@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="400"
+    android:fillAfter="false"
+    android:fromDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:repeatCount="infinite"
+    android:repeatMode="restart"
+    android:toDegrees="720">
+    <!--toDegrees的值大小影响旋转的速度-->
+    <bitmap android:src="@mipmap/ic_launcher" />
+</rotate>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<rotate xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:duration="400"-->
+    <!--android:fillAfter="false"-->
+    <!--android:fromDegrees="0"-->
+    <!--android:pivotX="50%"-->
+    <!--android:pivotY="50%"-->
+    <!--android:repeatCount="infinite"-->
+    <!--android:drawable="@drawable/ic_launcher"-->
+    <!--android:repeatMode="restart"-->
+    <!--android:toDegrees="720">-->
+    <!--&lt;!&ndash;toDegrees的值大小影响旋转的速度&ndash;&gt;-->
+    <!--</rotate>-->

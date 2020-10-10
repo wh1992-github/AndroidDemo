@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <!--通过Android动画集播放的20张图片-->
+    <item
+        android:drawable="@drawable/circle_1"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_2"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_3"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_4"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_5"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_6"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_7"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_8"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_9"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_10"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_11"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_12"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_13"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_14"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_15"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_16"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_17"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_18"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_19"
+        android:duration="50" />
+    <item
+        android:drawable="@drawable/circle_20"
+        android:duration="50" />
+
+</animation-list>

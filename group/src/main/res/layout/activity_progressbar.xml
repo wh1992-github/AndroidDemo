@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:max="100"
+        android:maxHeight="10dp"
+        android:minHeight="10dp"
+        android:progress="0"
+        android:progressDrawable="@drawable/progressbar_bg"
+        android:thumb="@drawable/seekbar_thumb"
+        android:thumbOffset="0dp" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:text="SeekBar: 0/100 \nSecondaryProgress: 0/200"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="260dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:max="200"
+        android:progressDrawable="@drawable/progressbar_bg" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:text="ProgressBar: "
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="#80ff0000" />
+
+    <!--系统默认的-->
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Inverse"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp" />
+    <!--自定义的-->
+    <ProgressBar
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="5dp"
+        android:indeterminate="false"
+        android:indeterminateDrawable="@drawable/rotate_drawable" />
+    <!--使用一张图片-->
+    <ProgressBar
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:indeterminate="false"
+        android:indeterminateDrawable="@drawable/rotate_anim" />
+    <!--使用帧动画-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:indeterminate="false"
+            android:indeterminateDrawable="@drawable/frame_anim1" />
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:indeterminate="false"
+            android:indeterminateDrawable="@drawable/frame_anim2" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="下一页" />
+</LinearLayout>

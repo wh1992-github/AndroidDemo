@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <layer-list>
+            <item android:width="50dp" android:height="50dp" android:gravity="center">
+                <shape android:shape="oval" android:useLevel="false">
+                    <gradient android:endColor="#63ffffff" android:startColor="#63ffffff" android:useLevel="false" />
+                </shape>
+            </item>
+            <item android:width="35dp" android:height="35dp" android:gravity="center">
+                <rotate android:fromDegrees="180" android:pivotX="50%p" android:pivotY="50%p" android:toDegrees="0">
+                    <shape android:shape="oval" android:useLevel="false">
+                        <gradient android:endColor="#00ffff" android:startColor="#ff0000" android:type="sweep" android:useLevel="false" />
+                    </shape>
+                </rotate>
+            </item>
+            <item android:width="20dp" android:height="20dp" android:gravity="center">
+                <rotate android:fromDegrees="270" android:pivotX="50%p" android:pivotY="50%p" android:toDegrees="0">
+                    <shape android:shape="oval" android:useLevel="false">
+                        <gradient android:endColor="#000000" android:startColor="#ffff00" android:type="sweep" android:useLevel="false" />
+                    </shape>
+                </rotate>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_pressed="false">
+        <shape android:shape="oval">
+            <size android:width="1dp" android:height="1dp" />
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+</selector>
