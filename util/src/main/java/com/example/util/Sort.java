@@ -2,7 +2,9 @@ package com.example.util;
 
 import java.util.Arrays;
 
-/*各种排序算法,默认从小到大排序*/
+/**
+ * 各种排序算法,默认从小到大排序
+ */
 public class Sort {
     public static void main(String[] args) {
         int[] test = {12, 3, 6, 19, 11, 17, 23, 16, 25, 2, 0, 1, 45, 33, 7, 10};

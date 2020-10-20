@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         mButton = findViewById(R.id.button);
         mButton.setOnClickListener(this::onClick);
 
-        GlideUtil.load(this, BASE_URL, mImageView);
+        GlideUtil.loadImage(this, BASE_URL, mImageView);
     }
 
     public void onClick(View view) {

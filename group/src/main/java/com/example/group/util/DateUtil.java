@@ -8,6 +8,7 @@ import java.util.Date;
 
 /**
  * Created by test on 2017/9/24.
+ * Android获取当前系统日期和时间
  */
 @SuppressLint("SimpleDateFormat")
 public class DateUtil {

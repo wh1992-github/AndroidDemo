@@ -5,12 +5,16 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 
 public class GlideUtil {
 
-    public static void load(Context context, String baseUrl, ImageView imageView) {
+    public static void loadImage(Context context, String baseUrl, ImageView imageView) {
+        //RequestOptions options = RequestOptions.noAnimation()
         RequestOptions options = new RequestOptions()
+                .transforms(new CenterCrop(), new RoundedCorners(8))
                 .placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ic_launcher)
                 //指定图片的尺寸
