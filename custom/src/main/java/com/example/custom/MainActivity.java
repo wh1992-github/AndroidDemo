@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_circle_animation).setOnClickListener(this);
         findViewById(R.id.btn_circle_clock).setOnClickListener(this);
         findViewById(R.id.btn_custom_textview).setOnClickListener(this);
+        findViewById(R.id.btn_bezier_quad).setOnClickListener(this);
+        findViewById(R.id.btn_bezier_cubic).setOnClickListener(this);
+        findViewById(R.id.btn_bezier_ripple).setOnClickListener(this);
         findViewById(R.id.btn_window).setOnClickListener(this);
         findViewById(R.id.btn_dialog_date).setOnClickListener(this);
         findViewById(R.id.btn_dialog_multi).setOnClickListener(this);
@@ -77,6 +80,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_custom_textview) {
             Intent intent = new Intent(this, CustomTextViewActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_bezier_quad) {
+            Intent intent = new Intent(this, BezierQuadActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_bezier_cubic) {
+            Intent intent = new Intent(this, BezierCubicActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_bezier_ripple) {
+            Intent intent = new Intent(this, BezierRippleActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_window) {
             Intent intent = new Intent(this, WindowActivity.class);
