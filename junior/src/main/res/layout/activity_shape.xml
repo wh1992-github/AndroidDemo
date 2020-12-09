@@ -6,8 +6,9 @@
 
     <View
         android:id="@+id/v_content"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
         android:layout_margin="20dp" />
 
     <LinearLayout
@@ -20,9 +21,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="圆角矩形背景"
+            android:text="圆角背景"
             android:textColor="#000000"
-            android:textSize="17sp" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_oval"
@@ -31,7 +32,32 @@
             android:layout_weight="1"
             android:text="椭圆背景"
             android:textColor="#000000"
-            android:textSize="17sp" />
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_dash"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="虚线背景"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_ring"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="圆环背景"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
