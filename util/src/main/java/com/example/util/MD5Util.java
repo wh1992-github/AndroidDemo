@@ -1,7 +1,6 @@
 
 package com.example.util;
 
-import android.text.TextUtils;
 import android.util.Log;
 
 import java.io.File;
@@ -57,49 +56,72 @@ public class MD5Util {
         }
     }
 
-    public static String getFileMD5(String path) {
-        if (TextUtils.isEmpty(path)) {
-            return null;
-        }
-        File file = new File(path);
-        if (!file.exists() || !file.isFile()) {
-            return null;
-        }
-        MessageDigest digest = null;
-        FileInputStream in = null;
-        byte[] buffer = new byte[1024];
-        int len;
-        boolean success = false;
+    public static String fileMD5(File file) {
+        FileInputStream fis = null;
         try {
-            digest = MessageDigest.getInstance("MD5");
-            in = new FileInputStream(file);
-            while ((len = in.read(buffer, 0, 1024)) != -1) {
-                digest.update(buffer, 0, len);
+            byte[] hash;
+            byte[] buffer = new byte[4096];
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            fis = new FileInputStream(file);
+            int len;
+            while ((len = fis.read(buffer)) != -1) {
+                md.update(buffer, 0, len);
             }
-            success = true;
+            hash = md.digest();
+            //对生成的16字节数组进行补零操作
+            StringBuilder hex = new StringBuilder(hash.length * 2);
+            for (byte b : hash) {
+                if ((b & 0xFF) < 0x10) {
+                    hex.append("0");
+                }
+                hex.append(Integer.toHexString(b & 0xFF));
+            }
+            return hex.toString();
         } catch (Exception e) {
             e.printStackTrace();
-            success = false;
         } finally {
-            if (null != in) {
+            if (fis != null) {
                 try {
-                    in.close();
+                    fis.close();
                 } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }
-        if (!success) {
-            return null;
-        }
-        BigInteger bigInt = new BigInteger(1, digest.digest());
-        String md5 = bigInt.toString(16);
-        if (md5.length() != 32) {
-            String temp = "";
-            for (int i = md5.length(); i < 32; i++) {
-                temp += "0";
+        return "";
+    }
+
+    public static String getFileMD5(File file) {
+        FileInputStream fis = null;
+        try {
+            byte[] buffer = new byte[4096];
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            fis = new FileInputStream(file);
+            int len;
+            while ((len = fis.read(buffer)) != -1) {
+                md.update(buffer, 0, len);
             }
-            md5 = temp + md5;
+            BigInteger bigInt = new BigInteger(1, md.digest());
+            String md5 = bigInt.toString(16);
+            if (md5.length() != 32) {
+                StringBuilder temp = new StringBuilder();
+                for (int i = md5.length(); i < 32; i++) {
+                    temp.append("0");
+                }
+                md5 = temp + md5;
+            }
+            return md5;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-        return md5;
+        return "";
     }
 }
