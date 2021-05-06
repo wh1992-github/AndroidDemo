@@ -101,6 +101,16 @@
                     android:textColor="@color/black"
                     android:textSize="17sp" />
 
+                <Button
+                    android:id="@+id/btn_base64"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Base64加密"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
             </LinearLayout>
 
             <TextView

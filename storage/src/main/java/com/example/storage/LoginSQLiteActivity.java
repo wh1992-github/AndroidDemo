@@ -37,7 +37,7 @@ import com.example.storage.util.ViewUtil;
 public class LoginSQLiteActivity extends AppCompatActivity implements OnClickListener, OnFocusChangeListener {
     private RadioGroup rg_login;
     private RadioButton rb_password;
-    private RadioButton rb_verifycode;
+    private RadioButton rb_verifyCode;
     private EditText et_phone;
     private TextView tv_password;
     private EditText et_password;
@@ -57,7 +57,7 @@ public class LoginSQLiteActivity extends AppCompatActivity implements OnClickLis
         setContentView(R.layout.activity_login_sqlite);
         rg_login = findViewById(R.id.rg_login);
         rb_password = findViewById(R.id.rb_password);
-        rb_verifycode = findViewById(R.id.rb_verifycode);
+        rb_verifyCode = findViewById(R.id.rb_verifycode);
         et_phone = findViewById(R.id.et_phone);
         tv_password = findViewById(R.id.tv_password);
         et_password = findViewById(R.id.et_password);
@@ -172,7 +172,7 @@ public class LoginSQLiteActivity extends AppCompatActivity implements OnClickLis
                 //携带手机号码跳转到找回密码页面
                 intent.putExtra("phone", phone);
                 startActivityForResult(intent, mRequestCode);
-            } else if (rb_verifycode.isChecked()) { //选择了验证码方式校验,此时要生成六位随机数字验证码
+            } else if (rb_verifyCode.isChecked()) { //选择了验证码方式校验,此时要生成六位随机数字验证码
                 //生成六位随机数字的验证码
                 mVerifyCode = String.format("%06d", (int) (Math.random() * 1000000 % 1000000));
                 //弹出提醒对话框,提示用户六位验证码数字
@@ -194,7 +194,7 @@ public class LoginSQLiteActivity extends AppCompatActivity implements OnClickLis
                 } else { //密码校验通过
                     loginSuccess(); //提示用户登录成功
                 }
-            } else if (rb_verifycode.isChecked()) { //验证码方式校验
+            } else if (rb_verifyCode.isChecked()) { //验证码方式校验
                 if (!et_password.getText().toString().equals(mVerifyCode)) {
                     Toast.makeText(this, "请输入正确的验证码", Toast.LENGTH_SHORT).show();
                 } else { //验证码校验通过

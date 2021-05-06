@@ -12,18 +12,18 @@ public class MD5Util {
             md.update(raw.getBytes()); //给算法对象加载待加密的原始数据
             byte[] encryContext = md.digest(); //调用digest方法完成哈希计算
             int i;
-            StringBuffer buf = new StringBuffer();
-            for (int offset = 0; offset < encryContext.length; offset++) {
-                i = encryContext[offset];
+            StringBuilder stringBuilder = new StringBuilder();
+            for (byte b : encryContext) {
+                i = b;
                 if (i < 0) {
                     i += 256;
                 }
                 if (i < 16) {
-                    buf.append("0");
+                    stringBuilder.append("0");
                 }
-                buf.append(Integer.toHexString(i)); //把字节数组逐位转换为十六进制数
+                stringBuilder.append(Integer.toHexString(i)); //把字节数组逐位转换为十六进制数
             }
-            md5Str = buf.toString(); //拼装加密字符串
+            md5Str = stringBuilder.toString(); //拼装加密字符串
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

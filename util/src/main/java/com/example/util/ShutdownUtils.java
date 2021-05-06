@@ -7,7 +7,6 @@ import android.os.PowerManager;
 import android.os.SystemClock;
 
 import java.lang.reflect.Method;
-//import android.support.annotation.RequiresPermission;
 
 public class ShutdownUtils {
     private static final String TAG = "ShutdownUtils";
@@ -89,7 +88,6 @@ public class ShutdownUtils {
     }
 
     @SuppressLint("PrivateApi")
-// @RequiresPermission("android.permission.DEVICE_POWER")
     public static void goToSleep(Context context, ShutdownListener listener) {
         LogUtil.d(TAG, "goToSleep() Start...");
         try {

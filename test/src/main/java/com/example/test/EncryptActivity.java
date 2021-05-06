@@ -1,6 +1,9 @@
 package com.example.test;
 
+import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.test.encrypt.AesUtil;
+import com.example.test.encrypt.Base64Util;
 import com.example.test.encrypt.Des3Util;
 import com.example.test.encrypt.MD5Util;
 import com.example.test.encrypt.RSAUtil;
@@ -34,8 +38,11 @@ public class EncryptActivity extends AppCompatActivity implements OnClickListene
         findViewById(R.id.btn_aes).setOnClickListener(this);
         findViewById(R.id.btn_3des).setOnClickListener(this);
         findViewById(R.id.btn_sm3).setOnClickListener(this);
+        findViewById(R.id.btn_base64).setOnClickListener(this);
     }
 
+    @SuppressLint("SetTextI18n")
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onClick(View v) {
         String raw = et_raw.getText().toString();
@@ -69,6 +76,9 @@ public class EncryptActivity extends AppCompatActivity implements OnClickListene
         } else if (v.getId() == R.id.btn_sm3) {
             String enStr = SM3Digest.encrypt(raw);
             tv_des.setText("SM3的加密结果是:" + enStr);
+        } else if (v.getId() == R.id.btn_base64) {
+            String enStr = Base64Util.base64Encode(raw);
+            tv_des.setText("Base64的加密结果是:" + enStr);
         }
     }
 

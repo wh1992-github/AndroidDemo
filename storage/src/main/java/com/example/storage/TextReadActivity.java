@@ -47,11 +47,11 @@ public class TextReadActivity extends AppCompatActivity implements OnClickListen
 
     private void refreshSpinner() {
         //获得指定目录下面的所有文本文件
-        ArrayList<File> fileAlllist = FileUtil.getFileList(mPath, new String[]{".txt"});
-        if (fileAlllist.size() > 0) {
-            fileArray = new String[fileAlllist.size()];
-            for (int i = 0; i < fileAlllist.size(); i++) {
-                fileArray[i] = fileAlllist.get(i).getName();
+        ArrayList<File> fileAllList = FileUtil.getFileList(mPath, new String[]{".txt"});
+        if (fileAllList.size() > 0) {
+            fileArray = new String[fileAllList.size()];
+            for (int i = 0; i < fileAllList.size(); i++) {
+                fileArray[i] = fileAllList.get(i).getName();
             }
             ArrayAdapter<String> typeAdapter = new ArrayAdapter<>(this,
                     R.layout.item_select, fileArray);
