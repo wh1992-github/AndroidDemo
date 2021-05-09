@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-
+        DefaultType defaultType = new DefaultType();
+        defaultType.setSexName(DefaultType.Person.female);
+        defaultType.setSexType(DefaultType.Sex.MAN);
     }
 }
