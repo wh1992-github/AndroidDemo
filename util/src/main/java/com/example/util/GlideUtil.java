@@ -14,7 +14,7 @@ public class GlideUtil {
     public static void loadImage(Context context, String baseUrl, ImageView imageView) {
         //RequestOptions options = RequestOptions.noAnimation()
         RequestOptions options = new RequestOptions()
-                .transforms(new CenterCrop(), new RoundedCorners(8))
+                .transforms(new CenterCrop(), new RoundedCorners(40))
                 .placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ic_launcher)
                 //指定图片的尺寸

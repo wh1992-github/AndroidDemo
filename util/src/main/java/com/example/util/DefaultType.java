@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
  * @Inherited：说明子类可以继承父类中的该注解
  */
 public class DefaultType {
-    private static final String TAG = "DefaultEnumType";
+    private static final String TAG = "DefaultType";
 
     @IntDef({Sex.MAN, Sex.WOMEN}) //限定为MAN,WOMEN
     @Target(ElementType.PARAMETER) //表示注解作用范围,参数注解

@@ -102,6 +102,13 @@
                     android:layout_weight="1"
                     android:text="下拉刷新动画" />
 
+                <Button
+                    android:id="@+id/btn_custom_imageview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="各种圆形图片" />
+
             </LinearLayout>
 
             <LinearLayout

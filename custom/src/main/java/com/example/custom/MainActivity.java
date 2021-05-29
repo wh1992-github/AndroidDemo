@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_pull_refresh).setOnClickListener(this);
         findViewById(R.id.btn_circle_animation).setOnClickListener(this);
         findViewById(R.id.btn_circle_clock).setOnClickListener(this);
+        findViewById(R.id.btn_custom_imageview).setOnClickListener(this);
         findViewById(R.id.btn_custom_textview).setOnClickListener(this);
         findViewById(R.id.btn_bezier_quad).setOnClickListener(this);
         findViewById(R.id.btn_bezier_cubic).setOnClickListener(this);
@@ -77,6 +78,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_circle_clock) {
             Intent intent = new Intent(this, CircleClockActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_custom_imageview) {
+            Intent intent = new Intent(this, CustomImageViewActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_custom_textview) {
             Intent intent = new Intent(this, CustomTextViewActivity.class);
