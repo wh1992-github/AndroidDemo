@@ -1,5 +1,6 @@
 package com.example.custom.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -13,16 +14,11 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
-/**
- * Created by test on 2018/7/11.
- */
-
+@SuppressLint("DrawAllocation")
 public class RoundImageView2 extends AppCompatImageView {
-
+    private static final int radius = 20;
     private Paint mPaint;
     private Xfermode mXfermode;
-    //圆角大小，默认为36
-    private int mBorderRadius = 36;
 
     public RoundImageView2(Context context) {
         this(context, null);
@@ -46,7 +42,7 @@ public class RoundImageView2 extends AppCompatImageView {
         }
         int sc = canvas.saveLayer(0, 0, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG);
         //画源图像，为一个圆角矩形
-        canvas.drawRoundRect(new RectF(0, 0, getWidth(), getHeight()), mBorderRadius, mBorderRadius, mPaint);
+        canvas.drawRoundRect(new RectF(0, 0, getWidth(), getHeight()), radius, radius, mPaint);
         //设置混合模式
         mPaint.setXfermode(mXfermode);
         //画目标图像
@@ -57,12 +53,7 @@ public class RoundImageView2 extends AppCompatImageView {
 
     }
 
-    /**
-     * 图片拉升
-     *
-     * @param drawable
-     * @return
-     */
+    //图片拉升
     private Drawable exChangeSize(Drawable drawable) {
         float scale = 1.0f;
         scale = Math.max(getWidth() * 1.0f / drawable.getIntrinsicWidth(), getHeight()

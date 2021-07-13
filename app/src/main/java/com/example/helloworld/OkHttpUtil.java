@@ -41,7 +41,7 @@ public class OkHttpUtil {
     }
 
     public void requestImage(String url) {
-        Request request = new Request.Builder().get().url(url).header("key","okhttp_key").build();
+        Request request = new Request.Builder().get().url(url).header("key", "okhttp_key").build();
         Call call = mOkHttpClient.newCall(request);
         call.enqueue(new Callback() {
             @Override

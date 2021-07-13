@@ -1,5 +1,6 @@
 package com.example.custom.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Path;
@@ -7,9 +8,10 @@ import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.Log;
 
+@SuppressLint("DrawAllocation")
 public class RoundImageView1 extends AppCompatImageView {
     private static final String TAG = "CustomRoundImageView";
-    private static final int radius = 60;
+    private static final int radius = 20;
     private float width, height;
 
     public RoundImageView1(Context context) {
