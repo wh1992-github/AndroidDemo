@@ -15,14 +15,12 @@ public class DateUtils {
         int index = -1;
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            Date d1 = null;
-            Date d2 = null;
-            d1 = sdf.parse(date);
-            d2 = sdf.parse(getNowDate());
+            Date d1 = sdf.parse(date);
+            Date d2 = sdf.parse(getNowDate());
             long t1 = d1.getTime();
             long t2 = d2.getTime();
             if (t1 >= t2) {
-                index = (int) ((t1 - t2) / (24 * 60 * 60 * 1000l));
+                index = (int) ((t1 - t2) / (24 * 60 * 60 * 1000L));
             }
         } catch (ParseException e) {
             e.printStackTrace();
@@ -42,7 +40,7 @@ public class DateUtils {
     public static boolean isDateRight() {
         long flagTime = 0;
         try {
-            flagTime = getMillis("2017-05-22 00:00:00");
+            flagTime = getMillis("2017-05-22 00:00:00", null);
         } catch (ParseException e) {
             LogUtil.e(TAG, "get flag time failed.");
         }
@@ -67,10 +65,8 @@ public class DateUtils {
         int result = -2;
         try {
             SimpleDateFormat sdf = new SimpleDateFormat(dateFormat, Locale.getDefault());
-            Date d1 = null;
-            Date d2 = null;
-            d1 = sdf.parse(date1);
-            d2 = sdf.parse(date2);
+            Date d1 = sdf.parse(date1);
+            Date d2 = sdf.parse(date2);
             result = d1.compareTo(d2);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -103,10 +99,8 @@ public class DateUtils {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
             String now = sdf.format(System.currentTimeMillis());
-            Date playDate = null;
-            Date nowdate = null;
-            playDate = sdf.parse(date);
-            nowdate = sdf.parse(now);
+            Date playDate = sdf.parse(date);
+            Date nowdate = sdf.parse(now);
             result = nowdate.compareTo(playDate);
         } catch (Exception e) {
             LogUtil.i(TAG, "Exception: " + e.getMessage());
@@ -124,7 +118,7 @@ public class DateUtils {
             if (0 == day) {
                 date = sdf.format(System.currentTimeMillis());
             } else {
-                date = sdf.format(System.currentTimeMillis() + day * 24 * 60 * 60 * 1000l);
+                date = sdf.format(System.currentTimeMillis() + day * 24 * 60 * 60 * 1000L);
             }
         } catch (Exception e) {
             LogUtil.i(TAG, "Exception: " + e.getMessage());
@@ -139,7 +133,7 @@ public class DateUtils {
         String date = null;
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            date = sdf.format(System.currentTimeMillis() + 1 * 24 * 60 * 60 * 1000l);
+            date = sdf.format(System.currentTimeMillis() + 24 * 60 * 60 * 1000L);
         } catch (Exception e) {
             LogUtil.i(TAG, "Exception: " + e.getMessage());
         }
@@ -153,15 +147,8 @@ public class DateUtils {
         String time = null;
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            String now = sdf.format(System.currentTimeMillis() + 1 * 24 * 60 * 60 * 1000l);
-            long zeroHourMillis = 0;
-            try {
-                zeroHourMillis = getMillis(now + " " + "00:00:00");
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-            time = sdf.format(zeroHourMillis);
+            String now = sdf.format(System.currentTimeMillis() + 24 * 60 * 60 * 1000L);
+            time = now + " 00:00:00";
         } catch (Exception e) {
             LogUtil.i(TAG, "Exception: " + e.getMessage());
         }
@@ -211,10 +198,6 @@ public class DateUtils {
             LogUtil.i(TAG, "Exception: " + e.getMessage());
         }
         return distance;
-    }
-
-    public static long getMillis(String dstr) throws ParseException {
-        return getMillis(dstr, null);
     }
 
     /**
@@ -268,7 +251,7 @@ public class DateUtils {
         String result = null;
         try {
             long time = -1;
-            time = Long.valueOf(FileUtils.removeWhitespace(showTime));
+            time = Long.parseLong(FileUtils.removeWhitespace(showTime));
             result = formatDate(time);
         } catch (Exception e) {
             LogUtil.i(TAG, "Exception: " + e.getMessage());

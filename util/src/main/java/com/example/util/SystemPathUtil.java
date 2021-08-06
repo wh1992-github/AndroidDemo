@@ -61,11 +61,47 @@ public class SystemPathUtil {
         Log.d(TAG, "Environment.getDataDirectory(): " + Environment.getDataDirectory().getPath());
         //获得缓存目录/cache
         Log.d(TAG, "Environment.getDownloadCacheDirectory(): " + Environment.getDownloadCacheDirectory().getPath());
-        //用于获取APP的在SD卡中的cache目录 /sdcard/Android/data/<application>/cache
-        Log.d(TAG, "getExternalCacheDir(): " + context.getExternalCacheDir().getPath());
         //用于获取APP的cache目录 /data/data/<application>/cache
         Log.d(TAG, "getCacheDir(): " + context.getCacheDir().getPath());
         //用于获取APP的files目录 /data/data/<application>/files
         Log.d(TAG, "getFilesDir(): " + context.getFilesDir().getPath());
+    }
+
+    public static void initExternalDir(Context context) {
+        if (isSDCardMounted()) {
+            //路径:/sdcard/Android/data/<application>/files/
+            File fileDir = context.getExternalFilesDir(null);
+            if (null != fileDir) {
+                String fileDirApp = fileDir.getAbsolutePath();
+                Log.i(TAG, "initExternalDir: fileDirApp = " + fileDirApp);
+            }
+            //路径:/sdcard/Android/data/<application>/files/log/
+            File logDir = context.getExternalFilesDir("log");
+            if (null != logDir) {
+                String fileDirAppLog = logDir.getAbsolutePath();
+                Log.i(TAG, "initExternalDir: fileDirAppLog = " + fileDirAppLog);
+            }
+            //路径:/sdcard/Android/data/<application>/files/crash/
+            File crashDir = context.getExternalFilesDir("crash");
+            if (null != crashDir) {
+                String fileDirAppCrash = crashDir.getAbsolutePath();
+                Log.i(TAG, "initExternalDir: fileDirAppCrash = " + fileDirAppCrash);
+            }
+            //路径:/sdcard/Android/data/<application>/files/apk/
+            File apkDir = context.getExternalFilesDir("apk");
+            if (null != apkDir) {
+                String fileDirAppApk = apkDir.getAbsolutePath();
+                Log.i(TAG, "initExternalDir: fileDirAppApk = " + fileDirAppApk);
+            }
+
+            //路径:/sdcard/Android/data/<application>/cache
+            File cacheDir = context.getExternalCacheDir();
+            if (null != cacheDir) {
+                String cacheDirApp = cacheDir.getAbsolutePath();
+                Log.i(TAG, "initExternalDir: cacheDirApp = " + cacheDirApp);
+            }
+        } else {
+            Log.w(TAG, "The external storage state is not MEDIA_MOUNTED.");
+        }
     }
 }

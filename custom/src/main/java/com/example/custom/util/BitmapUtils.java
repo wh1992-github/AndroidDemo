@@ -141,7 +141,7 @@ public class BitmapUtils {
         Bitmap target = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(target);
         RectF rect = new RectF(0, 0, width, height);
-        canvas.drawRoundRect(rect, 40, 40, paint);
+        canvas.drawRoundRect(rect, 20, 20, paint);
         //设置图片相交情况下的处理方式
         //setXfermode：设置当绘制的图像出现相交情况时候的处理方式的,它包含的常用模式有：
         //PorterDuff.Mode.SRC_IN 取两层图像交集部分,只显示上层图像

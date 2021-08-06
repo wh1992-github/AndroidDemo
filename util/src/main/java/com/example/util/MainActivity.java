@@ -28,5 +28,8 @@ public class MainActivity extends AppCompatActivity {
         DefaultType defaultType = new DefaultType();
         defaultType.setSexName(DefaultType.Person.female);
         defaultType.setSexType(DefaultType.Sex.MAN);
+
+        CountDownTimerUtil countDownTimerUtil = new CountDownTimerUtil(10 * 1000, 1000);
+        countDownTimerUtil.start();
     }
 }

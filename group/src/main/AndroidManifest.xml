@@ -30,6 +30,9 @@
             android:name=".ProgressBarActivity"
             android:theme="@style/AppCompatTheme" />
         <activity
+            android:name=".HandlerActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
             android:name=".SeekBarActivity"
             android:theme="@style/AppCompatTheme" />
         <activity

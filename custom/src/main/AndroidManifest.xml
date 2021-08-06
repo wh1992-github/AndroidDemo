@@ -37,7 +37,8 @@
         <activity android:name=".PullRefreshActivity" />
         <activity android:name=".CircleAnimationActivity" />
         <activity android:name=".CircleClockActivity" />
-        <activity android:name=".CustomImageViewActivity" />
+        <activity android:name=".RoundImageViewActivity" />
+        <activity android:name=".NiceImageViewActivity" />
         <activity android:name=".CustomTextViewActivity" />
         <activity android:name=".BezierQuadActivity" />
         <activity android:name=".BezierCubicActivity" />

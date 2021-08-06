@@ -1,8 +1,6 @@
-
 package com.example.util;
 
 import android.text.TextUtils;
-
 
 public class StringUtils {
     /**
@@ -12,7 +10,6 @@ public class StringUtils {
      * @return String 每个Byte之间空格分隔,如: [61 6C 6B]
      */
     public static String str2HexStr(String str) {
-
         char[] chars = "0123456789ABCDEF".toCharArray();
         StringBuilder sb = new StringBuilder();
         byte[] bs = str.getBytes();
@@ -39,7 +36,6 @@ public class StringUtils {
         char[] hexs = hexStr.toCharArray();
         byte[] bytes = new byte[hexStr.length() / 2];
         int n;
-
         for (int i = 0; i < bytes.length; i++) {
             n = str.indexOf(hexs[2 * i]) * 16;
             n += str.indexOf(hexs[2 * i + 1]);
@@ -55,10 +51,10 @@ public class StringUtils {
      * @return String 每个Byte值之间空格分隔
      */
     public static String byte2HexStr(byte[] b) {
-        String stmp = "";
+        String stmp;
         StringBuilder sb = new StringBuilder();
-        for (int n = 0; n < b.length; n++) {
-            stmp = Integer.toHexString(b[n] & 0xFF);
+        for (byte value : b) {
+            stmp = Integer.toHexString(value & 0xFF);
             sb.append((stmp.length() == 1) ? "0" + stmp : stmp);
             sb.append(" ");
         }
@@ -91,8 +87,7 @@ public class StringUtils {
      * @return String 每个unicode之间无分隔符
      * @throws Exception
      */
-    public static String strToUnicode(String strText)
-            throws Exception {
+    public static String strToUnicode(String strText) throws Exception {
         char c;
         StringBuilder str = new StringBuilder();
         int intAsc;
@@ -101,10 +96,11 @@ public class StringUtils {
             c = strText.charAt(i);
             intAsc = c;
             strHex = Integer.toHexString(intAsc);
-            if (intAsc > 128)
+            if (intAsc > 128) {
                 str.append("\\u" + strHex);
-            else //低位在前面补00
+            } else {//低位在前面补00
                 str.append("\\u00" + strHex);
+            }
         }
         return str.toString();
     }
@@ -148,7 +144,7 @@ public class StringUtils {
                         content.indexOf("<" + key + ">") + key.length() + 2,
                         content.indexOf("</" + key + ">"));
             }
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         if (TextUtils.isEmpty(value)) {
             value = def;

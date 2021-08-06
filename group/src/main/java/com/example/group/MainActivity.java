@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_tab_fragment).setOnClickListener(this);
         findViewById(R.id.btn_toolbar).setOnClickListener(this);
         findViewById(R.id.btn_seekbar).setOnClickListener(this);
+        findViewById(R.id.btn_handler).setOnClickListener(this);
         findViewById(R.id.btn_toolbar_custom).setOnClickListener(this);
         findViewById(R.id.btn_overflow_menu).setOnClickListener(this);
         findViewById(R.id.btn_search_view).setOnClickListener(this);
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_seekbar) {
             Intent intent = new Intent(this, ProgressBarActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_handler) {
+            Intent intent = new Intent(this, HandlerActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_overflow_menu) {
             Intent intent = new Intent(this, OverflowMenuActivity.class);

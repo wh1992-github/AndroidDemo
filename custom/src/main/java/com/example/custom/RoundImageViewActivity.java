@@ -14,7 +14,7 @@ import com.example.custom.widget.RoundImageView1;
 import com.example.custom.widget.RoundImageView2;
 import com.example.custom.widget.RoundImageView3;
 
-public class CustomImageViewActivity extends AppCompatActivity {
+public class RoundImageViewActivity extends AppCompatActivity {
 
     private ImageView mCircleView;
     private ImageView mRoundRectView;
@@ -25,7 +25,7 @@ public class CustomImageViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_imageview);
+        setContentView(R.layout.activity_round_imageview);
         mRoundIv1 = findViewById(R.id.round_iv1);
         mRoundIv2 = findViewById(R.id.round_iv2);
         mRoundIv3 = findViewById(R.id.round_iv3);
