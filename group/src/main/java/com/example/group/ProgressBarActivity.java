@@ -1,9 +1,9 @@
 package com.example.group;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -11,7 +11,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 @SuppressLint({"LongLogTag", "SetTextI18n"})
-public class ProgressBarActivity extends Activity {
+public class ProgressBarActivity extends AppCompatActivity {
     private static final String TAG = "ProgressBarActivity";
     private TextView mTv1, mTv2;
     private SeekBar mSeekBar;

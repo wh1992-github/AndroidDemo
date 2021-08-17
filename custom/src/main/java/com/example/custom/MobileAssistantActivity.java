@@ -1,12 +1,12 @@
 package com.example.custom;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint.Style;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
@@ -31,7 +31,7 @@ import java.util.Calendar;
  * Created by test on 2017/10/14.
  */
 @SuppressLint("DefaultLocale")
-public class MobileAssistantActivity extends Activity implements
+public class MobileAssistantActivity extends AppCompatActivity implements
         OnClickListener, OnDateSetListener {
     private static final String TAG = "MobileAssistantActivity";
     private TextView tv_day;

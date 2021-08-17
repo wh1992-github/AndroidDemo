@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TouchEventActivity">
+
+    <com.example.group.touchevent.BaseFrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55ff0000">
+
+    </com.example.group.touchevent.BaseFrameLayout>
+
+    <com.example.group.touchevent.BaseRelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="80dp"
+        android:background="#55ffff00">
+
+    </com.example.group.touchevent.BaseRelativeLayout>
+
+    <com.example.group.touchevent.BaseLinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="160dp"
+        android:background="#cccccc"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.example.group.touchevent.BaseTextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#4400ffff"
+            android:padding="10dp"
+            android:text="BaseTextView"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <com.example.group.touchevent.BaseImageView
+            android:id="@+id/imageview"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+
+        <com.example.group.touchevent.BaseButton
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="BaseButton"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+    </com.example.group.touchevent.BaseLinearLayout>
+</merge>

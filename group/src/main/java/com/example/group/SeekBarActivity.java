@@ -1,13 +1,13 @@
 package com.example.group;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.group.widget.NumberProgressBar;
 import com.example.group.widget.NumberSeekBar;
 
-public class SeekBarActivity extends Activity {
+public class SeekBarActivity extends AppCompatActivity {
     private NumberSeekBar mSeekBar;
     private NumberProgressBar mProgressBar;
 

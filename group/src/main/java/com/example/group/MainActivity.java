@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_tab_fragment).setOnClickListener(this);
         findViewById(R.id.btn_toolbar).setOnClickListener(this);
         findViewById(R.id.btn_seekbar).setOnClickListener(this);
+        findViewById(R.id.btn_click_effect).setOnClickListener(this);
+        findViewById(R.id.btn_touch_event).setOnClickListener(this);
         findViewById(R.id.btn_handler).setOnClickListener(this);
         findViewById(R.id.btn_toolbar_custom).setOnClickListener(this);
         findViewById(R.id.btn_overflow_menu).setOnClickListener(this);
@@ -68,6 +70,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_seekbar) {
             Intent intent = new Intent(this, ProgressBarActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_click_effect) {
+            Intent intent = new Intent(this, ClickEffectActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_touch_event) {
+            Intent intent = new Intent(this, TouchEventActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_handler) {
             Intent intent = new Intent(this, HandlerActivity.class);

@@ -1,8 +1,8 @@
 package com.example.storage;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +14,8 @@ import com.example.storage.util.DateUtil;
 /**
  * Created by test on 2017/10/1.
  */
-public class MenuOptionActivity extends Activity implements OnClickListener {
+public class MenuOptionActivity extends
+        AppCompatActivity implements OnClickListener {
     private TextView tv_option;
 
     @Override

@@ -1,14 +1,14 @@
 package com.example.custom;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.widget.TextView;
 
 /**
  * Created by test on 2017/10/14.
  */
-public class WindowActivity extends Activity {
+public class WindowActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

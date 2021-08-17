@@ -1,7 +1,6 @@
 package com.example.storage;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -9,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.ContextMenu;
@@ -40,7 +40,7 @@ import java.util.HashMap;
  * Created by test on 2017/10/1.
  */
 @SuppressLint("SetTextI18n")
-public class ShoppingCartActivity extends Activity implements OnClickListener {
+public class ShoppingCartActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "ShoppingCartActivity";
     private ImageView iv_menu;
     private TextView tv_count;

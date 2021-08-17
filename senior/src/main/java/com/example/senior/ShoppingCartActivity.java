@@ -1,7 +1,6 @@
 package com.example.senior;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -41,7 +41,7 @@ import java.util.ArrayList;
  * Created by test on 2017/10/7.
  */
 @SuppressLint("SetTextI18n")
-public class ShoppingCartActivity extends Activity implements
+public class ShoppingCartActivity extends AppCompatActivity implements
         OnClickListener, OnItemClickListener, OnItemLongClickListener {
     private static final String TAG = "ShoppingCartActivity";
     private ImageView iv_menu;

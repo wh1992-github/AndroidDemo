@@ -1,7 +1,6 @@
 package com.example.device;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
@@ -11,6 +10,7 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.Toast;
@@ -27,7 +27,7 @@ import java.io.IOException;
  * Created by test on 2017/11/4.
  */
 @SuppressLint("DefaultLocale")
-public class FindScanActivity extends Activity implements SurfaceHolder.Callback {
+public class FindScanActivity extends AppCompatActivity implements SurfaceHolder.Callback {
     private static final String TAG = "FindScanActivity";
     private CaptureActivityHandler mHandler;
     private ViewfinderView vv_finder; //定义一个扫码视图对象

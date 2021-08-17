@@ -1,14 +1,14 @@
 package com.example.group;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
 /**
  * Created by test on 2017/10/21.
  */
-public class TabFirstActivity extends Activity {
+public class TabFirstActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

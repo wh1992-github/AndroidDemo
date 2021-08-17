@@ -30,6 +30,12 @@
             android:name=".ProgressBarActivity"
             android:theme="@style/AppCompatTheme" />
         <activity
+            android:name=".ClickEffectActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name=".TouchEventActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
             android:name=".HandlerActivity"
             android:theme="@style/AppCompatTheme" />
         <activity

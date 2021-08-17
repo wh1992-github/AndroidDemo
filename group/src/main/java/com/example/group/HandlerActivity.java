@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
+//Handler机制
 public class HandlerActivity extends AppCompatActivity {
     private static final String TAG = "HandlerActivity";
     private Handler mMainHandler, mWorkHandler;
@@ -27,7 +28,7 @@ public class HandlerActivity extends AppCompatActivity {
         //创建与主线程关联的Handler
         mMainHandler = new Handler();
         //步骤1：创建HandlerThread实例对象
-        mHandlerThread = new HandlerThread("handlerThread");
+        mHandlerThread = new HandlerThread("HandlerThread");
         //步骤2：启动线程
         mHandlerThread.start();
         //步骤3：创建工作线程Handler&&复写handleMessage
