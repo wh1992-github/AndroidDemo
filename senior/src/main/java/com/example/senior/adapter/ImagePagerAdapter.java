@@ -1,4 +1,4 @@
-package com.example.custom.adapter;
+package com.example.senior.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -8,19 +8,19 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.example.custom.bean.GoodsInfo;
+import com.example.senior.bean.GoodsInfo;
 
 import java.util.ArrayList;
 
-public class ImagePagerAdapater extends PagerAdapter {
+public class ImagePagerAdapter extends PagerAdapter {
     private Context mContext; //声明一个上下文对象
     //声明一个图像视图队列
     private ArrayList<ImageView> mViewList = new ArrayList<>();
     //声明一个商品信息队列
-    private ArrayList<GoodsInfo> mGoodsList;
+    private ArrayList<GoodsInfo> mGoodsList = new ArrayList<>();
 
     //图像翻页适配器的构造函数,传入上下文与商品信息队列
-    public ImagePagerAdapater(Context context, ArrayList<GoodsInfo> goodsList) {
+    public ImagePagerAdapter(Context context, ArrayList<GoodsInfo> goodsList) {
         mContext = context;
         mGoodsList = goodsList;
         //给每个商品分配一个专用的图像视图

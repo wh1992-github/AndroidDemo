@@ -20,5 +20,6 @@ public class CountDownTimerUtil extends CountDownTimer {
     @Override
     public void onFinish() {
         Log.i(TAG, "onFinish: ");
+        cancel();
     }
 }

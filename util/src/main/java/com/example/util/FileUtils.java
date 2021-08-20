@@ -31,10 +31,6 @@ public class FileUtils {
         InputStream in = null;
         try {
             in = context.getAssets().open(name);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,7 +51,7 @@ public class FileUtils {
             is = context.getAssets().open(oldPath);
             fos = new FileOutputStream(new File(newPath));
             byte[] buffer = new byte[1024];
-            int byteCount = 0;
+            int byteCount;
             while ((byteCount = is.read(buffer)) != -1) {//循环从输入流读取
                 fos.write(buffer, 0, byteCount);//将读取的输入流写入到输出流
             }
@@ -65,17 +61,20 @@ public class FileUtils {
             e.printStackTrace();
         } finally {
             try {
-                is.close();
+                if (is != null) {
+                    is.close();
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
             try {
-                fos.close();
+                if (fos != null) {
+                    fos.close();
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
         return success;
     }
 
@@ -185,7 +184,7 @@ public class FileUtils {
         RandomAccessFile randomFile = null;
         try {
             randomFile = new RandomAccessFile(fileName, "rw");
-            long fileLength = 0l;
+            long fileLength = 0L;
             if (apend) {
                 fileLength = randomFile.length();
             }
@@ -200,6 +199,7 @@ public class FileUtils {
                 try {
                     randomFile.close();
                 } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }
@@ -281,9 +281,7 @@ public class FileUtils {
         } finally {
             try {
                 reader.close();
-                if (in != null) {
-                    in.close();
-                }
+                in.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -403,11 +401,7 @@ public class FileUtils {
                 }
                 isSuccess = true;
             }
-        } catch (FileNotFoundException fileNotFoundException) {
-            fileNotFoundException.printStackTrace();
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         } finally {
             if (in != null) {
@@ -447,11 +441,11 @@ public class FileUtils {
      */
     public static long getFileLastModifyTime(String path) {
         if (TextUtils.isEmpty(path)) {
-            return -1l;
+            return -1L;
         }
         File file = new File(path);
         if (!file.exists()) {
-            return -1l;
+            return -1L;
         }
         return file.lastModified();
     }
@@ -508,7 +502,7 @@ public class FileUtils {
      * @param path       文件或目录的路径
      * @param permission 需要设置的权限
      */
-    public static void chmod(String path, String permission) {
+    public static void chmod(String path, String permission) throws IOException {
         if (!isExists(path)) {
             return;
         }
@@ -533,8 +527,6 @@ public class FileUtils {
                     LogUtil.d(TAG, "chmod() result:" + result);
                 }
             }
-        } catch (IOException e) {
-            LogUtil.e(TAG, "chmod() IOException: " + e.getMessage());
         } catch (Exception e) {
             LogUtil.e(TAG, "chmod() Exception: " + e.getMessage());
         } finally {
@@ -542,12 +534,14 @@ public class FileUtils {
                 try {
                     in.close();
                 } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
             if (err != null) {
                 try {
                     err.close();
                 } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
             if (out != null) {
@@ -560,6 +554,7 @@ public class FileUtils {
                         LogUtil.d(TAG, "chmod() exitValue: " + exitValue);
                     }
                 } catch (IllegalThreadStateException e) {
+                    e.printStackTrace();
                 }
                 proc = null;
             }
@@ -622,6 +617,7 @@ public class FileUtils {
                     try {
                         is.close();
                     } catch (IOException e) {
+                        e.printStackTrace();
                     }
                 }
             }
@@ -645,5 +641,4 @@ public class FileUtils {
             return builder.toString();
         }
     }
-
 }

@@ -71,7 +71,7 @@ public class BannerPager extends RelativeLayout implements View.OnClickListener 
             mViewList.add(iv);
         }
         //设置翻页视图的图像翻页适配器
-        vp_banner.setAdapter(new ImageAdapater());
+        vp_banner.setAdapter(new ImageAdapter());
         //给翻页视图添加简单的页面变更监听器,此时只需重写onPageSelected方法
         vp_banner.addOnPageChangeListener(new SimpleOnPageChangeListener() {
             @Override
@@ -133,7 +133,7 @@ public class BannerPager extends RelativeLayout implements View.OnClickListener 
     }
 
     //定义一个图像翻页适配器
-    private class ImageAdapater extends PagerAdapter {
+    private class ImageAdapter extends PagerAdapter {
 
         //获取页面项的个数
         public int getCount() {

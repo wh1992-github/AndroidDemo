@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.example.senior.adapter.ImagePagerAdapater;
+import com.example.senior.adapter.ImagePagerAdapter;
 import com.example.senior.bean.GoodsInfo;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class ViewPagerActivity extends AppCompatActivity implements OnPageChange
         setContentView(R.layout.activity_view_pager);
         goodsList = GoodsInfo.getDefaultList();
         //构建一个商品图片的翻页适配器
-        ImagePagerAdapater adapter = new ImagePagerAdapater(this, goodsList);
+        ImagePagerAdapter adapter = new ImagePagerAdapter(this, goodsList);
         //从布局视图中获取名叫vp_content的翻页视图
         ViewPager vp_content = findViewById(R.id.vp_content);
         //给vp_content设置图片翻页适配器

@@ -1,6 +1,9 @@
 package com.example.util;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String BASE_URL = "http://b-ssl.duitang.com/uploads/item/201809/26/20180926162125_vjbwi.jpg";
     private ImageView mImageView;
     private Button mButton;
+    private CountDownTimer mCountDownTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +28,24 @@ public class MainActivity extends AppCompatActivity {
         GlideUtil.loadImage(this, BASE_URL, mImageView);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void onClick(View view) {
         DefaultType defaultType = new DefaultType();
         defaultType.setSexName(DefaultType.Person.female);
         defaultType.setSexType(DefaultType.Sex.MAN);
 
         CountDownTimerUtil countDownTimerUtil = new CountDownTimerUtil(10 * 1000, 1000);
-        countDownTimerUtil.start();
+        mCountDownTimer = countDownTimerUtil.start();
+
+        ReflectUtil.reflect();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mCountDownTimer != null) {
+            mCountDownTimer.cancel();
+            mCountDownTimer = null;
+        }
     }
 }
