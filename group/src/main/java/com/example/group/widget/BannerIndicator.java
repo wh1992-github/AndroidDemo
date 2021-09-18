@@ -19,7 +19,7 @@ public class BannerIndicator extends RelativeLayout implements View.OnClickListe
     private static final String TAG = "BannerIndicator";
     private Context mContext; //声明一个上下文对象
     private ViewPager vp_banner; //声明一个翻页视图对象
-    private PagerIndicator pi_banner; //声明一个翻页指示器对象
+    private PagerIndicator2 pi_banner; //声明一个翻页指示器对象
     private List<ImageView> mViewList = new ArrayList<>(); //声明一个图像视图队列
 
     public BannerIndicator(Context context) {
@@ -52,7 +52,7 @@ public class BannerIndicator extends RelativeLayout implements View.OnClickListe
         //设置翻页视图默认显示第一页
         vp_banner.setCurrentItem(0);
         //设置翻页指示器的个数与间隔
-        pi_banner.setCount(imageList.size(), 15);
+        pi_banner.setCount(imageList.size(), 20);
     }
 
     //初始化视图

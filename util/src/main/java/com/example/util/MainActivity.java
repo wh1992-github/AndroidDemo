@@ -2,7 +2,6 @@ package com.example.util;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -14,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String BASE_URL = "http://b-ssl.duitang.com/uploads/item/201809/26/20180926162125_vjbwi.jpg";
     private ImageView mImageView;
     private Button mButton;
-    private CountDownTimer mCountDownTimer;
+    private CountDownTimerUtil mCountDownTimerUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         defaultType.setSexName(DefaultType.Person.female);
         defaultType.setSexType(DefaultType.Sex.MAN);
 
-        CountDownTimerUtil countDownTimerUtil = new CountDownTimerUtil(10 * 1000, 1000);
-        mCountDownTimer = countDownTimerUtil.start();
+        mCountDownTimerUtil = new CountDownTimerUtil(10 * 1000, 1000);
+        mCountDownTimerUtil.start();
 
         ReflectUtil.reflect();
     }
@@ -43,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mCountDownTimer != null) {
-            mCountDownTimer.cancel();
-            mCountDownTimer = null;
+        if (mCountDownTimerUtil != null) {
+            mCountDownTimerUtil.cancel();
+            mCountDownTimerUtil = null;
         }
     }
 }
