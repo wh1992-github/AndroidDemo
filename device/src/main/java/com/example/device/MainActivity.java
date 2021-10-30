@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_bluetooth).setOnClickListener(this);
         findViewById(R.id.btn_navigation).setOnClickListener(this);
         findViewById(R.id.btn_wechat).setOnClickListener(this);
+        findViewById(R.id.btn_crashhandler).setOnClickListener(this);
     }
 
     @Override
@@ -127,6 +128,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             }
         } else if (v.getId() == R.id.btn_wechat) {
             Intent intent = new Intent(this, WeChatActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_crashhandler) {
+            Intent intent = new Intent(this, CrashHandlerActivity.class);
             startActivity(intent);
         }
     }

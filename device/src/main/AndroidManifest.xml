@@ -47,6 +47,8 @@
     <!-- 如果Android6.0 蓝牙搜索不到设备，需要补充下面两个权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -119,6 +121,7 @@
         <activity android:name=".FindShakeActivity" />
         <activity android:name=".FindListenActivity" />
         <activity android:name=".FindSmellActivity" />
+        <activity android:name=".CrashHandlerActivity" />
 
     </application>
 
