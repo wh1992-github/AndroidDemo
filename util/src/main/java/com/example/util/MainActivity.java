@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mCountDownTimerUtil.start();
 
         ReflectUtil.reflect();
+        AtomicWork.atomicWork();
     }
 
     @Override
