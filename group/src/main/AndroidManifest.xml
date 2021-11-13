@@ -39,6 +39,9 @@
             android:name=".HandlerActivity"
             android:theme="@style/AppCompatTheme" />
         <activity
+            android:name=".ToastActivity"
+            android:theme="@style/AppCompatTheme" />
+        <activity
             android:name=".SeekBarActivity"
             android:theme="@style/AppCompatTheme" />
         <activity
