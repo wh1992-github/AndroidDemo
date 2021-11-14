@@ -1,21 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="5dp">
+    android:orientation="vertical">
 
-    <AutoCompleteTextView
-        android:id="@+id/ac_text"
-        style="@style/text_normal"
-        android:padding="10dp"
-        android:hint="请输入“第一”或“第二”"
-        android:completionHint="相关词语"
-        android:completionThreshold="1"
-        android:dropDownHeight="wrap_content"
-        android:dropDownHorizontalOffset="0dp"
-        android:dropDownVerticalOffset="0dp"
-        android:dropDownWidth="match_parent"
-        android:textColor="#000000"
-        android:textSize="17sp" />
+    <!-- 搜索框 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#59B29C"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/linearlayout_corner_search"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/search" />
+
+            <AutoCompleteTextView
+                android:id="@+id/search"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@null"
+                android:completionThreshold="1"
+                android:dropDownWidth="200dp"
+                android:dropDownHeight="200dp"
+                android:hint="请输入..."
+                android:imeOptions="actionSearch"
+                android:maxLength="12"
+                android:popupElevation="10dp"
+                android:singleLine="true"
+                android:textColor="#317F6D"
+                android:textColorHint="#317F6D"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/empty"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/cross_empty" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
