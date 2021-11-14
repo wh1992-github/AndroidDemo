@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_recycler_combine).setOnClickListener(this);
         findViewById(R.id.btn_recycler_staggered).setOnClickListener(this);
         findViewById(R.id.btn_recycler_dynamic).setOnClickListener(this);
+        findViewById(R.id.btn_recycler_drag).setOnClickListener(this);
         findViewById(R.id.btn_coordinator).setOnClickListener(this);
         findViewById(R.id.btn_appbar_recycler).setOnClickListener(this);
         findViewById(R.id.btn_appbar_nested).setOnClickListener(this);
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         } else if (v.getId() == R.id.btn_handler) {
             Intent intent = new Intent(this, HandlerActivity.class);
             startActivity(intent);
-        }  else if (v.getId() == R.id.btn_toast) {
+        } else if (v.getId() == R.id.btn_toast) {
             Intent intent = new Intent(this, ToastActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_overflow_menu) {
@@ -122,6 +123,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_recycler_dynamic) {
             Intent intent = new Intent(this, RecyclerDynamicActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_recycler_drag) {
+            Intent intent = new Intent(this, RecyclerDragActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_coordinator) {
             Intent intent = new Intent(this, CoordinatorActivity.class);

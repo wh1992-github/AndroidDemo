@@ -67,6 +67,7 @@
         <activity android:name=".RecyclerLinearActivity" />
         <activity android:name=".RecyclerGridActivity" />
         <activity android:name=".RecyclerCombineActivity" />
+        <activity android:name=".RecyclerDragActivity" />
         <activity android:name=".RecyclerStaggeredActivity" />
         <activity android:name=".RecyclerDynamicActivity" />
         <activity android:name=".CoordinatorActivity" />

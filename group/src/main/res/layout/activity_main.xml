@@ -269,6 +269,13 @@
                     android:layout_weight="1"
                     android:text="动态增删循环视图" />
 
+                <Button
+                    android:id="@+id/btn_recycler_drag"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="可拖拽布局" />
+
             </LinearLayout>
 
             <TextView
