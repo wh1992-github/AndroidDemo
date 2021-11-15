@@ -48,41 +48,34 @@ public class ServiceHelper {
         return componentName;
     }
 
-    public static void setForegroundService(Service service, int iconResId,
-                                            String channelName, String channelId, int id) {
-        setForegroundService(service, id, channelName, channelId, iconResId, iconResId,
-                "default", "default");
-    }
-
-    public static void setForegroundService(Service service, int id,
-                                            String name, String channelId,
-                                            int smallIconId, int largeIconId,
-                                            String title, String content) {
+    public static void setForegroundService(Service service, int id, String channelName, String channelId,
+                                            int smallIconId, int largeIconId, String title, String content) {
         NotificationManager manager = (NotificationManager) service.getSystemService(NOTIFICATION_SERVICE);
-        Notification notification = null;
-        if (VERSION.SDK_INT >= 26) {
-            NotificationChannel channel = new NotificationChannel(channelId, name, NotificationManager.IMPORTANCE_HIGH);
+        Notification notification;
+        if (VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_HIGH);
             manager.createNotificationChannel(channel);
-            notification = new Notification.Builder(service, channelId)
+            notification = new Notification.Builder(service)
+                    .setAutoCancel(true)
+                    .setChannelId(channelId)
                     .setContentTitle(title)
                     .setContentText(content)
                     .setSmallIcon(smallIconId)
                     .setLargeIcon(BitmapFactory.decodeResource(service.getResources(), largeIconId))
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .setWhen(System.currentTimeMillis())
                     .build();
         } else {
-            //notification = new Notification();
-            //notification.flags = Notification.FLAG_ONGOING_EVENT;
-            //notification.flags |= Notification.FLAG_NO_CLEAR;
-            //notification.flags |= Notification.FLAG_FOREGROUND_SERVICE;
-            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(service, channelId);
-            mBuilder.setSmallIcon(smallIconId);
-            mBuilder.setLargeIcon(BitmapFactory.decodeResource(service.getResources(), largeIconId));
-            if (VERSION.SDK_INT < Build.VERSION_CODES.N) {
-                mBuilder.setContentTitle(title);
-                mBuilder.setContentText(content);
-            }
-
-            notification = mBuilder.build();
+            notification = new NotificationCompat.Builder(service)
+                    .setAutoCancel(true)
+                    .setChannelId(channelId)
+                    .setContentTitle(title)
+                    .setContentText(content)
+                    .setSmallIcon(smallIconId)
+                    .setLargeIcon(BitmapFactory.decodeResource(service.getResources(), largeIconId))
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .setWhen(System.currentTimeMillis())
+                    .build();
         }
         service.startForeground(id, notification);
     }

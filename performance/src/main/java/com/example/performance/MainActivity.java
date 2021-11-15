@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_battery_info).setOnClickListener(this);
         findViewById(R.id.btn_power_saving).setOnClickListener(this);
         findViewById(R.id.btn_alarm_idle).setOnClickListener(this);
+        findViewById(R.id.btn_notification).setOnClickListener(this);
         findViewById(R.id.btn_lru_cache).setOnClickListener(this);
         findViewById(R.id.btn_image_cache).setOnClickListener(this);
     }
@@ -73,6 +74,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_alarm_idle) {
             Intent intent = new Intent(this, AlarmIdleActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_notification) {
+            Intent intent = new Intent(this, NotificationActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_lru_cache) {
             Intent intent = new Intent(this, LruCacheActivity.class);
