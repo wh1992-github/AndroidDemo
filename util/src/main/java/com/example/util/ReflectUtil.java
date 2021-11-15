@@ -1,9 +1,6 @@
 package com.example.util;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;

@@ -48,7 +48,7 @@ public class CustomTextView extends View {
         float leading = fm.leading;
         float height = descent - ascent;
         float width = mPaint.measureText(content);
-        Log.i(TAG, "onDraw: ascent = " + ascent + ", descent = " + descent + ", top = " + top + ", bottom = " + bottom);
+        Log.i(TAG, "onDraw: top = " + top + ", ascent = " + ascent + ", leading = " + leading + ", descent = " + descent + ", bottom = " + bottom);
         Log.i(TAG, "onDraw: width = " + width + ", height = " + height);
 
         mPaint.setColor(Color.RED);

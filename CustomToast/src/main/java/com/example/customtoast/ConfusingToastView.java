@@ -12,15 +12,11 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-/**
- * Created by Anas Altair on 8/31/2016.
- * Modified by rahul on 16/09/2016
- */
 public class ConfusingToastView extends View {
 
-    Bitmap eye;
-    ValueAnimator valueAnimator;
-    float angle = 0f;
+    private Bitmap eye;
+    private ValueAnimator valueAnimator;
+    private float angle = 0f;
     private Paint mPaint;
     private float mWidth = 0f;
     private float mHeight = 0f;

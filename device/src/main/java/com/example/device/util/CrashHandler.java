@@ -24,7 +24,7 @@ import java.util.Map;
 
 @SuppressLint({"StaticFieldLeak", "SimpleDateFormat"})
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
-    public static final String TAG = "CrashHandler";
+    private static final String TAG = "CrashHandler";
     //系统默认的UncaughtExceptionHandler处理类
     private Thread.UncaughtExceptionHandler mDefaultHandler;
     //CrashHandler实例

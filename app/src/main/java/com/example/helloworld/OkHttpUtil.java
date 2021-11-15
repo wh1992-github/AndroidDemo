@@ -17,7 +17,7 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 public class OkHttpUtil {
-    private static final String TAG = "MainActivity_OkHttpUtil";
+    private static final String TAG = "OkHttpUtil";
     private static volatile OkHttpUtil sInstance;
     private OkHttpClient mOkHttpClient;
 

@@ -9,26 +9,21 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.View;
 
-/**
- * Created by rahul on 25/7/16.
- */
 public class WarningToastView extends View {
 
-    RectF rectFOne = new RectF();
-    RectF rectFTwo = new RectF();
-    RectF rectFThree = new RectF();
+    private RectF rectFOne = new RectF();
+    private RectF rectFTwo = new RectF();
+    private RectF rectFThree = new RectF();
     private Paint mPaint;
     private float mWidth = 0f;
     private float mHeight = 0f;
     private float mStrokeWidth = 0f;
     private float mPadding = 0f;
     private float mPaddingBottom = 0f;
-    private float endAngle = 0f;
 
     public WarningToastView(Context context) {
         super(context);
     }
-
 
     public WarningToastView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -70,7 +65,9 @@ public class WarningToastView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         mPaint.setStyle(Paint.Style.STROKE);
+
         canvas.drawArc(rectFOne, 170, -144, false, mPaint);
+
         canvas.drawLine(mWidth - convertDpToPixel(3) - mStrokeWidth, (float) (mPadding +
                         mHeight / 6), mWidth - convertDpToPixel(3) - mStrokeWidth,
                 mHeight - convertDpToPixel(2) - mHeight / 4, mPaint);
@@ -88,6 +85,7 @@ public class WarningToastView extends View {
                 (float) (mHeight - convertDpToPixel(2) - mHeight / 2.5), mPaint);
 
         canvas.drawArc(rectFTwo, 170, 180, false, mPaint);
+
         canvas.drawArc(rectFThree, 175, -150, false, mPaint);
     }
 

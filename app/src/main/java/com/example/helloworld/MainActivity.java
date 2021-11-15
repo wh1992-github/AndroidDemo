@@ -13,7 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity_";
+    private static final String TAG = "MainActivity";
     private static final String BASE_URL = "http://192.168.20.189:8080/ftp/test";
 
     @Override

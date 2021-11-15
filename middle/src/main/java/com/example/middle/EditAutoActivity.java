@@ -19,8 +19,8 @@ import java.util.ArrayList;
 public class EditAutoActivity extends Activity implements View.OnClickListener {
     private static final String TAG = "EditAutoActivity";
     private static final ArrayList<String> mList = new ArrayList<>();
-    private ImageView empty;
-    private AutoCompleteTextView autoCompleteTextView;
+    private ImageView mEmptyIv;
+    private AutoCompleteTextView mAutoCompleteTextView;
     private SearchAdapter mAdapter;
     //AutoCompleteTextView的doBeforeTextChanged方法
     private Method doBeforeTextChanged;
@@ -42,12 +42,12 @@ public class EditAutoActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_auto);
-        empty = findViewById(R.id.empty);
-        empty.setOnClickListener(this);
-        autoCompleteTextView = findViewById(R.id.search);
+        mEmptyIv = findViewById(R.id.empty);
+        mEmptyIv.setOnClickListener(this);
+        mAutoCompleteTextView = findViewById(R.id.search);
         mAdapter = new SearchAdapter(this, mList);
-        autoCompleteTextView.setAdapter(mAdapter);
-        autoCompleteTextView.addTextChangedListener(textWatcher);
+        mAutoCompleteTextView.setAdapter(mAdapter);
+        mAutoCompleteTextView.addTextChangedListener(textWatcher);
     }
 
 
@@ -64,7 +64,7 @@ public class EditAutoActivity extends Activity implements View.OnClickListener {
 
         @Override
         public void afterTextChanged(Editable editable) {
-            Log.i(TAG, "afterTextChanged: " + autoCompleteTextView.getText().toString());
+            Log.i(TAG, "afterTextChanged: " + mAutoCompleteTextView.getText().toString());
             dealSearchHint();
         }
     };
@@ -94,9 +94,9 @@ public class EditAutoActivity extends Activity implements View.OnClickListener {
                 doAfterTextChanged = autoCompleteTextView.getDeclaredMethod("doAfterTextChanged");
                 doAfterTextChanged.setAccessible(true);
             }
-            autoCompleteTextView.showDropDown();
-            doBeforeTextChanged.invoke(autoCompleteTextView);
-            doAfterTextChanged.invoke(autoCompleteTextView);
+            mAutoCompleteTextView.showDropDown();
+            doBeforeTextChanged.invoke(mAutoCompleteTextView);
+            doAfterTextChanged.invoke(mAutoCompleteTextView);
         } catch (Exception e) {
             Log.i(TAG, "refreshDropList: e = " + e.getMessage());
         }
@@ -106,8 +106,8 @@ public class EditAutoActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.empty:
-                Log.i(TAG, "onClick: text = " + autoCompleteTextView.getText().toString());
-                autoCompleteTextView.setText("");
+                Log.i(TAG, "onClick: text = " + mAutoCompleteTextView.getText().toString());
+                mAutoCompleteTextView.setText("");
                 break;
         }
     }

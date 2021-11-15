@@ -5,20 +5,14 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-/**
- * Created by rahul on 27/7/16.
- */
 public class InfoToastView extends View {
 
-    RectF rectF = new RectF();
-    ValueAnimator valueAnimator;
-    float mAnimatedValue = 0f;
-    private String TAG = "com.example.customtoast";
+    private ValueAnimator valueAnimator;
+    private float mAnimatedValue = 0f;
     private Paint mPaint;
     private float mWidth = 0f;
     private float mEyeWidth = 0f;
@@ -32,7 +26,6 @@ public class InfoToastView extends View {
         super(context);
     }
 
-
     public InfoToastView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
@@ -45,7 +38,6 @@ public class InfoToastView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         initPaint();
-        initRect();
         mWidth = getMeasuredWidth();
         mPadding = dip2px(10);
         mEyeWidth = dip2px(3);
@@ -58,11 +50,6 @@ public class InfoToastView extends View {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(Color.parseColor("#337ab7"));
         mPaint.setStrokeWidth(dip2px(2));
-
-    }
-
-    private void initRect() {
-        rectF = new RectF(mPadding, mPadding, mWidth - mPadding, mWidth - mPadding);
     }
 
     @Override
@@ -115,10 +102,8 @@ public class InfoToastView extends View {
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-
                 mAnimatedValue = (float) valueAnimator.getAnimatedValue();
-
-                //   Log.i(TAG, "Value : " + mAnimatedValue);
+                //Log.i(TAG, "Value : " + mAnimatedValue);
                 if (mAnimatedValue < 0.90) {
                     endPoint = ((2 * (mWidth) - (4 * mPadding)) * (mAnimatedValue / 2)) + mPadding;
                 } else {
@@ -148,16 +133,13 @@ public class InfoToastView extends View {
                     isEyeMiddle = true;
                     isEyeRight = false;
                 }
-
                 postInvalidate();
             }
         });
 
         if (!valueAnimator.isRunning()) {
             valueAnimator.start();
-
         }
         return valueAnimator;
     }
-
 }

@@ -10,16 +10,13 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-/**
- * Created by rahul on 22/7/16.
- */
 public class ErrorToastView extends View {
 
-    RectF rectF = new RectF();
-    RectF leftEyeRectF = new RectF();
-    RectF rightEyeRectF = new RectF();
-    ValueAnimator valueAnimator;
-    float mAnimatedValue = 0f;
+    private RectF rectF = new RectF();
+    private RectF leftEyeRectF = new RectF();
+    private RectF rightEyeRectF = new RectF();
+    private ValueAnimator valueAnimator;
+    private float mAnimatedValue = 0f;
     private Paint mPaint;
     private float mWidth = 0f;
     private float mEyeWidth = 0f;

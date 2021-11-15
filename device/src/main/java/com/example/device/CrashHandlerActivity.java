@@ -12,7 +12,7 @@ import android.widget.Button;
 import com.example.device.util.CrashHandler;
 
 public class CrashHandlerActivity extends AppCompatActivity {
-    public static final String TAG = "CrashHandlerActivity";
+
     private Button btn_crash;
 
     @Override

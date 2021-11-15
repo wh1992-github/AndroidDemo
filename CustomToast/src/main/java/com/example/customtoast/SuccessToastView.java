@@ -10,14 +10,11 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-/**
- * Created by rahul on 22/7/16.
- */
 public class SuccessToastView extends View {
 
-    RectF rectF = new RectF();
-    ValueAnimator valueAnimator;
-    float mAnimatedValue = 0f;
+    private RectF rectF = new RectF();
+    private ValueAnimator valueAnimator;
+    private float mAnimatedValue = 0f;
     private Paint mPaint;
     private float mWidth = 0f;
     private float mEyeWidth = 0f;
@@ -99,32 +96,26 @@ public class SuccessToastView extends View {
         valueAnimator = ValueAnimator.ofFloat(startF, endF);
         valueAnimator.setDuration(time);
         valueAnimator.setInterpolator(new LinearInterpolator());
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-
-                mAnimatedValue = (float) valueAnimator.getAnimatedValue();
-                if (mAnimatedValue < 0.5) {
-                    isSmileLeft = false;
-                    isSmileRight = false;
-                    endAngle = -360 * (mAnimatedValue);
-                } else if (mAnimatedValue > 0.55 && mAnimatedValue < 0.7) {
-                    endAngle = -180;
-                    isSmileLeft = true;
-                    isSmileRight = false;
-                } else {
-                    endAngle = -180;
-                    isSmileLeft = true;
-                    isSmileRight = true;
-                }
-
-                postInvalidate();
+        valueAnimator.addUpdateListener(valueAnimator -> {
+            mAnimatedValue = (float) valueAnimator.getAnimatedValue();
+            if (mAnimatedValue < 0.5) {
+                isSmileLeft = false;
+                isSmileRight = false;
+                endAngle = -360 * (mAnimatedValue);
+            } else if (mAnimatedValue > 0.55 && mAnimatedValue < 0.7) {
+                endAngle = -180;
+                isSmileLeft = true;
+                isSmileRight = false;
+            } else {
+                endAngle = -180;
+                isSmileLeft = true;
+                isSmileRight = true;
             }
+            postInvalidate();
         });
 
         if (!valueAnimator.isRunning()) {
             valueAnimator.start();
-
         }
         return valueAnimator;
     }

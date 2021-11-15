@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity---";
     private static final String BASE_URL = "http://b-ssl.duitang.com/uploads/item/201809/26/20180926162125_vjbwi.jpg";
     private ImageView mImageView;
+    private ImageView mBitmap;
     private Button mButton;
     private CountDownTimerUtil mCountDownTimerUtil;
 
@@ -21,10 +22,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ScreenUtils.printScreenParams(this);
         mImageView = findViewById(R.id.iv);
+        mBitmap = findViewById(R.id.bitmap);
         mButton = findViewById(R.id.button);
         mButton.setOnClickListener(this::onClick);
 
         GlideUtil.loadImage(this, BASE_URL, mImageView);
+        mBitmap.setImageBitmap(StringBitmap.drawString());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -38,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         ReflectUtil.reflect();
         AtomicWork.atomicWork();
+        JavaTest.switchLight();
+        JavaTest.fbnq();
+        JavaTest.test();
     }
 
     @Override

@@ -9,18 +9,14 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-/**
- * Created by rahul on 27/7/16.
- */
 public class DefaultToastView extends View {
 
-    ValueAnimator valueAnimator;
+    private ValueAnimator valueAnimator;
     float mAnimatedValue = 0f;
     private Paint mPaint, mSpikePaint;
     private float mWidth = 0f;
     private float mPadding = 0f;
     private float mSpikeLength;
-
 
     public DefaultToastView(Context context) {
         super(context);
@@ -65,7 +61,6 @@ public class DefaultToastView extends View {
         canvas.drawCircle(mWidth / 2, mWidth / 2, mWidth / 4, mPaint);
 
         for (int i = 0; i < 360; i += 40) {
-
             int angle = (int) (mAnimatedValue * 40 + i);
             float initialX = (float) ((mWidth / 4) * Math.cos(angle * Math.PI / 180));
             float initialY = (float) ((mWidth / 4) * Math.sin(angle * Math.PI / 180));
@@ -101,7 +96,6 @@ public class DefaultToastView extends View {
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-
                 mAnimatedValue = (float) valueAnimator.getAnimatedValue();
                 postInvalidate();
             }
@@ -109,7 +103,6 @@ public class DefaultToastView extends View {
 
         if (!valueAnimator.isRunning()) {
             valueAnimator.start();
-
         }
         return valueAnimator;
     }
