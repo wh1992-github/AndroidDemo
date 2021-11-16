@@ -66,12 +66,12 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
     //设置led灯闪烁，灯的颜色，灯亮的时长，灯暗去的时长
     //.setLights(Color.GREEN,1000,1000)
     //设置默认铃声和震动
-    //.setDefaults(NotificationCompat.DEFAULT_ALL)
+    //.setDefaults(Notification.DEFAULT_ALL)
     //设置富文本通知，比如设置一段长文字或者图片
-    //.setStyle(new NotificationCompat.BigTextStyle().bigText("很长很长的话"))
-    //.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.bg_02)))
+    //.setStyle(new Notification.BigTextStyle().bigText("很长很长的话"))
+    //.setStyle(new Notification.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.bg_02)))
     //设置通知的重要性
-    //.setPriority(NotificationCompat.PRIORITY_MAX)
+    //.setPriority(Notification.PRIORITY_MAX)
     private void startNotify() {
         Intent mainIntent = new Intent(this, ResultActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);

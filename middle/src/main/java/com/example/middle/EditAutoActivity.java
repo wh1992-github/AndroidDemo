@@ -1,8 +1,8 @@
 package com.example.middle;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -15,8 +15,7 @@ import com.example.middle.adapter.SearchAdapter;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-
-public class EditAutoActivity extends Activity implements View.OnClickListener {
+public class EditAutoActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "EditAutoActivity";
     private static final ArrayList<String> mList = new ArrayList<>();
     private ImageView mEmptyIv;
