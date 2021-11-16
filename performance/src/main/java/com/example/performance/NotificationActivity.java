@@ -13,6 +13,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.RemoteViews;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class NotificationActivity extends AppCompatActivity implements View.OnClickListener {
@@ -25,6 +26,9 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
         findViewById(R.id.btn1).setOnClickListener(this);
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btn3).setOnClickListener(this);
+        findViewById(R.id.btn4).setOnClickListener(this);
+        findViewById(R.id.btn5).setOnClickListener(this);
+        findViewById(R.id.btn6).setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +43,18 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.btn3:
                 cancelNotify();
+                break;
+            case R.id.btn4:
+                openNormalNotify();
+                break;
+            case R.id.btn5:
+                openFoldNotify();
+                break;
+            case R.id.btn6:
+                openFlyNotify();
+                break;
+            //Notification 还有一个显示等级,使用很简单,详见Android进阶之光22页.
+            default:
                 break;
         }
     }
@@ -69,7 +85,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
         notificationManager.createNotificationChannel(channel);
         //实例化Notification.Builder并设置相关属性
         Notification notification = new Notification.Builder(this)
-                .setAutoCancel(false)
+                .setAutoCancel(true)
                 .setChannelId(channelID)
                 .setContentTitle("最简单的Notification")
                 .setContentText("只有标题和内容")
@@ -96,7 +112,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
         notificationManager.createNotificationChannel(channel);
         //实例化Notification.Builder并设置相关属性
         Notification notification = new Notification.Builder(this)
-                .setAutoCancel(false)
+                .setAutoCancel(true)
                 .setChannelId(channelID)
                 .setContentTitle("最简单的Notification")
                 .setContentText("更新的通知")
@@ -119,5 +135,79 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
         notifyManager.cancel(id);
         //取消全部
         //notifyManager.cancelAll();
+    }
+
+    //普通的Notification
+    private void openNormalNotify() {
+        Intent intent = new Intent(this, ResultActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setAutoCancel(true);
+        builder.setContentTitle("Title");
+        builder.setContentText("普通的Notification");
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setContentIntent(pendingIntent);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        //Android8.0 版本必须加上channelId参数。
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String channelID = "1";
+            String channelName = "channel_name";
+            NotificationChannel channel = new NotificationChannel(channelID, channelName, NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel(channel);
+            builder.setChannelId(channelID);
+        }
+        Notification notification = builder.build();
+        notificationManager.notify(1, notification);
+    }
+
+    //折叠式Notification
+    private void openFoldNotify() {
+        Intent intent = new Intent(this, ResultActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setAutoCancel(true);
+        builder.setContentTitle("Title");
+        builder.setContentText("折叠式Notification");
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setContentIntent(pendingIntent);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        //Android8.0 版本必须加上channelId参数。
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String channelID = "2";
+            String channelName = "channel_name";
+            NotificationChannel channel = new NotificationChannel(channelID, channelName, NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel(channel);
+            builder.setChannelId(channelID);
+        }
+        Notification notification = builder.build();
+        //折叠式的设置RemoteViews方法
+        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.notification_item);
+        notification.bigContentView = remoteViews;
+        notificationManager.notify(2, notification);
+    }
+
+    //悬挂式Notification
+    private void openFlyNotify() {
+        Intent intent = new Intent(this, ResultActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setAutoCancel(true);
+        builder.setContentTitle("Title");
+        builder.setContentText("悬挂式Notification");
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setContentIntent(pendingIntent);
+        //悬挂式的设置Intent方法，与普通的对比只多了 setFullScreenIntent 方法。
+        builder.setFullScreenIntent(pendingIntent, true);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        //Android8.0 版本必须加上channelId参数。
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String channelID = "3";
+            String channelName = "channel_name";
+            NotificationChannel channel = new NotificationChannel(channelID, channelName, NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel(channel);
+            builder.setChannelId(channelID);
+        }
+        Notification notification = builder.build();
+        notificationManager.notify(3, notification);
     }
 }
