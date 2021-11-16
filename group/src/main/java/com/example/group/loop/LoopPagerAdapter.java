@@ -8,7 +8,7 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class LoopPagerAdapterWrapper extends PagerAdapter {
+public class LoopPagerAdapter extends PagerAdapter {
 
     private PagerAdapter mAdapter;
 
@@ -28,7 +28,7 @@ public class LoopPagerAdapterWrapper extends PagerAdapter {
         mBoundaryLooping = flag;
     }
 
-    LoopPagerAdapterWrapper(PagerAdapter adapter) {
+    LoopPagerAdapter(PagerAdapter adapter) {
         this.mAdapter = adapter;
     }
 

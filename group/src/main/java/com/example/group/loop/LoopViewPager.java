@@ -14,14 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LoopViewPager extends ViewPager {
-
-    private static final String TAG = LoopViewPager.class.getSimpleName();
+    private static final String TAG = "LoopViewPager";
     private static final boolean DEFAULT_BOUNDARY_CASHING = false;
     private static final boolean DEFAULT_BOUNDARY_LOOPING = true;
     private static final int DELAY_LONG_DURATION = 5000;
     private static final int MSG_LOOP_PICTURE = 1001;
 
-    private LoopPagerAdapterWrapper mAdapter;
+    private LoopPagerAdapter mAdapter;
     private boolean mBoundaryCaching = DEFAULT_BOUNDARY_CASHING;
     private boolean mBoundaryLooping = DEFAULT_BOUNDARY_LOOPING;
     private List<ViewPager.OnPageChangeListener> mOnPageChangeListeners;
@@ -92,7 +91,7 @@ public class LoopViewPager extends ViewPager {
     @Override
     public void setAdapter(PagerAdapter adapter) {
         Log.i(TAG, ">> setAdapter(" + adapter + ")");
-        mAdapter = new LoopPagerAdapterWrapper(adapter);
+        mAdapter = new LoopPagerAdapter(adapter);
         mAdapter.setBoundaryCaching(mBoundaryCaching);
         mAdapter.setBoundaryLooping(mBoundaryLooping);
         super.setAdapter(mAdapter);

@@ -10,8 +10,7 @@ import android.widget.TextView;
 
 import com.example.group.R;
 
-
-public class LoopAdapter extends PagerAdapter {
+public class BannerPagerAdapter extends PagerAdapter {
 
     private int mSize;
     private Activity mActivity;
@@ -31,7 +30,7 @@ public class LoopAdapter extends PagerAdapter {
             R.string.e_name,
     };
 
-    public LoopAdapter(Activity activity) {
+    public BannerPagerAdapter(Activity activity) {
         mActivity = activity;
         mSize = 5;
     }
