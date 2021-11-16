@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 
 /**
- * Created by wh on 18-10-19.
+ * Created by test on 18-10-19.
  */
 
 @SuppressLint({"AppCompatCustomView", "ClickableViewAccessibility"})

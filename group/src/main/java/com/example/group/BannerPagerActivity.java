@@ -3,46 +3,44 @@ package com.example.group;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.LinearLayout.LayoutParams;
-import android.widget.TextView;
+import android.util.Log;
+import android.view.MotionEvent;
 
-import com.example.group.constant.ImageList;
-import com.example.group.util.Utils;
-import com.example.group.widget.BannerPager;
-import com.example.group.widget.BannerPager.BannerClickListener;
+import com.example.group.loop.CircleIndicator;
+import com.example.group.loop.LoopViewPager;
+import com.example.group.loop.LoopAdapter;
 
 /**
  * Created by test on 2017/10/21.
  */
 @SuppressLint("DefaultLocale")
-public class BannerPagerActivity extends AppCompatActivity implements BannerClickListener {
+public class BannerPagerActivity extends AppCompatActivity {
     private static final String TAG = "BannerPagerActivity";
-    private TextView tv_pager;
+    private LoopViewPager mLooperViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banner_pager);
-        tv_pager = findViewById(R.id.tv_pager);
-        //从布局文件中获取名叫banner_pager的横幅轮播条
-        BannerPager banner = findViewById(R.id.banner_pager);
-        //获取横幅轮播条的布局参数
-        LayoutParams params = (LayoutParams) banner.getLayoutParams();
-        params.height = (int) (Utils.getScreenWidth(this) * 250f / 640f);
-        //设置横幅轮播条的布局参数
-        banner.setLayoutParams(params);
-        //设置横幅轮播条的广告图片队列
-        banner.setImage(ImageList.getDefault());
-        //设置横幅轮播条的广告点击监听器
-        banner.setOnBannerListener(this);
-        //开始广告图片的轮播滚动
-        banner.start();
+        mLooperViewPager = findViewById(R.id.viewpager);
+        CircleIndicator indicator = findViewById(R.id.indicator);
+        mLooperViewPager.setAdapter(new LoopAdapter(BannerPagerActivity.this));
+        mLooperViewPager.setOnDispatchTouchEventListener(mDispatchOnTouchListener);
+        mLooperViewPager.setLooperPic(true);
+        indicator.setViewPager(mLooperViewPager);
     }
 
-    //一旦点击了广告图,就回调监听器的onBannerClick方法
-    public void onBannerClick(int position) {
-        String desc = String.format("您点击了第%d张图片", position + 1);
-        tv_pager.setText(desc);
-    }
+    private LoopViewPager.OnDispatchTouchEventListener mDispatchOnTouchListener = new LoopViewPager.OnDispatchTouchEventListener() {
+        @Override
+        public void onDispatchKeyEvent(MotionEvent event) {
+            Log.i(TAG, "mDispatchOnTouchListener.onDispatchKeyEvent(" + event + ")");
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                mLooperViewPager.setLooperPic(false);
+            } else if (event.getAction() == MotionEvent.ACTION_UP
+                    || event.getAction() == MotionEvent.ACTION_CANCEL) {
+                mLooperViewPager.setLooperPic(true);
+            }
+        }
+    };
 
 }

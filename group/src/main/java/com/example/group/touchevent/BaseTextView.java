@@ -6,10 +6,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-/**
- * Created by wh on 18-10-19.
- */
-
 @SuppressLint({"AppCompatCustomView", "ClickableViewAccessibility"})
 public class BaseTextView extends TextView {
     private static final String TAG = "BaseTextView";

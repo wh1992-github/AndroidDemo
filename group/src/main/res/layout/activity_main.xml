@@ -204,7 +204,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="广告图片轮播" />
+                    android:text="无限循环轮播图" />
 
                 <Button
                     android:id="@+id/btn_banner_top"
