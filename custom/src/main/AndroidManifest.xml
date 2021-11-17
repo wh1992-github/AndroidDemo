@@ -43,9 +43,7 @@
         <activity android:name=".BezierQuadActivity" />
         <activity android:name=".BezierCubicActivity" />
         <activity android:name=".BezierRippleActivity" />
-        <activity
-            android:name=".WindowActivity"
-            android:theme="@style/AppBaseTheme" />
+        <activity android:name=".WindowActivity" />
         <activity android:name=".DialogDateActivity" />
         <activity android:name=".DialogMultiActivity" />
         <activity android:name=".NotifySimpleActivity" />

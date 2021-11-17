@@ -117,18 +117,35 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btn_window_dialog"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="WindowManager Dialog"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
                     android:id="@+id/btn_handler"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="HandlerThread" />
+                    android:text="HandlerThread"
+                    android:textAllCaps="false" />
 
                 <Button
                     android:id="@+id/btn_toast"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="自定义Toast" />
+                    android:text="自定义Toast"
+                    android:textAllCaps="false" />
             </LinearLayout>
 
             <LinearLayout

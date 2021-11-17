@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -36,6 +37,7 @@ public class SearchViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_search_view);
         //从布局文件中获取名叫tl_head的工具栏
         Toolbar tl_head = findViewById(R.id.tl_head);
@@ -47,6 +49,7 @@ public class SearchViewActivity extends AppCompatActivity {
     }
 
     //根据菜单项初始化搜索框
+    @SuppressLint("RestrictedApi")
     private void initSearchView(Menu menu) {
         MenuItem menuItem = menu.findItem(R.id.menu_search);
         //从菜单项中获取搜索框对象

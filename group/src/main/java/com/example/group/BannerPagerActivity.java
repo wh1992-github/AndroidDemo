@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 
+import com.example.group.loop.BannerPagerAdapter;
 import com.example.group.loop.CircleIndicator;
 import com.example.group.loop.LoopViewPager;
-import com.example.group.loop.BannerPagerAdapter;
 
 /**
  * Created by test on 2017/10/21.

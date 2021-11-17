@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 
 /**
  * Created by test on 2017/10/21.
@@ -15,6 +16,7 @@ public class DepartmentCartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_department_cart);
         //从布局文件中获取名叫tl_head的工具栏
         Toolbar tl_head = findViewById(R.id.tl_head);

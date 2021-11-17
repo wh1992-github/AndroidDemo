@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_seekbar).setOnClickListener(this);
         findViewById(R.id.btn_click_effect).setOnClickListener(this);
         findViewById(R.id.btn_touch_event).setOnClickListener(this);
+        findViewById(R.id.btn_window_dialog).setOnClickListener(this);
         findViewById(R.id.btn_handler).setOnClickListener(this);
         findViewById(R.id.btn_toast).setOnClickListener(this);
         findViewById(R.id.btn_toolbar_custom).setOnClickListener(this);
@@ -78,6 +79,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_touch_event) {
             Intent intent = new Intent(this, TouchEventActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_window_dialog) {
+            Intent intent = new Intent(this, WindowDialogActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_handler) {
             Intent intent = new Intent(this, HandlerActivity.class);

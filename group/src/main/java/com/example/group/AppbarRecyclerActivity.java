@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Window;
 import android.widget.LinearLayout;
 
 import com.example.group.adapter.RecyclerCollapseAdapter;
@@ -16,6 +17,7 @@ public class AppbarRecyclerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_appbar_recycler);
         //从布局文件中获取名叫tl_title的工具栏
         Toolbar tl_title = findViewById(R.id.tl_title);
