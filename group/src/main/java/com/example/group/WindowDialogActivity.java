@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.group.windowdialog.BottomDialog;
 import com.example.group.windowdialog.CenterDialog;
 import com.example.group.windowdialog.DialogThirdUtils;
+import com.example.group.windowdialog.FloatingService;
 import com.example.group.windowdialog.OnItemClickListener;
 import com.example.group.windowdialog.RightDialog;
 import com.example.group.windowdialog.WeiBoDialogUtils;
@@ -26,7 +27,7 @@ import com.example.group.windowdialog.WindowService;
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class WindowDialogActivity extends AppCompatActivity implements OnItemClickListener {
     private static final String TAG = "MainActivity";
-    private Button mBtn1, mBtn2, mBtn3, mBtn4, mBtn5, mBtn6, mBtn7, mBtn9, mBtn10;
+    private Button mBtn1, mBtn2, mBtn3, mBtn4, mBtn5, mBtn6, mBtn7, mBtn8, mBtn9, mBtn19, mBtn20;
     private RightDialog mRightDialog;
     private BottomDialog mBottomDialog;
     private WindowDialog mWindowDialog;
@@ -58,8 +59,10 @@ public class WindowDialogActivity extends AppCompatActivity implements OnItemCli
         mBtn5 = findViewById(R.id.btn5);
         mBtn6 = findViewById(R.id.btn6);
         mBtn7 = findViewById(R.id.btn7);
+        mBtn8 = findViewById(R.id.btn8);
         mBtn9 = findViewById(R.id.btn9);
-        mBtn10 = findViewById(R.id.btn10);
+        mBtn19 = findViewById(R.id.btn19);
+        mBtn20 = findViewById(R.id.btn20);
 
         mRightDialog = new RightDialog(this, this);
         mBottomDialog = new BottomDialog(this, this);
@@ -82,15 +85,24 @@ public class WindowDialogActivity extends AppCompatActivity implements OnItemCli
             startService(intent);
         });
         mBtn7.setOnClickListener(v -> {
-            Intent intent2 = new Intent(this, WindowService.class);
-            stopService(intent2);
+            Intent intent = new Intent(this, WindowService.class);
+            stopService(intent);
         });
 
+        mBtn8.setOnClickListener(v -> {
+            Intent intent = new Intent(this, FloatingService.class);
+            startService(intent);
+        });
         mBtn9.setOnClickListener(v -> {
+            Intent intent = new Intent(this, FloatingService.class);
+            stopService(intent);
+        });
+
+        mBtn19.setOnClickListener(v -> {
             mWeiboDialog = WeiBoDialogUtils.createLoadingDialog(this);
             mHandler.sendEmptyMessageDelayed(1, 2000);
         });
-        mBtn10.setOnClickListener(v -> {
+        mBtn20.setOnClickListener(v -> {
             mSecondDialog = DialogThirdUtils.showWaitDialog(this);
             mHandler.sendEmptyMessageDelayed(1, 2000);
         });

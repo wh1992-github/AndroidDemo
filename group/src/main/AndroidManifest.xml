@@ -72,6 +72,7 @@
         </activity>
 
         <service android:name=".windowdialog.WindowService" />
+        <service android:name=".windowdialog.FloatingService" />
 
     </application>
 
