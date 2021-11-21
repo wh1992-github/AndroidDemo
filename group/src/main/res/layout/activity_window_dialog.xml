@@ -1,88 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:padding="20dp">
 
     <Button
         android:id="@+id/btn1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:text="右侧的Dialog"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn2"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="底部的Dialog"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toRightOf="@id/btn1"
+        app:layout_constraintRight_toLeftOf="@id/btn3"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="标准的Dialog"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toRightOf="@id/btn2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="show WindowDialog"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn5"
+        app:layout_constraintTop_toBottomOf="@id/btn1" />
 
     <Button
         android:id="@+id/btn5"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="dismiss WindowDialog"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toRightOf="@id/btn4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn1" />
 
     <Button
         android:id="@+id/btn6"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="show WindowManager"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn7"
+        app:layout_constraintTop_toBottomOf="@id/btn4" />
 
     <Button
         android:id="@+id/btn7"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="dismiss WindowManager"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toRightOf="@id/btn6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn4" />
 
     <Button
         android:id="@+id/btn8"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="show FloatingView"
-        android:textAllCaps="false" />
+        android:text="show WindowManager"
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn9"
+        app:layout_constraintTop_toBottomOf="@id/btn6" />
 
     <Button
         android:id="@+id/btn9"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="dismiss FloatingView"
-        android:textAllCaps="false" />
+        android:text="dismiss WindowManager"
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toRightOf="@id/btn8"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn6" />
 
     <Button
         android:id="@+id/btn19"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="仿微博loading"
-        android:textAllCaps="false" />
+        android:text="仿微博Loading"
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn20"
+        app:layout_constraintTop_toBottomOf="@id/btn8" />
 
     <Button
         android:id="@+id/btn20"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="另一种loading"
-        android:textAllCaps="false" />
+        android:text="常见的Loading"
+        android:textAllCaps="false"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toRightOf="@id/btn19"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn8" />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
