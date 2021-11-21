@@ -10,8 +10,9 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 
 public class GlideUtil {
+    private static final String BASE_URL = "http://b-ssl.duitang.com/uploads/item/201809/26/20180926162125_vjbwi.jpg";
 
-    public static void loadImage(Context context, String baseUrl, ImageView imageView) {
+    public static void loadImage(Context context, ImageView imageView) {
         //RequestOptions options = RequestOptions.noAnimation()
         RequestOptions options = new RequestOptions()
                 .transforms(new CenterCrop(), new RoundedCorners(40))
@@ -39,7 +40,7 @@ public class GlideUtil {
                 //.diskCacheStrategy(DiskCacheStrategy.RESOURCE)
                 ;
         Glide.with(context)
-                .load(baseUrl)
+                .load(BASE_URL)
                 .apply(options)
                 .into(imageView);
     }
