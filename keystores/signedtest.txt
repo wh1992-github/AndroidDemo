@@ -1,0 +1,41 @@
+密钥库类型: jks
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: signedtest
+创建日期: 2021-11-22
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=signedtest, OU=signedtest, O=signedtest, L=beijing, ST=beijing, C=china
+发布者: CN=signedtest, OU=signedtest, O=signedtest, L=beijing, ST=beijing, C=china
+序列号: 48cb4970
+有效期为 Mon Nov 22 15:16:42 CST 2021 至 Fri Nov 16 15:16:42 CST 2046
+证书指纹:
+	 MD5:  2F:8B:CC:DE:13:43:03:12:57:E6:1B:BA:04:F3:B4:A2
+	 SHA1: B0:ED:AB:98:E2:DF:45:1B:AF:1D:26:88:76:18:A7:B1:D5:2A:7E:AC
+	 SHA256: E3:C3:93:25:30:60:06:77:0F:26:FF:43:DF:CB:DC:BC:AF:73:85:5A:C6:57:A3:32:F4:CF:F9:81:27:63:07:3C
+签名算法名称: SHA256withRSA
+主体公共密钥算法: 2048 位 RSA 密钥
+版本: 3
+
+扩展: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 38 E6 23 07 03 1C A0 6E   B8 3F 7E 62 C8 49 66 07  8.#....n.?.b.If.
+0010: 3C AE C2 0D                                        <...
+]
+]
+
+
+
+*******************************************
+*******************************************
+
+#签名文件密码: signedtest
+
+
+
