@@ -12,7 +12,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 @SuppressLint("DrawAllocation")
-public class PieAnimation extends View {
+public class PieView extends View {
     private static final String TAG = "PieAnimation";
     private static final int mEndAngle = 270; //结束角度
     private static final int mInterval = 70; //间隔时间,单位毫秒
@@ -22,11 +22,11 @@ public class PieAnimation extends View {
     private Handler mHandler = new Handler(); //声明一个处理器对象
     private boolean isRunning = false; //是否正在播放
 
-    public PieAnimation(Context context) {
+    public PieView(Context context) {
         this(context, null);
     }
 
-    public PieAnimation(Context context, AttributeSet attrs) {
+    public PieView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mPaint = new Paint(); //创建一个新的画笔
         mPaint.setAntiAlias(true); //设置画笔为无锯齿

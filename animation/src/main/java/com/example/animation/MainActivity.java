@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_banner_anim).setOnClickListener(this);
         findViewById(R.id.btn_weixin_anim).setOnClickListener(this);
         findViewById(R.id.btn_object_anim).setOnClickListener(this);
+        findViewById(R.id.btn_object_xml).setOnClickListener(this);
         findViewById(R.id.btn_object_group).setOnClickListener(this);
         findViewById(R.id.btn_interpolator).setOnClickListener(this);
         findViewById(R.id.btn_vector_drawable).setOnClickListener(this);
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_object_anim) {
             Intent intent = new Intent(this, ObjectAnimActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_object_xml) {
+            Intent intent = new Intent(this, ObjectXmlActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_object_group) {
             Intent intent = new Intent(this, ObjectGroupActivity.class);

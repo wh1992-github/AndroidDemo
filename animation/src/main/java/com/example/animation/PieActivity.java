@@ -5,13 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.example.animation.widget.PieAnimation;
+import com.example.animation.widget.PieView;
 
 /**
  * Created by test on 2017/11/27.
  */
 public class PieActivity extends AppCompatActivity implements OnClickListener {
-    private PieAnimation pa_circle; //声明一个饼图动画对象
+    private PieView pa_circle; //声明一个饼图动画对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

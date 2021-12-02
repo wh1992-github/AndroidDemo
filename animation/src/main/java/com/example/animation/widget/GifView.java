@@ -169,14 +169,14 @@ public class GifView extends View {
     @Override
     protected void onVisibilityChanged(View changedView, int visibility) {
         super.onVisibilityChanged(changedView, visibility);
-        mVisible = visibility == View.VISIBLE;
+        mVisible = (visibility == VISIBLE && getVisibility() == VISIBLE);
         invalidateView();
     }
 
     @Override
     protected void onWindowVisibilityChanged(int visibility) {
         super.onWindowVisibilityChanged(visibility);
-        mVisible = visibility == View.VISIBLE;
+        mVisible = (visibility == VISIBLE && getVisibility() == VISIBLE);
         invalidateView();
     }
 }

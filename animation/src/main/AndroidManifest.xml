@@ -26,6 +26,7 @@
         <activity android:name=".WeixinAnimActivity" />
         <activity android:name=".ObjectAnimActivity" />
         <activity android:name=".ObjectGroupActivity" />
+        <activity android:name=".ObjectXmlActivity" />
         <activity android:name=".InterpolatorActivity" />
         <activity android:name=".VectorDrawableActivity" />
         <activity android:name=".VectorSmileActivity" />

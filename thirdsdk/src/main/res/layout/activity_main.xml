@@ -13,13 +13,6 @@
             android:paddingBottom="10dp"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="15.1 地图SDK" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,13 +33,6 @@
                     android:text="高德地图" />
 
             </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="15.2 分享SDK" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,13 +55,6 @@
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="15.3 支付SDK" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,13 +75,6 @@
                     android:text="微信支付" />
 
             </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="15.4 语音SDK" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -145,13 +117,6 @@
                     android:text="语音合成" />
 
             </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="15.5 实战项目-叫车应用" />
 
             <LinearLayout
                 android:layout_width="match_parent"
