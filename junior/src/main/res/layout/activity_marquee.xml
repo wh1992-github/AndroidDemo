@@ -3,25 +3,88 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- 这个是普通的文本视图 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="跑马灯效果，点击暂停，再点击恢复" />
+        android:text="跑马灯效果，点击暂停，再点击恢复"
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
-    <!-- 这个是跑马灯滚动的文本视图，ellipsize属性设置为true表示文字从右向左滚动 -->
     <TextView
         android:id="@+id/tv_marquee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:singleLine="true"
         android:ellipsize="marquee"
         android:focusable="true"
         android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:text="快讯：红色预警，超强台风“莫兰蒂”即将登陆，请居民关紧门窗、备足粮草，做好防汛救灾准备！快讯：红色预警，超强台风“莫兰蒂”即将登陆，请居民关紧门窗、备足粮草，做好防汛救灾准备！快讯：红色预警，超强台风“莫兰蒂”即将登陆，请居民关紧门窗、备足粮草，做好防汛救灾准备！快讯：红色预警，超强台风“莫兰蒂”即将登陆，请居民关紧门窗、备足粮草，做好防汛救灾准备！"
         android:textColor="#000000"
-        android:textSize="17sp"
-        android:text="快讯：红色预警，超强台风“莫兰蒂”即将登陆，请居民关紧门窗、备足粮草，做好防汛救灾准备！" />
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="开启跑马灯" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="颜色" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="大小" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="速度" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="继续" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="停止" />
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="间距" />
+
+    </LinearLayout>
+
+    <com.example.junior.util.MarqueeView
+        android:id="@+id/marquee_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent" />
 </LinearLayout>

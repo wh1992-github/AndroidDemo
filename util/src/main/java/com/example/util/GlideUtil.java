@@ -1,15 +1,22 @@
 package com.example.util;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.Target;
 
 public class GlideUtil {
+    private static final String TAG = "GlideUtil";
     private static final String BASE_URL = "http://b-ssl.duitang.com/uploads/item/201809/26/20180926162125_vjbwi.jpg";
 
     public static void loadImage(Context context, ImageView imageView) {
@@ -39,8 +46,24 @@ public class GlideUtil {
                 //只缓存最终的图片
                 //.diskCacheStrategy(DiskCacheStrategy.RESOURCE)
                 ;
+
+        RequestListener<Drawable> requestListener = new RequestListener<Drawable>() {
+            @Override
+            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                LogUtil.i(TAG, "onLoadFailed: ");
+                return false;
+            }
+
+            @Override
+            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                LogUtil.i(TAG, "onResourceReady: ");
+                return false;
+            }
+        };
+
         Glide.with(context)
                 .load(BASE_URL)
+                .addListener(requestListener)
                 .apply(options)
                 .into(imageView);
     }

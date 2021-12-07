@@ -59,4 +59,6 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:4.8.0"
     //fresco
     implementation 'com.facebook.fresco:fresco:0.14.0'
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.6'
 }

@@ -30,6 +30,7 @@
         <activity android:name=".ClickEffectActivity" />
         <activity android:name=".TouchEventActivity" />
         <activity android:name=".WindowDialogActivity" />
+        <activity android:name=".LocalBroadcastActivity" />
         <activity android:name=".HandlerActivity" />
         <activity android:name=".ToastActivity" />
         <activity android:name=".SeekBarActivity" />
