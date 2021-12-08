@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cpbv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.customview.activity.ProgressBarActivity">
+
+    <com.example.customview.widget.CircleProgressBarView
+        android:id="@+id/circle_progress_view"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        cpbv:centerProgressTextColor="@color/colorAccent"
+        cpbv:centerProgressTextSize="20sp"
+        cpbv:circleBgStrokeWidth="10dp"
+        cpbv:isDrawCenterProgressText="true"
+        cpbv:progressStrokeWidth="10dp" />
+
+
+    <TextView
+        android:id="@+id/progress_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+    <com.example.customview.widget.HorizontalProgressBar
+        android:id="@+id/horizontal_progress_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" />
+
+    <com.example.customview.widget.ProductProgressBar
+        android:id="@+id/product_progress_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" />
+
+    <com.example.customview.widget.LoadingLineView
+        android:id="@+id/loading_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" />
+
+    <com.example.customview.widget.StudyPlanProgressView
+        android:id="@+id/study_plan_progress_view"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        cpbv:sppv_checkedProgressColor="@color/color_ffd500"
+        cpbv:sppv_iconChecked="@mipmap/icon_study_progress_completed"
+        cpbv:sppv_iconSize="14dp"
+        cpbv:sppv_iconUnchecked="@mipmap/icon_study_progress_not_check"
+        cpbv:sppv_progressWidth="2dp"
+        cpbv:sppv_textColor="@color/color_333333"
+        cpbv:sppv_uncheckedProgressColor="@color/color_E2E2E2" />
+
+    <Button
+        android:id="@+id/startAnimationBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="启动动画" />
+
+    <com.example.customview.widget.LoadingView
+        android:id="@+id/loading_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center" />
+</LinearLayout>

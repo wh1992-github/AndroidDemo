@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PayPsdInputView">
+
+        <attr name="maxCount" format="integer" />
+        <attr name="circleColor" format="color" />
+        <attr name="bottomLineColor" format="color" />
+        <attr name="radius" format="dimension" />
+        <attr name="divideLineWidth" format="dimension" />
+        <attr name="divideLineColor" format="color" />
+        <attr name="rectAngle" format="dimension" />
+        <attr name="focusedColor" format="color" />
+        <attr name="psdType" format="enum">
+            <enum name="weChat" value="0" />
+            <enum name="bottomLine" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressBarView">
+
+        <attr name="circleBgStrokeWidth" format="dimension" />
+        <attr name="progressStrokeWidth" format="dimension" />
+
+        <attr name="circleBgColor" format="color" />
+        <attr name="progressColor" format="color" />
+
+        <attr name="circleAnimationDuration" format="integer" />
+
+        <attr name="isDrawCenterProgressText" format="boolean" />
+
+        <attr name="centerProgressTextColor" format="color" />
+        <attr name="centerProgressTextSize" format="dimension" />
+
+    </declare-styleable>
+
+    <declare-styleable name="RadarWaveView">
+
+        <attr name="waveColor" format="color" />
+
+        <attr name="waveAmplitude" format="dimension" />
+
+        <attr name="waveSpeed" format="float" />
+
+        <attr name="waveStartPeriod" format="float" />
+        <attr name="waveStart" format="boolean" />
+
+        <attr name="waveFillTop" format="boolean" />
+        <attr name="waveFillBottom" format="boolean" />
+
+        <attr name="waveFillType" format="enum">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+        </attr>
+
+        <attr name="waveType" format="enum">
+            <enum name="sin" value="0" />
+            <enum name="cos" value="1" />
+        </attr>
+
+    </declare-styleable>
+    <declare-styleable name="ArcView">
+        <attr name="arcHeight" format="dimension" />
+        <attr name="bgColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CarMoveView">
+        <attr name="carMovePathColor" format="color" />
+        <attr name="carMoveDrawableRes" format="reference" />
+        <attr name="carMoveDuration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="VoteView">
+        <attr name="voteBorderRadius" format="dimension" />
+        <attr name="voteProgressBgColor" format="color" />
+        <attr name="voteUncheckedProgressColor" format="color" />
+        <attr name="voteCheckedProgressColor" format="color" />
+        <attr name="voteCheckedContentTextColor" format="color" />
+        <attr name="voteUncheckedContentTextColor" format="color" />
+        <attr name="voteCheckedResultTextColor" format="color" />
+        <attr name="voteUncheckedResultTextColor" format="color" />
+        <attr name="voteTextSize" format="dimension"/>
+        <attr name="voteBorderColor" format="color" />
+        <attr name="voteCheckedIcon" format="reference" />
+        <attr name="voteAnimDuration" format="integer" />
+        <attr name="voteRightIconWidth" format="dimension" />
+        <attr name="voteRightIconHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="StudyPlanProgressView">
+        <attr name="sppv_iconChecked" format="reference"/>
+        <attr name="sppv_iconUnchecked" format="reference"/>
+        <attr name="sppv_iconSize" format="dimension"/>
+        <attr name="sppv_uncheckedProgressColor" format="color"/>
+        <attr name="sppv_checkedProgressColor" format="color"/>
+        <attr name="sppv_progressWidth" format="dimension"/>
+        <attr name="sppv_textSize" format="dimension"/>
+        <attr name="sppv_textColor" format="color"/>
+    </declare-styleable>
+</resources>
