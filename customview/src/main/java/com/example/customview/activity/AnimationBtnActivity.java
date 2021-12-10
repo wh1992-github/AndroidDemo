@@ -15,7 +15,7 @@ public class AnimationBtnActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation_btn);
-        animationButton = (AnimationButton) findViewById(R.id.animation_btn);
+        animationButton = findViewById(R.id.animation_btn);
         animationButton.setAnimationButtonListener(new AnimationButton.AnimationButtonListener() {
             @Override
             public void onClickListener() {

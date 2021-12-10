@@ -47,8 +47,8 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
 
     private void init(Context context) {
         LayoutInflater.from(context).inflate(R.layout.banner_view_layout, this);
-        mViewPager = (ViewPager) findViewById(R.id.banner_view_pager);
-        mIndicatorContainer = (LinearLayout) findViewById(R.id.banner_indicator_container);
+        mViewPager = findViewById(R.id.banner_view_pager);
+        mIndicatorContainer = findViewById(R.id.banner_indicator_container);
 
         mPagerOptions = new PagerOptions.Builder(context).build();
 

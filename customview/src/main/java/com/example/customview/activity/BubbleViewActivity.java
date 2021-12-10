@@ -30,10 +30,10 @@ public class BubbleViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bubble_view);
-        hxbIv = (ImageView) findViewById(R.id.hxb_iv);
-        hxbTv = (TextView) findViewById(R.id.center_tv);
-        bezierView = (BubbleView) findViewById(R.id.circle_view);
-        button = (Button) findViewById(R.id.start_btn);
+        hxbIv = findViewById(R.id.hxb_iv);
+        hxbTv = findViewById(R.id.center_tv);
+        bezierView = findViewById(R.id.circle_view);
+        button = findViewById(R.id.start_btn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

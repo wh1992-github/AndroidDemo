@@ -35,15 +35,15 @@ public class ProgressBarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pregress_bar);
 
-        circleProgressBarView = (CircleProgressBarView) findViewById(R.id.circle_progress_view);
+        circleProgressBarView = findViewById(R.id.circle_progress_view);
 
-        horizontalProgressBar = (HorizontalProgressBar) findViewById(R.id.horizontal_progress_view);
-        productProgressBar = (ProductProgressBar) findViewById(R.id.product_progress_view);
-        loadingView = (LoadingView) findViewById(R.id.loading_view);
-        loadingLineView = (LoadingLineView) findViewById(R.id.loading_line_view);
+        horizontalProgressBar = findViewById(R.id.horizontal_progress_view);
+        productProgressBar = findViewById(R.id.product_progress_view);
+        loadingView = findViewById(R.id.loading_view);
+        loadingLineView = findViewById(R.id.loading_line_view);
 
-        textView = (TextView) findViewById(R.id.progress_tv);
-        button = (Button) findViewById(R.id.startAnimationBtn);
+        textView = findViewById(R.id.progress_tv);
+        button = findViewById(R.id.startAnimationBtn);
         studyPlanProgressView = findViewById(R.id.study_plan_progress_view);
 
         circleProgressBarView.setProgressWithAnimation(60);

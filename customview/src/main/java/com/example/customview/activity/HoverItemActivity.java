@@ -51,9 +51,9 @@ public class HoverItemActivity extends AppCompatActivity {
 
         userBeans = filledData(getData());
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        indexView = (IndexView) findViewById(R.id.index_view);
-        showTextDialog = (TextView) findViewById(R.id.show_text_dialog);
+        recyclerView = findViewById(R.id.recycler_view);
+        indexView = findViewById(R.id.index_view);
+        showTextDialog = findViewById(R.id.show_text_dialog);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

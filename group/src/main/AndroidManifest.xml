@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.group">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
@@ -29,6 +30,9 @@
         <activity android:name=".ProgressBarActivity" />
         <activity android:name=".ClickEffectActivity" />
         <activity android:name=".TouchEventActivity" />
+        <activity android:name=".LiveDataActivity" />
+        <activity android:name=".LiveDataSampleActivity" />
+        <activity android:name=".LiveDataTransformationsActivity" />
         <activity android:name=".WindowDialogActivity" />
         <activity android:name=".LocalBroadcastActivity" />
         <activity android:name=".HandlerActivity" />

@@ -20,10 +20,10 @@ public class DragBallActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drag_ball);
-        resetBtn = (Button) findViewById(R.id.reset_btn);
-        msgCountBtn = (Button) findViewById(R.id.msg_count_btn);
-        dragBallView = (DragBallView) findViewById(R.id.drag_ball_view);
-        msgCountEt = (EditText) findViewById(R.id.msg_count_et);
+        resetBtn = findViewById(R.id.reset_btn);
+        msgCountBtn = findViewById(R.id.msg_count_btn);
+        dragBallView = findViewById(R.id.drag_ball_view);
+        msgCountEt = findViewById(R.id.msg_count_et);
         resetBtn.setOnClickListener(v -> dragBallView.reset());
         msgCountBtn.setOnClickListener(v -> {
             if (!TextUtils.isEmpty(msgCountEt.getText().toString().trim())) {

@@ -64,6 +64,6 @@ public class TagActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        tagRecyclerView = (RecyclerView) findViewById(R.id.tag_rv);
+        tagRecyclerView = findViewById(R.id.tag_rv);
     }
 }

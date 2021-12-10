@@ -15,7 +15,7 @@ public class WaveByBezierActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wave_by_bezier);
 
-        waveViewByBezier = (WaveViewByBezier) findViewById(R.id.wave_bezier);
+        waveViewByBezier = findViewById(R.id.wave_bezier);
 
         waveViewByBezier.startAnimation();
     }

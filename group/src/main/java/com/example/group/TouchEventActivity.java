@@ -12,7 +12,7 @@ import com.example.group.touchevent.BaseImageView;
 import com.example.group.touchevent.BaseLinearLayout;
 import com.example.group.touchevent.BaseRelativeLayout;
 import com.example.group.touchevent.BaseTextView;
-import com.example.group.touchevent.LogUtil;
+import com.example.group.util.LogUtil;
 
 //事件分发机制
 @SuppressLint("ClickableViewAccessibility")

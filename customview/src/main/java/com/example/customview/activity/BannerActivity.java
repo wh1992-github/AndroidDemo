@@ -33,7 +33,7 @@ public class BannerActivity extends AppCompatActivity {
         datas.add("http://7xi8d6.com1.z0.glb.clouddn.com/20180102083655_3t4ytm_Screenshot.jpeg");
         datas.add("http://7xi8d6.com1.z0.glb.clouddn.com/20171228085004_5yEHju_Screenshot.jpeg");
 
-        bannerView = (BannerView) findViewById(R.id.banner_view);
+        bannerView = findViewById(R.id.banner_view);
 
         PagerOptions options = new PagerOptions
                 .Builder(this)

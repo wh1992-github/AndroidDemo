@@ -15,7 +15,7 @@ public class RadarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radar);
 
-        radarView = (RadarWaveView) findViewById(R.id.radar_view);
+        radarView = findViewById(R.id.radar_view);
     }
 
     @Override

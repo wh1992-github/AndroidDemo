@@ -21,7 +21,7 @@ public class FingerprintActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finger_print);
 
-        mResultTv = (TextView) findViewById(R.id.result_tv);
+        mResultTv = findViewById(R.id.result_tv);
 
         findViewById(R.id.open_finger_btn).setOnClickListener(new View.OnClickListener() {
             @Override

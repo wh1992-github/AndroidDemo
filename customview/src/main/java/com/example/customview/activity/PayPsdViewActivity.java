@@ -15,7 +15,7 @@ public class PayPsdViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay_psd_view);
 
-        passwordInputView = (PayPsdInputView) findViewById(R.id.password);
+        passwordInputView = findViewById(R.id.password);
 
         passwordInputView.setComparePassword(new PayPsdInputView.onPasswordListener() {
             @Override

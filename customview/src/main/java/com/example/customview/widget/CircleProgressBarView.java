@@ -25,7 +25,6 @@ public class CircleProgressBarView extends View {
 
     private Context mContext;
 
-
     /**
      * 圆心x坐标
      */
@@ -38,17 +37,14 @@ public class CircleProgressBarView extends View {
      * 圆的半径
      */
     private float radius;
-
     /**
      * 进度
      */
     private float mProgress;
-
     /**
      * 当前进度
      */
     private float currentProgress;
-
     /**
      * 圆形进度条底色画笔
      */
@@ -57,7 +53,6 @@ public class CircleProgressBarView extends View {
      * 圆形进度条进度画笔
      */
     private Paint progressPaint;
-
     /**
      * 进度条背景颜色
      */
@@ -66,7 +61,6 @@ public class CircleProgressBarView extends View {
      * 进度条颜色
      */
     private int progressColor = 0xFFf66b12;
-
     /**
      * 默认圆环的宽度
      */
@@ -79,18 +73,14 @@ public class CircleProgressBarView extends View {
      * 圆形进度画笔宽度
      */
     private int progressStrokeWidth = defaultStrokeWidth;
-
-
     /**
      * 扇形所在矩形
      */
     private RectF rectF = new RectF();
-
     /**
      * 进度动画
      */
     private ValueAnimator progressAnimator;
-
     /**
      * 动画执行时间
      */
@@ -141,9 +131,7 @@ public class CircleProgressBarView extends View {
 
     private void initPaint() {
         circleBgPaint = getPaint(circleBgStrokeWidth, circleBgColor);
-
         progressPaint = getPaint(progressStrokeWidth, progressColor);
-
     }
 
     private Paint getPaint(int strokeWidth, int color) {
@@ -153,7 +141,6 @@ public class CircleProgressBarView extends View {
         paint.setAntiAlias(true);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStyle(Paint.Style.STROKE);
-
         return paint;
     }
 
@@ -184,7 +171,6 @@ public class CircleProgressBarView extends View {
                     progressListener.currentProgressListener(roundTwo(value));
                 }
                 invalidate();
-
             }
         });
     }
@@ -192,17 +178,13 @@ public class CircleProgressBarView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-
         centerX = w / 2;
         centerY = h / 2;
-
         radius = Math.min(w, h) / 2 - Math.max(circleBgStrokeWidth, progressStrokeWidth);
-
         rectF.set(centerX - radius,
                 centerY - radius,
                 centerX + radius,
                 centerY + radius);
-
     }
 
     @Override
@@ -222,7 +204,6 @@ public class CircleProgressBarView extends View {
         canvas.drawText(currentProgress, rectF.centerX(), baseline, centerProgressTextPaint);
     }
 
-
     public void startProgressAnimation() {
         progressAnimator.start();
     }
@@ -238,7 +219,6 @@ public class CircleProgressBarView extends View {
     public void stopProgressAnimation() {
         progressAnimator.end();
     }
-
 
     /**
      * 传入一个进度值，从0到progress动画变化
@@ -264,7 +244,6 @@ public class CircleProgressBarView extends View {
         invalidate();
         return this;
     }
-
 
     public interface ProgressListener {
         void currentProgressListener(float currentProgress);

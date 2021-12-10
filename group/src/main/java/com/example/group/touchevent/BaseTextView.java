@@ -6,6 +6,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
+import com.example.group.util.LogUtil;
+
 @SuppressLint({"AppCompatCustomView", "ClickableViewAccessibility"})
 public class BaseTextView extends TextView {
     private static final String TAG = "BaseTextView";
