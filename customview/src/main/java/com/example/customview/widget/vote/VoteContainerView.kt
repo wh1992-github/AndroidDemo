@@ -2,7 +2,6 @@ package com.example.customview.widget.vote
 
 import android.content.Context
 import android.graphics.Outline
-import android.os.Build
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View

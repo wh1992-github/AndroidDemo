@@ -2,7 +2,6 @@ package com.example.customview.utils;
 
 import android.app.KeyguardManager;
 import android.content.Context;
-import android.os.Build;
 import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 import android.support.v4.os.CancellationSignal;
 

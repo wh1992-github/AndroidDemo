@@ -2,7 +2,6 @@ package com.example.customview.utils;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
-import android.view.WindowManager;
 
 /**
  * 与屏幕信息有关的类，包括屏幕的长宽、分辨率、长度换算

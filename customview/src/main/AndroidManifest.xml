@@ -35,12 +35,15 @@
         <activity android:name=".activity.FingerprintActivity" />
         <activity android:name=".activity.BannerActivity" />
         <activity android:name=".activity.HoverItemActivity" />
+        <activity android:name=".activity.HoverItemActivity2" />
+        <activity android:name=".activity.HoverItemActivity3" />
         <activity android:name=".activity.RevealAnimationActivity" />
         <activity android:name=".activity.AliPayHomeActivity" />
         <activity android:name=".activity.RecyclerViewItemAnimActivity" />
         <activity android:name=".activity.PathActivity" />
         <activity android:name=".activity.SinaVoteActivity" />
         <activity android:name=".activity.ClearScreenActivity" />
+        <activity android:name=".activity.RecyclerQQActivity" />
     </application>
 
 </manifest>

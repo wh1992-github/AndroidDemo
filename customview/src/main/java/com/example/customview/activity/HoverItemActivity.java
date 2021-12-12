@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.example.customview.R;
-import com.example.customview.adapter.HoverAdapter;
+import com.example.customview.adapter.HoverItemAdapter;
 import com.example.customview.bean.UserBean;
 import com.example.customview.utils.CharacterParser;
 import com.example.customview.utils.PinyinComparator;
@@ -24,7 +24,7 @@ public class HoverItemActivity extends AppCompatActivity {
     private IndexView indexView;
     private TextView showTextDialog;
 
-    private HoverAdapter adapter;
+    private HoverItemAdapter adapter;
 
     private List<UserBean> userBeans = new ArrayList<>();
 
@@ -66,7 +66,7 @@ public class HoverItemActivity extends AppCompatActivity {
             }
         }));
 
-        adapter = new HoverAdapter(userBeans);
+        adapter = new HoverItemAdapter(userBeans);
         recyclerView.setAdapter(adapter);
         initIndexView();
     }

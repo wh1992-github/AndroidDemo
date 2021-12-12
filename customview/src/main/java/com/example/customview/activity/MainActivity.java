@@ -50,13 +50,16 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         mList.add(new TypeBean("粘性小球", 9));
         mList.add(new TypeBean("banner", 10));
         mList.add(new TypeBean("吸顶效果--一行代码实现", 11));
-        mList.add(new TypeBean("揭露动画", 12));
-        mList.add(new TypeBean("支付宝首页效果", 13));
-        mList.add(new TypeBean("RecyclerView的item动画", 14));
-        mList.add(new TypeBean("路径path动画", 15));
-        mList.add(new TypeBean("仿新浪投票控件", 16));
-        mList.add(new TypeBean("直播侧滑清屏效果", 17));
-        mList.add(new TypeBean("指纹验证", 18));
+        mList.add(new TypeBean("吸顶效果--动态实现", 12));
+        mList.add(new TypeBean("吸顶效果--滑动切换", 13));
+        mList.add(new TypeBean("揭露动画", 14));
+        mList.add(new TypeBean("支付宝首页效果", 15));
+        mList.add(new TypeBean("RecyclerView的item动画", 16));
+        mList.add(new TypeBean("路径path动画", 17));
+        mList.add(new TypeBean("仿新浪投票控件", 18));
+        mList.add(new TypeBean("直播侧滑清屏效果", 19));
+        mList.add(new TypeBean("指纹验证", 20));
+        mList.add(new TypeBean("仿写QQ界面", 21));
         return mList;
     }
 
@@ -100,25 +103,34 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 startActivity(new Intent(MainActivity.this, HoverItemActivity.class));
                 break;
             case 12:
-                startActivity(new Intent(MainActivity.this, RevealAnimationActivity.class));
+                startActivity(new Intent(MainActivity.this, HoverItemActivity2.class));
                 break;
             case 13:
-                startActivity(new Intent(MainActivity.this, AliPayHomeActivity.class));
+                startActivity(new Intent(MainActivity.this, HoverItemActivity3.class));
                 break;
             case 14:
-                startActivity(new Intent(MainActivity.this, RecyclerViewItemAnimActivity.class));
+                startActivity(new Intent(MainActivity.this, RevealAnimationActivity.class));
                 break;
             case 15:
-                startActivity(new Intent(MainActivity.this, PathActivity.class));
+                startActivity(new Intent(MainActivity.this, AliPayHomeActivity.class));
                 break;
             case 16:
-                startActivity(new Intent(MainActivity.this, SinaVoteActivity.class));
+                startActivity(new Intent(MainActivity.this, RecyclerViewItemAnimActivity.class));
                 break;
             case 17:
-                startActivity(new Intent(MainActivity.this, ClearScreenActivity.class));
+                startActivity(new Intent(MainActivity.this, PathActivity.class));
                 break;
             case 18:
+                startActivity(new Intent(MainActivity.this, SinaVoteActivity.class));
+                break;
+            case 19:
+                startActivity(new Intent(MainActivity.this, ClearScreenActivity.class));
+                break;
+            case 20:
                 startActivity(new Intent(MainActivity.this, FingerprintActivity.class));
+                break;
+            case 21:
+                startActivity(new Intent(MainActivity.this, RecyclerQQActivity.class));
                 break;
         }
     }

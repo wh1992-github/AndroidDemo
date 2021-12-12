@@ -9,9 +9,9 @@ import com.example.customview.bean.UserBean;
 
 import java.util.List;
 
-public class HoverAdapter extends BaseQuickAdapter<UserBean, BaseViewHolder> {
+public class HoverItemAdapter extends BaseQuickAdapter<UserBean, BaseViewHolder> {
 
-    public HoverAdapter(@Nullable List<UserBean> data) {
+    public HoverItemAdapter(@Nullable List<UserBean> data) {
         super(R.layout.adapter_item_hover_user, data);
     }
 
