@@ -58,6 +58,4 @@ public class LifecycleHelper implements LifecycleObserver {
     public void destroy() {
         LogUtil.i(TAG, "destroy: ");
     }
-
-
 }
