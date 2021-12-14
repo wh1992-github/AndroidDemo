@@ -14,7 +14,7 @@ buildscript {
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
         maven { url "https://jitpack.io" }
         google()
-        jcenter()
+        //jcenter()
     }
     dependencies {
         //下面的版本号就是Android Studio的版本号
@@ -37,7 +37,7 @@ allprojects {
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
         maven { url "https://jitpack.io" }
         google()
-        jcenter()
+        //jcenter()
     }
 }
 

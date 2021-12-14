@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_swipe_recycler).setOnClickListener(this);
         findViewById(R.id.btn_department_store).setOnClickListener(this);
         findViewById(R.id.btn_live_data).setOnClickListener(this);
+        findViewById(R.id.btn_arouter).setOnClickListener(this);
     }
 
     @Override
@@ -171,6 +172,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_live_data) {
             Intent intent = new Intent(this, LiveDataActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_arouter) {
+            Intent intent = new Intent(this, ARouterActivity.class);
             startActivity(intent);
         }
     }

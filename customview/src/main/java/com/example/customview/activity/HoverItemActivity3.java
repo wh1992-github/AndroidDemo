@@ -25,8 +25,8 @@ public class HoverItemActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hover_item_3);
 
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        final TextView tvStickyHeaderView = (TextView) findViewById(R.id.header_view);
+        RecyclerView mRecyclerView = findViewById(R.id.recyclerview);
+        final TextView tvStickyHeaderView = findViewById(R.id.header_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(new HoverItemAdapter3(this, getData()));
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {

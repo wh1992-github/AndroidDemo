@@ -3,7 +3,6 @@ package com.example.group;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 
 import com.example.group.livedata.LifecycleHelper;
@@ -32,19 +31,9 @@ public class LiveDataActivity extends AppCompatActivity {
 
     private void initView() {
         mBtnLivedata = findViewById(R.id.btn_livedata);
-        mBtnLivedata.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LiveDataActivity.this, LiveDataSampleActivity.class));
-            }
-        });
+        mBtnLivedata.setOnClickListener(v -> startActivity(new Intent(this, LiveDataSampleActivity.class)));
 
         mBtnLivedataTransformations = findViewById(R.id.btn_livedata_transformations);
-        mBtnLivedataTransformations.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LiveDataActivity.this, LiveDataTransformationsActivity.class));
-            }
-        });
+        mBtnLivedataTransformations.setOnClickListener(v -> startActivity(new Intent(this, LiveDataTransformationsActivity.class)));
     }
 }
