@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -45,6 +46,23 @@ public class MainActivity extends AppCompatActivity {
         JavaTest.switchLight();
         JavaTest.fbnq();
         JavaTest.test();
+        SerializableUtil.saveObject();
+        SerializableUtil.getObject();
+
+        Log.i(TAG, "onClick: " + tryCatch());
+    }
+
+    public int tryCatch() {
+        int i = 0;
+        Log.i(TAG, "tryCatch: a = " + i);
+        try {
+            i = 2;
+            Log.i(TAG, "tryCatch: b = " + i);
+            return i;
+        } finally {
+            i = 3;
+            Log.i(TAG, "tryCatch: c = " + i);
+        }
     }
 
     @Override

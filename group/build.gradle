@@ -27,6 +27,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    sourceSets {
+        main {
+            java.srcDirs = ["src/main/java"]
+            jniLibs.srcDirs = ['src/main/libs']
+        }
+    }
 }
 
 dependencies {
@@ -36,11 +43,14 @@ dependencies {
     implementation "com.android.support:design:28.0.0"
     implementation "com.android.support:recyclerview-v7:28.0.0"
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation project(':CustomToast')
+    //Lifecycle和Livedata
     implementation "android.arch.lifecycle:extensions:1.1.0"
-
+    //ARouter
     implementation 'com.alibaba:arouter-api:1.3.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     implementation 'com.google.code.gson:gson:2.8.5'
+    //Timber
+    implementation 'com.jakewharton.timber:timber:4.7.0'
 
-    implementation project(':CustomToast')
 }

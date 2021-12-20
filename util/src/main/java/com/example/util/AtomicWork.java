@@ -7,8 +7,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicWork {
     private static final String TAG = "AtomicWork";
-    private static AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-    private static AtomicInteger atomicInteger = new AtomicInteger(10);
+    private static final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+    private static final AtomicInteger atomicInteger = new AtomicInteger(10);
 
     public static void atomicWork() {
         setAtomicBoolean();

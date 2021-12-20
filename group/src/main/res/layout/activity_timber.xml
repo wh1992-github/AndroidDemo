@@ -5,17 +5,17 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_livedata"
+        android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LiveData Sample"
+        android:text="Button1"
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/btn_livedata_transformations"
+        android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LiveData Transformations"
+        android:text="Button2"
         android:textAllCaps="false" />
 
 </LinearLayout>
