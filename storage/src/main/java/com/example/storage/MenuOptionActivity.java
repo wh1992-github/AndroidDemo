@@ -1,77 +1,95 @@
 package com.example.storage;
 
-import android.graphics.Color;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.TextView;
-
-import com.example.storage.util.DateUtil;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 /**
  * Created by test on 2017/10/1.
  */
-public class MenuOptionActivity extends
-        AppCompatActivity implements OnClickListener {
-    private TextView tv_option;
+@SuppressLint("SetTextI18n")
+public class MenuOptionActivity extends AppCompatActivity implements OnClickListener, PopupMenu.OnMenuItemClickListener {
+    private static final String TAG = "MenuOptionActivity";
+    private Button mMenuBtn;
+    private EditText mEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_option);
-        tv_option = findViewById(R.id.tv_option);
+        mMenuBtn = findViewById(R.id.btn_menu);
+        mMenuBtn.setOnClickListener(this);
         findViewById(R.id.btn_option).setOnClickListener(this);
-        setRandomTime();
+
+        mEditText = findViewById(R.id.editable_view);
+        //注册上下文菜单
+        registerForContextMenu(mEditText);
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_option) {
-            //注意：如果当前页面继承自AppCompatActivity,并且appcompat版本不低于22.1.0
+            //注意:如果当前页面继承自AppCompatActivity,并且appcompat版本不低于22.1.0
             //那么调用openOptionsMenu方法将不会弹出菜单。这应该是Android的一个bug
             openOptionsMenu();
+        } else if (v.getId() == R.id.btn_menu) {
+            popupMenu();
         }
     }
 
-    //在选项菜单的菜单界面创建时调用
+    //选项菜单
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //从menu_option.xml中构建菜单界面布局
+        super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.menu_option, menu);
         return true;
     }
 
-    //在选项菜单的菜单项选中时调用
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId(); //获取菜单项的编号
-        if (id == R.id.menu_change_time) { //点击了菜单项“改变时间”
-            setRandomTime();
-        } else if (id == R.id.menu_change_color) { //点击了菜单项“改变颜色”
-            tv_option.setTextColor(getRandomColor());
-        } else if (id == R.id.menu_change_bg) { //点击了菜单项“改变背景”
-            tv_option.setBackgroundColor(getRandomColor());
-        }
-        return true;
+        Log.i(TAG, "onOptionsItemSelected: " + item.getItemId());
+        Toast.makeText(this, "点击了" + item.getTitle(), Toast.LENGTH_SHORT).show();
+        return super.onOptionsItemSelected(item);
     }
 
-    private void setRandomTime() {
-        String desc = DateUtil.getNowDateTime("yyyy-MM-dd HH:mm:ss") + " 这里是菜单显示文本";
-        tv_option.setText(desc);
+    //上下文菜单
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.clear();
+        getMenuInflater().inflate(R.menu.menu_context, menu);
     }
 
-    private int[] mColorArray = {
-            Color.BLACK, Color.WHITE, Color.RED, Color.YELLOW, Color.GREEN,
-            Color.BLUE, Color.CYAN, Color.MAGENTA, Color.GRAY, Color.DKGRAY
-    };
-
-    //获取随机的颜色值
-    private int getRandomColor() {
-        int random = (int) (Math.random() * 10 % 10);
-        return mColorArray[random];
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        Log.i(TAG, "onContextItemSelected: " + item.getItemId());
+        Toast.makeText(this, "点击了" + item.getTitle(), Toast.LENGTH_SHORT).show();
+        return super.onContextItemSelected(item);
     }
 
+    //弹出菜单
+    public void popupMenu() {
+        PopupMenu popupMenu = new PopupMenu(this, mMenuBtn);
+        Menu menu = popupMenu.getMenu();
+        getMenuInflater().inflate(R.menu.menu_popup, menu);
+        popupMenu.setOnMenuItemClickListener(this);
+        popupMenu.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        Log.i(TAG, "onMenuItemClick: " + item.getItemId());
+        Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
+        return false;
+    }
 }

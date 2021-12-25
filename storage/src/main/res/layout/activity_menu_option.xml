@@ -6,11 +6,24 @@
     android:orientation="vertical"
     android:padding="10dp">
 
+    <EditText
+        android:id="@+id/editable_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/btn_option"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="打开选项菜单，也可直接按菜单键"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="弹出菜单"
         android:textColor="@color/black"
         android:textSize="17sp" />
 
