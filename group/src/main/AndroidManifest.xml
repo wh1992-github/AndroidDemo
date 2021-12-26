@@ -69,6 +69,7 @@
         <activity android:name=".DepartmentCartActivity" />
         <activity android:name=".GlideActivity" />
         <activity android:name=".TimberActivity" />
+        <activity android:name=".OrientationActivity" />
 
         <activity android:name=".ARouterActivity" />
         <activity android:name=".arouter.activity.ActivityOne" />

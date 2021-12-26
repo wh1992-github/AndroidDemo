@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_arouter).setOnClickListener(this);
         findViewById(R.id.btn_glide).setOnClickListener(this);
         findViewById(R.id.btn_timber).setOnClickListener(this);
+        findViewById(R.id.btn_orientation).setOnClickListener(this);
     }
 
     @Override
@@ -183,6 +184,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_timber) {
             Intent intent = new Intent(this, TimberActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_orientation) {
+            Intent intent = new Intent(this, OrientationActivity.class);
             startActivity(intent);
         }
     }
