@@ -70,6 +70,8 @@
         <activity android:name=".GlideActivity" />
         <activity android:name=".TimberActivity" />
         <activity android:name=".OrientationActivity" />
+        <activity android:name=".BigPictureActivity" />
+        <activity android:name=".MMKVActivity" />
 
         <activity android:name=".ARouterActivity" />
         <activity android:name=".arouter.activity.ActivityOne" />

@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_glide).setOnClickListener(this);
         findViewById(R.id.btn_timber).setOnClickListener(this);
         findViewById(R.id.btn_orientation).setOnClickListener(this);
+        findViewById(R.id.btn_big_picture).setOnClickListener(this);
+        findViewById(R.id.btn_mmkv).setOnClickListener(this);
     }
 
     @Override
@@ -187,6 +189,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_orientation) {
             Intent intent = new Intent(this, OrientationActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_big_picture) {
+            Intent intent = new Intent(this, BigPictureActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_mmkv) {
+            Intent intent = new Intent(this, MMKVActivity.class);
             startActivity(intent);
         }
     }

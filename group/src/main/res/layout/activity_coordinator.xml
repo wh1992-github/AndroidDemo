@@ -11,12 +11,22 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btn_snackbar"
+            android:id="@+id/btn_snackbar_simple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:text="显示简单提示条"
+            android:layout_marginTop="20dp"
+            android:text="显示简单的提示条"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btn_snackbar_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="显示可交互提示条"
             android:textColor="@color/black"
             android:textSize="17sp" />
 

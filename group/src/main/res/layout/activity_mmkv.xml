@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_write_int"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="write int"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_read_int"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="read int"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_delete_int"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="delete int"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_write_string"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="write String"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_read_string"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="read String"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_delete_string"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="delete String"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_write_object"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="write Object"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_read_object"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="read Object"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_delete_object"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="delete Object"
+        android:textAllCaps="false" />
+
+</LinearLayout>

@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 @SuppressLint("LogNotTimber")
-//旋转方向自适应
+//屏幕方向自适应
 public class OrientationActivity extends AppCompatActivity {
     private static final String TAG = "OrientationActivity";
     private int mOrientation = OrientationEventListener.ORIENTATION_UNKNOWN;

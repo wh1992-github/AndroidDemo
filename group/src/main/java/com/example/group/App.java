@@ -1,8 +1,10 @@
 package com.example.group;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.tencent.mmkv.MMKV;
 
 import timber.log.Timber;
 
@@ -38,5 +40,10 @@ public class App extends Application {
                 super.log(priority, TAG + tag, message, t);
             }
         });
+
+        //初始化MMKV
+        String dir = getFilesDir().getAbsolutePath();
+        String rootDir = MMKV.initialize(dir);
+        Log.i(TAG, "mmkv root = " + rootDir);
     }
 }
