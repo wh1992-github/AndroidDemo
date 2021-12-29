@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_delay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="delay"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_doNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="doNext"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_doOnError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="doOnError"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_doOnFinally"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="doOnFinally"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_onErrorReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="onErrorReturn"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_onErrorResumeNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="onErrorResumeNext"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_onExceptionResumeNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="onExceptionResumeNext"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="retry"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_retryWhen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="retryWhen"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="repeat"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_repeatWhen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="repeatWhen"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</ScrollView>

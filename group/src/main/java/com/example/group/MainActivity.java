@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_orientation).setOnClickListener(this);
         findViewById(R.id.btn_big_picture).setOnClickListener(this);
         findViewById(R.id.btn_mmkv).setOnClickListener(this);
+        findViewById(R.id.btn_rxjava).setOnClickListener(this);
     }
 
     @Override
@@ -195,6 +196,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_mmkv) {
             Intent intent = new Intent(this, MMKVActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_rxjava) {
+            Intent intent = new Intent(this, RxJavaRetrofitOkHttpActivity.class);
             startActivity(intent);
         }
     }

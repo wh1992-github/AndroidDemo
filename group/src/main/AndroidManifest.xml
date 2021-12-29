@@ -82,6 +82,14 @@
         <activity android:name=".arouter.activity.UrlSchemeActivity" />
         <activity android:name=".arouter.activity.WebViewActivity" />
 
+        <activity android:name=".RxJavaRetrofitOkHttpActivity" />
+        <activity android:name=".rxjava.RxJavaActivity01" />
+        <activity android:name=".rxjava.RxJavaActivity02" />
+        <activity android:name=".rxjava.RxJavaActivity03" />
+        <activity android:name=".rxjava.RxJavaActivity04" />
+        <activity android:name=".retrofit.RetrofitActivity" />
+        <activity android:name=".retrofit.OkHttpActivity" />
+
         <activity android:name=".SearchResultActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />

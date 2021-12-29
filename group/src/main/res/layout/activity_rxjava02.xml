@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="map" />
+
+        <Button
+            android:id="@+id/btn_flatMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="flatMap"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_concatMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="concatMap"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_buffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="buffer"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_concatAndConcatArray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="concatAndConcatArray"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_merge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="merge"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_concatDelayError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="concatDelayError"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_mergeDelayError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="mergeDelayError"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_startWithAndStartWithArray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="startWithAndStartWithArray"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_zip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="zip"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_combineLatest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="combineLatest"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_reduce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="reduce"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="collect"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="count"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</ScrollView>

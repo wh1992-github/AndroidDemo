@@ -13,8 +13,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-    private static final String BASE_URL = "http://192.168.20.189:8080/ftp/test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,52 +27,17 @@ public class MainActivity extends AppCompatActivity {
         //设置TextView控件的文字大小
         tv_hello.setTextSize(20);
 
-        findViewById(R.id.btn1).setOnClickListener(this::requestData);
-        findViewById(R.id.btn2).setOnClickListener(this::requestData);
+        findViewById(R.id.btn1).setOnClickListener(this::onClick);
+        findViewById(R.id.btn2).setOnClickListener(this::onClick);
     }
 
-    private void requestData(View view) {
+    private void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:
-                http();
                 break;
             case R.id.btn2:
-                okhttp();
                 break;
         }
-    }
-
-    private void http() {
-        Log.i(TAG, "run: code : start");
-        new Thread(() -> {
-            try {
-                URL url = new URL(BASE_URL);
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                connection.setRequestMethod("GET");
-                connection.setRequestProperty("key", "http_key");
-                InputStream inputStream = connection.getInputStream();
-                int totalLength = connection.getContentLength();
-                int currentLength = 0;
-                int length;
-                byte[] buffer = new byte[1024 * 100];
-                FileOutputStream fileOutputStream = new FileOutputStream("sdcard/AAA/" + System.currentTimeMillis() + ".jpg");
-                while ((length = inputStream.read(buffer)) != -1) {
-                    fileOutputStream.write(buffer, 0, length);
-                    currentLength += length;
-                    Log.i(TAG, "requestData: current = " + currentLength + ", total = " + totalLength);
-                }
-                inputStream.close();
-                fileOutputStream.close();
-                Log.i(TAG, "run: code = " + connection.getResponseCode());
-            } catch (Exception e) {
-                Log.i(TAG, "run: e = " + e.getMessage());
-            }
-        }).start();
-    }
-
-    private void okhttp() {
-        Log.i(TAG, "run: code : start");
-        OkHttpUtil.getInstance().requestImage(BASE_URL);
     }
 }
 
