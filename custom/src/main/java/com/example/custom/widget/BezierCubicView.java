@@ -1,5 +1,6 @@
 package com.example.custom.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,6 +11,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+@SuppressLint("DrawAllocation")
 public class BezierCubicView extends View {
     private int leftX, leftY;
     private int rightX, rightY;
@@ -73,7 +75,7 @@ public class BezierCubicView extends View {
         canvas.drawLine(leftX, leftY, rightX, rightY, paint);
         canvas.drawLine(rightX, rightY, endX, endY, paint);
 
-        //画高阶贝塞尔曲线
+        //画三阶贝塞尔曲线
         paint.setColor(Color.GREEN);
         Path path = new Path();
         path.moveTo(startX, startY);

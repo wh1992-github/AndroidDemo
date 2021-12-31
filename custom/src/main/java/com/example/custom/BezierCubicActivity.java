@@ -6,6 +6,7 @@ import android.widget.RadioGroup;
 
 import com.example.custom.widget.BezierCubicView;
 
+//三阶贝塞尔曲线
 public class BezierCubicActivity extends AppCompatActivity {
     private BezierCubicView cubicView;
     private RadioGroup radioGroup;
@@ -16,14 +17,12 @@ public class BezierCubicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bezier_cubic);
         cubicView = findViewById(R.id.cubicview);
         radioGroup = findViewById(R.id.rg);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == group.getChildAt(0).getId()) {
-                    cubicView.moveLeft();
-                } else if (checkedId == group.getChildAt(1).getId()) {
-                    cubicView.moveRight();
-                }
+        radioGroup.check(radioGroup.getChildAt(0).getId());
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == group.getChildAt(0).getId()) {
+                cubicView.moveLeft();
+            } else if (checkedId == group.getChildAt(1).getId()) {
+                cubicView.moveRight();
             }
         });
     }

@@ -1,4 +1,3 @@
-
 package com.example.util;
 
 import java.util.concurrent.ExecutorService;
@@ -43,22 +42,6 @@ public class ThreadManager {
         //unit 用于指定 keepAliveTime 参数的时间单位,这是一个枚举,常用的有 TimeUnit.MILLISECONDS 和 TimeUnit.SECONDS.
         //workQueue 线程池中的任务队列,通过线程池的 execute 方法提交的 Runnable 对象会存储在这个参数中.
         mThreadPoolExecutor = new ThreadPoolExecutor(sCoreThreadsCount, 30, 1, TimeUnit.SECONDS, new LinkedBlockingQueue<>(128));
-    }
-
-    public ExecutorService getSingleThreadPool() {
-        return mSingleThreadPool;
-    }
-
-    public ExecutorService getCachedThreadPool() {
-        return mCachedThreadPool;
-    }
-
-    public ExecutorService getFixedThreadPool() {
-        return mFixedThreadPool;
-    }
-
-    public ExecutorService getScheduledThreadPool() {
-        return mScheduledThreadPool;
     }
 
     public void executeSingle(Runnable command) {

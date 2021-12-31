@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_custom_textview).setOnClickListener(this);
         findViewById(R.id.btn_bezier_quad).setOnClickListener(this);
         findViewById(R.id.btn_bezier_cubic).setOnClickListener(this);
+        findViewById(R.id.btn_bezier_custom).setOnClickListener(this);
         findViewById(R.id.btn_bezier_ripple).setOnClickListener(this);
         findViewById(R.id.btn_window).setOnClickListener(this);
         findViewById(R.id.btn_dialog_date).setOnClickListener(this);
@@ -94,6 +95,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_bezier_cubic) {
             Intent intent = new Intent(this, BezierCubicActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_bezier_custom) {
+            Intent intent = new Intent(this, BezierCustomActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_bezier_ripple) {
             Intent intent = new Intent(this, BezierRippleActivity.class);

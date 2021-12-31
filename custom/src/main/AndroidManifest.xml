@@ -42,6 +42,7 @@
         <activity android:name=".CustomTextViewActivity" />
         <activity android:name=".BezierQuadActivity" />
         <activity android:name=".BezierCubicActivity" />
+        <activity android:name=".BezierCustomActivity" />
         <activity android:name=".BezierRippleActivity" />
         <activity android:name=".WindowActivity" />
         <activity android:name=".DialogDateActivity" />

@@ -34,51 +34,52 @@ public class BezierRippleView extends View {
         mPaint.setAntiAlias(true);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setColor(Color.parseColor("#009FCC"));
-        mPaint.setStyle(Paint.Style.FILL);
-        mPath = new Path();
     }
 
     //重写onDraw方法
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        init();
+        drawPoint(canvas);
         drawHorizontal(canvas);
         //drawVertical(canvas);
-        drawPoint(canvas);
     }
 
     //贝塞尔水平波纹
     private void drawHorizontal(Canvas canvas) {
-        init();
         if (mWaveStartX >= 0) {
             mWaveStartX = -400;
         }
+        mPath = new Path();
         mPath.moveTo(mWaveStartX, 600);
         for (int i = 0; i < getWidth() / 400 + 2; i++) {
-            mPath.rQuadTo(100, -60, 200, 0);
-            mPath.rQuadTo(100, 60, 200, 0);
+            mPath.rQuadTo(100, -100, 200, 0);
+            mPath.rQuadTo(100, 100, 200, 0);
         }
         mPath.lineTo(getWidth(), getHeight());
         mPath.lineTo(0, getHeight());
         mPath.close();
+        mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(Color.parseColor("#009FCC"));//设置画笔的颜色为海蓝色
         canvas.drawPath(mPath, mPaint);
     }
 
     //贝塞尔垂直波纹
     private void drawVertical(Canvas canvas) {
-        init();
         if (mWaveStartX >= 0) {
             mWaveStartX = -400;
         }
+        mPath = new Path();
         mPath.moveTo(0, -mWaveStartX);
         for (int i = 0; i < getWidth() / 400 + 2; i++) {
-            mPath.rQuadTo(100, -60, 200, 0);
-            mPath.rQuadTo(100, 60, 200, 0);
+            mPath.rQuadTo(100, -100, 200, 0);
+            mPath.rQuadTo(100, 100, 200, 0);
         }
         mPath.lineTo(getWidth(), getHeight());
         mPath.lineTo(0, getHeight());
         mPath.close();
+        mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(Color.parseColor("#009FCC"));//设置画笔的颜色为海蓝色
         canvas.drawPath(mPath, mPaint);
     }
@@ -87,9 +88,20 @@ public class BezierRippleView extends View {
     private void drawPoint(Canvas canvas) {
         mPaint.setColor(Color.RED);
         mPaint.setStrokeWidth(12);
+        mPaint.setStyle(Paint.Style.STROKE);
         for (int i = 0; i < getWidth() / 100 + 2; i++) {
-            canvas.drawPoint(i * 100, 600 + getValue(i), mPaint);
+            canvas.drawPoint(i * 100, 300 + getValue(i), mPaint);
         }
+
+        mPaint.setColor(Color.BLACK);
+        mPaint.setStrokeWidth(4);
+        mPath = new Path();
+        mPath.moveTo(0, 300);
+        for (int i = 0; i < getWidth() / 400 + 2; i++) {
+            mPath.rQuadTo(100, -100, 200, 0);
+            mPath.rQuadTo(100, 100, 200, 0);
+        }
+        canvas.drawPath(mPath, mPaint);
     }
 
     //获取纵坐标

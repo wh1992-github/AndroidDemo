@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.custom.widget.BezierRippleView;
 
+//水波纹贝塞尔曲线
 public class BezierRippleActivity extends AppCompatActivity {
     private BezierRippleView waveRippleView;
 
