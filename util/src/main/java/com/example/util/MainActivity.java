@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
         defaultType.setSexName(DefaultType.Person.female);
         defaultType.setSexType(DefaultType.Sex.MAN);
 
+        Class<?> childClass = DefaultType.Child.class;
+        DefaultType.People people = childClass.getAnnotation(DefaultType.People.class);
+        String name = people.getName();
+        int age = people.getAge();
+        Log.i(TAG, "onClick: value = " + name + ", age = " + age);
+
         mCountDownTimerUtil = new CountDownTimerUtil(10 * 1000, 1000);
         mCountDownTimerUtil.start();
 

@@ -36,7 +36,7 @@ public class DefaultType {
     }
 
     public void setSexType(@Sex int sex) {
-        LogUtil.i(TAG, "setSex: sex = " + sex);
+        LogUtil.i(TAG, "setSexType: sex = " + sex);
     }
 
     @StringDef({Person.male, Person.female})
@@ -48,6 +48,18 @@ public class DefaultType {
     }
 
     public void setSexName(@Person String sex) {
-        LogUtil.i(TAG, "setSex: sex = " + sex);
+        LogUtil.i(TAG, "setSexName: sex = " + sex);
+    }
+
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface People {
+        String getName() default "test";
+
+        int getAge() default 28;
+    }
+
+    @People
+    public static class Child {
     }
 }
