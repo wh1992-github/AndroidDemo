@@ -8,7 +8,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -19,20 +18,20 @@ import java.util.List;
 import java.util.Random;
 
 @SuppressLint("DrawAllocation")
-public class BezierCustomView extends View {
-    private static final String TAG = "BezierCustomView";
+public class BezierCustomView1 extends View {
+    private static final String TAG = "BezierCustomView1";
     private Paint mPaint;
     private final List<PointF> mList = new ArrayList<>();
 
-    public BezierCustomView(Context context) {
+    public BezierCustomView1(Context context) {
         this(context, null);
     }
 
-    public BezierCustomView(Context context, @Nullable AttributeSet attrs) {
+    public BezierCustomView1(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public BezierCustomView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public BezierCustomView1(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -43,15 +42,29 @@ public class BezierCustomView extends View {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int width = getMeasuredWidth();
+        int height = getMeasuredHeight();
+        Log.i(TAG, "onMeasure: width = " + width + ", height = " + height);
+    }
+
+    /**
+     * 曲线穿过相邻点的中点:
+     * 先根据相邻点（P1,P2,P3）计算出相邻点的中点(P12,P23),
+     * 最后将（P1,P2,P3）作为控制点画出贝塞尔曲线.
+     */
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        Log.i(TAG, "onDraw: ");
         //清空画布
         canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.SRC_OVER);
 
         //随机生成数据
         mList.clear();
-        for (int i = 1; i < 100; i++) {
-            mList.add(new PointF(i * 10, new Random().nextInt(340) + 200));
+        for (int i = 1; i < 60; i++) {
+            mList.add(new PointF(i * 20, new Random().nextInt(300) + 20));
         }
 
         mPaint.setColor(Color.GRAY);

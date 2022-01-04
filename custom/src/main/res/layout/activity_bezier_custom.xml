@@ -9,9 +9,24 @@
         android:layout_height="wrap_content"
         android:text="重置贝塞尔曲线" />
 
-    <com.example.custom.widget.BezierCustomView
-        android:id="@+id/customview"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/reset_btn"
+        android:orientation="vertical">
+
+        <com.example.custom.widget.BezierCustomView1
+            android:id="@+id/customview1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.example.custom.widget.BezierCustomView2
+            android:id="@+id/customview2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
 </RelativeLayout>
