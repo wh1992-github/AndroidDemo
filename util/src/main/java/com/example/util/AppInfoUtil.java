@@ -84,6 +84,11 @@ public class AppInfoUtil {
         return mPackageInfo.applicationInfo.loadIcon(mPackageManager);
     }
 
+    //获取应用程序名称
+    public String getAppName(Context context) {
+        return context.getResources().getString(mPackageInfo.applicationInfo.labelRes);
+    }
+
     //获取所有已安装应用
     public static void getAllPackageInfo(Context context) {
         try {

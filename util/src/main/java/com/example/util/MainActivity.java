@@ -3,6 +3,7 @@ package com.example.util;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity---";
+    private ConstraintLayout mRootView;
     private ImageView mImageView;
     private SimpleDraweeView mSimpleDraweeView;
     private Button mButton;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ScreenUtils.printScreenParams(this);
+        mRootView = findViewById(R.id.constraint_layout);
         mImageView = findViewById(R.id.imageview);
         mSimpleDraweeView = findViewById(R.id.simpledraweeview);
         mButton = findViewById(R.id.button);
@@ -56,6 +59,24 @@ public class MainActivity extends AppCompatActivity {
         SerializableUtil.getObject();
 
         Log.i(TAG, "onClick: " + tryCatch());
+
+        //PhoneWindow
+        Log.i(TAG, "onClick: " + getWindow().getClass());
+        //DecorView
+        Log.i(TAG, "onClick: " + getWindow().getDecorView().getClass());
+        //ContentFrameLayout
+        Log.i(TAG, "onClick: " + mRootView.getParent().getClass());
+        //ActionBarOverlayLayout
+        Log.i(TAG, "onClick: " + mRootView.getParent().getParent().getClass());
+        //FrameLayout
+        Log.i(TAG, "onClick: " + mRootView.getParent().getParent().getParent().getClass());
+        //LinearLayout
+        Log.i(TAG, "onClick: " + mRootView.getParent().getParent().getParent().getParent().getClass());
+        //DecorView
+        Log.i(TAG, "onClick: " + mRootView.getParent().getParent().getParent().getParent().getParent().getClass());
+        //ViewRootImpl
+        Log.i(TAG, "onClick: " + mRootView.getParent().getParent().getParent().getParent().getParent().getParent().getClass());
+
     }
 
     public int tryCatch() {
