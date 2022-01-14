@@ -19,10 +19,12 @@ import android.widget.Toast;
 import com.example.device.util.DateUtil;
 import com.example.device.util.SwitchUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/4.
  */
-@SuppressLint(value = {"DefaultLocale", "SetTextI18n"})
+@SuppressLint({"SetTextI18n"})
 public class LocationActivity extends AppCompatActivity {
     private static final String TAG = "LocationActivity";
     private TextView tv_location;
@@ -66,7 +68,7 @@ public class LocationActivity extends AppCompatActivity {
         String bestProvider = mLocationMgr.getBestProvider(mCriteria, true);
         if (mLocationMgr.isProviderEnabled(bestProvider)) { //定位提供者当前可用
             tv_location.setText("正在获取" + bestProvider + "定位对象");
-            mLocation = String.format("定位类型=%s", bestProvider);
+            mLocation = String.format(Locale.getDefault(), "定位类型=%s", bestProvider);
             beginLocation(bestProvider);
             isLocationEnable = true;
         } else { //定位提供者暂不可用
@@ -78,7 +80,7 @@ public class LocationActivity extends AppCompatActivity {
     //设置定位结果文本
     private void setLocationText(Location location) {
         if (location != null) {
-            String desc = String.format("%s\n定位对象信息如下： " +
+            String desc = String.format(Locale.getDefault(), "%s\n定位对象信息如下： " +
                             "\n\t其中时间：%s" + "\n\t其中经度：%f,纬度：%f" +
                             "\n\t其中高度：%d米,精度：%d米",
                     mLocation, DateUtil.getNowDateTimeFormat(),

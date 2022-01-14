@@ -10,6 +10,8 @@ import android.graphics.RectF;
 import android.os.Debug;
 import android.util.Log;
 
+import java.util.Locale;
+
 /**
  * Keeps track of an entire Scene -- a bitmap (or virtual bitmap) that is much too large
  * to fit into memory. Clients subclass this class and extend its abstract methods to
@@ -326,7 +328,7 @@ public abstract class Scene {
                     }
                     window.set((int) w2.left, (int) w2.top, (int) w2.right, (int) w2.bottom);
                     zoom = newZoom;
-//                   Log.d(TAG,String.format(
+//                   Log.d(TAG,String.format(Locale.getDefault(),
 //                           "f=%.2f, z=%.2f, scrf(%.0f,%.0f), scnf(%.0f,%.0f) w1s(%.0f,%.0f) w2s(%.0f,%.0f) w1(%.0f,%.0f,%.0f,%.0f) w2(%.0f,%.0f,%.0f,%.0f)",
 //                           factor,
 //                           zoom,
@@ -375,7 +377,7 @@ public abstract class Scene {
 
         void setState(CacheState newState) {
             if (Debug.isDebuggerConnected())
-                Log.i(TAG, String.format("cacheState old=%s new=%s", state.toString(), newState.toString()));
+                Log.i(TAG, String.format(Locale.getDefault(), "cacheState old=%s new=%s", state.toString(), newState.toString()));
             state = newState;
         }
 
@@ -594,7 +596,7 @@ public abstract class Scene {
                             }
                             long done = System.currentTimeMillis();
                             if (Debug.isDebuggerConnected())
-                                Log.d(TAG, String.format("fillCache in %dms", done - start));
+                                Log.d(TAG, String.format(Locale.getDefault(), "fillCache in %dms", done - start));
                         } catch (OutOfMemoryError e) {
                             Log.d(TAG, "CacheThread out of memory");
                             /*

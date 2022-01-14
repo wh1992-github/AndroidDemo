@@ -1,6 +1,5 @@
 package com.example.network;
 
-import android.annotation.SuppressLint;
 import android.app.DownloadManager;
 import android.app.DownloadManager.Query;
 import android.app.DownloadManager.Request;
@@ -23,11 +22,12 @@ import android.widget.TextView;
 import com.example.network.widget.TextProgressCircle;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint("DefaultLocale")
+
 public class DownloadImageActivity extends AppCompatActivity {
     private Spinner sp_image_url;
     private ImageView iv_image_url;
@@ -165,12 +165,12 @@ public class DownloadImageActivity extends AppCompatActivity {
                 int status = isFinished ? DownloadManager.STATUS_SUCCESSFUL : cursor.getInt(statusIdx);
                 String desc = "";
                 //以下拼接图片下载任务的下载详情
-                desc = String.format("%s文件路径：%s\n", desc, mImagePath);
-                desc = String.format("%s媒体类型：%s\n", desc, cursor.getString(mediaTypeIdx));
-                desc = String.format("%s文件总大小：%d\n", desc, cursor.getLong(totalSizeIdx));
-                desc = String.format("%s已下载大小：%d\n", desc, cursor.getLong(nowSizeIdx));
-                desc = String.format("%s下载进度：%d%%\n", desc, progress);
-                desc = String.format("%s下载状态：%s\n", desc, mStatusMap.get(status));
+                desc = String.format(Locale.getDefault(), "%s文件路径：%s\n", desc, mImagePath);
+                desc = String.format(Locale.getDefault(), "%s媒体类型：%s\n", desc, cursor.getString(mediaTypeIdx));
+                desc = String.format(Locale.getDefault(), "%s文件总大小：%d\n", desc, cursor.getLong(totalSizeIdx));
+                desc = String.format(Locale.getDefault(), "%s已下载大小：%d\n", desc, cursor.getLong(nowSizeIdx));
+                desc = String.format(Locale.getDefault(), "%s下载进度：%d%%\n", desc, progress);
+                desc = String.format(Locale.getDefault(), "%s下载状态：%s\n", desc, mStatusMap.get(status));
                 tv_image_result.setText(desc);
             }
             cursor.close(); //关闭数据库游标

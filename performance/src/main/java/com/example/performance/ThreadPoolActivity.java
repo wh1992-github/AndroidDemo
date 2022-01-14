@@ -1,6 +1,5 @@
 package com.example.performance;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,6 +14,7 @@ import android.widget.TextView;
 import com.example.performance.util.DateUtil;
 
 import java.lang.ref.WeakReference;
+import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by test on 2017/12/27.
  */
-@SuppressLint("DefaultLocale")
+
 public class ThreadPoolActivity extends AppCompatActivity {
     private static final String TAG = "ThreadPoolActivity";
     private TextView tv_desc;
@@ -105,7 +105,7 @@ public class ThreadPoolActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             ThreadPoolActivity act = mActivity.get();
             if (act != null) {
-                act.mDesc = String.format("%s\n%s 当前序号是%d",
+                act.mDesc = String.format(Locale.getDefault(), "%s\n%s 当前序号是%d",
                         act.mDesc, DateUtil.getNowTime(), msg.arg1);
                 act.tv_desc.setText(act.mDesc);
             }

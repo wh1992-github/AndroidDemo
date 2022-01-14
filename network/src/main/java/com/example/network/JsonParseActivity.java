@@ -1,6 +1,5 @@
 package com.example.network;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,11 +11,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Iterator;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint("DefaultLocale")
+
 public class JsonParseActivity extends AppCompatActivity implements OnClickListener {
     private TextView tv_json;
     private String mJsonStr;
@@ -89,9 +89,9 @@ public class JsonParseActivity extends AppCompatActivity implements OnClickListe
             String desc = obj.getString("desc");
             //获得名叫count的整型参数
             int count = obj.getInt("count");
-            result = String.format("%sname=%s\n", result, name);
-            result = String.format("%sdesc=%s\n", result, desc);
-            result = String.format("%scount=%d\n", result, count);
+            result = String.format(Locale.getDefault(), "%sname=%s\n", result, name);
+            result = String.format(Locale.getDefault(), "%sdesc=%s\n", result, desc);
+            result = String.format(Locale.getDefault(), "%scount=%d\n", result, count);
             //获得名叫list的数组参数
             JSONArray listArray = obj.getJSONArray("list");
             for (int i = 0; i < listArray.length(); i++) {
@@ -99,7 +99,7 @@ public class JsonParseActivity extends AppCompatActivity implements OnClickListe
                 JSONObject list_item = listArray.getJSONObject(i);
                 //获得名叫item的字符串参数
                 String item = list_item.getString("item");
-                result = String.format("%s\titem=%s\n", result, item);
+                result = String.format(Locale.getDefault(), "%s\titem=%s\n", result, item);
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -118,7 +118,7 @@ public class JsonParseActivity extends AppCompatActivity implements OnClickListe
             while (it.hasNext()) { //遍历JSONObject
                 String key = it.next(); //获得下一个键的名称
                 String value = obj.getString(key); //获得与该键对应的值信息
-                result = String.format("%skey=%s, value=%s\n", result, key, value);
+                result = String.format(Locale.getDefault(), "%skey=%s, value=%s\n", result, key, value);
             }
         } catch (JSONException e) {
             e.printStackTrace();

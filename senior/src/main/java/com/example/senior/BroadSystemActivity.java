@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.senior.util.DateUtil;
 
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -60,9 +61,9 @@ public class BroadSystemActivity extends AppCompatActivity {
                 Set<String> key_set = bundle.keySet();
                 String content = "";
                 for (String key : key_set) {
-                    content = String.format("%s\n%s=%s", content, key, bundle.get(key));
+                    content = String.format(Locale.getDefault(), "%s\n%s=%s", content, key, bundle.get(key));
                 }
-                desc = String.format("%s\n%s 收到一个%s广播, 内容是%s", desc,
+                desc = String.format(Locale.getDefault(), "%s\n%s 收到一个%s广播, 内容是%s", desc,
                         DateUtil.getNowTime(), intent.getAction(), content);
                 tv_system.setText(desc);
             }

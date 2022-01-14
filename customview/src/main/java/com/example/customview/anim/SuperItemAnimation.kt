@@ -14,14 +14,21 @@ abstract class SuperItemAnimation(animDuration: Long = 200) : BaseItemAnimation(
     abstract fun setAddItemAnim(holder: RecyclerView.ViewHolder?, animator: ViewPropertyAnimator?)
     abstract fun setAddItemAnimCancel(holder: RecyclerView.ViewHolder?)
 
-    abstract fun setRemoveItemAnim(holder: RecyclerView.ViewHolder?, animator: ViewPropertyAnimator?)
+    abstract fun setRemoveItemAnim(
+        holder: RecyclerView.ViewHolder?,
+        animator: ViewPropertyAnimator?
+    )
+
     abstract fun setRemoveItemAnimEnd(holder: RecyclerView.ViewHolder?)
 
     override fun setAddItemAnimationInit(holder: RecyclerView.ViewHolder?) {
         setAddItemAnimInit(holder)
     }
 
-    override fun setAddItemAnimation(holder: RecyclerView.ViewHolder?, animator: ViewPropertyAnimator?) {
+    override fun setAddItemAnimation(
+        holder: RecyclerView.ViewHolder?,
+        animator: ViewPropertyAnimator?
+    ) {
         setAddItemAnim(holder, animator)
     }
 
@@ -29,7 +36,10 @@ abstract class SuperItemAnimation(animDuration: Long = 200) : BaseItemAnimation(
         setAddItemAnimCancel(holder)
     }
 
-    override fun setRemoveAnimation(holder: RecyclerView.ViewHolder?, animator: ViewPropertyAnimator?) {
+    override fun setRemoveAnimation(
+        holder: RecyclerView.ViewHolder?,
+        animator: ViewPropertyAnimator?
+    ) {
         setRemoveItemAnim(holder, animator)
     }
 
@@ -37,7 +47,10 @@ abstract class SuperItemAnimation(animDuration: Long = 200) : BaseItemAnimation(
         setRemoveItemAnimEnd(holder)
     }
 
-    override fun setOldChangeAnimation(holder: RecyclerView.ViewHolder?, animator: ViewPropertyAnimator?) {
+    override fun setOldChangeAnimation(
+        holder: RecyclerView.ViewHolder?,
+        animator: ViewPropertyAnimator?
+    ) {
         animator?.alpha(0f)
     }
 
@@ -49,7 +62,10 @@ abstract class SuperItemAnimation(animDuration: Long = 200) : BaseItemAnimation(
         holder?.itemView?.alpha = 0f
     }
 
-    override fun setNewChangeAnimation(holder: RecyclerView.ViewHolder?, animator: ViewPropertyAnimator?) {
+    override fun setNewChangeAnimation(
+        holder: RecyclerView.ViewHolder?,
+        animator: ViewPropertyAnimator?
+    ) {
         animator?.alpha(1f)
     }
 

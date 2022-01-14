@@ -19,6 +19,8 @@ import com.example.test.encrypt.MD5Util;
 import com.example.test.encrypt.RSAUtil;
 import com.example.test.sm3.SM3Digest;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/28.
  */
@@ -61,7 +63,7 @@ public class EncryptActivity extends AppCompatActivity implements OnClickListene
                 String seed = "a";
                 String enStr = AesUtil.encrypt(seed, raw);
                 String deStr = AesUtil.decrypt(seed, enStr);
-                String desc = String.format("AES的加密结果是:%s\n解密结果是:%s", enStr, deStr);
+                String desc = String.format(Locale.getDefault(), "AES的加密结果是:%s\n解密结果是:%s", enStr, deStr);
                 tv_des.setText(desc);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -71,7 +73,7 @@ public class EncryptActivity extends AppCompatActivity implements OnClickListene
             String key = "a";
             String enStr = Des3Util.encrypt(key, raw);
             String deStr = Des3Util.decrypt(key, enStr);
-            String desc = String.format("3DES的加密结果是:%s\n解密结果是:%s", enStr, deStr);
+            String desc = String.format(Locale.getDefault(), "3DES的加密结果是:%s\n解密结果是:%s", enStr, deStr);
             tv_des.setText(desc);
         } else if (v.getId() == R.id.btn_sm3) {
             String enStr = SM3Digest.encrypt(raw);

@@ -1,6 +1,5 @@
 package com.example.device;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
@@ -22,11 +21,12 @@ import com.app.zxing.view.ViewfinderView;
 import com.google.zxing.Result;
 
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/11/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class FindScanActivity extends AppCompatActivity implements SurfaceHolder.Callback {
     private static final String TAG = "FindScanActivity";
     private CaptureActivityHandler mHandler;
@@ -91,7 +91,7 @@ public class FindScanActivity extends AppCompatActivity implements SurfaceHolder
         if (resultString == null || resultString.length() <= 0) {
             Toast.makeText(this, "Scan failed or result is null", Toast.LENGTH_SHORT).show();
         } else {
-            String desc = String.format("barcode width=%d,height=%d",
+            String desc = String.format(Locale.getDefault(), "barcode width=%d,height=%d",
                     barcode.getWidth(), barcode.getHeight());
             Toast.makeText(this, desc, Toast.LENGTH_SHORT).show();
             //跳到扫描结果页面

@@ -1,6 +1,5 @@
 package com.example.group;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -14,10 +13,12 @@ import com.example.group.util.StatusBarUtil;
 import com.example.group.util.Utils;
 import com.example.group.widget.BannerPager;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2018/2/24.
  */
-@SuppressLint("DefaultLocale")
+
 public class BannerTopActivity extends AppCompatActivity implements
         OnClickListener, BannerPager.BannerClickListener {
     private static final String TAG = "BannerTopActivity";
@@ -48,7 +49,7 @@ public class BannerTopActivity extends AppCompatActivity implements
 
     //一旦点击了广告图,就回调监听器的onBannerClick方法
     public void onBannerClick(int position) {
-        String desc = String.format("您点击了第%d张图片", position + 1);
+        String desc = String.format(Locale.getDefault(), "您点击了第%d张图片", position + 1);
         Toast.makeText(this, desc, Toast.LENGTH_SHORT).show();
     }
 

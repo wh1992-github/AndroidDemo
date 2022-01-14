@@ -1,6 +1,5 @@
 package com.example.mixture.service;
 
-import android.annotation.SuppressLint;
 import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
@@ -10,11 +9,12 @@ import com.example.mixture.bean.BookInfo;
 import com.example.mixture.util.AssetsUtil;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by test on 2018/1/8.
  */
-@SuppressLint("DefaultLocale")
+
 public class CopyFileService extends IntentService {
     private static final String TAG = "CopyFileService";
 
@@ -41,7 +41,7 @@ public class CopyFileService extends IntentService {
             }
             //把演示用的电子书信息添加到SQLite数据库
             EbookReaderActivity.helper.insert(bookArray);
-            String desc = String.format("已成功复制%d个电子书文件", pathArray.size());
+            String desc = String.format(Locale.getDefault(), "已成功复制%d个电子书文件", pathArray.size());
             Log.d(TAG, desc);
         }
         Log.d(TAG, "end onHandleIntent");

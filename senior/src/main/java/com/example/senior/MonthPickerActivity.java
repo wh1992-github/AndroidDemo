@@ -1,6 +1,5 @@
 package com.example.senior;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,10 +8,12 @@ import android.widget.TextView;
 
 import com.example.senior.widget.MonthPicker;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/7.
  */
-@SuppressLint("DefaultLocale")
+
 public class MonthPickerActivity extends AppCompatActivity implements OnClickListener {
     private TextView tv_month;
     private MonthPicker mp_month; //声明一个月份选择器对象
@@ -31,7 +32,7 @@ public class MonthPickerActivity extends AppCompatActivity implements OnClickLis
     public void onClick(View v) {
         if (v.getId() == R.id.btn_ok) {
             //获取月份选择器mp_month设定的年月
-            String desc = String.format("您选择的月份是%d年%d月",
+            String desc = String.format(Locale.getDefault(), "您选择的月份是%d年%d月",
                     mp_month.getYear(), mp_month.getMonth() + 1);
             tv_month.setText(desc);
         }

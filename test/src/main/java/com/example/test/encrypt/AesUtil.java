@@ -1,5 +1,6 @@
 package com.example.test.encrypt;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 
 import java.security.Provider;
@@ -10,6 +11,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+@SuppressLint({"GetInstance", "DeletedProvider"})
 public class AesUtil {
     private static final String Algorithm = "AES";
     private static final String HEX = "0123456789ABCDEF";

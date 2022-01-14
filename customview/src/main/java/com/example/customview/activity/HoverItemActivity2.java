@@ -34,7 +34,7 @@ public class HoverItemActivity2 extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.recyclerView);
         //添加数据
         addData();
-        mAdapter = new HoverItemAdapter2(this, mDatas);
+        mAdapter = new HoverItemAdapter2(mDatas);
         mRecyclerView.setAdapter(mAdapter);
         //线性layout
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

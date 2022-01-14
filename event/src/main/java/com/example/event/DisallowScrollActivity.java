@@ -1,6 +1,5 @@
 package com.example.event;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout.LayoutParams;
@@ -11,10 +10,12 @@ import com.example.event.util.Utils;
 import com.example.event.widget.BannerFlipper;
 import com.example.event.widget.BannerFlipper.BannerClickListener;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/23.
  */
-@SuppressLint("DefaultLocale")
+
 public class DisallowScrollActivity extends AppCompatActivity implements BannerClickListener {
     private static final String TAG = "DisallowScrollActivity";
     private TextView tv_flipper;
@@ -38,7 +39,7 @@ public class DisallowScrollActivity extends AppCompatActivity implements BannerC
 
     //在点击横幅图片时触发
     public void onBannerClick(int position) {
-        String desc = String.format("您点击了第%d张图片", position + 1);
+        String desc = String.format(Locale.getDefault(), "您点击了第%d张图片", position + 1);
         tv_flipper.setText(desc);
     }
 

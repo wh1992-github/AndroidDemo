@@ -1,6 +1,5 @@
 package com.example.device;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -10,12 +9,13 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 /**
  * Created by test on 2017/11/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class SensorActivity extends AppCompatActivity {
     private TextView tv_sensor;
     private String[] mSensorType = {
@@ -49,7 +49,7 @@ public class SensorActivity extends AppCompatActivity {
         for (Map.Entry<Integer, String> item_map : mapSensor.entrySet()) {
             int type = item_map.getKey();
             String name = item_map.getValue();
-            String content = String.format("%d %s：%s\n", type, mSensorType[type - 1], name);
+            String content = String.format(Locale.getDefault(), "%d %s：%s\n", type, mSensorType[type - 1], name);
             show_content += content;
         }
         tv_sensor.setText(show_content);

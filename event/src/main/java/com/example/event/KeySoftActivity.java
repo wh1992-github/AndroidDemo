@@ -1,6 +1,5 @@
 package com.example.event;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -10,10 +9,12 @@ import android.view.View.OnKeyListener;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/23.
  */
-@SuppressLint("DefaultLocale")
+
 public class KeySoftActivity extends AppCompatActivity implements OnKeyListener {
     private TextView tv_result;
     private String desc = "";
@@ -32,23 +33,23 @@ public class KeySoftActivity extends AppCompatActivity implements OnKeyListener 
     //在发生按键动作时触发
     public boolean onKey(View v, int keyCode, KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            desc = String.format("%s输入的软按键编码是%d,动作是按下", desc, keyCode);
+            desc = String.format(Locale.getDefault(), "%s输入的软按键编码是%d,动作是按下", desc, keyCode);
             if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                desc = String.format("%s, 按键为回车键", desc);
+                desc = String.format(Locale.getDefault(), "%s, 按键为回车键", desc);
             } else if (keyCode == KeyEvent.KEYCODE_DEL) {
-                desc = String.format("%s, 按键为删除键", desc);
+                desc = String.format(Locale.getDefault(), "%s, 按键为删除键", desc);
             } else if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-                desc = String.format("%s, 按键为搜索键", desc);
+                desc = String.format(Locale.getDefault(), "%s, 按键为搜索键", desc);
             } else if (keyCode == KeyEvent.KEYCODE_BACK) {
-                desc = String.format("%s, 按键为返回键", desc);
+                desc = String.format(Locale.getDefault(), "%s, 按键为返回键", desc);
                 //延迟3秒后启动页面关闭任务
                 new Handler().postDelayed(mFinish, 3000);
             } else if (keyCode == KeyEvent.KEYCODE_MENU) {
-                desc = String.format("%s, 按键为菜单键", desc);
+                desc = String.format(Locale.getDefault(), "%s, 按键为菜单键", desc);
             } else if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-                desc = String.format("%s, 按键为加大音量键", desc);
+                desc = String.format(Locale.getDefault(), "%s, 按键为加大音量键", desc);
             } else if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
-                desc = String.format("%s, 按键为减小音量键", desc);
+                desc = String.format(Locale.getDefault(), "%s, 按键为减小音量键", desc);
             }
             desc = desc + "\n";
             tv_result.setText(desc);

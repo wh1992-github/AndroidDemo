@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.example.custom.service.BindImmediateService;
 import com.example.custom.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/14.
  */
@@ -52,7 +54,7 @@ public class BindImmediateActivity extends AppCompatActivity implements OnClickL
 
     public static void showText(String desc) {
         if (tv_immediate != null) {
-            mDesc = String.format("%s%s %s\n", mDesc, DateUtil.getNowDateTime("HH:mm:ss"), desc);
+            mDesc = String.format(Locale.getDefault(), "%s%s %s\n", mDesc, DateUtil.getNowDateTime("HH:mm:ss"), desc);
             tv_immediate.setText(mDesc);
         }
     }

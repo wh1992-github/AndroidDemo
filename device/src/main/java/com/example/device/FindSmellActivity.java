@@ -1,7 +1,6 @@
 package com.example.device;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
@@ -24,12 +23,13 @@ import com.example.device.util.SwitchUtil;
 import com.example.device.widget.CompassView;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
  * Created by test on 2017/11/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class FindSmellActivity extends AppCompatActivity {
     private static final String TAG = "FindSmellActivity";
     private TextView tv_satellite;
@@ -87,7 +87,7 @@ public class FindSmellActivity extends AppCompatActivity {
     //设置定位结果文本
     private void setLocationText(Location location) {
         if (location != null) {
-            String desc = String.format("当前定位类型：%s,定位时间：%s" +
+            String desc = String.format(Locale.getDefault(), "当前定位类型：%s,定位时间：%s" +
                             "\n经度：%f,纬度：%f\n高度：%d米,精度：%d米",
                     mLocationType, DateUtil.getNowTime(),
                     location.getLongitude(), location.getLatitude(),

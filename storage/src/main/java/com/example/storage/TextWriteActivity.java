@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.example.storage.util.DateUtil;
 import com.example.storage.util.FileUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/1.
  */
@@ -91,12 +93,12 @@ public class TextWriteActivity extends AppCompatActivity implements OnClickListe
             }
 
             String content = "";
-            content = String.format("%s　姓名：%s\n", content, name);
-            content = String.format("%s　年龄：%s\n", content, age);
-            content = String.format("%s　身高：%scm\n", content, height);
-            content = String.format("%s　体重：%skg\n", content, weight);
-            content = String.format("%s　婚否：%s\n", content, typeArray[!bMarried ? 0 : 1]);
-            content = String.format("%s　注册时间：%s\n", content, DateUtil.getNowDateTime("yyyy-MM-dd HH:mm:ss"));
+            content = String.format(Locale.getDefault(), "%s　姓名：%s\n", content, name);
+            content = String.format(Locale.getDefault(), "%s　年龄：%s\n", content, age);
+            content = String.format(Locale.getDefault(), "%s　身高：%scm\n", content, height);
+            content = String.format(Locale.getDefault(), "%s　体重：%skg\n", content, weight);
+            content = String.format(Locale.getDefault(), "%s　婚否：%s\n", content, typeArray[!bMarried ? 0 : 1]);
+            content = String.format(Locale.getDefault(), "%s　注册时间：%s\n", content, DateUtil.getNowDateTime("yyyy-MM-dd HH:mm:ss"));
             if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
                 String file_path = mPath + DateUtil.getNowDateTime("") + ".txt";
                 //把文本字符串保存为文本文件

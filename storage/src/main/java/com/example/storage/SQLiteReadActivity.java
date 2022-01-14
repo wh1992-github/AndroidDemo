@@ -1,6 +1,5 @@
 package com.example.storage;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,11 +11,12 @@ import com.example.storage.bean.UserInfo;
 import com.example.storage.database.UserDBHelper;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/1.
  */
-@SuppressLint("DefaultLocale")
+
 public class SQLiteReadActivity extends AppCompatActivity implements OnClickListener {
     private UserDBHelper mHelper; //声明一个用户数据库帮助器的对象
     private TextView tv_sqlite;
@@ -37,16 +37,16 @@ public class SQLiteReadActivity extends AppCompatActivity implements OnClickList
         }
         //执行数据库帮助器的查询操作
         ArrayList<UserInfo> userArray = mHelper.query("1=1");
-        String desc = String.format("数据库查询到%d条记录,详情如下：", userArray.size());
+        String desc = String.format(Locale.getDefault(), "数据库查询到%d条记录,详情如下：", userArray.size());
         for (int i = 0; i < userArray.size(); i++) {
             UserInfo info = userArray.get(i);
-            desc = String.format("%s\n第%d条记录信息如下：", desc, i + 1);
-            desc = String.format("%s\n　姓名为%s", desc, info.name);
-            desc = String.format("%s\n　年龄为%d", desc, info.age);
-            desc = String.format("%s\n　身高为%d", desc, info.height);
-            desc = String.format("%s\n　体重为%f", desc, info.weight);
-            desc = String.format("%s\n　婚否为%b", desc, info.married);
-            desc = String.format("%s\n　更新时间为%s", desc, info.update_time);
+            desc = String.format(Locale.getDefault(), "%s\n第%d条记录信息如下：", desc, i + 1);
+            desc = String.format(Locale.getDefault(), "%s\n　姓名为%s", desc, info.name);
+            desc = String.format(Locale.getDefault(), "%s\n　年龄为%d", desc, info.age);
+            desc = String.format(Locale.getDefault(), "%s\n　身高为%d", desc, info.height);
+            desc = String.format(Locale.getDefault(), "%s\n　体重为%f", desc, info.weight);
+            desc = String.format(Locale.getDefault(), "%s\n　婚否为%b", desc, info.married);
+            desc = String.format(Locale.getDefault(), "%s\n　更新时间为%s", desc, info.update_time);
         }
         if (userArray.size() <= 0) {
             desc = "数据库查询到的记录为空";

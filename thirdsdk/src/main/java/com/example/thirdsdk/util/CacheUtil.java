@@ -1,6 +1,5 @@
 package com.example.thirdsdk.util;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -15,8 +14,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
+
 public class CacheUtil {
 
     public static boolean isAvailable(Context context, String packageName) {
@@ -78,8 +78,8 @@ public class CacheUtil {
     }
 
     public static String formatDecimal(double value, int digit) {
-        String format = String.format("%%.%df", digit);
-        return String.format(format, value);
+        String format = String.format(Locale.getDefault(), "%%.%df", digit);
+        return String.format(Locale.getDefault(), format, value);
     }
 
 }

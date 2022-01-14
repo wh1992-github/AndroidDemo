@@ -22,7 +22,7 @@ public class ImageCacheActivity extends AppCompatActivity implements OnClickList
     private ListView lv_cache; //声明一个用于展示网络图片的列表视图对象
     private ImageCache mCache; //声明一个图片缓存对象
     //这个是单个图像视图随机展示的图片数组。其中前六张图片可以正常访问,后两张图片不能正常访问
-    private String[] mPlaceImg = {
+    private static final String[] mPlaceImg = {
             "http://b258.photo.store.qq.com/psb?/V11ZojBI312o2K/XM9Hdo68BzvH6ZObpYKkjmlD41ALDfuM8YhJ*SeaVmE!/b/dCxrz5koFgAA&bo=VQOAAgAAAAABB*Q!&rf=viewer_4",
             "http://b247.photo.store.qq.com/psb?/V11ZojBI312o2K/63aY8a4M5quhi.78*krOo7k3Gu3cknuclBJHS3g1fpc!/b/dDXWPZMlBgAA&bo=VQOAAgAAAAABB*Q!&rf=viewer_4",
             "http://b249.photo.store.qq.com/psb?/V11ZojBI312o2K/JMmveEpaF8rq1MD3fl7j84t1Py2DYodwY29TAbt0dMo!/b/dPYKbJQdBwAA&bo=VQOAAgAAAAABB*Q!&rf=viewer_4",
@@ -33,7 +33,7 @@ public class ImageCacheActivity extends AppCompatActivity implements OnClickList
             "http://b247.photo.store.qq.com/psb?/viewer_5",
     };
     //这个是列表视图统一展示的图片数组
-    private String[] mListImg = {
+    private static final String[] mListImg = {
             "http://b86.photo.store.qq.com/psb?/V11ZojBI3Em2xO/XeY2fKiZrmNHT1V4kA16giHVzucf0pVfR7e6L*0QABE!/b/YSNZUDPQWAAAYpO.SzO.WAAA&bo=ngL2AQAAAAABBEg!&rf=viewer_4",
             "http://b85.photo.store.qq.com/psb?/V11ZojBI3Em2xO/UywnWltcpgsSUNjNOeYnTCl1vMrwlh6Eyu7m7gLn7RA!/b/YaEyszJjhwAAYjEuszKIiAAA&bo=ngL2AQAAAAABBEg!&rf=viewer_4",
             "http://b85.photo.store.qq.com/psb?/V11ZojBI3Em2xO/EtfxWhkZu23WJMBsUMBOWH9KojgEHl4*22hHvO*600Y!/b/YV.frjLShgAAYseUrjJdhwAA&bo=ngL2AQAAAAABBEg!&rf=viewer_4",

@@ -20,6 +20,7 @@ import com.example.event.widget.BitmapView;
 import com.example.event.widget.MeituView;
 import com.example.event.widget.MeituView.ImageChangetListener;
 
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -56,7 +57,7 @@ public class MeituActivity extends AppCompatActivity implements
     //点击文件保存对话框的确定按钮后触发
     public void onConfirmSave(String absolutePath, String fileName) {
         //拼接文件的完整路径
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         //把位图数据保存为图片文件
         BitmapUtil.saveBitmap(path, mBitmap, "jpg", 80);
         Toast.makeText(this, "成功保存图片文件：" + path, Toast.LENGTH_LONG).show();
@@ -66,7 +67,7 @@ public class MeituActivity extends AppCompatActivity implements
     public void onConfirmSelect(String absolutePath, String fileName, Map<String, Object> map_param) {
         tv_intro.setVisibility(View.GONE);
         //拼接文件的完整路径
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         //从指定路径的图片文件中获取位图数据
         Bitmap bitmap = BitmapUtil.openBitmap(path);
         //设置位图视图的位图对象

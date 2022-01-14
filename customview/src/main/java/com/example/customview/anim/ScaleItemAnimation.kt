@@ -21,7 +21,10 @@ class ScaleItemAnimation(animDuration: Long = 500) : SuperItemAnimation(animDura
         holder?.itemView?.scaleY = 1f
     }
 
-    override fun setRemoveItemAnim(holder: RecyclerView.ViewHolder?, animator: ViewPropertyAnimator?) {
+    override fun setRemoveItemAnim(
+        holder: RecyclerView.ViewHolder?,
+        animator: ViewPropertyAnimator?
+    ) {
         holder?.itemView?.pivotX = 1f
         holder?.itemView?.pivotY = 1f
         animator?.scaleX(0f)?.scaleY(0f)

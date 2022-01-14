@@ -1,10 +1,12 @@
 package com.example.util;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
+@SuppressLint("StaticFieldLeak")
 public class AndroidApplication extends Application {
     private static Context sContext;
 

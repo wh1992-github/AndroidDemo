@@ -21,6 +21,7 @@ import com.example.network.bean.MailBox;
 import com.example.network.bean.MailItem;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MailExpandAdapter implements ExpandableListAdapter, OnGroupClickListener, OnChildClickListener {
     private static final String TAG = "MailExpandAdapter";
@@ -118,7 +119,7 @@ public class MailExpandAdapter implements ExpandableListAdapter, OnGroupClickLis
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 MailBox box = mBoxList.get(groupPosition);
                 MailItem item = box.mail_list.get(childPosition);
-                String desc = String.format("您点击了%s的邮件,标题是%s", box.box_title, item.mail_title);
+                String desc = String.format(Locale.getDefault(), "您点击了%s的邮件,标题是%s", box.box_title, item.mail_title);
                 Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
             }
         });
@@ -183,7 +184,7 @@ public class MailExpandAdapter implements ExpandableListAdapter, OnGroupClickLis
     //在分组标题被点击时触发。如果返回true,就不会展示子列表
     public boolean onGroupClick(ExpandableListView parent, View v,
                                 int groupPosition, long id) {
-        String desc = String.format("您点击了%s", mBoxList.get(groupPosition).box_title);
+        String desc = String.format(Locale.getDefault(), "您点击了%s", mBoxList.get(groupPosition).box_title);
         Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
         return false;
     }

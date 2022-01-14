@@ -44,7 +44,7 @@ import java.util.Set;
 /**
  * Created by test on 2017/12/11.
  */
-@SuppressLint(value = {"SetTextI18n", "HandlerLeak"})
+@SuppressLint({"SetTextI18n", "HandlerLeak"})
 public class BluetoothTransActivity extends AppCompatActivity implements
         OnItemClickListener, OnCheckedChangeListener,
         BlueConnectListener, InputCallbacks, BlueAcceptListener {

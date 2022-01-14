@@ -31,6 +31,7 @@ import com.example.device.util.DateUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Locale;
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class Camera2View extends TextureView {
@@ -308,7 +309,7 @@ public class Camera2View extends TextureView {
         @Override
         public void run() {
             //获取本次拍摄的照片保存路径
-            String path = String.format("%s%s.jpg", BitmapUtil.getCachePath(mContext), DateUtil.getNowDateTime());
+            String path = String.format(Locale.getDefault(), "%s%s.jpg", BitmapUtil.getCachePath(mContext), DateUtil.getNowDateTime());
             Log.d(TAG, "正在保存图片 path=" + path);
             //保存图片文件
             BitmapUtil.saveBitmap(path, mImage.getPlanes()[0].getBuffer(), 4, "JPEG", 80);

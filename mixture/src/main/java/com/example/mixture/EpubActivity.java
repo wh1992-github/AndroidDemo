@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 
 import nl.siegmann.epublib.domain.Author;
 import nl.siegmann.epublib.domain.Book;
@@ -116,7 +117,7 @@ public class EpubActivity extends AppCompatActivity {
         List<Resource> contents = book.getContents();
         for (int i = 0; i < contents.size(); i++) {
             //获取该网页的链接地址,并添加到网页队列中
-            String href = String.format("%s/%s", mDir, contents.get(i).getHref());
+            String href = String.format(Locale.getDefault(), "%s/%s", mDir, contents.get(i).getHref());
             htmlArray.add(href);
         }
         //下面使用ViewPager展示每页的WebView内容
@@ -135,9 +136,9 @@ public class EpubActivity extends AppCompatActivity {
         String autors = "作者：";
         for (int i = 0; i < authorArray.size(); i++) {
             if (i == 0) {
-                autors = String.format("%s%s", autors, authorArray.get(i).toString());
+                autors = String.format(Locale.getDefault(), "%s%s", autors, authorArray.get(i).toString());
             } else {
-                autors = String.format("%s, %s", autors, authorArray.get(i).toString());
+                autors = String.format(Locale.getDefault(), "%s, %s", autors, authorArray.get(i).toString());
             }
         }
         autors = autors.replace(",", "");
@@ -153,7 +154,7 @@ public class EpubActivity extends AppCompatActivity {
         //获取该书的页数,同时更新数据库中该书信息
         EbookReaderActivity.updatePageCount(mPath,
                 book.getContents().size(), title, autors);
-        String fullTitle = String.format("%s（%s）", title, autors);
+        String fullTitle = String.format(Locale.getDefault(), "%s（%s）", title, autors);
         tv_title.setText(fullTitle);
     }
 

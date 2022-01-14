@@ -1,12 +1,11 @@
 package com.example.device.nfc;
 
-import android.annotation.SuppressLint;
 import android.nfc.tech.IsoDep;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
 public class BusCard {
     private static final String TAG = "BusCard";
     private static final int SFI_EXTRA_LOG = 4;
@@ -77,16 +76,16 @@ public class BusCard {
         }
         final byte[] d = info.getBytes();
         mSerial = NfcUtil.toHexString(d, 0, 8);
-        mVersion = String.format("%02X.%02X%02X", d[8], d[9], d[10]);
-        mValidDate = String.format("%02X%02X.%02X.%02X - %02X%02X.%02X.%02X",
+        mVersion = String.format(Locale.getDefault(), "%02X.%02X%02X", d[8], d[9], d[10]);
+        mValidDate = String.format(Locale.getDefault(), "%02X%02X.%02X.%02X - %02X%02X.%02X.%02X",
                 d[24], d[25], d[26], d[27], d[28], d[29], d[30], d[31]);
         if (cnt != null && cnt.isOkey() && cnt.size() > 4) {
             byte[] e = cnt.getBytes();
             final int n = NfcUtil.toInt(e, 1, 4);
             if (e[0] == 0) {
-                mUsedCount = String.format("%d", n);
+                mUsedCount = String.format(Locale.getDefault(), "%d", n);
             } else {
-                mUsedCount = String.format("%d*", n);
+                mUsedCount = String.format(Locale.getDefault(), "%d*", n);
             }
         }
     }
@@ -130,7 +129,7 @@ public class BusCard {
             for (byte[] v : log) {
                 int cash = NfcUtil.toInt(v, 5, 4);
                 if (cash > 0) {
-                    desc = String.format("%s\n%02X%02X-%02X-%02X %02X:%02X:%02X %s了%s元",
+                    desc = String.format(Locale.getDefault(), "%s\n%02X%02X-%02X-%02X %02X:%02X:%02X %s了%s元",
                             desc, v[16], v[17], v[18], v[19], v[20], v[21], v[22],
                             (v[9] == TRANS_CSU || v[9] == TRANS_CSU_CPX) ? "消费" : "充值",
                             NfcUtil.toAmountString(cash / 100.0f));
@@ -153,7 +152,7 @@ public class BusCard {
     }
 
     private String formatInfo() {
-        return String.format("\t卡内余额：%s元\n\t序列号：%s\n\t版本号：%s\n\t有效期：%s\n\t一共使用了%s次\n\t刷卡记录如下：%s",
+        return String.format(Locale.getDefault(), "\t卡内余额：%s元\n\t序列号：%s\n\t版本号：%s\n\t有效期：%s\n\t一共使用了%s次\n\t刷卡记录如下：%s",
                 mBalance, mSerial, mVersion, mValidDate, mUsedCount, mConsumeLog);
     }
 

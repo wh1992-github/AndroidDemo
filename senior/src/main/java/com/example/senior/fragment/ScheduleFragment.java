@@ -1,11 +1,11 @@
 package com.example.senior.fragment;
 
-import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -27,8 +27,8 @@ import com.example.senior.database.ScheduleArrangeHelper;
 import com.example.senior.util.DateUtil;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-@SuppressLint(value = {"SimpleDateFormat", "DefaultLocale"})
 public class ScheduleFragment extends Fragment {
     private static final String TAG = "ScheduleFragment";
     protected View mView; //声明一个视图对象
@@ -38,7 +38,7 @@ public class ScheduleFragment extends Fragment {
     private int mYear, mMonth, mDay; //当前选择周数的星期一对应的年、月、日
     private int first_pos = 0; //当前选择周数的星期一在该月月历中的位置
     private String thisDate; //当前选择周数的星期一的具体日期
-    private ArrayList<CalendarTransfer> tranArray = new ArrayList<>();
+    private final ArrayList<CalendarTransfer> tranArray = new ArrayList<>();
     private ScheduleArrangeHelper mArrangeHelper; //声明一个日程安排的数据库帮助器
 
     //获取该碎片的一个实例
@@ -51,7 +51,7 @@ public class ScheduleFragment extends Fragment {
     }
 
     //创建碎片视图
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContext = getActivity(); //获取活动页面的上下文
         if (getArguments() != null) { //如果碎片携带有包裹,则打开包裹获取参数信息
             mSelectedWeek = getArguments().getInt("week", 1);
@@ -138,9 +138,9 @@ public class ScheduleFragment extends Fragment {
         //获得数据库帮助器的实例
         mArrangeHelper = new ScheduleArrangeHelper(mContext, DbHelper.db_name, null, 1);
         CalendarTransfer begin_trans = tranArray.get(0);
-        String begin_day = String.format("%s%02d%02d", begin_trans.solar_year, begin_trans.solar_month, begin_trans.solar_day);
+        String begin_day = String.format(Locale.getDefault(), "%s%02d%02d", begin_trans.solar_year, begin_trans.solar_month, begin_trans.solar_day);
         CalendarTransfer end_trans = tranArray.get(tranArray.size() - 1);
-        String end_day = String.format("%s%02d%02d", end_trans.solar_year, end_trans.solar_month, end_trans.solar_day);
+        String end_day = String.format(Locale.getDefault(), "%s%02d%02d", end_trans.solar_year, end_trans.solar_month, end_trans.solar_day);
         //根据开始日期和结束日期,到数据库中查询这几天的日程安排信息
         ArrayList<ScheduleArrange> arrangeList = (ArrayList<ScheduleArrange>) mArrangeHelper.queryInfoByDayRange(begin_day, end_day);
         //构建一个当周日程的列表适配器

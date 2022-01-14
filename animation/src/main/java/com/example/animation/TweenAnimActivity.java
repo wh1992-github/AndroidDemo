@@ -66,7 +66,7 @@ public class TweenAnimActivity extends AppCompatActivity implements AnimationLis
         sp_tween.setSelection(0);
     }
 
-    private String[] tweenArray = {"灰度动画", "平移动画", "缩放动画", "旋转动画"};
+    private static final String[] tweenArray = {"灰度动画", "平移动画", "缩放动画", "旋转动画"};
 
     class TweenSelectedListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {

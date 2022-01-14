@@ -14,6 +14,7 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.Locale;
 
 @SuppressLint("HandlerLeak")
 public class ClientThread implements Runnable {
@@ -109,7 +110,7 @@ public class ClientThread implements Runnable {
     private void notify(int type, String message) {
         if (type == 99) { //连接异常
             //以下发送连接异常的广播
-            String content = String.format("%s%s%s%s", "ERROR", SPLIT_ITEM, SPLIT_LINE, message);
+            String content = String.format(Locale.getDefault(), "%s%s%s%s", "ERROR", SPLIT_ITEM, SPLIT_LINE, message);
             Intent intent1 = new Intent(ACTION_RECV_MSG);
             intent1.putExtra(CONTENT, content);
             mContext.sendBroadcast(intent1);

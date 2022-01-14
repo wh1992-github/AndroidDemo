@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.performance.util.DateUtil;
 
 import java.lang.ref.WeakReference;
+import java.util.Locale;
 
 /**
  * Created by test on 2018/4/29.
@@ -80,7 +81,7 @@ public class ReferWeakActivity extends AppCompatActivity implements OnClickListe
             //从目标页面的弱引用中获得一个实例
             ReferWeakActivity act = mActivity.get();
             if (act != null) {
-                act.mDesc = String.format("%s%s 打印了一行测试日志\n",
+                act.mDesc = String.format(Locale.getDefault(), "%s%s 打印了一行测试日志\n",
                         act.mDesc, DateUtil.getNowTime());
                 act.tv_weak.setText(act.mDesc);
             }

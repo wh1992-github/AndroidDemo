@@ -110,12 +110,12 @@ public class FileUtil {
             @Override
             public boolean accept(File directory, String fileName) {
                 boolean matched = false;
-                File f = new File(String.format("%s/%s",
+                File f = new File(String.format(Locale.getDefault(), "%s/%s",
                         directory.getAbsolutePath(), fileName));
                 matched = f.isDirectory();
                 if (!matched) {
                     for (String s : fileExtensions) {
-                        s = String.format(".{0,}\\%s$", s);
+                        s = String.format(Locale.getDefault(), ".{0,}\\%s$", s);
                         s = s.toUpperCase(Locale.getDefault());
                         fileName = fileName.toUpperCase(Locale.getDefault());
                         matched = fileName.matches(s);

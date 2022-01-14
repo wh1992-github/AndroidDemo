@@ -76,7 +76,7 @@ public class VectorHookActivity extends AppCompatActivity implements OnClickList
 
     //定义一个打勾动画的播放任务
     //Android4.*和5.*系统,只能利用定时任务来延迟执行新动画的播放
-    private Runnable mHookRunnable = new Runnable() {
+    private final Runnable mHookRunnable = new Runnable() {
         @Override
         public void run() {
             //开始播放打勾的矢量动画

@@ -21,10 +21,12 @@ import com.example.network.task.GetAddressTask.OnAddressListener;
 import com.example.network.util.DateUtil;
 import com.example.network.util.SwitchUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint(value = {"SetTextI18n", "DefaultLocale"})
+@SuppressLint({"SetTextI18n"})
 public class HttpRequestActivity extends AppCompatActivity implements OnAddressListener {
     private static final String TAG = "HttpRequestActivity";
     private TextView tv_location;
@@ -68,7 +70,7 @@ public class HttpRequestActivity extends AppCompatActivity implements OnAddressL
         String bestProvider = mLocationMgr.getBestProvider(mCriteria, true);
         if (mLocationMgr.isProviderEnabled(bestProvider)) { //定位提供者当前可用
             tv_location.setText("正在获取" + bestProvider + "定位对象");
-            mLocation = String.format("定位类型=%s", bestProvider);
+            mLocation = String.format(Locale.getDefault(), "定位类型=%s", bestProvider);
             beginLocation(bestProvider);
             isLocationEnable = true;
         } else { //定位提供者暂不可用
@@ -87,7 +89,7 @@ public class HttpRequestActivity extends AppCompatActivity implements OnAddressL
     //设置定位结果文本
     private void setLocationText(Location location) {
         if (location != null) {
-            String desc = String.format("%s\n定位对象信息如下： " +
+            String desc = String.format(Locale.getDefault(), "%s\n定位对象信息如下： " +
                             "\n\t其中时间：%s" + "\n\t其中经度：%f,纬度：%f" +
                             "\n\t其中高度：%d米,精度：%d米" + "\n\t其中地址：%s",
                     mLocation, DateUtil.getNowDateTime("yyyy-MM-dd HH:mm:ss"),
@@ -122,7 +124,7 @@ public class HttpRequestActivity extends AppCompatActivity implements OnAddressL
     }
 
     //定义一个位置变更监听器
-    private LocationListener mLocationListener = new LocationListener() {
+    private final LocationListener mLocationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
             setLocationText(location);
@@ -142,7 +144,7 @@ public class HttpRequestActivity extends AppCompatActivity implements OnAddressL
     };
 
     //定义一个刷新任务,若无法定位则每隔一秒就尝试定位
-    private Runnable mRefresh = new Runnable() {
+    private final Runnable mRefresh = new Runnable() {
         @Override
         public void run() {
             if (!isLocationEnable) {

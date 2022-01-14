@@ -24,6 +24,7 @@ import com.example.device.util.DateUtil;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CameraView extends SurfaceView {
     private static final String TAG = "CameraView";
@@ -99,7 +100,7 @@ public class CameraView extends SurfaceView {
             Bitmap bitmap = BitmapUtil.getRotateBitmap(raw,
                     (mCameraType == CAMERA_BEHIND) ? 90 : -90);
             //获取本次拍摄的照片保存路径
-            mPhotoPath = String.format("%s%s.jpg", BitmapUtil.getCachePath(mContext),
+            mPhotoPath = String.format(Locale.getDefault(), "%s%s.jpg", BitmapUtil.getCachePath(mContext),
                     DateUtil.getNowDateTime());
             //保存照片文件
             BitmapUtil.saveBitmap(mPhotoPath, bitmap, "jpg", 80);
@@ -224,7 +225,7 @@ public class CameraView extends SurfaceView {
                 Bitmap bitmap = BitmapUtil.getRotateBitmap(raw,
                         (mCameraType == CAMERA_BEHIND) ? 90 : -90);
                 //获取本次拍摄的照片保存路径
-                String path = String.format("%s%s.jpg", BitmapUtil.getCachePath(mContext),
+                String path = String.format(Locale.getDefault(), "%s%s.jpg", BitmapUtil.getCachePath(mContext),
                         DateUtil.getNowDateTimeFull());
                 //把位图保存为图片文件
                 BitmapUtil.saveBitmap(path, bitmap, "jpg", 80);

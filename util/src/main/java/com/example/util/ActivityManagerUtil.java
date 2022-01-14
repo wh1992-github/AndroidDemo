@@ -1,11 +1,11 @@
 package com.example.util;
 
-import java.util.Stack;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.util.Log;
+
+import java.util.Stack;
 
 /**
  * 管理activity

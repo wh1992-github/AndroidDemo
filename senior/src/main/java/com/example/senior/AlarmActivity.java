@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.example.senior.util.DateUtil;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/7.
@@ -99,7 +100,7 @@ public class AlarmActivity extends AppCompatActivity implements OnClickListener 
                 Log.d(TAG, "AlarmReceiver onReceive");
                 if (tv_alarm != null && !isArrived) {
                     isArrived = true;
-                    mDesc = String.format("%s\n%s 闹钟时间到达", mDesc, DateUtil.getNowTime());
+                    mDesc = String.format(Locale.getDefault(), "%s\n%s 闹钟时间到达", mDesc, DateUtil.getNowTime());
                     tv_alarm.setText(mDesc);
                 }
             }

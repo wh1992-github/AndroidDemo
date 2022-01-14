@@ -22,7 +22,10 @@ class RotateXItemAnimation(animDuration: Long = 500) : SuperItemAnimation(animDu
         holder?.itemView?.rotationX = 0f
     }
 
-    override fun setRemoveItemAnim(holder: RecyclerView.ViewHolder?, animator: ViewPropertyAnimator?) {
+    override fun setRemoveItemAnim(
+        holder: RecyclerView.ViewHolder?,
+        animator: ViewPropertyAnimator?
+    ) {
         animator?.rotationX(-90f)
     }
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -29,7 +30,7 @@ public class AppReadActivity extends AppCompatActivity {
         Map<String, String> mapParam = app.mInfoMap;
         //遍历映射全局变量内部的键值对信息
         for (Map.Entry<String, String> item_map : mapParam.entrySet()) {
-            desc = String.format("%s\n　%s的取值为%s",
+            desc = String.format(Locale.getDefault(), "%s\n　%s的取值为%s",
                     desc, item_map.getKey(), item_map.getValue());
         }
         if (mapParam.size() <= 0) {

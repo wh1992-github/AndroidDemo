@@ -1,6 +1,5 @@
 package com.example.device;
 
-import android.annotation.SuppressLint;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.os.Bundle;
@@ -12,11 +11,12 @@ import com.example.device.adapter.CameraAdapter;
 import com.example.device.bean.CameraInfo;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/11/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class CameraInfoActivity extends AppCompatActivity {
     private static final String TAG = "CameraInfoActivity";
     private ListView lv_camera;
@@ -34,7 +34,7 @@ public class CameraInfoActivity extends AppCompatActivity {
         ArrayList<CameraInfo> cameraList = new ArrayList<>();
         //获取摄像头的个数
         int cameraCount = Camera.getNumberOfCameras();
-        Log.d(TAG, String.format("摄像头个数=%d", cameraCount));
+        Log.d(TAG, String.format(Locale.getDefault(), "摄像头个数=%d", cameraCount));
         for (int i = 0; i < cameraCount; i++) {
             CameraInfo info = new CameraInfo();
             Camera camera = Camera.open(i); //打开指定摄像头

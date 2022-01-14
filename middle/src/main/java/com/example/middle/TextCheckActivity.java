@@ -10,7 +10,9 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
 
-@SuppressLint(value = {"SetTextI18n", "DefaultLocale"})
+import java.util.Locale;
+
+@SuppressLint({"SetTextI18n"})
 public class TextCheckActivity extends AppCompatActivity implements OnClickListener {
     private EditText et_input; //声明一个编辑框对象
     private TextView tv_result; //声明一个文本视图对象
@@ -35,17 +37,17 @@ public class TextCheckActivity extends AppCompatActivity implements OnClickListe
         if (v.getId() == R.id.btn_empty) {
             //判断字符串是否为空值
             boolean isEmpty = TextUtils.isEmpty(et_input.getText());
-            String desc = String.format("输入框的文本%s空的", isEmpty ? "是" : "不是");
+            String desc = String.format(Locale.getDefault(), "输入框的文本%s空的", isEmpty ? "是" : "不是");
             tv_result.setText(desc);
         } else if (v.getId() == R.id.btn_trim_length) {
             //获取字符串去除头尾空格之后的长度
             int length = TextUtils.getTrimmedLength(et_input.getText());
-            String desc = String.format("输入框的文本去掉左右空格后的长度是%d", length);
+            String desc = String.format(Locale.getDefault(), "输入框的文本去掉左右空格后的长度是%d", length);
             tv_result.setText(desc);
         } else if (v.getId() == R.id.btn_digit) {
             //判断字符串是否全部由数字组成
             boolean isDigit = TextUtils.isDigitsOnly(et_input.getText());
-            String desc = String.format("输入框的文本%s纯数字", isDigit ? "是" : "不是");
+            String desc = String.format(Locale.getDefault(), "输入框的文本%s纯数字", isDigit ? "是" : "不是");
             tv_result.setText(desc);
         } else if (v.getId() == R.id.btn_ellipsize) {
             //总共显示十个字符（因为省略号占了一个,所以还剩九个可显示汉字）

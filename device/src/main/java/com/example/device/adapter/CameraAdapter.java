@@ -14,8 +14,9 @@ import com.example.device.R;
 import com.example.device.bean.CameraInfo;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-@SuppressLint(value = {"DefaultLocale", "SetTextI18n"})
+@SuppressLint({"SetTextI18n"})
 //展示相机信息列表的适配器
 public class CameraAdapter extends BaseAdapter {
     private ArrayList<CameraInfo> mCameraList;
@@ -75,7 +76,7 @@ public class CameraAdapter extends BaseAdapter {
         String desc = "";
         for (int j = 0; j < item.resolutionList.size(); j++) {
             Camera.Size size = item.resolutionList.get(j);
-            desc = String.format("%s分辨率%d为：宽%d*高%d\n", desc, j + 1, size.width, size.height);
+            desc = String.format(Locale.getDefault(), "%s分辨率%d为：宽%d*高%d\n", desc, j + 1, size.width, size.height);
         }
         holder.tv_resolution_list.setText(desc);
         listeneClick(holder);

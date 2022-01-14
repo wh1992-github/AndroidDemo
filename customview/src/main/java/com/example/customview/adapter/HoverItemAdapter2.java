@@ -1,7 +1,7 @@
 package com.example.customview.adapter;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,11 +16,10 @@ import java.util.List;
 @SuppressLint("RecyclerView")
 public class HoverItemAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static final String TAG = "MainAdapter";
-    private Context mContext;
     private final int type_one = 1;
     private final int type_two = 2;
     private final int type_three = 3;
-    private List<String> mDatas;
+    private final List<String> mDatas;
 
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
@@ -32,13 +31,13 @@ public class HoverItemAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHol
         this.mOnItemClickListener = listener;
     }
 
-    public HoverItemAdapter2(Context context, List<String> mDatas) {
-        this.mContext = context;
+    public HoverItemAdapter2(List<String> mDatas) {
         this.mDatas = mDatas;
     }
 
+    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         if (viewType == type_one) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.hover_item_one, parent, false);
@@ -53,7 +52,7 @@ public class HoverItemAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         switch (holder.getItemViewType()) {
             case type_one:
                 OneViewHolder oneViewHolder = (OneViewHolder) holder;
@@ -102,19 +101,19 @@ public class HoverItemAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHol
         return mDatas.size();
     }
 
-    class OneViewHolder extends RecyclerView.ViewHolder {
+    static class OneViewHolder extends RecyclerView.ViewHolder {
         public OneViewHolder(View itemView) {
             super(itemView);
         }
     }
 
-    class TwoViewHolder extends RecyclerView.ViewHolder {
+    static class TwoViewHolder extends RecyclerView.ViewHolder {
         public TwoViewHolder(View itemView) {
             super(itemView);
         }
     }
 
-    class ThreeViewHolder extends RecyclerView.ViewHolder {
+    static class ThreeViewHolder extends RecyclerView.ViewHolder {
         TextView tv_text;
 
         public ThreeViewHolder(View itemView) {

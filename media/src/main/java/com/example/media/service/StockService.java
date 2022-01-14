@@ -16,6 +16,8 @@ import com.example.media.http.tool.HttpReqData;
 import com.example.media.http.tool.HttpRespData;
 import com.example.media.widget.FloatWindow;
 
+import java.util.Locale;
+
 @SuppressLint("HandlerLeak")
 public class StockService extends Service {
     private static final String TAG = "StockService";
@@ -37,7 +39,7 @@ public class StockService extends Service {
             String stock = array[1]; //当前指数
             float distance = Float.parseFloat(array[2]); //与上一交易日的指数差额
             String range = array[3]; //涨跌百分比
-            String text = String.format("%s  %s%%", stock, range);
+            String text = String.format(Locale.getDefault(), "%s  %s%%", stock, range);
             int type = msg.what;
             if (type == SHANGHAI) { //上证综指
                 tv_sh_stock.setText(text);

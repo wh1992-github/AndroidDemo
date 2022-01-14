@@ -1,6 +1,5 @@
 package com.example.mixture;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
@@ -36,11 +35,12 @@ import com.example.mixture.util.WifiUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/12/11.
  */
-@SuppressLint("DefaultLocale")
+
 public class WifiShareActivity extends AppCompatActivity implements
         OnClickListener, OnCheckedChangeListener, GetClientListener, FindNameListener {
     private static final String TAG = "WifiShareActivity";
@@ -206,7 +206,7 @@ public class WifiShareActivity extends AppCompatActivity implements
             tv_connect.setText("当前没有设备连接");
             ll_client_title.setVisibility(View.GONE);
         } else { //有设备连接
-            String desc = String.format("当前已有%d台设备连接", mClientArray.size());
+            String desc = String.format(Locale.getDefault(), "当前已有%d台设备连接", mClientArray.size());
             tv_connect.setText(desc);
             ll_client_title.setVisibility(View.VISIBLE);
         }

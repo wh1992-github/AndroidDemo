@@ -1,16 +1,17 @@
 package com.example.middle;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/9/24.
  */
-@SuppressLint("DefaultLocale")
+
 public class CheckboxActivity extends AppCompatActivity implements OnCheckedChangeListener {
 
     @Override
@@ -33,7 +34,7 @@ public class CheckboxActivity extends AppCompatActivity implements OnCheckedChan
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        String desc = String.format("您%s了这个CheckBox", isChecked ? "勾选" : "取消勾选");
+        String desc = String.format(Locale.getDefault(), "您%s了这个CheckBox", isChecked ? "勾选" : "取消勾选");
         buttonView.setText(desc);
     }
 }

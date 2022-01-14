@@ -42,7 +42,7 @@ public class AppInfoActivity extends AppCompatActivity {
         sp_list.setSelection(0);
     }
 
-    private String[] typeArray = {"所有应用", "联网应用"};
+    private static final String[] typeArray = {"所有应用", "联网应用"};
 
     class TypeSelectedListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {

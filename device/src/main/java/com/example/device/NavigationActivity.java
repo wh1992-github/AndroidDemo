@@ -22,6 +22,7 @@ import com.example.device.util.DateUtil;
 import com.example.device.util.SwitchUtil;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -38,7 +39,7 @@ public class NavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         TextView tv_device = findViewById(R.id.tv_device);
-        tv_device.setText(String.format("当前设备型号为%s", Build.MODEL));
+        tv_device.setText(String.format(Locale.getDefault(), "当前设备型号为%s", Build.MODEL));
         tv_navigation = findViewById(R.id.tv_navigation);
         SwitchUtil.checkGpsIsOpen(this, "需要打开定位功能才能查看卫星导航信息");
     }
@@ -138,9 +139,9 @@ public class NavigationActivity extends AppCompatActivity {
         String desc = "支持的卫星导航系统包括：";
         for (Map.Entry<String, Boolean> item_map : mapNavigation.entrySet()) {
             if (!isFirst) {
-                desc = String.format("%s、%s", desc, item_map.getKey());
+                desc = String.format(Locale.getDefault(), "%s、%s", desc, item_map.getKey());
             } else {
-                desc = String.format("%s%s", desc, item_map.getKey());
+                desc = String.format(Locale.getDefault(), "%s%s", desc, item_map.getKey());
                 isFirst = false;
             }
         }

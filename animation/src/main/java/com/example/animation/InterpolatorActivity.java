@@ -51,7 +51,7 @@ public class InterpolatorActivity extends AppCompatActivity implements AnimatorL
         sp_interpolator.setSelection(0);
     }
 
-    private String[] interpolatorArray = {
+    private static final String[] interpolatorArray = {
             "背景色+加速插值器+颜色估值器",
             "旋转+减速插值器+浮点型估值器",
             "裁剪+匀速插值器+矩形估值器",

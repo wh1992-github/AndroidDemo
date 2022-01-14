@@ -1,8 +1,7 @@
 package com.example.device.nfc;
 
-import android.annotation.SuppressLint;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
 public final class NfcUtil {
     private static final char[] HEX = {'0', '1', '2', '3', '4', '5', '6', '7',
             '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -30,7 +29,7 @@ public final class NfcUtil {
     }
 
     public static String toAmountString(float value) {
-        return String.format("%.2f", value);
+        return String.format(Locale.getDefault(), "%.2f", value);
     }
 
 }

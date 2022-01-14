@@ -1,6 +1,5 @@
 package com.example.group;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -19,11 +18,12 @@ import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
 import com.example.group.widget.SpacesItemDecoration;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/21.
  */
-@SuppressLint("DefaultLocale")
+
 public class RecyclerDynamicActivity extends AppCompatActivity implements OnClickListener,
         OnItemClickListener, OnItemLongClickListener, OnItemDeleteClickListener {
     private RecyclerView rv_dynamic; //声明一个循环视图对象
@@ -84,7 +84,7 @@ public class RecyclerDynamicActivity extends AppCompatActivity implements OnClic
 
     //一旦点击循环适配器的列表项,就触发点击监听器的onItemClick方法
     public void onItemClick(View view, int position) {
-        String desc = String.format("您点击了第%d项,标题是%s", position + 1,
+        String desc = String.format(Locale.getDefault(), "您点击了第%d项,标题是%s", position + 1,
                 mPublicArray.get(position).title);
         Toast.makeText(this, desc, Toast.LENGTH_SHORT).show();
     }

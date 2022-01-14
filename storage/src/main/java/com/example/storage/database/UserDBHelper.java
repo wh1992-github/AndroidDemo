@@ -1,6 +1,5 @@
 package com.example.storage.database;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -11,8 +10,9 @@ import android.util.Log;
 import com.example.storage.bean.UserInfo;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
+
 public class UserDBHelper extends SQLiteOpenHelper {
     private static final String TAG = "UserDBHelper";
     private static final String DB_NAME = "user.db"; //数据库的名称
@@ -123,7 +123,7 @@ public class UserDBHelper extends SQLiteOpenHelper {
             //如果存在同名记录,则更新记录
             //注意条件语句的等号后面要用单引号括起来
             if (info.name != null && info.name.length() > 0) {
-                String condition = String.format("name='%s'", info.name);
+                String condition = String.format(Locale.getDefault(), "name='%s'", info.name);
                 tempArray = query(condition);
                 if (tempArray.size() > 0) {
                     update(info, condition);
@@ -133,7 +133,7 @@ public class UserDBHelper extends SQLiteOpenHelper {
             }
             //如果存在同样的手机号码,则更新记录
             if (info.phone != null && info.phone.length() > 0) {
-                String condition = String.format("phone='%s'", info.phone);
+                String condition = String.format(Locale.getDefault(), "phone='%s'", info.phone);
                 tempArray = query(condition);
                 if (tempArray.size() > 0) {
                     update(info, condition);
@@ -183,7 +183,7 @@ public class UserDBHelper extends SQLiteOpenHelper {
 
     //根据指定条件查询记录,并返回结果数据队列
     public ArrayList<UserInfo> query(String condition) {
-        String sql = String.format("select rowid,_id,name,age,height,weight,married,update_time," +
+        String sql = String.format(Locale.getDefault(), "select rowid,_id,name,age,height,weight,married,update_time," +
                 "phone,password from %s where %s;", TABLE_NAME, condition);
         Log.d(TAG, "query sql: " + sql);
         ArrayList<UserInfo> infoArray = new ArrayList<UserInfo>();
@@ -212,7 +212,7 @@ public class UserDBHelper extends SQLiteOpenHelper {
     //根据手机号码查询指定记录
     public UserInfo queryByPhone(String phone) {
         UserInfo info = null;
-        ArrayList<UserInfo> infoArray = query(String.format("phone='%s'", phone));
+        ArrayList<UserInfo> infoArray = query(String.format(Locale.getDefault(), "phone='%s'", phone));
         if (infoArray.size() > 0) {
             info = infoArray.get(0);
         }

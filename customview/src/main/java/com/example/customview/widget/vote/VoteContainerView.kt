@@ -16,7 +16,11 @@ import com.example.customview.bean.VoteOption
 import kotlinx.android.synthetic.main.widget_vote_layout.view.*
 import java.lang.ref.WeakReference
 
-class VoteContainerView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : FrameLayout(context, attrs, defStyleAttr) {
+class VoteContainerView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : FrameLayout(context, attrs, defStyleAttr) {
 
     private var voteViewHolders: ArrayList<VoteItemViewHolder> = arrayListOf()
 
@@ -72,7 +76,8 @@ class VoteContainerView @JvmOverloads constructor(context: Context, attrs: Attri
         val isVoteMulti = vote.choiceType == VOTE_TYPE_MULTIPLE
         val voteResult = vote.sumVoteCount ?: 0
         val voted = vote.voted
-        vote_container_vote_btn.visibility = if (voted != true && isVoteMulti) View.VISIBLE else View.GONE
+        vote_container_vote_btn.visibility =
+            if (voted != true && isVoteMulti) View.VISIBLE else View.GONE
         vote_container_vote_result.visibility = if (voted == true) View.VISIBLE else View.GONE
         setVoteResult("共${voteResult}人参与了投票")
     }
@@ -160,8 +165,8 @@ class VoteContainerView @JvmOverloads constructor(context: Context, attrs: Attri
             val voteResultCount = voteOption.showCount ?: 0
 
             voteView.setVoteIsSelected(voteOption.voted ?: false)
-                    .setVoteContent(voteOption.content)
-                    .setVoteResultText("${voteResultCount}人").refreshView()
+                .setVoteContent(voteOption.content)
+                .setVoteResultText("${voteResultCount}人").refreshView()
 
             if (isHaveVoted()) {
                 val sum = mainVote?.sumVoteCount ?: 0
@@ -232,8 +237,10 @@ class VoteContainerView @JvmOverloads constructor(context: Context, attrs: Attri
             voteOption.voted = true
             ref()?.addOptionIds(voteOption.id ?: 0)
             voteView.setVoteIsSelected(voteOption.voted ?: false).refreshView()
-            ref()?.onVoteClickListener?.onVoteCommitBtnClick(mainVote, ref()?.optionIds
-                    ?: arrayListOf())
+            ref()?.onVoteClickListener?.onVoteCommitBtnClick(
+                mainVote, ref()?.optionIds
+                    ?: arrayListOf()
+            )
         }
 
     }
@@ -241,17 +248,17 @@ class VoteContainerView @JvmOverloads constructor(context: Context, attrs: Attri
     private fun getVoteView(context: Context): VoteView {
         val voteView = VoteView(context)
         voteView.setVoteTextSize(voteView.sp2px(15))
-                .setVoteUncheckedContentTextColor(resources.getColor(R.color.unchecked_content_text_color))
-                .setVoteCheckedContentTextColor(resources.getColor(R.color.checked_content_text_color))
-                .setVoteUncheckedResultTextColor(resources.getColor(R.color.unchecked_result_text_color))
-                .setVoteCheckedResultTextColor(resources.getColor(R.color.checked_result_text_color))
-                .setVoteUncheckedProgressColor(resources.getColor(R.color.unchecked_progress_color))
-                .setVoteCheckedProgressColor(resources.getColor(R.color.checked_progress_color))
-                .setVoteCheckedIcon(resources.getDrawable(R.mipmap.icon_vote_check))
-                .setVoteBorderRadius(voteView.dp2px(3f))
-                .setVoteBorderColor(resources.getColor(R.color.border_color))
-                .setVoteRightIconSize(voteView.dp2px(18f).toInt())
-                .setVoteAnimDuration(2000L)
+            .setVoteUncheckedContentTextColor(resources.getColor(R.color.unchecked_content_text_color))
+            .setVoteCheckedContentTextColor(resources.getColor(R.color.checked_content_text_color))
+            .setVoteUncheckedResultTextColor(resources.getColor(R.color.unchecked_result_text_color))
+            .setVoteCheckedResultTextColor(resources.getColor(R.color.checked_result_text_color))
+            .setVoteUncheckedProgressColor(resources.getColor(R.color.unchecked_progress_color))
+            .setVoteCheckedProgressColor(resources.getColor(R.color.checked_progress_color))
+            .setVoteCheckedIcon(resources.getDrawable(R.mipmap.icon_vote_check))
+            .setVoteBorderRadius(voteView.dp2px(3f))
+            .setVoteBorderColor(resources.getColor(R.color.border_color))
+            .setVoteRightIconSize(voteView.dp2px(18f).toInt())
+            .setVoteAnimDuration(2000L)
         voteView.clipToOutline = true
         voteView.outlineProvider = object : ViewOutlineProvider() {
             override fun getOutline(view: View, outline: Outline) {
@@ -259,7 +266,10 @@ class VoteContainerView @JvmOverloads constructor(context: Context, attrs: Attri
             }
         }
 
-        val layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, voteView.dp2px(40f).toInt())
+        val layoutParams = LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            voteView.dp2px(40f).toInt()
+        )
         layoutParams.bottomMargin = voteView.dp2px(12f).toInt()
         voteView.layoutParams = layoutParams
         return voteView

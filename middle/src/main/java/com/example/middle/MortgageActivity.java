@@ -1,6 +1,5 @@
 package com.example.middle;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -22,11 +21,12 @@ import com.example.middle.bean.Repayment;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/9/24.
  */
-@SuppressLint("DefaultLocale")
+
 public class MortgageActivity extends AppCompatActivity implements OnClickListener,
         RadioGroup.OnCheckedChangeListener, OnCheckedChangeListener {
     private EditText et_price; //声明一个编辑框对象
@@ -81,8 +81,8 @@ public class MortgageActivity extends AppCompatActivity implements OnClickListen
         sp_year.setOnItemSelectedListener(new YearSelectedListener());
     }
 
-    private String[] yearDescArray = {"5年", "10年", "15年", "20年", "30年"};
-    private int[] yearArray = {5, 10, 15, 20, 30};
+    private static final String[] yearDescArray = {"5年", "10年", "15年", "20年", "30年"};
+    private static final int[] yearArray = {5, 10, 15, 20, 30};
 
     //定义一个贷款年限的选择监听器
     class YearSelectedListener implements OnItemSelectedListener {
@@ -106,7 +106,7 @@ public class MortgageActivity extends AppCompatActivity implements OnClickListen
         sp_ratio.setOnItemSelectedListener(new RatioSelectedListener());
     }
 
-    private String[] ratioDescArray = {
+    private static final String[] ratioDescArray = {
             "2015年10月24日 五年期商贷利率 4.90%　公积金利率 3.25%",
             "2015年08月26日 五年期商贷利率 5.15%　公积金利率 3.25%",
             "2015年06月28日 五年期商贷利率 5.40%　公积金利率 3.50%",
@@ -115,8 +115,8 @@ public class MortgageActivity extends AppCompatActivity implements OnClickListen
             "2014年11月22日 五年期商贷利率 6.15%　公积金利率 4.25%",
             "2012年07月06日 五年期商贷利率 6.15%　公积金利率 4.50%",
     };
-    private double[] businessArray = {4.90, 5.15, 5.40, 5.65, 5.90, 6.15, 6.55};
-    private double[] accumulationArray = {3.25, 3.25, 3.50, 3.75, 4.00, 4.25, 4.50};
+    private static final double[] businessArray = {4.90, 5.15, 5.40, 5.65, 5.90, 6.15, 6.55};
+    private static final double[] accumulationArray = {3.25, 3.25, 3.50, 3.75, 4.00, 4.25, 4.50};
 
     //定义一个基准利率的选择监听器
     class RatioSelectedListener implements OnItemSelectedListener {
@@ -162,7 +162,7 @@ public class MortgageActivity extends AppCompatActivity implements OnClickListen
     private void showLoan() {
         double total = Double.parseDouble(et_price.getText().toString());
         double rate = Double.parseDouble(et_loan.getText().toString()) / 100;
-        String desc = String.format("您的贷款总额为%s万元", formatDecimal(total * rate, 2));
+        String desc = String.format(Locale.getDefault(), "您的贷款总额为%s万元", formatDecimal(total * rate, 2));
         tv_loan.setText(desc);
     }
 
@@ -184,19 +184,19 @@ public class MortgageActivity extends AppCompatActivity implements OnClickListen
             //计算公积金贷款部分的还款明细
             accumulationResult = calMortgage(accumulationLoad, accumulationTime, accumulationRate, isInterest);
         }
-        String desc = String.format("您的贷款总额为%s万元", formatDecimal(
+        String desc = String.format(Locale.getDefault(), "您的贷款总额为%s万元", formatDecimal(
                 (businessResult.mTotal + accumulationResult.mTotal) / 10000, 2));
-        desc = String.format("%s\n　　还款总额为%s万元", desc, formatDecimal(
+        desc = String.format(Locale.getDefault(), "%s\n　　还款总额为%s万元", desc, formatDecimal(
                 (businessResult.mTotal + businessResult.mTotalInterest +
                         accumulationResult.mTotal + accumulationResult.mTotalInterest) / 10000, 2));
-        desc = String.format("%s\n其中利息总额为%s万元", desc, formatDecimal(
+        desc = String.format(Locale.getDefault(), "%s\n其中利息总额为%s万元", desc, formatDecimal(
                 (businessResult.mTotalInterest + accumulationResult.mTotalInterest) / 10000, 2));
-        desc = String.format("%s\n　　还款总时间为%d月", desc, mYear * 12);
+        desc = String.format(Locale.getDefault(), "%s\n　　还款总时间为%d月", desc, mYear * 12);
         if (isInterest) { //如果是等额本息方式
-            desc = String.format("%s\n每月还款金额为%s元", desc, formatDecimal(
+            desc = String.format(Locale.getDefault(), "%s\n每月还款金额为%s元", desc, formatDecimal(
                     businessResult.mMonthRepayment + accumulationResult.mMonthRepayment, 2));
         } else { //如果是等额本金方式
-            desc = String.format("%s\n首月还款金额为%s元,其后每月递减%s元", desc, formatDecimal(
+            desc = String.format(Locale.getDefault(), "%s\n首月还款金额为%s元,其后每月递减%s元", desc, formatDecimal(
                     businessResult.mMonthRepayment + accumulationResult.mMonthRepayment, 2),
                     formatDecimal(businessResult.mMonthMinus + accumulationResult.mMonthMinus, 2));
         }

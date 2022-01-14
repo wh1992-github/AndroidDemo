@@ -1,6 +1,5 @@
 package com.example.group;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -21,11 +20,12 @@ import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
 import com.example.group.widget.SpacesItemDecoration;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/21.
  */
-@SuppressLint("DefaultLocale")
+
 public class SwipeRecyclerActivity extends AppCompatActivity implements OnRefreshListener,
         OnItemClickListener, OnItemLongClickListener, OnItemDeleteClickListener {
     private SwipeRefreshLayout srl_dynamic; //声明一个下拉刷新布局对象
@@ -106,7 +106,7 @@ public class SwipeRecyclerActivity extends AppCompatActivity implements OnRefres
 
     //一旦点击循环适配器的列表项,就触发点击监听器的onItemClick方法
     public void onItemClick(View view, int position) {
-        String desc = String.format("您点击了第%d项,标题是%s", position + 1,
+        String desc = String.format(Locale.getDefault(), "您点击了第%d项,标题是%s", position + 1,
                 mPublicArray.get(position).title);
         Toast.makeText(this, desc, Toast.LENGTH_SHORT).show();
     }

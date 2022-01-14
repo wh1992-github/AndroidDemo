@@ -9,7 +9,11 @@ import android.view.View
 import com.example.customview.R
 import kotlin.math.min
 
-class StudyPlanProgressView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
+class StudyPlanProgressView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : View(context, attrs, defStyleAttr) {
     private var mWidth = 0
     private var mHeight = 0
 
@@ -44,14 +48,34 @@ class StudyPlanProgressView @JvmOverloads constructor(context: Context, attrs: A
 
     private fun initAttr(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.StudyPlanProgressView)
-        iconUncheckedBitmapRes = (typedArray.getDrawable(R.styleable.StudyPlanProgressView_sppv_iconUnchecked) as? BitmapDrawable)?.bitmap
-        iconCheckedBitmapRes = (typedArray.getDrawable(R.styleable.StudyPlanProgressView_sppv_iconChecked) as? BitmapDrawable)?.bitmap
-        iconSize = typedArray.getDimensionPixelOffset(R.styleable.StudyPlanProgressView_sppv_iconSize, dp2px(14f).toInt())
-        progressWidth = typedArray.getDimensionPixelOffset(R.styleable.StudyPlanProgressView_sppv_progressWidth, dp2px(2f).toInt())
-        uncheckedProgressColor = typedArray.getColor(R.styleable.StudyPlanProgressView_sppv_uncheckedProgressColor, uncheckedProgressColor)
-        checkedProgressColor = typedArray.getColor(R.styleable.StudyPlanProgressView_sppv_checkedProgressColor, checkedProgressColor)
-        textSize = typedArray.getDimensionPixelSize(R.styleable.StudyPlanProgressView_sppv_textSize, sp2px(11))
-        textColor = typedArray.getColor(R.styleable.StudyPlanProgressView_sppv_textColor, checkedProgressColor)
+        iconUncheckedBitmapRes =
+            (typedArray.getDrawable(R.styleable.StudyPlanProgressView_sppv_iconUnchecked) as? BitmapDrawable)?.bitmap
+        iconCheckedBitmapRes =
+            (typedArray.getDrawable(R.styleable.StudyPlanProgressView_sppv_iconChecked) as? BitmapDrawable)?.bitmap
+        iconSize = typedArray.getDimensionPixelOffset(
+            R.styleable.StudyPlanProgressView_sppv_iconSize,
+            dp2px(14f).toInt()
+        )
+        progressWidth = typedArray.getDimensionPixelOffset(
+            R.styleable.StudyPlanProgressView_sppv_progressWidth,
+            dp2px(2f).toInt()
+        )
+        uncheckedProgressColor = typedArray.getColor(
+            R.styleable.StudyPlanProgressView_sppv_uncheckedProgressColor,
+            uncheckedProgressColor
+        )
+        checkedProgressColor = typedArray.getColor(
+            R.styleable.StudyPlanProgressView_sppv_checkedProgressColor,
+            checkedProgressColor
+        )
+        textSize = typedArray.getDimensionPixelSize(
+            R.styleable.StudyPlanProgressView_sppv_textSize,
+            sp2px(11)
+        )
+        textColor = typedArray.getColor(
+            R.styleable.StudyPlanProgressView_sppv_textColor,
+            checkedProgressColor
+        )
 
         typedArray.recycle()
     }
@@ -77,7 +101,8 @@ class StudyPlanProgressView @JvmOverloads constructor(context: Context, attrs: A
         mWidth = w
         mHeight = h
 
-        cellWidth = (mWidth - marginLeftAndRight * 2 - iconSize * ALL_POINT_SIZE) / (ALL_POINT_SIZE - 1)
+        cellWidth =
+            (mWidth - marginLeftAndRight * 2 - iconSize * ALL_POINT_SIZE) / (ALL_POINT_SIZE - 1)
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -89,11 +114,23 @@ class StudyPlanProgressView @JvmOverloads constructor(context: Context, attrs: A
     private fun drawProgressLine(canvas: Canvas) {
         val lineStart = (marginLeftAndRight + iconSize / 2).toFloat()
         linePaint.color = uncheckedProgressColor
-        canvas.drawLine(lineStart, (mHeight / 2).toFloat(), (mWidth - marginLeftAndRight - iconSize / 2).toFloat(), (mHeight / 2).toFloat(), linePaint)
+        canvas.drawLine(
+            lineStart,
+            (mHeight / 2).toFloat(),
+            (mWidth - marginLeftAndRight - iconSize / 2).toFloat(),
+            (mHeight / 2).toFloat(),
+            linePaint
+        )
         if (getDataSize() == 0) return
         val lineEnd = lineStart + (getDataSize() - 1) * (cellWidth + iconSize)
         linePaint.color = checkedProgressColor
-        canvas.drawLine(lineStart, (mHeight / 2).toFloat(), lineEnd, (mHeight / 2).toFloat(), linePaint)
+        canvas.drawLine(
+            lineStart,
+            (mHeight / 2).toFloat(),
+            lineEnd,
+            (mHeight / 2).toFloat(),
+            linePaint
+        )
     }
 
     private fun drawProgress(canvas: Canvas) {
@@ -120,16 +157,23 @@ class StudyPlanProgressView @JvmOverloads constructor(context: Context, attrs: A
         if (position < getDataSize()) {
             val textWidth = textPaint.measureText(dates[position].content).toInt()
             val isTop = position % 2 == 0
-            val left = marginLeftAndRight + iconSize / 2 + (cellWidth + iconSize) * position - textWidth / 2
+            val left =
+                marginLeftAndRight + iconSize / 2 + (cellWidth + iconSize) * position - textWidth / 2
             textRectF.left = left
             textRectF.right = left + textWidth
             textRectF.top = if (isTop) 0 else (mHeight + iconSize) / 2
             textRectF.bottom = if (isTop) (mHeight - iconSize) / 2 else mHeight
 
             val fontMetrics = textPaint.fontMetricsInt
-            val baseline = (textRectF.bottom + textRectF.top - fontMetrics.bottom - fontMetrics.top) / 2
+            val baseline =
+                (textRectF.bottom + textRectF.top - fontMetrics.bottom - fontMetrics.top) / 2
             //文字绘制到整个布局的中心位置
-            canvas.drawText(dates[position].content, textRectF.centerX().toFloat(), baseline.toFloat(), textPaint)
+            canvas.drawText(
+                dates[position].content,
+                textRectF.centerX().toFloat(),
+                baseline.toFloat(),
+                textPaint
+            )
         }
     }
 
@@ -145,13 +189,17 @@ class StudyPlanProgressView @JvmOverloads constructor(context: Context, attrs: A
     private fun getDataSize() = min(dates.size, 7)
 
     fun dp2px(dpVal: Float): Float {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                dpVal, resources.displayMetrics)
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            dpVal, resources.displayMetrics
+        )
     }
 
     fun sp2px(spVal: Int): Int {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
-                spVal.toFloat(), resources.displayMetrics).toInt()
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_SP,
+            spVal.toFloat(), resources.displayMetrics
+        ).toInt()
     }
 
     class ProgressData(var content: String, var isFinished: Boolean)

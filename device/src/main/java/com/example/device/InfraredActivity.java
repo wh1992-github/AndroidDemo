@@ -1,6 +1,5 @@
 package com.example.device;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.hardware.ConsumerIrManager;
@@ -14,10 +13,12 @@ import android.widget.TextView;
 
 import com.example.device.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2018/1/29.
  */
-@SuppressLint("DefaultLocale")
+
 @TargetApi(Build.VERSION_CODES.KITKAT)
 public class InfraredActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "InfraredActivity";
@@ -70,7 +71,7 @@ public class InfraredActivity extends AppCompatActivity implements OnClickListen
             String result = "当前手机的红外载波频率范围为：\n";
             //遍历获取所有的频率段
             for (CarrierFrequencyRange range : freqs) {
-                result = String.format("%s    %d - %d\n", result,
+                result = String.format(Locale.getDefault(), "%s    %d - %d\n", result,
                         range.getMinFrequency(), range.getMaxFrequency());
             }
             tv_infrared.setText(result);

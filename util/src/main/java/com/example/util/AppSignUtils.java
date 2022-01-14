@@ -1,5 +1,6 @@
 package com.example.util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -16,11 +17,6 @@ public class AppSignUtils {
 
     /**
      * 返回一个签名的对应类型的字符串
-     *
-     * @param context
-     * @param packageName
-     * @param type
-     * @return
      */
     public static ArrayList<String> getSingInfo(Context context, String packageName, String type) {
         ArrayList<String> result = new ArrayList<>();
@@ -45,13 +41,10 @@ public class AppSignUtils {
 
     /**
      * 返回对应包的签名信息
-     *
-     * @param context
-     * @param packageName
-     * @return
      */
+    @SuppressLint("PackageManagerGetSignatures")
     public static Signature[] getSignatures(Context context, String packageName) {
-        PackageInfo packageInfo = null;
+        PackageInfo packageInfo;
         try {
             packageInfo = context.getPackageManager().getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
             return packageInfo.signatures;
@@ -63,10 +56,6 @@ public class AppSignUtils {
 
     /**
      * 获取相应的类型的字符串（把签名的byte[]信息转换成16进制）
-     *
-     * @param sig
-     * @param type
-     * @return
      */
     public static String getSignatureString(Signature sig, String type) {
         byte[] hexBytes = sig.toByteArray();

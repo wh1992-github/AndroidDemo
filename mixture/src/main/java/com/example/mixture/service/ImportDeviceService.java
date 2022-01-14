@@ -1,6 +1,5 @@
 package com.example.mixture.service;
 
-import android.annotation.SuppressLint;
 import android.app.IntentService;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,8 +13,9 @@ import com.example.mixture.database.MacDeviceDB;
 import com.example.mixture.util.AssetsUtil;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
+
 public class ImportDeviceService extends IntentService {
     private static final String TAG = "ImportDeviceService";
 
@@ -79,7 +79,7 @@ public class ImportDeviceService extends IntentService {
         SharedPreferences.Editor editor = sps.edit();
         editor.putInt("version", DeviceDBHelper.DB_VERSION);
         editor.apply();
-        String desc = String.format("已成功导入%d条设备名称记录,导入%d条设备MAC记录",
+        String desc = String.format(Locale.getDefault(), "已成功导入%d条设备名称记录,导入%d条设备MAC记录",
                 nameArray.size(), macArray.size());
         Log.d(TAG, desc);
     }

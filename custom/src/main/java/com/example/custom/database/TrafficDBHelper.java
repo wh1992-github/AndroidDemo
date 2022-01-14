@@ -1,6 +1,5 @@
 package com.example.custom.database;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -11,8 +10,9 @@ import android.util.Log;
 import com.example.custom.bean.AppInfo;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
+
 public class TrafficDBHelper extends SQLiteOpenHelper {
     private static final String TAG = "TrafficDBHelper";
     private static final String DB_NAME = "traffic.db"; //数据库的名称
@@ -109,14 +109,14 @@ public class TrafficDBHelper extends SQLiteOpenHelper {
         for (AppInfo info : infoArray) {
             //如果存在相同rowid的记录,则更新记录
             if (info.rowid > 0) {
-                String condition = String.format("rowid='%d'", info.rowid);
+                String condition = String.format(Locale.getDefault(), "rowid='%d'", info.rowid);
                 update(info, condition);
                 result = info.rowid;
                 continue;
             }
             //如果存在同样日期的uid,则更新记录
             if (info.day > 0 && info.uid > 0) {
-                String condition = String.format("day=%d and uid=%d", info.day, info.uid);
+                String condition = String.format(Locale.getDefault(), "day=%d and uid=%d", info.day, info.uid);
                 ArrayList<AppInfo> tempArray = query(condition);
                 if (tempArray.size() > 0) {
                     update(info, condition);
@@ -164,7 +164,7 @@ public class TrafficDBHelper extends SQLiteOpenHelper {
 
     //根据指定条件查询记录,并返回结果数据队列
     public ArrayList<AppInfo> query(String condition) {
-        String sql = String.format("select rowid,_id,month,day,uid,label,package_name,icon_path,traffic" +
+        String sql = String.format(Locale.getDefault(), "select rowid,_id,month,day,uid,label,package_name,icon_path,traffic" +
                 " from %s where %s;", TABLE_NAME, condition);
         Log.d(TAG, "query sql: " + sql);
         ArrayList<AppInfo> infoArray = new ArrayList<>();
@@ -191,7 +191,7 @@ public class TrafficDBHelper extends SQLiteOpenHelper {
     //根据行号查询指定记录
     public AppInfo queryById(long rowid) {
         AppInfo info = null;
-        ArrayList<AppInfo> infoArray = query(String.format("rowid='%d'", rowid));
+        ArrayList<AppInfo> infoArray = query(String.format(Locale.getDefault(), "rowid='%d'", rowid));
         if (infoArray.size() > 0) {
             info = infoArray.get(0);
         }

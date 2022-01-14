@@ -1,6 +1,5 @@
 package com.example.device;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.hardware.Sensor;
@@ -13,11 +12,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/11/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class StepActivity extends AppCompatActivity implements SensorEventListener {
     private TextView tv_step;
     private SensorManager mSensorMgr; //声明一个传感管理器对象
@@ -77,7 +77,7 @@ public class StepActivity extends AppCompatActivity implements SensorEventListen
         } else if (event.sensor.getType() == Sensor.TYPE_STEP_COUNTER) { //计步器事件
             mStepCounter = (int) event.values[0];
         }
-        String desc = String.format("设备检测到您当前走了%d步,总计数为%d步",
+        String desc = String.format(Locale.getDefault(), "设备检测到您当前走了%d步,总计数为%d步",
                 mStepDetector, mStepCounter);
         tv_step.setText(desc);
     }

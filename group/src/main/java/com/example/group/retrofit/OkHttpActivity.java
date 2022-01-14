@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -400,7 +401,7 @@ public class OkHttpActivity extends AppCompatActivity implements View.OnClickLis
 
                 //构造数据
                 for (int i = 2; i < 997; i++) {
-                    bufferedSink.writeUtf8(String.format(" * %s = %s\n", i, factor(i)));
+                    bufferedSink.writeUtf8(String.format(Locale.getDefault(), " * %s = %s\n", i, factor(i)));
                 }
             }
         };

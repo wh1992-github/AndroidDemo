@@ -1,6 +1,5 @@
 package com.example.mixture;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -34,10 +33,11 @@ import com.example.mixture.util.MD5Util;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Map;
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-@SuppressLint("DefaultLocale")
+
 public class PdfRenderActivity extends AppCompatActivity implements OnClickListener, FileSelectCallbacks {
     private static final String TAG = "PdfRenderActivity";
     private TextView tv_title;
@@ -129,7 +129,7 @@ public class PdfRenderActivity extends AppCompatActivity implements OnClickListe
             //依次处理PDF文件的每个页面
             for (int i = 0; i < pdfRenderer.getPageCount(); i++) {
                 //生成该页图片的保存路径
-                String imgPath = String.format("%s/%03d.jpg", mDir, i);
+                String imgPath = String.format(Locale.getDefault(), "%s/%03d.jpg", mDir, i);
                 imgArray.add(imgPath);
                 //打开序号为i的页面
                 PdfRenderer.Page page = pdfRenderer.openPage(i);
@@ -166,7 +166,7 @@ public class PdfRenderActivity extends AppCompatActivity implements OnClickListe
     //点击文件选择对话框的确定按钮后触发
     public void onConfirmSelect(String absolutePath, String fileName, Map<String, Object> map_param) {
         //拼接文件的完整路径
-        mPath = String.format("%s/%s", absolutePath, fileName);
+        mPath = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         //生成PDF文件的图片保存目录
         mDir = absolutePath + "/pdf/" + MD5Util.encrypt(mPath);
         Log.d(TAG, "path=" + mPath);

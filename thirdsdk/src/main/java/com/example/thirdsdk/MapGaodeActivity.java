@@ -54,6 +54,7 @@ import com.example.thirdsdk.util.MapGaodeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/12/18.
@@ -346,7 +347,7 @@ public class MapGaodeActivity extends AppCompatActivity implements OnClickListen
             }
             mLatitude = location.getLatitude(); //获得该位置的纬度
             mLongitude = location.getLongitude(); //获得该位置的经度
-            String position = String.format("当前位置：%s|%s|%s|%s|%s|%s|%s",
+            String position = String.format(Locale.getDefault(), "当前位置：%s|%s|%s|%s|%s|%s|%s",
                     location.getProvince(), location.getCity(),
                     location.getDistrict(), location.getStreet(),
                     location.getStreetNum(), location.getAddress(),

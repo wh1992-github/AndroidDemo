@@ -1,6 +1,5 @@
 package com.example.senior.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +16,13 @@ import com.example.senior.R;
 import com.example.senior.bean.Planet;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by test on 2018/3/29.
  */
 
-@SuppressLint("DefaultLocale")
+
 public class PlanetGridAdapter extends BaseAdapter implements
         OnItemClickListener, OnItemLongClickListener {
     private Context mContext; //声明一个上下文对象
@@ -81,14 +81,14 @@ public class PlanetGridAdapter extends BaseAdapter implements
 
     //处理网格项的点击事件,由接口OnItemClickListener触发
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String desc = String.format("您点击了第%d个行星,它的名字是%s", position + 1,
+        String desc = String.format(Locale.getDefault(), "您点击了第%d个行星,它的名字是%s", position + 1,
                 mPlanetList.get(position).name);
         Toast.makeText(mContext, desc, Toast.LENGTH_LONG).show();
     }
 
     //处理网格项的长按事件,由接口OnItemLongClickListener触发
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        String desc = String.format("您长按了第%d个行星,它的名字是%s", position + 1,
+        String desc = String.format(Locale.getDefault(), "您长按了第%d个行星,它的名字是%s", position + 1,
                 mPlanetList.get(position).name);
         Toast.makeText(mContext, desc, Toast.LENGTH_LONG).show();
         return true;

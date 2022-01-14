@@ -1,6 +1,5 @@
 package com.example.senior.database;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -11,8 +10,8 @@ import android.util.Log;
 import com.example.senior.bean.GoodsInfo;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
 public class GoodsDBHelper extends SQLiteOpenHelper {
     private static final String TAG = "GoodsDBHelper";
     private static final String DB_NAME = "goods.db"; //数据库的名称
@@ -110,7 +109,7 @@ public class GoodsDBHelper extends SQLiteOpenHelper {
         for (GoodsInfo info : infoArray) {
             //如果存在相同rowid的记录,则更新记录
             if (info.rowid > 0) {
-                String condition = String.format("rowid='%d'", info.rowid);
+                String condition = String.format(Locale.getDefault(), "rowid='%d'", info.rowid);
                 update(info, condition);
                 result = info.rowid;
                 continue;
@@ -151,7 +150,7 @@ public class GoodsDBHelper extends SQLiteOpenHelper {
 
     //根据指定条件查询记录,并返回结果数据队列
     public ArrayList<GoodsInfo> query(String condition) {
-        String sql = String.format("select rowid,_id,name,desc,price,thumb_path,pic_path" +
+        String sql = String.format(Locale.getDefault(), "select rowid,_id,name,desc,price,thumb_path,pic_path" +
                 " from %s where %s;", TABLE_NAME, condition);
         Log.d(TAG, "query sql: " + sql);
         ArrayList<GoodsInfo> infoArray = new ArrayList<>();
@@ -176,7 +175,7 @@ public class GoodsDBHelper extends SQLiteOpenHelper {
     //根据行号查询指定记录
     public GoodsInfo queryById(long rowid) {
         GoodsInfo info = null;
-        ArrayList<GoodsInfo> infoArray = query(String.format("rowid='%d'", rowid));
+        ArrayList<GoodsInfo> infoArray = query(String.format(Locale.getDefault(), "rowid='%d'", rowid));
         if (infoArray.size() > 0) {
             info = infoArray.get(0);
         }

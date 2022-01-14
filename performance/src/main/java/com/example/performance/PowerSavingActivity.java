@@ -1,6 +1,5 @@
 package com.example.performance;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -8,9 +7,8 @@ import android.widget.TextView;
 /**
  * Created by test on 2017/12/27.
  */
-@SuppressLint("StaticFieldLeak")
 public class PowerSavingActivity extends AppCompatActivity {
-    private static TextView tv_screen;
+    private TextView tv_screen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

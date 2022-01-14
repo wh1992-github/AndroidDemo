@@ -19,7 +19,7 @@ import com.example.device.util.SwitchUtil;
 /**
  * Created by test on 2017/11/4.
  */
-@SuppressLint(value = {"DefaultLocale", "SetTextI18n"})
+@SuppressLint({"SetTextI18n"})
 public class LightActivity extends AppCompatActivity implements
         OnCheckedChangeListener, SensorEventListener {
     private TextView tv_light;

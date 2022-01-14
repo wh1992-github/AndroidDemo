@@ -41,7 +41,7 @@ public class ShutterActivity extends AppCompatActivity {
         sp_shutter.setSelection(0);
     }
 
-    private String[] shutterArray = {"水平五叶", "水平十叶", "水平二十叶",
+    private static final String[] shutterArray = {"水平五叶", "水平十叶", "水平二十叶",
             "垂直五叶", "垂直十叶", "垂直二十叶"};
 
     class ShutterSelectedListener implements OnItemSelectedListener {

@@ -26,6 +26,7 @@ import com.example.mixture.widget.InputDialogFragment;
 import com.example.mixture.widget.InputDialogFragment.InputCallbacks;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Map;
 
 public class EbookReaderActivity extends AppCompatActivity implements
@@ -132,7 +133,7 @@ public class EbookReaderActivity extends AppCompatActivity implements
     //点击文件选择对话框的确定按钮后触发
     public void onConfirmSelect(String absolutePath, String fileName, Map<String, Object> map_param) {
         //拼接文件的完整路径
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         Log.d(TAG, "path=" + path);
         //往数据库中添加一条书籍记录
         helper.insert(new BookInfo(path));

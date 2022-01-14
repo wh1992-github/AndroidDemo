@@ -12,7 +12,11 @@ import android.view.View
 import com.example.customview.R
 import kotlin.math.atan2
 
-class CarMoveView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
+class CarMoveView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : View(context, attrs, defStyleAttr) {
 
     private var mWidth = 0
     private var mHeight = 0
@@ -90,7 +94,12 @@ class CarMoveView @JvmOverloads constructor(context: Context, attrs: AttributeSe
             val degrees = (atan2(tan[1].toDouble(), tan[0].toDouble()) * 180.0 / Math.PI).toFloat()
             canvas?.rotate(degrees, pos[0], pos[1])
             //小车中心点在运行轨道上
-            mRect.set((pos[0] - mRectWidth).toInt(), (pos[1] - mRectWidth).toInt(), (pos[0] + mRectWidth).toInt(), (pos[1] + mRectWidth).toInt())
+            mRect.set(
+                (pos[0] - mRectWidth).toInt(),
+                (pos[1] - mRectWidth).toInt(),
+                (pos[0] + mRectWidth).toInt(),
+                (pos[1] + mRectWidth).toInt()
+            )
             //小车轮子在运行轨道上
             //mRect.set((pos[0] - mRectWidth).toInt(), (pos[1] - mRectWidth * 2).toInt(), (pos[0] + mRectWidth).toInt(), (pos[1]).toInt())
             if (mCarBitmapRes != null) {

@@ -18,6 +18,7 @@ import com.example.mixture.task.GetClientListTask.GetClientListener;
 import com.example.mixture.util.GetClientName;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class NetbiosActivity extends AppCompatActivity implements
         GetClientListener, OnItemClickListener {
@@ -89,7 +90,7 @@ public class NetbiosActivity extends AppCompatActivity implements
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        String desc = String.format("%s的计算机名称是%s", split[0], split[1]);
+                        String desc = String.format(Locale.getDefault(), "%s的计算机名称是%s", split[0], split[1]);
                         //下面弹出提醒对话框展示找到的主机名
                         AlertDialog.Builder builder = new AlertDialog.Builder(NetbiosActivity.this);
                         builder.setMessage(desc);

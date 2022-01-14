@@ -13,6 +13,7 @@ import com.example.custom.util.AppUtil;
 import com.example.custom.util.StringUtil;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/14.
@@ -38,7 +39,7 @@ public class TrafficInfoActivity extends AppCompatActivity {
     private Runnable mRefresh = new Runnable() {
         @Override
         public void run() {
-            String desc = String.format("当前总共接收流量：%s\n　　其中接收数据流量：%s" +
+            String desc = String.format(Locale.getDefault(), "当前总共接收流量：%s\n　　其中接收数据流量：%s" +
                             "\n当前总共发送流量：%s\n　　其中发送数据流量：%s",
                     StringUtil.formatData(TrafficStats.getTotalRxBytes()), //获取总共接收的流量数据
                     StringUtil.formatData(TrafficStats.getMobileRxBytes()), //获取数据流量的接收数据

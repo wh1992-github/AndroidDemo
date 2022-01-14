@@ -10,10 +10,10 @@ public class SM3Digest {
     private static final int BLOCK_LENGTH = 64;
 
     //缓冲区长度
-    private static final int BUFFER_LENGTH = BLOCK_LENGTH * 1;
+    private static final int BUFFER_LENGTH = BLOCK_LENGTH;
 
     //缓冲区
-    private byte[] xBuf = new byte[BUFFER_LENGTH];
+    private final byte[] xBuf = new byte[BUFFER_LENGTH];
 
     //缓冲区偏移量
     private int xBufOff;
@@ -33,10 +33,9 @@ public class SM3Digest {
     }
 
     //SM3结果输出
-    public int doFinal(byte[] out, int outOff) {
+    public void doFinal(byte[] out, int outOff) {
         byte[] tmp = doFinal();
         System.arraycopy(tmp, 0, out, 0, tmp.length);
-        return BYTE_LENGTH;
     }
 
     public void reset() {

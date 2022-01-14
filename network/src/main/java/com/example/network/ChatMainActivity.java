@@ -47,12 +47,13 @@ import com.example.network.util.Utils;
 import com.example.network.widget.TextProgressCircle;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint(value = {"SetTextI18n", "StaticFieldLeak", "HardwareIds", "RtlHardcoded"})
+@SuppressLint({"SetTextI18n", "StaticFieldLeak", "HardwareIds", "RtlHardcoded"})
 public class ChatMainActivity extends AppCompatActivity implements
         OnClickListener, FileSelectCallbacks, OnUploadHttpListener {
     private static final String TAG = "ChatMainActivity";
@@ -92,7 +93,7 @@ public class ChatMainActivity extends AppCompatActivity implements
         //从包裹中获取名叫otherId的对方设备编号
         mOtherId = bundle.getString("otherId", "");
         //从包裹中获取名叫otherName的对方昵称
-        String desc = String.format("与%s聊天", bundle.getString("otherName", ""));
+        String desc = String.format(Locale.getDefault(), "与%s聊天", bundle.getString("otherName", ""));
         tv_other.setText(desc);
         //从系统服务中获取下载管理器
         mDownloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
@@ -117,7 +118,7 @@ public class ChatMainActivity extends AppCompatActivity implements
         } else if (v.getId() == R.id.btn_send) { //点击了发送文本按钮
             String body = et_input.getText().toString();
             //拼接文本消息的消息内容
-            String append = String.format("%s %s\n%s",
+            String append = String.format(Locale.getDefault(), "%s %s\n%s",
                     MainApplication.getInstance().getNickName(),
                     DateUtil.formatTime(DateUtil.getNowDateTime("")), body);
             //在聊天窗口中添加文本消息
@@ -184,7 +185,7 @@ public class ChatMainActivity extends AppCompatActivity implements
     public void onConfirmSelect(String absolutePath, String fileName, Map<String, Object> map_param) {
         mFileName = fileName;
         //拼接文件的完整路径
-        mFilePath = String.format("%s/%s", absolutePath, fileName);
+        mFilePath = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         Log.d(TAG, "select path=" + mFilePath);
         mType = (int) map_param.get("type");
         //创建文件上传线程
@@ -211,7 +212,7 @@ public class ChatMainActivity extends AppCompatActivity implements
             //拼接该文件的下载地址
             String downloadUrl = mUploadUrl.substring(0, mUploadUrl.lastIndexOf("/") + 1) + mFileName;
             //拼接多媒体消息的消息标题
-            String title = String.format("%s %s",
+            String title = String.format(Locale.getDefault(), "%s %s",
                     MainApplication.getInstance().getNickName(),
                     DateUtil.formatTime(DateUtil.getNowDateTime("")));
             if (mType == TYPE_PHOTO) { //图片消息
@@ -247,19 +248,19 @@ public class ChatMainActivity extends AppCompatActivity implements
                     String action = splitArray[0];
                     if (action.equals(ClientThread.RECVMSG)) { //文本消息
                         //拼接文本消息的消息内容
-                        String append = String.format("%s %s\n%s",
+                        String append = String.format(Locale.getDefault(), "%s %s\n%s",
                                 splitArray[2], DateUtil.formatTime(splitArray[3]), body);
                         //在聊天窗口中添加文本消息
                         appendMsg(splitArray[1], append);
                     } else if (action.equals(ClientThread.RECVPHOTO) //图片消息或者音频消息
                             || action.equals(ClientThread.RECVSOUND)) {
                         //拼接多媒体消息的消息标题
-                        String title = String.format("%s %s", splitArray[2],
+                        String title = String.format(Locale.getDefault(), "%s %s", splitArray[2],
                                 DateUtil.formatTime(splitArray[3]));
                         //在聊天窗口中添加多媒体消息
                         showMedia(action, splitArray[1], title, body);
                     } else { //接收失败
-                        String hint = String.format("%s\n%s", splitArray[0], body);
+                        String hint = String.format(Locale.getDefault(), "%s\n%s", splitArray[0], body);
                         Toast.makeText(mContext, hint, Toast.LENGTH_SHORT).show();
                     }
                 }

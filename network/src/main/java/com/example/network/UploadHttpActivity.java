@@ -14,6 +14,7 @@ import com.example.network.task.UploadHttpTask;
 import com.example.network.task.UploadHttpTask.OnUploadHttpListener;
 import com.example.network.thread.ClientThread;
 
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -50,7 +51,7 @@ public class UploadHttpActivity extends AppCompatActivity implements
     public void onConfirmSelect(String absolutePath, String fileName, Map<String, Object> map_param) {
         mFileName = fileName;
         //拼接文件的完整路径
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         tv_file_path.setText("上传文件的路径为：" + path);
         //创建文件上传线程
         UploadHttpTask uploadTask = new UploadHttpTask();
@@ -68,11 +69,11 @@ public class UploadHttpActivity extends AppCompatActivity implements
     //在文件上传结束后触发
     public void onUploadFinish(String result) {
         //以下拼接文件上传的结果描述
-        String desc = String.format("%s\n上传结果为：%s",
+        String desc = String.format(Locale.getDefault(), "%s\n上传结果为：%s",
                 tv_file_path.getText().toString(), result);
         if (result.equals("SUCC")) {
             String uploadUrl = et_http_url.getText().toString();
-            desc = String.format("%s\n预计下载地址为：%s%s", desc,
+            desc = String.format(Locale.getDefault(), "%s\n预计下载地址为：%s%s", desc,
                     uploadUrl.substring(0, uploadUrl.lastIndexOf("/") + 1), mFileName);
         }
         tv_file_path.setText(desc);

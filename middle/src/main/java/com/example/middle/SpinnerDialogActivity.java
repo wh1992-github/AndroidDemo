@@ -41,7 +41,7 @@ public class SpinnerDialogActivity extends AppCompatActivity {
     }
 
     //定义下拉列表需要显示的文本数组
-    private String[] starArray = {"水星", "金星", "地球", "火星", "木星", "土星"};
+    private static final String[] starArray = {"水星", "金星", "地球", "火星", "木星", "土星"};
 
     //定义一个选择监听器,它实现了接口OnItemSelectedListener
     class MySelectedListener implements OnItemSelectedListener {

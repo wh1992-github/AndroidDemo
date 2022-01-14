@@ -20,9 +20,10 @@ import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
-@SuppressLint({"StaticFieldLeak", "SimpleDateFormat"})
+@SuppressLint({"StaticFieldLeak"})
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
     private static final String TAG = "CrashHandler";
     //系统默认的UncaughtExceptionHandler处理类
@@ -32,9 +33,9 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     //程序的Context对象
     private Context mContext;
     //用来存储设备信息和异常信息
-    private Map<String, Object> mInfos = new HashMap<>();
+    private final Map<String, Object> mInfos = new HashMap<>();
     //用于格式化日期,作为日志文件名的一部分
-    private SimpleDateFormat mFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+    private final SimpleDateFormat mFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss", Locale.getDefault());
 
     //获取CrashHandler实例,单例模式
     public static CrashHandler getInstance() {

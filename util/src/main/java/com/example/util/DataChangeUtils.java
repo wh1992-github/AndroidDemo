@@ -1,7 +1,5 @@
 package com.example.util;
 
-import android.annotation.SuppressLint;
-
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
@@ -10,7 +8,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-@SuppressLint("SimpleDateFormat")
 public class DataChangeUtils {
 
     //获取现在时间
@@ -119,8 +116,8 @@ public class DataChangeUtils {
 
     //二个小时时间间的差值,必须保证二个时间都是"HH:MM"的格式,返回字符型的分钟
     public static String getTwoHour(String st1, String st2) {
-        String[] kk = null;
-        String[] jj = null;
+        String[] kk;
+        String[] jj;
         kk = st1.split(":");
         jj = st2.split(":");
         if (Integer.parseInt(kk[0]) < Integer.parseInt(jj[0]))
@@ -140,7 +137,7 @@ public class DataChangeUtils {
     //得到二个日期间的间隔天数
     public static String getTwoDay(String sj1, String sj2) {
         SimpleDateFormat myFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        long day = 0;
+        long day;
         try {
             Date date = myFormatter.parse(sj1);
             Date mydate = myFormatter.parse(sj2);
@@ -160,7 +157,7 @@ public class DataChangeUtils {
             long Time = (date1.getTime() / 1000) + Integer.parseInt(jj) * 60;
             date1.setTime(Time * 1000);
             mydate1 = format.format(date1);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         return mydate1;
     }
@@ -169,7 +166,7 @@ public class DataChangeUtils {
     public static String getNextDay(String nowdate, String delay) {
         try {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-            String mdate = "";
+            String mdate;
             Date d = strToDate(nowdate);
             long myTime = (d.getTime() / 1000) + Integer.parseInt(delay) * 24 * 60 * 60;
             d.setTime(myTime * 1000);
@@ -263,11 +260,11 @@ public class DataChangeUtils {
         if (0 == subYear) {
             return cal1.get(Calendar.WEEK_OF_YEAR) == cal2
                     .get(Calendar.WEEK_OF_YEAR);
-        } else if (1 == subYear && 11 == cal2.get(Calendar.MONTH)) {
+        } else if (1 == subYear && Calendar.DECEMBER == cal2.get(Calendar.MONTH)) {
             //如果12月的最后一周横跨来年第一周的话则最后一周即算做来年的第一周
             return cal1.get(Calendar.WEEK_OF_YEAR) == cal2
                     .get(Calendar.WEEK_OF_YEAR);
-        } else if (-1 == subYear && 11 == cal1.get(Calendar.MONTH)) {
+        } else if (-1 == subYear && Calendar.DECEMBER == cal1.get(Calendar.MONTH)) {
             return cal1.get(Calendar.WEEK_OF_YEAR) == cal2
                     .get(Calendar.WEEK_OF_YEAR);
         }

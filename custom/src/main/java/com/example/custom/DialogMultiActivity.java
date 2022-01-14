@@ -12,6 +12,7 @@ import com.example.custom.widget.DialogFriend.onAddFriendListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/14.
@@ -30,7 +31,7 @@ public class DialogMultiActivity extends AppCompatActivity implements
         findViewById(R.id.btn_friend).setOnClickListener(this);
         String origin = "";
         for (String phone : phoneArray) {
-            origin = String.format("%s  %s", origin, phone);
+            origin = String.format(Locale.getDefault(), "%s  %s", origin, phone);
         }
         tv_origin.setText(origin.trim());
     }
@@ -53,7 +54,7 @@ public class DialogMultiActivity extends AppCompatActivity implements
         String result = "添加的好友信息如下：";
         //循环取出好友的关系信息,并拼接成描述文字
         for (Friend item : friendList) {
-            result = String.format("%s\n号码%s,关系是%s,%s访问朋友圈", result,
+            result = String.format(Locale.getDefault(), "%s\n号码%s,关系是%s,%s访问朋友圈", result,
                     item.phone, item.relation, (item.admit_circle) ? "允许" : "禁止");
         }
         tv_result.setText(result);

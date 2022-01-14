@@ -1,6 +1,5 @@
 package com.example.event;
 
-import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,10 +13,12 @@ import android.widget.TextView;
 
 import com.example.event.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/23.
  */
-@SuppressLint("DefaultLocale")
+
 public class KeyHardActivity extends AppCompatActivity {
     private TextView tv_result;
     private String desc = "";
@@ -32,17 +33,17 @@ public class KeyHardActivity extends AppCompatActivity {
 
     //在发生物理按键动作时触发
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        desc = String.format("%s物理按键的编码是%d", desc, keyCode);
+        desc = String.format(Locale.getDefault(), "%s物理按键的编码是%d", desc, keyCode);
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            desc = String.format("%s, 按键为返回键", desc);
+            desc = String.format(Locale.getDefault(), "%s, 按键为返回键", desc);
             //延迟3秒后启动页面关闭任务
             new Handler().postDelayed(mFinish, 3000);
         } else if (keyCode == KeyEvent.KEYCODE_MENU) {
-            desc = String.format("%s, 按键为菜单键", desc);
+            desc = String.format(Locale.getDefault(), "%s, 按键为菜单键", desc);
         } else if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
-            desc = String.format("%s, 按键为加大音量键", desc);
+            desc = String.format(Locale.getDefault(), "%s, 按键为加大音量键", desc);
         } else if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
-            desc = String.format("%s, 按键为减小音量键", desc);
+            desc = String.format(Locale.getDefault(), "%s, 按键为减小音量键", desc);
         }
         desc = desc + "\n";
         tv_result.setText(desc);
@@ -89,10 +90,10 @@ public class KeyHardActivity extends AppCompatActivity {
                 String reason = intent.getStringExtra(SYSTEM_DIALOG_REASON_KEY);
                 if (!TextUtils.isEmpty(reason)) {
                     if (reason.equals(SYSTEM_DIALOG_REASON_HOME)) { //按下了主页键
-                        desc = String.format("%s%s\t 按键为主页键\n", desc, DateUtil.getNowTime());
+                        desc = String.format(Locale.getDefault(), "%s%s\t 按键为主页键\n", desc, DateUtil.getNowTime());
                         tv_result.setText(desc);
                     } else if (reason.equals(SYSTEM_DIALOG_REASON_TASK)) { //按下了任务键
-                        desc = String.format("%s%s\t 按键为任务键\n", desc, DateUtil.getNowTime());
+                        desc = String.format(Locale.getDefault(), "%s%s\t 按键为任务键\n", desc, DateUtil.getNowTime());
                         tv_result.setText(desc);
                     }
                 }

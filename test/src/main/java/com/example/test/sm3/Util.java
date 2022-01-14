@@ -6,7 +6,7 @@ public class Util {
     //整形转换成网络传输的字节流（字节数组）型数据
     public static byte[] intToBytes(int num) {
         byte[] bytes = new byte[4];
-        bytes[0] = (byte) (0xff & (num >> 0));
+        bytes[0] = (byte) (0xff & (num));
         bytes[1] = (byte) (0xff & (num >> 8));
         bytes[2] = (byte) (0xff & (num >> 16));
         bytes[3] = (byte) (0xff & (num >> 24));
@@ -17,7 +17,7 @@ public class Util {
     public static int byteToInt(byte[] bytes) {
         int num = 0;
         int temp;
-        temp = (0x000000ff & (bytes[0])) << 0;
+        temp = (0x000000ff & (bytes[0]));
         num = num | temp;
         temp = (0x000000ff & (bytes[1])) << 8;
         num = num | temp;
@@ -40,7 +40,7 @@ public class Util {
 
     //大数字转换字节流（字节数组）型数据
     public static byte[] byteConvert32Bytes(BigInteger n) {
-        byte[] tmpd = null;
+        byte[] tmpd;
         if (n == null) {
             return null;
         }
@@ -78,17 +78,17 @@ public class Util {
 
     //根据字节数组获得值(十六进制数字)
     public static String getHexString(byte[] bytes, boolean upperCase) {
-        String ret = "";
-        for (int i = 0; i < bytes.length; i++) {
-            ret += Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1);
+        StringBuilder ret = new StringBuilder();
+        for (byte aByte : bytes) {
+            ret.append(Integer.toString((aByte & 0xff) + 0x100, 16).substring(1));
         }
-        return upperCase ? ret.toUpperCase() : ret;
+        return upperCase ? ret.toString().toUpperCase() : ret.toString();
     }
 
     //打印十六进制字符串
     public static void printHexString(byte[] bytes) {
-        for (int i = 0; i < bytes.length; i++) {
-            String hex = Integer.toHexString(bytes[i] & 0xFF);
+        for (byte aByte : bytes) {
+            String hex = Integer.toHexString(aByte & 0xFF);
             if (hex.length() == 1) {
                 hex = '0' + hex;
             }
@@ -198,26 +198,26 @@ public class Util {
 
     //数字字符串转ASCII码字符串
     public static String StringToAsciiString(String content) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int max = content.length();
         for (int i = 0; i < max; i++) {
             char c = content.charAt(i);
             String b = Integer.toHexString(c);
-            result = result + b;
+            result.append(b);
         }
-        return result;
+        return result.toString();
     }
 
     //十六进制转字符串。编码类型4：Unicode,2：普通编码
     public static String hexStringToString(String hexString, int encodeType) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int max = hexString.length() / encodeType;
         for (int i = 0; i < max; i++) {
             char c = (char) hexStringToAlgorism(hexString
                     .substring(i * encodeType, (i + 1) * encodeType));
-            result += c;
+            result.append(c);
         }
-        return result;
+        return result.toString();
     }
 
     //十六进制字符串装十进制
@@ -227,7 +227,7 @@ public class Util {
         int result = 0;
         for (int i = max; i > 0; i--) {
             char c = hex.charAt(i - 1);
-            int algorism = 0;
+            int algorism;
             if (c >= '0' && c <= '9') {
                 algorism = c - '0';
             } else {
@@ -241,81 +241,81 @@ public class Util {
     //十六进制转二进制
     public static String hexStringToBinary(String hex) {
         hex = hex.toUpperCase();
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int max = hex.length();
         for (int i = 0; i < max; i++) {
             char c = hex.charAt(i);
             switch (c) {
                 case '0':
-                    result += "0000";
+                    result.append("0000");
                     break;
                 case '1':
-                    result += "0001";
+                    result.append("0001");
                     break;
                 case '2':
-                    result += "0010";
+                    result.append("0010");
                     break;
                 case '3':
-                    result += "0011";
+                    result.append("0011");
                     break;
                 case '4':
-                    result += "0100";
+                    result.append("0100");
                     break;
                 case '5':
-                    result += "0101";
+                    result.append("0101");
                     break;
                 case '6':
-                    result += "0110";
+                    result.append("0110");
                     break;
                 case '7':
-                    result += "0111";
+                    result.append("0111");
                     break;
                 case '8':
-                    result += "1000";
+                    result.append("1000");
                     break;
                 case '9':
-                    result += "1001";
+                    result.append("1001");
                     break;
                 case 'A':
-                    result += "1010";
+                    result.append("1010");
                     break;
                 case 'B':
-                    result += "1011";
+                    result.append("1011");
                     break;
                 case 'C':
-                    result += "1100";
+                    result.append("1100");
                     break;
                 case 'D':
-                    result += "1101";
+                    result.append("1101");
                     break;
                 case 'E':
-                    result += "1110";
+                    result.append("1110");
                     break;
                 case 'F':
-                    result += "1111";
+                    result.append("1111");
                     break;
             }
         }
-        return result;
+        return result.toString();
     }
 
     //ASCII码字符串转数字字符串
     public static String AsciiStringToString(String content) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int length = content.length() / 2;
         for (int i = 0; i < length; i++) {
             String c = content.substring(i * 2, i * 2 + 2);
             int a = hexStringToAlgorism(c);
             char b = (char) a;
             String d = String.valueOf(b);
-            result += d;
+            result.append(d);
         }
-        return result;
+        return result.toString();
     }
 
     //将十进制转换为指定长度的十六进制字符串
     public static String algorismToHexString(int algorism, int maxLength) {
-        String result = "";
+        String result;
         result = Integer.toHexString(algorism);
 
         if (result.length() % 2 == 1) {
@@ -326,15 +326,15 @@ public class Util {
 
     //字节数组转为普通字符串（ASCII对应的字符）
     public static String byteToString(byte[] bytearray) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         char temp;
 
         int length = bytearray.length;
-        for (int i = 0; i < length; i++) {
-            temp = (char) bytearray[i];
-            result += temp;
+        for (byte b : bytearray) {
+            temp = (char) b;
+            result.append(temp);
         }
-        return result;
+        return result.toString();
     }
 
     //二进制字符串转十进制
@@ -351,7 +351,7 @@ public class Util {
 
     //十进制转换为十六进制字符串
     public static String algorismToHEXString(int algorism) {
-        String result = "";
+        String result;
         result = Integer.toHexString(algorism);
 
         if (result.length() % 2 == 1) {
@@ -365,9 +365,9 @@ public class Util {
 
     //HEX字符串前补0,主要用于长度位数不足。
     static public String patchHexString(String str, int maxLength) {
-        String temp = "";
+        StringBuilder temp = new StringBuilder();
         for (int i = 0; i < maxLength - str.length(); i++) {
-            temp = "0" + temp;
+            temp.insert(0, "0");
         }
         str = (temp + str).substring(0, maxLength);
         return str;
@@ -375,7 +375,7 @@ public class Util {
 
     //将一个字符串转换为int
     public static int parseToInt(String s, int defaultInt, int radix) {
-        int i = 0;
+        int i;
         try {
             i = Integer.parseInt(s, radix);
         } catch (NumberFormatException ex) {
@@ -386,7 +386,7 @@ public class Util {
 
     //将一个十进制形式的数字字符串转换为int
     public static int parseToInt(String s, int defaultInt) {
-        int i = 0;
+        int i;
         try {
             i = Integer.parseInt(s);
         } catch (NumberFormatException ex) {
@@ -406,7 +406,7 @@ public class Util {
         for (int i = 0, j = 0, l = hex.length(); i < l; i++, j++) {
             String swap = "" + arr[i++] + arr[i];
             int byteint = Integer.parseInt(swap, 16) & 0xFF;
-            b[j] = new Integer(byteint).byteValue();
+            b[j] = Integer.valueOf(byteint).byteValue();
         }
         return b;
     }
@@ -417,23 +417,23 @@ public class Util {
             throw new IllegalArgumentException(
                     "Argument b ( byte array ) is null! ");
         }
-        String hs = "";
-        String stmp = "";
-        for (int n = 0; n < b.length; n++) {
-            stmp = Integer.toHexString(b[n] & 0xff);
+        StringBuilder hs = new StringBuilder();
+        String stmp;
+        for (byte value : b) {
+            stmp = Integer.toHexString(value & 0xff);
             if (stmp.length() == 1) {
-                hs = hs + "0" + stmp;
+                hs.append("0").append(stmp);
             } else {
-                hs = hs + stmp;
+                hs.append(stmp);
             }
         }
-        return hs.toUpperCase();
+        return hs.toString().toUpperCase();
     }
 
     public static byte[] subByte(byte[] input, int startIndex, int length) {
         byte[] bt = new byte[length];
-        for (int i = 0; i < length; i++) {
-            bt[i] = input[i + startIndex];
+        if (length >= 0) {
+            System.arraycopy(input, startIndex, bt, 0, length);
         }
         return bt;
     }

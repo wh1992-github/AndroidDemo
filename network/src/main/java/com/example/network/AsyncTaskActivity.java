@@ -15,10 +15,12 @@ import android.widget.TextView;
 import com.example.network.task.ProgressAsyncTask;
 import com.example.network.task.ProgressAsyncTask.OnProgressListener;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint(value = {"SetTextI18n", "DefaultLocale"})
+@SuppressLint({"SetTextI18n"})
 public class AsyncTaskActivity extends AppCompatActivity implements OnProgressListener {
     private TextView tv_async;
     private ProgressBar pb_async; //声明一个进度条对象
@@ -49,8 +51,8 @@ public class AsyncTaskActivity extends AppCompatActivity implements OnProgressLi
         sp_style.setSelection(0);
     }
 
-    private String[] bookArray = {"三国演义", "西游记", "红楼梦"};
-    private int[] styleArray = {BAR_HORIZONTAL, DIALOG_CIRCLE, DIALOG_HORIZONTAL};
+    private final String[] bookArray = {"三国演义", "西游记", "红楼梦"};
+    private final int[] styleArray = {BAR_HORIZONTAL, DIALOG_CIRCLE, DIALOG_HORIZONTAL};
 
     class StyleSelectedListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -81,21 +83,21 @@ public class AsyncTaskActivity extends AppCompatActivity implements OnProgressLi
 
     //在线程处理结束时触发
     public void onFinish(String result) {
-        String desc = String.format("您要阅读的《%s》已经加载完毕", result);
+        String desc = String.format(Locale.getDefault(), "您要阅读的《%s》已经加载完毕", result);
         tv_async.setText(desc);
         closeDialog(); //关闭对话框
     }
 
     //在线程处理取消时触发
     public void onCancel(String result) {
-        String desc = String.format("您要阅读的《%s》已经取消加载", result);
+        String desc = String.format(Locale.getDefault(), "您要阅读的《%s》已经取消加载", result);
         tv_async.setText(desc);
         closeDialog(); //关闭对话框
     }
 
     //在线程处理过程中更新进度时触发
     public void onUpdate(String request, int progress, int sub_progress) {
-        String desc = String.format("%s当前加载进度为%d%%", request, progress);
+        String desc = String.format(Locale.getDefault(), "%s当前加载进度为%d%%", request, progress);
         tv_async.setText(desc);
         if (mShowStyle == BAR_HORIZONTAL) { //水平条
             pb_async.setProgress(progress); //设置水平进度条的当前进度

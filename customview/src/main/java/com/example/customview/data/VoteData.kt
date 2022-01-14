@@ -17,7 +17,15 @@ private fun getVoteBeanData(index: Int): VoteBean {
         1 -> "你觉得谁最火呢？(单选)"
         else -> ""
     }
-    return VoteBean(11, voteTitle, if (index == 0) "multiple" else "single", 2, false, Random.nextInt(10000, 20000), getVoteOptionsDatas(index))
+    return VoteBean(
+        11,
+        voteTitle,
+        if (index == 0) "multiple" else "single",
+        2,
+        false,
+        Random.nextInt(10000, 20000),
+        getVoteOptionsDatas(index)
+    )
 }
 
 private fun getVoteOptionsDatas(index: Int): java.util.ArrayList<VoteOption>? {

@@ -29,7 +29,11 @@ class ArcView : View {
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         initView(context, attrs, defStyleAttr)
     }
 
@@ -57,7 +61,12 @@ class ArcView : View {
         mPath.reset()
         mPath.moveTo(0f, 0f)
         mPath.lineTo(0f, (mHeight - mArcHeight).toFloat())
-        mPath.quadTo((mWidth / 2).toFloat(), (mHeight + mArcHeight).toFloat(), mWidth.toFloat(), (mHeight - mArcHeight).toFloat())
+        mPath.quadTo(
+            (mWidth / 2).toFloat(),
+            (mHeight + mArcHeight).toFloat(),
+            mWidth.toFloat(),
+            (mHeight - mArcHeight).toFloat()
+        )
         mPath.lineTo(mWidth.toFloat(), 0f)
         mPath.close()
     }

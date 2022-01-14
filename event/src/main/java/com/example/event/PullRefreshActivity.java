@@ -1,6 +1,5 @@
 package com.example.event;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,10 +17,12 @@ import com.example.event.util.Utils;
 import com.example.event.widget.BannerFlipper;
 import com.example.event.widget.PullDownRefreshLayout;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2018/1/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class PullRefreshActivity extends AppCompatActivity implements
         BannerFlipper.BannerClickListener, PullDownRefreshLayout.PullRefreshListener {
     private static final String TAG = "PullRefreshActivity";
@@ -70,7 +71,7 @@ public class PullRefreshActivity extends AppCompatActivity implements
 
     //在图片点击时触发
     public void onBannerClick(int position) {
-        String desc = String.format("您点击了第%d张图片", position + 1);
+        String desc = String.format(Locale.getDefault(), "您点击了第%d张图片", position + 1);
         tv_flipper.setText(desc);
     }
 

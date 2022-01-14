@@ -17,6 +17,8 @@ import com.example.event.util.BitmapUtil;
 import com.example.event.util.DateUtil;
 import com.example.event.widget.SignatureView;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/23.
  */
@@ -99,7 +101,7 @@ public class SignatureActivity extends AppCompatActivity implements
     //点击文件保存对话框的确定按钮后触发
     public void onConfirmSave(String absolutePath, String fileName) {
         //拼接文件的完整路径
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         Log.d(TAG, "path=" + path);
         //把位图数据保存为图片文件
         BitmapUtil.saveBitmap(path, mBitmap, "jpg", 80);

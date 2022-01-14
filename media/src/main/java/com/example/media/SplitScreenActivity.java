@@ -15,6 +15,7 @@ import android.widget.VideoView;
 import com.aqi00.lib.dialog.FileSelectFragment;
 import com.example.media.widget.VideoController;
 
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -86,7 +87,7 @@ public class SplitScreenActivity extends AppCompatActivity implements
         });
         //视频视图开始播放
         vv_content.start();
-        String hint = String.format("App正处于%s模式", isInMultiWindowMode() ? "分屏" : "全屏");
+        String hint = String.format(Locale.getDefault(), "App正处于%s模式", isInMultiWindowMode() ? "分屏" : "全屏");
         Toast.makeText(this, hint, Toast.LENGTH_SHORT).show();
     }
 

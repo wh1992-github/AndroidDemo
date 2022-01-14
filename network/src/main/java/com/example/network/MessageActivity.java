@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.example.network.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/11.
  */
@@ -88,11 +90,11 @@ public class MessageActivity extends AppCompatActivity implements OnClickListene
         public void handleMessage(Message msg) {
             String desc = tv_message.getText().toString();
             if (msg.what == BEGIN) { //开始播放
-                desc = String.format("%s\n%s %s", desc, DateUtil.getNowTime(), "开始播放新闻");
+                desc = String.format(Locale.getDefault(), "%s\n%s %s", desc, DateUtil.getNowTime(), "开始播放新闻");
             } else if (msg.what == SCROLL) { //滚动播放
-                desc = String.format("%s\n%s %s", desc, DateUtil.getNowTime(), msg.obj);
+                desc = String.format(Locale.getDefault(), "%s\n%s %s", desc, DateUtil.getNowTime(), msg.obj);
             } else if (msg.what == END) { //结束播放
-                desc = String.format("%s\n%s %s", desc, DateUtil.getNowTime(), "新闻播放结束");
+                desc = String.format(Locale.getDefault(), "%s\n%s %s", desc, DateUtil.getNowTime(), "新闻播放结束");
             }
             tv_message.setText(desc);
         }

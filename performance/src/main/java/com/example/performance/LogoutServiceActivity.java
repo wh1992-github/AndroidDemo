@@ -19,10 +19,12 @@ import android.widget.TextView;
 
 import com.example.performance.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/12/27.
  */
-@SuppressLint(value = {"StaticFieldLeak", "SetTextI18n"})
+@SuppressLint({"StaticFieldLeak", "SetTextI18n"})
 public class LogoutServiceActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "LogoutServiceActivity";
     private CheckBox ck_logout;
@@ -96,7 +98,7 @@ public class LogoutServiceActivity extends AppCompatActivity implements OnClickL
             if (intent != null) {
                 Log.d(TAG, "AlarmReceiver onReceive");
                 if (tv_alarm != null) {
-                    mDesc = String.format("%s\n%s 闹钟时间到达", mDesc, DateUtil.getNowTime());
+                    mDesc = String.format(Locale.getDefault(), "%s\n%s 闹钟时间到达", mDesc, DateUtil.getNowTime());
                     tv_alarm.setText(mDesc);
                     repeatAlarm(); //重复闹钟提醒设置
                 }

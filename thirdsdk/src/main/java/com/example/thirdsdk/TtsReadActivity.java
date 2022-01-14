@@ -163,7 +163,7 @@ public class TtsReadActivity extends AppCompatActivity implements OnClickListene
             mSpeech.setSpeechRate(1.0f);
             //开始朗读指定文本
             int result = mSpeech.speak(content, TextToSpeech.QUEUE_FLUSH, null);
-            String desc = String.format("朗读%s", result == TextToSpeech.SUCCESS ? "成功" : "失败");
+            String desc = String.format(Locale.getDefault(), "朗读%s", result == TextToSpeech.SUCCESS ? "成功" : "失败");
             Toast.makeText(TtsReadActivity.this, desc, Toast.LENGTH_SHORT).show();
         }
     }

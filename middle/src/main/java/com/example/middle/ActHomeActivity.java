@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import com.example.middle.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/9/24.
  */
@@ -17,7 +19,7 @@ public class ActHomeActivity extends AppCompatActivity {
 
     private void refreshLife(String desc) { //刷新生命周期的日志信息
         Log.d(TAG, desc);
-        mStr = String.format("%s%s %s %s\n", mStr, DateUtil.getNowTimeDetail(), TAG, desc);
+        mStr = String.format(Locale.getDefault(), "%s%s %s %s\n", mStr, DateUtil.getNowTimeDetail(), TAG, desc);
         tv_life.setText(mStr);
     }
 

@@ -54,7 +54,7 @@ public class ObjectAnimActivity extends AppCompatActivity {
         sp_object.setSelection(0);
     }
 
-    private String[] objectArray = {"灰度动画", "平移动画", "缩放动画", "旋转动画", "裁剪动画"};
+    private static final String[] objectArray = {"灰度动画", "平移动画", "缩放动画", "旋转动画", "裁剪动画"};
 
     class ObjectSelectedListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {

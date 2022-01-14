@@ -11,10 +11,12 @@ import android.widget.TextView;
 
 import com.example.performance.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2018/4/29.
  */
-@SuppressLint(value = {"SetTextI18n", "StaticFieldLeak"})
+@SuppressLint({"SetTextI18n", "StaticFieldLeak"})
 public class ReferStrongActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "ReferStrongActivity";
     private static TextView tv_strong;
@@ -67,7 +69,7 @@ public class ReferStrongActivity extends AppCompatActivity implements View.OnCli
     private static class StrongHandler extends Handler {
         //在收到消息时触发
         public void handleMessage(Message msg) {
-            mDesc = String.format("%s%s 打印了一行测试日志\n",
+            mDesc = String.format(Locale.getDefault(), "%s%s 打印了一行测试日志\n",
                     mDesc, DateUtil.getNowTime());
             tv_strong.setText(mDesc);
         }

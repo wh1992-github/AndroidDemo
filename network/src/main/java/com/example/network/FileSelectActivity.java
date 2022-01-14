@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.aqi00.lib.dialog.FileSelectFragment;
 import com.aqi00.lib.dialog.FileSelectFragment.FileSelectCallbacks;
 
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -45,7 +46,7 @@ public class FileSelectActivity extends AppCompatActivity implements
     //点击文件选择对话框的确定按钮后触发
     public void onConfirmSelect(String absolutePath, String fileName, Map<String, Object> map_param) {
         //拼接文件的完整路径
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         //把要打开的图片文件显示在图像视图上面
         iv_image_select.setImageURI(Uri.parse(path));
         //把要打开的图片文件路径显示在文本视图上面

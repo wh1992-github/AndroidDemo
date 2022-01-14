@@ -1,6 +1,5 @@
 package com.example.custom;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,11 +12,12 @@ import com.example.custom.widget.CustomMonthDialog;
 import com.example.custom.widget.CustomMonthDialog.OnMonthSetListener;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/14.
  */
-@SuppressLint("DefaultLocale")
+
 public class DialogDateActivity extends AppCompatActivity implements OnClickListener {
     private TextView tv_date;
     private TextView tv_month;
@@ -56,7 +56,7 @@ public class DialogDateActivity extends AppCompatActivity implements OnClickList
     private class DateListener implements OnDateSetListener {
         @Override
         public void onDateSet(int year, int month, int day) {
-            String desc = String.format("您选择的日期是%d年%d月%d日", year, month, day);
+            String desc = String.format(Locale.getDefault(), "您选择的日期是%d年%d月%d日", year, month, day);
             tv_date.setText(desc);
         }
     }
@@ -76,7 +76,7 @@ public class DialogDateActivity extends AppCompatActivity implements OnClickList
     private class MonthListener implements OnMonthSetListener {
         @Override
         public void onMonthSet(int year, int month) {
-            String desc = String.format("您选择的月份是%d年%d月", year, month);
+            String desc = String.format(Locale.getDefault(), "您选择的月份是%d年%d月", year, month);
             tv_month.setText(desc);
         }
     }

@@ -13,15 +13,17 @@ import com.example.customview.utils.DisplayUtils
 object DragViewHelper {
 
     @SuppressLint("ClickableViewAccessibility")
-    fun addDragView(context: Context,
-                    parent: ViewGroup,
-                    imgUrl: String,
-                    defaultImgResId: Int = R.mipmap.ic_launcher,
-                    dragViewSize: Float = 60f,
-                    dragViewOriginalMarginRight: Float = 20f,
-                    dragViewOriginalMarginBottom: Float = 20f,
-                    autoPullToBorder: Boolean = true,
-                    onClick: (() -> Unit)? = null): ImageView {
+    fun addDragView(
+        context: Context,
+        parent: ViewGroup,
+        imgUrl: String,
+        defaultImgResId: Int = R.mipmap.ic_launcher,
+        dragViewSize: Float = 60f,
+        dragViewOriginalMarginRight: Float = 20f,
+        dragViewOriginalMarginBottom: Float = 20f,
+        autoPullToBorder: Boolean = true,
+        onClick: (() -> Unit)? = null
+    ): ImageView {
         val dragView = ImageView(context)
         parent.post {
             val onDragTouchListener = OnDragTouchListener()
@@ -34,9 +36,18 @@ object DragViewHelper {
             onDragTouchListener.mIsAutoToBorder = autoPullToBorder
             dragView.scaleType = ImageView.ScaleType.CENTER_CROP
             dragView.setOnTouchListener(onDragTouchListener)
-            val layoutParams = RelativeLayout.LayoutParams(DisplayUtils.dip2px(context, dragViewSize), DisplayUtils.dip2px(context, dragViewSize))
-            layoutParams.leftMargin = parent.width - DisplayUtils.dip2px(context, dragViewSize + dragViewOriginalMarginRight)
-            layoutParams.topMargin = parent.height - DisplayUtils.dip2px(context, dragViewSize + dragViewOriginalMarginBottom)
+            val layoutParams = RelativeLayout.LayoutParams(
+                DisplayUtils.dip2px(context, dragViewSize),
+                DisplayUtils.dip2px(context, dragViewSize)
+            )
+            layoutParams.leftMargin = parent.width - DisplayUtils.dip2px(
+                context,
+                dragViewSize + dragViewOriginalMarginRight
+            )
+            layoutParams.topMargin = parent.height - DisplayUtils.dip2px(
+                context,
+                dragViewSize + dragViewOriginalMarginBottom
+            )
 //           GlideApp.with(context).load(imgUrl).into(dragView)
             dragView.setBackgroundResource(defaultImgResId)
             parent.addView(dragView, layoutParams)

@@ -45,13 +45,13 @@ public class YingjiActivity extends AppCompatActivity implements
     private ShutterView view2; //声明一个百叶窗视图对象
     private MosaicView view3; //声明一个马赛克视图对象
     //定义一个用于播放动感影集的风景照片资源数组
-    private int[] mImageArray = {
+    private final int[] mImageArray = {
             R.drawable.bdg01, R.drawable.bdg02, R.drawable.bdg03, R.drawable.bdg04, R.drawable.bdg05,
             R.drawable.bdg06, R.drawable.bdg07, R.drawable.bdg08, R.drawable.bdg09, R.drawable.bdg10
     };
     private ObjectAnimator anim1, anim2, anim3, anim4; //分别声明四个属性动画对象
     private Animation translateAnim, setAnim; //分别声明两个补间动画对象
-    private int mDuration = 5000; //每个动画的播放时长
+    private final int mDuration = 5000; //每个动画的播放时长
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,7 +154,7 @@ public class YingjiActivity extends AppCompatActivity implements
             //设置偏差比例
             view3.setOffset(offset);
             //构造一个按比率逐步展开的属性动画
-            anim4 = ObjectAnimator.ofInt(view3, "ratio", 0 - offset, 101 + offset);
+            anim4 = ObjectAnimator.ofInt(view3, "ratio", -offset, 101 + offset);
             anim4.setDuration(mDuration); //设置动画的播放时长
             anim4.addListener(this); //给属性动画添加动画事件监听器
             anim4.start(); //属性动画开始播放
@@ -177,9 +177,9 @@ public class YingjiActivity extends AppCompatActivity implements
         }
     }
 
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     //定义一个过渡图形变换结束后的动画任务
-    private Runnable mTransitionEnd = new Runnable() {
+    private final Runnable mTransitionEnd = new Runnable() {
         @Override
         public void run() {
             rl_yingji.addView(view5, 0);

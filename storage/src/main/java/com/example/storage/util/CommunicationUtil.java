@@ -1,6 +1,5 @@
 package com.example.storage.util;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.ContentProviderOperation;
 import android.content.ContentResolver;
@@ -19,8 +18,8 @@ import com.example.storage.bean.Contact;
 import com.example.storage.bean.SmsContent;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
 public class CommunicationUtil {
     private static final String TAG = "CommunicationUtil";
     private static Uri mContactUri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
@@ -158,10 +157,10 @@ public class CommunicationUtil {
         ArrayList<SmsContent> smsArray = new ArrayList<SmsContent>();
         String selection = "";
         if (phone != null && phone.length() > 0) {
-            selection = String.format("address='%s'", phone);
+            selection = String.format(Locale.getDefault(), "address='%s'", phone);
         }
         if (gaps > 0) {
-            selection = String.format("%s%sdate>%d", selection,
+            selection = String.format(Locale.getDefault(), "%s%sdate>%d", selection,
                     (selection.length() > 0) ? " and " : "", System.currentTimeMillis() - gaps * 1000);
         }
         Cursor cursor = resolver.query(mSmsUri, mSmsColumn, selection, null, "date desc");
@@ -187,7 +186,7 @@ public class CommunicationUtil {
     //读取规定时间内的通话记录
     public static int readCallRecord(ContentResolver resolver, int gaps) {
         ArrayList<CallRecord> recordArray = new ArrayList<CallRecord>();
-        String selection = String.format("date>%d", System.currentTimeMillis() - gaps * 1000);
+        String selection = String.format(Locale.getDefault(), "date>%d", System.currentTimeMillis() - gaps * 1000);
         Cursor cursor = resolver.query(mRecordUri, mRecordColumn, selection, null, "date desc");
         while (cursor.moveToNext()) {
             CallRecord record = new CallRecord();
@@ -239,7 +238,7 @@ public class CommunicationUtil {
         }
         String result = "";
         for (Contact contact : contactArray) {
-            result = String.format("%s%s	%s	%s\n", result, contact.name, contact.phone, contact.email);
+            result = String.format(Locale.getDefault(), "%s%s	%s	%s\n", result, contact.name, contact.phone, contact.email);
         }
         return result;
     }

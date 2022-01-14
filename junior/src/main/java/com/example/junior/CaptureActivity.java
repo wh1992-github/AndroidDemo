@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.example.junior.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/9/15.
  */
@@ -57,7 +59,7 @@ public class CaptureActivity extends AppCompatActivity implements View.OnClickLi
         if (v.getId() == R.id.btn_chat) { //点击了聊天按钮,则给文本视图添加聊天文字
             int random = (int) (Math.random() * 10) % 5;
             //下面的DateUtil参见本书附录源码中的DateUtil.java
-            String newStr = String.format("%s\n%s %s",
+            String newStr = String.format(Locale.getDefault(), "%s\n%s %s",
                     tv_capture.getText().toString(), DateUtil.getNowTime(), mChatStr[random]);
             tv_capture.setText(newStr);
         } else if (v.getId() == R.id.btn_capture) { //点击了截图按钮,则将截图信息显示在图像视图上

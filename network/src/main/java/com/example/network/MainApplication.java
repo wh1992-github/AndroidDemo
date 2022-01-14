@@ -8,6 +8,8 @@ import android.util.Log;
 import com.example.network.thread.ClientThread;
 import com.example.network.util.DateUtil;
 
+import java.util.Locale;
+
 public class MainApplication extends Application {
     private static final String TAG = "MainApplication";
     //声明一个当前应用的静态实例
@@ -36,7 +38,7 @@ public class MainApplication extends Application {
     //发送聊天消息
     public void sendAction(String action, String otherId, String msgText) {
         //拼接完整的聊天消息
-        String content = String.format("%s,%s,%s,%s,%s%s%s\r\n",
+        String content = String.format(Locale.getDefault(), "%s,%s,%s,%s,%s%s%s\r\n",
                 action, Build.SERIAL, getNickName(), DateUtil.getNowDateTime(""),
                 otherId, ClientThread.SPLIT_LINE, msgText);
         Log.d(TAG, "sendAction : " + content);

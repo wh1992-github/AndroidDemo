@@ -1,6 +1,5 @@
 package com.example.senior;
 
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.os.Bundle;
@@ -11,11 +10,12 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/7.
  */
-@SuppressLint("DefaultLocale")
+
 //该页面类实现了接口OnDateSetListener,意味着要重写日期监听器的onDateSet方法
 public class DatePickerActivity extends AppCompatActivity implements
         OnClickListener, OnDateSetListener {
@@ -48,7 +48,7 @@ public class DatePickerActivity extends AppCompatActivity implements
             dialog.show();
         } else if (v.getId() == R.id.btn_ok) {
             //获取日期选择器dp_date设定的年月份
-            String desc = String.format("您选择的日期是%d年%d月%d日",
+            String desc = String.format(Locale.getDefault(), "您选择的日期是%d年%d月%d日",
                     dp_date.getYear(), dp_date.getMonth() + 1, dp_date.getDayOfMonth());
             tv_date.setText(desc);
         }
@@ -57,7 +57,7 @@ public class DatePickerActivity extends AppCompatActivity implements
     //一旦点击日期对话框上的确定按钮,就会触发监听器的onDateSet方法
     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
         //获取日期对话框设定的年月份
-        String desc = String.format("您选择的日期是%d年%d月%d日",
+        String desc = String.format(Locale.getDefault(), "您选择的日期是%d年%d月%d日",
                 year, monthOfYear + 1, dayOfMonth);
         tv_date.setText(desc);
     }

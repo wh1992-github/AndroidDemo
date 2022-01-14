@@ -18,10 +18,12 @@ import android.widget.TextView;
 
 import com.example.performance.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2018/1/26.
  */
-@SuppressLint(value = {"StaticFieldLeak", "SetTextI18n"})
+@SuppressLint({"StaticFieldLeak", "SetTextI18n"})
 @TargetApi(Build.VERSION_CODES.M)
 public class AlarmIdleActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "AlarmIdleActivity";
@@ -97,7 +99,7 @@ public class AlarmIdleActivity extends AppCompatActivity implements View.OnClick
             if (intent != null) {
                 Log.d(TAG, "AlarmReceiver onReceive");
                 if (tv_alarm != null) {
-                    mDesc = String.format("%s\n%s 闹钟时间到达", mDesc, DateUtil.getNowTime());
+                    mDesc = String.format(Locale.getDefault(), "%s\n%s 闹钟时间到达", mDesc, DateUtil.getNowTime());
                     tv_alarm.setText(mDesc);
                     repeatAlarm(); //重复闹钟提醒设置
                 }

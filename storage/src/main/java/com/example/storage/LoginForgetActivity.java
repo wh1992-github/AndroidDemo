@@ -1,6 +1,5 @@
 package com.example.storage;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -11,10 +10,12 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/1.
  */
-@SuppressLint("DefaultLocale")
+
 public class LoginForgetActivity extends AppCompatActivity implements OnClickListener {
     private EditText et_password_first;
     private EditText et_password_second;
@@ -43,7 +44,7 @@ public class LoginForgetActivity extends AppCompatActivity implements OnClickLis
                 return;
             }
             //生成六位随机数字的验证码
-            mVerifyCode = String.format("%06d", (int) (Math.random() * 1000000 % 1000000));
+            mVerifyCode = String.format(Locale.getDefault(), "%06d", (int) (Math.random() * 1000000 % 1000000));
             //弹出提醒对话框,提示用户六位验证码数字
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("请记住验证码");

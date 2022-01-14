@@ -121,7 +121,7 @@ public class StringUtils {
             //低位直接转
             String s2 = s.substring(4);
             //将16进制的string转为int
-            int n = Integer.valueOf(s1, 16) + Integer.valueOf(s2, 16);
+            int n = Integer.parseInt(s1, 16) + Integer.parseInt(s2, 16);
             //将int转换为字符
             char[] chars = Character.toChars(n);
             str.append(new String(chars));

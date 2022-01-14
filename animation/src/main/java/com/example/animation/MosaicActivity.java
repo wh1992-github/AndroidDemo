@@ -41,7 +41,7 @@ public class MosaicActivity extends AppCompatActivity {
         sp_mosaic.setSelection(0);
     }
 
-    private String[] mosaicArray = {"水平二十格", "水平三十格", "水平四十格",
+    private static final String[] mosaicArray = {"水平二十格", "水平三十格", "水平四十格",
             "垂直二十格", "垂直三十格", "垂直四十格"};
 
     class MosaicSelectedListener implements OnItemSelectedListener {
@@ -60,7 +60,7 @@ public class MosaicActivity extends AppCompatActivity {
             //设置偏差比例
             sv_mosaic.setOffset(offset);
             //构造一个按比率逐步展开的属性动画
-            ObjectAnimator anim = ObjectAnimator.ofInt(sv_mosaic, "ratio", 0 - offset, 101 + offset);
+            ObjectAnimator anim = ObjectAnimator.ofInt(sv_mosaic, "ratio", -offset, 101 + offset);
             anim.setDuration(3000); //设置动画的播放时长
             anim.start(); //开始播放属性动画
         }

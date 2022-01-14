@@ -33,11 +33,12 @@ import com.example.senior.database.ScheduleArrangeHelper;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/7.
  */
-@SuppressLint(value = {"SetTextI18n", "DefaultLocale"})
+@SuppressLint("SetTextI18n")
 public class ScheduleDetailActivity extends AppCompatActivity implements
         OnClickListener, OnTimeSetListener {
     private static final String TAG = "ScheduleDetailActivity";
@@ -78,9 +79,9 @@ public class ScheduleDetailActivity extends AppCompatActivity implements
         month = day.substring(0, 6);
         week = req.getString("week");
         holiday = req.getString("holiday");
-        detail_date = String.format("%s %s\n%s", solar_date, lunar_date, week);
+        detail_date = String.format(Locale.getDefault(), "%s %s\n%s", solar_date, lunar_date, week);
         if (!TextUtils.isEmpty(holiday)) {
-            detail_date = String.format("%s,今天是 %s", detail_date, holiday);
+            detail_date = String.format(Locale.getDefault(), "%s,今天是 %s", detail_date, holiday);
         }
         schedule_date.setText(detail_date);
         Log.d(TAG, "month=" + month + ",day=" + day + ",solar_date=" + solar_date + ",lunar_date="
@@ -99,9 +100,9 @@ public class ScheduleDetailActivity extends AppCompatActivity implements
     }
 
     private int alarmType = 0;
-    private String[] alarmArray = {"不提醒", "提前5分钟", "提前10分钟",
+    private final String[] alarmArray = {"不提醒", "提前5分钟", "提前10分钟",
             "提前15分钟", "提前半小时", "提前1小时", "当前时间后10秒"};
-    private int[] advanceArray = {0, 5, 10, 15, 30, 60, 10};
+    private final int[] advanceArray = {0, 5, 10, 15, 30, 60, 10};
 
     class AlarmSelectedListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -223,12 +224,12 @@ public class ScheduleDetailActivity extends AppCompatActivity implements
     //一旦点击时间对话框上的确定按钮,就会触发监听器的onTimeSet方法
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         //获取时间对话框设定的小时和分钟
-        String time = String.format("%02d:%02d", hourOfDay, minute);
+        String time = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute);
         schedule_time.setText(time);
     }
 
     //声明一个闹钟广播事件的标识串
-    private String ALARM_EVENT = "com.example.senior.ScheduleDetailActivity.AlarmReceiver";
+    private final String ALARM_EVENT = "com.example.senior.ScheduleDetailActivity.AlarmReceiver";
 
     //定义一个闹钟广播的接收器
     public static class AlarmReceiver extends BroadcastReceiver {

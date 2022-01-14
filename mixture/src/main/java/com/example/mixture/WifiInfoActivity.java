@@ -1,6 +1,5 @@
 package com.example.mixture;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -16,10 +15,12 @@ import android.widget.TextView;
 import com.example.mixture.util.IPv4Util;
 import com.example.mixture.util.NetUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/12/11.
  */
-@SuppressLint("DefaultLocale")
+
 public class WifiInfoActivity extends AppCompatActivity {
     private static final String TAG = "WifiInfoActivity";
     private TextView tv_info;
@@ -65,23 +66,23 @@ public class WifiInfoActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(SSID) || SSID.contains("unknown")) {
                     desc = "\n当前联网的网络类型是WIFI,但未成功连接已知的wifi信号";
                 } else {
-                    desc = String.format("%s当前联网的网络类型是WIFI,", desc);
-                    desc = String.format("%s状态是%s。\n", desc, mWifiStateArray[state]);
-                    desc = String.format("%s\tWIFI名称是：%s\n", desc, SSID);
-                    desc = String.format("%s\t路由器MAC是：%s\n", desc, wifiInfo.getBSSID());
-                    desc = String.format("%s\tWIFI信号强度是：%d\n", desc, wifiInfo.getRssi());
-                    desc = String.format("%s\t连接速率是：%s\n", desc, wifiInfo.getLinkSpeed());
-                    desc = String.format("%s\t手机的IP地址是：%s\n", desc, IPv4Util.intToIp(wifiInfo.getIpAddress()));
-                    desc = String.format("%s\t手机的MAC地址是：%s\n", desc, wifiInfo.getMacAddress());
-                    desc = String.format("%s\t网络编号是：%s\n", desc, wifiInfo.getNetworkId());
+                    desc = String.format(Locale.getDefault(), "%s当前联网的网络类型是WIFI,", desc);
+                    desc = String.format(Locale.getDefault(), "%s状态是%s。\n", desc, mWifiStateArray[state]);
+                    desc = String.format(Locale.getDefault(), "%s\tWIFI名称是：%s\n", desc, SSID);
+                    desc = String.format(Locale.getDefault(), "%s\t路由器MAC是：%s\n", desc, wifiInfo.getBSSID());
+                    desc = String.format(Locale.getDefault(), "%s\tWIFI信号强度是：%d\n", desc, wifiInfo.getRssi());
+                    desc = String.format(Locale.getDefault(), "%s\t连接速率是：%s\n", desc, wifiInfo.getLinkSpeed());
+                    desc = String.format(Locale.getDefault(), "%s\t手机的IP地址是：%s\n", desc, IPv4Util.intToIp(wifiInfo.getIpAddress()));
+                    desc = String.format(Locale.getDefault(), "%s\t手机的MAC地址是：%s\n", desc, wifiInfo.getMacAddress());
+                    desc = String.format(Locale.getDefault(), "%s\t网络编号是：%s\n", desc, wifiInfo.getNetworkId());
                 }
             } else if (info.getType() == ConnectivityManager.TYPE_MOBILE) { //移动网络（数据连接）
                 int net_type = info.getSubtype();
-                desc = String.format("\n当前联网的网络类型是%s %s",
+                desc = String.format(Locale.getDefault(), "\n当前联网的网络类型是%s %s",
                         NetUtil.getNetworkTypeName(tm, net_type),
                         NetUtil.getClassName(tm, net_type));
             } else {
-                desc = String.format("\n当前联网的网络类型是%d", info.getType());
+                desc = String.format(Locale.getDefault(), "\n当前联网的网络类型是%d", info.getType());
             }
         } else { //无网络连接
             desc = "\n当前无上网连接";

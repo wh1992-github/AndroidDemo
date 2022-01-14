@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.Locale;
 
 public class GetClientName {
     private String remoteAddr;
@@ -133,7 +134,7 @@ public class GetClientName {
         byte[] bqcmd = getQueryCmd();
         this.send(bqcmd);
         DatagramPacket dp = receive();
-        String info = String.format("%s|%s|%s", remoteAddr,
+        String info = String.format(Locale.getDefault(), "%s|%s|%s", remoteAddr,
                 getDeviceName(dp.getData()), getMacAddr(dp.getData()));
         System.out.println("getRemoteInfo=" + info);
         this.close();

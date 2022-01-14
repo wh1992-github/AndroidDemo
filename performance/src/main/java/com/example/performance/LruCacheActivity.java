@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.performance.util.DateUtil;
 
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -50,7 +51,7 @@ public class LruCacheActivity extends AppCompatActivity implements OnClickListen
         //获取LRU缓存在当前时刻下的快照映射
         Map<String, String> cache = mLanguageLru.snapshot();
         for (Map.Entry<String, String> item : cache.entrySet()) {
-            desc = String.format("%s%s 最后一次更新时间为%s\n",
+            desc = String.format(Locale.getDefault(), "%s%s 最后一次更新时间为%s\n",
                     desc, item.getKey(), item.getValue());
         }
         tv_lru_cache.setText(desc);

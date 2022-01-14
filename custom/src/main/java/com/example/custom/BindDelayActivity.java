@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.example.custom.service.BindDelayService;
 import com.example.custom.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/14.
  */
@@ -56,7 +58,7 @@ public class BindDelayActivity extends AppCompatActivity implements OnClickListe
 
     public static void showText(String desc) {
         if (tv_delay != null) {
-            mDesc = String.format("%s%s %s\n", mDesc, DateUtil.getNowDateTime("HH:mm:ss"), desc);
+            mDesc = String.format(Locale.getDefault(), "%s%s %s\n", mDesc, DateUtil.getNowDateTime("HH:mm:ss"), desc);
             tv_delay.setText(mDesc);
         }
     }

@@ -18,7 +18,7 @@ import com.example.network.util.DateUtil;
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint(value = {"HandlerLeak", "SetTextI18n"})
+@SuppressLint({"HandlerLeak", "SetTextI18n"})
 public class ProgressDialogActivity extends AppCompatActivity {
     private static final String TAG = "ProgressDialogActivity";
     private ProgressDialog mDialog; //声明一个进度对话框对象

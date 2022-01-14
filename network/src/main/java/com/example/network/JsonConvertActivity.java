@@ -10,10 +10,12 @@ import android.widget.TextView;
 import com.example.network.bean.UserInfo;
 import com.google.gson.Gson;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/9/24.
  */
-@SuppressLint(value = {"DefaultLocale", "SetTextI18n"})
+@SuppressLint({"SetTextI18n"})
 public class JsonConvertActivity extends AppCompatActivity implements OnClickListener {
     private TextView tv_json;
     private UserInfo mUser = new UserInfo(); //创建一个用户信息对象
@@ -45,7 +47,7 @@ public class JsonConvertActivity extends AppCompatActivity implements OnClickLis
         } else if (v.getId() == R.id.btn_convert_json) {
             //把json串转换为UserInfo类型的数据对象newUser
             UserInfo newUser = new Gson().fromJson(mJsonStr, UserInfo.class);
-            String desc = String.format("\n\t姓名=%s\n\t年龄=%d\n\t身高=%d\n\t体重=%f\n\t婚否=%b",
+            String desc = String.format(Locale.getDefault(), "\n\t姓名=%s\n\t年龄=%d\n\t身高=%d\n\t体重=%f\n\t婚否=%b",
                     newUser.name, newUser.age, newUser.height, newUser.weight, newUser.married);
             tv_json.setText("从json串解析而来的用户信息如下：" + desc);
         }

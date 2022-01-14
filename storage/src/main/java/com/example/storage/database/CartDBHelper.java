@@ -1,6 +1,5 @@
 package com.example.storage.database;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -11,8 +10,9 @@ import android.util.Log;
 import com.example.storage.bean.CartInfo;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
+
 public class CartDBHelper extends SQLiteOpenHelper {
     private static final String TAG = "CartDBHelper";
     private static final String DB_NAME = "cart.db"; //数据库的名称
@@ -110,7 +110,7 @@ public class CartDBHelper extends SQLiteOpenHelper {
             Log.d(TAG, "goods_id=" + info.goods_id + ", count=" + info.count);
             //如果存在相同rowid的记录,则更新记录
             if (info.rowid > 0) {
-                String condition = String.format("rowid='%d'", info.rowid);
+                String condition = String.format(Locale.getDefault(), "rowid='%d'", info.rowid);
                 update(info, condition);
                 result = info.rowid;
                 continue;
@@ -147,7 +147,7 @@ public class CartDBHelper extends SQLiteOpenHelper {
 
     //根据指定条件查询记录,并返回结果数据队列
     public ArrayList<CartInfo> query(String condition) {
-        String sql = String.format("select rowid,_id,goods_id,count,update_time" +
+        String sql = String.format(Locale.getDefault(), "select rowid,_id,goods_id,count,update_time" +
                 " from %s where %s;", TABLE_NAME, condition);
         Log.d(TAG, "query sql: " + sql);
         ArrayList<CartInfo> infoArray = new ArrayList<CartInfo>();
@@ -170,7 +170,7 @@ public class CartDBHelper extends SQLiteOpenHelper {
     //根据行号查询指定记录
     public CartInfo queryById(long rowid) {
         CartInfo info = null;
-        ArrayList<CartInfo> infoArray = query(String.format("rowid='%d'", rowid));
+        ArrayList<CartInfo> infoArray = query(String.format(Locale.getDefault(), "rowid='%d'", rowid));
         if (infoArray.size() > 0) {
             info = infoArray.get(0);
         }
@@ -180,7 +180,7 @@ public class CartDBHelper extends SQLiteOpenHelper {
     //根据商品编号查询指定记录
     public CartInfo queryByGoodsId(long goods_id) {
         CartInfo info = null;
-        ArrayList<CartInfo> infoArray = query(String.format("goods_id='%d'", goods_id));
+        ArrayList<CartInfo> infoArray = query(String.format(Locale.getDefault(), "goods_id='%d'", goods_id));
         if (infoArray.size() > 0) {
             info = infoArray.get(0);
         }

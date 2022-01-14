@@ -11,11 +11,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.net.InetAddress;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint(value = {"HandlerLeak", "SetTextI18n"})
+@SuppressLint({"HandlerLeak", "SetTextI18n"})
 public class NetAddressActivity extends AppCompatActivity implements OnClickListener {
     private EditText et_host_name;
     private TextView tv_host_name;
@@ -64,7 +65,7 @@ public class NetAddressActivity extends AppCompatActivity implements OnClickList
                 boolean isReachable = host.isReachable(5000);
                 String desc = (isReachable) ? "可以连接" : "无法连接";
                 if (isReachable) { //可以连接
-                    desc = String.format("%s\n主机名为%s\n主机地址为%s",
+                    desc = String.format(Locale.getDefault(), "%s\n主机名为%s\n主机地址为%s",
                             desc, host.getHostName(), host.getHostAddress());
                 }
                 message.what = 0; //消息类型

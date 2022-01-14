@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.middle.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/9/24.
  */
@@ -51,7 +53,7 @@ public class ActRequestActivity extends AppCompatActivity implements OnClickList
             String response_time = data.getStringExtra("response_time");
             //从意图中取出名叫response_content的字符串
             String response_content = data.getStringExtra("response_content");
-            String desc = String.format("收到返回消息：\n应答时间为%s\n应答内容为%s",
+            String desc = String.format(Locale.getDefault(), "收到返回消息：\n应答时间为%s\n应答内容为%s",
                     response_time, response_content);
             //把返回消息的详情显示在文本视图上
             tv_request.setText(desc);

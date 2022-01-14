@@ -18,13 +18,13 @@ import com.example.group.widget.CustomDateDialog;
 import com.example.group.widget.CustomDateDialog.OnDateSetListener;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/21.
  */
-@SuppressLint(value = {"DefaultLocale", "SetTextI18n"})
-public class ToolbarCustomActivity extends AppCompatActivity implements
-        OnClickListener, OnDateSetListener {
+@SuppressLint({"SetTextI18n"})
+public class ToolbarCustomActivity extends AppCompatActivity implements OnClickListener, OnDateSetListener {
     private static final String TAG = "ToolbarCustomActivity";
     private TextView tv_day;
     private TextView tv_desc;
@@ -77,7 +77,7 @@ public class ToolbarCustomActivity extends AppCompatActivity implements
 
     @Override
     public void onDateSet(int year, int month, int day) {
-        String date = String.format("%d年%d月%d日", year, month, day);
+        String date = String.format(Locale.getDefault(), "%d年%d月%d日", year, month, day);
         tv_day.setText(date);
         tv_desc.setText("您选择的日期是" + date);
     }

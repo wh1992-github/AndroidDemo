@@ -1,13 +1,15 @@
 package com.example.animation.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.Scroller;
 import android.widget.TextView;
 
 //平滑滚动的文本视图
+@SuppressLint("AppCompatCustomView")
 public class ScrollTextView extends TextView {
-    private Scroller mScroller; //声明一个滚动器对象
+    private final Scroller mScroller; //声明一个滚动器对象
 
     public ScrollTextView(Context context) {
         this(context, null);

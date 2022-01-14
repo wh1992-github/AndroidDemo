@@ -1,6 +1,5 @@
 package com.example.performance;
 
-import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,10 +11,12 @@ import android.widget.TextView;
 
 import com.example.performance.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/12/27.
  */
-@SuppressLint("DefaultLocale")
+
 public class BatteryInfoActivity extends AppCompatActivity {
     private TextView tv_battery_change;
     private static String[] mStatus = {"不存在", "未知", "正在充电", "正在断电", "不在充电", "充满"};
@@ -66,16 +67,16 @@ public class BatteryInfoActivity extends AppCompatActivity {
                 String technology = intent.getStringExtra(BatteryManager.EXTRA_TECHNOLOGY);
                 int temperature = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0);
                 boolean present = intent.getBooleanExtra(BatteryManager.EXTRA_PRESENT, false);
-                String desc = String.format("%s : 收到广播：%s", DateUtil.getNowTime(), intent.getAction());
-                desc = String.format("%s\n电量刻度=%d", desc, scale);
-                desc = String.format("%s\n当前电量=%d", desc, level);
-                desc = String.format("%s\n当前状态=%s", desc, mStatus[status]);
-                desc = String.format("%s\n健康程度=%s", desc, mHealthy[healthy]);
-                desc = String.format("%s\n当前电压=%d", desc, voltage);
-                desc = String.format("%s\n当前电源=%s", desc, mPlugged[plugged]);
-                desc = String.format("%s\n当前技术=%s", desc, technology);
-                desc = String.format("%s\n当前温度=%d", desc, temperature / 10);
-                desc = String.format("%s\n是否提供电池=%s", desc, present ? "是" : "否");
+                String desc = String.format(Locale.getDefault(), "%s : 收到广播：%s", DateUtil.getNowTime(), intent.getAction());
+                desc = String.format(Locale.getDefault(), "%s\n电量刻度=%d", desc, scale);
+                desc = String.format(Locale.getDefault(), "%s\n当前电量=%d", desc, level);
+                desc = String.format(Locale.getDefault(), "%s\n当前状态=%s", desc, mStatus[status]);
+                desc = String.format(Locale.getDefault(), "%s\n健康程度=%s", desc, mHealthy[healthy]);
+                desc = String.format(Locale.getDefault(), "%s\n当前电压=%d", desc, voltage);
+                desc = String.format(Locale.getDefault(), "%s\n当前电源=%s", desc, mPlugged[plugged]);
+                desc = String.format(Locale.getDefault(), "%s\n当前技术=%s", desc, technology);
+                desc = String.format(Locale.getDefault(), "%s\n当前温度=%d", desc, temperature / 10);
+                desc = String.format(Locale.getDefault(), "%s\n是否提供电池=%s", desc, present ? "是" : "否");
                 tv_battery_change.setText(desc);
             }
         }

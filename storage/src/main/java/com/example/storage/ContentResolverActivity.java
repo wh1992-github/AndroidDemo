@@ -1,6 +1,5 @@
 package com.example.storage;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,10 +12,12 @@ import android.widget.Toast;
 import com.example.storage.bean.Contact;
 import com.example.storage.util.CommunicationUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/12/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class ContentResolverActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "ContentResolverActivity";
     private EditText et_contact_name;
@@ -66,7 +67,7 @@ public class ContentResolverActivity extends AppCompatActivity implements OnClic
             mContactResult = CommunicationUtil.readAllContacts(getContentResolver());
             String[] split = mContactResult.split("\n");
             int count = (!mContactResult.contains("\n")) ? 0 : split.length;
-            mContactCount = String.format("当前共找到%d位联系人", count);
+            mContactCount = String.format(Locale.getDefault(), "当前共找到%d位联系人", count);
             tv_read_contact.setText(mContactCount);
         } catch (Exception e) {
             Toast.makeText(this, "请检查是否开启了通讯录权限", Toast.LENGTH_SHORT).show();

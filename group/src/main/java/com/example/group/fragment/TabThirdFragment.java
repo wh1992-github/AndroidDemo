@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.group.R;
 
+import java.util.Locale;
+
 public class TabThirdFragment extends Fragment {
     private static final String TAG = "TabThirdFragment";
     protected View mView; //声明一个视图对象
@@ -21,7 +23,7 @@ public class TabThirdFragment extends Fragment {
         //根据布局文件fragment_tab_third.xml生成视图对象
         mView = inflater.inflate(R.layout.fragment_tab_third, container, false);
         //根据碎片标签栏传来的参数拼接文本字符串
-        String desc = String.format("我是%s页面,来自%s",
+        String desc = String.format(Locale.getDefault(), "我是%s页面,来自%s",
                 "购物车", getArguments().getString("tag"));
         TextView tv_third = mView.findViewById(R.id.tv_third);
         tv_third.setText(desc);

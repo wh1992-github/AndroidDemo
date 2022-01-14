@@ -18,8 +18,8 @@ public class PieView extends View {
     private static final int mInterval = 70; //间隔时间,单位毫秒
     private static final int mIncrease = 10; //每次绘制增加的度数
     private int mStartAngle = 0; //当前绘制的角度
-    private Paint mPaint; //声明一个画笔对象
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Paint mPaint; //声明一个画笔对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private boolean isRunning = false; //是否正在播放
 
     public PieView(Context context) {
@@ -48,7 +48,7 @@ public class PieView extends View {
     }
 
     //定义一个绘图刷新任务
-    private Runnable mRefresh = new Runnable() {
+    private final Runnable mRefresh = new Runnable() {
         @Override
         public void run() {
             mStartAngle += mIncrease;

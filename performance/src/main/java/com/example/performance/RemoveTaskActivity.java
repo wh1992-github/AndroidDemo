@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import com.example.performance.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/12/27.
  */
@@ -107,7 +109,7 @@ public class RemoveTaskActivity extends AppCompatActivity implements OnClickList
         //在收到定时任务的广播时触发
         public void onReceive(Context context, Intent intent) {
             if (intent != null) {
-                mDesc = String.format("%s%s 打印了一行测试日志\n", mDesc, DateUtil.getNowTime());
+                mDesc = String.format(Locale.getDefault(), "%s%s 打印了一行测试日志\n", mDesc, DateUtil.getNowTime());
                 tv_remove.setText(mDesc);
             }
         }

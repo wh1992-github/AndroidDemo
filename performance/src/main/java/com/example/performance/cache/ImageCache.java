@@ -16,11 +16,12 @@ import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
-@SuppressLint(value = {"StaticFieldLeak", "DefaultLocale"})
+@SuppressLint("StaticFieldLeak")
 public class ImageCache {
     private static final String TAG = "ImageCache";
     //内存中的图片缓存
@@ -124,7 +125,7 @@ public class ImageCache {
 
     //根据图片地址生成对应的图片路径
     private String getFilePath(String url) {
-        return String.format("%s/%d.jpg", mDir, url.hashCode());
+        return String.format(Locale.getDefault(), "%s/%d.jpg", mDir, url.hashCode());
     }
 
     //定义一个渲染处理器,用于在UI主线程中渲染图片
@@ -132,7 +133,7 @@ public class ImageCache {
         public static WeakReference<Activity> mActivity;
 
         public RenderHandler(Activity activity) {
-            mActivity = new WeakReference<Activity>(activity);
+            mActivity = new WeakReference<>(activity);
         }
 
         @Override
@@ -153,7 +154,7 @@ public class ImageCache {
 
     //定义一个图片加载任务
     private class LoadRunnable implements Runnable {
-        private String mUrl;
+        private final String mUrl;
 
         public LoadRunnable(String url) {
             mUrl = url;

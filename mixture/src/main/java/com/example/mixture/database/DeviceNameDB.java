@@ -8,6 +8,7 @@ import android.util.Log;
 import com.example.mixture.bean.DeviceName;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class DeviceNameDB {
     private static final String TAG = "DeviceNameDB";
@@ -61,7 +62,7 @@ public class DeviceNameDB {
     }
 
     public ArrayList<DeviceName> queryByDevice(String device) {
-        String str = String.format("select _id,device,name from %s where device='%s';"
+        String str = String.format(Locale.getDefault(), "select _id,device,name from %s where device='%s';"
                 , TABLE_NAME, device);
         return query(str);
     }

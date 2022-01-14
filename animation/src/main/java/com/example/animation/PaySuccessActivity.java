@@ -74,7 +74,7 @@ public class PaySuccessActivity extends AppCompatActivity implements OnClickList
     }
 
     //定义一个打勾动画的播放任务
-    private Runnable mHookRunnable = new Runnable() {
+    private final Runnable mHookRunnable = new Runnable() {
         @Override
         public void run() {
             //开始播放打勾的矢量动画

@@ -49,13 +49,17 @@ class RecyclerViewItemAnimActivity : AppCompatActivity() {
         remove_btn.setOnClickListener {
             if (adapter?.data?.size ?: 0 > 0) {
                 adapter?.remove(0)
-                (recycler_view.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(0, 0)
+                (recycler_view.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(
+                    0,
+                    0
+                )
             }
         }
     }
 
     private fun setReverseLayout(reverseLayout: Boolean) {
-        recycler_view.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, reverseLayout)
+        recycler_view.layoutManager =
+            LinearLayoutManager(this, RecyclerView.VERTICAL, reverseLayout)
         adapter?.data?.clear()
         adapter?.notifyDataSetChanged()
     }

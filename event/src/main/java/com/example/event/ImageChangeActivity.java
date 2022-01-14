@@ -19,13 +19,13 @@ import com.aqi00.lib.dialog.FileSelectFragment.FileSelectCallbacks;
 import com.example.event.util.BitmapUtil;
 import com.example.event.widget.BitmapView;
 
+import java.util.Locale;
 import java.util.Map;
 
 /**
  * Created by test on 2017/11/23.
  */
-public class ImageChangeActivity extends AppCompatActivity implements
-        OnClickListener, FileSelectCallbacks, FileSaveCallbacks {
+public class ImageChangeActivity extends AppCompatActivity implements OnClickListener, FileSelectCallbacks, FileSaveCallbacks {
     private BitmapView bv_image; //声明一个位图视图对象
     private Bitmap mBitmap = null; //声明一个位图对象
 
@@ -122,7 +122,7 @@ public class ImageChangeActivity extends AppCompatActivity implements
     //点击文件保存对话框的确定按钮后触发
     public void onConfirmSave(String absolutePath, String fileName) {
         //拼接文件的完整路径
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         //从位图视图bv_image的绘图缓存中获取位图对象
         Bitmap bitmap = bv_image.getDrawingCache();
         //把位图数据保存为图片文件
@@ -134,7 +134,7 @@ public class ImageChangeActivity extends AppCompatActivity implements
     //点击文件选择对话框的确定按钮后触发
     public void onConfirmSelect(String absolutePath, String fileName, Map<String, Object> map_param) {
         //拼接文件的完整路径
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         //从指定路径的图片文件中获取位图数据
         mBitmap = BitmapFactory.decodeFile(path);
         //设置位图视图的位图对象

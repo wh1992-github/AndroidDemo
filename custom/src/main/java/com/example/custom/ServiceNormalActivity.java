@@ -1,6 +1,5 @@
 package com.example.custom;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,10 +10,11 @@ import android.widget.TextView;
 import com.example.custom.service.NormalService;
 import com.example.custom.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/14.
  */
-@SuppressLint("StaticFieldLeak")
 public class ServiceNormalActivity extends AppCompatActivity implements OnClickListener {
     private static TextView tv_normal;
     private Intent mIntent; //声明一个意图对象
@@ -42,7 +42,7 @@ public class ServiceNormalActivity extends AppCompatActivity implements OnClickL
 
     public static void showText(String desc) {
         if (tv_normal != null) {
-            mDesc = String.format("%s%s %s\n", mDesc, DateUtil.getNowDateTime("HH:mm:ss"), desc);
+            mDesc = String.format(Locale.getDefault(), "%s%s %s\n", mDesc, DateUtil.getNowDateTime("HH:mm:ss"), desc);
             tv_normal.setText(mDesc);
         }
     }

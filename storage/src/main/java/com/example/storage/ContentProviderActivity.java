@@ -1,6 +1,5 @@
 package com.example.storage;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -18,11 +17,12 @@ import com.example.storage.provider.UserInfoContent;
 import com.example.storage.util.DateUtil;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/12/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class ContentProviderActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "ContentProviderActivity";
     private EditText et_name;
@@ -71,7 +71,7 @@ public class ContentProviderActivity extends AppCompatActivity implements OnClic
         mUserResult = readAllUser(getContentResolver());
         String[] split = mUserResult.split("\n");
         int count = (!mUserResult.contains("\n")) ? 0 : split.length;
-        mUserCount = String.format("当前共找到%d位用户信息", count);
+        mUserCount = String.format(Locale.getDefault(), "当前共找到%d位用户信息", count);
         tv_read_user.setText(mUserCount);
     }
 
@@ -107,7 +107,7 @@ public class ContentProviderActivity extends AppCompatActivity implements OnClic
         String result = "";
         for (UserInfo user : userArray) {
             //遍历用户信息队列,逐个拼接到结果字符串
-            result = String.format("%s%s	年龄%d	身高%d	体重%f\n", result,
+            result = String.format(Locale.getDefault(), "%s%s	年龄%d	身高%d	体重%f\n", result,
                     user.name, user.age, user.height, user.weight);
         }
         Log.d(TAG, "result=" + result);

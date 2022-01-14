@@ -4,11 +4,12 @@ import android.content.Context;
 import android.os.Environment;
 
 import java.io.File;
+import java.util.Locale;
 
 public class DirUtil {
 
     public static boolean isStorageAdmit(Context context) {
-        String tempPath = String.format("%s/%s/", Environment.getExternalStoragePublicDirectory(
+        String tempPath = String.format(Locale.getDefault(), "%s/%s/", Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_DOWNLOADS).getAbsolutePath(),
                 context.getPackageName());
         if (!createDir(tempPath)) {

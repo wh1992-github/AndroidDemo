@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import com.example.media.util.DateUtil;
 
+import java.util.Locale;
+
 public class OrientationActivity extends AppCompatActivity {
     private TextView tv_orientation;
     private String mDesc = "";
@@ -17,7 +19,7 @@ public class OrientationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_orientation);
         TextView tv_create = findViewById(R.id.tv_create);
         tv_orientation = findViewById(R.id.tv_orientation);
-        String desc = String.format("%s %s", DateUtil.getNowTime(), "活动页面已创建,请旋转手机屏幕");
+        String desc = String.format(Locale.getDefault(), "%s %s", DateUtil.getNowTime(), "活动页面已创建,请旋转手机屏幕");
         tv_create.setText(desc);
     }
 
@@ -26,12 +28,12 @@ public class OrientationActivity extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
         switch (newConfig.orientation) { //判断当前的屏幕方向
             case Configuration.ORIENTATION_PORTRAIT: //切换到竖屏
-                mDesc = String.format("%s\n%s %s", mDesc,
+                mDesc = String.format(Locale.getDefault(), "%s\n%s %s", mDesc,
                         DateUtil.getNowTime(), "当前屏幕为竖屏方向");
                 tv_orientation.setText(mDesc);
                 break;
             case Configuration.ORIENTATION_LANDSCAPE: //切换到横屏
-                mDesc = String.format("%s\n%s %s", mDesc,
+                mDesc = String.format(Locale.getDefault(), "%s\n%s %s", mDesc,
                         DateUtil.getNowTime(), "当前屏幕为横屏方向");
                 tv_orientation.setText(mDesc);
                 break;

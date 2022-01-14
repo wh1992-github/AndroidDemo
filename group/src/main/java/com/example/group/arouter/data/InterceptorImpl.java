@@ -11,6 +11,8 @@ import com.alibaba.android.arouter.facade.callback.InterceptorCallback;
 import com.alibaba.android.arouter.facade.template.IInterceptor;
 import com.example.group.ARouterActivity;
 
+import java.util.Locale;
+
 @Interceptor(priority = 7, name = "TestInterceptor")
 public class InterceptorImpl implements IInterceptor {
     private static final String TAG = "TestInterceptor";
@@ -30,7 +32,7 @@ public class InterceptorImpl implements IInterceptor {
             final AlertDialog.Builder ab = new AlertDialog.Builder(activity);
             ab.setCancelable(false);
             ab.setTitle("温馨提醒");
-            ab.setMessage(String.format("想要跳转到ActivityOne吗？(触发了%s拦截器，拦截了本次跳转)", INTERCEPTOR));
+            ab.setMessage(String.format(Locale.getDefault(), "想要跳转到ActivityOne吗？(触发了%s拦截器，拦截了本次跳转)", INTERCEPTOR));
             ab.setNegativeButton("继续", (dialog, which) -> callback.onContinue(postcard));
             ab.setNeutralButton("算了", (dialog, which) -> callback.onInterrupt(null));
             ab.setPositiveButton("加点料", (dialog, which) -> {

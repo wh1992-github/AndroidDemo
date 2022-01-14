@@ -15,10 +15,12 @@ import android.widget.TextView;
 
 import com.example.senior.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/7.
  */
-@SuppressLint(value = {"DefaultLocale", "StaticFieldLeak"})
+@SuppressLint({"StaticFieldLeak"})
 public class VibratorActivity extends AppCompatActivity implements OnClickListener {
     private static TextView tv_vibrator;
 
@@ -43,8 +45,8 @@ public class VibratorActivity extends AppCompatActivity implements OnClickListen
     }
 
     private int mDuration; //震动时长
-    private int[] durationArray = {500, 1000, 2000, 3000, 4000, 5000};
-    private String[] durationDescArray = {"0.5秒", "1秒", "2秒", "3秒", "4秒", "5秒"};
+    private final int[] durationArray = {500, 1000, 2000, 3000, 4000, 5000};
+    private final String[] durationDescArray = {"0.5秒", "1秒", "2秒", "3秒", "4秒", "5秒"};
 
     class DurationSelectedListener implements OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -62,7 +64,7 @@ public class VibratorActivity extends AppCompatActivity implements OnClickListen
             Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
             //命令震动器吱吱个若干秒
             vibrator.vibrate(mDuration);
-            String desc = String.format("%s 手机震动了%f秒", DateUtil.getNowTime(), mDuration / 1000.0f);
+            String desc = String.format(Locale.getDefault(), "%s 手机震动了%f秒", DateUtil.getNowTime(), mDuration / 1000.0f);
             tv_vibrator.setText(desc);
         }
     }

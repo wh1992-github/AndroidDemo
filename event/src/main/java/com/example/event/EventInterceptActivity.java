@@ -10,6 +10,8 @@ import com.example.event.util.DateUtil;
 import com.example.event.widget.InterceptLayout;
 import com.example.event.widget.InterceptLayout.InterceptListener;
 
+import java.util.Locale;
+
 public class EventInterceptActivity extends AppCompatActivity implements
         OnClickListener, InterceptListener {
     private TextView tv_intercept_no;
@@ -34,17 +36,17 @@ public class EventInterceptActivity extends AppCompatActivity implements
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_intercept_no) {
-            desc_no = String.format("%s%s 您点击了按钮\n", desc_no, DateUtil.getNowTime());
+            desc_no = String.format(Locale.getDefault(), "%s%s 您点击了按钮\n", desc_no, DateUtil.getNowTime());
             tv_intercept_no.setText(desc_no);
         } else if (v.getId() == R.id.btn_intercept_yes) {
-            desc_yes = String.format("%s%s 您点击了按钮\n", desc_yes, DateUtil.getNowTime());
+            desc_yes = String.format(Locale.getDefault(), "%s%s 您点击了按钮\n", desc_yes, DateUtil.getNowTime());
             tv_intercept_yes.setText(desc_yes);
         }
     }
 
     //在拦截触摸事件时触发
     public void onIntercept() {
-        desc_yes = String.format("%s%s 触摸动作被拦截,按钮点击不了了\n", desc_yes,
+        desc_yes = String.format(Locale.getDefault(), "%s%s 触摸动作被拦截,按钮点击不了了\n", desc_yes,
                 DateUtil.getNowTime());
         tv_intercept_yes.setText(desc_yes);
     }

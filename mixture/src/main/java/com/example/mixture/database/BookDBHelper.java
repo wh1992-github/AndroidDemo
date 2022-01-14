@@ -11,6 +11,7 @@ import android.util.Log;
 import com.example.mixture.bean.BookInfo;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by test on 2018/1/9.
@@ -102,7 +103,7 @@ public class BookDBHelper extends SQLiteOpenHelper {
             //如果存在同名记录,则更新记录
             //注意条件语句的等号后面要用单引号括起来
             if (!TextUtils.isEmpty(info.path)) {
-                String condition = String.format("path='%s'", info.path);
+                String condition = String.format(Locale.getDefault(), "path='%s'", info.path);
                 tempArray = query(condition);
                 if (tempArray.size() > 0) {
                     continue;
@@ -139,7 +140,7 @@ public class BookDBHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<BookInfo> query(String condition) {
-        String sql = String.format("select _id,title,author,path,page_number,size" +
+        String sql = String.format(Locale.getDefault(), "select _id,title,author,path,page_number,size" +
                 " from %s where %s;", TABLE_NAME, condition);
         Log.d(TAG, "query sql: " + sql);
         ArrayList<BookInfo> infoArray = new ArrayList<>();
@@ -160,7 +161,7 @@ public class BookDBHelper extends SQLiteOpenHelper {
 
     public BookInfo queryByPath(String path) {
         BookInfo info = null;
-        ArrayList<BookInfo> infoArray = query(String.format("path='%s'", path));
+        ArrayList<BookInfo> infoArray = query(String.format(Locale.getDefault(), "path='%s'", path));
         if (infoArray.size() > 0) {
             info = infoArray.get(0);
         }

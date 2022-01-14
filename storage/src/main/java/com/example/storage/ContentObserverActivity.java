@@ -1,6 +1,5 @@
 package com.example.storage;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -16,10 +15,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/12/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class ContentObserverActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "ContentObserverActivity";
     private static TextView tv_check_flow;
@@ -120,7 +121,7 @@ public class ContentObserverActivity extends AppCompatActivity implements OnClic
         public void onChange(boolean selfChange) {
             String sender = "", content = "";
             //构建一个查询短信的条件语句,这里使用移动号码测试,故而查找10086发来的短信
-            String selection = String.format("address='10086' and date>%d", System.currentTimeMillis() - 1000 * 60 * 60);
+            String selection = String.format(Locale.getDefault(), "address='10086' and date>%d", System.currentTimeMillis() - 1000 * 60 * 60);
             //通过内容解析器获取符合条件的结果集游标
             Cursor cursor = mContext.getContentResolver().query(
                     mSmsUri, mSmsColumn, selection, null, " date desc");
@@ -131,9 +132,9 @@ public class ContentObserverActivity extends AppCompatActivity implements OnClic
                 break;
             }
             cursor.close(); //关闭数据库游标
-            mCheckResult = String.format("发送号码：%s\n短信内容：%s", sender, content);
+            mCheckResult = String.format(Locale.getDefault(), "发送号码：%s\n短信内容：%s", sender, content);
             //依次解析流量校准短信里面的各项流量数值,并拼接流量校准的结果字符串
-            String flow = String.format("流量校准结果如下：\n\t总流量为：%s\n\t已使用：%s" +
+            String flow = String.format(Locale.getDefault(), "流量校准结果如下：\n\t总流量为：%s\n\t已使用：%s" +
                             "\n\t剩余：%s", findFlow(content, "总流量为", ","),
                     findFlow(content, "已使用", "MB"), findFlow(content, "剩余", "MB"));
             if (tv_check_flow != null) { //离开该页面时就不再显示流量信息

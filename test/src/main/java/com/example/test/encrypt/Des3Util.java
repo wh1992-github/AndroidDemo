@@ -1,5 +1,7 @@
 package com.example.test.encrypt;
 
+import android.annotation.SuppressLint;
+
 import com.example.test.encrypt.base64.BASE64Decoder;
 import com.example.test.encrypt.base64.BASE64Encoder;
 
@@ -11,6 +13,7 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+@SuppressLint("GetInstance")
 public class Des3Util {
 
     //定义加密算法,DESede即3DES
@@ -61,15 +64,11 @@ public class Des3Util {
     }
 
     //根据字符串生成密钥24位的字节数组
-    private static byte[] build3DesKey(String keyStr) throws UnsupportedEncodingException {
+    private static byte[] build3DesKey(String keyStr) {
         byte[] key = new byte[24];
         byte[] temp = keyStr.getBytes(StandardCharsets.UTF_8);
 
-        if (key.length > temp.length) {
-            System.arraycopy(temp, 0, key, 0, temp.length);
-        } else {
-            System.arraycopy(temp, 0, key, 0, key.length);
-        }
+        System.arraycopy(temp, 0, key, 0, Math.min(key.length, temp.length));
         return key;
     }
 

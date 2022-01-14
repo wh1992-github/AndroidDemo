@@ -9,7 +9,7 @@ import com.example.animation.widget.ExpandTextLayout;
  * Created by test on 2017/11/27.
  */
 public class ExpandActivity extends AppCompatActivity {
-    private int[] newsArray = {R.string.news1, R.string.news2, R.string.news3, R.string.news4};
+    private static final int[] newsArray = {R.string.news1, R.string.news2, R.string.news3, R.string.news4};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

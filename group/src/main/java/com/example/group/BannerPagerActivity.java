@@ -1,6 +1,5 @@
 package com.example.group;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -13,7 +12,7 @@ import com.example.group.loop.LoopViewPager;
 /**
  * Created by test on 2017/10/21.
  */
-@SuppressLint("DefaultLocale")
+
 public class BannerPagerActivity extends AppCompatActivity {
     private static final String TAG = "BannerPagerActivity";
     private LoopViewPager mLoopViewPager;

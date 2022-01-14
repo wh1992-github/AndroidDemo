@@ -1,6 +1,5 @@
 package com.example.custom;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
@@ -13,10 +12,12 @@ import android.widget.TextView;
 
 import com.example.custom.util.MeasureUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/14.
  */
-@SuppressLint("DefaultLocale")
+
 public class MeasureTextActivity extends AppCompatActivity {
     private TextView tv_desc, tv_text;
 
@@ -53,7 +54,7 @@ public class MeasureTextActivity extends AppCompatActivity {
             int width = (int) MeasureUtil.getTextWidth(text, textSize);
             //计算获取指定文本的高度
             int height = (int) MeasureUtil.getTextHeight(text, textSize);
-            String desc = String.format("下面文字的宽度是%d ,高度是%d", width, height);
+            String desc = String.format(Locale.getDefault(), "下面文字的宽度是%d ,高度是%d", width, height);
             tv_desc.setText(desc);
         }
 

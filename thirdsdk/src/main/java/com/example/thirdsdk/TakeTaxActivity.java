@@ -35,6 +35,8 @@ import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechSynthesizer;
 import com.iflytek.cloud.SynthesizerListener;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/12/18.
  */
@@ -75,7 +77,7 @@ public class TakeTaxActivity extends AppCompatActivity implements OnClickListene
                 speaking("等待司机接单");
                 mHandler.postDelayed(mAccept, mDelayTime);
             } else if (mStep == 1) { //支付车费
-                String desc = String.format("从%s到%s的打车费", et_departure.getText().toString(), et_destination.getText().toString());
+                String desc = String.format(Locale.getDefault(), "从%s到%s的打车费", et_departure.getText().toString(), et_destination.getText().toString());
                 new AlipayTask(this, 1).execute("打车费", desc, "0.01");
                 isFinished = false;
             }

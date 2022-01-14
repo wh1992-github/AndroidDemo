@@ -7,6 +7,8 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/9/24.
  */
@@ -29,7 +31,7 @@ public class SwitchIOSActivity extends AppCompatActivity implements OnCheckedCha
 
     //刷新仿iOS按钮的开关状态说明
     private void refreshResult() {
-        String result = String.format("仿iOS开关的状态是%s",
+        String result = String.format(Locale.getDefault(), "仿iOS开关的状态是%s",
                 (ck_status.isChecked()) ? "开" : "关");
         tv_result.setText(result);
     }

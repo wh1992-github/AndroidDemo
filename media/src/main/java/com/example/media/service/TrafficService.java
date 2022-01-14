@@ -13,6 +13,8 @@ import com.example.media.R;
 import com.example.media.util.FlowUtil;
 import com.example.media.widget.FloatWindow;
 
+import java.util.Locale;
+
 @SuppressLint("SetTextI18n")
 public class TrafficService extends Service {
     private static final String TAG = "TrafficService";
@@ -34,7 +36,7 @@ public class TrafficService extends Service {
                 //平均一下接收的流量和发送的流量
                 long flow = ((TrafficStats.getTotalRxBytes() - curRx) + (TrafficStats
                         .getTotalTxBytes() - curTx)) / 2;
-                String desc = String.format("即时流量: %s/S", FlowUtil.BToShowString(flow, 0));
+                String desc = String.format(Locale.getDefault(), "即时流量: %s/S", FlowUtil.BToShowString(flow, 0));
                 tv_traffic.setText(desc);
                 //获取接收流量的总字节数
                 curRx = TrafficStats.getTotalRxBytes();

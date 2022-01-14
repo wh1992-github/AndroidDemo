@@ -8,6 +8,7 @@ import android.util.Log;
 import com.example.mixture.bean.MacDevice;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MacDeviceDB {
     private static final String TAG = "MacDeviceDB";
@@ -59,7 +60,7 @@ public class MacDeviceDB {
     }
 
     public ArrayList<MacDevice> queryByMac(String mac) {
-        String str = String.format("select _id,mac,device from %s where mac='%s';"
+        String str = String.format(Locale.getDefault(), "select _id,mac,device from %s where mac='%s';"
                 , TABLE_NAME, mac);
         return query(str);
     }

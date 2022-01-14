@@ -1,6 +1,5 @@
 package com.example.storage;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -27,10 +26,12 @@ import android.widget.Toast;
 
 import com.example.storage.util.ViewUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/1.
  */
-@SuppressLint("DefaultLocale")
+
 public class LoginShareActivity extends AppCompatActivity implements OnClickListener {
     private RadioGroup rg_login;
     private RadioButton rb_password;
@@ -177,7 +178,7 @@ public class LoginShareActivity extends AppCompatActivity implements OnClickList
                 startActivityForResult(intent, mRequestCode);
             } else if (rb_verifyCode.isChecked()) { //选择了验证码方式校验,此时要生成六位随机数字验证码
                 //生成六位随机数字的验证码
-                mVerifyCode = String.format("%06d", (int) (Math.random() * 1000000 % 1000000));
+                mVerifyCode = String.format(Locale.getDefault(), "%06d", (int) (Math.random() * 1000000 % 1000000));
                 //弹出提醒对话框,提示用户六位验证码数字
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("请记住验证码");
@@ -224,7 +225,7 @@ public class LoginShareActivity extends AppCompatActivity implements OnClickList
 
     //校验通过,登录成功
     private void loginSuccess() {
-        String desc = String.format("您的手机号码是%s,类型是%s。恭喜你通过登录验证,点击“确定”按钮返回上个页面",
+        String desc = String.format(Locale.getDefault(), "您的手机号码是%s,类型是%s。恭喜你通过登录验证,点击“确定”按钮返回上个页面",
                 et_phone.getText().toString(), typeArray[mType]);
         //弹出提醒对话框,提示用户登录成功
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

@@ -1,6 +1,5 @@
 package com.example.network;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -12,10 +11,12 @@ import android.widget.TextView;
 
 import com.example.network.util.Utils;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint("DefaultLocale")
+
 public class ConnectActivity extends AppCompatActivity {
     private TextView tv_connect;
     private Handler mHandler = new Handler(); //声明一个处理器对象
@@ -51,16 +52,16 @@ public class ConnectActivity extends AppCompatActivity {
         NetworkInfo info = cm.getActiveNetworkInfo();
         if (info != null) {
             if (info.getState() == NetworkInfo.State.CONNECTED) { //网络已连上
-                desc = String.format("当前网络连接的状态是%s", mNetStateArray[info.getState().ordinal()]);
+                desc = String.format(Locale.getDefault(), "当前网络连接的状态是%s", mNetStateArray[info.getState().ordinal()]);
                 if (info.getType() == ConnectivityManager.TYPE_WIFI) { //WIFI网络
-                    desc = String.format("%s\n当前联网的网络类型是WIFI", desc);
+                    desc = String.format(Locale.getDefault(), "%s\n当前联网的网络类型是WIFI", desc);
                 } else if (info.getType() == ConnectivityManager.TYPE_MOBILE) { //4G等移动网络
                     int mobile_type = info.getSubtype(); //获取网络子类型
-                    desc = String.format("%s\n当前联网的网络类型是%s %s", desc,
+                    desc = String.format(Locale.getDefault(), "%s\n当前联网的网络类型是%s %s", desc,
                             Utils.getNetworkTypeName(tm, mobile_type),
                             Utils.getClassName(tm, mobile_type));
                 } else {
-                    desc = String.format("%s\n当前联网的网络类型是%d", desc, info.getType());
+                    desc = String.format(Locale.getDefault(), "%s\n当前联网的网络类型是%d", desc, info.getType());
                 }
             } else { //网络未连上
                 desc = "\n当前无上网连接";

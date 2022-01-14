@@ -18,7 +18,10 @@ class SlideItemAnimation(animDuration: Long = 500) : SuperItemAnimation(animDura
         holder?.itemView?.translationX = 0f
     }
 
-    override fun setRemoveItemAnim(holder: RecyclerView.ViewHolder?, animator: ViewPropertyAnimator?) {
+    override fun setRemoveItemAnim(
+        holder: RecyclerView.ViewHolder?,
+        animator: ViewPropertyAnimator?
+    ) {
         val with = holder?.itemView?.width ?: 0
         animator?.translationX(-with.toFloat())
     }

@@ -17,13 +17,13 @@ import com.aqi00.lib.dialog.FileSelectFragment.FileSelectCallbacks;
 import com.example.event.util.BitmapUtil;
 import com.example.event.widget.CropImageView;
 
+import java.util.Locale;
 import java.util.Map;
 
 /**
  * Created by test on 2017/11/23.
  */
-public class ImageCutActivity extends AppCompatActivity implements
-        OnClickListener, FileSelectCallbacks, FileSaveCallbacks {
+public class ImageCutActivity extends AppCompatActivity implements OnClickListener, FileSelectCallbacks, FileSaveCallbacks {
     private View v_shade; //声明一个阴影视图对象
     private CropImageView civ_over; //声明一个裁剪图像视图对象
     private ImageView iv_old; //声明一个原始图片的图像视图对象
@@ -91,7 +91,7 @@ public class ImageCutActivity extends AppCompatActivity implements
     //点击文件保存对话框的确定按钮后触发
     public void onConfirmSave(String absolutePath, String fileName) {
         //拼接文件的完整路径
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         //把位图数据保存为图片文件
         BitmapUtil.saveBitmap(path, mBitmap, "jpg", 80);
         Toast.makeText(this, "成功保存图片文件：" + path, Toast.LENGTH_LONG).show();
@@ -100,7 +100,7 @@ public class ImageCutActivity extends AppCompatActivity implements
     //点击文件选择对话框的确定按钮后触发
     public void onConfirmSelect(String absolutePath, String fileName, Map<String, Object> map_param) {
         //拼接文件的完整路径
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         //把要打开的图片文件显示在图像视图上面
         iv_old.setImageURI(Uri.parse(path));
     }

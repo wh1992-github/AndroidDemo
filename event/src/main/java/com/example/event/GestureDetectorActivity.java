@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.example.event.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/23.
  */
@@ -46,15 +48,15 @@ public class GestureDetectorActivity extends AppCompatActivity {
             float offsetY = e1.getY() - e2.getY();
             if (Math.abs(offsetX) > Math.abs(offsetY)) { //水平方向滑动
                 if (offsetX > 0) {
-                    desc = String.format("%s%s 您向左滑动了一下\n", desc, DateUtil.getNowTime());
+                    desc = String.format(Locale.getDefault(), "%s%s 您向左滑动了一下\n", desc, DateUtil.getNowTime());
                 } else {
-                    desc = String.format("%s%s 您向右滑动了一下\n", desc, DateUtil.getNowTime());
+                    desc = String.format(Locale.getDefault(), "%s%s 您向右滑动了一下\n", desc, DateUtil.getNowTime());
                 }
             } else { //垂直方向滑动
                 if (offsetY > 0) {
-                    desc = String.format("%s%s 您向上滑动了一下\n", desc, DateUtil.getNowTime());
+                    desc = String.format(Locale.getDefault(), "%s%s 您向上滑动了一下\n", desc, DateUtil.getNowTime());
                 } else {
-                    desc = String.format("%s%s 您向下滑动了一下\n", desc, DateUtil.getNowTime());
+                    desc = String.format(Locale.getDefault(), "%s%s 您向下滑动了一下\n", desc, DateUtil.getNowTime());
                 }
             }
             tv_gesture.setText(desc);
@@ -63,7 +65,7 @@ public class GestureDetectorActivity extends AppCompatActivity {
 
         //在手势长按时触发
         public final void onLongPress(MotionEvent event) {
-            desc = String.format("%s%s 您长按了一下下\n", desc, DateUtil.getNowTime());
+            desc = String.format(Locale.getDefault(), "%s%s 您长按了一下下\n", desc, DateUtil.getNowTime());
             tv_gesture.setText(desc);
         }
 
@@ -78,7 +80,7 @@ public class GestureDetectorActivity extends AppCompatActivity {
 
         //在轻点弹起时触发,也就是点击时触发
         public boolean onSingleTapUp(MotionEvent event) {
-            desc = String.format("%s%s 您轻轻点了一下\n", desc, DateUtil.getNowTime());
+            desc = String.format(Locale.getDefault(), "%s%s 您轻轻点了一下\n", desc, DateUtil.getNowTime());
             tv_gesture.setText(desc);
             //返回true表示我已经处理了,别处不要再处理这个手势
             return true;

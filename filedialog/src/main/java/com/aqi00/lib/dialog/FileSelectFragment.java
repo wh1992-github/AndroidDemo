@@ -75,11 +75,11 @@ public class FileSelectFragment extends DialogFragment implements
         FilenameFilter fileNameFilter = new FilenameFilter() {
             @Override
             public boolean accept(File directory, String fileName) {
-                File f = new File(String.format("%s/%s", directory.getAbsolutePath(), fileName));
+                File f = new File(String.format(Locale.getDefault(), "%s/%s", directory.getAbsolutePath(), fileName));
                 boolean matched = f.isDirectory();
                 if (!matched) {
                     for (String s : fileExtensions) {
-                        s = String.format(".{0,}\\%s$", s);
+                        s = String.format(Locale.getDefault(), ".{0,}\\%s$", s);
                         s = s.toUpperCase(Locale.getDefault());
                         fileName = fileName.toUpperCase(Locale.getDefault());
                         matched = fileName.matches(s);

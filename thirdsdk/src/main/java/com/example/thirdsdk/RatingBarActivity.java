@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.example.thirdsdk.util.CacheUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/12/18.
  */
@@ -54,7 +56,7 @@ public class RatingBarActivity extends AppCompatActivity implements
 
     //在评分发生变化时触发
     public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-        String desc = String.format("当前选中的是%s颗星", CacheUtil.formatDecimal(rating, 1));
+        String desc = String.format(Locale.getDefault(), "当前选中的是%s颗星", CacheUtil.formatDecimal(rating, 1));
         tv_rating.setText(desc);
     }
 

@@ -1,6 +1,5 @@
 package com.example.media;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.Ringtone;
@@ -15,10 +14,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/12/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class RingtoneActivity extends AppCompatActivity {
     private TextView tv_volume;
     private Ringtone mRingtone; //声明一个铃声对象
@@ -43,7 +44,7 @@ public class RingtoneActivity extends AppCompatActivity {
         int maxVolume = audio.getStreamMaxVolume(RING_TYPE);
         //获取铃声的当前音量
         int nowVolume = audio.getStreamVolume(RING_TYPE);
-        String desc = String.format("当前铃声音量为%d,最大音量为%d,请先将铃声音量调至最大",
+        String desc = String.format(Locale.getDefault(), "当前铃声音量为%d,最大音量为%d,请先将铃声音量调至最大",
                 nowVolume, maxVolume);
         tv_volume.setText(desc);
     }

@@ -1,6 +1,5 @@
 package com.example.mixture;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
@@ -32,8 +31,9 @@ import org.vudroid.pdfdroid.codec.PdfContext;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
+
 public class VudroidActivity extends AppCompatActivity {
     private static final String TAG = "VudroidActivity";
     private ViewPager vp_content; //声明一个翻页视图对象
@@ -122,7 +122,7 @@ public class VudroidActivity extends AppCompatActivity {
         Log.d(TAG, "getPageCount=" + decodeService.getPageCount());
         //根据电子书的总页数生成图片路径队列
         for (int i = 0; i < decodeService.getPageCount(); i++) {
-            String imgPath = String.format("%s/%03d.jpg", mDir, i);
+            String imgPath = String.format(Locale.getDefault(), "%s/%03d.jpg", mDir, i);
             imgArray.add(imgPath);
         }
         //更新数据库中该书籍记录的总页数
@@ -138,7 +138,7 @@ public class VudroidActivity extends AppCompatActivity {
         public void run() {
             Log.d(TAG, "getBitmap mIndex=" + mIndex);
             //生成该页图片的保存路径
-            final String imgPath = String.format("%s/%03d.jpg", mDir, mIndex);
+            final String imgPath = String.format(Locale.getDefault(), "%s/%03d.jpg", mDir, mIndex);
             if (!(new File(imgPath)).exists()) { //不存在该页的图片
                 //对该页内容进行解码处理
                 decodeService.decodePage(mDir, mIndex, new DecodeService.DecodeCallback() {

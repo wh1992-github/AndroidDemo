@@ -26,6 +26,7 @@ import com.example.network.thread.ClientThread;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/11/11.
@@ -164,7 +165,7 @@ public class QQContactActivity extends AppCompatActivity implements
             mGroupOnline.friend_list = friendList;
             showAllFriend(); //显示所有好友分组
         } else { //不是获取好友列表
-            String hint = String.format("%s\n%s", splitArray[0], body);
+            String hint = String.format(Locale.getDefault(), "%s\n%s", splitArray[0], body);
             Toast.makeText(mContext, hint, Toast.LENGTH_SHORT).show();
         }
     }

@@ -51,8 +51,8 @@ public class BezierCustomView1 extends View {
 
     /**
      * 曲线穿过相邻点的中点:
-     * 先根据相邻点（P1,P2,P3）计算出相邻点的中点(P12,P23),
-     * 最后将（P1,P2,P3）作为控制点画出贝塞尔曲线.
+     * 先根据相邻点(P1,P2,P3)计算出相邻点的中点(P12,P23),
+     * 最后将(P1,P2,P3)作为控制点画出贝塞尔曲线.
      */
     @Override
     protected void onDraw(Canvas canvas) {

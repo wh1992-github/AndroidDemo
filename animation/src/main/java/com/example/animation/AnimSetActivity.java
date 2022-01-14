@@ -16,8 +16,7 @@ import android.widget.ImageView;
 /**
  * Created by test on 2017/11/27.
  */
-public class AnimSetActivity extends AppCompatActivity implements
-        OnClickListener, AnimationListener {
+public class AnimSetActivity extends AppCompatActivity implements OnClickListener, AnimationListener {
     private ImageView iv_anim_set; //声明一个图像视图对象
     private AnimationSet setAnim; //声明一个集合动画对象
 

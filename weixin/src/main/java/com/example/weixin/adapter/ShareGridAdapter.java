@@ -43,30 +43,30 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-@SuppressLint("StaticFieldLeak")
+@SuppressLint({"StaticFieldLeak", "InflateParams"})
 public class ShareGridAdapter extends BaseAdapter implements OnItemClickListener {
     private static final String TAG = "ShareGridAdapter";
     private static Context mContext;
-    private Handler mHandler;
-    private String mUrl;
-    private String mTitle;
+    private final Handler mHandler;
+    private final String mUrl;
+    private final String mTitle;
     private static String mContent;
     private static String mImageUrl;
-    private ArrayList<ShareChanels> mChannelList;
-    private int THUMB_SIZE = 150;
+    private final ArrayList<ShareChanels> mChannelList;
+    private final int THUMB_SIZE = 150;
 
     private final String QQ_APPID = "100330589"; //这里替换为开发者在QQ互联平台申请的应用id
     private static Tencent mTencent;
     private final String WX_APPID = "wxd930ea5d5a258f4f"; //这里替换为开发者在微信开放平台申请的应用id
     private IWXAPI mWeixinApi;
 
-    private int WEIXIN = 0; //微信好友
-    private int CIRCLE = 1; //微信朋友圈
-    private int QQ = 2; //QQ好友
-    private int QZONE = 3; //QQ空间
-    private int WEIBO = 4; //腾讯微博
+    private static final int WEIXIN = 0; //微信好友
+    private static final int CIRCLE = 1; //微信朋友圈
+    private static final int QQ = 2; //QQ好友
+    private static final int QZONE = 3; //QQ空间
+    private static final int WEIBO = 4; //腾讯微博
 
-    private int[] mShareIcons = {R.drawable.logo_wechat,
+    private final int[] mShareIcons = {R.drawable.logo_wechat,
             R.drawable.logo_wechatcircle, R.drawable.logo_qq,
             R.drawable.logo_qzone, R.drawable.logo_tencentweibo};
 
@@ -147,7 +147,7 @@ public class ShareGridAdapter extends BaseAdapter implements OnItemClickListener
         return convertView;
     }
 
-    public final class ViewHolder {
+    public static final class ViewHolder {
         public TextView tv_share_name;
         public ImageView iv_share_icon;
     }
@@ -272,8 +272,8 @@ public class ShareGridAdapter extends BaseAdapter implements OnItemClickListener
 
     //定义一个QQ分享监听器
     private static class ShareQQListener implements IUiListener {
-        private Context context;
-        private String channelName; //分享渠道名称
+        private final Context context;
+        private final String channelName; //分享渠道名称
 
         public ShareQQListener(final Context context, final String channelName) {
             this.context = context;

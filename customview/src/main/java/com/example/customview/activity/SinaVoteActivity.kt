@@ -26,7 +26,11 @@ class SinaVoteActivity : AppCompatActivity(), VoteLayoutAdapter.OnVoteClickListe
         voteLayoutAdapter?.onDestroy()
     }
 
-    override fun onVoteCommitBtnClick(mainVote: VoteBean?, optionIds: ArrayList<Int>, position: Int) {
+    override fun onVoteCommitBtnClick(
+        mainVote: VoteBean?,
+        optionIds: ArrayList<Int>,
+        position: Int
+    ) {
         voteLayoutAdapter?.refreshDataAfterVotedSuccess(position)
     }
 

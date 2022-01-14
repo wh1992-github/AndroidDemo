@@ -1,6 +1,5 @@
 package com.example.senior.database;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,8 +9,9 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
+
 public class DbHelper extends SQLiteOpenHelper {
     protected static String TAG;
     protected Context mContext;
@@ -49,7 +49,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     public void delete(int xuhao) {
-        String delete_sql = String.format("delete from %s where id=%d;", mTableName, xuhao);
+        String delete_sql = String.format(Locale.getDefault(), "delete from %s where id=%d;", mTableName, xuhao);
         Log.d(TAG, "delete sql=" + delete_sql);
         mWriteDB.execSQL(delete_sql);
     }

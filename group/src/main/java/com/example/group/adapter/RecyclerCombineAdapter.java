@@ -1,6 +1,5 @@
 package com.example.group.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
@@ -21,10 +20,9 @@ import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
-public class RecyclerCombineAdapter extends RecyclerView.Adapter<ViewHolder> implements
-        OnItemClickListener, OnItemLongClickListener {
+public class RecyclerCombineAdapter extends RecyclerView.Adapter<ViewHolder> implements OnItemClickListener, OnItemLongClickListener {
     private static final String TAG = "RecyclerCombineAdapter";
     private Context mContext; //声明一个上下文对象
     private ArrayList<GoodsInfo> mGoodsArray;
@@ -119,14 +117,14 @@ public class RecyclerCombineAdapter extends RecyclerView.Adapter<ViewHolder> imp
 
     //处理列表项的点击事件
     public void onItemClick(View view, int position) {
-        String desc = String.format("您点击了第%d项,推荐频道是%s", position + 1,
+        String desc = String.format(Locale.getDefault(), "您点击了第%d项,推荐频道是%s", position + 1,
                 mGoodsArray.get(position).title);
         Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
     }
 
     //处理列表项的长按事件
     public void onItemLongClick(View view, int position) {
-        String desc = String.format("您长按了第%d项,推荐频道是%s", position + 1,
+        String desc = String.format(Locale.getDefault(), "您长按了第%d项,推荐频道是%s", position + 1,
                 mGoodsArray.get(position).title);
         Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
     }

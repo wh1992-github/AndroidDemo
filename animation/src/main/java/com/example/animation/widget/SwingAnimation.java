@@ -4,13 +4,13 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
 public class SwingAnimation extends Animation {
-    private float mMiddleDegrees; //中间的角度
-    private float mLeftDegrees; //左边的角度
-    private float mRightDegrees; //右边的角度
-    private int mPivotXType = ABSOLUTE; //圆心的横坐标类型
-    private int mPivotYType = ABSOLUTE; //圆心的纵坐标类型
-    private float mPivotXValue = 0.0f; //圆心横坐标的数值比例
-    private float mPivotYValue = 0.0f; //圆心纵坐标的数值比例
+    private final float mMiddleDegrees; //中间的角度
+    private final float mLeftDegrees; //左边的角度
+    private final float mRightDegrees; //右边的角度
+    private final int mPivotXType; //圆心的横坐标类型
+    private final int mPivotYType; //圆心的纵坐标类型
+    private final float mPivotXValue; //圆心横坐标的数值比例
+    private final float mPivotYValue; //圆心纵坐标的数值比例
     private float mPivotX; //圆心横坐标的数值
     private float mPivotY; //圆心纵坐标的数值
 

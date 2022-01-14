@@ -12,6 +12,7 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Locale;
 
 public class InputStreamScene extends Scene {
     private static final String TAG = "InputStreamScene";
@@ -167,7 +168,7 @@ public class InputStreamScene extends Scene {
     protected void fillCacheOutOfMemoryError(OutOfMemoryError error) {
         if (percent > 0)
             percent -= 1;
-        Log.e(TAG, String.format("caught oom -- cache now at %d percent.", percent));
+        Log.e(TAG, String.format(Locale.getDefault(), "caught oom -- cache now at %d percent.", percent));
     }
 
     @Override

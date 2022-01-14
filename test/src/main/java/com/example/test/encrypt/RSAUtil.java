@@ -127,11 +127,7 @@ public class RSAUtil {
             byte[] raw = new byte[outputSize * blocksSize];
             int i = 0;
             while (data.length - i * blockSize > 0) {
-                if (data.length - i * blockSize > blockSize) {
-                    cipher.doFinal(data, i * blockSize, blockSize, raw, i * outputSize);
-                } else {
-                    cipher.doFinal(data, i * blockSize, data.length - i * blockSize, raw, i * outputSize);
-                }
+                cipher.doFinal(data, i * blockSize, Math.min(data.length - i * blockSize, blockSize), raw, i * outputSize);
                 i++;
             }
             return raw;

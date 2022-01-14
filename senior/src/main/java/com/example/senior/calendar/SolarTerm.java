@@ -1,6 +1,7 @@
 package com.example.senior.calendar;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 public class SolarTerm {
     //========角度变换===============
@@ -1074,7 +1075,7 @@ public class SolarTerm {
             }
             int day = cal.get(Calendar.DAY_OF_MONTH);
             solarDays[i] = month + "" + day + " " + sSolarTerms[i];
-            solarDays[i] = String.format("%02d%02d %s", month, day, sSolarTerms[i]);
+            solarDays[i] = String.format(Locale.getDefault(), "%02d%02d %s", month, day, sSolarTerms[i]);
         }
         return solarDays;
     }

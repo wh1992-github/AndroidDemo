@@ -7,6 +7,8 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/9/24.
  */
@@ -29,7 +31,7 @@ public class SwitchDefaultActivity extends AppCompatActivity implements OnChecke
 
     //刷新Switch按钮的开关状态说明
     private void refreshResult() {
-        String result = String.format("Switch按钮的状态是%s", (sw_status.isChecked()) ? "开" : "关");
+        String result = String.format(Locale.getDefault(), "Switch按钮的状态是%s", (sw_status.isChecked()) ? "开" : "关");
         tv_result.setText(result);
     }
 

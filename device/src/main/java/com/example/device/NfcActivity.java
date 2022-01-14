@@ -18,10 +18,12 @@ import android.widget.TextView;
 import com.example.device.nfc.BusCard;
 import com.example.device.nfc.ByteArrayChange;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2018/1/29.
  */
-@SuppressLint(value = {"DefaultLocale", "SetTextI18n"})
+@SuppressLint("SetTextI18n")
 public class NfcActivity extends AppCompatActivity {
     private static final String TAG = "NfcActivity";
     private TextView tv_nfc_result;
@@ -98,15 +100,15 @@ public class NfcActivity extends AppCompatActivity {
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
             //获取NFC卡片的序列号
             byte[] ids = tag.getId();
-            String card_info = String.format("卡片的序列号为: %s",
+            String card_info = String.format(Locale.getDefault(), "卡片的序列号为: %s",
                     ByteArrayChange.ByteArrayToHexString(ids));
             if (rb_guard_card.isChecked()) {
                 String result = readGuardCard(tag);
-                card_info = String.format("%s\n详细信息如下：\n%s", card_info, result);
+                card_info = String.format(Locale.getDefault(), "%s\n详细信息如下：\n%s", card_info, result);
                 tv_nfc_result.setText(card_info);
             } else if (rb_bus_card.isChecked()) {
                 String result = readBusCard(tag);
-                card_info = String.format("%s\n详细信息如下：\n%s", card_info, result);
+                card_info = String.format(Locale.getDefault(), "%s\n详细信息如下：\n%s", card_info, result);
                 tv_nfc_result.setText(card_info);
             }
         }
@@ -132,7 +134,7 @@ public class NfcActivity extends AppCompatActivity {
             } else {
                 typeDesc = "未知类型";
             }
-            info = String.format("\t卡片类型：%s\n\t扇区数量：%d\n\t分块个数：%d\n\t存储空间：%d字节",
+            info = String.format(Locale.getDefault(), "\t卡片类型：%s\n\t扇区数量：%d\n\t分块个数：%d\n\t存储空间：%d字节",
                     typeDesc, classic.getSectorCount(), classic.getBlockCount(), classic.getSize());
         } catch (Exception e) {
             e.printStackTrace();

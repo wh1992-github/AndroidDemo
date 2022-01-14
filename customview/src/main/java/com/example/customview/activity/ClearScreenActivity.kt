@@ -18,8 +18,12 @@ class ClearScreenActivity : AppCompatActivity(), ClearScreenView.OnClearScreenLi
 
         clear_screen_container.setOnClearScreenListener(this)
 
-        btn_quick_clear.setOnClickListener { clear_screen_container.clearScreenMode = ClearScreenMode.QUICK_SCROLL }
-        btn_slow_clear.setOnClickListener { clear_screen_container.clearScreenMode = ClearScreenMode.SLOW_SCROLL }
+        btn_quick_clear.setOnClickListener {
+            clear_screen_container.clearScreenMode = ClearScreenMode.QUICK_SCROLL
+        }
+        btn_slow_clear.setOnClickListener {
+            clear_screen_container.clearScreenMode = ClearScreenMode.SLOW_SCROLL
+        }
     }
 
     override fun onCleared() {

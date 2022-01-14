@@ -1,6 +1,5 @@
 package com.example.media.util;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
@@ -8,7 +7,7 @@ import android.util.Log;
 import java.io.File;
 import java.util.Locale;
 
-@SuppressLint("DefaultLocale")
+
 public class MediaUtil {
     private static final String TAG = "MediaUtil";
 
@@ -26,9 +25,9 @@ public class MediaUtil {
         int second = seconds % 60;
         String str;
         if (hour > 0) {
-            str = String.format("%02d:%02d:%02d", hour, minute, second);
+            str = String.format(Locale.getDefault(), "%02d:%02d:%02d", hour, minute, second);
         } else {
-            str = String.format("%02d:%02d", minute, second);
+            str = String.format(Locale.getDefault(), "%02d:%02d", minute, second);
         }
         return str;
     }

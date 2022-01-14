@@ -1,11 +1,10 @@
 package com.example.senior.calendar;
 
-import android.annotation.SuppressLint;
-
 import com.example.senior.bean.CalendarTransfer;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class LunarCalendar {
     private int year;
@@ -17,8 +16,7 @@ public class LunarCalendar {
 
     public static final String[] chineseNumber = {"一", "二", "三", "四", "五", "六", "七",
             "八", "九", "十", "十一", "十二"};
-    @SuppressLint("SimpleDateFormat")
-    private static SimpleDateFormat chineseDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
+    private static SimpleDateFormat chineseDateFormat = new SimpleDateFormat("yyyy年MM月dd日", Locale.getDefault());
     private static final long[] lunarInfo = new long[]{0x04bd8, 0x04ae0, 0x0a570,
             0x054d5, 0x0d260, 0x0d950, 0x16554, 0x056a0, 0x09ad0, 0x055d2,
             0x04ae0, 0x0a5b6, 0x0a4d0, 0x0d250, 0x1d255, 0x0b540, 0x0d6a0,
@@ -162,7 +160,7 @@ public class LunarCalendar {
      * <p>
      * isday: 这个参数为false---日期为节假日时,阴历日期就返回节假日 ,true---不管日期是否为节假日依然返回这天对应的阴历日期
      */
-    @SuppressLint("DefaultLocale")
+
     public CalendarTransfer getLunarDate(int year_log, int month_log, int day_log, boolean isday) {
         int yearCyl, monCyl, dayCyl;
         String nowadays;
@@ -272,7 +270,7 @@ public class LunarCalendar {
 
     private static String[] termDays = new String[24];
 
-    @SuppressLint("DefaultLocale")
+
     public CalendarTransfer getSubDate(CalendarTransfer lastTrans,
                                        int year_log, int month_log, int day_log, int weekday, boolean isday) {
         CalendarTransfer trans;
@@ -297,7 +295,7 @@ public class LunarCalendar {
                 //返回公历节假日名称
                 String sd = solarHoliday[i].split(" ")[0];  //节假日的日期
                 String sdv = solarHoliday[i].split(" ")[1]; //节假日的名称
-                String smd = String.format("%02d%02d", month_log, day_log);
+                String smd = String.format(Locale.getDefault(), "%02d%02d", month_log, day_log);
                 if (sd.equals(smd)) {
                     day_result = getLinkName(day_result, sdv);
                     break;
@@ -312,7 +310,7 @@ public class LunarCalendar {
                 //返回公历节假日名称
                 String wd = weekHoliday[i].split(" ")[0];  //节假日的日期
                 String wdv = weekHoliday[i].split(" ")[1]; //节假日的名称
-                String wmd = String.format("%02d%d%d", month_log, weeknum, weekday);
+                String wmd = String.format(Locale.getDefault(), "%02d%d%d", month_log, weeknum, weekday);
                 if (wd.equals(wmd)) {
                     day_result = getLinkName(day_result, wdv);
                     break;
@@ -323,7 +321,7 @@ public class LunarCalendar {
                 //返回农历节假日名称
                 String ld = lunarHoliday[i].split(" ")[0];   //节假日的日期
                 String ldv = lunarHoliday[i].split(" ")[1];  //节假日的名称
-                String lmd = String.format("%02d%02d", trans.lunar_month, trans.lunar_day);
+                String lmd = String.format(Locale.getDefault(), "%02d%02d", trans.lunar_month, trans.lunar_day);
                 if (ld.equals(lmd)) {
                     day_result = getLinkName(day_result, ldv);
                     break;
@@ -337,7 +335,7 @@ public class LunarCalendar {
                 //返回农历二十四节气名称
                 String td = termDays[i].split(" ")[0];   //二十四节气的日期
                 String tdv = termDays[i].split(" ")[1];  //二十四节气的名称
-                String tmd = String.format("%02d%02d", month_log, day_log);
+                String tmd = String.format(Locale.getDefault(), "%02d%02d", month_log, day_log);
                 if (td.equals(tmd)) {
                     day_result = getLinkName(day_result, tdv);
                     break;

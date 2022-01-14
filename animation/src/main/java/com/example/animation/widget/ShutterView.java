@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 @SuppressLint("DrawAllocation")
 public class ShutterView extends View {
     private static final String TAG = "ShutterView";
-    private Paint mPaint; //声明一个画笔对象
+    private final Paint mPaint; //声明一个画笔对象
     private int mOrientation = LinearLayout.HORIZONTAL; //百叶窗的方向
     private int mLeafCount = 10; //叶片的数量
     private PorterDuff.Mode mMode = PorterDuff.Mode.DST_IN; //绘图模式为只展示交集

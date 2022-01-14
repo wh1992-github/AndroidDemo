@@ -1,6 +1,5 @@
 package com.example.custom.widget;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -14,7 +13,6 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
-@SuppressLint("DrawAllocation")
 public class RoundImageView3 extends AppCompatImageView {
     private static final int radius = 20;
     private Paint mPaint;

@@ -1,6 +1,5 @@
 package com.example.custom;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint.Style;
@@ -26,11 +25,12 @@ import com.example.custom.widget.NoScrollListView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/14.
  */
-@SuppressLint("DefaultLocale")
+
 public class MobileAssistantActivity extends AppCompatActivity implements
         OnClickListener, OnDateSetListener {
     private static final String TAG = "MobileAssistantActivity";
@@ -114,7 +114,7 @@ public class MobileAssistantActivity extends AppCompatActivity implements
 
     @Override
     public void onDateSet(int year, int month, int day) {
-        String date = String.format("%d年%d月%d日", year, month, day);
+        String date = String.format(Locale.getDefault(), "%d年%d月%d日", year, month, day);
         tv_day.setText(date);
         mDay = year * 10000 + month * 100 + day;
         //选择完日期,立即启动流量刷新任务
@@ -169,19 +169,19 @@ public class MobileAssistantActivity extends AppCompatActivity implements
             int end_angle = (int) ((trafficM > limit_day * 3) ? 360 : (trafficM - limit_day * 2) * 360 / limit_day);
             dayAnimation.setAngle(0, end_angle);
             dayAnimation.setFront(Color.RED, line_width, Style.STROKE);
-            desc = String.format("%s\n超出限额%s", desc,
+            desc = String.format(Locale.getDefault(), "%s\n超出限额%s", desc,
                     StringUtil.formatData(traffic_day - limit_day * 1024 * 1024));
         } else if (trafficM > limit_day) { //超出一倍限额,则展示橙色圆弧进度
             int end_angle = (int) ((trafficM > limit_day * 2) ? 360 : (trafficM - limit_day) * 360 / limit_day);
             dayAnimation.setAngle(0, end_angle);
             dayAnimation.setFront(0xffff9900, line_width, Style.STROKE);
-            desc = String.format("%s\n超出限额%s", desc,
+            desc = String.format(Locale.getDefault(), "%s\n超出限额%s", desc,
                     StringUtil.formatData(traffic_day - limit_day * 1024 * 1024));
         } else { //未超出限额,则展示绿色圆弧进度
             int end_angle = (int) (trafficM * 360 / limit_day);
             dayAnimation.setAngle(0, end_angle);
             dayAnimation.setFront(Color.GREEN, line_width, Style.STROKE);
-            desc = String.format("%s\n剩余流量%s", desc,
+            desc = String.format(Locale.getDefault(), "%s\n剩余流量%s", desc,
                     StringUtil.formatData(limit_day * 1024 * 1024 - traffic_day));
         }
         rl_day.addView(dayAnimation);

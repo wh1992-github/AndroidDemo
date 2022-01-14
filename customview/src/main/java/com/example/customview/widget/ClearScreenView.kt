@@ -27,7 +27,11 @@ enum class ClearScreenMode {
     SLOW_SCROLL//滑动出发清屏
 }
 
-class ClearScreenView @JvmOverloads constructor(private val mContext: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : FrameLayout(mContext, attrs, defStyleAttr) {
+class ClearScreenView @JvmOverloads constructor(
+    private val mContext: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : FrameLayout(mContext, attrs, defStyleAttr) {
 
     companion object {
         /**
@@ -113,7 +117,10 @@ class ClearScreenView @JvmOverloads constructor(private val mContext: Context, a
 
     private fun initView() {
         val view = View(mContext)
-        view.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        view.layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        )
         view.isClickable = true
         addView(view, 0)
     }
@@ -161,7 +168,8 @@ class ClearScreenView @JvmOverloads constructor(private val mContext: Context, a
     private fun isInterceptClearScreenEvent(x: Int, y: Int): Boolean {
         return when (clearScreenMode) {
             ClearScreenMode.QUICK_SCROLL -> {
-                val isIntercept = isMoveForHorizontal(x, y) && !isAnimRunning() && isGreaterThanMinSize(mDownX, x)
+                val isIntercept =
+                    isMoveForHorizontal(x, y) && !isAnimRunning() && isGreaterThanMinSize(mDownX, x)
                 requestDisallowInterceptTouchEvent(isIntercept)
                 isIntercept
             }

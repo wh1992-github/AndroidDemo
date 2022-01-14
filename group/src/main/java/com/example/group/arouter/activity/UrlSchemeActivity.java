@@ -31,7 +31,7 @@ public class UrlSchemeActivity extends AppCompatActivity {
             public void onLost(Postcard postcard) {
                 super.onLost(postcard);
                 Log.i(TAG, "onLost: uri=" + uri);
-                //Toast.makeText(UrlSchemeActivity.this,String.format("找不到可以处理该
+                //Toast.makeText(UrlSchemeActivity.this,String.format(Locale.getDefault(),"找不到可以处理该
                 //URI %s 的 Activity",uri),Toast.LENGTH_SHORT).show();
                 //找不到的时候 finish 掉当前 activity
                 finish();

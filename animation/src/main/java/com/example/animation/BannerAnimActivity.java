@@ -1,6 +1,5 @@
 package com.example.animation;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout.LayoutParams;
@@ -11,10 +10,12 @@ import com.example.animation.util.Utils;
 import com.example.animation.widget.BannerFlipper;
 import com.example.animation.widget.BannerFlipper.BannerClickListener;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/27.
  */
-@SuppressLint("DefaultLocale")
+
 public class BannerAnimActivity extends AppCompatActivity implements BannerClickListener {
     private static final String TAG = "BannerAnimActivity";
     private TextView tv_flipper;
@@ -38,7 +39,7 @@ public class BannerAnimActivity extends AppCompatActivity implements BannerClick
 
     //在点击横幅图片时触发
     public void onBannerClick(int position) {
-        String desc = String.format("您点击了第%d张图片", position + 1);
+        String desc = String.format(Locale.getDefault(), "您点击了第%d张图片", position + 1);
         tv_flipper.setText(desc);
     }
 

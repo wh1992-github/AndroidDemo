@@ -10,6 +10,8 @@ import com.example.event.util.DateUtil;
 import com.example.event.widget.NotDispatchLayout;
 import com.example.event.widget.NotDispatchLayout.NotDispatchListener;
 
+import java.util.Locale;
+
 public class EventDispatchActivity extends AppCompatActivity implements
         OnClickListener, NotDispatchListener {
     private TextView tv_dispatch_yes;
@@ -34,17 +36,17 @@ public class EventDispatchActivity extends AppCompatActivity implements
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_dispatch_yes) {
-            desc_yes = String.format("%s%s 您点击了按钮\n", desc_yes, DateUtil.getNowTime());
+            desc_yes = String.format(Locale.getDefault(), "%s%s 您点击了按钮\n", desc_yes, DateUtil.getNowTime());
             tv_dispatch_yes.setText(desc_yes);
         } else if (v.getId() == R.id.btn_dispatch_no) {
-            desc_no = String.format("%s%s 您点击了按钮\n", desc_no, DateUtil.getNowTime());
+            desc_no = String.format(Locale.getDefault(), "%s%s 您点击了按钮\n", desc_no, DateUtil.getNowTime());
             tv_dispatch_no.setText(desc_no);
         }
     }
 
     //在分发触摸事件时触发
     public void onNotDispatch() {
-        desc_no = String.format("%s%s 触摸动作未分发,按钮点击不了了\n"
+        desc_no = String.format(Locale.getDefault(), "%s%s 触摸动作未分发,按钮点击不了了\n"
                 , desc_no, DateUtil.getNowTime());
         tv_dispatch_no.setText(desc_no);
     }

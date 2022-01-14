@@ -17,6 +17,7 @@ import android.widget.Scroller;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Locale;
 
 @SuppressLint("LogNotTimber")
 public class ImageSurfaceView extends SurfaceView implements SurfaceHolder.Callback, OnGestureListener {
@@ -130,7 +131,7 @@ public class ImageSurfaceView extends SurfaceView implements SurfaceHolder.Callb
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
         scene.getViewport().setSize(width, height);
-        Log.d(TAG, String.format("onSizeChanged(w=%d,h=%d)", width, height));
+        Log.d(TAG, String.format(Locale.getDefault(), "onSizeChanged(w=%d,h=%d)", width, height));
     }
 
     @Override

@@ -20,10 +20,12 @@ import android.widget.Toast;
 
 import com.example.custom.util.SharedUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/10/14.
  */
-@SuppressLint(value = {"SetTextI18n", "DefaultLocale", "StaticFieldLeak"})
+@SuppressLint({"SetTextI18n", "StaticFieldLeak"})
 public class MobileConfigActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "MobileConfigActivity";
     private static EditText et_config_month;
@@ -68,9 +70,9 @@ public class MobileConfigActivity extends AppCompatActivity implements OnClickLi
     }
 
     //短信发送事件
-    private String SENT_SMS_ACTION = "com.example.custom.SENT_SMS_ACTION";
+    private final String SENT_SMS_ACTION = "com.example.custom.SENT_SMS_ACTION";
     //短信接收事件
-    private String DELIVERED_SMS_ACTION = "com.example.custom.DELIVERED_SMS_ACTION";
+    private final String DELIVERED_SMS_ACTION = "com.example.custom.DELIVERED_SMS_ACTION";
 
     //无需用户操作,由App自动发送短信
     public void sendSmsAuto(String phoneNumber, String message) {
@@ -90,9 +92,9 @@ public class MobileConfigActivity extends AppCompatActivity implements OnClickLi
         smsManager.sendTextMessage(phoneNumber, null, message, sentPI, deliverPI);
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private SmsGetObserver mObserver; //声明一个短信获取的观察器对象
-    private static String mCustomNumber = "10086"; //中国移动的客服号码
+    private static final String mCustomNumber = "10086"; //中国移动的客服号码
     private static Uri mSmsUri; //声明一个系统短信提供器的Uri对象
     private static String[] mSmsColumn; //声明一个短信记录的字段数组
 
@@ -117,7 +119,7 @@ public class MobileConfigActivity extends AppCompatActivity implements OnClickLi
 
     //定义一个短信获取的观察器
     private static class SmsGetObserver extends ContentObserver {
-        private Context mContext; //声明一个上下文对象
+        private final Context mContext; //声明一个上下文对象
 
         public SmsGetObserver(Context context, Handler handler) {
             super(handler);
@@ -128,7 +130,7 @@ public class MobileConfigActivity extends AppCompatActivity implements OnClickLi
         public void onChange(boolean selfChange) { //观察到短信的内容提供器发生变化
             String sender = "", content = "";
             //构建一个查询短信的条件语句,这里使用移动号码测试,故而查找10086发来的短信
-            String selection = String.format("address='%s' and date>%d",
+            String selection = String.format(Locale.getDefault(), "address='%s' and date>%d",
                     mCustomNumber, System.currentTimeMillis() - 1000 * 60 * 60);
             //通过内容解析器获取符合条件的结果集游标
             Cursor cursor = mContext.getContentResolver().query(

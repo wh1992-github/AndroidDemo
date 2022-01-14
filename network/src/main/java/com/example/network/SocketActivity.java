@@ -14,10 +14,12 @@ import android.widget.TextView;
 import com.example.network.thread.MessageTransmit;
 import com.example.network.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint(value = {"HandlerLeak", "StaticFieldLeak"})
+@SuppressLint({"HandlerLeak", "StaticFieldLeak"})
 public class SocketActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "SocketActivity";
     private EditText et_socket;
@@ -53,7 +55,7 @@ public class SocketActivity extends AppCompatActivity implements OnClickListener
             Log.d(TAG, "handleMessage: " + msg.obj);
             if (tv_socket != null) {
                 //拼接服务器的应答字符串
-                String desc = String.format("%s 收到服务器的应答消息：%s",
+                String desc = String.format(Locale.getDefault(), "%s 收到服务器的应答消息：%s",
                         DateUtil.getNowTime(), msg.obj.toString());
                 tv_socket.setText(desc);
             }

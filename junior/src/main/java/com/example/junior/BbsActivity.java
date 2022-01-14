@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.example.junior.util.DateUtil;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/9/14.
  */
@@ -52,7 +54,7 @@ public class BbsActivity extends AppCompatActivity implements
             //生成一个0到4之间的随机数
             int random = (int) (Math.random() * 10) % 5;
             //拼接聊天的文本内容
-            String newStr = String.format("%s\n%s %s",
+            String newStr = String.format(Locale.getDefault(), "%s\n%s %s",
                     tv_bbs.getText().toString(), DateUtil.getNowTime(), mChatStr[random]);
             //设置文本视图tv_bbs的文本内容
             tv_bbs.setText(newStr);

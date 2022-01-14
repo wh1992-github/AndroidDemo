@@ -1,6 +1,5 @@
 package com.example.media;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.media.AudioAttributes;
@@ -14,11 +13,12 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/12/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class SoundPoolActivity extends AppCompatActivity implements OnClickListener {
     private TextView tv_volume;
     private SoundPool mSoundPool; //初始化一个声音池对象
@@ -46,7 +46,7 @@ public class SoundPoolActivity extends AppCompatActivity implements OnClickListe
         int maxVolume = audio.getStreamMaxVolume(SOUND_TYPE);
         //获取音乐的当前音量
         int nowVolume = audio.getStreamVolume(SOUND_TYPE);
-        String desc = String.format("当前音乐音量为%d,最大音量为%d,请先将铃声音量调至最大",
+        String desc = String.format(Locale.getDefault(), "当前音乐音量为%d,最大音量为%d,请先将铃声音量调至最大",
                 nowVolume, maxVolume);
         tv_volume.setText(desc);
     }

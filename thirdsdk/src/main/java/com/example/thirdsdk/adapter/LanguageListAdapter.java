@@ -1,6 +1,5 @@
 package com.example.thirdsdk.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,7 @@ import com.example.thirdsdk.bean.Language;
 
 import java.util.ArrayList;
 
-@SuppressLint("DefaultLocale")
+
 public class LanguageListAdapter extends BaseAdapter {
     private Context mContext; //声明一个上下文对象
     private ArrayList<Language> mLanguageList; //声明一个语言信息队列

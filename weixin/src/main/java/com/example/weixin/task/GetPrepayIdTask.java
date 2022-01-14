@@ -22,6 +22,7 @@ import org.json.JSONObject;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class GetPrepayIdTask extends AsyncTask<String, Void, GetPrepayIdResult> {
@@ -44,7 +45,7 @@ public class GetPrepayIdTask extends AsyncTask<String, Void, GetPrepayIdResult> 
     @Override
     protected GetPrepayIdResult doInBackground(String... params) {
         mGoodsInfo = new String[]{params[0], params[1], params[2]};
-        String url = String.format("https://api.weixin.qq.com/pay/genprepay?access_token=%s", mAccessToken);
+        String url = String.format(Locale.getDefault(), "https://api.weixin.qq.com/pay/genprepay?access_token=%s", mAccessToken);
         String entity = genProductArgs();
         Log.d(TAG, "doInBackground, url = " + url + ", entity = " + entity);
 

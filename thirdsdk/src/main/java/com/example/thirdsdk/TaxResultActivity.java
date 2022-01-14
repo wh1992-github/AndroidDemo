@@ -1,6 +1,5 @@
 package com.example.thirdsdk;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -14,10 +13,12 @@ import android.widget.Toast;
 
 import com.example.thirdsdk.adapter.ShareGridAdapter;
 
+import java.util.Locale;
+
 /**
  * Created by test on 2017/12/18.
  */
-@SuppressLint("DefaultLocale")
+
 public class TaxResultActivity extends AppCompatActivity implements
         OnClickListener, OnRatingBarChangeListener {
     private static final String TAG = "TaxResultActivity";
@@ -48,7 +49,7 @@ public class TaxResultActivity extends AppCompatActivity implements
     public void onClick(View v) {
         if (v.getId() == R.id.btn_tax_score) {
             //下面两行获取评分条的评分星级,并提示用户
-            String desc = String.format("您的评分为%d颗星,感谢您的评价", (int) rb_tax_score.getRating());
+            String desc = String.format(Locale.getDefault(), "您的评分为%d颗星,感谢您的评价", (int) rb_tax_score.getRating());
             Toast.makeText(this, desc, Toast.LENGTH_SHORT).show();
             btn_tax_score.setText("已评价");
             btn_tax_score.setTextColor(getResources().getColor(R.color.dark_grey));

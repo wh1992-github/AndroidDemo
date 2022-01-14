@@ -1,6 +1,5 @@
 package com.example.device;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -11,11 +10,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/11/4.
  */
-@SuppressLint("DefaultLocale")
+
 public class GyroscopeActivity extends AppCompatActivity implements SensorEventListener {
     private static final float NS2S = 1.0f / 1000000000.0f; //将纳秒转化为秒
     private TextView tv_gyroscope;
@@ -75,7 +75,7 @@ public class GyroscopeActivity extends AppCompatActivity implements SensorEventL
                 float angleY = (float) Math.toDegrees(mAngle[1]);
                 //z轴的旋转角度,手机平放桌上,然后水平旋转
                 float angleZ = (float) Math.toDegrees(mAngle[2]);
-                String desc = String.format("陀螺仪检测到当前x轴方向的转动角度为%f,y轴方向的转动角度为%f,z轴方向的转动角度为%f",
+                String desc = String.format(Locale.getDefault(), "陀螺仪检测到当前x轴方向的转动角度为%f,y轴方向的转动角度为%f,z轴方向的转动角度为%f",
                         angleX, angleY, angleZ);
                 tv_gyroscope.setText(desc);
             }

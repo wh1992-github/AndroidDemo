@@ -1,6 +1,5 @@
 package com.example.senior;
 
-import android.annotation.SuppressLint;
 import android.app.TimePickerDialog;
 import android.app.TimePickerDialog.OnTimeSetListener;
 import android.os.Bundle;
@@ -11,11 +10,12 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by test on 2017/10/7.
  */
-@SuppressLint("DefaultLocale")
+
 //该页面类实现了接口OnTimeSetListener,意味着要重写时间监听器的onTimeSet方法
 public class TimePickerActivity extends AppCompatActivity implements
         OnClickListener, OnTimeSetListener {
@@ -48,7 +48,7 @@ public class TimePickerActivity extends AppCompatActivity implements
             dialog.show();
         } else if (v.getId() == R.id.btn_ok) {
             //获取时间选择器tp_time设定的小时和分钟
-            String desc = String.format("您选择的时间是%d时%d分",
+            String desc = String.format(Locale.getDefault(), "您选择的时间是%d时%d分",
                     tp_time.getCurrentHour(), tp_time.getCurrentMinute());
             tv_time.setText(desc);
         }
@@ -57,7 +57,7 @@ public class TimePickerActivity extends AppCompatActivity implements
     //一旦点击时间对话框上的确定按钮,就会触发监听器的onTimeSet方法
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         //获取时间对话框设定的小时和分钟
-        String desc = String.format("您选择的时间是%d时%d分", hourOfDay, minute);
+        String desc = String.format(Locale.getDefault(), "您选择的时间是%d时%d分", hourOfDay, minute);
         tv_time.setText(desc);
     }
 }

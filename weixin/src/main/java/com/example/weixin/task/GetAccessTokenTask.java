@@ -11,6 +11,8 @@ import com.example.weixin.bean.LocalRetCode;
 import com.example.weixin.bean.WechatConstants;
 import com.example.weixin.util.WechatUtil;
 
+import java.util.Locale;
+
 public class GetAccessTokenTask extends AsyncTask<String, Void, GetAccessTokenResult> {
     private static final String TAG = "GetAccessTokenTask";
     private Context mContext;
@@ -30,7 +32,7 @@ public class GetAccessTokenTask extends AsyncTask<String, Void, GetAccessTokenRe
     protected GetAccessTokenResult doInBackground(String... params) {
         mGoodsInfo = new String[]{params[0], params[1], params[2]};
         GetAccessTokenResult result = new GetAccessTokenResult();
-        String url = String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",
+        String url = String.format(Locale.getDefault(), "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",
                 WechatConstants.APP_ID, WechatConstants.APP_SECRET);
         Log.d(TAG, "get access token, url = " + url);
 

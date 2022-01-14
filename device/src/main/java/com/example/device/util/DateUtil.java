@@ -1,11 +1,8 @@
 package com.example.device.util;
 
-import android.annotation.SuppressLint;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@SuppressLint("SimpleDateFormat")
 public class DateUtil {
 
     public static String getNowDateTime() {

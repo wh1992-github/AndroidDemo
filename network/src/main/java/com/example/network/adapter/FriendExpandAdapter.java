@@ -21,6 +21,7 @@ import com.example.network.bean.FriendGroup;
 import com.example.network.util.DateUtil;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class FriendExpandAdapter implements ExpandableListAdapter, OnGroupClickListener, OnChildClickListener {
     private static final String TAG = "FriendExpandAdapter";
@@ -185,7 +186,7 @@ public class FriendExpandAdapter implements ExpandableListAdapter, OnGroupClickL
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(intent);
         } else {
-            String desc = String.format("您点击了好友：%s", mGroupList.get(groupPosition).friend_list.get(childPosition).nick_name);
+            String desc = String.format(Locale.getDefault(), "您点击了好友：%s", mGroupList.get(groupPosition).friend_list.get(childPosition).nick_name);
             Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
         }
         return true;
@@ -193,7 +194,7 @@ public class FriendExpandAdapter implements ExpandableListAdapter, OnGroupClickL
 
     //在分组标题被点击时触发。如果返回true,就不会展示子列表
     public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-        String desc = String.format("您点击了分组：%s", mGroupList.get(groupPosition).title);
+        String desc = String.format(Locale.getDefault(), "您点击了分组：%s", mGroupList.get(groupPosition).title);
         Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
         return false;
     }

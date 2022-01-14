@@ -1,6 +1,5 @@
 package com.example.network;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,12 +22,13 @@ import com.example.network.util.ApkUtil;
 import com.example.network.util.StringUtil;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Map;
 
 /**
  * Created by test on 2018/1/17.
  */
-@SuppressLint("DefaultLocale")
+
 public class ApkInfoActivity extends AppCompatActivity implements
         OnClickListener, OnItemClickListener, FileSelectCallbacks {
     private static final String TAG = "ApkInfoActivity";
@@ -94,7 +94,7 @@ public class ApkInfoActivity extends AppCompatActivity implements
         //下面通过提醒对话框展示APK文件的详细信息
         AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         builder.setTitle("APK文件信息");
-        String desc = String.format("文件名称：%s\n包名：%s\n版本号：%d\n版本名称：%s\n文件路径：%s\n文件大小：%s",
+        String desc = String.format(Locale.getDefault(), "文件名称：%s\n包名：%s\n版本号：%d\n版本名称：%s\n文件路径：%s\n文件大小：%s",
                 info.file_name, newInfo.package_name, newInfo.version_code, newInfo.version_name,
                 newInfo.file_path, StringUtil.formatData(newInfo.file_size));
         builder.setMessage(desc);
@@ -104,7 +104,7 @@ public class ApkInfoActivity extends AppCompatActivity implements
 
     //点击文件选择对话框的确定按钮后触发
     public void onConfirmSelect(String absolutePath, String fileName, Map<String, Object> map_param) {
-        String path = String.format("%s/%s", absolutePath, fileName);
+        String path = String.format(Locale.getDefault(), "%s/%s", absolutePath, fileName);
         Log.d(TAG, "path=" + path);
         ApkInfo info = new ApkInfo();
         info.file_name = fileName;

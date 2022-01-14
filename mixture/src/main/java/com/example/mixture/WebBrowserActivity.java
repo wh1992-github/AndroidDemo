@@ -25,7 +25,7 @@ import android.widget.Toast;
 /**
  * Created by test on 2017/12/11.
  */
-@SuppressLint(value = {"SetTextI18n", "SetJavaScriptEnabled"})
+@SuppressLint({"SetTextI18n", "SetJavaScriptEnabled"})
 public class WebBrowserActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "WebBrowserActivity";
     private EditText et_web_url; //声明一个用于输入网址的编辑框对象
