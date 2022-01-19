@@ -9,6 +9,7 @@ import com.example.group.livedata.LifecycleHelper;
 
 public class LiveDataActivity extends AppCompatActivity {
     private static final String TAG = "LiveDataActivity";
+    private Button mBtnLifecycle;
     private Button mBtnLivedata;
     private Button mBtnLivedataTransformations;
 
@@ -18,18 +19,10 @@ public class LiveDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_live_data);
-        initView();
-        mLifecycleHelper = new LifecycleHelper(this);
-        mLifecycleHelper.addObserver();
-    }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mLifecycleHelper.removeObserver();
-    }
+        mBtnLifecycle = findViewById(R.id.btn_lifecycle);
+        mBtnLifecycle.setOnClickListener(v -> startActivity(new Intent(this, LifecycleActivity.class)));
 
-    private void initView() {
         mBtnLivedata = findViewById(R.id.btn_livedata);
         mBtnLivedata.setOnClickListener(v -> startActivity(new Intent(this, LiveDataSampleActivity.class)));
 

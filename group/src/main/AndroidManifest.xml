@@ -31,6 +31,7 @@
         <activity android:name=".ProgressBarActivity" />
         <activity android:name=".ClickEffectActivity" />
         <activity android:name=".TouchEventActivity" />
+        <activity android:name=".LifecycleActivity" />
         <activity android:name=".LiveDataActivity" />
         <activity android:name=".LiveDataSampleActivity" />
         <activity android:name=".LiveDataTransformationsActivity" />
@@ -101,6 +102,7 @@
 
         <service android:name=".windowdialog.WindowService" />
         <service android:name=".windowdialog.FloatingService" />
+        <service android:name=".livedata.MyLifecycleService" />
 
     </application>
 

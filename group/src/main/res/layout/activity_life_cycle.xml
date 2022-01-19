@@ -5,24 +5,17 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_lifecycle"
+        android:id="@+id/btn_open"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lifecycle"
+        android:text="开启服务"
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/btn_livedata"
+        android:id="@+id/btn_close"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LiveData Sample"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/btn_livedata_transformations"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LiveData Transformations"
+        android:text="关闭服务"
         android:textAllCaps="false" />
 
 </LinearLayout>
