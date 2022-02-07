@@ -73,6 +73,7 @@
         <activity android:name=".OrientationActivity" />
         <activity android:name=".BigPictureActivity" />
         <activity android:name=".MMKVActivity" />
+        <activity android:name=".LevelListActivity" />
 
         <activity android:name=".ARouterActivity" />
         <activity android:name=".arouter.activity.ActivityOne" />
