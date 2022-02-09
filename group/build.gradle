@@ -38,6 +38,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation files('src/main/libs/android-logging-log4j-1.0.3.jar')
+    implementation files('src/main/libs/log4j-1.2.17.jar')
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation "com.android.support:design:28.0.0"

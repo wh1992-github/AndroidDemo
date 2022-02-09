@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_mmkv).setOnClickListener(this);
         findViewById(R.id.btn_level_list).setOnClickListener(this);
         findViewById(R.id.btn_rxjava).setOnClickListener(this);
+        findViewById(R.id.btn_log4j).setOnClickListener(this);
     }
 
     @Override
@@ -203,6 +204,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_rxjava) {
             Intent intent = new Intent(this, RxJavaRetrofitOkHttpActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_log4j) {
+            Intent intent = new Intent(this, Log4jActivity.class);
             startActivity(intent);
         }
     }

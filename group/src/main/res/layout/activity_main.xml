@@ -485,6 +485,14 @@
                     android:text="RxJava Retrofit OkHttp"
                     android:textAllCaps="false" />
 
+                <Button
+                    android:id="@+id/btn_log4j"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Log4j"
+                    android:textAllCaps="false" />
+
             </LinearLayout>
 
         </LinearLayout>

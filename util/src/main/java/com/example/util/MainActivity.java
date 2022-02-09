@@ -12,6 +12,11 @@ import android.widget.ImageView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.function.BiConsumer;
+
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity---";
     private ConstraintLayout mRootView;
@@ -76,6 +81,27 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "onClick: " + mRootView.getParent().getParent().getParent().getParent().getParent().getClass());
         //ViewRootImpl
         Log.i(TAG, "onClick: " + mRootView.getParent().getParent().getParent().getParent().getParent().getParent().getClass());
+
+        TreeMap<String, String> treeMap = new TreeMap<>();
+        treeMap.put("aaa", "ass");
+        treeMap.put("bbb", "bss");
+        treeMap.put("ccc", "css");
+        treeMap.put("ddd", "dss");
+        treeMap.put("eee", "ess");
+
+        for (Map.Entry<String, String> entry : treeMap.entrySet()) {
+            Log.i(TAG, "onClick treeMap: key = "+entry.getKey()+", value = "+entry.getValue());
+        }
+
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("aaa", "ass");
+        hashMap.put("bbb", "bss");
+        hashMap.put("ccc", "css");
+        hashMap.put("ddd", "dss");
+        hashMap.put("eee", "ess");
+        for (Map.Entry<String, String> entry : hashMap.entrySet()) {
+            Log.i(TAG, "onClick hashMap: key = "+entry.getKey()+", value = "+entry.getValue());
+        }
 
     }
 
