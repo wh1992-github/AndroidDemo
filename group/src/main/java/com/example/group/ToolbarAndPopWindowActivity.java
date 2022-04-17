@@ -1,9 +1,12 @@
 package com.example.group;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
@@ -12,11 +15,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
+@SuppressLint("RtlHardcoded")
 public class ToolbarAndPopWindowActivity extends AppCompatActivity implements View.OnClickListener {
     private Toolbar mToolbar;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private LinearLayout mLlTab;
     private Toast mToast;
     private PopupWindow mPopupWindow;
 
@@ -30,7 +38,7 @@ public class ToolbarAndPopWindowActivity extends AppCompatActivity implements Vi
 
         mToolbar = findViewById(R.id.toolbar);
         //App Logo
-        //mToolbar.setLogo(R.mipmap.ic_launcher);
+        mToolbar.setLogo(R.mipmap.ic_launcher);
         //主标题,默认为app_label的名字,此处为空
         mToolbar.setTitle("Title");
         mToolbar.setTitleTextColor(Color.YELLOW);
@@ -43,6 +51,7 @@ public class ToolbarAndPopWindowActivity extends AppCompatActivity implements Vi
         mToolbar.setNavigationIcon(R.drawable.ic_back);
         //取代原本的actionbar
         setSupportActionBar(mToolbar);
+        //DrawerToggle和NavigationIcon冲突，只能显示一个
         //设置NavigationIcon的点击事件,需要放在setSupportActionBar之后设置才会生效,
         //因为setSupportActionBar里面也会setNavigationOnClickListener
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -50,6 +59,19 @@ public class ToolbarAndPopWindowActivity extends AppCompatActivity implements Vi
             public void onClick(View v) {
                 mToast.setText("click NavigationIcon");
                 mToast.show();
+            }
+        });
+
+        //设置侧或布局
+        mDrawerLayout = findViewById(R.id.drawerlayout);
+        mLlTab = findViewById(R.id.ll_tabs);
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close);
+        mDrawerToggle.syncState();
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mLlTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawerLayout.closeDrawer(Gravity.LEFT);
             }
         });
 

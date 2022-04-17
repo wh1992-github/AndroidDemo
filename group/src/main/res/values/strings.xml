@@ -15,4 +15,7 @@
     <string name="c_name">红色通道，刘烨归来</string>
     <string name="d_name">神犬小七第二季</string>
     <string name="e_name">灭罪师</string>
+
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 </resources>
