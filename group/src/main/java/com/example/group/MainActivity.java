@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_recycler_staggered).setOnClickListener(this);
         findViewById(R.id.btn_recycler_dynamic).setOnClickListener(this);
         findViewById(R.id.btn_recycler_drag).setOnClickListener(this);
+        findViewById(R.id.btn_view_drag1).setOnClickListener(this);
+        findViewById(R.id.btn_view_drag2).setOnClickListener(this);
         findViewById(R.id.btn_coordinator).setOnClickListener(this);
         findViewById(R.id.btn_appbar_recycler).setOnClickListener(this);
         findViewById(R.id.btn_appbar_nested).setOnClickListener(this);
@@ -144,6 +146,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_recycler_drag) {
             Intent intent = new Intent(this, RecyclerDragActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_view_drag1) {
+            Intent intent = new Intent(this, ViewDragActivity1.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_view_drag2) {
+            Intent intent = new Intent(this, ViewDragActivity2.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_coordinator) {
             Intent intent = new Intent(this, CoordinatorActivity.class);

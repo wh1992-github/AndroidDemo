@@ -266,12 +266,35 @@
                     android:layout_weight="1"
                     android:text="动态增删循环视图" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/btn_recycler_drag"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="可拖拽布局" />
+                    android:text="可拖拽RecyclerView"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_view_drag1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="底部菜单抽屉示例" />
+
+                <Button
+                    android:id="@+id/btn_view_drag2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="可拖拽View"
+                    android:textAllCaps="false" />
 
             </LinearLayout>
 

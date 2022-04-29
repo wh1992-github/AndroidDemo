@@ -77,6 +77,8 @@
         <activity android:name=".MMKVActivity" />
         <activity android:name=".LevelListActivity" />
         <activity android:name=".Log4jActivity" />
+        <activity android:name=".ViewDragActivity1" />
+        <activity android:name=".ViewDragActivity2" />
 
         <activity android:name=".ARouterActivity" />
         <activity android:name=".arouter.activity.ActivityOne" />
