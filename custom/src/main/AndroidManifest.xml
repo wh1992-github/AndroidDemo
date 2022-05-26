@@ -30,7 +30,9 @@
         <activity android:name=".CustomPropertyActivity" />
         <activity android:name=".MeasureTextActivity" />
         <activity android:name=".MeasureLayoutActivity" />
-        <activity android:name=".OnMeasureActivity" />
+        <activity android:name=".OnMeasureActivity1" />
+        <activity android:name=".OnMeasureActivity2" />
+        <activity android:name=".OnMeasureActivity3" />
         <activity android:name=".OnLayoutActivity" />
         <activity android:name=".ShowDrawActivity" />
         <activity android:name=".RunnableActivity" />

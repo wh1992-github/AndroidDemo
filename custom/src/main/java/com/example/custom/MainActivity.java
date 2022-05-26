@@ -19,7 +19,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_custom_property).setOnClickListener(this);
         findViewById(R.id.btn_measure_text).setOnClickListener(this);
         findViewById(R.id.btn_measure_layout).setOnClickListener(this);
-        findViewById(R.id.btn_on_measure).setOnClickListener(this);
+        findViewById(R.id.btn_on_measure1).setOnClickListener(this);
+        findViewById(R.id.btn_on_measure2).setOnClickListener(this);
+        findViewById(R.id.btn_on_measure3).setOnClickListener(this);
         findViewById(R.id.btn_on_layout).setOnClickListener(this);
         findViewById(R.id.btn_show_draw).setOnClickListener(this);
         findViewById(R.id.btn_runnable).setOnClickListener(this);
@@ -60,8 +62,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         } else if (v.getId() == R.id.btn_measure_layout) {
             Intent intent = new Intent(this, MeasureLayoutActivity.class);
             startActivity(intent);
-        } else if (v.getId() == R.id.btn_on_measure) {
-            Intent intent = new Intent(this, OnMeasureActivity.class);
+        } else if (v.getId() == R.id.btn_on_measure1) {
+            Intent intent = new Intent(this, OnMeasureActivity1.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_on_measure2) {
+            Intent intent = new Intent(this, OnMeasureActivity2.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_on_measure3) {
+            Intent intent = new Intent(this, OnMeasureActivity3.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_on_layout) {
             Intent intent = new Intent(this, OnLayoutActivity.class);

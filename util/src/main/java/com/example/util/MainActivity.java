@@ -15,7 +15,6 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.function.BiConsumer;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity---";
@@ -90,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         treeMap.put("eee", "ess");
 
         for (Map.Entry<String, String> entry : treeMap.entrySet()) {
-            Log.i(TAG, "onClick treeMap: key = "+entry.getKey()+", value = "+entry.getValue());
+            Log.i(TAG, "onClick treeMap: key = " + entry.getKey() + ", value = " + entry.getValue());
         }
 
         HashMap<String, String> hashMap = new HashMap<>();
@@ -100,9 +99,8 @@ public class MainActivity extends AppCompatActivity {
         hashMap.put("ddd", "dss");
         hashMap.put("eee", "ess");
         for (Map.Entry<String, String> entry : hashMap.entrySet()) {
-            Log.i(TAG, "onClick hashMap: key = "+entry.getKey()+", value = "+entry.getValue());
+            Log.i(TAG, "onClick hashMap: key = " + entry.getKey() + ", value = " + entry.getValue());
         }
-
     }
 
     public int tryCatch() {
