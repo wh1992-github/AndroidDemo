@@ -52,8 +52,9 @@ public class AppInfoActivity extends AppCompatActivity {
             AppInfoAdapter adapter = new AppInfoAdapter(AppInfoActivity.this, appinfoList);
             //给lv_appinfo设置应用信息列表适配器
             lv_appinfo.setAdapter(adapter);
-            //获取Launcher应用
-            //AppUtil.getLauncherAppsList(AppInfoActivity.this);
+            //
+            AppUtil.getAppInfo(AppInfoActivity.this);
+            AppUtil.getLauncherAppInfo(AppInfoActivity.this);
         }
 
         public void onNothingSelected(AdapterView<?> arg0) {

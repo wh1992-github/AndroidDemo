@@ -67,16 +67,6 @@ public class AppUtil {
         return appList;  //返回去重后的应用包队列
     }
 
-    public static List<LauncherActivityInfo> getLauncherAppsList(Context context) {
-        LauncherApps launcherApps = (LauncherApps) context.getSystemService(Context.LAUNCHER_APPS_SERVICE);
-        List<LauncherActivityInfo> apps = launcherApps.getActivityList(null, Process.myUserHandle());
-        for (LauncherActivityInfo launcherActivityInfo : apps) {
-            ApplicationInfo applicationInfo = launcherActivityInfo.getApplicationInfo();
-            Log.i(TAG, "getLauncherAppsList: label = " + launcherActivityInfo.getLabel() + ", pkgName = " + applicationInfo.packageName);
-        }
-        return apps;
-    }
-
     //填充应用的完整信息。主要做两个事情：其一是补充应用的图标字段,其二是将列表按照流量排序
     public static ArrayList<AppInfo> fillAppInfo(Context ctx, ArrayList<AppInfo> originArray) {
         ArrayList<AppInfo> fullArray = (ArrayList<AppInfo>) originArray.clone();
@@ -102,6 +92,31 @@ public class AppUtil {
             }
         });
         return fullArray;
+    }
+
+    //获取所有应用
+    public static void getAppInfo(Context context) {
+        PackageManager pm = context.getPackageManager();
+        //获取系统中已经安装的应用列表
+        List<ApplicationInfo> list = pm.getInstalledApplications(0);
+        for (ApplicationInfo applicationInfo : list) {
+            //三方应用
+            if ((applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) <= 0) {
+                Log.i(TAG, "getAppInfo: 三方应用 = " + applicationInfo.loadLabel(pm) + ", packageName = " + applicationInfo.packageName);
+            } else {
+                Log.i(TAG, "getAppInfo: 系统应用 = " + applicationInfo.loadLabel(pm) + ", packageName = " + applicationInfo.packageName);
+            }
+        }
+    }
+
+    //获取在桌面Launcher显示的应用
+    public static void getLauncherAppInfo(Context context) {
+        LauncherApps launcherApps = (LauncherApps) context.getSystemService(Context.LAUNCHER_APPS_SERVICE);
+        List<LauncherActivityInfo> apps = launcherApps.getActivityList(null, Process.myUserHandle());
+        for (LauncherActivityInfo launcherActivityInfo : apps) {
+            ApplicationInfo applicationInfo = launcherActivityInfo.getApplicationInfo();
+            Log.i(TAG, "getLauncherAppInfo: 桌面应用 = " + launcherActivityInfo.getLabel() + ", packageName = " + applicationInfo.packageName);
+        }
     }
 
 }
