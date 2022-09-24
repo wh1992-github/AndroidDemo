@@ -152,12 +152,25 @@
                     android:text="播放圆形时钟" />
 
                 <Button
+                    android:id="@+id/btn_ripple_anim"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="水波纹动画" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
                     android:id="@+id/btn_custom_textview"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="文字绝对居中" />
-
             </LinearLayout>
 
             <LinearLayout

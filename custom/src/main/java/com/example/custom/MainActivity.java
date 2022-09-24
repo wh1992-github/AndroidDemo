@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_pull_refresh).setOnClickListener(this);
         findViewById(R.id.btn_circle_animation).setOnClickListener(this);
         findViewById(R.id.btn_circle_clock).setOnClickListener(this);
+        findViewById(R.id.btn_ripple_anim).setOnClickListener(this);
         findViewById(R.id.btn_round_imageview).setOnClickListener(this);
         findViewById(R.id.btn_nice_imageview).setOnClickListener(this);
         findViewById(R.id.btn_custom_textview).setOnClickListener(this);
@@ -88,6 +89,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_circle_clock) {
             Intent intent = new Intent(this, CircleClockActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_ripple_anim) {
+            Intent intent = new Intent(this, RippleAnimActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_round_imageview) {
             Intent intent = new Intent(this, RoundImageViewActivity.class);
