@@ -2,6 +2,7 @@ package com.example.group.retrofit;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
@@ -35,6 +36,10 @@ public interface RetrofitAPI {
     //ResponseBody是请求网络后返回的原始数据，如果网络请求没有参数，不用写
     @GET("user")
     Call<ResponseBody> getData1();
+
+    //请求图片
+    @GET("https://www.bing.com/th?id=OHR.SpottedDeers_ZH-CN8790816034_tmb.jpg")
+    Observable<ResponseBody> getPic();
 
     //(有参数)
     //get请求网络方法，添加参数在方法括号内添加@Query，后面是参数类型和参数字段，其实就是键值对，Retrofit会把两个字段拼接到接口中

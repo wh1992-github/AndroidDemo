@@ -1,19 +1,29 @@
 package com.example.group.retrofit;
 
 import android.annotation.SuppressLint;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.group.R;
+import com.example.group.util.LogUtil;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.FormBody;
 import okhttp3.HttpUrl;
 import okhttp3.MediaType;
@@ -36,13 +46,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitActivity extends AppCompatActivity {
     private static final String TAG = "RetrofitActivity";
     private TextView mTextView;
+    private ImageView imageView;
     private RetrofitAPI mRetrofitAPI;
 
+    @SuppressLint("CheckResult")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit);
         mTextView = findViewById(R.id.tv);
+        imageView = findViewById(R.id.iv);
 
         //初始化一个client,不然retrofit会自己默认添加一个
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -75,9 +88,39 @@ public class RetrofitActivity extends AppCompatActivity {
         mRetrofitAPI = retrofit.create(RetrofitAPI.class);
 
         findViewById(R.id.btn1).setOnClickListener(v -> getJsonData());
-
         findViewById(R.id.btn2).setOnClickListener(v -> postJsonData());
+        findViewById(R.id.btn3).setOnClickListener(v -> loadBitmap());
     }
+
+    //RxJava加载图片
+    private void loadBitmap() {
+        Observable<ResponseBody> observable = mRetrofitAPI.getPic();
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ResponseBody>() {
+                    @Override
+                    public void onSubscribe(@NotNull Disposable d) {
+                        LogUtil.i(TAG, "onSubscribe: ");
+                    }
+
+                    @Override
+                    public void onNext(@NotNull ResponseBody responseBody) {
+                        LogUtil.i(TAG, "onNext: " + Thread.currentThread().getName());
+                        imageView.setImageBitmap(BitmapFactory.decodeStream(responseBody.byteStream()));
+                    }
+
+                    @Override
+                    public void onError(@NotNull Throwable e) {
+                        LogUtil.i(TAG, "onError: ");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        LogUtil.i(TAG, "onComplete: ");
+                    }
+                });
+    }
+
 
     /**
      * 示例，get加载Json数据
