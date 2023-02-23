@@ -5,12 +5,14 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.group.R;
-import com.example.group.util.LogUtil;
+import com.jakewharton.rxbinding2.view.RxView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -19,10 +21,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.FormBody;
 import okhttp3.HttpUrl;
@@ -45,8 +51,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @SuppressLint("LogNotTimber")
 public class RetrofitActivity extends AppCompatActivity {
     private static final String TAG = "RetrofitActivity";
+    private static final String PIC_URL1 = "https://www.bing.com/th?id=OHR.SpottedDeers_ZH-CN8790816034_tmb.jpg";
+    private static final String PIC_URL2 = "https://www.bing.com/th?id=OHR.BabblingBrook_ZH-CN9371346787_tmb.jpg";
     private TextView mTextView;
-    private ImageView imageView;
+    private ImageView mImageView1, mImageView2;
+    @BindView(R.id.btn1)
+    Button mButton1;
+    @BindView(R.id.btn2)
+    Button mButton2;
+    @BindView(R.id.btn3)
+    Button mButton3;
     private RetrofitAPI mRetrofitAPI;
 
     @SuppressLint("CheckResult")
@@ -54,8 +68,10 @@ public class RetrofitActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit);
+        ButterKnife.bind(this);
         mTextView = findViewById(R.id.tv);
-        imageView = findViewById(R.id.iv);
+        mImageView1 = findViewById(R.id.iv1);
+        mImageView2 = findViewById(R.id.iv2);
 
         //初始化一个client,不然retrofit会自己默认添加一个
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -86,37 +102,61 @@ public class RetrofitActivity extends AppCompatActivity {
                 .build();
         //步骤5:创建网络请求接口对象实例
         mRetrofitAPI = retrofit.create(RetrofitAPI.class);
+    }
 
-        findViewById(R.id.btn1).setOnClickListener(v -> getJsonData());
-        findViewById(R.id.btn2).setOnClickListener(v -> postJsonData());
-        findViewById(R.id.btn3).setOnClickListener(v -> loadBitmap());
+    @SuppressLint({"NonConstantResourceId", "CheckResult"})
+    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3})
+    public void onViewClick(View view) {
+        //防抖模式
+        RxView.clicks(view)
+                .throttleFirst(1, TimeUnit.SECONDS)
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Object>() {
+                    @Override
+                    public void accept(Object o) throws Exception {
+                        switch (view.getId()) {
+                            case R.id.btn1:
+                                getJsonData();
+                                break;
+                            case R.id.btn2:
+                                postJsonData();
+                                break;
+                            case R.id.btn3:
+                                loadBitmap(mImageView1, PIC_URL1);
+                                loadBitmap(mImageView2, PIC_URL2);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                });
     }
 
     //RxJava加载图片
-    private void loadBitmap() {
-        Observable<ResponseBody> observable = mRetrofitAPI.getPic();
+    private void loadBitmap(ImageView imageView, String url) {
+        Observable<ResponseBody> observable = mRetrofitAPI.getPic(url);
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<ResponseBody>() {
                     @Override
                     public void onSubscribe(@NotNull Disposable d) {
-                        LogUtil.i(TAG, "onSubscribe: ");
+                        Log.i(TAG, "onSubscribe: ");
                     }
 
                     @Override
                     public void onNext(@NotNull ResponseBody responseBody) {
-                        LogUtil.i(TAG, "onNext: " + Thread.currentThread().getName());
+                        Log.i(TAG, "onNext: " + Thread.currentThread().getName());
                         imageView.setImageBitmap(BitmapFactory.decodeStream(responseBody.byteStream()));
                     }
 
                     @Override
                     public void onError(@NotNull Throwable e) {
-                        LogUtil.i(TAG, "onError: ");
+                        Log.i(TAG, "onError: " + e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtil.i(TAG, "onComplete: ");
+                        Log.i(TAG, "onComplete: ");
                     }
                 });
     }

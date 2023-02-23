@@ -29,6 +29,14 @@ public interface RetrofitAPI {
     //这里特别说明Url的组成，retrofit把网络请求的Url分成两部分设置：第一部分在创建Retrofit实例时通过.baseUrl()设置，
     //第二部分在网络接口注解中设置，如下面的"/user"，网络请求的完整地址Url = Retrofit实例.baseUrl()+网络请求接口注解()
 
+    //请求图片
+    @GET("https://www.bing.com/th?id=OHR.SpottedDeers_ZH-CN8790816034_tmb.jpg")
+    Observable<ResponseBody> getPic();
+
+    //请求图片
+    @GET
+    Observable<ResponseBody> getPic(@Url String url);
+
     //1.get请求
     //(无参数)
     //get请求网络方法，需要在方法头部添加@GET注解，表示采用get方法访问网络请求，括号内的是请求的地址(Url的一部分)
@@ -36,10 +44,6 @@ public interface RetrofitAPI {
     //ResponseBody是请求网络后返回的原始数据，如果网络请求没有参数，不用写
     @GET("user")
     Call<ResponseBody> getData1();
-
-    //请求图片
-    @GET("https://www.bing.com/th?id=OHR.SpottedDeers_ZH-CN8790816034_tmb.jpg")
-    Observable<ResponseBody> getPic();
 
     //(有参数)
     //get请求网络方法，添加参数在方法括号内添加@Query，后面是参数类型和参数字段，其实就是键值对，Retrofit会把两个字段拼接到接口中
