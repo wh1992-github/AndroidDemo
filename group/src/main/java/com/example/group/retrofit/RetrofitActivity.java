@@ -6,12 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.group.R;
+import com.example.group.databinding.ActivityRetrofitBinding;
 import com.jakewharton.rxbinding2.view.RxView;
 
 import org.jetbrains.annotations.NotNull;
@@ -21,9 +20,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -48,30 +44,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Retrofit的简单使用
  */
-@SuppressLint("LogNotTimber")
+@SuppressLint({"LogNotTimber", "CheckResult", "NonConstantResourceId"})
 public class RetrofitActivity extends AppCompatActivity {
     private static final String TAG = "RetrofitActivity";
     private static final String PIC_URL1 = "https://www.bing.com/th?id=OHR.SpottedDeers_ZH-CN8790816034_tmb.jpg";
     private static final String PIC_URL2 = "https://www.bing.com/th?id=OHR.BabblingBrook_ZH-CN9371346787_tmb.jpg";
-    private TextView mTextView;
-    private ImageView mImageView1, mImageView2;
-    @BindView(R.id.btn1)
-    Button mButton1;
-    @BindView(R.id.btn2)
-    Button mButton2;
-    @BindView(R.id.btn3)
-    Button mButton3;
     private RetrofitAPI mRetrofitAPI;
 
-    @SuppressLint("CheckResult")
+    private ActivityRetrofitBinding mViewBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrofit);
-        ButterKnife.bind(this);
-        mTextView = findViewById(R.id.tv);
-        mImageView1 = findViewById(R.id.iv1);
-        mImageView2 = findViewById(R.id.iv2);
+        mViewBinding = ActivityRetrofitBinding.inflate(getLayoutInflater());
+        setContentView(mViewBinding.getRoot());
 
         //初始化一个client,不然retrofit会自己默认添加一个
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -102,11 +88,13 @@ public class RetrofitActivity extends AppCompatActivity {
                 .build();
         //步骤5:创建网络请求接口对象实例
         mRetrofitAPI = retrofit.create(RetrofitAPI.class);
+
+        onRxClick(mViewBinding.btn1);
+        onRxClick(mViewBinding.btn2);
+        onRxClick(mViewBinding.btn3);
     }
 
-    @SuppressLint({"NonConstantResourceId", "CheckResult"})
-    @OnClick({R.id.btn1, R.id.btn2, R.id.btn3})
-    public void onViewClick(View view) {
+    public void onRxClick(View view) {
         //防抖模式
         RxView.clicks(view)
                 .throttleFirst(1, TimeUnit.SECONDS)
@@ -122,8 +110,8 @@ public class RetrofitActivity extends AppCompatActivity {
                                 postJsonData();
                                 break;
                             case R.id.btn3:
-                                loadBitmap(mImageView1, PIC_URL1);
-                                loadBitmap(mImageView2, PIC_URL2);
+                                loadBitmap(mViewBinding.iv1, PIC_URL1);
+                                loadBitmap(mViewBinding.iv2, PIC_URL2);
                                 break;
                             default:
                                 break;
@@ -187,7 +175,7 @@ public class RetrofitActivity extends AppCompatActivity {
                 if (retrofitInfo == null) {
                     return;
                 }
-                mTextView.setText("返回的数据：" + "\n" + retrofitInfo.getName() + "\n" + retrofitInfo.getPicUrl());
+                mViewBinding.tv.setText("返回的数据：" + "\n" + retrofitInfo.getName() + "\n" + retrofitInfo.getPicUrl());
             }
 
             @Override
@@ -232,7 +220,7 @@ public class RetrofitActivity extends AppCompatActivity {
                 if (body == null) {
                     return;
                 }
-                mTextView.setText("返回的数据：" + "\n" + response.body().toString());
+                mViewBinding.tv.setText("返回的数据：" + "\n" + response.body().toString());
                 Toast.makeText(RetrofitActivity.this, "post回调成功:异步执行", Toast.LENGTH_SHORT).show();
             }
 

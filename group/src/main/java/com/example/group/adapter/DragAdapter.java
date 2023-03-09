@@ -1,5 +1,6 @@
 package com.example.group.adapter;
 
+import android.annotation.SuppressLint;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,7 +28,7 @@ public class DragAdapter extends RecyclerView.Adapter<DragAdapter.DragViewHolder
     }
 
     @Override
-    public void onBindViewHolder(DragViewHolder holder, int position) {
+    public void onBindViewHolder(DragViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.textView.setText(mList.get(position));
         holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
