@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.example.group.rxbus.RxBusActivity;
+
 /**
  * Created by test on 2017/10/21.
  */
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_level_list).setOnClickListener(this);
         findViewById(R.id.btn_rxjava).setOnClickListener(this);
         findViewById(R.id.btn_log4j).setOnClickListener(this);
+        findViewById(R.id.btn_rx_bus).setOnClickListener(this);
+        findViewById(R.id.btn_view_pager).setOnClickListener(this);
     }
 
     @Override
@@ -214,6 +218,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             Intent intent = new Intent(this, RxJavaRetrofitOkHttpActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_log4j) {
+            Intent intent = new Intent(this, Log4jActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_rx_bus) {
+            Intent intent = new Intent(this, RxBusActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_view_pager) {
             Intent intent = new Intent(this, Log4jActivity.class);
             startActivity(intent);
         }

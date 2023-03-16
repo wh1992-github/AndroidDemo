@@ -518,6 +518,30 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_rx_bus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RxBus"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_view_pager"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ViewPager"
+                    android:textAllCaps="false"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>
