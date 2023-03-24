@@ -17,7 +17,7 @@ public class RxBusBaseActivity extends AppCompatActivity {
      */
     private void clearSubscription() {
         for (Subscription subscription : mRxBusList) {
-            if (subscription != null && subscription.isUnsubscribed()) {
+            if (subscription != null && !subscription.isUnsubscribed()) {
                 subscription.unsubscribe();
             }
         }

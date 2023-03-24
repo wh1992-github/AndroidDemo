@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn2:
                 break;
+            default:
+                break;
         }
     }
 }

@@ -141,4 +141,27 @@ public class AppInfoUtil {
             Log.e(TAG, "getMainAppInfo: e = " + e.getMessage());
         }
     }
+
+    //判断app是否安装
+    private boolean checkAppInstall1(Context context, String packageName) {
+        PackageManager manager = context.getPackageManager();
+        List<PackageInfo> pkgList = manager.getInstalledPackages(0);
+        for (int i = 0; i < pkgList.size(); i++) {
+            PackageInfo pI = pkgList.get(i);
+            Log.i(TAG, "checkAppInstall1: " + pI.packageName);
+        }
+        return false;
+    }
+
+    //判断app是否安装
+    public static boolean checkAppInstall2(Context context, String pkgName) {
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(pkgName, 0);
+            Log.i(TAG, "checkAppInstall2: 2222 = " + packageInfo.packageName);
+        } catch (Exception e) {
+            Log.i(TAG, "checkAppInstall2: e = " + e.getMessage());
+            return false;
+        }
+        return true;
+    }
 }

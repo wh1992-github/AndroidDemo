@@ -42,6 +42,8 @@ public class WindowDialogActivity extends AppCompatActivity implements OnItemCli
                     DialogThirdUtils.closeDialog(mSecondDialog);
                     WeiBoDialogUtils.closeDialog(mWeiboDialog);
                     break;
+                default:
+                    break;
             }
             return false;
         }

@@ -58,6 +58,7 @@ public class DragView extends Button {
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
+            default:
                 break;
         }
         return super.onTouchEvent(event);
