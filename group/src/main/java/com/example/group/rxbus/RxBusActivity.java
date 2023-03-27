@@ -11,7 +11,7 @@ import rx.Subscription;
 import rx.functions.Action1;
 
 /**
- * @author wh
+ * @author test
  */
 @SuppressLint("SetTextI18n")
 public class RxBusActivity extends RxBusBaseActivity {

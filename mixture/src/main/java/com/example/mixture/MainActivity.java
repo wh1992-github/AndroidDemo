@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_jni_secret).setOnClickListener(this);
         findViewById(R.id.btn_wifi_info).setOnClickListener(this);
         findViewById(R.id.btn_wifi_connect).setOnClickListener(this);
+        findViewById(R.id.btn_wifi_list).setOnClickListener(this);
         findViewById(R.id.btn_wifi_ap).setOnClickListener(this);
         findViewById(R.id.btn_bluetooth_trans).setOnClickListener(this);
         findViewById(R.id.btn_netbios).setOnClickListener(this);
@@ -81,10 +82,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             } else {
                 PermissionUtil.goActivity(this, WifiConnectActivity.class);
             }
+        } else if (v.getId() == R.id.btn_wifi_list) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                //Android6.0之后查看WIFI需要定位权限
+                if (PermissionUtil.checkPermission(this, Manifest.permission.ACCESS_FINE_LOCATION, R.id.btn_wifi_list % 4096)) {
+                    PermissionUtil.goActivity(this, WifiList2Activity.class);
+                }
+            } else {
+                PermissionUtil.goActivity(this, WifiList2Activity.class);
+            }
         } else if (v.getId() == R.id.btn_wifi_ap) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 //Android8.0之后开关热点需要定位权限。Android9.0之后读取序列号需要号码权限
-                if (PermissionUtil.checkMultiPermission(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.READ_PHONE_STATE}, R.id.btn_wifi_connect % 4096)) {
+                if (PermissionUtil.checkMultiPermission(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.READ_PHONE_STATE}, R.id.btn_wifi_ap % 4096)) {
                     PermissionUtil.goActivity(this, WifiApActivity.class);
                 }
             } else {
@@ -136,6 +146,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 PermissionUtil.goActivity(this, WifiConnectActivity.class);
             } else {
                 Toast.makeText(this, "需要允许定位权限才能查看WIFI噢", Toast.LENGTH_SHORT).show();
+            }
+        } else if (requestCode == R.id.btn_wifi_list % 4096) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                PermissionUtil.goActivity(this, WifiList2Activity.class);
+            } else {
+                Toast.makeText(this, "需要允许定位权限才能开关热点噢", Toast.LENGTH_SHORT).show();
             }
         } else if (requestCode == R.id.btn_wifi_ap % 4096) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {

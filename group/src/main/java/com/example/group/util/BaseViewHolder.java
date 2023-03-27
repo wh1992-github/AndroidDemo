@@ -6,7 +6,7 @@ import android.viewbinding.ViewBinding;
 import io.reactivex.annotations.NonNull;
 
 /**
- * @author wh
+ * @author test
  */
 public class BaseViewHolder<T extends ViewBinding> extends RecyclerView.ViewHolder {
 

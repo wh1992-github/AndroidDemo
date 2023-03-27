@@ -157,7 +157,7 @@ public class AppInfoUtil {
     public static boolean checkAppInstall2(Context context, String pkgName) {
         try {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(pkgName, 0);
-            Log.i(TAG, "checkAppInstall2: 2222 = " + packageInfo.packageName);
+            Log.i(TAG, "checkAppInstall2: " + packageInfo.packageName);
         } catch (Exception e) {
             Log.i(TAG, "checkAppInstall2: e = " + e.getMessage());
             return false;

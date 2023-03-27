@@ -50,6 +50,7 @@
         <activity android:name=".JniSecretActivity" />
         <activity android:name=".WifiInfoActivity" />
         <activity android:name=".WifiConnectActivity" />
+        <activity android:name=".WifiList2Activity" />
         <activity android:name=".WifiApActivity" />
         <activity android:name=".BluetoothTransActivity" />
         <activity android:name=".NetbiosActivity" />

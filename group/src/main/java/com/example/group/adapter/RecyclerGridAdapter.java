@@ -20,7 +20,7 @@ import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
 import java.util.ArrayList;
 import java.util.Locale;
 /**
- * @author wh
+ * @author test
  */
 @SuppressLint("RecyclerView")
 public class RecyclerGridAdapter extends RecyclerView.Adapter<BaseViewHolder<ItemGridBinding>> implements OnItemClickListener, OnItemLongClickListener {

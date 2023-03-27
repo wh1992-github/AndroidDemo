@@ -101,7 +101,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="查看wifi信息" />
-
+                <Button
+                    android:id="@+id/btn_wifi_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="查看wifi列表" />
                 <Button
                     android:id="@+id/btn_wifi_connect"
                     android:layout_width="0dp"

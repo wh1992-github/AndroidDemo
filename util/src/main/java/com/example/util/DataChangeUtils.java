@@ -120,17 +120,18 @@ public class DataChangeUtils {
         String[] jj;
         kk = st1.split(":");
         jj = st2.split(":");
-        if (Integer.parseInt(kk[0]) < Integer.parseInt(jj[0]))
+        if (Integer.parseInt(kk[0]) < Integer.parseInt(jj[0])) {
             return "0";
-        else {
+        } else {
             double y = Double.parseDouble(kk[0]) + Double.parseDouble(kk[1])
                     / 60;
             double u = Double.parseDouble(jj[0]) + Double.parseDouble(jj[1])
                     / 60;
-            if ((y - u) > 0)
+            if ((y - u) > 0) {
                 return y - u + "";
-            else
+            } else {
                 return "0";
+            }
         }
     }
 
@@ -275,8 +276,9 @@ public class DataChangeUtils {
     public static String getSeqWeek() {
         Calendar c = Calendar.getInstance(Locale.CHINA);
         String week = Integer.toString(c.get(Calendar.WEEK_OF_YEAR));
-        if (week.length() == 1)
+        if (week.length() == 1) {
             week = "0" + week;
+        }
         String year = Integer.toString(c.get(Calendar.YEAR));
         return year + week;
     }

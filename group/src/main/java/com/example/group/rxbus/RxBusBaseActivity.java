@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import rx.Subscription;
 
 /**
- * @author wh
+ * @author test
  */
 public class RxBusBaseActivity extends AppCompatActivity {
     protected ArrayList<Subscription> mRxBusList = new ArrayList<>();

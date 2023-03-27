@@ -5,7 +5,7 @@ import android.app.Application
 import android.util.Log
 
 /**
- * @author wh
+ * @author test
  */
 object DisplayUtil {
     private const val TAG = "DisplayUtil"

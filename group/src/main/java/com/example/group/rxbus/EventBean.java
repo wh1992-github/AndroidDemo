@@ -1,7 +1,7 @@
 package com.example.group.rxbus;
 
 /**
- * @author wh
+ * @author test
  */
 public class EventBean {
     private int userId;

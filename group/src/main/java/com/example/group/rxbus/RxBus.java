@@ -6,7 +6,7 @@ import rx.subjects.SerializedSubject;
 import rx.subjects.Subject;
 
 /**
- * @author wh
+ * @author test
  */
 public class RxBus {
     private static volatile RxBus sInstance;
