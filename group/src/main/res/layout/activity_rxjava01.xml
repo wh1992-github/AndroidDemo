@@ -113,9 +113,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
             android:padding="8dp"
             android:text="range"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_count_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="countDown"
             android:textAllCaps="false" />
 
     </LinearLayout>

@@ -3,10 +3,14 @@ package com.example.group.rxjava;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 
 import com.example.group.R;
+import com.example.group.util.LogUtil;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -24,6 +28,7 @@ import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
@@ -51,6 +56,7 @@ public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.btn_interval).setOnClickListener(this);
         findViewById(R.id.btn_intervalRange).setOnClickListener(this);
         findViewById(R.id.btn_range).setOnClickListener(this);
+        findViewById(R.id.btn_count_down).setOnClickListener(this);
 
         //观察者不对被观察者发送的事件做出响应(但是被观察者还可以继续发送事件)
         //public final Disposable subscribe()
@@ -112,6 +118,9 @@ public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickL
             case R.id.btn_range:
                 range();
                 break;
+            case R.id.btn_count_down:
+                countDown();
+                break;
             default:
                 break;
         }
@@ -126,23 +135,23 @@ public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickL
         //1、创建被观察者Observable
         //当 Observable 被订阅时，OnSubscribe 的 call() 方法会自动被调用，即事件序列就会依照设定依次被触发
         Observable<String> observable = Observable.create(new ObservableOnSubscribe<String>() {
-            @Override
-            public void subscribe(@NotNull ObservableEmitter<String> emitter) {
-                //通过 ObservableEmitter类对象产生事件并通知观察者
-                //即观察者会依次调用对应事件的复写方法从而响应事件
-                try {
-                    if (!emitter.isDisposed()) {
-                        emitter.onNext("RxJava:e.onNext = 第一次");
-                        emitter.onNext("RxJava:e.onNext = 第二次");
-                        emitter.onNext("RxJava:e.onNext = 第三次");
-                        Log.i(TAG, "subscribe() = 执行事件的线程 name = " + Thread.currentThread().getName());
-                        emitter.onComplete();
+                    @Override
+                    public void subscribe(@NotNull ObservableEmitter<String> emitter) {
+                        //通过 ObservableEmitter类对象产生事件并通知观察者
+                        //即观察者会依次调用对应事件的复写方法从而响应事件
+                        try {
+                            if (!emitter.isDisposed()) {
+                                emitter.onNext("RxJava:e.onNext = 第一次");
+                                emitter.onNext("RxJava:e.onNext = 第二次");
+                                emitter.onNext("RxJava:e.onNext = 第三次");
+                                Log.i(TAG, "subscribe() = 执行事件的线程 name = " + Thread.currentThread().getName());
+                                emitter.onComplete();
+                            }
+                        } catch (Exception e) {
+                            emitter.onError(e);
+                        }
                     }
-                } catch (Exception e) {
-                    emitter.onError(e);
-                }
-            }
-        }).subscribeOn(Schedulers.io())//指定subscribe()(发射事件的线程)在IO线程()
+                }).subscribeOn(Schedulers.io())//指定subscribe()(发射事件的线程)在IO线程()
                 .observeOn(AndroidSchedulers.mainThread());//指定订阅者接收事件的线程在主线程;
 
         //2、创建观察者Observer  并且定义响应事件
@@ -175,80 +184,77 @@ public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickL
 
     private void empty() {
         //快速创建被观察者对象，仅发送onComplete()事件，直接通知完成。
-        Observable.empty()
-                .subscribe(new Observer<Object>() {
-                    @Override
-                    public void onSubscribe(@NotNull Disposable d) {
-                        Log.i(TAG, "empty:onSubscribe = 订阅");
-                    }
+        Observable.empty().subscribe(new Observer<Object>() {
+            @Override
+            public void onSubscribe(@NotNull Disposable d) {
+                Log.i(TAG, "empty:onSubscribe = 订阅");
+            }
 
-                    @Override
-                    public void onNext(@NotNull Object o) {
-                        Log.i(TAG, "empty:onNext  = " + o.toString());
-                    }
+            @Override
+            public void onNext(@NotNull Object o) {
+                Log.i(TAG, "empty:onNext  = " + o.toString());
+            }
 
-                    @Override
-                    public void onError(@NotNull Throwable e) {
-                        Log.i(TAG, "empty:onError = " + e.getMessage());
-                    }
+            @Override
+            public void onError(@NotNull Throwable e) {
+                Log.i(TAG, "empty:onError = " + e.getMessage());
+            }
 
-                    @Override
-                    public void onComplete() {
-                        Log.i(TAG, "empty:onComplete = ");
-                    }
-                });
+            @Override
+            public void onComplete() {
+                Log.i(TAG, "empty:onComplete = ");
+            }
+        });
     }
 
     private void error() {
         //快速创建被观察者对象，仅发送onError()事件，直接通知异常。
-        Observable.error(new Throwable("只回调error"))
-                .subscribe(new Observer<Object>() {
-                    @Override
-                    public void onSubscribe(@NotNull Disposable d) {
-                        Log.i(TAG, "error:onSubscribe = 订阅");
-                    }
+        Observable.error(new Throwable("只回调error")).subscribe(new Observer<Object>() {
+            @Override
+            public void onSubscribe(@NotNull Disposable d) {
+                Log.i(TAG, "error:onSubscribe = 订阅");
+            }
 
-                    @Override
-                    public void onNext(@NotNull Object o) {
-                        Log.i(TAG, "error:onNext  = " + o.toString());
-                    }
+            @Override
+            public void onNext(@NotNull Object o) {
+                Log.i(TAG, "error:onNext  = " + o.toString());
+            }
 
-                    @Override
-                    public void onError(@NotNull Throwable e) {
-                        Log.i(TAG, "error:onError = " + e.getMessage());
-                    }
+            @Override
+            public void onError(@NotNull Throwable e) {
+                Log.i(TAG, "error:onError = " + e.getMessage());
+            }
 
-                    @Override
-                    public void onComplete() {
-                        Log.i(TAG, "error:onComplete = ");
-                    }
-                });
+            @Override
+            public void onComplete() {
+                Log.i(TAG, "error:onComplete = ");
+            }
+        });
     }
 
     private void never() {
         //快速创建被观察者对象，不发送任何事件。
-        Observable.never()
-                .subscribe(new Observer<Object>() {
-                    @Override
-                    public void onSubscribe(@NotNull Disposable d) {
-                        Log.i(TAG, "never:onSubscribe = 订阅");
-                    }
+        Observable.never().subscribe(new Observer<Object>() {
+            @Override
+            public void onSubscribe(@NotNull Disposable d) {
+                Log.i(TAG, "never:onSubscribe = 订阅");
+            }
 
-                    @Override
-                    public void onNext(@NotNull Object o) {
-                        Log.i(TAG, "never:onNext  = " + o.toString());
-                    }
+            @Override
+            public void onNext(@NotNull Object o) {
+                Log.i(TAG, "never:onNext  = " + o.toString());
+            }
 
-                    @Override
-                    public void onError(@NotNull Throwable e) {
-                        Log.i(TAG, "never:onError = " + e.getMessage());
-                    }
+            @Override
+            public void onError(@NotNull Throwable e) {
+                Log.i(TAG, "never:onError = " + e.getMessage());
+            }
 
-                    @Override
-                    public void onComplete() {
-                        Log.i(TAG, "never:onComplete = ");
-                    }
-                });
+            @Override
+            public void onComplete() {
+                Log.i(TAG, "never:onComplete = ");
+            }
+        });
     }
 
     /**
@@ -385,28 +391,27 @@ public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickL
         final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 
         Log.i(TAG, "timer:当前时间  = " + dateFormat.format(System.currentTimeMillis()));
-        Observable.timer(3, TimeUnit.SECONDS)
-                .subscribe(new Observer<Long>() {
-                    @Override
-                    public void onSubscribe(@NotNull Disposable d) {
-                        Log.i(TAG, "timer:onSubscribe = 订阅");
-                    }
+        Observable.timer(3, TimeUnit.SECONDS).subscribe(new Observer<Long>() {
+            @Override
+            public void onSubscribe(@NotNull Disposable d) {
+                Log.i(TAG, "timer:onSubscribe = 订阅");
+            }
 
-                    @Override
-                    public void onNext(@NotNull Long aLong) {
-                        Log.i(TAG, "timer:onNext = " + aLong + ", 时间 = " + dateFormat.format(System.currentTimeMillis()));
-                    }
+            @Override
+            public void onNext(@NotNull Long aLong) {
+                Log.i(TAG, "timer:onNext = " + aLong + ", 时间 = " + dateFormat.format(System.currentTimeMillis()));
+            }
 
-                    @Override
-                    public void onError(@NotNull Throwable e) {
-                        Log.i(TAG, "timer:onError = " + e.getMessage());
-                    }
+            @Override
+            public void onError(@NotNull Throwable e) {
+                Log.i(TAG, "timer:onError = " + e.getMessage());
+            }
 
-                    @Override
-                    public void onComplete() {
-                        Log.i(TAG, "timer:onComplete = ");
-                    }
-                });
+            @Override
+            public void onComplete() {
+                Log.i(TAG, "timer:onComplete = ");
+            }
+        });
     }
 
     /**
@@ -422,28 +427,27 @@ public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickL
         //每间隔多少时间发送一次事件，可以指定调度器
         //interval(long period, TimeUnit unit, Scheduler scheduler)
 
-        Observable.interval(3, 1, TimeUnit.SECONDS)
-                .subscribe(new Observer<Long>() {
-                    @Override
-                    public void onSubscribe(@NotNull Disposable d) {
-                        Log.i(TAG, "interval:onSubscribe = 订阅");
-                    }
+        Observable.interval(3, 1, TimeUnit.SECONDS).subscribe(new Observer<Long>() {
+            @Override
+            public void onSubscribe(@NotNull Disposable d) {
+                Log.i(TAG, "interval:onSubscribe = 订阅");
+            }
 
-                    @Override
-                    public void onNext(@NotNull Long aLong) {
-                        Log.i(TAG, "interval:onNext  = " + aLong);
-                    }
+            @Override
+            public void onNext(@NotNull Long aLong) {
+                Log.i(TAG, "interval:onNext  = " + aLong);
+            }
 
-                    @Override
-                    public void onError(@NotNull Throwable e) {
-                        Log.i(TAG, "interval:onError = " + e.getMessage());
-                    }
+            @Override
+            public void onError(@NotNull Throwable e) {
+                Log.i(TAG, "interval:onError = " + e.getMessage());
+            }
 
-                    @Override
-                    public void onComplete() {
-                        Log.i(TAG, "interval:onComplete = ");
-                    }
-                });
+            @Override
+            public void onComplete() {
+                Log.i(TAG, "interval:onComplete = ");
+            }
+        });
     }
 
     private void intervalRange() {
@@ -451,35 +455,33 @@ public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickL
         //period:距离下一次发送事件的时间间隔, unit:时间单位，scheduler:调度器
         //intervalRange(long start, long count, long initialDelay, long period, TimeUnit unit)
         //intervalRange(long start, long count, long initialDelay, long period, TimeUnit unit, Scheduler scheduler)
-        Observable.intervalRange(10, 5, 3, 1, TimeUnit.SECONDS)
-                .filter(new Predicate<Long>() {
-                    @Override
-                    public boolean test(@NotNull Long aLong) {
-                        return false;
-                    }
-                })
-                .subscribe(new Observer<Long>() {
-                    @Override
-                    public void onSubscribe(@NotNull Disposable d) {
-                        Log.i(TAG, "intervalRange:onSubscribe = 订阅");
-                        d.dispose();
-                    }
+        Observable.intervalRange(10, 5, 3, 1, TimeUnit.SECONDS).filter(new Predicate<Long>() {
+            @Override
+            public boolean test(@NotNull Long aLong) {
+                return false;
+            }
+        }).subscribe(new Observer<Long>() {
+            @Override
+            public void onSubscribe(@NotNull Disposable d) {
+                Log.i(TAG, "intervalRange:onSubscribe = 订阅");
+                d.dispose();
+            }
 
-                    @Override
-                    public void onNext(@NotNull Long aLong) {
-                        Log.i(TAG, "intervalRange:onNext  = " + aLong);
-                    }
+            @Override
+            public void onNext(@NotNull Long aLong) {
+                Log.i(TAG, "intervalRange:onNext  = " + aLong);
+            }
 
-                    @Override
-                    public void onError(@NotNull Throwable e) {
-                        Log.i(TAG, "intervalRange:onError = " + e.getMessage());
-                    }
+            @Override
+            public void onError(@NotNull Throwable e) {
+                Log.i(TAG, "intervalRange:onError = " + e.getMessage());
+            }
 
-                    @Override
-                    public void onComplete() {
-                        Log.i(TAG, "intervalRange:onComplete = ");
-                    }
-                });
+            @Override
+            public void onComplete() {
+                Log.i(TAG, "intervalRange:onComplete = ");
+            }
+        });
     }
 
     private void range() {
@@ -505,5 +507,49 @@ public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickL
                 Log.i(TAG, "range:onComplete = ");
             }
         });
+    }
+
+    //点击获取验证码,10S倒计时,利用Rxjava进行线程切换
+    @SuppressLint("CheckResult")
+    private void countDown() {
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+                    @Override
+                    public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                        for (int i = 0; i < 10; i++) {
+                            try {
+                                Thread.sleep(1000);
+                                emitter.onNext(i);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        emitter.onComplete();
+                    }
+                }).subscribeOn(Schedulers.io())// 此方法为上面发出事件设置线程为IO线程
+                .observeOn(AndroidSchedulers.mainThread())// 为消耗事件设置线程为UI线程
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        Log.i(TAG, "aaa---accept: " + integer);
+                    }
+                });
+
+        mDisposable = Observable.interval(1, 1, TimeUnit.SECONDS).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(new Consumer<Long>() {
+            @Override
+            public void accept(Long l) throws Exception {
+                Log.i(TAG, "bbb---accept: " + l);
+                countDownManager(l);
+            }
+        });
+    }
+
+    private Disposable mDisposable;
+
+    private void countDownManager(Long count) {
+        if (count >= 12) {
+            if (mDisposable != null && !mDisposable.isDisposed()) {
+                mDisposable.dispose();
+            }
+        }
     }
 }
