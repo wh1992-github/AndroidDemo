@@ -1,5 +1,7 @@
 package com.example.customview.widget;
 
+import static android.graphics.Paint.ANTI_ALIAS_FLAG;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,8 +15,6 @@ import android.util.AttributeSet;
 import android.widget.EditText;
 
 import com.example.customview.R;
-
-import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 
 /**
  * Created by test on 2017/5/7.

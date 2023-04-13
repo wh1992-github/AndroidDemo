@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:onClick="startAnimAll"
+        android:text="start all"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:onClick="stopAnimAll"
+        android:text="stop all"
+        android:textColor="@android:color/black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.LVCircularCD
+                        android:id="@+id/lv_circularCD"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:onClick="startAnim" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVCircularRing
+                        android:id="@+id/lv_circularring"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.LVCircular
+                        android:id="@+id/lv_circular"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVFinePoiStar
+                        android:id="@+id/lv_finePoiStar"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVCircularSmile
+                        android:id="@+id/lv_circularSmile"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVGears
+                        android:id="@+id/lv_gears"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVGearsTwo
+                        android:id="@+id/lv_gears_two"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVWifi
+                        android:id="@+id/lv_wifi"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVCircularJump
+                        android:id="@+id/lv_circularJump"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVCircularZoom
+                        android:id="@+id/lv_circularZoom"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVPlayBall
+                        android:id="@+id/lv_playball"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVNews
+                        android:id="@+id/lv_news"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.example.customview.loadingview.LVLineWithText
+                android:id="@+id/lv_linetext"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:onClick="startAnim" />
+
+            <com.example.customview.loadingview.view.LVEatBeans
+                android:id="@+id/lv_eatBeans"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:onClick="startAnim" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.LVChromeLogo
+                        android:id="@+id/lv_chromeLogo"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVRingProgress
+                        android:id="@+id/lv_ringp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVBlock
+                        android:id="@+id/lv_block"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <com.example.customview.loadingview.view.LVFunnyBar
+                        android:id="@+id/lv_funnybar"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.example.customview.loadingview.view.LVGhost
+                        android:id="@+id/lv_ghost"
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        android:onClick="startAnim" />
+
+                    <com.example.customview.loadingview.view.LVBlazeWood
+                        android:id="@+id/lv_wood"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="startAnim" />
+
+                    <com.example.customview.loadingview.view.LVBattery
+                        android:id="@+id/lv_battery"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_weight="1"
+                        android:onClick="startAnim" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:orientation="horizontal">
+
+                <com.example.customview.loadingview.LVSunSetView
+                    android:id="@+id/lv_sunset"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:onClick="startAnim" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

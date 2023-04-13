@@ -3,10 +3,12 @@ package com.example.helloworld;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn1:
                 break;
             case R.id.btn2:
+                StringBuilder stringBuilder = new StringBuilder("asdfghjkl");
+                Log.i(TAG, "onClick: " + stringBuilder.append("---zxcvbnm"));
+
+                String string = "qwertyuio";
+                Log.i(TAG, "onClick: " + string.concat("---zxcvbnm"));
                 break;
             default:
                 break;

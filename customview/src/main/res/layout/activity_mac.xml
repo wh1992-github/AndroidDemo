@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.example.customview.loadingview.mac.LVComputerDesktop
+                    android:layout_width="370dp"
+                    android:layout_height="210dp"
+                    android:layout_marginLeft="-45dp" />
+
+                <com.example.customview.loadingview.mac.LVComputer
+                    android:layout_width="240dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="8dp" />
+
+                <com.example.customview.loadingview.mac.LVComputerIpad
+                    android:layout_width="60dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginBottom="5dp" />
+
+            </FrameLayout>
+
+            <com.example.customview.loadingview.mac.LVComputerIpad
+                android:id="@+id/lv_computer_ipad"
+                android:layout_width="84dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="25dp"
+                android:onClick="startAnim" />
+
+            <com.example.customview.loadingview.mac.LVComputer
+                android:id="@+id/lv_computer"
+                android:layout_width="240dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="25dp"
+                android:onClick="startAnim" />
+
+            <com.example.customview.loadingview.mac.LVComputerDesktop
+                android:id="@+id/lv_computer_desktop"
+                android:layout_width="370dp"
+                android:layout_height="210dp"
+                android:layout_marginTop="25dp"
+                android:onClick="startAnim" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

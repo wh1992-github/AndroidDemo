@@ -44,6 +44,8 @@
         <activity android:name=".activity.SinaVoteActivity" />
         <activity android:name=".activity.ClearScreenActivity" />
         <activity android:name=".activity.RecyclerQQActivity" />
+        <activity android:name=".activity.LoadingViewActivity" />
+        <activity android:name=".activity.LoadingViewMacActivity" />
     </application>
 
 </manifest>

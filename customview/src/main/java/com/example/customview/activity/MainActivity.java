@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         mList.add(new TypeBean("直播侧滑清屏效果", 19));
         mList.add(new TypeBean("指纹验证", 20));
         mList.add(new TypeBean("仿写QQ界面", 21));
+        mList.add(new TypeBean("LoadingView", 22));
+        mList.add(new TypeBean("LoadingViewMac", 23));
         return mList;
     }
 
@@ -131,6 +133,14 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 21:
                 startActivity(new Intent(MainActivity.this, RecyclerQQActivity.class));
+                break;
+            case 22:
+                startActivity(new Intent(MainActivity.this, LoadingViewActivity.class));
+                break;
+            case 23:
+                startActivity(new Intent(MainActivity.this, LoadingViewMacActivity.class));
+                break;
+            default:
                 break;
         }
     }
