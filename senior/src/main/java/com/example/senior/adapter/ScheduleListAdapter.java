@@ -14,7 +14,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.senior.R;
-import com.example.senior.ScheduleDetailActivity;
+import com.example.senior.activity.ScheduleDetailActivity;
 import com.example.senior.bean.CalendarTransfer;
 import com.example.senior.bean.ScheduleArrange;
 import com.example.senior.calendar.Constant;

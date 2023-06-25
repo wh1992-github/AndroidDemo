@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TouchEventActivity">
+    tools:context=".activity.TouchEventActivity">
 
     <com.example.group.touchevent.BaseFrameLayout
         android:id="@+id/framelayout"

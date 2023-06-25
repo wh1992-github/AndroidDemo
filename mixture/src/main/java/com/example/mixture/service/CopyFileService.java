@@ -4,7 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
 
-import com.example.mixture.EbookReaderActivity;
+import com.example.mixture.activity.EbookReaderActivity;
 import com.example.mixture.bean.BookInfo;
 import com.example.mixture.util.AssetsUtil;
 

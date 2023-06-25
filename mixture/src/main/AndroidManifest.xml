@@ -33,55 +33,55 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AssetsTextActivity" />
-        <activity android:name=".AssetsImageActivity" />
-        <activity android:name=".WebLocalActivity" />
-        <activity android:name=".WebSpanActivity" />
-        <activity android:name=".WebBrowserActivity" />
-        <activity android:name=".WebScriptActivity" />
-        <activity android:name=".JniCpuActivity" />
-        <activity android:name=".JniSecretActivity" />
-        <activity android:name=".WifiInfoActivity" />
-        <activity android:name=".WifiConnectActivity" />
-        <activity android:name=".WifiList2Activity" />
-        <activity android:name=".WifiApActivity" />
-        <activity android:name=".BluetoothTransActivity" />
-        <activity android:name=".NetbiosActivity" />
-        <activity android:name=".WifiShareActivity" />
+        <activity android:name=".activity.AssetsTextActivity" />
+        <activity android:name=".activity.AssetsImageActivity" />
+        <activity android:name=".activity.WebLocalActivity" />
+        <activity android:name=".activity.WebSpanActivity" />
+        <activity android:name=".activity.WebBrowserActivity" />
+        <activity android:name=".activity.WebScriptActivity" />
+        <activity android:name=".activity.JniCpuActivity" />
+        <activity android:name=".activity.JniSecretActivity" />
+        <activity android:name=".activity.WifiInfoActivity" />
+        <activity android:name=".activity.WifiConnectActivity" />
+        <activity android:name=".activity.WifiList2Activity" />
+        <activity android:name=".activity.WifiApActivity" />
+        <activity android:name=".activity.BluetoothTransActivity" />
+        <activity android:name=".activity.NetbiosActivity" />
+        <activity android:name=".activity.WifiShareActivity" />
         <activity
-            android:name=".PdfRenderActivity"
+            android:name=".activity.PdfRenderActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
             android:screenOrientation="sensor"
             android:theme="@style/AppCompatTheme" />
         <activity
-            android:name=".PdfSliderActivity"
+            android:name=".activity.PdfSliderActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
             android:screenOrientation="sensor"
             android:theme="@style/AppCompatTheme" />
         <activity
-            android:name=".PdfTurnActivity"
+            android:name=".activity.PdfTurnActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
             android:screenOrientation="sensor"
             android:theme="@style/AppCompatTheme" />
         <activity
-            android:name=".EbookReaderActivity"
+            android:name=".activity.EbookReaderActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
             android:screenOrientation="sensor"
             android:theme="@style/AppCompatTheme" />
         <activity
-            android:name=".EpubActivity"
+            android:name=".activity.EpubActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
             android:screenOrientation="sensor"
             android:theme="@style/AppCompatTheme" />
         <activity
-            android:name=".VudroidActivity"
+            android:name=".activity.VudroidActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
             android:screenOrientation="sensor"
             android:theme="@style/AppCompatTheme" />

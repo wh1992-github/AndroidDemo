@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.widget.TextView;
 
-import com.example.media.MainApplication;
+import com.example.media.activity.MainApplication;
 import com.example.media.R;
 import com.example.media.util.FlowUtil;
 import com.example.media.widget.FloatWindow;

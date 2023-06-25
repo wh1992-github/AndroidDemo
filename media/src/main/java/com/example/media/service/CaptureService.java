@@ -19,7 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.media.MainApplication;
+import com.example.media.activity.MainApplication;
 import com.example.media.R;
 import com.example.media.util.DateUtil;
 import com.example.media.util.FileUtil;

@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.network.ChatMainActivity;
+import com.example.network.activity.ChatMainActivity;
 import com.example.network.R;
 import com.example.network.bean.Friend;
 import com.example.network.bean.FriendGroup;

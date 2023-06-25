@@ -15,8 +15,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".MainApplication">
-        <activity android:name=".MainActivity">
+        android:name=".activity.MainApplication">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,43 +24,43 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".DatePickerActivity" />
-        <activity android:name=".TimePickerActivity" />
-        <activity android:name=".BaseAdapterActivity" />
-        <activity android:name=".ListViewActivity" />
-        <activity android:name=".GridViewActivity" />
-        <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".PagerTabStripActivity" />
-        <activity android:name=".PagerTitleStripActivity" />
+        <activity android:name=".activity.DatePickerActivity" />
+        <activity android:name=".activity.TimePickerActivity" />
+        <activity android:name=".activity.BaseAdapterActivity" />
+        <activity android:name=".activity.ListViewActivity" />
+        <activity android:name=".activity.GridViewActivity" />
+        <activity android:name=".activity.ViewPagerActivity" />
+        <activity android:name=".activity.PagerTabStripActivity" />
+        <activity android:name=".activity.PagerTitleStripActivity" />
         <activity
-            android:name=".LaunchSimpleActivity"
+            android:name=".activity.LaunchSimpleActivity"
             android:theme="@style/AppCompatTheme" />
-        <activity android:name=".FragmentStaticActivity" />
-        <activity android:name=".FragmentDynamicActivity" />
+        <activity android:name=".activity.FragmentStaticActivity" />
+        <activity android:name=".activity.FragmentDynamicActivity" />
         <activity
-            android:name=".LaunchImproveActivity"
+            android:name=".activity.LaunchImproveActivity"
             android:theme="@style/AppCompatTheme" />
-        <activity android:name=".BroadTempActivity" />
-        <activity android:name=".BroadSystemActivity" />
-        <activity android:name=".AlarmActivity" />
+        <activity android:name=".activity.BroadTempActivity" />
+        <activity android:name=".activity.BroadSystemActivity" />
+        <activity android:name=".activity.AlarmActivity" />
         <activity
-            android:name=".ShoppingCartActivity"
+            android:name=".activity.ShoppingCartActivity"
             android:theme="@style/AppBaseTheme" />
-        <activity android:name=".ShoppingChannelActivity" />
-        <activity android:name=".ShoppingDetailActivity" />
-        <activity android:name=".MonthPickerActivity" />
-        <activity android:name=".CalendarActivity" />
-        <activity android:name=".VibratorActivity" />
-        <activity android:name=".ScheduleActivity" />
-        <activity android:name=".ScheduleDetailActivity" />
+        <activity android:name=".activity.ShoppingChannelActivity" />
+        <activity android:name=".activity.ShoppingDetailActivity" />
+        <activity android:name=".activity.MonthPickerActivity" />
+        <activity android:name=".activity.CalendarActivity" />
+        <activity android:name=".activity.VibratorActivity" />
+        <activity android:name=".activity.ScheduleActivity" />
+        <activity android:name=".activity.ScheduleDetailActivity" />
 
-        <receiver android:name=".AlarmActivity$AlarmReceiver">
+        <receiver android:name=".activity.AlarmActivity$AlarmReceiver">
             <intent-filter>
                 <action android:name="com.example.senior.AlarmActivity.AlarmReceiver" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".ScheduleDetailActivity$AlarmReceiver">
+        <receiver android:name=".activity.ScheduleDetailActivity$AlarmReceiver">
             <intent-filter>
                 <action android:name="com.example.senior.ScheduleDetailActivity.AlarmReceiver" />
             </intent-filter>

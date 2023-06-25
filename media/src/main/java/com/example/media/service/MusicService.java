@@ -14,8 +14,8 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-import com.example.media.MainApplication;
-import com.example.media.MusicDetailActivity;
+import com.example.media.activity.MainApplication;
+import com.example.media.activity.MusicDetailActivity;
 import com.example.media.R;
 import com.example.media.bean.MediaInfo;
 import com.example.media.util.DateUtil;

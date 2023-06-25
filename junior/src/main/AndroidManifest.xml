@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -16,27 +16,27 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PxActivity" />
-        <activity android:name=".ColorActivity" />
-        <activity android:name=".ScreenActivity" />
+        <activity android:name=".activity.PxActivity" />
+        <activity android:name=".activity.ColorActivity" />
+        <activity android:name=".activity.ScreenActivity" />
 
-        <activity android:name=".MarginActivity" />
-        <activity android:name=".GravityActivity" />
-        <activity android:name=".ScrollActivity" />
+        <activity android:name=".activity.MarginActivity" />
+        <activity android:name=".activity.GravityActivity" />
+        <activity android:name=".activity.ScrollActivity" />
 
-        <activity android:name=".MarqueeActivity" />
-        <activity android:name=".BbsActivity" />
-        <activity android:name=".ClickActivity" />
+        <activity android:name=".activity.MarqueeActivity" />
+        <activity android:name=".activity.BbsActivity" />
+        <activity android:name=".activity.ClickActivity" />
 
-        <activity android:name=".ScaleActivity" />
-        <activity android:name=".CaptureActivity" />
-        <activity android:name=".IconActivity" />
+        <activity android:name=".activity.ScaleActivity" />
+        <activity android:name=".activity.CaptureActivity" />
+        <activity android:name=".activity.IconActivity" />
 
-        <activity android:name=".StateActivity" />
-        <activity android:name=".ShapeActivity" />
-        <activity android:name=".NineActivity" />
+        <activity android:name=".activity.StateActivity" />
+        <activity android:name=".activity.ShapeActivity" />
+        <activity android:name=".activity.NineActivity" />
 
-        <activity android:name=".CalculatorActivity" />
+        <activity android:name=".activity.CalculatorActivity" />
 
     </application>
 

@@ -38,8 +38,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".MainApplication">
-        <activity android:name=".MainActivity">
+        android:name=".activity.MainApplication">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,40 +47,40 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MessageActivity" />
-        <activity android:name=".ProgressDialogActivity" />
-        <activity android:name=".ProgressTextActivity" />
-        <activity android:name=".ProgressCircleActivity" />
-        <activity android:name=".AsyncTaskActivity" />
-        <activity android:name=".IntentServiceActivity" />
-        <activity android:name=".ConnectActivity" />
-        <activity android:name=".JsonParseActivity" />
-        <activity android:name=".JsonConvertActivity" />
-        <activity android:name=".HttpRequestActivity" />
-        <activity android:name=".HttpImageActivity" />
-        <activity android:name=".DownloadApkActivity" />
-        <activity android:name=".DownloadImageActivity" />
-        <activity android:name=".FileSaveActivity" />
-        <activity android:name=".FileSelectActivity" />
-        <activity android:name=".UploadHttpActivity" />
-        <activity android:name=".NetAddressActivity" />
-        <activity android:name=".SocketActivity" />
-        <activity android:name=".ApkInfoActivity" />
-        <activity android:name=".AppStoreActivity" />
-        <activity android:name=".FoldListActivity" />
-        <activity android:name=".QQLoginActivity" />
+        <activity android:name=".activity.MessageActivity" />
+        <activity android:name=".activity.ProgressDialogActivity" />
+        <activity android:name=".activity.ProgressTextActivity" />
+        <activity android:name=".activity.ProgressCircleActivity" />
+        <activity android:name=".activity.AsyncTaskActivity" />
+        <activity android:name=".activity.IntentServiceActivity" />
+        <activity android:name=".activity.ConnectActivity" />
+        <activity android:name=".activity.JsonParseActivity" />
+        <activity android:name=".activity.JsonConvertActivity" />
+        <activity android:name=".activity.HttpRequestActivity" />
+        <activity android:name=".activity.HttpImageActivity" />
+        <activity android:name=".activity.DownloadApkActivity" />
+        <activity android:name=".activity.DownloadImageActivity" />
+        <activity android:name=".activity.FileSaveActivity" />
+        <activity android:name=".activity.FileSelectActivity" />
+        <activity android:name=".activity.UploadHttpActivity" />
+        <activity android:name=".activity.NetAddressActivity" />
+        <activity android:name=".activity.SocketActivity" />
+        <activity android:name=".activity.ApkInfoActivity" />
+        <activity android:name=".activity.AppStoreActivity" />
+        <activity android:name=".activity.FoldListActivity" />
+        <activity android:name=".activity.QQLoginActivity" />
         <activity
-            android:name=".QQChatActivity"
+            android:name=".activity.QQChatActivity"
             android:theme="@style/AppCompatTheme" />
         <activity
-            android:name=".QQConcernActivity"
+            android:name=".activity.QQConcernActivity"
             android:theme="@style/AppCompatTheme" />
         <activity
-            android:name=".QQContactActivity"
+            android:name=".activity.QQContactActivity"
             android:theme="@style/AppCompatTheme" />
-        <activity android:name=".ChatMainActivity" />
+        <activity android:name=".activity.ChatMainActivity" />
         <activity
-            android:name=".QQFindActivity"
+            android:name=".activity.QQFindActivity"
             android:theme="@style/AppCompatTheme" />
 
         <service
@@ -113,26 +113,26 @@
         </service>
 
         <!-- 接收下载任务的下载完成事件 -->
-        <receiver android:name=".DownloadApkActivity$DownloadCompleteReceiver">
+        <receiver android:name=".activity.DownloadApkActivity$DownloadCompleteReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
             </intent-filter>
         </receiver>
         <!-- 接收通知栏上的下载任务点击事件 -->
-        <receiver android:name=".DownloadApkActivity$NotificationClickReceiver">
+        <receiver android:name=".activity.DownloadApkActivity$NotificationClickReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
             </intent-filter>
         </receiver>
 
         <!-- 接收Socket得到的收到对方消息事件 -->
-        <receiver android:name=".ChatMainActivity$RecvMsgReceiver">
+        <receiver android:name=".activity.ChatMainActivity$RecvMsgReceiver">
             <intent-filter>
                 <action android:name="com.example.network.RECV_MSG" />
             </intent-filter>
         </receiver>
         <!-- 接收Socket得到的获取好友列表事件 -->
-        <receiver android:name=".QQContactActivity$GetListReceiver">
+        <receiver android:name=".activity.QQContactActivity$GetListReceiver">
             <intent-filter>
                 <action android:name="com.example.network.GET_LIST" />
             </intent-filter>

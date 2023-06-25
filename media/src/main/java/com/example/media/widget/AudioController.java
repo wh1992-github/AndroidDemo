@@ -12,7 +12,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-import com.example.media.MainApplication;
+import com.example.media.activity.MainApplication;
 import com.example.media.R;
 import com.example.media.util.DateUtil;
 import com.example.media.util.Utils;

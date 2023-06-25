@@ -14,9 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.senior.MainApplication;
+import com.example.senior.activity.MainApplication;
 import com.example.senior.R;
-import com.example.senior.ShoppingDetailActivity;
+import com.example.senior.activity.ShoppingDetailActivity;
 import com.example.senior.bean.GoodsInfo;
 
 import java.util.ArrayList;

@@ -13,13 +13,13 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:name=".MainApplication"
+        android:name=".activity.MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,41 +27,41 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CustomPropertyActivity" />
-        <activity android:name=".MeasureTextActivity" />
-        <activity android:name=".MeasureLayoutActivity" />
-        <activity android:name=".OnMeasureActivity1" />
-        <activity android:name=".OnMeasureActivity2" />
-        <activity android:name=".OnMeasureActivity3" />
-        <activity android:name=".OnLayoutActivity" />
-        <activity android:name=".ShowDrawActivity" />
-        <activity android:name=".RunnableActivity" />
-        <activity android:name=".PullRefreshActivity" />
-        <activity android:name=".CircleAnimationActivity" />
-        <activity android:name=".CircleClockActivity" />
-        <activity android:name=".RippleAnimActivity" />
-        <activity android:name=".RoundImageViewActivity" />
-        <activity android:name=".NiceImageViewActivity" />
-        <activity android:name=".CustomTextViewActivity" />
-        <activity android:name=".BezierQuadActivity" />
-        <activity android:name=".BezierCubicActivity" />
-        <activity android:name=".BezierCustomActivity" />
-        <activity android:name=".BezierRippleActivity" />
-        <activity android:name=".WindowActivity" />
-        <activity android:name=".DialogDateActivity" />
-        <activity android:name=".DialogMultiActivity" />
-        <activity android:name=".NotifySimpleActivity" />
-        <activity android:name=".NotifyCounterActivity" />
-        <activity android:name=".NotifyProgressActivity" />
-        <activity android:name=".NotifyCustomActivity" />
-        <activity android:name=".ServiceNormalActivity" />
-        <activity android:name=".BindImmediateActivity" />
-        <activity android:name=".BindDelayActivity" />
-        <activity android:name=".NotifyServiceActivity" />
-        <activity android:name=".AppInfoActivity" />
-        <activity android:name=".TrafficInfoActivity" />
-        <activity android:name=".MobileAssistantActivity" />
-        <activity android:name=".MobileConfigActivity" />
+        <activity android:name=".activity.CustomPropertyActivity" />
+        <activity android:name=".activity.MeasureTextActivity" />
+        <activity android:name=".activity.MeasureLayoutActivity" />
+        <activity android:name=".activity.OnMeasureActivity1" />
+        <activity android:name=".activity.OnMeasureActivity2" />
+        <activity android:name=".activity.OnMeasureActivity3" />
+        <activity android:name=".activity.OnLayoutActivity" />
+        <activity android:name=".activity.ShowDrawActivity" />
+        <activity android:name=".activity.RunnableActivity" />
+        <activity android:name=".activity.PullRefreshActivity" />
+        <activity android:name=".activity.CircleAnimationActivity" />
+        <activity android:name=".activity.CircleClockActivity" />
+        <activity android:name=".activity.RippleAnimActivity" />
+        <activity android:name=".activity.RoundImageViewActivity" />
+        <activity android:name=".activity.NiceImageViewActivity" />
+        <activity android:name=".activity.CustomTextViewActivity" />
+        <activity android:name=".activity.BezierQuadActivity" />
+        <activity android:name=".activity.BezierCubicActivity" />
+        <activity android:name=".activity.BezierCustomActivity" />
+        <activity android:name=".activity.BezierRippleActivity" />
+        <activity android:name=".activity.WindowActivity" />
+        <activity android:name=".activity.DialogDateActivity" />
+        <activity android:name=".activity.DialogMultiActivity" />
+        <activity android:name=".activity.NotifySimpleActivity" />
+        <activity android:name=".activity.NotifyCounterActivity" />
+        <activity android:name=".activity.NotifyProgressActivity" />
+        <activity android:name=".activity.NotifyCustomActivity" />
+        <activity android:name=".activity.ServiceNormalActivity" />
+        <activity android:name=".activity.BindImmediateActivity" />
+        <activity android:name=".activity.BindDelayActivity" />
+        <activity android:name=".activity.NotifyServiceActivity" />
+        <activity android:name=".activity.AppInfoActivity" />
+        <activity android:name=".activity.TrafficInfoActivity" />
+        <activity android:name=".activity.MobileAssistantActivity" />
+        <activity android:name=".activity.MobileConfigActivity" />
 
         <service
             android:name=".service.MusicService"

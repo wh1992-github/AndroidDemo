@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.mixture.R;
-import com.example.mixture.VudroidActivity;
+import com.example.mixture.activity.VudroidActivity;
 import com.example.mixture.util.FileUtil;
 
 import org.vudroid.core.DecodeService;

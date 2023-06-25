@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".App"
+        android:name=".activity.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="UnusedAttribute">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,65 +26,65 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TabButtonActivity" />
-        <activity android:name=".TabHostActivity" />
-        <activity android:name=".TabFirstActivity" />
-        <activity android:name=".TabSecondActivity" />
-        <activity android:name=".TabThirdActivity" />
-        <activity android:name=".TabGroupActivity" />
-        <activity android:name=".TabFragmentActivity" />
-        <activity android:name=".ToolbarAndPopWindowActivity" />
-        <activity android:name=".ProgressBarActivity" />
-        <activity android:name=".ClickEffectActivity" />
-        <activity android:name=".TouchEventActivity" />
-        <activity android:name=".LifecycleActivity" />
-        <activity android:name=".LiveDataActivity" />
-        <activity android:name=".LiveDataSampleActivity" />
-        <activity android:name=".LiveDataTransformationsActivity" />
-        <activity android:name=".WindowDialogActivity" />
-        <activity android:name=".LocalBroadcastActivity" />
-        <activity android:name=".HandlerActivity" />
-        <activity android:name=".ToastActivity" />
-        <activity android:name=".SeekBarActivity" />
-        <activity android:name=".OverflowMenuActivity" />
-        <activity android:name=".SearchViewActivity" />
-        <activity android:name=".ToolbarCustomActivity" />
-        <activity android:name=".TabLayoutActivity" />
-        <activity android:name=".TabCustomActivity" />
-        <activity android:name=".BannerIndicatorActivity" />
-        <activity android:name=".BannerPagerActivity" />
-        <activity android:name=".BannerTopActivity" />
-        <activity android:name=".RecyclerLinearActivity" />
-        <activity android:name=".RecyclerGridActivity" />
-        <activity android:name=".RecyclerCombineActivity" />
-        <activity android:name=".RecyclerDragActivity" />
-        <activity android:name=".RecyclerStaggeredActivity" />
-        <activity android:name=".RecyclerDynamicActivity" />
-        <activity android:name=".CoordinatorActivity" />
-        <activity android:name=".AppbarRecyclerActivity" />
-        <activity android:name=".AppbarNestedActivity" />
-        <activity android:name=".CollapsePinActivity" />
-        <activity android:name=".CollapseParallaxActivity" />
-        <activity android:name=".ImageFadeActivity" />
-        <activity android:name=".ScrollFlagActivity" />
-        <activity android:name=".ScrollAlipayActivity" />
-        <activity android:name=".SwipeRefreshActivity" />
-        <activity android:name=".SwipeRecyclerActivity" />
-        <activity android:name=".DepartmentStoreActivity" />
-        <activity android:name=".DepartmentHomeActivity" />
-        <activity android:name=".DepartmentClassActivity" />
-        <activity android:name=".DepartmentCartActivity" />
-        <activity android:name=".GlideActivity" />
-        <activity android:name=".TimberActivity" />
-        <activity android:name=".OrientationActivity" />
-        <activity android:name=".BigPictureActivity" />
-        <activity android:name=".MMKVActivity" />
-        <activity android:name=".LevelListActivity" />
-        <activity android:name=".Log4jActivity" />
-        <activity android:name=".ViewDragActivity1" />
-        <activity android:name=".ViewDragActivity2" />
+        <activity android:name=".activity.TabButtonActivity" />
+        <activity android:name=".activity.TabHostActivity" />
+        <activity android:name=".activity.TabFirstActivity" />
+        <activity android:name=".activity.TabSecondActivity" />
+        <activity android:name=".activity.TabThirdActivity" />
+        <activity android:name=".activity.TabGroupActivity" />
+        <activity android:name=".activity.TabFragmentActivity" />
+        <activity android:name=".activity.ToolbarAndPopWindowActivity" />
+        <activity android:name=".activity.ProgressBarActivity" />
+        <activity android:name=".activity.ClickEffectActivity" />
+        <activity android:name=".activity.TouchEventActivity" />
+        <activity android:name=".activity.LifecycleActivity" />
+        <activity android:name=".activity.LiveDataActivity" />
+        <activity android:name=".activity.LiveDataSampleActivity" />
+        <activity android:name=".activity.LiveDataTransformationsActivity" />
+        <activity android:name=".activity.WindowDialogActivity" />
+        <activity android:name=".activity.LocalBroadcastActivity" />
+        <activity android:name=".activity.HandlerActivity" />
+        <activity android:name=".activity.ToastActivity" />
+        <activity android:name=".activity.SeekBarActivity" />
+        <activity android:name=".activity.OverflowMenuActivity" />
+        <activity android:name=".activity.SearchViewActivity" />
+        <activity android:name=".activity.ToolbarCustomActivity" />
+        <activity android:name=".activity.TabLayoutActivity" />
+        <activity android:name=".activity.TabCustomActivity" />
+        <activity android:name=".activity.BannerIndicatorActivity" />
+        <activity android:name=".activity.BannerPagerActivity" />
+        <activity android:name=".activity.BannerTopActivity" />
+        <activity android:name=".activity.RecyclerLinearActivity" />
+        <activity android:name=".activity.RecyclerGridActivity" />
+        <activity android:name=".activity.RecyclerCombineActivity" />
+        <activity android:name=".activity.RecyclerDragActivity" />
+        <activity android:name=".activity.RecyclerStaggeredActivity" />
+        <activity android:name=".activity.RecyclerDynamicActivity" />
+        <activity android:name=".activity.CoordinatorActivity" />
+        <activity android:name=".activity.AppbarRecyclerActivity" />
+        <activity android:name=".activity.AppbarNestedActivity" />
+        <activity android:name=".activity.CollapsePinActivity" />
+        <activity android:name=".activity.CollapseParallaxActivity" />
+        <activity android:name=".activity.ImageFadeActivity" />
+        <activity android:name=".activity.ScrollFlagActivity" />
+        <activity android:name=".activity.ScrollAlipayActivity" />
+        <activity android:name=".activity.SwipeRefreshActivity" />
+        <activity android:name=".activity.SwipeRecyclerActivity" />
+        <activity android:name=".activity.DepartmentStoreActivity" />
+        <activity android:name=".activity.DepartmentHomeActivity" />
+        <activity android:name=".activity.DepartmentClassActivity" />
+        <activity android:name=".activity.DepartmentCartActivity" />
+        <activity android:name=".activity.GlideActivity" />
+        <activity android:name=".activity.TimberActivity" />
+        <activity android:name=".activity.OrientationActivity" />
+        <activity android:name=".activity.BigPictureActivity" />
+        <activity android:name=".activity.MMKVActivity" />
+        <activity android:name=".activity.LevelListActivity" />
+        <activity android:name=".activity.Log4jActivity" />
+        <activity android:name=".activity.ViewDragActivity1" />
+        <activity android:name=".activity.ViewDragActivity2" />
 
-        <activity android:name=".ARouterActivity" />
+        <activity android:name=".activity.ARouterActivity" />
         <activity android:name=".arouter.activity.ActivityOne" />
         <activity android:name=".arouter.activity.InterceptorActivity" />
         <activity android:name=".arouter.activity.ParseActivity" />
@@ -93,7 +93,7 @@
         <activity android:name=".arouter.activity.UrlSchemeActivity" />
         <activity android:name=".arouter.activity.WebViewActivity" />
 
-        <activity android:name=".RxJavaRetrofitOkHttpActivity" />
+        <activity android:name=".activity.RxJavaRetrofitOkHttpActivity" />
         <activity android:name=".rxjava.RxJavaActivity01" />
         <activity android:name=".rxjava.RxJavaActivity02" />
         <activity android:name=".rxjava.RxJavaActivity03" />
@@ -102,7 +102,7 @@
         <activity android:name=".retrofit.OkHttpActivity" />
         <activity android:name=".rxbus.RxBusActivity" />
 
-        <activity android:name=".SearchResultActivity">
+        <activity android:name=".activity.SearchResultActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>

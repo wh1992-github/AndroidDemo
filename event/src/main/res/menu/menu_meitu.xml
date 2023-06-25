@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.event.MainActivity">
+    tools:context="com.example.event.activity.MainActivity">
 
     <item
         android:id="@+id/menu_file_open"

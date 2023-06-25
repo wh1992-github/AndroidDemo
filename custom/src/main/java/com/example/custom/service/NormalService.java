@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.example.custom.ServiceNormalActivity;
+import com.example.custom.activity.ServiceNormalActivity;
 
 /**
  * Created by test on 2017/10/14.

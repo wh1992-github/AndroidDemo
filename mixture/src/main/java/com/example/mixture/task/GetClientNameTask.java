@@ -3,7 +3,7 @@ package com.example.mixture.task;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.mixture.WifiShareActivity;
+import com.example.mixture.activity.WifiShareActivity;
 
 public class GetClientNameTask extends AsyncTask<String, Void, String> {
     private static final String TAG = "GetClientNameTask";

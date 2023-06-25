@@ -3,7 +3,7 @@ package com.example.network.task;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.network.MainApplication;
+import com.example.network.activity.MainApplication;
 import com.example.network.http.HttpRequestUtil;
 import com.example.network.http.tool.HttpReqData;
 import com.example.network.http.tool.HttpRespData;

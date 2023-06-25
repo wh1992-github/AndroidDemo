@@ -6,7 +6,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.example.custom.BindDelayActivity;
+import com.example.custom.activity.BindDelayActivity;
 
 /**
  * Created by test on 2017/10/14.

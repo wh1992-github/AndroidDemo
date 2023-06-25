@@ -15,7 +15,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-import com.example.custom.MainActivity;
+import com.example.custom.activity.MainActivity;
 import com.example.custom.R;
 
 /**

@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,35 +21,35 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".RelativeXmlActivity" />
-        <activity android:name=".RelativeCodeActivity" />
-        <activity android:name=".FrameActivity" />
-        <activity android:name=".CheckboxActivity" />
-        <activity android:name=".SwitchDefaultActivity" />
-        <activity android:name=".SwitchIOSActivity" />
-        <activity android:name=".RadioHorizontalActivity" />
-        <activity android:name=".RadioVerticalActivity" />
-        <activity android:name=".SpinnerDropdownActivity" />
-        <activity android:name=".SpinnerDialogActivity" />
-        <activity android:name=".SpinnerIconActivity" />
-        <activity android:name=".EditSimpleActivity" />
-        <activity android:name=".EditCursorActivity" />
-        <activity android:name=".EditBorderActivity" />
-        <activity android:name=".EditHideActivity" />
-        <activity android:name=".EditJumpActivity" />
-        <activity android:name=".EditAutoActivity" />
-        <activity android:name=".ActJumpActivity" />
-        <activity android:name=".ActNextActivity" />
-        <activity android:name=".ActRotateActivity" />
-        <activity android:name=".ActHomeActivity" />
-        <activity android:name=".ActUriActivity" />
-        <activity android:name=".ActRequestActivity" />
-        <activity android:name=".ActResponseActivity" />
-        <activity android:name=".TextCheckActivity" />
-        <activity android:name=".MortgageActivity" />
-        <activity android:name=".AlertActivity" />
-        <activity android:name=".LoginMainActivity" />
-        <activity android:name=".LoginForgetActivity" />
+        <activity android:name=".activity.RelativeXmlActivity" />
+        <activity android:name=".activity.RelativeCodeActivity" />
+        <activity android:name=".activity.FrameActivity" />
+        <activity android:name=".activity.CheckboxActivity" />
+        <activity android:name=".activity.SwitchDefaultActivity" />
+        <activity android:name=".activity.SwitchIOSActivity" />
+        <activity android:name=".activity.RadioHorizontalActivity" />
+        <activity android:name=".activity.RadioVerticalActivity" />
+        <activity android:name=".activity.SpinnerDropdownActivity" />
+        <activity android:name=".activity.SpinnerDialogActivity" />
+        <activity android:name=".activity.SpinnerIconActivity" />
+        <activity android:name=".activity.EditSimpleActivity" />
+        <activity android:name=".activity.EditCursorActivity" />
+        <activity android:name=".activity.EditBorderActivity" />
+        <activity android:name=".activity.EditHideActivity" />
+        <activity android:name=".activity.EditJumpActivity" />
+        <activity android:name=".activity.EditAutoActivity" />
+        <activity android:name=".activity.ActJumpActivity" />
+        <activity android:name=".activity.ActNextActivity" />
+        <activity android:name=".activity.ActRotateActivity" />
+        <activity android:name=".activity.ActHomeActivity" />
+        <activity android:name=".activity.ActUriActivity" />
+        <activity android:name=".activity.ActRequestActivity" />
+        <activity android:name=".activity.ActResponseActivity" />
+        <activity android:name=".activity.TextCheckActivity" />
+        <activity android:name=".activity.MortgageActivity" />
+        <activity android:name=".activity.AlertActivity" />
+        <activity android:name=".activity.LoginMainActivity" />
+        <activity android:name=".activity.LoginForgetActivity" />
 
     </application>
 

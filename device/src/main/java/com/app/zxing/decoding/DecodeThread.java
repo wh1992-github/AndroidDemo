@@ -19,7 +19,7 @@ package com.app.zxing.decoding;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.example.device.FindScanActivity;
+import com.example.device.activity.FindScanActivity;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.ResultPointCallback;

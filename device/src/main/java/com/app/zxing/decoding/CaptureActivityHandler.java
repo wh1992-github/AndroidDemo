@@ -27,7 +27,7 @@ import android.util.Log;
 
 import com.app.zxing.camera.CameraManager;
 import com.app.zxing.view.ViewfinderResultPointCallback;
-import com.example.device.FindScanActivity;
+import com.example.device.activity.FindScanActivity;
 import com.example.device.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;

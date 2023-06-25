@@ -9,7 +9,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.widget.TextView;
 
-import com.example.media.MainApplication;
+import com.example.media.activity.MainApplication;
 import com.example.media.R;
 import com.example.media.http.HttpRequestUtil;
 import com.example.media.http.tool.HttpReqData;

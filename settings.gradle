@@ -1,6 +1,6 @@
 include ':CustomToast'
 include ':util'
 include ':app', ':junior', ':middle', ':storage', ':senior', ':custom', ':group', ':test'
-include ':device', ':network', ':event', ':animation', ':media', ':mixture', ':thirdsdk', ':weixin', ':performance'
+include ':device', ':network', ':event', ':animation', ':media', ':mixture', ':weixin', ':performance'
 include ':filedialog'
 include ':customview'

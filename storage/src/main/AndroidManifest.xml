@@ -26,8 +26,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".MainApplication">
-        <activity android:name=".MainActivity">
+        android:name=".activity.MainApplication">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,36 +35,36 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ShareWriteActivity" />
-        <activity android:name=".ShareReadActivity" />
-        <activity android:name=".LoginShareActivity" />
-        <activity android:name=".LoginForgetActivity" />
-        <activity android:name=".DatabaseActivity" />
-        <activity android:name=".SQLiteWriteActivity" />
-        <activity android:name=".SQLiteReadActivity" />
-        <activity android:name=".LoginSQLiteActivity" />
-        <activity android:name=".FileBasicActivity" />
-        <activity android:name=".FilePathActivity" />
-        <activity android:name=".TextWriteActivity" />
-        <activity android:name=".TextReadActivity" />
-        <activity android:name=".ImageWriteActivity" />
-        <activity android:name=".ImageReadActivity" />
-        <activity android:name=".ActJumpActivity" />
-        <activity android:name=".ActNextActivity" />
-        <activity android:name=".AppWriteActivity" />
-        <activity android:name=".AppReadActivity" />
-        <activity android:name=".ContentProviderActivity" />
-        <activity android:name=".ContentResolverActivity" />
-        <activity android:name=".ContentObserverActivity" />
+        <activity android:name=".activity.ShareWriteActivity" />
+        <activity android:name=".activity.ShareReadActivity" />
+        <activity android:name=".activity.LoginShareActivity" />
+        <activity android:name=".activity.LoginForgetActivity" />
+        <activity android:name=".activity.DatabaseActivity" />
+        <activity android:name=".activity.SQLiteWriteActivity" />
+        <activity android:name=".activity.SQLiteReadActivity" />
+        <activity android:name=".activity.LoginSQLiteActivity" />
+        <activity android:name=".activity.FileBasicActivity" />
+        <activity android:name=".activity.FilePathActivity" />
+        <activity android:name=".activity.TextWriteActivity" />
+        <activity android:name=".activity.TextReadActivity" />
+        <activity android:name=".activity.ImageWriteActivity" />
+        <activity android:name=".activity.ImageReadActivity" />
+        <activity android:name=".activity.ActJumpActivity" />
+        <activity android:name=".activity.ActNextActivity" />
+        <activity android:name=".activity.AppWriteActivity" />
+        <activity android:name=".activity.AppReadActivity" />
+        <activity android:name=".activity.ContentProviderActivity" />
+        <activity android:name=".activity.ContentResolverActivity" />
+        <activity android:name=".activity.ContentObserverActivity" />
         <activity
-            android:name=".MenuOptionActivity"
+            android:name=".activity.MenuOptionActivity"
             android:theme="@style/AppBaseTheme" />
-        <activity android:name=".MenuContextActivity" />
+        <activity android:name=".activity.MenuContextActivity" />
         <activity
-            android:name=".ShoppingCartActivity"
+            android:name=".activity.ShoppingCartActivity"
             android:theme="@style/AppBaseTheme" />
-        <activity android:name=".ShoppingChannelActivity" />
-        <activity android:name=".ShoppingDetailActivity" />
+        <activity android:name=".activity.ShoppingChannelActivity" />
+        <activity android:name=".activity.ShoppingDetailActivity" />
 
         <provider
             android:name=".provider.UserInfoProvider"

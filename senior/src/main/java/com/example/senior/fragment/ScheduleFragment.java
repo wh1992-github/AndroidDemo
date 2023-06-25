@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.senior.R;
-import com.example.senior.ScheduleActivity;
+import com.example.senior.activity.ScheduleActivity;
 import com.example.senior.adapter.CalendarGridAdapter;
 import com.example.senior.adapter.ScheduleListAdapter;
 import com.example.senior.bean.CalendarTransfer;
