@@ -12,13 +12,17 @@ android {
         //指定App适合运行的最小SDK版本号。如16表示至少要在Android 4.1上运行
         minSdkVersion 23
         //指定目标设备的SDK版本号。即该App最希望在哪个版本的Android上运行
-        targetSdkVersion 28
+        targetSdkVersion 30
         //指定App的应用版本号
         versionCode 1
         //指定App的应用版本名称
         versionName "1.0"
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             //指定是否开启代码混淆功能。true表示开启混淆，false表示无需混淆。
             minifyEnabled false

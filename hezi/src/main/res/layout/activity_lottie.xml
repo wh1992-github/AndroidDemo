@@ -10,11 +10,22 @@
         android:id="@+id/lottie_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="visible"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="data.json"
-        app:lottie_loop="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.example.hezi.SpeedTextView
+        android:id="@+id/speed_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textColor="#ff0000"
+        app:layout_constraintBottom_toBottomOf="@id/lottie_view"
+        app:layout_constraintLeft_toLeftOf="@id/lottie_view"
+        app:layout_constraintRight_toRightOf="@id/lottie_view"
+        app:layout_constraintTop_toTopOf="@id/lottie_view"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
