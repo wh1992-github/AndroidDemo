@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 public class GongZi {
     private static final String TAG = "GongZi";
     //每个月的基本工资
-    private static final float[] gongzi = {20000,20000,20000,20000,20000,20000,20000,20000,20000,20000,20000,20000,20000,20000,20000};
+    private static final float[] gongzi = {20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000};
     //每个月的社保公积金扣除额
     private static final float[] wuxian = {5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000};
     //工资合计

@@ -40,4 +40,13 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.airbnb.android:lottie:3.4.4'
+
+    implementation files('src/main/libs/Common-debug.aar')
+    implementation files('src/main/libs/AddressPicker-debug.aar')
+    implementation files('src/main/libs/CalendarPicker-debug.aar')
+    implementation files('src/main/libs/ColorPicker-debug.aar')
+    implementation files('src/main/libs/FilePicker-debug.aar')
+    implementation files('src/main/libs/ImagePicker-debug.aar')
+    implementation files('src/main/libs/WheelPicker-debug.aar')
+    implementation files('src/main/libs/WheelView-debug.aar')
 }

@@ -57,6 +57,7 @@ public class DatePickerActivity extends AppCompatActivity implements
     }
 
     //一旦点击日期对话框上的确定按钮,就会触发监听器的onDateSet方法
+    @Override
     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
         //获取日期对话框设定的年月份
         String desc = String.format(Locale.getDefault(), "您选择的日期是%d年%d月%d日",
