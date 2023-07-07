@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LottieActivity">
+    android:layout_height="match_parent">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie_view"
@@ -16,12 +15,12 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <com.example.hezi.SpeedTextView
+    <com.example.hezi.view.SpeedTextView
         android:id="@+id/speed_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
         android:textColor="#ff0000"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@id/lottie_view"
         app:layout_constraintLeft_toLeftOf="@id/lottie_view"
         app:layout_constraintRight_toRightOf="@id/lottie_view"

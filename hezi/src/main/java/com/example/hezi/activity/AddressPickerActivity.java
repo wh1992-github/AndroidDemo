@@ -11,15 +11,19 @@
  * See the Mulan PSL v2 for more details.
  */
 
-package com.example.hezi;
+package com.example.hezi.activity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.picker.CustomAddressPicker;
-import com.example.picker.TextAddressLoader;
-import com.example.picker.TextAddressParser;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.hezi.R;
+import com.example.hezi.picker.CustomAddressPicker;
+import com.example.hezi.picker.TextAddressLoader;
+import com.example.hezi.picker.TextAddressParser;
 import com.github.gzuliyujiang.wheelpicker.AddressPicker;
 import com.github.gzuliyujiang.wheelpicker.annotation.AddressMode;
 import com.github.gzuliyujiang.wheelpicker.contract.OnAddressPickedListener;
@@ -30,9 +34,6 @@ import com.github.gzuliyujiang.wheelpicker.entity.ProvinceEntity;
 import com.github.gzuliyujiang.wheelpicker.utility.AddressJsonParser;
 import com.github.gzuliyujiang.wheelpicker.widget.LinkageWheelLayout;
 import com.github.gzuliyujiang.wheelview.annotation.CurtainCorner;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * 地址滚轮选择器

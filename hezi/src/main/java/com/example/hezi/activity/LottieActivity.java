@@ -1,4 +1,4 @@
-package com.example.hezi;
+package com.example.hezi.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
+import com.example.hezi.R;
+import com.example.hezi.view.SpeedTextView;
 
 /**
  * LottieAnimationView.CacheStrategy.None 没有缓存

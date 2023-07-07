@@ -11,7 +11,7 @@
  * See the Mulan PSL v2 for more details.
  */
 
-package com.example.picker;
+package com.example.hezi.picker;
 
 import androidx.annotation.NonNull;
 

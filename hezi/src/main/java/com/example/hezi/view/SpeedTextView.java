@@ -1,4 +1,4 @@
-package com.example.hezi;
+package com.example.hezi.view;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
