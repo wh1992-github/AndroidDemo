@@ -27,7 +27,7 @@ import android.view.View;
 /**
  * OpenGL ES View.
  *
- * @author harism
+ * @author test
  */
 public class CurlView extends GLSurfaceView implements View.OnTouchListener,
         CurlRenderer.Observer {

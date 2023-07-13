@@ -30,7 +30,7 @@ import javax.microedition.khronos.opengles.GL10;
 /**
  * Actual renderer class.
  *
- * @author harism
+ * @author test
  */
 public class CurlRenderer implements GLSurfaceView.Renderer {
 

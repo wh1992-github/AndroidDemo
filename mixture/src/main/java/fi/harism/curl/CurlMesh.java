@@ -31,7 +31,7 @@ import javax.microedition.khronos.opengles.GL10;
 /**
  * Class implementing actual curl/page rendering.
  *
- * @author harism
+ * @author test
  */
 public class CurlMesh {
 

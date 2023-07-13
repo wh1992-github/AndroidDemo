@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hezi.R;
+import com.example.hezi.viewpager.ViewpagerActivity;
 import com.example.hezi.viewpager2.ViewPager2Activity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         findViewById(R.id.btn_lottie).setOnClickListener(this);
         findViewById(R.id.btn_picker).setOnClickListener(this);
+        findViewById(R.id.btn_viewpager).setOnClickListener(this);
         findViewById(R.id.btn_viewpager2).setOnClickListener(this);
         findViewById(R.id.btn_constraint).setOnClickListener(this);
     }
@@ -29,10 +31,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v.getId() == R.id.btn_picker) {
             Intent intent = new Intent(this, AddressPickerActivity.class);
             startActivity(intent);
+        } else if (v.getId() == R.id.btn_viewpager) {
+            Intent intent = new Intent(this, ViewpagerActivity.class);
+            startActivity(intent);
         } else if (v.getId() == R.id.btn_viewpager2) {
             Intent intent = new Intent(this, ViewPager2Activity.class);
             startActivity(intent);
-        }else if (v.getId() == R.id.btn_constraint) {
+        } else if (v.getId() == R.id.btn_constraint) {
             Intent intent = new Intent(this, ConstraintLayoutActivity.class);
             startActivity(intent);
         }

@@ -38,7 +38,7 @@ import com.github.gzuliyujiang.wheelview.annotation.CurtainCorner;
 /**
  * 地址滚轮选择器
  *
- * @author 贵州山野羡民（1032694760@qq.com）
+ * @author test
  * @since 2019/6/23
  */
 public class AddressPickerActivity extends AppCompatActivity implements OnAddressPickedListener {

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author 贵州山野羡民（1032694760@qq.com）
+ * @author test
  * @since 2021/6/7 16:30
  */
 public class TextAddressParser implements AddressParser {

@@ -17,14 +17,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Lottie View" />
+            android:text="Lottie View"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_picker"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Picker View" />
+            android:text="Picker View"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 
@@ -37,18 +39,38 @@
         tools:ignore="MissingConstraints">
 
         <Button
+            android:id="@+id/btn_viewpager"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ViewPager"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/btn_viewpager2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="ViewPager2" />
+            android:text="ViewPager2"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/line2"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/btn_constraint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="ConstraintLayout" />
+            android:text="ConstraintLayout"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 

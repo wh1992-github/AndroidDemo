@@ -4,10 +4,19 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
+import android.view.PixelCopy;
+import android.view.SurfaceView;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
+import androidx.annotation.RequiresApi;
+
+@RequiresApi(api = Build.VERSION_CODES.O)
 public class ScreenUtils {
     private static final String TAG = "ScreenUtils";
 
@@ -93,4 +102,40 @@ public class ScreenUtils {
         view.destroyDrawingCache();
         return bp;
     }
+
+    //截取SurfaceView 截图
+    //(SurfaceView) view.getHolder().getSurface().isValid()
+    private void screenShot(SurfaceView surfaceView) {
+        Bitmap bitmap = Bitmap.createBitmap(surfaceView.getWidth(), surfaceView.getHeight(), Bitmap.Config.ARGB_8888);
+        PixelCopy.request(surfaceView, bitmap, new PixelCopy.OnPixelCopyFinishedListener() {
+            @Override
+            public void onPixelCopyFinished(int copyResult) {
+                if (copyResult == PixelCopy.SUCCESS) {
+                    LogUtil.i(TAG, "onPixelCopyFinished: w = " + bitmap.getWidth() + ", h = " + bitmap.getHeight());
+                }
+            }
+        }, new Handler(Looper.getMainLooper()));
+    }
+
+    //截取Window 截图
+    private void screenShot(Window window, int width, int height) {
+        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        PixelCopy.request(window, bitmap, new PixelCopy.OnPixelCopyFinishedListener() {
+            @Override
+            public void onPixelCopyFinished(int copyResult) {
+                if (copyResult == PixelCopy.SUCCESS) {
+                    LogUtil.i(TAG, "onPixelCopyFinished: w = " + bitmap.getWidth() + ", h = " + bitmap.getHeight());
+                }
+            }
+        }, new Handler(Looper.getMainLooper()));
+    }
+
+    //截取View 截图
+    public Bitmap screenShot(View view) {
+        view.setDrawingCacheEnabled(true);
+        Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache());
+        view.setDrawingCacheEnabled(false);
+        return bitmap;
+    }
+
 }

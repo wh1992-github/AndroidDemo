@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * 自定义地址选择器
  *
- * @author 贵州山野羡民（1032694760@qq.com）
+ * @author test
  * @since 2021/6/7 16:03
  */
 public class CustomAddressPicker extends BottomDialog implements AddressReceiver, View.OnClickListener {

@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author 贵州山野羡民（1032694760@qq.com）
+ * @author test
  * @since 2021/6/7 12:22
  */
 public class AntFortuneLikeProvider implements LinkageProvider {
