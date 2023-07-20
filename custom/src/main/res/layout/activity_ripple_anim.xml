@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:gravity="center_horizontal"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical">
 
-    <com.example.custom.widget.ScanningView
-        android:id="@+id/scanView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <com.example.custom.widget.ScanningView1
+        android:id="@+id/scanView1"
+        android:layout_width="300dp"
+        android:layout_height="300dp" />
+
+    <com.example.custom.widget.ScanningView2
+        android:id="@+id/scanView2"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp" />
 
 </LinearLayout>

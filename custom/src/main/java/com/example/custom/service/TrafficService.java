@@ -11,9 +11,9 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import com.example.custom.R;
 import com.example.custom.activity.MainActivity;
 import com.example.custom.activity.MainApplication;
-import com.example.custom.R;
 import com.example.custom.bean.AppInfo;
 import com.example.custom.util.AppUtil;
 import com.example.custom.util.DateUtil;

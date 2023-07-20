@@ -17,19 +17,19 @@ import com.example.custom.R;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ScanningView extends FrameLayout {
+public class ScanningView1 extends FrameLayout {
 
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
-    public ScanningView(Context context) {
+    public ScanningView1(Context context) {
         this(context, null);
     }
 
-    public ScanningView(Context context, AttributeSet attrs) {
+    public ScanningView1(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ScanningView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ScanningView1(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

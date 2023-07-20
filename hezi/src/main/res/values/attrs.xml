@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundLayout">
+        <attr name="attr_stroke_color" format="dimension" />
+        <attr name="attr_stroke_width" format="dimension" />
+        <attr name="attr_clip_background" format="boolean" />
+        <attr name="attr_round_corner" format="dimension" />
+        <attr name="attr_round_corner_top_left" format="dimension" />
+        <attr name="attr_round_corner_top_right" format="dimension" />
+        <attr name="attr_round_corner_bottom_left" format="dimension" />
+        <attr name="attr_round_corner_bottom_right" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="StepView">
+        <attr name="svCircleColor" format="color"/>
+        <attr name="svTextColor" format="color"/>
+        <attr name="svSelectedColor" format="color"/>
+        <attr name="svFillRadius" format="dimension"/>
+        <attr name="svStrokeWidth" format="dimension"/>
+        <attr name="svLineWidth" format="dimension"/>
+        <attr name="svTextSize" format="dimension"/>
+        <attr name="svDrawablePadding" format="dimension"/>
+    </declare-styleable>
+</resources>

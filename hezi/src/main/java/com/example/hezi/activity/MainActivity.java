@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_viewpager).setOnClickListener(this);
         findViewById(R.id.btn_viewpager2).setOnClickListener(this);
         findViewById(R.id.btn_constraint).setOnClickListener(this);
+        findViewById(R.id.btn_step_view).setOnClickListener(this);
+        findViewById(R.id.btn_video_view).setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +41,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (v.getId() == R.id.btn_constraint) {
             Intent intent = new Intent(this, ConstraintLayoutActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_step_view) {
+            Intent intent = new Intent(this, StepViewActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_video_view) {
+            Intent intent = new Intent(this, VideoViewActivity.class);
             startActivity(intent);
         }
     }

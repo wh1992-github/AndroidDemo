@@ -1,0 +1,14 @@
+    <style>
+        video::cue {
+            background-color: transparent;
+            color: yellow;
+            font-size: 20px;
+            text-shadow: peachpuff 0 1px;
+        }
+
+        video::cue(c.mn) {
+            color: #FFF;
+            text-shadow: peachpuff 0 1px;
+        }
+    </style>
+

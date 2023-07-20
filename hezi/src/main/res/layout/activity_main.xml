@@ -72,6 +72,32 @@
             android:text="ConstraintLayout"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/btn_step_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="StepView"
+            android:textAllCaps="false" />
+
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/line3"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btn_video_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="VideoView"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

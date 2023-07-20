@@ -22,6 +22,8 @@
         <activity android:name=".activity.LottieActivity" />
         <activity android:name=".activity.AddressPickerActivity" />
         <activity android:name=".activity.ConstraintLayoutActivity" />
+        <activity android:name=".activity.StepViewActivity" />
+        <activity android:name=".activity.VideoViewActivity" />
 
         <activity android:name=".viewpager.ViewpagerActivity" />
         <activity android:name=".viewpager2.ViewPager2Activity" />
