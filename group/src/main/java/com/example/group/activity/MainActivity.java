@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             Intent intent = new Intent(this, ToolbarAndPopWindowActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_seekbar) {
-            Intent intent = new Intent(this, ProgressBarActivity.class);
+            Intent intent = new Intent(this, ProgressBarSeekBarActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_click_effect) {
             Intent intent = new Intent(this, ClickEffectActivity.class);

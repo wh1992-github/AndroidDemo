@@ -19,6 +19,7 @@ import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
 
 import java.util.ArrayList;
 import java.util.Locale;
+
 /**
  * @author test
  */

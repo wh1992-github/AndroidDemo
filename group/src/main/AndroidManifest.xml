@@ -34,7 +34,7 @@
         <activity android:name=".activity.TabGroupActivity" />
         <activity android:name=".activity.TabFragmentActivity" />
         <activity android:name=".activity.ToolbarAndPopWindowActivity" />
-        <activity android:name=".activity.ProgressBarActivity" />
+        <activity android:name=".activity.ProgressBarSeekBarActivity" />
         <activity android:name=".activity.ClickEffectActivity" />
         <activity android:name=".activity.TouchEventActivity" />
         <activity android:name=".activity.LifecycleActivity" />
@@ -45,7 +45,6 @@
         <activity android:name=".activity.LocalBroadcastActivity" />
         <activity android:name=".activity.HandlerActivity" />
         <activity android:name=".activity.ToastActivity" />
-        <activity android:name=".activity.SeekBarActivity" />
         <activity android:name=".activity.OverflowMenuActivity" />
         <activity android:name=".activity.SearchViewActivity" />
         <activity android:name=".activity.ToolbarCustomActivity" />

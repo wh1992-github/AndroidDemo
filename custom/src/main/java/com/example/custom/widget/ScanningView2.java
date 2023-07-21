@@ -22,20 +22,20 @@ import com.example.custom.R;
  */
 @SuppressLint("DrawAllocation")
 public class ScanningView2 extends View {
-    private Context mContext;
-    private Paint paintLine;//画圆
-    private Paint paintIcon;//画中间的图
-    private Paint paintScan;//画扫描
-    private Shader scanShader;//扫描渲染shader
-    private Matrix matrix = new Matrix();//旋转需要的矩阵
-    private int scanAngle = 0;      //扫描旋转的角度
+    private final Context mContext;
+    private Paint mPaintLine;//画圆
+    private Paint mPaintIcon;//画中间的图
+    private Paint mPaintScan;//画扫描
+    private Shader mScanShader;//扫描渲染shader
+    private final Matrix mMatrix = new Matrix();//旋转需要的矩阵
+    private int mScanAngle = 0;//扫描旋转的角度
 
-    private Bitmap centerBitmap;
+    private Bitmap mCenterBitmap;
 
-    private float lineWidth = 5f;
-    private float[] circleProportion = {1 / 8f, 2 / 8f, 3 / 8f, 4 / 8f};
+    private final float mLineWidth = 5f;
+    private final float[] mCircleProportion = {1 / 8f, 2 / 8f, 3 / 8f, 4 / 8f};
 
-    private int width, height;
+    private int mWidth, mHeight;
 
     public ScanningView2(Context context) {
         this(context, null);
@@ -58,37 +58,37 @@ public class ScanningView2 extends View {
     private final Runnable run = new Runnable() {
         @Override
         public void run() {
-            scanAngle = (scanAngle + 1) % 360;
-            matrix.postRotate(1, width / 2, height / 2);
+            mScanAngle = (mScanAngle + 1) % 360;
+            mMatrix.postRotate(1, mWidth / 2, mHeight / 2);
             invalidate();
             postDelayed(run, 10);
         }
     };
 
     private void init() {
-        paintLine = new Paint();
-        paintLine.setAntiAlias(true);
-        paintLine.setColor(ContextCompat.getColor(mContext, R.color.white));
-        paintLine.setStrokeWidth(lineWidth);
-        paintLine.setStyle(Paint.Style.STROKE);
+        mPaintLine = new Paint();
+        mPaintLine.setAntiAlias(true);
+        mPaintLine.setColor(ContextCompat.getColor(mContext, R.color.black));
+        mPaintLine.setStrokeWidth(mLineWidth);
+        mPaintLine.setStyle(Paint.Style.STROKE);
 
-        paintIcon = new Paint();
-        paintIcon.setAntiAlias(true);
-        paintIcon.setColor(ContextCompat.getColor(mContext, R.color.white));
+        mPaintIcon = new Paint();
+        mPaintIcon.setAntiAlias(true);
+        mPaintIcon.setColor(ContextCompat.getColor(mContext, R.color.black));
 
-        paintScan = new Paint();
-        paintScan.setAntiAlias(true);
-        paintScan.setStyle(Paint.Style.FILL_AND_STROKE);
+        mPaintScan = new Paint();
+        mPaintScan.setAntiAlias(true);
+        mPaintScan.setStyle(Paint.Style.FILL_AND_STROKE);
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         setMeasuredDimension(measureSize(widthMeasureSpec), measureSize(heightMeasureSpec));
-        width = getMeasuredWidth();
-        height = getMeasuredHeight();
+        mWidth = getMeasuredWidth();
+        mHeight = getMeasuredHeight();
 
-        centerBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.device_searching);
-        scanShader = new SweepGradient(width / 2, height / 2,
+        mCenterBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.device_searching);
+        mScanShader = new SweepGradient(mWidth / 2, mHeight / 2,
                 new int[]{Color.TRANSPARENT, ContextCompat.getColor(mContext, R.color.red)}, null);
     }
 
@@ -113,36 +113,45 @@ public class ScanningView2 extends View {
         drawCircle(canvas);
         drawIcon(canvas);
         drawCross(canvas);
-        drawScan(canvas);
+        drawScan1(canvas);
+        drawScan2(canvas);
     }
 
     private void drawCircle(Canvas canvas) {
-        paintLine.setStrokeWidth(lineWidth / 2);
-        canvas.drawCircle(width / 2, height / 2, width * circleProportion[1] - lineWidth / 4, paintLine);
-        canvas.drawCircle(width / 2, height / 2, width * circleProportion[2] - lineWidth / 4, paintLine);
-        paintLine.setStrokeWidth(lineWidth);
-        canvas.drawCircle(width / 2, height / 2, width * circleProportion[3] - lineWidth / 4, paintLine);
+        mPaintLine.setStrokeWidth(mLineWidth / 2);
+        canvas.drawCircle(mWidth / 2, mHeight / 2, mWidth * mCircleProportion[0] - mLineWidth / 4, mPaintLine);
+        canvas.drawCircle(mWidth / 2, mHeight / 2, mWidth * mCircleProportion[1] - mLineWidth / 4, mPaintLine);
+        canvas.drawCircle(mWidth / 2, mHeight / 2, mWidth * mCircleProportion[2] - mLineWidth / 4, mPaintLine);
+        canvas.drawCircle(mWidth / 2, mHeight / 2, mWidth * mCircleProportion[3] - mLineWidth / 4, mPaintLine);
     }
 
     private void drawIcon(Canvas canvas) {
-        canvas.drawBitmap(centerBitmap, null, new Rect((int) (width / 2 - width * circleProportion[0]),
-                        (int) (height / 2 - height * circleProportion[0]),
-                        (int) (width / 2 + width * circleProportion[0]),
-                        (int) (height / 2 + height * circleProportion[0])),
-                paintIcon);
+        canvas.drawBitmap(mCenterBitmap, null, new Rect((int) (mWidth / 2 - mWidth * mCircleProportion[0]),
+                        (int) (mHeight / 2 - mHeight * mCircleProportion[0]),
+                        (int) (mWidth / 2 + mWidth * mCircleProportion[0]),
+                        (int) (mHeight / 2 + mHeight * mCircleProportion[0])),
+                mPaintIcon);
     }
 
     private void drawCross(Canvas canvas) {
-        paintLine.setStrokeWidth(lineWidth / 2);
-        canvas.drawLine(0, height / 2, width, height / 2, paintLine);
-        canvas.drawLine(width / 2, 0, width / 2, height, paintLine);
+        mPaintLine.setStrokeWidth(mLineWidth / 2);
+        canvas.drawLine(0, mHeight / 2, mWidth, mHeight / 2, mPaintLine);
+        canvas.drawLine(mWidth / 2, 0, mWidth / 2, mHeight, mPaintLine);
     }
 
-    private void drawScan(Canvas canvas) {
-        canvas.save();
-        paintScan.setShader(scanShader);
-        canvas.concat(matrix);
-        canvas.drawCircle(width / 2, height / 2, width * circleProportion[3], paintScan);
-        canvas.restore();
+    private void drawScan1(Canvas canvas) {
+        int count = canvas.save();
+        mPaintScan.setShader(mScanShader);
+        canvas.concat(mMatrix);
+        canvas.drawCircle(mWidth / 2, mHeight / 2, mWidth * mCircleProportion[3], mPaintScan);
+        canvas.restoreToCount(count);
+    }
+
+    private void drawScan2(Canvas canvas) {
+        int count = canvas.save();
+        mPaintScan.setShader(mScanShader);
+        canvas.rotate(mScanAngle, mWidth / 2, mHeight / 2);
+        canvas.drawCircle(mWidth / 2, mHeight / 2, mWidth * mCircleProportion[3], mPaintScan);
+        canvas.restoreToCount(count);
     }
 }

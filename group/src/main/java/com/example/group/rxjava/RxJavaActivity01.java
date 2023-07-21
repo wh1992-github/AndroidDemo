@@ -3,14 +3,10 @@ package com.example.group.rxjava;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 
 import com.example.group.R;
-import com.example.group.util.LogUtil;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -135,23 +131,23 @@ public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickL
         //1、创建被观察者Observable
         //当 Observable 被订阅时，OnSubscribe 的 call() 方法会自动被调用，即事件序列就会依照设定依次被触发
         Observable<String> observable = Observable.create(new ObservableOnSubscribe<String>() {
-                    @Override
-                    public void subscribe(@NotNull ObservableEmitter<String> emitter) {
-                        //通过 ObservableEmitter类对象产生事件并通知观察者
-                        //即观察者会依次调用对应事件的复写方法从而响应事件
-                        try {
-                            if (!emitter.isDisposed()) {
-                                emitter.onNext("RxJava:e.onNext = 第一次");
-                                emitter.onNext("RxJava:e.onNext = 第二次");
-                                emitter.onNext("RxJava:e.onNext = 第三次");
-                                Log.i(TAG, "subscribe() = 执行事件的线程 name = " + Thread.currentThread().getName());
-                                emitter.onComplete();
-                            }
-                        } catch (Exception e) {
-                            emitter.onError(e);
-                        }
+            @Override
+            public void subscribe(@NotNull ObservableEmitter<String> emitter) {
+                //通过 ObservableEmitter类对象产生事件并通知观察者
+                //即观察者会依次调用对应事件的复写方法从而响应事件
+                try {
+                    if (!emitter.isDisposed()) {
+                        emitter.onNext("RxJava:e.onNext = 第一次");
+                        emitter.onNext("RxJava:e.onNext = 第二次");
+                        emitter.onNext("RxJava:e.onNext = 第三次");
+                        Log.i(TAG, "subscribe() = 执行事件的线程 name = " + Thread.currentThread().getName());
+                        emitter.onComplete();
                     }
-                }).subscribeOn(Schedulers.io())//指定subscribe()(发射事件的线程)在IO线程()
+                } catch (Exception e) {
+                    emitter.onError(e);
+                }
+            }
+        }).subscribeOn(Schedulers.io())//指定subscribe()(发射事件的线程)在IO线程()
                 .observeOn(AndroidSchedulers.mainThread());//指定订阅者接收事件的线程在主线程;
 
         //2、创建观察者Observer  并且定义响应事件
@@ -513,19 +509,19 @@ public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickL
     @SuppressLint("CheckResult")
     private void countDown() {
         Observable.create(new ObservableOnSubscribe<Integer>() {
-                    @Override
-                    public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                        for (int i = 0; i < 10; i++) {
-                            try {
-                                Thread.sleep(1000);
-                                emitter.onNext(i);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        emitter.onComplete();
+            @Override
+            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                for (int i = 0; i < 10; i++) {
+                    try {
+                        Thread.sleep(1000);
+                        emitter.onNext(i);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                }).subscribeOn(Schedulers.io())// 此方法为上面发出事件设置线程为IO线程
+                }
+                emitter.onComplete();
+            }
+        }).subscribeOn(Schedulers.io())// 此方法为上面发出事件设置线程为IO线程
                 .observeOn(AndroidSchedulers.mainThread())// 为消耗事件设置线程为UI线程
                 .subscribe(new Consumer<Integer>() {
                     @Override
