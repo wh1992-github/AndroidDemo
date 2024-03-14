@@ -37,18 +37,6 @@ public class TouchEventActivity extends AppCompatActivity implements View.OnClic
         mImageView = findViewById(R.id.imageview);
         mButton = findViewById(R.id.button);
 
-        //先执行setOnTouchListener,然后执行onTouchEvent
-        mButton.setOnTouchListener((v, ev) -> {
-            if (ev.getAction() == MotionEvent.ACTION_DOWN) {
-                LogUtil.i(TAG, "onTouch: BaseButton DOWN");
-            } else if (ev.getAction() == MotionEvent.ACTION_UP) {
-                LogUtil.i(TAG, "onTouch: BaseButton UP");
-            } else if (ev.getAction() == MotionEvent.ACTION_MOVE) {
-                LogUtil.i(TAG, "onTouch: BaseButton MOVE");
-            }
-            //返回值会影响后续事件的分发
-            return false;
-        });
         //注释掉和放开,结果是不一样的,可以看log加深理解
         //mFrameLayout.setOnClickListener(this);
         //mRelativeLayout.setOnClickListener(this);

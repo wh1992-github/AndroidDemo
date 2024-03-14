@@ -17,11 +17,11 @@ public class BaseImageView extends ImageView {
     private static final String TAG = "BaseImageView";
 
     public BaseImageView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public BaseImageView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public BaseImageView(Context context, AttributeSet attrs, int defStyleAttr) {

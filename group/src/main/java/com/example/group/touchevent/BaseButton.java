@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 
 import com.example.group.util.LogUtil;
@@ -13,19 +14,20 @@ import com.example.group.util.LogUtil;
  */
 
 @SuppressLint({"AppCompatCustomView", "ClickableViewAccessibility"})
-public class BaseButton extends Button {
+public class BaseButton extends Button implements View.OnTouchListener {
     private static final String TAG = "BaseButton";
 
     public BaseButton(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public BaseButton(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public BaseButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        setOnTouchListener(this);
     }
 
     @Override
@@ -50,5 +52,19 @@ public class BaseButton extends Button {
             LogUtil.i(TAG, "onTouchEvent: MOVE");
         }
         return super.onTouchEvent(ev);
+    }
+
+    //先执行setOnTouchListener,然后执行onTouchEvent
+    @Override
+    public boolean onTouch(View v, MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            LogUtil.i(TAG, "OnTouchListener: BaseButton DOWN");
+        } else if (ev.getAction() == MotionEvent.ACTION_UP) {
+            LogUtil.i(TAG, "OnTouchListener: BaseButton UP");
+        } else if (ev.getAction() == MotionEvent.ACTION_MOVE) {
+            LogUtil.i(TAG, "OnTouchListener: BaseButton MOVE");
+        }
+        //返回值会影响后续事件的分发
+        return false;
     }
 }

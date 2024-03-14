@@ -17,11 +17,11 @@ public class BaseLinearLayout extends LinearLayout {
     private static final String TAG = "BaseLinearLayout";
 
     public BaseLinearLayout(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public BaseLinearLayout(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public BaseLinearLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {

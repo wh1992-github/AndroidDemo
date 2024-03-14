@@ -17,6 +17,8 @@ import com.example.group.util.BaseViewHolder;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -40,6 +42,7 @@ public class RecyclerGridAdapter extends RecyclerView.Adapter<BaseViewHolder<Ite
     }
 
     //创建列表项的视图持有者
+    @NotNull
     @Override
     public BaseViewHolder<ItemGridBinding> onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         //根据布局文件item_grid.xml生成视图对象

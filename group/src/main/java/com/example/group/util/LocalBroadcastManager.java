@@ -22,9 +22,9 @@ public final class LocalBroadcastManager {
     private static final String TAG = "LocalBroadcastManager";
     private static final boolean DEBUG = false;
     private final Context mAppContext;
-    private final HashMap<CustomBroadcastReceiver, ArrayList<LocalBroadcastManager.ReceiverRecord>> mReceivers = new HashMap();
-    private final HashMap<String, ArrayList<LocalBroadcastManager.ReceiverRecord>> mActions = new HashMap();
-    private final ArrayList<LocalBroadcastManager.BroadcastRecord> mPendingBroadcasts = new ArrayList();
+    private final HashMap<CustomBroadcastReceiver, ArrayList<LocalBroadcastManager.ReceiverRecord>> mReceivers = new HashMap<>();
+    private final HashMap<String, ArrayList<LocalBroadcastManager.ReceiverRecord>> mActions = new HashMap<>();
+    private final ArrayList<LocalBroadcastManager.BroadcastRecord> mPendingBroadcasts = new ArrayList<>();
     static final int MSG_EXEC_PENDING_BROADCASTS = 1;
     private final Handler mHandler;
     private static final Object mLock = new Object();

@@ -55,6 +55,7 @@ public class GlideActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("LogNotTimber")
     private void testThreadName() {
         Log.i(TAG, "onClick: threadName = " + Thread.currentThread().getName() + ", isOnMainThread = " + (Looper.myLooper() == Looper.getMainLooper()));
         new Thread(() -> {

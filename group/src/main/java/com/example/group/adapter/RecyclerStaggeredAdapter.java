@@ -1,5 +1,6 @@
 package com.example.group.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
@@ -18,13 +19,15 @@ import com.example.group.bean.GoodsInfo;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
 public class RecyclerStaggeredAdapter extends RecyclerView.Adapter<ViewHolder> implements OnItemClickListener, OnItemLongClickListener {
     private static final String TAG = "RecyclerStaggeredAdapter";
-    private Context mContext; //声明一个上下文对象
-    private ArrayList<GoodsInfo> mGoodsArray;
+    private final Context mContext; //声明一个上下文对象
+    private final ArrayList<GoodsInfo> mGoodsArray;
 
     public RecyclerStaggeredAdapter(Context context, ArrayList<GoodsInfo> goodsArray) {
         mContext = context;
@@ -37,14 +40,15 @@ public class RecyclerStaggeredAdapter extends RecyclerView.Adapter<ViewHolder> i
     }
 
     //创建列表项的视图持有者
-    public ViewHolder onCreateViewHolder(ViewGroup vg, int viewType) {
+    @NotNull
+    public ViewHolder onCreateViewHolder(@NotNull ViewGroup vg, int viewType) {
         //根据布局文件item_staggered.xml生成视图对象
         View v = LayoutInflater.from(mContext).inflate(R.layout.item_staggered, vg, false);
         return new ItemHolder(v);
     }
 
     //绑定列表项的视图持有者
-    public void onBindViewHolder(ViewHolder vh, final int position) {
+    public void onBindViewHolder(@NotNull ViewHolder vh, @SuppressLint("RecyclerView") final int position) {
         ItemHolder holder = (ItemHolder) vh;
         holder.iv_pic.setImageResource(mGoodsArray.get(position).pic_id);
         holder.tv_title.setText(mGoodsArray.get(position).title);
@@ -88,7 +92,7 @@ public class RecyclerStaggeredAdapter extends RecyclerView.Adapter<ViewHolder> i
     }
 
     //定义列表项的视图持有者
-    public class ItemHolder extends RecyclerView.ViewHolder {
+    public static class ItemHolder extends RecyclerView.ViewHolder {
         public LinearLayout ll_item; //声明列表项的线性布局
         public ImageView iv_pic; //声明列表项图标的图像视图
         public TextView tv_title; //声明列表项标题的文本视图

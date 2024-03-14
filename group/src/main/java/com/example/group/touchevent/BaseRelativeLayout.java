@@ -16,11 +16,11 @@ public class BaseRelativeLayout extends RelativeLayout {
     private static final String TAG = "BaseRelativeLayout";
 
     public BaseRelativeLayout(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public BaseRelativeLayout(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public BaseRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {

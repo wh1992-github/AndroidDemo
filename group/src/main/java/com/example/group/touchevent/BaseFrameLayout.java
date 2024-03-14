@@ -18,11 +18,11 @@ public class BaseFrameLayout extends FrameLayout {
     private static final String TAG = "BaseFrameLayout";
 
     public BaseFrameLayout(@NonNull Context context) {
-        super(context);
+        this(context, null);
     }
 
     public BaseFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public BaseFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {

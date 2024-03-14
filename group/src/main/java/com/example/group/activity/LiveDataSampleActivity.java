@@ -25,7 +25,7 @@ public class LiveDataSampleActivity extends AppCompatActivity {
     public TestViewModel mTestViewModel;
     private TextView mTvName, mTvNameForever;
     private Button mBtnChangeName;
-    private String[] mNames = new String[]{"lufei", "sulong", "shanzhi", "NaMei"};
+    private final String[] mNames = new String[]{"lufei", "sulong", "shanzhi", "NaMei"};
     private int i = 0;
     private OneFragment mOneFragment;
     private TwoFragment mTwoFragment;
@@ -54,6 +54,7 @@ public class LiveDataSampleActivity extends AppCompatActivity {
             i++;
             String name = mNames[i % mNames.length];
             mNameEvent.setValue(name);
+            LogUtil.i(TAG, "initView: value = " + mNameEvent.getValue());
         });
 
         mOneFragment = OneFragment.newInstance();
@@ -67,6 +68,8 @@ public class LiveDataSampleActivity extends AppCompatActivity {
     private void initData() {
         mTestViewModel = ViewModelProviders.of(this, new TestViewModel.Factory(mKey)).get(TestViewModel.class);
         mNameEvent = mTestViewModel.getNameEvent();
+        mNameEvent.setValue(mNames[0]);
+
         mNameEvent.observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
