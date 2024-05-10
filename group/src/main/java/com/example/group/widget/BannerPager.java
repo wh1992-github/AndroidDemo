@@ -110,7 +110,7 @@ public class BannerPager extends RelativeLayout implements View.OnClickListener 
         addView(view); //将该布局视图添加到横幅轮播条
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //定义一个滚动任务
     private Runnable mScroll = new Runnable() {
         @Override

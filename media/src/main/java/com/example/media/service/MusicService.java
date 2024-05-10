@@ -26,7 +26,7 @@ public class MusicService extends Service {
     private String PAUSE_EVENT = ""; //“暂停/继续”事件的标识串
     private boolean isPlaying = true; //是否正在播放
     private MediaInfo mMusic; //音乐信息
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     @Override
     public IBinder onBind(Intent intent) {

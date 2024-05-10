@@ -23,7 +23,7 @@ public class TrafficInfoActivity extends AppCompatActivity {
     private static final String TAG = "TrafficInfoActivity";
     private TextView tv_traffic; //声明一个列表视图对象
     private ListView lv_traffic;
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

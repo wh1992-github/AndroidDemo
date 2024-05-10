@@ -31,7 +31,7 @@ public class RemoveTaskActivity extends AppCompatActivity implements OnClickList
     private Button btn_remove;
     private String mDesc = "";
     private boolean isRunning = false; //定时任务是否正在运行
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

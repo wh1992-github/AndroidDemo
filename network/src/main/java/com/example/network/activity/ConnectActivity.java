@@ -20,7 +20,7 @@ import java.util.Locale;
 
 public class ConnectActivity extends AppCompatActivity {
     private TextView tv_connect;
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private String[] mNetStateArray = {"正在连接", "已连接", "暂停", "正在断开", "已断开", "未知"};
 
     @Override

@@ -34,7 +34,7 @@ public class HttpRequestActivity extends AppCompatActivity implements OnAddressL
     private String mLocation = "";
     private LocationManager mLocationMgr; //声明一个定位管理器对象
     private Criteria mCriteria = new Criteria(); //声明一个定位准则对象
-    private Handler mHandler = new Handler(); //声明一个处理器
+    private final Handler mHandler = new Handler(); //声明一个处理器
     private boolean isLocationEnable = false; //定位服务是否可用
 
     @Override

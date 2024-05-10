@@ -17,6 +17,7 @@ import com.example.event.util.PermissionUtil;
  * Created by test on 2017/11/23.
  */
 public class MainActivity extends AppCompatActivity implements OnClickListener {
+    private static final String TAG = "EventMainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,26 +119,33 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         }
     }
 
-    private boolean needExit = false; //是否需要退出App
+    //是否需要退出App
+    private boolean needExit = false;
+    private long currentBackPressedTime = 0;
+    // 退出间隔
+    private static final int BACK_PRESSED_INTERVAL = 2000;
 
     //在按下返回键时触发
-//  public void onBackPressed() {
-//      if (needExit) {
-//          finish(); //关闭当前页面
-//          return;
-//      }
-//      needExit = true;
-//      Toast.makeText(this, "再按一次返回键退出!", Toast.LENGTH_SHORT).show();
-//  }
+    @Override
+    public void onBackPressed() {
+        if (needExit) {
+            finish(); //关闭当前页面
+            return;
+        }
+        needExit = true;
+        Toast.makeText(this, "再按一次返回键退出!", Toast.LENGTH_SHORT).show();
+    }
 
     //在发生物理按键动作时触发
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) { //按下返回键
-            if (needExit) {
-                finish(); //关闭当前页面
+            if (System.currentTimeMillis() - currentBackPressedTime > BACK_PRESSED_INTERVAL) {
+                currentBackPressedTime = System.currentTimeMillis();
+                Toast.makeText(this, "再按一次返回键退出!", Toast.LENGTH_SHORT).show();
+            } else {
+                finish(); //退出
             }
-            needExit = true;
-            Toast.makeText(this, "再按一次返回键退出!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             return super.onKeyDown(keyCode, event);

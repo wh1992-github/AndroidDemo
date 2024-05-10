@@ -34,7 +34,7 @@ public class WifiApActivity extends AppCompatActivity implements
     private WifiManager mWifiManager; //声明一个无线网络管理器对象
     private WifiConfiguration mWifiConfig = new WifiConfiguration(); //声明一个无线网络配置对象
     private int mDesType = WifiConfiguration.KeyMgmt.NONE; //加密类型
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

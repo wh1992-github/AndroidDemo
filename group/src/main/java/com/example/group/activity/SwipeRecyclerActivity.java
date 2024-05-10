@@ -83,7 +83,7 @@ public class SwipeRecyclerActivity extends AppCompatActivity implements OnRefres
         mHandler.postDelayed(mRefresh, 2000);
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //定义一个刷新任务
     private Runnable mRefresh = new Runnable() {
         @Override

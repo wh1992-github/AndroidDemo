@@ -76,7 +76,7 @@ public class CaptureActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    private Handler mHandler = new Handler(); //声明一个任务处理器
+    private final Handler mHandler = new Handler(); //声明一个任务处理器
     private Runnable mResetCache = new Runnable() {
         @Override
         public void run() {

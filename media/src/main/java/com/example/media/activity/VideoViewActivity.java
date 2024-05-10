@@ -24,7 +24,7 @@ public class VideoViewActivity extends AppCompatActivity implements
     private static final String TAG = "VideoViewActivity";
     private VideoView vv_play; //声明一个视频视图对象
     private SeekBar sb_play; //声明一个拖动条对象
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

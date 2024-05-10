@@ -40,7 +40,7 @@ public class MusicPlayerActivity extends AppCompatActivity implements
     private VolumeDialog dialog; //声明一个音量对话框对象
     private MainApplication app; //声明一个全局应用对象
     private MusicLoader loader; //声明一个音乐加载器对象
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

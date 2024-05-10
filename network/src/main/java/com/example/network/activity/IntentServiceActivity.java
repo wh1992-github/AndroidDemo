@@ -19,7 +19,7 @@ import com.example.network.util.DateUtil;
 @SuppressLint("SetTextI18n")
 public class IntentServiceActivity extends AppCompatActivity implements OnClickListener {
     private TextView tv_intent;
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

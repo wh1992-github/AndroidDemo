@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         mList.add(new TypeBean("仿写QQ界面", 21));
         mList.add(new TypeBean("LoadingView", 22));
         mList.add(new TypeBean("LoadingViewMac", 23));
+        mList.add(new TypeBean("FlowLayout", 24));
         return mList;
     }
 
@@ -139,6 +140,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 23:
                 startActivity(new Intent(MainActivity.this, LoadingViewMacActivity.class));
+                break;
+            case 24:
+                startActivity(new Intent(MainActivity.this, FlowActivity.class));
                 break;
             default:
                 break;

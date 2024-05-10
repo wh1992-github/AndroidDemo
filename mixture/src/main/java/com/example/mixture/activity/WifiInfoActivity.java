@@ -25,7 +25,7 @@ import java.util.Locale;
 public class WifiInfoActivity extends AppCompatActivity {
     private static final String TAG = "WifiInfoActivity";
     private TextView tv_info;
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private String[] mWifiStateArray = {"正在断开", "已断开", "正在连接", "已连接", "未知"};
 
     @Override

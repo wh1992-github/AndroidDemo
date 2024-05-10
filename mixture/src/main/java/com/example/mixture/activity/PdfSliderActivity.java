@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class PdfSliderActivity extends AppCompatActivity {
     private static final String TAG = "PdfSliderActivity";
     private ViewSlider vs_content; //声明一个滑动视图对象
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private ProgressDialog mDialog; //声明一个进度对话框对象
 
     @Override

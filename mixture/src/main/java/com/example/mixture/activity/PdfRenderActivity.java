@@ -45,7 +45,7 @@ public class PdfRenderActivity extends AppCompatActivity implements OnClickListe
     private ViewPager vp_content; //声明一个翻页视图对象
     private String mTitle; //书籍标题
     private String mDir, mPath, mOriginPath; //文件目录、文件路径,以及原始路径
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private ProgressDialog mDialog; //声明一个进度对话框对象
     private ArrayList<String> imgArray = new ArrayList<>(); //图片路径队列
 

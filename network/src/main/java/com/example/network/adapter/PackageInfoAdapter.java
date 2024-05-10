@@ -199,7 +199,7 @@ public class PackageInfoAdapter extends BaseAdapter {
         return local_path;
     }
 
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
 
     //下载过程中实时刷新下载进度的任务
     private class DownloadTask implements Runnable {

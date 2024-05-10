@@ -32,7 +32,7 @@ public class WifiConnectActivity extends AppCompatActivity implements
     private static final String TAG = "WifiConnectActivity";
     private WifiManager mWifiManager; //声明一个无线网络管理器对象
     private ListView lv_wifi; //声明一个用于展示周围无线网络的列表视图对象
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

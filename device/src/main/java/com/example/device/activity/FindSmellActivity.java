@@ -38,7 +38,7 @@ public class FindSmellActivity extends AppCompatActivity {
     private Map<Integer, Satellite> mapSatellite = new HashMap<>();
     private LocationManager mLocationMgr; //声明一个定位管理器对象
     private Criteria mCriteria = new Criteria(); //声明一个定位准则对象
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private boolean isLocationEnable = false; //定位服务是否可用
     private String mLocationType = ""; //定位类型。是卫星定位还是网络定位
 

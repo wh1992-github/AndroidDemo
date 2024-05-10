@@ -66,7 +66,7 @@ public class BookView extends FrameLayout {
 
     private int mTimeGap = 20; //每次滚动的时间间隔,单位毫秒
     private int mDistanceGap = 20; //每次滚动的间距大小
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     //定义一个滚动任务,用于在手指松开时自动判断继续往左滚还是往右滚
     private class ScrollRunnable implements Runnable {

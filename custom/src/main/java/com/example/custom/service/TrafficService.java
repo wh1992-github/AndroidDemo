@@ -43,7 +43,7 @@ public class TrafficService extends Service {
         return START_STICKY;
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //定义一个流量刷新任务
     private Runnable mRefresh = new Runnable() {
         @Override

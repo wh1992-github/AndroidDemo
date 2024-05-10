@@ -89,7 +89,7 @@ public class CaptureService extends Service implements FloatClickListener {
     }
 
     //创建一个处理器对象
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     //定义一个屏幕准备任务
     private Runnable mStartVirtual = new Runnable() {
         @Override

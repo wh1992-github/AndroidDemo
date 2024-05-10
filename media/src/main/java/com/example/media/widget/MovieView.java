@@ -34,7 +34,7 @@ public class MovieView extends VideoView implements
     private View mBottomView; //底部的控制条视图
     private AudioManager mAudioMgr; //声明一个音频管理器对象
     private VolumeDialog dialog; //声明一个音量对话框对象
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     public MovieView(Context context) {
         this(context, null);

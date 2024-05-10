@@ -54,7 +54,7 @@ public class MusicDetailActivity extends AppCompatActivity implements
     private AudioManager mAudioMgr; //声明一个音频管理器对象
     private VolumeDialog dialog; //声明一个音量对话框对象
     private MainApplication app; //声明一个全局应用对象
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private int frequence = 8000; //音轨的频率
     private int channel = AudioFormat.CHANNEL_IN_STEREO; //音轨的声道
     private int format = AudioFormat.ENCODING_PCM_16BIT; //音轨的格式

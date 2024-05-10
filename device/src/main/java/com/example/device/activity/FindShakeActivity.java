@@ -87,7 +87,7 @@ public class FindShakeActivity extends AppCompatActivity implements SensorEventL
 
     private boolean isShaking = false; //是否正在摇骰子
     private int mCount = 0; //骰子滚动的次数,暂定每次摇骰子滚动十次
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
 
     //定义一个摇骰子任务
     private Runnable mShake = new Runnable() {

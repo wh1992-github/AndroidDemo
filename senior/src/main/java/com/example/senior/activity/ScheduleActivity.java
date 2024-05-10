@@ -67,7 +67,7 @@ public class ScheduleActivity extends AppCompatActivity {
         mHandler.postDelayed(mFirst, 50);
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //声明一个首次打开页面需要延迟执行的任务
     private Runnable mFirst = new Runnable() {
         @Override

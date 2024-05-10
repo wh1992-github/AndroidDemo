@@ -110,7 +110,7 @@ public class LinearDynamicAdapter extends RecyclerView.Adapter<ViewHolder>
     }
 
     //定义列表项的视图持有者
-    public class ItemHolder extends RecyclerView.ViewHolder {
+    public static class ItemHolder extends RecyclerView.ViewHolder {
         public LinearLayout ll_item; //声明列表项的线性布局
         public ImageView iv_pic; //声明列表项图标的图像视图
         public TextView tv_title; //声明列表项标题的文本视图

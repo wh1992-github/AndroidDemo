@@ -21,11 +21,11 @@ import java.util.ArrayList;
 
 public class BannerFlipper extends RelativeLayout {
     private static final String TAG = "BannerFlipper";
-    private Context mContext; //声明一个上下文对象
+    private final Context mContext; //声明一个上下文对象
     private ViewFlipper mFlipper; //声明一个飞掠视图对象
     private RadioGroup mGroup; //声明一个单选组对象
     private GestureDetector mGesture; //声明一个手势检测器对象
-    private float mFlipGap = 20f; //触发飞掠事件的距离阈值
+    private final float mFlipGap = 20f; //触发飞掠事件的距离阈值
 
     public BannerFlipper(Context context) {
         this(context, null);
@@ -152,9 +152,9 @@ public class BannerFlipper extends RelativeLayout {
         mFlipper.showPrevious(); //显示上一个场景
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //定义一个指示器的刷新任务
-    private Runnable mRefresh = new Runnable() {
+    private final Runnable mRefresh = new Runnable() {
         @Override
         public void run() {
             //获得正在播放的场景位置

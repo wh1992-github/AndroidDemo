@@ -46,7 +46,7 @@ public class MusicService extends Service {
         return mBinder;
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //定义一个音乐播放任务
     private Runnable mPlay = new Runnable() {
         @Override

@@ -14,7 +14,7 @@ import java.io.FileOutputStream;
 
 public class AudioRecordTask extends AsyncTask<String, Integer, Void> {
     private static final String TAG = "AudioRecordTask";
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private int mRecordTime = 0; //已录制时间
 
     @Override

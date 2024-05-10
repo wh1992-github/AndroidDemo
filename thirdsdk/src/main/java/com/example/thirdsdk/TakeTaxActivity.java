@@ -85,7 +85,7 @@ public class TakeTaxActivity extends AppCompatActivity implements OnClickListene
         }
     }
 
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private double latitude_offset;
     private double longitude_offset;
     private Runnable mAccept = new Runnable() {

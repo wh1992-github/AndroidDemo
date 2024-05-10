@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">CustomView</string>
+
+    <string-array name="flow_data">
+        <item>春江潮</item>
+        <item>海上明月</item>
+        <item>随波千万里</item>
+        <item>何处春江无月</item>
+        <item>江流宛转绕芳甸</item>
+        <item>芳甸霰</item>
+        <item>江天一色无纤尘</item>
+        <item>皎皎空中孤月轮</item>
+        <item>江月何年初照人</item>
+        <item>无穷已</item>
+        <item>但见长江送流水</item>
+        <item>白云一片</item>
+        <item>去悠悠</item>
+    </string-array>
 </resources>
+

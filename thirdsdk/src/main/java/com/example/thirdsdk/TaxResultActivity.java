@@ -59,7 +59,7 @@ public class TaxResultActivity extends AppCompatActivity implements
         }
     }
 
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
 
     //初始化分享渠道
     private void initShareChannel() {

@@ -84,7 +84,7 @@ public class MobileAssistantActivity extends AppCompatActivity implements
         mHandler.postDelayed(mDayRefresh, 500);
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //定义一个日流量的刷新任务
     private Runnable mDayRefresh = new Runnable() {
         @Override

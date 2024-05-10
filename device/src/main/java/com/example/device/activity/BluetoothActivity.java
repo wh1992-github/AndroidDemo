@@ -43,7 +43,7 @@ public class BluetoothActivity extends AppCompatActivity implements
     private BluetoothAdapter mBluetooth; //声明一个蓝牙适配器对象
     private BlueListAdapter mListAdapter; //声明一个蓝牙设备的列表适配器对象
     private ArrayList<BlueDevice> mDeviceList = new ArrayList<>(); //蓝牙设备队列
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private int mOpenCode = 1; //是否允许扫描蓝牙设备的选择对话框返回结果代码
 
     @Override

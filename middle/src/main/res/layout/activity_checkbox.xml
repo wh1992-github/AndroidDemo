@@ -22,6 +22,7 @@
         android:padding="10dp"
         android:checked="false"
         android:text="这个CheckBox换了图标"
+        android:background="@android:color/transparent"
         android:textColor="#000000"
         android:textSize="17sp" />
 

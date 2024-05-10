@@ -27,7 +27,7 @@ public class TrafficService extends Service {
     private final int delayTime = 2000; //刷新的间隔时间
 
     //创建一个处理器对象
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     //定义一个流量刷新任务
     private Runnable mRefresh = new Runnable() {
         public void run() {

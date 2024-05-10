@@ -170,7 +170,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="文字绝对居中" />
+                    android:text="文字绝对居中|柱状图" />
             </LinearLayout>
 
             <LinearLayout

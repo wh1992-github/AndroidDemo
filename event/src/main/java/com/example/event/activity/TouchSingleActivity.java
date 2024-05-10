@@ -44,7 +44,7 @@ public class TouchSingleActivity extends AppCompatActivity {
         } else if (action == MotionEvent.ACTION_CANCEL) { //取消手势
             desc = String.format(Locale.getDefault(), "%s取消", desc);
         }
-        desc = String.format(Locale.getDefault(), "%s\n动作发生位置是：横坐标%f,纵坐标%f",
+        desc = String.format(Locale.getDefault(), "%s\n动作发生位置是：横坐标%.2f,纵坐标%.2f",
                 desc, event.getX(), event.getY());
         tv_touch.setText(desc);
         return super.onTouchEvent(event);

@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         }
     }
 
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private Runnable mImportService = new Runnable() {
         @Override
         public void run() {

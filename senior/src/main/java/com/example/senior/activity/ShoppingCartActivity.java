@@ -124,7 +124,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements
         return true;
     }
 
-    private Handler mHandler = new Handler();  //声明一个处理器对象
+    private final Handler mHandler = new Handler();  //声明一个处理器对象
     //定义一个上下文菜单的弹出任务
     private Runnable mPopupMenu = new Runnable() {
         @Override

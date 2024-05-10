@@ -55,7 +55,7 @@ public class WifiShareActivity extends AppCompatActivity implements
     private int mDesType = WifiConfiguration.KeyMgmt.NONE; //加密类型
     private ArrayList<ClientScanResult> mClientArray = new ArrayList<>(); //已连接设备的队列
     private HashMap<String, String> mapName = new HashMap<>(); //IP与主机名的关系映射
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

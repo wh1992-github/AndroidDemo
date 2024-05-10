@@ -86,7 +86,7 @@ public class ContentObserverActivity extends AppCompatActivity implements OnClic
         smsManager.sendTextMessage(phoneNumber, null, message, sentPI, deliverPI);
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private SmsGetObserver mObserver; //声明一个短信获取的观察器对象
     private static Uri mSmsUri; //声明一个系统短信提供器的Uri对象
     private static String[] mSmsColumn; //声明一个短信记录的字段数组

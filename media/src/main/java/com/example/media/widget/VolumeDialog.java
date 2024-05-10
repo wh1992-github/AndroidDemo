@@ -99,7 +99,7 @@ public class VolumeDialog implements OnSeekBarChangeListener, OnKeyListener {
         mHandler.postDelayed(mClose, 2000);
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //声明一个关闭对话框任务
     private Runnable mClose = new Runnable() {
         @Override

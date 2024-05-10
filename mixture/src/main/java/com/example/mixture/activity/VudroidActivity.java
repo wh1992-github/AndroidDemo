@@ -40,7 +40,7 @@ public class VudroidActivity extends AppCompatActivity {
     private ViewPager vp_content; //声明一个翻页视图对象
     private FrameLayout fr_content; //声明一个框架布局对象
     public static DecodeService decodeService; //声明一个解码服务对象
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private String mDir, mPath; //文件目录和文件路径
     private ProgressDialog mDialog; //声明一个进度对话框对象
     private ArrayList<String> imgArray = new ArrayList<>(); //图片路径队列

@@ -46,7 +46,7 @@ public class RunnableActivity extends AppCompatActivity implements OnClickListen
     }
 
     private boolean isStarted = false; //是否开始计数
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private int mCount = 0; //计数值
     //定义一个计数任务
     private Runnable mCounter = new Runnable() {

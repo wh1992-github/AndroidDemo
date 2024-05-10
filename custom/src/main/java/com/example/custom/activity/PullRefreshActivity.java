@@ -48,7 +48,7 @@ public class PullRefreshActivity extends AppCompatActivity implements OnClickLis
     }
 
     private boolean isStarted = false; //是否开始刷新
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     private int mOffset = 0; //刷新过程中的下拉偏移
     //定义一个下拉刷新任务
     private Runnable mRefresh = new Runnable() {

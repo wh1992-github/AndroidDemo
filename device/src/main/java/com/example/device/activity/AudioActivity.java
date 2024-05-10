@@ -34,7 +34,7 @@ public class AudioActivity extends AppCompatActivity implements AudioRecorder.On
         mHandler.postDelayed(mPreplay, 1000);
     }
 
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     //定义一个准备播放任务
     private Runnable mPreplay = new Runnable() {
         @Override

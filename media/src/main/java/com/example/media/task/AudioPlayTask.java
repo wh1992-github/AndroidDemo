@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 
 public class AudioPlayTask extends AsyncTask<String, Integer, Void> {
     private static final String TAG = "AudioPlayTask";
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private int mPlayTime = 0; //已播放时间
 
     //线程正在后台处理

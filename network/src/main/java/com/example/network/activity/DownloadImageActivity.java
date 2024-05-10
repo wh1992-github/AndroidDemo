@@ -123,7 +123,7 @@ public class DownloadImageActivity extends AppCompatActivity {
         }
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //定义一个下载进度的刷新任务
     private Runnable mRefresh = new Runnable() {
         @Override

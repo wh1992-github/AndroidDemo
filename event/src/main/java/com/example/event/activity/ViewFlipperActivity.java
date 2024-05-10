@@ -100,7 +100,7 @@ public class ViewFlipperActivity extends AppCompatActivity implements OnClickLis
         }
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //定义一个指示器的刷新任务
     private Runnable mRefresh = new Runnable() {
         @Override

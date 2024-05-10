@@ -16,7 +16,7 @@ public class TurnView extends View {
     private RectF mRectF; //矩形边界
     private int mBeginAngle = 0; //起始角度
     private boolean isRunning = false; //是否正在转动
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     public TurnView(Context context) {
         this(context, null);

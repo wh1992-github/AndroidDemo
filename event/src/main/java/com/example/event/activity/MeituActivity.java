@@ -27,8 +27,7 @@ import java.util.Map;
 /**
  * Created by test on 2017/11/23.
  */
-public class MeituActivity extends AppCompatActivity implements
-        FileSelectCallbacks, FileSaveCallbacks, ImageChangetListener {
+public class MeituActivity extends AppCompatActivity implements FileSelectCallbacks, FileSaveCallbacks, ImageChangetListener {
     private static final String TAG = "MeituActivity";
     private MeituView mv_content; //声明一个美图视图对象
     private TextView tv_intro;

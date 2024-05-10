@@ -115,7 +115,7 @@ public class QQContactActivity extends AppCompatActivity implements
         super.onDestroy();
     }
 
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
     //定义一个分组刷新任务
     private Runnable mRefresh = new Runnable() {
         @Override

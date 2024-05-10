@@ -25,7 +25,7 @@ public class NetbiosActivity extends AppCompatActivity implements
         GetClientListener, OnItemClickListener {
     private TextView tv_hint;
     private ListView lv_device;
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private ArrayList<ClientScanResult> mClientArray = new ArrayList<>(); //已连接设备队列
 
     @Override

@@ -34,7 +34,7 @@ public class MovieDetailActivity extends AppCompatActivity implements OnSeekChan
     private MediaInfo mMovie; //声明一个媒体信息对象
     private MovieView mv_content; //声明一个电影视图对象
     private VideoController vc_play; //声明一个视频控制条对象
-    private Handler mHandler = new Handler(); //声明一个处理器对象
+    private final Handler mHandler = new Handler(); //声明一个处理器对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
