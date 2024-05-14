@@ -2,9 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     //指定编译用的SDK版本号。如28表示使用Android 9.0编译
-    compileSdkVersion 28
+    compileSdkVersion 34
     //指定编译工具的版本号。这里的头两位数字必须与compileSdkVersion保持一致，具体的版本号可在sdk安装目录的“sdk\build-tools”下找到
-    buildToolsVersion "28.0.3"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         //指定该模块的应用编号，即App的包名。该参数为自动生成，无需修改
@@ -12,7 +12,7 @@ android {
         //指定App适合运行的最小SDK版本号。如16表示至少要在Android 4.1上运行
         minSdkVersion 23
         //指定目标设备的SDK版本号。即该App最希望在哪个版本的Android上运行
-        targetSdkVersion 30
+        targetSdkVersion 34
         //指定App的应用版本号
         versionCode 1
         //指定App的应用版本名称

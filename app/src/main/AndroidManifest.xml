@@ -16,7 +16,8 @@
         android:theme="@style/AppTheme"
         tools:targetApi="n">
         <!-- activity节点指定了该App拥有的活动页面信息 -->
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

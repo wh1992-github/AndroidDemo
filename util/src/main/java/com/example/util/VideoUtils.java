@@ -5,6 +5,7 @@ import android.media.MediaMetadataRetriever;
 import android.media.ThumbnailUtils;
 import android.provider.MediaStore;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 public class VideoUtils {
@@ -51,7 +52,7 @@ public class VideoUtils {
         } finally {
             try {
                 retriever.release();
-            } catch (RuntimeException ex) {
+            } catch (RuntimeException | IOException ex) {
                 //Ignore failures while cleaning up.
             }
         }

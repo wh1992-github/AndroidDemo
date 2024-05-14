@@ -39,7 +39,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".activity.MainApplication">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -101,6 +102,7 @@
         <!-- AutoInstallService为智能安装服务，参见AppStoreActivity的调用 -->
         <service
             android:name=".service.AutoInstallService"
+            android:exported="true"
             android:label="@string/accessibility_label"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
@@ -113,26 +115,30 @@
         </service>
 
         <!-- 接收下载任务的下载完成事件 -->
-        <receiver android:name=".activity.DownloadApkActivity$DownloadCompleteReceiver">
+        <receiver android:name=".activity.DownloadApkActivity$DownloadCompleteReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
             </intent-filter>
         </receiver>
         <!-- 接收通知栏上的下载任务点击事件 -->
-        <receiver android:name=".activity.DownloadApkActivity$NotificationClickReceiver">
+        <receiver android:name=".activity.DownloadApkActivity$NotificationClickReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
             </intent-filter>
         </receiver>
 
         <!-- 接收Socket得到的收到对方消息事件 -->
-        <receiver android:name=".activity.ChatMainActivity$RecvMsgReceiver">
+        <receiver android:name=".activity.ChatMainActivity$RecvMsgReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.example.network.RECV_MSG" />
             </intent-filter>
         </receiver>
         <!-- 接收Socket得到的获取好友列表事件 -->
-        <receiver android:name=".activity.QQContactActivity$GetListReceiver">
+        <receiver android:name=".activity.QQContactActivity$GetListReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.example.network.GET_LIST" />
             </intent-filter>

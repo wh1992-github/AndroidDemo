@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".activity.MainApplication">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,13 +55,15 @@
         <activity android:name=".activity.ScheduleActivity" />
         <activity android:name=".activity.ScheduleDetailActivity" />
 
-        <receiver android:name=".activity.AlarmActivity$AlarmReceiver">
+        <receiver android:name=".activity.AlarmActivity$AlarmReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.example.senior.AlarmActivity.AlarmReceiver" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".activity.ScheduleDetailActivity$AlarmReceiver">
+        <receiver android:name=".activity.ScheduleDetailActivity$AlarmReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.example.senior.ScheduleDetailActivity.AlarmReceiver" />
             </intent-filter>

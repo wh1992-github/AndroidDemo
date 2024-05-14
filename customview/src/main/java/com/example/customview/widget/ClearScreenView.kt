@@ -134,7 +134,7 @@ class ClearScreenView @JvmOverloads constructor(
             translateChild(translate)
         }
         mAnimator?.addListener(object : AnimatorListenerAdapter() {
-            override fun onAnimationEnd(animation: Animator?) {
+            override fun onAnimationEnd(animation: Animator) {
                 when (clearScreenStatus) {
                     ClearScreenStatus.CLEARED -> {
                         clearScreenStatus = ClearScreenStatus.NORMAL

@@ -133,9 +133,9 @@ public class WebSpanActivity extends AppCompatActivity {
         //设置是否使用缓存
         settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         //设置是否启用app缓存
-        settings.setAppCacheEnabled(true);
+        //settings.setAppCacheEnabled(true);
         //设置app缓存文件的路径
-        settings.setAppCachePath("");
+        //settings.setAppCachePath("");
         //设置是否允许访问文件,如WebView访问sd卡的文件。
         //不过assets与res文件不受此限制,仍然可以通过“file:///android_asset”和“file:///android_res”访问
         settings.setAllowFileAccess(true);

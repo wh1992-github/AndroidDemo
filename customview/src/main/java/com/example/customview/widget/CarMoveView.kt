@@ -77,7 +77,7 @@ class CarMoveView @JvmOverloads constructor(
         mHeight = h
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         drawPath(canvas)
         drawMoveCar(canvas)
@@ -142,17 +142,17 @@ class CarMoveView @JvmOverloads constructor(
             invalidate()
         }
         valueAnimator.addListener(object : Animator.AnimatorListener {
-            override fun onAnimationRepeat(animation: Animator?) {}
+            override fun onAnimationRepeat(animation: Animator) {}
 
-            override fun onAnimationEnd(animation: Animator?) {
+            override fun onAnimationEnd(animation: Animator) {
                 isMoveCar = false
             }
 
-            override fun onAnimationCancel(animation: Animator?) {
+            override fun onAnimationCancel(animation: Animator) {
                 isMoveCar = false
             }
 
-            override fun onAnimationStart(animation: Animator?) {}
+            override fun onAnimationStart(animation: Animator) {}
 
         })
         valueAnimator.start()

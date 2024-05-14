@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="UnusedAttribute">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -102,7 +103,8 @@
         <activity android:name=".retrofit.OkHttpActivity" />
         <activity android:name=".rxbus.RxBusActivity" />
 
-        <activity android:name=".activity.SearchResultActivity">
+        <activity android:name=".activity.SearchResultActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
