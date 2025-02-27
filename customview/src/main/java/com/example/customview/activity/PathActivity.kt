@@ -3,7 +3,8 @@ package com.example.customview.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.customview.R
-import kotlinx.android.synthetic.main.activity_path.*
+import kotlinx.android.synthetic.main.activity_path.car_anim_view
+import kotlinx.android.synthetic.main.activity_path.start_btn
 
 class PathActivity : AppCompatActivity() {
 

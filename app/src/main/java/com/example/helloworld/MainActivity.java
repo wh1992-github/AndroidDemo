@@ -1,7 +1,17 @@
 package com.example.helloworld;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -9,21 +19,17 @@ import android.widget.TextView;
 
 import com.example.helloworld.databinding.ActivityMainBinding;
 
-import java.lang.ref.SoftReference;
-import java.lang.ref.WeakReference;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
+@SuppressLint({"NonConstantResourceId", "SdCardPath"})
+@RequiresApi(api = Build.VERSION_CODES.R)
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "MainActivity---";
     private ActivityMainBinding mViewBinding;
+    private static final String[] PERMISSIONS = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CALL_PHONE, Manifest.permission.SEND_SMS};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "onCreate: ");
         mViewBinding = ActivityMainBinding.inflate(getLayoutInflater());
 
         setContentView(mViewBinding.getRoot());
@@ -38,77 +44,37 @@ public class MainActivity extends AppCompatActivity {
         mViewBinding.btn1.setOnClickListener(this::onClick);
         mViewBinding.btn2.setOnClickListener(this::onClick);
         mViewBinding.btn3.setOnClickListener(this::onClick);
+
+        requestPermissions(PERMISSIONS, 10002);
+
+        if ((ContextCompat.checkSelfPermission(this, Manifest.permission.MANAGE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)) {
+            //如果没有权限，获取权限
+            Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+            intent.setData(Uri.parse("package:" + getPackageName()));
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Log.i(TAG, "onRequestPermissionsResult: READ_EXTERNAL_STORAGE = " + ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE));
+        Log.i(TAG, "onRequestPermissionsResult: WRITE_EXTERNAL_STORAGE = " + ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE));
+        Log.i(TAG, "onRequestPermissionsResult: CALL_PHONE = " + ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE));
+        Log.i(TAG, "onRequestPermissionsResult: SEND_SMS = " + ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS));
+        for (int i = 0; i < permissions.length; i++) {
+            Log.i(TAG, "onRequestPermissionsResult: permission = " + permissions[i] + ", " + grantResults[i]);
+        }
     }
 
     private void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:
-                Log.i(TAG, "onClick: " + reverseWords("abcd efg hijk"));
                 break;
             case R.id.btn2:
-                StringBuilder stringBuilder = new StringBuilder("asdfghjkl");
-                Log.i(TAG, "onClick: " + stringBuilder.append("---zxcvbnm"));
-
-                String string = "qwertyuio";
-                Log.i(TAG, "onClick: " + string.concat("---zxcvbnm"));
-                break;
-            case R.id.btn3:
-                Log.i(TAG, "onClick: size = " + call(arrays1));
-                Log.i(TAG, "onClick: size = " + call(arrays2));
-                Log.i(TAG, "onClick: size = " + call(arrays3));
                 break;
             default:
                 break;
         }
     }
-
-    public String reverseWords(String s) {
-        String[] ss = s.trim().split(" ");
-        StringBuilder sb = new StringBuilder();
-        for (int i = ss.length - 1; i >= 0; i--) {
-            if (ss[i].equals("")) {
-                continue;
-            }
-            sb.append(ss[i] + " ");
-        }
-        return sb.toString().trim();
-    }
-
-    private static final int[] arrays1 = {2, 5, 1, 2, 3, 4, 7, 7, 6};
-    private static final int[] arrays2 = {2, 5, 1, 3, 1, 2, 1, 7, 7, 6};
-    private static final int[] arrays3 = {3, 2, 3, 4, 5, 6};
-
-    //数组注水问题
-    public int call(int[] array) {
-        int r = 0;
-        int max_index = -1;
-        int max = -1;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
-                max_index = i;
-            }
-        }
-
-        max = array[0];
-        for (int i = 0; i < max_index; i++) {
-            if (array[i] < max) {
-                r += (max - array[i]);
-            } else {
-                max = array[i];
-            }
-        }
-
-        max = array[array.length - 1];
-        for (int i = array.length - 1; i > max_index; i--) {
-            if (array[i] < max) {
-                r += (max - array[i]);
-            } else {
-                max = array[i];
-            }
-        }
-
-        return r;
-    }
 }
-

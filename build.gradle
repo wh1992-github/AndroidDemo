@@ -22,6 +22,9 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
     }
+    tasks.withType(JavaCompile) {//解决编码错误: 编码UTF-8的不可映射字
+        options.encoding = "UTF-8"
+    }
 }
 
 allprojects {

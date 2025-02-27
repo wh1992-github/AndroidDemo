@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
         mList.add(new TypeBean("LoadingView", 22));
         mList.add(new TypeBean("LoadingViewMac", 23));
         mList.add(new TypeBean("FlowLayout", 24));
+        mList.add(new TypeBean("TextSwitcher", 25));
         return mList;
     }
 
@@ -143,6 +144,9 @@ public class MainActivity extends AppCompatActivity implements BaseQuickAdapter.
                 break;
             case 24:
                 startActivity(new Intent(MainActivity.this, FlowActivity.class));
+                break;
+            case 25:
+                startActivity(new Intent(MainActivity.this, TextSwitcherActivity.class));
                 break;
             default:
                 break;

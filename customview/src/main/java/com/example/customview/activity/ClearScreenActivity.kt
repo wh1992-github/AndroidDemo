@@ -6,7 +6,10 @@ import android.widget.Toast
 import com.example.customview.R
 import com.example.customview.widget.ClearScreenMode
 import com.example.customview.widget.ClearScreenView
-import kotlinx.android.synthetic.main.activity_clear_screen.*
+import kotlinx.android.synthetic.main.activity_clear_screen.btn_quick_clear
+import kotlinx.android.synthetic.main.activity_clear_screen.btn_slow_clear
+import kotlinx.android.synthetic.main.activity_clear_screen.clear_screen_container
+import kotlinx.android.synthetic.main.activity_clear_screen.iv_clear_content
 
 class ClearScreenActivity : AppCompatActivity(), ClearScreenView.OnClearScreenListener {
 

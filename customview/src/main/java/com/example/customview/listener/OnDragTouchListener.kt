@@ -87,6 +87,7 @@ class OnDragTouchListener : View.OnTouchListener {
                 mLayoutParams?.setMargins(left, top, 0, 0)
                 view.layoutParams = mLayoutParams
             }
+
             MotionEvent.ACTION_UP -> {
                 //如果移动距离过小，则判定为点击
                 if (Math.abs(event.rawX - mOriginalX) < minDragDistance && Math.abs(event.rawY - mOriginalY) < minDragDistance) {
@@ -163,6 +164,7 @@ class OnDragTouchListener : View.OnTouchListener {
                 topOrBottomEnd = getBorderMargin(mBorderMarginTop)
                 createTopOrBottomAnimation(v, topOrBottomEnd)
             }
+
             else -> null
         }
     }

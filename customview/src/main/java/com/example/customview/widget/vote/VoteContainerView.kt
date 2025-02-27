@@ -13,7 +13,10 @@ import android.widget.Toast
 import com.example.customview.R
 import com.example.customview.bean.VoteBean
 import com.example.customview.bean.VoteOption
-import kotlinx.android.synthetic.main.widget_vote_layout.view.*
+import kotlinx.android.synthetic.main.widget_vote_layout.view.vote_container_title
+import kotlinx.android.synthetic.main.widget_vote_layout.view.vote_container_vote_btn
+import kotlinx.android.synthetic.main.widget_vote_layout.view.vote_container_vote_result
+import kotlinx.android.synthetic.main.widget_vote_layout.view.vote_item_ll
 import java.lang.ref.WeakReference
 
 class VoteContainerView @JvmOverloads constructor(
@@ -226,7 +229,8 @@ class VoteContainerView @JvmOverloads constructor(
                     voteOption.voted = true
                     ref()?.addOptionIds(voteOption.id ?: 0)
                 } else {
-                    Toast.makeText(ref()?.context, "最多可选${maxSelect}个", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(ref()?.context, "最多可选${maxSelect}个", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
             ref()?.setVoteBtnStatus()
