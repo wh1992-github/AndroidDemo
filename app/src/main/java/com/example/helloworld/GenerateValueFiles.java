@@ -88,8 +88,8 @@ public class GenerateValueFiles {
     }
 
     public static void main(String[] args) {
-        int baseW = 1080;
-        int baseH = 1920;
+        int baseW = 1440;
+        int baseH = 2560;
 
         new GenerateValueFiles(baseW, baseH).generate();
     }

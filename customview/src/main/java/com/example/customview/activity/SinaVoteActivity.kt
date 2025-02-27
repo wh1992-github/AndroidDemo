@@ -7,7 +7,7 @@ import com.example.customview.bean.VoteBean
 import com.example.customview.bean.VoteOption
 import com.example.customview.data.getMockData
 import com.example.customview.widget.vote.VoteLayoutAdapter
-import kotlinx.android.synthetic.main.activity_sina_vote.*
+import kotlinx.android.synthetic.main.activity_sina_vote.vote_ll
 
 class SinaVoteActivity : AppCompatActivity(), VoteLayoutAdapter.OnVoteClickListener {
 

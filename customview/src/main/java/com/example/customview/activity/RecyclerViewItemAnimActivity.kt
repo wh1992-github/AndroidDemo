@@ -11,7 +11,15 @@ import com.example.customview.anim.RotateXItemAnimation
 import com.example.customview.anim.RotateYItemAnimation
 import com.example.customview.anim.ScaleItemAnimation
 import com.example.customview.anim.SlideItemAnimation
-import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.*
+import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.add_btn
+import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.normal_btn
+import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.recycler_view
+import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.remove_btn
+import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.reverse_btn
+import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.rotate_x_btn
+import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.rotate_y_btn
+import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.scale_btn
+import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.slide_btn
 import kotlin.random.Random
 
 class RecyclerViewItemAnimActivity : AppCompatActivity() {

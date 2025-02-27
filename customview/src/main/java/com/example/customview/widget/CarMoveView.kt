@@ -3,7 +3,13 @@ package com.example.customview.widget
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.Path
+import android.graphics.PathMeasure
+import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
@@ -119,6 +125,7 @@ class CarMoveView @JvmOverloads constructor(
                 mMovePath.moveTo(mStartX, mStartY)
                 return true
             }
+
             MotionEvent.ACTION_MOVE -> {
                 val endX = (mStartX + event.x) / 2
                 val endY = (mStartY + event.y) / 2

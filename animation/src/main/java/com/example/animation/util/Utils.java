@@ -2,6 +2,7 @@ package com.example.animation.util;
 
 import android.content.Context;
 import android.graphics.Point;
+import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;

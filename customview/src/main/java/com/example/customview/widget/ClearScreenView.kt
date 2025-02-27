@@ -140,6 +140,7 @@ class ClearScreenView @JvmOverloads constructor(
                         clearScreenStatus = ClearScreenStatus.NORMAL
                         clearScreenListener?.onRestored()
                     }
+
                     ClearScreenStatus.NORMAL -> {
                         clearScreenStatus = ClearScreenStatus.CLEARED
                         clearScreenListener?.onCleared()
@@ -173,6 +174,7 @@ class ClearScreenView @JvmOverloads constructor(
                 requestDisallowInterceptTouchEvent(isIntercept)
                 isIntercept
             }
+
             ClearScreenMode.SLOW_SCROLL -> {
                 val isIntercept = isMoveForHorizontal(x, y) && !isAnimRunning() || isScrolling
                 requestDisallowInterceptTouchEvent(isIntercept)
@@ -198,6 +200,7 @@ class ClearScreenView @JvmOverloads constructor(
             ClearScreenMode.QUICK_SCROLL -> {
                 handleQuickScrollMode(event)
             }
+
             ClearScreenMode.SLOW_SCROLL -> {
                 handleSlowScrollMode(event)
             }
@@ -220,6 +223,7 @@ class ClearScreenView @JvmOverloads constructor(
                     xVelocity < -MIN_X_VELOCITY -> {
                         setRight2LeftMoveTranslateX()
                     }
+
                     else -> {
                         translateX = 0
                     }
@@ -246,6 +250,7 @@ class ClearScreenView @JvmOverloads constructor(
                         }
                         mAnimator?.start()
                     }
+
                     ClearScreenStatus.CLEARED -> {
                         if (startTranslateX >= width / 2) {
                             translateX = width - startTranslateX
@@ -258,6 +263,7 @@ class ClearScreenView @JvmOverloads constructor(
                     }
                 }
             }
+
             MotionEvent.ACTION_MOVE -> {
                 translateX = 0
                 val move = x - mDownX
@@ -269,6 +275,7 @@ class ClearScreenView @JvmOverloads constructor(
                             translateChild(translate.toFloat())
                         }
                     }
+
                     ClearScreenStatus.CLEARED -> {
                         val translate = if (x > mDownX) 0 else mDownX - x
                         startTranslateX = width - translate
@@ -287,6 +294,7 @@ class ClearScreenView @JvmOverloads constructor(
                 startTranslateX = 0
                 translateX = if (clearScreenStatus == ClearScreenStatus.NORMAL) width else 0
             }
+
             ClearScreenType.RIGHT_TO_LEFT -> {
                 startTranslateX = -width
                 translateX = if (clearScreenStatus == ClearScreenStatus.NORMAL) 0 else width
@@ -300,6 +308,7 @@ class ClearScreenView @JvmOverloads constructor(
                 startTranslateX = width
                 translateX = if (clearScreenStatus == ClearScreenStatus.NORMAL) 0 else -width
             }
+
             ClearScreenType.RIGHT_TO_LEFT -> {
                 startTranslateX = 0
                 translateX = if (clearScreenStatus == ClearScreenStatus.NORMAL) -width else 0
@@ -318,6 +327,7 @@ class ClearScreenView @JvmOverloads constructor(
                     ClearScreenStatus.CLEARED -> downX - moveX > MIN_SCROLL_SIZE
                 }
             }
+
             ClearScreenType.RIGHT_TO_LEFT -> {
                 when (clearScreenStatus) {
                     ClearScreenStatus.NORMAL -> downX - moveX > MIN_SCROLL_SIZE
