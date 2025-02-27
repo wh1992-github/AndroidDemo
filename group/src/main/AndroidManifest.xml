@@ -19,6 +19,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="UnusedAttribute">
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="720" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="800" />
+        <dependency>
+            <groupId tools:ignore="ExtraText">com.github.saiintpal</groupId>
+            <artifactId>stock-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <activity android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>

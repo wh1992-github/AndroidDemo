@@ -168,4 +168,55 @@ public class Sort {
         //只复制k个值,若第二段存在比第一段所有数都大的数,要将其及其后面部分在source中位置不变
         System.arraycopy(temp, 0, source, lowA, k);
     }
+
+
+    private static final int[] arrays1 = {2, 5, 1, 2, 3, 4, 7, 7, 6};
+    private static final int[] arrays2 = {2, 5, 1, 3, 1, 2, 1, 7, 7, 6};
+    private static final int[] arrays3 = {3, 2, 3, 4, 5, 6};
+
+    //数组注水问题
+    public int call(int[] array) {
+        int r = 0;
+        int max_index = -1;
+        int max = -1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+                max_index = i;
+            }
+        }
+
+        max = array[0];
+        for (int i = 0; i < max_index; i++) {
+            if (array[i] < max) {
+                r += (max - array[i]);
+            } else {
+                max = array[i];
+            }
+        }
+
+        max = array[array.length - 1];
+        for (int i = array.length - 1; i > max_index; i--) {
+            if (array[i] < max) {
+                r += (max - array[i]);
+            } else {
+                max = array[i];
+            }
+        }
+
+        return r;
+    }
+
+    //翻转字符串
+    public String reverseWords(String s) {
+        String[] ss = s.trim().split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (int i = ss.length - 1; i >= 0; i--) {
+            if (ss[i].equals("")) {
+                continue;
+            }
+            sb.append(ss[i] + " ");
+        }
+        return sb.toString().trim();
+    }
 }

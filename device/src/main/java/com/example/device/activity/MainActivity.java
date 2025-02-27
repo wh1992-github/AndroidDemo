@@ -1,10 +1,12 @@
 package com.example.device.activity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -46,8 +48,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         findViewById(R.id.btn_navigation).setOnClickListener(this);
         findViewById(R.id.btn_wechat).setOnClickListener(this);
         findViewById(R.id.btn_crashhandler).setOnClickListener(this);
+        findViewById(R.id.btn_txt).setOnClickListener(this);
+        findViewById(R.id.btn_ui).setOnClickListener(this);
+        findViewById(R.id.btn_auto_size).setOnClickListener(this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_turn_view) {
@@ -132,6 +138,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             startActivity(intent);
         } else if (v.getId() == R.id.btn_crashhandler) {
             Intent intent = new Intent(this, CrashHandlerActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_txt) {
+            Intent intent = new Intent(this, TxtActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_ui) {
+            Intent intent = new Intent(this, UIActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_auto_size) {
+            Intent intent = new Intent(this, AutoSizeActivity.class);
             startActivity(intent);
         }
     }
