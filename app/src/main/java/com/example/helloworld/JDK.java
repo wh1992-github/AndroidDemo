@@ -312,6 +312,90 @@ public class JDK {
         return time;
     }
 
+    /**
+     * 读取股票数据文件，计算每个月最低点买入、下个月最高点卖出的收益
+     */
+    public void printBestBuySell(Context context, String fileName) {
+        // 读取所有数据行
+        List<String> allLines = new ArrayList<>();
+        try {
+            InputStream inputStream = context.getResources().getAssets().open(fileName);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                if (!TextUtils.isEmpty(line)) {
+                    allLines.add(line);
+                }
+            }
+            bufferedReader.close();
+        } catch (IOException e) {
+            Log.e(TAG, "printBestBuySell: e = " + e.getMessage());
+            return;
+        }
+
+        // 按年月分组: key = "2016-01", value = list of lines
+        java.util.LinkedHashMap<String, List<String>> monthMap = new java.util.LinkedHashMap<>();
+        for (String line : allLines) {
+            String yearMonth = line.substring(0, 7); // "2016-01"
+            if (!monthMap.containsKey(yearMonth)) {
+                monthMap.put(yearMonth, new ArrayList<>());
+            }
+            monthMap.get(yearMonth).add(line);
+        }
+
+        List<String> monthKeys = new ArrayList<>(monthMap.keySet());
+        float totalProfit = 0;
+        int profitCount = 0;
+        int lossCount = 0;
+
+        Log.i(TAG, "printBestBuySell: ====== " + fileName + " 月度策略：上月最低买入 → 下月最高卖出 ======");
+
+        for (int i = 0; i < monthKeys.size() - 1; i++) {
+            String buyMonth = monthKeys.get(i);
+            String sellMonth = monthKeys.get(i + 1);
+            List<String> buyLines = monthMap.get(buyMonth);
+            List<String> sellLines = monthMap.get(sellMonth);
+
+            // 找本月最低点
+            String buyDay = "";
+            float buyPrice = Float.MAX_VALUE;
+            for (String line : buyLines) {
+                float price = Float.parseFloat(line.substring(line.indexOf("------") + 6));
+                if (price < buyPrice) {
+                    buyPrice = price;
+                    buyDay = line.substring(0, 10);
+                }
+            }
+
+            // 找下月最高点
+            String sellDay = "";
+            float sellPrice = 0;
+            for (String line : sellLines) {
+                float price = Float.parseFloat(line.substring(line.indexOf("------") + 6));
+                if (price > sellPrice) {
+                    sellPrice = price;
+                    sellDay = line.substring(0, 10);
+                }
+            }
+
+            float profit = (sellPrice - buyPrice) / buyPrice * 100;
+            totalProfit += profit;
+            if (profit > 0) profitCount++;
+            else lossCount++;
+
+            Log.i(TAG, "printBestBuySell: 买入 " + buyDay + " 价格 " + formatNumTwo(buyPrice)
+                    + " → 卖出 " + sellDay + " 价格 " + formatNumTwo(sellPrice)
+                    + " | 收益 " + formatNumTwo(profit) + "%"
+                    + (profit < 0 ? " ******" : ""));
+        }
+
+        Log.i(TAG, "printBestBuySell: ====== 总结 ======");
+        Log.i(TAG, "printBestBuySell: 总交易次数 = " + (profitCount + lossCount)
+                + ", 盈利次数 = " + profitCount + ", 亏损次数 = " + lossCount
+                + ", 胜率 = " + formatNumTwo(profitCount * 100.0 / (profitCount + lossCount)) + "%"
+                + ", 累计收益 = " + formatNumTwo(totalProfit) + "%");
+    }
+
     public float getAverage5(List<Float> list, int index, int days) {
         float sum = 0;
         for (int i = 1; i <= days; i++) {
