@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd D:/code/AndroidDemo && openspec list --specs)",
+      "Bash(cd D:/code/AndroidDemo && npx openspec instructions specs --change \"optimize-stock-algorithm\" --json 2>&1)",
+      "Bash(openspec status:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"D:/code/AndroidDemo\" status)",
+      "Bash(git -C \"D:/code/AndroidDemo\" diff)",
+      "Bash(git -C \"D:/code/AndroidDemo\" log --oneline -5)",
+      "Bash(git -C \"D:/code/AndroidDemo\" add app/src/main/java/com/example/helloworld/AlarmActivity.java app/src/main/java/com/example/helloworld/JDK.java app/src/main/res/layout/activity_alarm.xml)",
+      "Bash(git -C \"D:/code/AndroidDemo\" commit --amend --no-edit)",
+      "Bash(./gradlew:*)",
+      "Bash(echo:*)",
+      "Bash(where:*)",
+      "Bash(java:*)",
+      "Bash(gradlew.bat build:*)"
+    ]
+  }
+}

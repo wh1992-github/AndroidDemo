@@ -35,6 +35,13 @@ public class AlarmActivity extends AppCompatActivity {
         pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 5 * 60 * 1000, pendingIntent);
 
+        mViewBinding.btnBestBuySell.setOnClickListener(v -> {
+            new Thread(() -> {
+                JDK jdk = new JDK();
+                jdk.printBestBuySell(AlarmActivity.this, "长白山.txt");
+            }).start();
+        });
+
         mViewBinding.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
