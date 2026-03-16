@@ -10,7 +10,8 @@
       "Bash(echo:*)",
       "Bash(where:*)",
       "Bash(java:*)",
-      "Bash(gradlew.bat build:*)"
+      "Bash(gradlew.bat build:*)",
+      "WebSearch"
     ]
   }
 }
