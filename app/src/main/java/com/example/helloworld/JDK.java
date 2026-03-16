@@ -390,4 +390,11 @@ public class JDK {
                 + ", 累计收益 = " + formatNumTwo(totalProfit) + "%");
     }
 
+    public float getAverage5(List<Float> list, int index, int days) {
+        float sum = 0;
+        for (int i = 1; i <= days; i++) {
+            sum += list.get(Math.max(index - i, 0));
+        }
+        return sum / days;
+    }
 }
