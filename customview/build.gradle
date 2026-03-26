@@ -37,6 +37,10 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {

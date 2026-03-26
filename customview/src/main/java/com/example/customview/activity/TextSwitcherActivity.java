@@ -14,6 +14,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
@@ -22,6 +23,7 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 
 import com.example.customview.R;
+import com.example.customview.databinding.ActivityTextSwitcherBinding;
 import com.example.customview.utils.ShaderSpan;
 
 import java.util.ArrayList;
@@ -30,6 +32,7 @@ import java.util.List;
 public class TextSwitcherActivity extends AppCompatActivity {
     private static final String TAG = "TextSwitcherActivity";
 
+    private ActivityTextSwitcherBinding binding;
     private TextSwitcher mTextSwitcher;
     private int mCount = 0;
     private static final List<String> mList = new ArrayList<>();
@@ -45,8 +48,9 @@ public class TextSwitcherActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_text_switcher);
-        mTextSwitcher = findViewById(R.id.switcher);
+        binding = ActivityTextSwitcherBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        mTextSwitcher = binding.switcher;
 
         //设置显示Text文本到View创建工厂
         mTextSwitcher.setFactory(() -> {
@@ -68,7 +72,7 @@ public class TextSwitcherActivity extends AppCompatActivity {
         mTextSwitcher.setOutAnimation(out);//设置文本消失动画
         mTextSwitcher.setCurrentText(mList.get(0));//设置初始值，初始值不显示动画
 
-        findViewById(R.id.button1).setOnClickListener(v -> {
+        binding.button1.setOnClickListener(v -> {
             mCount++;
             if (mCount >= mList.size()) {
                 mCount = 0;
@@ -87,7 +91,7 @@ public class TextSwitcherActivity extends AppCompatActivity {
             textView.setText(spannableString);
         });
 
-        findViewById(R.id.button2).setOnClickListener(v -> {
+        binding.button2.setOnClickListener(v -> {
             mCount++;
             if (mCount >= mList.size()) {
                 mCount = 0;
@@ -106,7 +110,7 @@ public class TextSwitcherActivity extends AppCompatActivity {
             textView.setText(spannableString);
         });
 
-        findViewById(R.id.button3).setOnClickListener(v -> {
+        binding.button3.setOnClickListener(v -> {
             ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) mTextSwitcher.getLayoutParams();
             int originalPosition = layoutParams.topMargin <= 200 ? 400 : layoutParams.topMargin;
             Log.i(TAG, "onCreate: " + originalPosition);
@@ -122,6 +126,17 @@ public class TextSwitcherActivity extends AppCompatActivity {
             });
             valueAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
             valueAnimator.start();
+        });
+
+        binding.button4.setOnClickListener(v -> {
+            binding.textSwitcherView.addText("思考中");
+            binding.textSwitcherView.addText("搜索中 111");
+            binding.textSwitcherView.addText("搜索中 222");
+            binding.textSwitcherView.addText("搜索中 333");
+            binding.textSwitcherView.addText("整理中 111");
+            binding.textSwitcherView.addText("整理中 222");
+            binding.textSwitcherView.addText("整理中 333");
+            binding.textSwitcherView.addText("整理完成");
         });
     }
 }
