@@ -7,6 +7,9 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 
 import java.util.concurrent.TimeUnit;
+/**
+ * 提供 Key Event 相关工具方法的工具类。
+ */
 
 public class KeyEventUtils {
     public static void sendKeyEvent(final int keyCode, int delayMills) {

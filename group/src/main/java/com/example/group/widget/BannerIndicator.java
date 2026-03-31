@@ -1,8 +1,8 @@
 package com.example.group.widget;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +14,9 @@ import com.example.group.R;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 封装 Banner Indicator 相关逻辑的类。
+ */
 
 public class BannerIndicator extends RelativeLayout implements View.OnClickListener {
     private static final String TAG = "BannerIndicator";

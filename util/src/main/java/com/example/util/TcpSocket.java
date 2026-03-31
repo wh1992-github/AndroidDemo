@@ -6,6 +6,9 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
+/**
+ * 封装 Tcp Socket 相关逻辑的类。
+ */
 
 public class TcpSocket {
 

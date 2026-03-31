@@ -5,6 +5,9 @@ import android.app.FragmentManager;
 
 import com.example.hezi.viewpager.fragments.FragmentFactory;
 import com.example.hezi.viewpager.fragments.FragmentPagerAdapter;
+/**
+ * 用于适配 Home 数据的适配器。
+ */
 
 public class HomeAdapter extends FragmentPagerAdapter {
 

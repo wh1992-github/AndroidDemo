@@ -2,8 +2,8 @@ package com.example.group.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,6 +23,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 用于适配 Recycler Staggered 数据的适配器。
+ */
 
 public class RecyclerStaggeredAdapter extends RecyclerView.Adapter<ViewHolder> implements OnItemClickListener, OnItemLongClickListener {
     private static final String TAG = "RecyclerStaggeredAdapter";

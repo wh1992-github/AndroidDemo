@@ -2,6 +2,9 @@ package org.vudroid.pdfdroid.codec;
 
 import org.vudroid.core.codec.CodecDocument;
 import org.vudroid.core.codec.CodecPage;
+/**
+ * 封装 Pdf Document 相关逻辑的类。
+ */
 
 
 public class PdfDocument implements CodecDocument {

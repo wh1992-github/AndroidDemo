@@ -4,6 +4,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AbsoluteLayout;
+/**
+ * 用于组织 Offset 界面内容的布局类。
+ */
 
 public class OffsetLayout extends AbsoluteLayout {
     private int mOffsetHorizontal = 0; //水平方向的偏移量

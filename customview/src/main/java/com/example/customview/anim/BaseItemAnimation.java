@@ -5,10 +5,10 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
-import android.support.annotation.NonNull;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.RecyclerView.ViewHolder;
-import android.support.v7.widget.SimpleItemAnimator;
+import androidx.annotation.NonNull;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
+import androidx.recyclerview.widget.SimpleItemAnimator;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 
@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 //基于DefaultItemAnimator扩展的BaseItemAnimation，暴露常用方法
+/**
+ * 封装 Base Item Animation 相关逻辑的类。
+ */
 public abstract class BaseItemAnimation extends SimpleItemAnimator {
     private static final boolean DEBUG = false;
 
@@ -112,8 +115,11 @@ public abstract class BaseItemAnimation extends SimpleItemAnimator {
                 }
             };
             if (removalsPending) {
-                View view = moves.get(0).holder.itemView;
-                ViewCompat.postOnAnimationDelayed(view, mover, getRemoveDuration());
+                // 检查moves是否为空，防止数组越界
+                if (!moves.isEmpty()) {
+                    View view = moves.get(0).holder.itemView;
+                    ViewCompat.postOnAnimationDelayed(view, mover, getRemoveDuration());
+                }
             } else {
                 mover.run();
             }
@@ -135,8 +141,11 @@ public abstract class BaseItemAnimation extends SimpleItemAnimator {
                 }
             };
             if (removalsPending) {
-                ViewHolder holder = changes.get(0).oldHolder;
-                ViewCompat.postOnAnimationDelayed(holder.itemView, changer, getRemoveDuration());
+                // 检查changes是否为空，防止数组越界
+                if (!changes.isEmpty()) {
+                    ViewHolder holder = changes.get(0).oldHolder;
+                    ViewCompat.postOnAnimationDelayed(holder.itemView, changer, getRemoveDuration());
+                }
             } else {
                 changer.run();
             }
@@ -162,8 +171,11 @@ public abstract class BaseItemAnimation extends SimpleItemAnimator {
                 long moveDuration = movesPending ? getMoveDuration() : 0;
                 long changeDuration = changesPending ? getChangeDuration() : 0;
                 long totalDelay = removeDuration + Math.max(moveDuration, changeDuration);
-                View view = additions.get(0).itemView;
-                ViewCompat.postOnAnimationDelayed(view, adder, totalDelay);
+                // 检查additions是否为空，防止数组越界
+                if (!additions.isEmpty()) {
+                    View view = additions.get(0).itemView;
+                    ViewCompat.postOnAnimationDelayed(view, adder, totalDelay);
+                }
             } else {
                 adder.run();
             }

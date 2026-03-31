@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- 下面定义了公共的标题栏布局 -->
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/tl_head"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -31,5 +31,5 @@
                 android:src="@drawable/ic_share"
                 android:scaleType="fitCenter" />
         </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 </merge>

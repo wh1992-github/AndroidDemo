@@ -1,10 +1,13 @@
 package com.example.customview.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.customview.R;
 import com.example.customview.widget.RadarWaveView;
+/**
+ * 用于展示 Radar 功能的 Activity。
+ */
 
 public class RadarActivity extends AppCompatActivity {
 

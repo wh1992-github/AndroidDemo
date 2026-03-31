@@ -15,6 +15,9 @@ import com.example.hezi.R;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于适配 Vertical Vp 数据的适配器。
+ */
 
 public class VerticalVpAdapter extends RecyclerView.Adapter<VerticalVpAdapter.VerticalVpViewHolder> {
     private List<Integer> backgrounds;

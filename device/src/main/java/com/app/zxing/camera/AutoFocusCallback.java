@@ -20,6 +20,9 @@ import android.hardware.Camera;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+/**
+ * 用于处理 Auto Focus 回调逻辑的回调类型。
+ */
 
 final class AutoFocusCallback implements Camera.AutoFocusCallback {
     private static final String TAG = "AutoFocusCallback";

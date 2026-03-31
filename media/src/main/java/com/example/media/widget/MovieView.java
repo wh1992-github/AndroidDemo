@@ -20,6 +20,9 @@ import com.example.media.util.Utils;
 import com.example.media.widget.VolumeDialog.VolumeAdjustListener;
 
 //电影视图支持以下功能：自动全屏、调节音量、收缩控制栏、设置背景
+/**
+ * 用于展示 Movie 效果的自定义 View。
+ */
 public class MovieView extends VideoView implements
         OnTouchListener, OnKeyListener, VolumeAdjustListener {
     private static final String TAG = "MovieView";

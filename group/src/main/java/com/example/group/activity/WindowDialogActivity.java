@@ -8,8 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
@@ -24,6 +24,9 @@ import com.example.group.windowdialog.RightDialog;
 import com.example.group.windowdialog.WeiBoDialogUtils;
 import com.example.group.windowdialog.WindowDialog;
 import com.example.group.windowdialog.WindowService;
+/**
+ * 用于展示 Window Dialog 功能的 Activity。
+ */
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class WindowDialogActivity extends AppCompatActivity implements OnItemClickListener {

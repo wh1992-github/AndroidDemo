@@ -20,6 +20,9 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
+/**
+ * 封装 Image Cache 相关逻辑的类。
+ */
 
 @SuppressLint("StaticFieldLeak")
 public class ImageCache {

@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.hezi.R;
+/**
+ * 用于承载 Message 内容的 Fragment。
+ */
 
 public class MessageFragment extends Fragment {
     @Override

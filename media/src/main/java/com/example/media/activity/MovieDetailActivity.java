@@ -13,7 +13,7 @@ import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Rational;
 import android.widget.RelativeLayout;

@@ -3,12 +3,15 @@ package com.example.group.activity;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
 import com.example.group.R;
 import com.example.group.util.LocalBroadcastManager;
+/**
+ * 用于展示 Local Broadcast 功能的 Activity。
+ */
 
 public class LocalBroadcastActivity extends AppCompatActivity {
     private static final String TAG = "LocalBroadcastActivity";

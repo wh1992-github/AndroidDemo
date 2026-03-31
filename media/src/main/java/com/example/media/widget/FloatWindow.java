@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+/**
+ * 封装 Float Window 相关逻辑的类。
+ */
 
 @SuppressLint("ClickableViewAccessibility")
 public class FloatWindow extends View {

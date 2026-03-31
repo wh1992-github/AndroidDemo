@@ -17,6 +17,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+/**
+ * 提供 Bitmap 相关工具方法的工具类。
+ */
 
 public class BitmapUtils {
     //将bitmap保存到本地

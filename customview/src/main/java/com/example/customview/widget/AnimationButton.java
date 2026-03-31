@@ -362,6 +362,27 @@ public class AnimationButton extends View {
         invalidate();
     }
 
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        // 取消所有动画
+        if (animatorSet != null && animatorSet.isRunning()) {
+            animatorSet.cancel();
+        }
+        if (animator_rect_to_angle != null && animator_rect_to_angle.isRunning()) {
+            animator_rect_to_angle.cancel();
+        }
+        if (animator_rect_to_square != null && animator_rect_to_square.isRunning()) {
+            animator_rect_to_square.cancel();
+        }
+        if (animator_move_to_up != null && animator_move_to_up.isRunning()) {
+            animator_move_to_up.cancel();
+        }
+        if (animator_draw_ok != null && animator_draw_ok.isRunning()) {
+            animator_draw_ok.cancel();
+        }
+    }
+
     /**
      * 借口回调
      */

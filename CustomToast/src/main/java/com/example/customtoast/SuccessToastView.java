@@ -9,6 +9,9 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+/**
+ * 用于展示 Success Toast 效果的自定义 View。
+ */
 
 public class SuccessToastView extends View {
 

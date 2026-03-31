@@ -2,7 +2,7 @@ package com.example.middle.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -15,6 +15,9 @@ import com.example.middle.adapter.SearchAdapter;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+/**
+ * 用于展示 Edit Auto 功能的 Activity。
+ */
 
 public class EditAutoActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "EditAutoActivity";

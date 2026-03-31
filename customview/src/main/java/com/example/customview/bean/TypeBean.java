@@ -1,4 +1,7 @@
 package com.example.customview.bean;
+/**
+ * 用于描述 Type 数据的实体类。
+ */
 
 public class TypeBean {
     private String title;

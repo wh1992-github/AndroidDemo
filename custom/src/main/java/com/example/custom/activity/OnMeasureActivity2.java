@@ -1,7 +1,7 @@
 package com.example.custom.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.custom.R;
 import com.example.custom.adapter.PlanetListAdapter;

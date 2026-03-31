@@ -4,6 +4,9 @@ import android.util.Log;
 
 import java.util.Calendar;
 import java.util.Date;
+/**
+ * 封装 Special Calendar 相关逻辑的类。
+ */
 
 public class SpecialCalendar {
     private static final String TAG = "SpecialCalendar";

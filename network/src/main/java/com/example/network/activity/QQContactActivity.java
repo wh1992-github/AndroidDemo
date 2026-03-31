@@ -8,8 +8,8 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,25 +26,27 @@ import com.example.network.task.QueryFriendTask.OnQueryFriendListener;
 import com.example.network.thread.ClientThread;
 import com.google.gson.Gson;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Locale;
 
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint("StaticFieldLeak")
 public class QQContactActivity extends AppCompatActivity implements
         OnClickListener, OnQueryFriendListener {
     private static final String TAG = "QQContactActivity";
-    private static Context mContext;
-    private static ExpandableListView elv_friend; //声明一个可折叠列表视图对象
-    private static ArrayList<FriendGroup> mGroupList = new ArrayList<FriendGroup>(); //好友分组队列
-    private static FriendGroup mGroupOnline = new FriendGroup(); //在线好友分组
+    private static WeakReference<QQContactActivity> activityRef; // WeakReference for static BroadcastReceiver
+    private Context mContext;  // 改为实例变量，防止内存泄漏
+    private ExpandableListView elv_friend; //声明一个可折叠列表视图对象 - 改为实例变量
+    private ArrayList<FriendGroup> mGroupList = new ArrayList<FriendGroup>(); //好友分组队列 - 改为实例变量
+    private FriendGroup mGroupOnline = new FriendGroup(); //在线好友分组 - 改为实例变量
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qq_contact);
+        activityRef = new WeakReference<>(this); // Set WeakReference for static BroadcastReceiver
         //从布局文件中获取名叫tl_head的工具栏
         Toolbar tl_head = findViewById(R.id.tl_head);
         //设置工具栏的标题文本
@@ -110,6 +112,11 @@ public class QQContactActivity extends AppCompatActivity implements
 
     @Override
     protected void onDestroy() {
+        // 清理WeakReference，防止内存泄漏
+        if (activityRef != null) {
+            activityRef.clear();
+            activityRef = null;
+        }
         //向后端服务器发送注销请求
         MainApplication.getInstance().sendAction(ClientThread.LOGOUT, "", "");
         super.onDestroy();
@@ -136,23 +143,36 @@ public class QQContactActivity extends AppCompatActivity implements
     public static class GetListReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
+            QQContactActivity activity = activityRef != null ? activityRef.get() : null;
+            if (activity == null) {
+                Log.w(TAG, "Activity is null, ignoring broadcast");
+                return;
+            }
             if (intent != null) {
                 Log.d(TAG, "onReceive");
                 //从意图中解包得到在线好友的消息内容
                 String content = intent.getStringExtra(ClientThread.CONTENT);
-                if (mContext != null && content != null && content.length() > 0) {
-                    showFriendOnline(content); //显示在线好友列表
+                if (activity.mContext != null && content != null && content.length() > 0) {
+                    activity.showFriendOnline(content); //显示在线好友列表
                 }
             }
         }
     }
 
     //显示在线好友列表
-    private static void showFriendOnline(String content) {
+    private void showFriendOnline(String content) {
         int pos = content.indexOf(ClientThread.SPLIT_LINE);
+        if (pos <= 0) {
+            Log.w(TAG, "Invalid message format: SPLIT_LINE not found or at beginning");
+            return;
+        }
         String head = content.substring(0, pos); //消息头部
         String body = content.substring(pos + 1); //消息主体
         String[] splitArray = head.split(ClientThread.SPLIT_ITEM);
+        if (splitArray.length == 0) {
+            Log.w(TAG, "Invalid message format: empty split array");
+            return;
+        }
         if (splitArray[0].equals(ClientThread.GETLIST)) { //是获取好友列表
             String[] bodyArray = body.split("\\|"); //每条好友记录之间以竖线分隔
             ArrayList<Friend> friendList = new ArrayList<>();
@@ -172,7 +192,7 @@ public class QQContactActivity extends AppCompatActivity implements
     }
 
     //显示所有好友分组
-    private static void showAllFriend() {
+    private void showAllFriend() {
         ArrayList<FriendGroup> all_group = new ArrayList<>();
         all_group.add(mGroupOnline); //先往好友队列添加在线好友
         all_group.addAll(mGroupList); //再往好友队列添加各好友分组

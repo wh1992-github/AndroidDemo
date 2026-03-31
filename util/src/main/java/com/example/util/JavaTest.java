@@ -3,6 +3,9 @@ package com.example.util;
 import android.util.Log;
 
 import java.util.Arrays;
+/**
+ * 用于验证 Java Test 行为的测试类。
+ */
 
 public class JavaTest {
     private static final String TAG = "Test";

@@ -1,4 +1,7 @@
 package com.example.network.bean;
+/**
+ * 用于描述 Apk 数据的实体类。
+ */
 
 public class ApkInfo {
     public String file_name;

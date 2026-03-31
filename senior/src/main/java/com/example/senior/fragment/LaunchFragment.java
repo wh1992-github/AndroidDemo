@@ -2,7 +2,7 @@ package com.example.senior.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,6 +15,9 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.senior.R;
+/**
+ * 用于承载 Launch 内容的 Fragment。
+ */
 
 public class LaunchFragment extends Fragment {
     protected View mView; //声明一个视图对象

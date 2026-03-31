@@ -9,6 +9,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hezi.databinding.ActivityConstraintBinding;
+/**
+ * 用于展示 Constraint Layout 功能的 Activity。
+ */
 
 @SuppressLint("LongLogTag")
 public class ConstraintLayoutActivity extends AppCompatActivity {

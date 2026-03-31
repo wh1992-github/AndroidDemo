@@ -1,6 +1,9 @@
 package org.vudroid.djvudroid.codec;
 
 import org.vudroid.core.codec.CodecDocument;
+/**
+ * 封装 Djvu Document 相关逻辑的类。
+ */
 
 public class DjvuDocument implements CodecDocument {
     private long documentHandle;

@@ -13,6 +13,9 @@ import com.example.device.R;
 import java.util.ArrayList;
 
 //展示连拍缩略图的网格适配器
+/**
+ * 用于适配 Shooting 数据的适配器。
+ */
 public class ShootingAdapter extends BaseAdapter {
     private ArrayList<String> mPathList;
     private Context mContext;

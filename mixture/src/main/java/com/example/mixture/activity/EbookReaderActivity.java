@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +29,9 @@ import com.example.mixture.widget.InputDialogFragment.InputCallbacks;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Map;
+/**
+ * 用于展示 Ebook Reader 功能的 Activity。
+ */
 
 public class EbookReaderActivity extends AppCompatActivity implements
         OnClickListener, OnItemClickListener, OnItemLongClickListener,

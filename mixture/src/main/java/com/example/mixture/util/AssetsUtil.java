@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+/**
+ * 提供 Assets 相关工具方法的工具类。
+ */
 
 public class AssetsUtil {
 

@@ -1,4 +1,7 @@
 package com.example.util;
+/**
+ * 提供 CRC 相关工具方法的工具类。
+ */
 
 public class CRCUtils {
     private static int[] crc_table = {

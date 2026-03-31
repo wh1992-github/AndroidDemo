@@ -6,6 +6,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.viewpager.widget.PagerAdapter;
+/**
+ * 用于适配 Three 数据的适配器。
+ */
 
 public class ThreeAdapter extends PagerAdapter {
 

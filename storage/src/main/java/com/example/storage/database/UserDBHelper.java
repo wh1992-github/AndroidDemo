@@ -11,6 +11,9 @@ import com.example.storage.bean.UserInfo;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 提供 User DB 相关工具方法的工具类。
+ */
 
 
 public class UserDBHelper extends SQLiteOpenHelper {
@@ -123,7 +126,9 @@ public class UserDBHelper extends SQLiteOpenHelper {
             //如果存在同名记录,则更新记录
             //注意条件语句的等号后面要用单引号括起来
             if (info.name != null && info.name.length() > 0) {
-                String condition = String.format(Locale.getDefault(), "name='%s'", info.name);
+                // 转义单引号，防止SQL注入
+                String escapedName = info.name.replace("'", "''");
+                String condition = String.format(Locale.getDefault(), "name='%s'", escapedName);
                 tempArray = query(condition);
                 if (tempArray.size() > 0) {
                     update(info, condition);
@@ -133,7 +138,9 @@ public class UserDBHelper extends SQLiteOpenHelper {
             }
             //如果存在同样的手机号码,则更新记录
             if (info.phone != null && info.phone.length() > 0) {
-                String condition = String.format(Locale.getDefault(), "phone='%s'", info.phone);
+                // 转义单引号，防止SQL注入
+                String escapedPhone = info.phone.replace("'", "''");
+                String condition = String.format(Locale.getDefault(), "phone='%s'", escapedPhone);
                 tempArray = query(condition);
                 if (tempArray.size() > 0) {
                     update(info, condition);
@@ -212,7 +219,9 @@ public class UserDBHelper extends SQLiteOpenHelper {
     //根据手机号码查询指定记录
     public UserInfo queryByPhone(String phone) {
         UserInfo info = null;
-        ArrayList<UserInfo> infoArray = query(String.format(Locale.getDefault(), "phone='%s'", phone));
+        // 转义单引号，防止SQL注入
+        String escapedPhone = phone.replace("'", "''");
+        ArrayList<UserInfo> infoArray = query(String.format(Locale.getDefault(), "phone='%s'", escapedPhone));
         if (infoArray.size() > 0) {
             info = infoArray.get(0);
         }

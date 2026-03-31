@@ -1,7 +1,7 @@
 package com.example.customview.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +13,9 @@ import com.example.customview.bean.HoverItemModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+/**
+ * 封装 Hover Item Adapter 3 相关逻辑的类。
+ */
 
 public class HoverItemAdapter3 extends RecyclerView.Adapter<HoverItemAdapter3.MyViewHolder> {
     public static final int HAS_STICKY_VIEW = 1;

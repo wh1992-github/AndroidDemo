@@ -3,6 +3,9 @@ package com.example.thirdsdk.util;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
+/**
+ * 提供 Sign 相关工具方法的工具类。
+ */
 
 public class SignUtils {
     private static final String ALGORITHM = "RSA";

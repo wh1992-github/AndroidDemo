@@ -1,7 +1,7 @@
 package com.example.custom.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -10,6 +10,9 @@ import com.example.custom.widget.BezierCustomView1;
 import com.example.custom.widget.BezierCustomView2;
 
 //高阶贝塞尔曲线
+/**
+ * 用于展示 Bezier Custom 功能的 Activity。
+ */
 public class BezierCustomActivity extends AppCompatActivity {
 
     private Button mButton;

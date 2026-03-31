@@ -10,7 +10,7 @@ import android.nfc.tech.IsoDep;
 import android.nfc.tech.MifareClassic;
 import android.nfc.tech.NfcA;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.TextView;

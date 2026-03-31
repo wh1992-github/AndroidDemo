@@ -9,6 +9,9 @@ import android.view.WindowManager;
 
 import java.util.List;
 import java.util.regex.Pattern;
+/**
+ * 提供 Camera 相关工具方法的工具类。
+ */
 
 public class CameraUtil {
     private static final String TAG = "CameraUtil";
@@ -83,6 +86,10 @@ public class CameraUtil {
 
     public static Camera.Size getMaxPictureSize(Camera.Parameters params) {
         List<Camera.Size> supportedSizes = params.getSupportedPictureSizes();
+        // 检查列表是否为空，防止数组越界
+        if (supportedSizes == null || supportedSizes.isEmpty()) {
+            return null;
+        }
         Camera.Size maxSize = supportedSizes.get(0);
         for (Camera.Size size : supportedSizes) {
             if (size.width > maxSize.width) {

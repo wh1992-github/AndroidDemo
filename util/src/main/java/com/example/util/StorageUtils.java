@@ -9,6 +9,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+/**
+ * 提供 Storage 相关工具方法的工具类。
+ */
 
 public class StorageUtils {
     private static final String TAG = "StorageUtils";

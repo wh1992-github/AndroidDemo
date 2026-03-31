@@ -1,6 +1,9 @@
 package com.example.test.sm3;
 
 import java.math.BigInteger;
+/**
+ * 提供 Util 相关工具方法的工具类。
+ */
 
 public class Util {
     //整形转换成网络传输的字节流（字节数组）型数据

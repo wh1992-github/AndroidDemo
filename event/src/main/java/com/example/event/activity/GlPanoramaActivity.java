@@ -1,7 +1,7 @@
 package com.example.event.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -9,6 +9,9 @@ import android.widget.Spinner;
 
 import com.example.event.R;
 import com.example.event.widget.PanoramaView;
+/**
+ * 用于展示 Gl Panorama 功能的 Activity。
+ */
 
 public class GlPanoramaActivity extends AppCompatActivity {
     private static final String TAG = "GlPanoramaActivity";

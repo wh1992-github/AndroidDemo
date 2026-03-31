@@ -9,6 +9,9 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
 import com.example.customview.R;
+/**
+ * 用于展示 Recycler QQ Item 效果的自定义 View。
+ */
 
 public class RecyclerQQItemView extends HorizontalScrollView {
     private LinearLayout slide;//滑动弹出的按钮容器

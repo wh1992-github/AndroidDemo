@@ -10,8 +10,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -142,6 +142,10 @@ public class LocationActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        // 清理Handler回调
+        if (mHandler != null) {
+            mHandler.removeCallbacks(mRefresh);
+        }
         if (mLocationMgr != null) {
             //移除定位管理器的位置变更监听器
             mLocationMgr.removeUpdates(mLocationListener);

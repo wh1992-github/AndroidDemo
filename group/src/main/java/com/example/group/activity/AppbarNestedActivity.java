@@ -1,11 +1,14 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Window;
 
 import com.example.group.R;
+/**
+ * 用于展示 Appbar Nested 功能的 Activity。
+ */
 
 public class AppbarNestedActivity extends AppCompatActivity {
 

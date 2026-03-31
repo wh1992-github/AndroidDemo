@@ -11,6 +11,9 @@ import android.content.pm.ServiceInfo;
 import android.os.Bundle;
 
 //元数据工具类, 用于获取清单内声明的元数据
+/**
+ * 提供 Meta Data 相关工具方法的工具类。
+ */
 public class MetaDataUtil {
     private static final String TAG = "MetaDataUtil";
 

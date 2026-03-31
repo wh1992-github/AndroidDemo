@@ -3,7 +3,7 @@ package com.example.group.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.group.R;
@@ -13,6 +13,9 @@ import com.example.group.rxjava.RxJavaActivity01;
 import com.example.group.rxjava.RxJavaActivity02;
 import com.example.group.rxjava.RxJavaActivity03;
 import com.example.group.rxjava.RxJavaActivity04;
+/**
+ * 用于展示 Rx Java Retrofit Ok Http 功能的 Activity。
+ */
 
 @SuppressLint("NonConstantResourceId")
 public class RxJavaRetrofitOkHttpActivity extends AppCompatActivity implements View.OnClickListener {

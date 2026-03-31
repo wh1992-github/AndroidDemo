@@ -7,6 +7,9 @@ import com.alibaba.android.arouter.facade.service.SerializationService;
 import com.google.gson.Gson;
 
 import java.lang.reflect.Type;
+/**
+ * 封装 Json Service Impl 相关逻辑的类。
+ */
 
 @Route(path = "/service/json")
 public class JsonServiceImpl implements SerializationService {

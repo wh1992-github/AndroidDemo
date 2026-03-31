@@ -14,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.senior.R;
+/**
+ * 用于承载 Static 内容的 Fragment。
+ */
 
 public class StaticFragment extends Fragment implements OnClickListener {
     private static final String TAG = "StaticFragment";

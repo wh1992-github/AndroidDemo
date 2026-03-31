@@ -1,6 +1,9 @@
 package com.example.performance.cache;
 
 import android.graphics.Point;
+/**
+ * 用于定义 Image Cache 配置项的配置类。
+ */
 
 public final class ImageCacheConfig {
     final String mDir; //缓存图片的文件目录

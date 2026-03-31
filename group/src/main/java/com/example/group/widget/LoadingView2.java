@@ -9,6 +9,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+/**
+ * 封装 Loading View 2 相关逻辑的类。
+ */
 
 public class LoadingView2 extends View {
     private static final String TAG = "LoadingView2";

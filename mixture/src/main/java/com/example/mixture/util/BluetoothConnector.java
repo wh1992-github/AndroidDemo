@@ -12,6 +12,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+/**
+ * 封装 Bluetooth Connector 相关逻辑的类。
+ */
 
 public class BluetoothConnector {
     private static final String TAG = "BluetoothConnector";

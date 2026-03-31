@@ -17,6 +17,9 @@ import android.view.View;
 import com.example.event.R;
 
 import java.util.ArrayList;
+/**
+ * 用于展示 Signature 效果的自定义 View。
+ */
 
 @SuppressLint("ClickableViewAccessibility")
 public class SignatureView extends View {

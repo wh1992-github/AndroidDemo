@@ -1,10 +1,10 @@
 package com.example.group.livedata;
 
 import android.annotation.SuppressLint;
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +13,9 @@ import android.widget.TextView;
 import com.example.group.R;
 import com.example.group.activity.LiveDataSampleActivity;
 import com.example.group.util.LogUtil;
+/**
+ * 用于承载 One 内容的 Fragment。
+ */
 
 @SuppressLint("SetTextI18n")
 public class OneFragment extends BaseFragment {

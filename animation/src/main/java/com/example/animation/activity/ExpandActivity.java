@@ -1,7 +1,7 @@
 package com.example.animation.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.animation.R;
 import com.example.animation.widget.ExpandTextLayout;

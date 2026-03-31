@@ -24,6 +24,9 @@ import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 import retrofit2.http.Streaming;
 import retrofit2.http.Url;
+/**
+ * 用于约束 Retrofit API 相关能力的接口。
+ */
 
 public interface RetrofitAPI {
     //这里特别说明Url的组成，retrofit把网络请求的Url分成两部分设置：第一部分在创建Retrofit实例时通过.baseUrl()设置，

@@ -1,4 +1,7 @@
 package com.example.thirdsdk.bean;
+/**
+ * 封装 Alipay Constants 相关逻辑的类。
+ */
 
 public class AlipayConstants {
 

@@ -1,8 +1,8 @@
 package com.example.customview.widget.banner;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v4.view.ViewPager;
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -15,6 +15,9 @@ import com.example.customview.widget.banner.adapter.BannerViewPagerAdapter;
 import com.example.customview.widget.banner.holder.BannerViewHolderCreator;
 
 import java.util.List;
+/**
+ * 用于展示 Banner 效果的自定义 View。
+ */
 
 public class BannerView extends RelativeLayout implements ViewPager.OnPageChangeListener {
     private static final String TAG = "BannerView";

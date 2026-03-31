@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.hezi.R;
+/**
+ * 用于展示 Horizontal 功能的 Activity。
+ */
 
 public class HorizontalActivity extends AppCompatActivity {
     private static final String TAG = "HorizontalActivity";

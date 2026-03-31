@@ -1,4 +1,7 @@
 package com.example.storage.bean;
+/**
+ * 用于描述 Call 数据的实体类。
+ */
 
 public class CallRecord {
     public String name;

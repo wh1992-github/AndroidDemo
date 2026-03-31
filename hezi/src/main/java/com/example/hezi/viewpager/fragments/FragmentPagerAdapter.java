@@ -16,6 +16,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.viewpager.widget.PagerAdapter;
+/**
+ * 用于适配 Fragment Pager 数据的适配器。
+ */
 
 public abstract class FragmentPagerAdapter extends PagerAdapter {
     private static final String TAG = "FragmentPagerAdapter";

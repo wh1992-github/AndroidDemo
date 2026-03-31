@@ -11,6 +11,9 @@ import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+/**
+ * 用于执行 Audio Record 任务的任务类。
+ */
 
 public class AudioRecordTask extends AsyncTask<String, Integer, Void> {
     private static final String TAG = "AudioRecordTask";
@@ -23,16 +26,18 @@ public class AudioRecordTask extends AsyncTask<String, Integer, Void> {
         int frequence = Integer.parseInt(arg0[1]); //第二个参数是音频的采样频率,单位赫兹
         int channel = Integer.parseInt(arg0[2]); //第三个参数是音频的声道配置
         int format = Integer.parseInt(arg0[3]); //第四个参数是音频的编码格式
+        DataOutputStream dos = null;
+        AudioRecord record = null;
         try {
             //开通输出流到指定的文件
-            DataOutputStream dos = new DataOutputStream(
+            dos = new DataOutputStream(
                     new BufferedOutputStream(new FileOutputStream(recordFile)));
             //根据定义好的几个配置,来获取合适的缓冲大小
             int bsize = AudioRecord.getMinBufferSize(frequence, channel, format);
             //定义缓冲区
             short[] buffer = new short[bsize];
             //根据音频配置和缓冲区构建音轨录制实例
-            AudioRecord record = new AudioRecord(AudioSource.MIC,
+            record = new AudioRecord(AudioSource.MIC,
                     frequence, channel, format, bsize);
             //设置需要通知的时间周期为1秒
             record.setPositionNotificationPeriod(1000);
@@ -48,12 +53,26 @@ public class AudioRecordTask extends AsyncTask<String, Integer, Void> {
                     dos.writeShort(buffer[i]);
                 }
             }
-            //取消录制任务,则停止音轨录制
-            record.stop();
-            dos.close();
             Log.d(TAG, "file_path=" + arg0[0] + ", length=" + recordFile.length());
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            //取消录制任务,则停止音轨录制
+            if (record != null) {
+                try {
+                    record.stop();
+                    record.release();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (dos != null) {
+                try {
+                    dos.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -70,6 +89,14 @@ public class AudioRecordTask extends AsyncTask<String, Integer, Void> {
         if (mListener != null) {
             mListener.onRecordFinish();
         }
+        //移除刷新录制进度的任务
+        mHandler.removeCallbacks(mRecordRun);
+    }
+
+    //线程已经取消
+    @Override
+    protected void onCancelled(Void result) {
+        super.onCancelled(result);
         //移除刷新录制进度的任务
         mHandler.removeCallbacks(mRecordRun);
     }

@@ -4,10 +4,13 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+/**
+ * 用于展示 Indicator 效果的自定义 View。
+ */
 
 public class IndicatorView extends View {
 

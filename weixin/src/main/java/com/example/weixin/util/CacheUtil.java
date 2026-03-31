@@ -15,6 +15,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+/**
+ * 提供 Cache 相关工具方法的工具类。
+ */
 
 public class CacheUtil {
     private static final String TAG = "CacheUtil";

@@ -3,7 +3,7 @@ package com.example.group.activity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
@@ -12,6 +12,9 @@ import android.widget.TextView;
 import com.example.group.R;
 import com.example.group.widget.NumberProgressBar;
 import com.example.group.widget.NumberSeekBar;
+/**
+ * 用于展示 Progress Bar Seek Bar 功能的 Activity。
+ */
 
 @SuppressLint({"LongLogTag", "SetTextI18n"})
 public class ProgressBarSeekBarActivity extends AppCompatActivity {

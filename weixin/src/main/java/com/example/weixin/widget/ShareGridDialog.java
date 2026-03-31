@@ -17,9 +17,12 @@ import android.widget.GridView;
 import com.example.weixin.adapter.ShareGridAdapter;
 import com.example.weixin.bean.ShareChanels;
 
-import net.sourceforge.simcpux.R;
+import com.example.weixin.R;
 
 import java.util.ArrayList;
+/**
+ * 用于展示 Share Grid 内容的对话框类。
+ */
 
 @SuppressLint("HandlerLeak")
 public class ShareGridDialog implements OnClickListener {

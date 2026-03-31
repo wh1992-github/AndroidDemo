@@ -13,6 +13,9 @@ import com.example.hezi.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+/**
+ * 用于展示 Step 效果的自定义 View。
+ */
 
 public class StepView extends View {
     private static final int START_STEP = 1;

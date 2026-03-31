@@ -3,6 +3,9 @@ package com.example.thirdsdk;
 import android.app.Application;
 
 import com.iflytek.cloud.SpeechUtility;
+/**
+ * 用于维护 Main Application 全局初始化逻辑的应用类。
+ */
 
 public class MainApplication extends Application {
 

@@ -6,6 +6,9 @@ import com.example.network.R;
 import com.example.network.util.ApkUtil;
 
 import java.util.ArrayList;
+/**
+ * 用于描述 Package 数据的实体类。
+ */
 
 public class PackageInfo {
     public String app_name;

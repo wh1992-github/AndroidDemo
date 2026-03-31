@@ -4,6 +4,9 @@ import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+/**
+ * 提供 Keyboard 相关工具方法的工具类。
+ */
 
 public class KeyboardUtil {
     private static final String TAG = "KeyboardUtil";

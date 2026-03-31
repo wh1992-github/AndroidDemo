@@ -19,6 +19,9 @@ import com.example.animation.R;
 import com.example.animation.util.Utils;
 
 import java.util.ArrayList;
+/**
+ * 封装 Banner Flipper 相关逻辑的类。
+ */
 
 public class BannerFlipper extends RelativeLayout {
     private static final String TAG = "BannerFlipper";

@@ -2,7 +2,7 @@ package com.example.group.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +11,9 @@ import android.widget.TextView;
 import com.example.group.R;
 
 import java.util.Locale;
+/**
+ * 用于承载 Tab First 内容的 Fragment。
+ */
 
 public class TabFirstFragment extends Fragment {
     private static final String TAG = "TabFirstFragment";

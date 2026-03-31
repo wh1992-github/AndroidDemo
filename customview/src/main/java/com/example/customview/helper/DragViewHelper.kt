@@ -9,6 +9,9 @@ import android.widget.RelativeLayout
 import com.example.customview.R
 import com.example.customview.listener.OnDragTouchListener
 import com.example.customview.utils.DisplayUtils
+/**
+ * 提供 Drag View 相关工具方法的工具类。
+ */
 
 object DragViewHelper {
 

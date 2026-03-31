@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+/**
+ * 提供 Serializable 相关工具方法的工具类。
+ */
 
 public class SerializableUtil {
     private static final String TAG = "SerializableUtil";

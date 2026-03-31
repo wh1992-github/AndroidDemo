@@ -17,6 +17,9 @@ import com.example.media.http.tool.HttpRespData;
 import com.example.media.widget.FloatWindow;
 
 import java.util.Locale;
+/**
+ * 用于处理 Stock 相关后台工作的 Service。
+ */
 
 @SuppressLint("HandlerLeak")
 public class StockService extends Service {

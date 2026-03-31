@@ -6,6 +6,9 @@ import android.util.Log;
 
 import java.io.File;
 import java.util.Locale;
+/**
+ * 提供 Media 相关工具方法的工具类。
+ */
 
 
 public class MediaUtil {

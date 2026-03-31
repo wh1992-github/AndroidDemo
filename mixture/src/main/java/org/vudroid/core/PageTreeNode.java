@@ -8,6 +8,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 
 import java.lang.ref.SoftReference;
+/**
+ * 封装 Page Tree Node 相关逻辑的类。
+ */
 
 class PageTreeNode {
     private static final int SLICE_SIZE = 65535;

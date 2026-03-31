@@ -8,6 +8,9 @@ import android.text.format.Formatter;
 import android.util.Log;
 
 import java.io.File;
+/**
+ * 提供 System Path 相关工具方法的工具类。
+ */
 
 public class SystemPathUtil {
     private static final String TAG = "SystemPathUtil";

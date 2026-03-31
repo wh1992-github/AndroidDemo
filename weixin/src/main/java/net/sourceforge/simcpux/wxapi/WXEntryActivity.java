@@ -1,7 +1,7 @@
 package net.sourceforge.simcpux.wxapi;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -10,6 +10,9 @@ import com.tencent.mm.sdk.modelbase.BaseResp;
 import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 
 //以下是微信默认的回调入口。调用微信包libammsdk.jar时调用该入口
+/**
+ * 用于展示 WX Entry 功能的 Activity。
+ */
 public class WXEntryActivity extends AppCompatActivity implements IWXAPIEventHandler {
     private static final String TAG = "WXEntryActivity";
 

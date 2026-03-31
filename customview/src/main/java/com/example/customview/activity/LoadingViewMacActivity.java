@@ -1,13 +1,16 @@
 package com.example.customview.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.customview.R;
 import com.example.customview.loadingview.mac.LVComputer;
 import com.example.customview.loadingview.mac.LVComputerDesktop;
 import com.example.customview.loadingview.mac.LVComputerIpad;
+/**
+ * 用于展示 Loading View Mac 功能的 Activity。
+ */
 
 public class LoadingViewMacActivity extends AppCompatActivity {
 

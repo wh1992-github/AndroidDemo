@@ -1,7 +1,7 @@
 package com.example.mixture.wifi;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +11,9 @@ import android.widget.TextView;
 import com.example.mixture.R;
 
 import java.util.List;
+/**
+ * 用于适配 Wifi List 2 数据的适配器。
+ */
 
 public class WifiList2Adapter extends RecyclerView.Adapter<WifiList2Adapter.WifiViewHolder> {
     private List<AccessPoint> list;

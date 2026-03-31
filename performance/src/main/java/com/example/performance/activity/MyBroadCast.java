@@ -7,6 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.util.Log;
+/**
+ * 封装 My Broad Cast 相关逻辑的类。
+ */
 
 public class MyBroadCast extends BroadcastReceiver {
 

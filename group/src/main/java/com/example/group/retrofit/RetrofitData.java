@@ -1,4 +1,7 @@
 package com.example.group.retrofit;
+/**
+ * 用于描述 Retrofit 数据的实体类。
+ */
 
 public class RetrofitData<T> {
     private int code;

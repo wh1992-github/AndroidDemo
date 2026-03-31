@@ -10,6 +10,9 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+/**
+ * 用于展示 Marquee 效果的自定义 View。
+ */
 
 public class MarqueeView extends View implements Runnable {
     private static final String TAG = "MarqueeView";

@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.util.DisplayMetrics;
 
 import com.aqi00.lib.R;
+/**
+ * 封装 File Resource 相关逻辑的类。
+ */
 
 public class FileResource {
 

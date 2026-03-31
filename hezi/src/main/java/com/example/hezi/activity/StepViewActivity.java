@@ -10,6 +10,9 @@ import com.example.hezi.view.StepView;
 
 import java.util.Arrays;
 import java.util.List;
+/**
+ * 用于展示 Step View 功能的 Activity。
+ */
 
 public class StepViewActivity extends AppCompatActivity {
 

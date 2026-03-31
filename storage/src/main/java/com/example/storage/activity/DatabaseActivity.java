@@ -3,7 +3,7 @@ package com.example.storage.activity;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -37,6 +37,10 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
             SQLiteDatabase db = openOrCreateDatabase(mDatabaseName, Context.MODE_PRIVATE, null);
             String desc = String.format(Locale.getDefault(), "数据库%s创建%s", mDatabaseName, (db != null) ? "成功" : "失败");
             tv_database.setText(desc);
+            //使用完数据库后需要关闭
+            if (db != null) {
+                db.close();
+            }
         } else if (v.getId() == R.id.btn_database_delete) {
             //删除数据库
             boolean result = deleteDatabase(mDatabaseName);

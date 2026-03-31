@@ -1,0 +1,658 @@
+./gradlew: line 23: cd: "./: No such file or directory
+
+> Configure project :mixture
+[CXX5202] This app only has 32-bit [armeabi-v7a,x86] native libraries. Beginning August 1, 2019 Google Play store requires that all apps that include native libraries must provide 64-bit versions. For more information, visit https://g.co/64-bit-requirement
+[CXX5202] This app only has 32-bit [armeabi-v7a,x86] native libraries. Beginning August 1, 2019 Google Play store requires that all apps that include native libraries must provide 64-bit versions. For more information, visit https://g.co/64-bit-requirement
+WARNING:[CXX5202] This app only has 32-bit [armeabi-v7a,x86] native libraries. Beginning August 1, 2019 Google Play store requires that all apps that include native libraries must provide 64-bit versions. For more information, visit https://g.co/64-bit-requirement
+[CXX5202] This app only has 32-bit [armeabi-v7a,x86] native libraries. Beginning August 1, 2019 Google Play store requires that all apps that include native libraries must provide 64-bit versions. For more information, visit https://g.co/64-bit-requirement
+WARNING:[CXX5202] This app only has 32-bit [armeabi-v7a,x86] native libraries. Beginning August 1, 2019 Google Play store requires that all apps that include native libraries must provide 64-bit versions. For more information, visit https://g.co/64-bit-requirement
+[CXX5202] This app only has 32-bit [armeabi-v7a,x86] native libraries. Beginning August 1, 2019 Google Play store requires that all apps that include native libraries must provide 64-bit versions. For more information, visit https://g.co/64-bit-requirement
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+
+> Task :clean
+> Task :animation:clean
+> Task :app:clean
+> Task :custom:clean
+> Task :CustomToast:clean
+> Task :customview:clean
+> Task :device:clean
+> Task :event:clean
+> Task :filedialog:clean
+> Task :group:clean
+> Task :junior:clean
+> Task :media:clean
+> Task :middle:clean
+
+> Task :mixture:externalNativeBuildCleanDebug
+Clean jni_mix-x86
+
+> Task :mixture:externalNativeBuildCleanRelease
+> Task :mixture:clean
+> Task :network:clean
+> Task :performance:clean
+> Task :senior:clean
+> Task :storage:clean
+> Task :test:clean
+> Task :util:clean
+> Task :weixin:clean
+> Task :animation:preBuild UP-TO-DATE
+> Task :animation:preDebugBuild UP-TO-DATE
+> Task :animation:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :animation:compileDebugAidl NO-SOURCE
+> Task :animation:compileDebugRenderscript NO-SOURCE
+> Task :animation:generateDebugBuildConfig
+> Task :animation:javaPreCompileDebug
+> Task :animation:checkDebugAarMetadata
+> Task :animation:generateDebugResValues
+> Task :animation:mapDebugSourceSetPaths
+> Task :animation:generateDebugResources
+> Task :animation:createDebugCompatibleScreenManifests
+> Task :animation:extractDeepLinksDebug
+
+> Task :animation:processDebugMainManifest
+package="com.example.animation" found in source AndroidManifest.xml: D:\code\AndroidDemo\animation\src\main\AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+[com.android.support:animated-vector-drawable:28.0.0] D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\069b6a8262cfa4e95a7bae2fe6ed15cc\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml Warning:
+	Namespace 'android.support.graphics.drawable' used in: com.android.support:animated-vector-drawable:28.0.0, com.android.support:support-vector-drawable:28.0.0.
+
+> Task :animation:processDebugManifest
+> Task :animation:mergeDebugShaders
+> Task :animation:compileDebugShaders NO-SOURCE
+> Task :animation:generateDebugAssets UP-TO-DATE
+> Task :animation:mergeDebugResources
+> Task :animation:mergeDebugAssets
+> Task :animation:compressDebugAssets
+> Task :animation:processDebugJavaRes NO-SOURCE
+> Task :animation:checkDebugDuplicateClasses
+> Task :animation:desugarDebugFileDependencies
+> Task :animation:mergeDebugJniLibFolders
+> Task :animation:mergeLibDexDebug
+> Task :animation:mergeDebugNativeLibs NO-SOURCE
+> Task :animation:stripDebugDebugSymbols NO-SOURCE
+> Task :animation:validateSigningDebug
+> Task :animation:writeDebugAppMetadata
+> Task :animation:writeDebugSigningConfigVersions
+> Task :animation:preReleaseBuild UP-TO-DATE
+> Task :animation:compileReleaseAidl NO-SOURCE
+> Task :animation:compileReleaseRenderscript NO-SOURCE
+> Task :animation:generateReleaseBuildConfig
+> Task :animation:javaPreCompileRelease
+> Task :animation:checkReleaseAarMetadata
+> Task :animation:generateReleaseResValues
+> Task :animation:mapReleaseSourceSetPaths
+> Task :animation:generateReleaseResources
+> Task :animation:mergeDebugJavaResource
+> Task :animation:createReleaseCompatibleScreenManifests
+> Task :animation:extractDeepLinksRelease
+
+> Task :animation:processReleaseMainManifest
+package="com.example.animation" found in source AndroidManifest.xml: D:\code\AndroidDemo\animation\src\main\AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+[com.android.support:animated-vector-drawable:28.0.0] D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\069b6a8262cfa4e95a7bae2fe6ed15cc\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml Warning:
+	Namespace 'android.support.graphics.drawable' used in: com.android.support:animated-vector-drawable:28.0.0, com.android.support:support-vector-drawable:28.0.0.
+
+> Task :animation:processReleaseManifest
+> Task :animation:extractProguardFiles
+> Task :animation:mergeReleaseJniLibFolders
+> Task :animation:mergeReleaseNativeLibs NO-SOURCE
+> Task :animation:stripReleaseDebugSymbols NO-SOURCE
+> Task :animation:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :animation:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :animation:checkReleaseDuplicateClasses
+> Task :animation:desugarReleaseFileDependencies
+> Task :animation:mergeReleaseArtProfile UP-TO-DATE
+> Task :animation:mergeReleaseShaders
+> Task :animation:compileReleaseShaders NO-SOURCE
+> Task :animation:generateReleaseAssets UP-TO-DATE
+> Task :animation:mergeReleaseAssets
+> Task :animation:compressReleaseAssets
+> Task :animation:processReleaseJavaRes NO-SOURCE
+> Task :animation:mergeReleaseJavaResource
+> Task :animation:collectReleaseDependencies
+> Task :animation:sdkReleaseDependencyData
+> Task :animation:writeReleaseAppMetadata
+> Task :animation:writeReleaseSigningConfigVersions
+> Task :animation:preDebugAndroidTestBuild SKIPPED
+> Task :animation:processDebugAndroidTestManifest
+> Task :animation:compileDebugAndroidTestRenderscript NO-SOURCE
+> Task :animation:generateDebugAndroidTestResValues
+> Task :animation:preDebugUnitTestBuild UP-TO-DATE
+> Task :animation:processDebugUnitTestJavaRes NO-SOURCE
+> Task :animation:preReleaseUnitTestBuild UP-TO-DATE
+> Task :animation:javaPreCompileDebugUnitTest
+> Task :animation:javaPreCompileReleaseUnitTest
+> Task :animation:processDebugManifestForPackage
+> Task :animation:mergeExtDexRelease
+> Task :animation:mergeExtDexDebug
+> Task :animation:mergeReleaseResources
+> Task :animation:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:compileDebugAidl NO-SOURCE
+> Task :app:compileDebugRenderscript NO-SOURCE
+> Task :app:generateDebugResValues
+> Task :app:generateDebugResources
+> Task :app:dataBindingMergeDependencyArtifactsDebug
+> Task :app:generateDebugBuildConfig
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+
+> Task :app:processDebugMainManifest
+package="com.example.helloworld" found in source AndroidManifest.xml: D:\code\AndroidDemo\app\src\main\AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+[com.android.support:animated-vector-drawable:28.0.0] D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\069b6a8262cfa4e95a7bae2fe6ed15cc\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml Warning:
+	Namespace 'android.support.graphics.drawable' used in: com.android.support:animated-vector-drawable:28.0.0, com.android.support:support-vector-drawable:28.0.0.
+
+> Task :app:processDebugManifest
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugResources
+> Task :app:mergeDebugAssets
+> Task :app:dataBindingGenBaseClassesDebug
+> Task :app:processDebugJavaRes NO-SOURCE
+> Task :app:compressDebugAssets
+> Task :app:desugarDebugFileDependencies
+> Task :app:checkDebugDuplicateClasses
+> Task :app:mergeDebugJniLibFolders
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:mergeLibDexDebug
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:buildKotlinToolingMetadata
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:compileReleaseAidl NO-SOURCE
+> Task :app:compileReleaseRenderscript NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsRelease
+> Task :app:generateReleaseResValues
+> Task :app:generateReleaseResources
+> Task :app:generateReleaseBuildConfig
+> Task :app:checkReleaseAarMetadata
+> Task :app:mapReleaseSourceSetPaths
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease
+
+> Task :app:processReleaseMainManifest
+package="com.example.helloworld" found in source AndroidManifest.xml: D:\code\AndroidDemo\app\src\main\AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+[com.android.support:animated-vector-drawable:28.0.0] D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\069b6a8262cfa4e95a7bae2fe6ed15cc\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml Warning:
+	Namespace 'android.support.graphics.drawable' used in: com.android.support:animated-vector-drawable:28.0.0, com.android.support:support-vector-drawable:28.0.0.
+
+> Task :app:processReleaseManifest
+> Task :app:javaPreCompileRelease
+> Task :app:extractProguardFiles
+> Task :app:processReleaseManifestForPackage
+> Task :app:mergeReleaseJniLibFolders
+> Task :app:mergeReleaseResources
+> Task :app:mergeReleaseNativeLibs NO-SOURCE
+> Task :app:dataBindingGenBaseClassesRelease
+> Task :app:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:desugarReleaseFileDependencies
+> Task :app:checkReleaseDuplicateClasses
+> Task :app:mergeReleaseArtProfile UP-TO-DATE
+> Task :app:mergeReleaseShaders
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets
+> Task :app:processReleaseJavaRes NO-SOURCE
+> Task :app:compressReleaseAssets
+> Task :app:collectReleaseDependencies
+> Task :app:sdkReleaseDependencyData
+> Task :app:writeReleaseAppMetadata
+> Task :app:writeReleaseSigningConfigVersions
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:processDebugAndroidTestManifest
+> Task :app:compileDebugAndroidTestRenderscript NO-SOURCE
+> Task :app:generateDebugAndroidTestResValues
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:processDebugUnitTestJavaRes NO-SOURCE
+> Task :app:javaPreCompileDebugUnitTest
+> Task :app:preReleaseUnitTestBuild UP-TO-DATE
+> Task :app:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :custom:preBuild UP-TO-DATE
+> Task :custom:preDebugBuild UP-TO-DATE
+> Task :custom:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :custom:compileDebugAidl NO-SOURCE
+> Task :app:javaPreCompileReleaseUnitTest
+> Task :custom:compileDebugRenderscript NO-SOURCE
+> Task :custom:generateDebugBuildConfig
+> Task :custom:javaPreCompileDebug
+> Task :custom:checkDebugAarMetadata
+> Task :custom:generateDebugResValues
+> Task :custom:mapDebugSourceSetPaths
+> Task :custom:generateDebugResources
+> Task :app:mergeExtDexDebug
+> Task :app:processReleaseResources
+> Task :app:mergeExtDexRelease
+> Task :custom:mergeDebugResources
+> Task :animation:processDebugResources
+
+> Task :animation:compileDebugJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :animation:dexBuilderDebug
+> Task :custom:createDebugCompatibleScreenManifests
+> Task :custom:extractDeepLinksDebug
+> Task :animation:bundleDebugClassesToRuntimeJar
+> Task :animation:mergeProjectDexDebug
+> Task :animation:bundleDebugClassesToCompileJar
+
+> Task :custom:processDebugMainManifest
+package="com.example.custom" found in source AndroidManifest.xml: D:\code\AndroidDemo\custom\src\main\AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+[com.android.support:animated-vector-drawable:28.0.0] D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\069b6a8262cfa4e95a7bae2fe6ed15cc\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml Warning:
+	Namespace 'android.support.graphics.drawable' used in: com.android.support:animated-vector-drawable:28.0.0, com.android.support:support-vector-drawable:28.0.0.
+
+> Task :app:compileReleaseKotlin
+> Task :animation:compileDebugUnitTestJavaWithJavac
+> Task :animation:testDebugUnitTest
+> Task :app:compileReleaseJavaWithJavac
+> Task :animation:packageDebug
+> Task :animation:createDebugApkListingFileRedirect
+> Task :animation:assembleDebug
+> Task :app:dexBuilderRelease
+> Task :app:processDebugManifestForPackage
+> Task :app:bundleReleaseClassesToRuntimeJar
+> Task :custom:processDebugManifest
+> Task :app:bundleReleaseClassesToCompileJar
+> Task :app:compileReleaseUnitTestKotlin
+> Task :app:mergeReleaseJavaResource
+> Task :app:compileReleaseUnitTestJavaWithJavac
+> Task :app:processDebugResources
+> Task :app:mergeDexRelease
+> Task :app:testReleaseUnitTest
+> Task :app:compileReleaseArtProfile UP-TO-DATE
+> Task :custom:mergeDebugShaders
+> Task :custom:compileDebugShaders NO-SOURCE
+> Task :custom:generateDebugAssets UP-TO-DATE
+> Task :custom:mergeDebugAssets
+> Task :custom:compressDebugAssets
+> Task :custom:processDebugJavaRes NO-SOURCE
+> Task :custom:checkDebugDuplicateClasses
+> Task :custom:desugarDebugFileDependencies
+> Task :custom:mergeDebugJniLibFolders
+> Task :custom:mergeLibDexDebug
+> Task :custom:mergeDebugNativeLibs NO-SOURCE
+> Task :custom:stripDebugDebugSymbols NO-SOURCE
+> Task :custom:validateSigningDebug
+> Task :custom:writeDebugAppMetadata
+> Task :custom:writeDebugSigningConfigVersions
+> Task :custom:preReleaseBuild UP-TO-DATE
+> Task :custom:compileReleaseAidl NO-SOURCE
+> Task :custom:compileReleaseRenderscript NO-SOURCE
+> Task :custom:generateReleaseBuildConfig
+> Task :custom:javaPreCompileRelease
+> Task :custom:checkReleaseAarMetadata
+> Task :custom:generateReleaseResValues
+> Task :custom:mapReleaseSourceSetPaths
+> Task :custom:generateReleaseResources
+> Task :custom:mergeExtDexDebug
+> Task :custom:createReleaseCompatibleScreenManifests
+> Task :custom:extractDeepLinksRelease
+
+> Task :custom:processReleaseMainManifest
+package="com.example.custom" found in source AndroidManifest.xml: D:\code\AndroidDemo\custom\src\main\AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+[com.android.support:animated-vector-drawable:28.0.0] D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\069b6a8262cfa4e95a7bae2fe6ed15cc\transformed\animated-vector-drawable-28.0.0\AndroidManifest.xml Warning:
+	Namespace 'android.support.graphics.drawable' used in: com.android.support:animated-vector-drawable:28.0.0, com.android.support:support-vector-drawable:28.0.0.
+
+> Task :custom:processReleaseManifest
+> Task :app:optimizeReleaseResources
+> Task :custom:extractProguardFiles
+> Task :custom:mergeReleaseJniLibFolders
+> Task :custom:mergeReleaseNativeLibs NO-SOURCE
+> Task :custom:stripReleaseDebugSymbols NO-SOURCE
+> Task :custom:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :custom:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :animation:processReleaseManifestForPackage
+> Task :custom:checkReleaseDuplicateClasses
+> Task :custom:desugarReleaseFileDependencies
+> Task :custom:mergeReleaseResources
+> Task :app:compileDebugKotlin
+> Task :app:compileDebugJavaWithJavac
+> Task :custom:mergeExtDexRelease
+> Task :app:packageRelease
+> Task :app:mergeDebugJavaResource
+> Task :app:dexBuilderDebug
+> Task :app:createReleaseApkListingFileRedirect
+> Task :custom:processReleaseManifestForPackage
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:mergeProjectDexDebug
+> Task :app:compileDebugUnitTestKotlin
+> Task :app:compileDebugUnitTestJavaWithJavac
+> Task :custom:processReleaseResources
+> Task :app:testDebugUnitTest
+> Task :app:test
+> Task :animation:processReleaseResources
+
+> Task :custom:compileReleaseJavaWithJavac
+The following annotation processors are not incremental: compiler-4.8.0.jar (com.github.bumptech.glide:compiler:4.8.0).
+Make sure all annotation processors are incremental to improve your build speed.
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: 某些输入文件使用了未经检查或不安全的操作。
+注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+
+> Task :app:packageDebug
+
+> Task :animation:compileReleaseJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :animation:dexBuilderRelease
+> Task :custom:processDebugManifestForPackage
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+> Task :animation:bundleReleaseClassesToRuntimeJar
+> Task :animation:bundleReleaseClassesToCompileJar
+> Task :animation:compileReleaseUnitTestJavaWithJavac
+> Task :animation:mergeDexRelease
+> Task :custom:processDebugResources
+> Task :app:lintVitalAnalyzeRelease
+> Task :animation:testReleaseUnitTest
+> Task :animation:compileReleaseArtProfile UP-TO-DATE
+> Task :animation:test
+> Task :app:lintVitalReportRelease SKIPPED
+> Task :app:lintVitalRelease SKIPPED
+> Task :app:assembleRelease
+> Task :app:assemble
+
+> Task :custom:compileDebugJavaWithJavac
+The following annotation processors are not incremental: compiler-4.8.0.jar (com.github.bumptech.glide:compiler:4.8.0).
+Make sure all annotation processors are incremental to improve your build speed.
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: 某些输入文件使用了未经检查或不安全的操作。
+注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+
+> Task :app:lintAnalyzeDebug
+> Task :animation:lintVitalAnalyzeRelease
+> Task :animation:lintAnalyzeDebug
+> Task :custom:dexBuilderDebug
+> Task :animation:lintVitalReportRelease SKIPPED
+> Task :animation:lintVitalRelease SKIPPED
+> Task :custom:mergeDebugJavaResource
+> Task :custom:mergeProjectDexDebug
+
+> Task :app:lintReportDebug
+Wrote HTML report to file:///D:/code/AndroidDemo/app/build/reports/lint-results-debug.html
+
+> Task :animation:lintReportDebug
+Wrote HTML report to file:///D:/code/AndroidDemo/animation/build/reports/lint-results-debug.html
+
+> Task :custom:dexBuilderRelease
+
+> Task :animation:lintDebug FAILED
+Lint found 1 errors, 113 warnings. First failure:
+
+D:\code\AndroidDemo\animation\build.gradle:33: Error: Version 28 (intended for Android Pie and below) is the last version of the legacy support library, so we recommend that you migrate to AndroidX libraries when using Android Q and moving forward. The IDE can help with this: Refactor > Migrate to AndroidX... [GradleCompatible]
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleCompatible":
+   There are some combinations of libraries, or tools and libraries, that are
+   incompatible, or can lead to bugs. One such incompatibility is compiling
+   with a version of the Android support libraries that is not the latest
+   version (or in particular, a version lower than your targetSdkVersion).
+
+
+The full lint text report is located at:
+  D:\code\AndroidDemo\animation\build\intermediates\lint_intermediate_text_report\debug\lint-results-debug.txt
+
+> Task :custom:packageDebug
+> Task :custom:createDebugApkListingFileRedirect
+> Task :animation:optimizeReleaseResources
+> Task :custom:lintVitalAnalyzeRelease
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':animation:lintDebug'.
+>                 Lint found errors in the project; aborting build.
+  
+                  Fix the issues identified by lint, or create a baseline to see only new errors:
+                  ```
+                  android {
+                      lint {
+                          baseline = file("lint-baseline.xml")
+                      }
+                  }
+                  ```
+  
+                  For more details, see https://developer.android.com/studio/write/lint#snapshot
+  
+                  Lint found 1 errors, 113 warnings. First failure:
+  
+  D:\code\AndroidDemo\animation\build.gradle:33: Error: Version 28 (intended for Android Pie and below) is the last version of the legacy support library, so we recommend that you migrate to AndroidX libraries when using Android Q and moving forward. The IDE can help with this: Refactor > Migrate to AndroidX... [GradleCompatible]
+      implementation 'com.android.support:appcompat-v7:28.0.0'
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+     Explanation for issues of type "GradleCompatible":
+     There are some combinations of libraries, or tools and libraries, that are
+     incompatible, or can lead to bugs. One such incompatibility is compiling
+     with a version of the Android support libraries that is not the latest
+     version (or in particular, a version lower than your targetSdkVersion).
+  
+  
+  The full lint text report is located at:
+    D:\code\AndroidDemo\animation\build\intermediates\lint_intermediate_text_report\debug\lint-results-debug.txt
+
+* Try:
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':animation:lintDebug'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:142)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:282)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:140)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:128)
+	at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:56)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:69)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:327)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:307)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:293)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:417)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:339)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+Caused by: java.lang.RuntimeException:                 Lint found errors in the project; aborting build.
+
+                Fix the issues identified by lint, or create a baseline to see only new errors:
+                ```
+                android {
+                    lint {
+                        baseline = file("lint-baseline.xml")
+                    }
+                }
+                ```
+
+                For more details, see https://developer.android.com/studio/write/lint#snapshot
+
+                Lint found 1 errors, 113 warnings. First failure:
+
+D:\code\AndroidDemo\animation\build.gradle:33: Error: Version 28 (intended for Android Pie and below) is the last version of the legacy support library, so we recommend that you migrate to AndroidX libraries when using Android Q and moving forward. The IDE can help with this: Refactor > Migrate to AndroidX... [GradleCompatible]
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleCompatible":
+   There are some combinations of libraries, or tools and libraries, that are
+   incompatible, or can lead to bugs. One such incompatibility is compiling
+   with a version of the Android support libraries that is not the latest
+   version (or in particular, a version lower than your targetSdkVersion).
+
+
+The full lint text report is located at:
+  D:\code\AndroidDemo\animation\build\intermediates\lint_intermediate_text_report\debug\lint-results-debug.txt
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction$Companion.maybeThrowException(AndroidLintWorkAction.kt:225)
+	at com.android.build.gradle.internal.lint.AndroidLintTextOutputTask.doTaskAction(AndroidLintTextOutputTask.kt:106)
+	at com.android.build.gradle.internal.tasks.NonIncrementalTask$taskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:66)
+	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
+	at com.android.build.gradle.internal.tasks.NonIncrementalTask.taskAction(NonIncrementalTask.kt:97)
+	at jdk.internal.reflect.GeneratedMethodAccessor673.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:236)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:221)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:204)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:187)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:165)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:89)
+	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:40)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:53)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:50)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:50)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:40)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:68)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:38)
+	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:41)
+	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:74)
+	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+	at org.gradle.internal.execution.steps.CreateOutputsStep.execute(CreateOutputsStep.java:51)
+	at org.gradle.internal.execution.steps.CreateOutputsStep.execute(CreateOutputsStep.java:29)
+	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.executeDelegateBroadcastingChanges(CaptureStateAfterExecutionStep.java:124)
+	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.execute(CaptureStateAfterExecutionStep.java:80)
+	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.execute(CaptureStateAfterExecutionStep.java:58)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:48)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:36)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:181)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:71)
+	at org.gradle.internal.Either$Right.fold(Either.java:175)
+	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:59)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:69)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:47)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:25)
+	at org.gradle.internal.execution.steps.RecordOutputsStep.execute(RecordOutputsStep.java:36)
+	at org.gradle.internal.execution.steps.RecordOutputsStep.execute(RecordOutputsStep.java:22)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:110)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:56)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:56)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:38)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:73)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:44)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:89)
+	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:50)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:114)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:57)
+	at org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep.execute(CaptureStateBeforeExecutionStep.java:76)
+	at org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep.execute(CaptureStateBeforeExecutionStep.java:50)
+	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.executeWithNoEmptySources(SkipEmptyWorkStep.java:254)
+	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.execute(SkipEmptyWorkStep.java:91)
+	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.execute(SkipEmptyWorkStep.java:56)
+	at org.gradle.internal.execution.steps.RemoveUntrackedExecutionStateStep.execute(RemoveUntrackedExecutionStateStep.java:32)
+	at org.gradle.internal.execution.steps.RemoveUntrackedExecutionStateStep.execute(RemoveUntrackedExecutionStateStep.java:21)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:43)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:31)
+	at org.gradle.internal.execution.steps.AssignWorkspaceStep.lambda$execute$0(AssignWorkspaceStep.java:40)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:281)
+	at org.gradle.internal.execution.steps.AssignWorkspaceStep.execute(AssignWorkspaceStep.java:40)
+	at org.gradle.internal.execution.steps.AssignWorkspaceStep.execute(AssignWorkspaceStep.java:30)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:37)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:27)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:44)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:33)
+	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:76)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:139)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:128)
+	at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:56)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:69)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:327)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:307)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:293)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:417)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:339)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/7.5/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 1m 20s
+234 actionable tasks: 230 executed, 4 up-to-date

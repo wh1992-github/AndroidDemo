@@ -14,6 +14,9 @@ import android.widget.RelativeLayout;
 
 import com.example.event.R;
 import com.example.event.opengl.PanoramaRender;
+/**
+ * 用于展示 Panorama 效果的自定义 View。
+ */
 
 @SuppressLint("ClickableViewAccessibility")
 public class PanoramaView extends RelativeLayout implements SensorEventListener {

@@ -1,4 +1,7 @@
 package com.example.network.bean;
+/**
+ * 用于描述 User 数据的实体类。
+ */
 
 public class UserInfo {
     public String name;

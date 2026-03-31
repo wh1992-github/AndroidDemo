@@ -19,6 +19,9 @@ import java.io.InputStream;
  * Created by test on 17-8-25.
  */
 //围绕圆形图片旋转
+/**
+ * 用于展示 Circle Rotate 效果的自定义 View。
+ */
 public class CircleRotateView extends View {
     //圆心坐标
     private float mXIndex;

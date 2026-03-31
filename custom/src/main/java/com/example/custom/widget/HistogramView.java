@@ -11,6 +11,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 //自定义View柱状图
+/**
+ * 用于展示 Histogram 效果的自定义 View。
+ */
 public class HistogramView extends View {
     private Paint mPaint;
     private Path mPath;

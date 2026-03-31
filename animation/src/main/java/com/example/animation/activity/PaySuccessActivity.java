@@ -8,14 +8,17 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.example.animation.R;
 import com.example.animation.util.Utils;
+/**
+ * 用于展示 Pay Success 功能的 Activity。
+ */
 
 public class PaySuccessActivity extends AppCompatActivity implements OnClickListener {
     private Button btn_success; //声明一个按钮控件对象

@@ -14,6 +14,9 @@ import com.example.senior.R;
 import com.example.senior.bean.CartInfo;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Cart 数据的适配器。
+ */
 
 @SuppressLint("SetTextI18n")
 public class CartAdapter extends BaseAdapter {

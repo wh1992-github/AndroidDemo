@@ -13,6 +13,9 @@ import com.example.media.bean.MediaInfo;
 import com.example.media.util.MediaUtil;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Media List 数据的适配器。
+ */
 
 public class MediaListAdapter extends BaseAdapter {
     private Context mContext;

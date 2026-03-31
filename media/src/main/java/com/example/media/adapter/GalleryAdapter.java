@@ -8,6 +8,9 @@ import android.widget.Gallery;
 import android.widget.ImageView;
 
 import com.example.media.util.Utils;
+/**
+ * 用于适配 Gallery 数据的适配器。
+ */
 
 public class GalleryAdapter extends BaseAdapter {
     private Context mContext;

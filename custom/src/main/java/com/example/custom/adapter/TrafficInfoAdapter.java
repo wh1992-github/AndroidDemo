@@ -13,6 +13,9 @@ import com.example.custom.bean.AppInfo;
 import com.example.custom.util.StringUtil;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Traffic Info 数据的适配器。
+ */
 
 public class TrafficInfoAdapter extends BaseAdapter {
     private Context mContext; //声明一个上下文对象

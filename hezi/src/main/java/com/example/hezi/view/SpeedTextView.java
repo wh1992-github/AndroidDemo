@@ -8,6 +8,9 @@ import android.view.animation.LinearInterpolator;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
+/**
+ * 用于展示 Speed Text 效果的自定义 View。
+ */
 
 public class SpeedTextView extends AppCompatTextView {
 

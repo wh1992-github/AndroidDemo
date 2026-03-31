@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.group.R;
+/**
+ * 用于展示 Center 内容的对话框类。
+ */
 
 public class CenterDialog extends Dialog {
     public CenterDialog(Context context) {

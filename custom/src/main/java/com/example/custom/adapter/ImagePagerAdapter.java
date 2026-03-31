@@ -1,7 +1,7 @@
 package com.example.custom.adapter;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -11,6 +11,9 @@ import android.widget.ImageView.ScaleType;
 import com.example.custom.bean.GoodsInfo;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Image Pager 数据的适配器。
+ */
 
 public class ImagePagerAdapter extends PagerAdapter {
     private Context mContext; //声明一个上下文对象

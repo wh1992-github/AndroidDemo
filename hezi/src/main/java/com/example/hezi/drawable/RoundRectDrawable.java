@@ -15,6 +15,9 @@ import android.graphics.drawable.Drawable;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+/**
+ * 封装 Round Rect Drawable 相关逻辑的类。
+ */
 
 @RequiresApi(21)
 public class RoundRectDrawable extends Drawable {

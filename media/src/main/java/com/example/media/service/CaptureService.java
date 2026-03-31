@@ -26,6 +26,9 @@ import com.example.media.util.FileUtil;
 import com.example.media.util.Utils;
 import com.example.media.widget.FloatWindow;
 import com.example.media.widget.FloatWindow.FloatClickListener;
+/**
+ * 用于处理 Capture 相关后台工作的 Service。
+ */
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class CaptureService extends Service implements FloatClickListener {

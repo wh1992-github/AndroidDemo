@@ -13,6 +13,9 @@ import com.example.custom.R;
 import com.example.custom.bean.AppInfo;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 App Info 数据的适配器。
+ */
 
 @SuppressLint("SetTextI18n")
 public class AppInfoAdapter extends BaseAdapter {

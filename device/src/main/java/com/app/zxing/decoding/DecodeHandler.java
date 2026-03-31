@@ -34,6 +34,9 @@ import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 
 import java.util.Hashtable;
+/**
+ * 封装 Decode Handler 相关逻辑的类。
+ */
 
 final class DecodeHandler extends Handler {
     private static final String TAG = "DecodeHandler";

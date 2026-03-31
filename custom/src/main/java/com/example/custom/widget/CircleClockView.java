@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.support.annotation.ColorInt;
+import androidx.annotation.ColorInt;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -15,6 +15,9 @@ import java.util.Calendar;
 import java.util.Locale;
 
 //仿锤子时钟
+/**
+ * 用于展示 Circle Clock 效果的自定义 View。
+ */
 public class CircleClockView extends View {
     private static final String TAG = "CircleClockView--";
     //表盘的背景颜色

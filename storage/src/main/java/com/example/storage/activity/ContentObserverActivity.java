@@ -9,7 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.storage.R;
 
+import java.lang.ref.WeakReference;
 import java.util.Locale;
 
 /**
@@ -25,7 +26,8 @@ import java.util.Locale;
 
 public class ContentObserverActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "ContentObserverActivity";
-    private static TextView tv_check_flow;
+    private static WeakReference<TextView> tv_check_flow_ref;
+    private TextView tv_check_flow;
     private static String mCheckResult;
 
     @Override
@@ -33,6 +35,7 @@ public class ContentObserverActivity extends AppCompatActivity implements OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content_observer);
         tv_check_flow = findViewById(R.id.tv_check_flow);
+        tv_check_flow_ref = new WeakReference<>(tv_check_flow);
         tv_check_flow.setOnClickListener(this);
         findViewById(R.id.btn_check_flow).setOnClickListener(this);
         initSmsObserver();
@@ -107,6 +110,12 @@ public class ContentObserverActivity extends AppCompatActivity implements OnClic
     protected void onDestroy() {
         //注销内容观察器
         getContentResolver().unregisterContentObserver(mObserver);
+        // 清理静态引用
+        if (tv_check_flow_ref != null) {
+            tv_check_flow_ref.clear();
+            tv_check_flow_ref = null;
+        }
+        mCheckResult = null;
         super.onDestroy();
     }
 
@@ -139,9 +148,10 @@ public class ContentObserverActivity extends AppCompatActivity implements OnClic
             String flow = String.format(Locale.getDefault(), "流量校准结果如下：\n\t总流量为：%s\n\t已使用：%s" +
                             "\n\t剩余：%s", findFlow(content, "总流量为", ","),
                     findFlow(content, "已使用", "MB"), findFlow(content, "剩余", "MB"));
-            if (tv_check_flow != null) { //离开该页面时就不再显示流量信息
+            TextView tv = tv_check_flow_ref != null ? tv_check_flow_ref.get() : null;
+            if (tv != null) { //离开该页面时就不再显示流量信息
                 //把流量校准结果显示到文本视图tv_check_flow上面
-                tv_check_flow.setText(flow);
+                tv.setText(flow);
             }
             super.onChange(selfChange);
         }

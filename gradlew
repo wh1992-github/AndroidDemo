@@ -30,6 +30,36 @@ APP_BASE_NAME=$(basename "$0")
 # Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 DEFAULT_JVM_OPTS=""
 
+# Keep wrapper downloads inside the project unless the caller already chose a home.
+if [ -z "$GRADLE_USER_HOME" ]; then
+  GRADLE_USER_HOME="$APP_HOME/.gradle-user-home"
+  export GRADLE_USER_HOME
+fi
+
+# Java does not reliably honor HTTP_PROXY/HTTPS_PROXY env vars, so forward them explicitly.
+DEFAULT_JVM_OPTS="$DEFAULT_JVM_OPTS \"-Djava.net.useSystemProxies=true\""
+append_proxy_opts() {
+  proxy_name="$1"
+  proxy_url="$2"
+  proxy_url="${proxy_url#http://}"
+  proxy_url="${proxy_url#https://}"
+  proxy_hostport="${proxy_url%%/*}"
+  proxy_host="${proxy_hostport%%:*}"
+  proxy_port="${proxy_hostport#*:}"
+
+  if [ -n "$proxy_host" ] && [ -n "$proxy_port" ] && [ "$proxy_host" != "$proxy_port" ]; then
+    DEFAULT_JVM_OPTS="$DEFAULT_JVM_OPTS \"-D${proxy_name}.proxyHost=$proxy_host\" \"-D${proxy_name}.proxyPort=$proxy_port\""
+  fi
+}
+
+if [ -n "$HTTPS_PROXY" ]; then
+  append_proxy_opts https "$HTTPS_PROXY"
+fi
+
+if [ -n "$HTTP_PROXY" ]; then
+  append_proxy_opts http "$HTTP_PROXY"
+fi
+
 # Use the maximum available, or set MAX_FD != -1 to use that value.
 MAX_FD="maximum"
 

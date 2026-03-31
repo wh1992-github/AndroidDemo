@@ -1,8 +1,15 @@
 //Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.6.20'
+    ext.kotlin_version = '1.8.22'
+    ext {
+        agp_version = '7.4.2'
+    }
     repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2/' }
+        maven { url "https://jitpack.io" }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
@@ -12,15 +19,11 @@ buildscript {
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
-        maven { url "https://jitpack.io" }
-        google()
-        //jcenter()
     }
     dependencies {
         //下面的版本号就是Android Studio的版本号
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath "com.android.tools.build:gradle:$agp_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
     }
     tasks.withType(JavaCompile) {//解决编码错误: 编码UTF-8的不可映射字
         options.encoding = "UTF-8"
@@ -29,6 +32,10 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2/' }
+        maven { url "https://jitpack.io" }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
@@ -38,9 +45,6 @@ allprojects {
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
-        maven { url "https://jitpack.io" }
-        google()
-        //jcenter()
     }
 }
 

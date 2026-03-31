@@ -4,6 +4,9 @@ import com.amap.api.maps2d.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 提供 Map Gaode 相关工具方法的工具类。
+ */
 
 public class MapGaodeUtil {
     static double DEF_PI = 3.14159265359; //PI

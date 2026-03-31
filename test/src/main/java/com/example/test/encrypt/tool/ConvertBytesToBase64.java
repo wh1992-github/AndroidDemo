@@ -1,4 +1,7 @@
 package com.example.test.encrypt.tool;
+/**
+ * 封装 Convert Bytes To Base 64 相关逻辑的类。
+ */
 
 public class ConvertBytesToBase64 {
     //下面的代码转换byte数组到 Base64

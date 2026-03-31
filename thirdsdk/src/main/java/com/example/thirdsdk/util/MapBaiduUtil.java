@@ -9,6 +9,9 @@ import java.util.List;
 //1、计算地面两点之间的距离
 //2、计算地面一个多边形的面积
 //3、计算某点是否在多边形内部
+/**
+ * 提供 Map Baidu 相关工具方法的工具类。
+ */
 public class MapBaiduUtil {
     static double DEF_PI = 3.14159265359; //PI
     static double DEF_2PI = 6.28318530712; //2*PI

@@ -22,6 +22,9 @@ import com.example.network.util.DateUtil;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 用于适配 Friend Expand 数据的适配器。
+ */
 
 public class FriendExpandAdapter implements ExpandableListAdapter, OnGroupClickListener, OnChildClickListener {
     private static final String TAG = "FriendExpandAdapter";

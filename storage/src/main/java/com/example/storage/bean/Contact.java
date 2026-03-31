@@ -1,4 +1,7 @@
 package com.example.storage.bean;
+/**
+ * 封装 Contact 相关逻辑的类。
+ */
 
 public class Contact {
     public String contactId;

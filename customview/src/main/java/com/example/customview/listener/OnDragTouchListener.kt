@@ -7,6 +7,9 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
+/**
+ * 用于约束 On Drag Touch 回调能力的接口。
+ */
 
 class OnDragTouchListener : View.OnTouchListener {
 

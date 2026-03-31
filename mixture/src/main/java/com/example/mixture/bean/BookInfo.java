@@ -2,6 +2,9 @@ package com.example.mixture.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+/**
+ * 用于描述 Book 数据的实体类。
+ */
 
 public class BookInfo implements Parcelable {
     public long id; //编号

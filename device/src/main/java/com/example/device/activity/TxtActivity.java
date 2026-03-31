@@ -8,10 +8,10 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
@@ -29,6 +29,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于展示 Txt 功能的 Activity。
+ */
 
 @SuppressLint({"NonConstantResourceId", "SdCardPath"})
 @RequiresApi(api = Build.VERSION_CODES.R)
@@ -98,12 +101,14 @@ public class TxtActivity extends AppCompatActivity {
         File file = new File(dir.getAbsolutePath(), "AAA.txt");
         Log.i(TAG, "createTXT: " + file.getAbsolutePath());
         int index = 0;
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
         try {
             file.createNewFile();
             Log.i(TAG, "createTXT: " + file.getAbsolutePath());
             InputStream inputStream = getResources().getAssets().open("百战系列.txt");
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            bufferedWriter = new BufferedWriter(new FileWriter(file));
 
             String lines;
             while ((lines = bufferedReader.readLine()) != null) {
@@ -119,16 +124,29 @@ public class TxtActivity extends AppCompatActivity {
             bufferedWriter.write((String) null);
             bufferedWriter.newLine();
             bufferedWriter.flush();
-            bufferedWriter.close();
-            bufferedReader.close();
         } catch (IOException e) {
             Log.i(TAG, "createTXT: e = " + e.getMessage());
+        } finally {
+            try {
+                if (bufferedWriter != null) {
+                    bufferedWriter.close();
+                }
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     public void createTXT3() {
         File dir = new File("/sdcard/AAA/AAA/");
         File[] files = dir.listFiles();
+        if (files == null || files.length == 0) {
+            Log.i(TAG, "createTXT3: no files found");
+            return;
+        }
         Log.i(TAG, "createTXT3: " + files.length);
 
         String name;
@@ -151,12 +169,14 @@ public class TxtActivity extends AppCompatActivity {
         }
         File file = new File(dir.getAbsolutePath(), "百战系列.txt");
         Log.i(TAG, "createTXT: " + file.getAbsolutePath());
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
         try {
             file.createNewFile();
             Log.i(TAG, "createTXT: " + file.getAbsolutePath());
             InputStream inputStream = getResources().getAssets().open("abcd.txt");
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            bufferedWriter = new BufferedWriter(new FileWriter(file));
 
             String lines;
             while ((lines = bufferedReader.readLine()) != null) {
@@ -170,10 +190,19 @@ public class TxtActivity extends AppCompatActivity {
                 }
             }
             bufferedWriter.flush();
-            bufferedWriter.close();
-            bufferedReader.close();
         } catch (IOException e) {
             Log.i(TAG, "createTXT: e = " + e.getMessage());
+        } finally {
+            try {
+                if (bufferedWriter != null) {
+                    bufferedWriter.close();
+                }
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -185,12 +214,14 @@ public class TxtActivity extends AppCompatActivity {
         }
         File file = new File(dir.getAbsolutePath(), "一眼万年.txt");
         Log.i(TAG, "createTXT: " + file.getAbsolutePath());
+        BufferedReader bufferedReader = null;
+        BufferedWriter bufferedWriter = null;
         try {
             file.createNewFile();
             Log.i(TAG, "createTXT: " + file.getAbsolutePath());
             InputStream inputStream = getResources().getAssets().open("一眼万年.txt");
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            bufferedWriter = new BufferedWriter(new FileWriter(file));
 
             String lines;
             StringBuilder builder = new StringBuilder();
@@ -205,10 +236,19 @@ public class TxtActivity extends AppCompatActivity {
                 }
             }
             bufferedWriter.flush();
-            bufferedWriter.close();
-            bufferedReader.close();
         } catch (IOException e) {
             Log.i(TAG, "createTXT: e = " + e.getMessage());
+        } finally {
+            try {
+                if (bufferedWriter != null) {
+                    bufferedWriter.close();
+                }
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

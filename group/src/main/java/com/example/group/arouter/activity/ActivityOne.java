@@ -1,11 +1,14 @@
 package com.example.group.arouter.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.group.R;
 import com.example.group.arouter.data.ARouterConstants;
+/**
+ * 封装 Activity One 相关逻辑的类。
+ */
 
 @Route(path = ARouterConstants.COM_ACTIVITY_ONE)
 public class ActivityOne extends AppCompatActivity {

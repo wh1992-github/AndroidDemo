@@ -1,6 +1,9 @@
 package com.example.network.bean;
 
 import java.util.ArrayList;
+/**
+ * 封装 Mail Box 相关逻辑的类。
+ */
 
 public class MailBox {
     public int box_icon;

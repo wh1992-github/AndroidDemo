@@ -2,7 +2,7 @@ package com.example.util;
 
 
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.util.Log;
 
 import java.io.File;
@@ -13,6 +13,9 @@ import java.nio.charset.Charset;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
+/**
+ * 提供 Zip 相关工具方法的工具类。
+ */
 
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class ZipUtil {

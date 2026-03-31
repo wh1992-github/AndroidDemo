@@ -25,6 +25,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 import java.util.regex.Pattern;
+/**
+ * 用于管理 Decode Format 相关流程的管理类。
+ */
 
 final class DecodeFormatManager {
 

@@ -1,12 +1,15 @@
 package com.example.mixture.adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.mixture.fragment.ImageFragment;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Pdf Page 数据的适配器。
+ */
 
 public class PdfPageAdapter extends FragmentStatePagerAdapter {
     private ArrayList<String> mImgArray = new ArrayList<>();

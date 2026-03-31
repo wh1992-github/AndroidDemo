@@ -8,6 +8,9 @@ import android.graphics.RectF;
 import org.vudroid.core.codec.CodecPage;
 
 import java.nio.ByteBuffer;
+/**
+ * 封装 Pdf Page 相关逻辑的类。
+ */
 
 public class PdfPage implements CodecPage {
     private long pageHandle;

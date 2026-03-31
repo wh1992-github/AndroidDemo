@@ -3,6 +3,9 @@ package com.example.custom.widget;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ListView;
+/**
+ * 用于展示 No Scroll List 效果的自定义 View。
+ */
 
 public class NoScrollListView extends ListView {
 

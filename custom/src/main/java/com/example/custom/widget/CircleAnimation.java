@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.example.custom.util.Utils;
+/**
+ * 封装 Circle Animation 相关逻辑的类。
+ */
 
 public class CircleAnimation extends RelativeLayout {
     private static final String TAG = "CircleAnimation";

@@ -18,6 +18,9 @@ import java.util.Locale;
 
 @SuppressLint({"SetTextI18n"})
 //展示相机信息列表的适配器
+/**
+ * 用于适配 Camera 数据的适配器。
+ */
 public class CameraAdapter extends BaseAdapter {
     private ArrayList<CameraInfo> mCameraList;
     private Context mContext;

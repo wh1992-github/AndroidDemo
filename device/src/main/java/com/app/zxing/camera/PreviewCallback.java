@@ -21,6 +21,9 @@ import android.hardware.Camera;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+/**
+ * 用于处理 Preview 回调逻辑的回调类型。
+ */
 
 final class PreviewCallback implements Camera.PreviewCallback {
     private static final String TAG = "PreviewCallback";

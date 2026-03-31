@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.hezi.viewpager.LogUtil;
+/**
+ * 封装 Fragment Five 相关逻辑的类。
+ */
 
 public class FragmentFive extends BaseFragment {
     private static final String TAG = "FragmentFive";

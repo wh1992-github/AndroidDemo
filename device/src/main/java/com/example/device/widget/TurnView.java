@@ -10,6 +10,9 @@ import android.graphics.RectF;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
+/**
+ * 用于展示 Turn 效果的自定义 View。
+ */
 
 public class TurnView extends View {
     private Paint mPaint; //声明一个画笔对象

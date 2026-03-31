@@ -9,13 +9,16 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
 import java.lang.reflect.Method;
+/**
+ * 提供 Switch 相关工具方法的工具类。
+ */
 
 @SuppressLint("WifiManagerPotentialLeak")
 public class SwitchUtil {

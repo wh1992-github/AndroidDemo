@@ -1,4 +1,7 @@
 package com.example.mixture.bean;
+/**
+ * 封装 Blue Device 相关逻辑的类。
+ */
 
 public class BlueDevice {
     public String name; //蓝牙设备的名称

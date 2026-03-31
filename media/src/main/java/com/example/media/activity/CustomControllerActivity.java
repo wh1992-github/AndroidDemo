@@ -3,7 +3,7 @@ package com.example.media.activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.VideoView;
 
@@ -13,6 +13,9 @@ import com.example.media.R;
 import com.example.media.widget.VideoController;
 
 import java.util.Map;
+/**
+ * 用于展示 Custom Controller 功能的 Activity。
+ */
 
 public class CustomControllerActivity extends AppCompatActivity implements
         View.OnClickListener, FileSelectCallbacks {

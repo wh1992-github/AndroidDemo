@@ -10,6 +10,9 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.example.group.R;
+/**
+ * 用于展示 Right 内容的对话框类。
+ */
 
 public class RightDialog extends Dialog implements View.OnClickListener {
     private OnItemClickListener mListener;

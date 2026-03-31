@@ -5,6 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
+/**
+ * 用于展示 Circle Corner 效果的自定义 View。
+ */
 
 public class CircleCornerView extends LinearLayout {
     private static final int radius = 28;

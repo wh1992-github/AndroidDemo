@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -21,9 +21,8 @@ import java.util.Locale;
 /**
  * Created by test on 2017/10/7.
  */
-@SuppressLint({"StaticFieldLeak"})
 public class VibratorActivity extends AppCompatActivity implements OnClickListener {
-    private static TextView tv_vibrator;
+    private TextView tv_vibrator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,6 +6,9 @@ import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+/**
+ * 封装 Udp Multicast Socket 相关逻辑的类。
+ */
 
 public class UdpMulticastSocket {
 

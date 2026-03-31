@@ -1,4 +1,7 @@
 package com.example.mixture.bean;
+/**
+ * 封装 Mac Device 相关逻辑的类。
+ */
 
 public class MacDevice {
     public int xuhao;

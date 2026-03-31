@@ -3,8 +3,8 @@ package com.example.group.loop;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -12,6 +12,9 @@ import android.view.MotionEvent;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 封装 Loop View Pager 相关逻辑的类。
+ */
 
 public class LoopViewPager extends ViewPager {
     private static final String TAG = "LoopViewPager";

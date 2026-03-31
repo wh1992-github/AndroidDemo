@@ -21,6 +21,9 @@ import com.example.device.util.Utils;
 
 import java.util.HashMap;
 import java.util.Map;
+/**
+ * 用于展示 Compass 效果的自定义 View。
+ */
 
 public class CompassView extends View {
     private static final String TAG = "CompassView";

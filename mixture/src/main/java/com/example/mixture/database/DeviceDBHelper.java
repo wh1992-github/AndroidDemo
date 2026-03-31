@@ -4,6 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+/**
+ * 提供 Device DB 相关工具方法的工具类。
+ */
 
 public class DeviceDBHelper extends SQLiteOpenHelper {
     private static final String TAG = "DeviceDBHelper";

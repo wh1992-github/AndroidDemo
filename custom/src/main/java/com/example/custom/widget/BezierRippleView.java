@@ -6,10 +6,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+/**
+ * 用于展示 Bezier Ripple 效果的自定义 View。
+ */
 
 public class BezierRippleView extends View {
     private Paint mPaint;

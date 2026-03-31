@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 //这是共享参数的工具类,统一对共享参数的读写操作
+/**
+ * 提供 Shared 相关工具方法的工具类。
+ */
 public class SharedUtil {
     private static SharedUtil mUtil; //声明一个共享参数工具类的实例
     private static SharedPreferences mShared; //声明一个共享参数的实例

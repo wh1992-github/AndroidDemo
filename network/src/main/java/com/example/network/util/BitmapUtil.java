@@ -12,6 +12,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.ByteBuffer;
 import java.util.Locale;
+/**
+ * 提供 Bitmap 相关工具方法的工具类。
+ */
 
 public class BitmapUtil {
 

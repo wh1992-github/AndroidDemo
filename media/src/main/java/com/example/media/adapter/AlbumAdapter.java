@@ -1,7 +1,7 @@
 package com.example.media.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
+import androidx.cardview.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -10,6 +10,9 @@ import android.widget.Gallery;
 import android.widget.ImageView;
 
 import com.example.media.util.Utils;
+/**
+ * 用于适配 Album 数据的适配器。
+ */
 
 public class AlbumAdapter extends BaseAdapter {
     private Context mContext;

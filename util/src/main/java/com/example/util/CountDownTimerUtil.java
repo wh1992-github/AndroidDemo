@@ -2,6 +2,9 @@ package com.example.util;
 
 import android.os.CountDownTimer;
 import android.util.Log;
+/**
+ * 提供 Count Down Timer 相关工具方法的工具类。
+ */
 
 public class CountDownTimerUtil extends CountDownTimer {
     private static final String TAG = "CountDownTimerUtil";

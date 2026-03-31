@@ -1,4 +1,7 @@
 package com.example.network.bean;
+/**
+ * 用于描述 Mail 数据的实体类。
+ */
 
 public class MailItem {
     public String mail_title;

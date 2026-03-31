@@ -3,7 +3,7 @@ package com.example.group.arouter.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -14,6 +14,9 @@ import com.example.group.R;
 import com.example.group.arouter.data.ARouterConstants;
 import com.example.group.arouter.data.Person;
 import com.example.group.arouter.data.TestObj;
+/**
+ * 用于展示 Parse 功能的 Activity。
+ */
 
 @SuppressLint("SetTextI18n")
 @Route(path = ARouterConstants.COM_PARSE_ACTIVITY)

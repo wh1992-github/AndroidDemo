@@ -11,6 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.animation.R;
+/**
+ * 用于组织 Expand Text 界面内容的布局类。
+ */
 
 public class ExpandTextLayout extends LinearLayout implements OnClickListener {
     private Context mContext; //声明一个上下文对象

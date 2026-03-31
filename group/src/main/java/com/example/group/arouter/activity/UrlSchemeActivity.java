@@ -2,13 +2,16 @@ package com.example.group.arouter.activity;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.group.R;
+/**
+ * 用于展示 Url Scheme 功能的 Activity。
+ */
 
 public class UrlSchemeActivity extends AppCompatActivity {
 

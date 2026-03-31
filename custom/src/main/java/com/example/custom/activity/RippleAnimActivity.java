@@ -1,11 +1,14 @@
 package com.example.custom.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.custom.R;
 import com.example.custom.widget.ScanningView1;
 import com.example.custom.widget.ScanningView2;
+/**
+ * 用于展示 Ripple Anim 功能的 Activity。
+ */
 
 public class RippleAnimActivity extends AppCompatActivity {
 

@@ -6,6 +6,9 @@ import android.util.Log;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+/**
+ * 提供 System Properties 相关工具方法的工具类。
+ */
 
 @SuppressLint("PrivateApi")
 @SuppressWarnings({"rawtypes", "unchecked"})

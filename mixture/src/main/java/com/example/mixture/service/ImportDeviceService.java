@@ -14,6 +14,9 @@ import com.example.mixture.util.AssetsUtil;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 用于处理 Import Device 相关后台工作的 Service。
+ */
 
 
 public class ImportDeviceService extends IntentService {

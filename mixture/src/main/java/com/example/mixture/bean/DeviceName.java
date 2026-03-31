@@ -1,4 +1,7 @@
 package com.example.mixture.bean;
+/**
+ * 封装 Device Name 相关逻辑的类。
+ */
 
 public class DeviceName {
     public int xuhao;

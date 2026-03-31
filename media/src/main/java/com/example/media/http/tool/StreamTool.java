@@ -6,6 +6,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.GZIPInputStream;
+/**
+ * 封装 Stream Tool 相关逻辑的类。
+ */
 
 public class StreamTool {
     private static final String TAG = "StreamTool";

@@ -9,6 +9,9 @@ import com.example.mixture.bean.DeviceName;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 封装 Device Name DB 相关逻辑的类。
+ */
 
 public class DeviceNameDB {
     private static final String TAG = "DeviceNameDB";

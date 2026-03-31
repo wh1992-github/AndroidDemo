@@ -8,6 +8,9 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.View;
+/**
+ * 用于展示 Warning Toast 效果的自定义 View。
+ */
 
 public class WarningToastView extends View {
 

@@ -2,8 +2,11 @@ package com.example.group.livedata;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+/**
+ * 用于承载 Base 内容的 Fragment。
+ */
 
 @SuppressLint("SetTextI18n")
 public class BaseFragment extends Fragment {

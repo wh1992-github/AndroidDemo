@@ -4,7 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.GridView;
 import android.widget.Toast;
@@ -21,6 +21,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+/**
+ * 用于展示 App Store 功能的 Activity。
+ */
 
 public class AppStoreActivity extends AppCompatActivity implements OnCheckUpdateListener {
     private static final String TAG = "AppStoreActivity";

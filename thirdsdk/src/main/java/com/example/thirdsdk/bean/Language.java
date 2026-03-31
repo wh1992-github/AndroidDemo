@@ -1,6 +1,9 @@
 package com.example.thirdsdk.bean;
 
 import java.util.Locale;
+/**
+ * 封装 Language 相关逻辑的类。
+ */
 
 public class Language {
     public String name;

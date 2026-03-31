@@ -33,6 +33,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+/**
+ * 用于承载 File Select 内容的 Fragment。
+ */
 
 public class FileSelectFragment extends DialogFragment implements
         OnItemClickListener, OnItemLongClickListener {

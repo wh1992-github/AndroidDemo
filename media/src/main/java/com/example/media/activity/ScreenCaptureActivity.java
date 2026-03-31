@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.media.projection.MediaProjectionManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +16,9 @@ import com.example.media.R;
 import com.example.media.service.CaptureService;
 import com.example.media.service.RecordService;
 import com.example.media.util.AuthorityUtil;
+/**
+ * 用于展示 Screen Capture 功能的 Activity。
+ */
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class ScreenCaptureActivity extends AppCompatActivity implements OnClickListener {

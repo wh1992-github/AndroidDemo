@@ -19,6 +19,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.HashMap;
 import java.util.Locale;
+/**
+ * 提供 File 相关工具方法的工具类。
+ */
 
 public class FileUtils {
     private static final String TAG = "FileUtils";

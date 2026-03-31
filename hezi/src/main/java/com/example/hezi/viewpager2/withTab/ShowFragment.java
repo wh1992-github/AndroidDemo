@@ -16,6 +16,9 @@ import com.example.hezi.R;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于承载 Show 内容的 Fragment。
+ */
 
 public class ShowFragment extends Fragment {
 

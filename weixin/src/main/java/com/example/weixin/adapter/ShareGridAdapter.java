@@ -37,11 +37,14 @@ import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 
-import net.sourceforge.simcpux.R;
+import com.example.weixin.R;
 
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Share Grid 数据的适配器。
+ */
 
 @SuppressLint({"StaticFieldLeak", "InflateParams"})
 public class ShareGridAdapter extends BaseAdapter implements OnItemClickListener {

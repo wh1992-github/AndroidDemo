@@ -2,9 +2,9 @@ package com.example.util;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.RequiresApi;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +15,9 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
+/**
+ * 用于展示 Main 功能的 Activity。
+ */
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity---";

@@ -2,8 +2,8 @@ package com.example.mixture.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,6 +20,9 @@ import com.example.mixture.util.GetClientName;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 用于展示 Netbios 功能的 Activity。
+ */
 
 public class NetbiosActivity extends AppCompatActivity implements
         GetClientListener, OnItemClickListener {
@@ -100,6 +103,15 @@ public class NetbiosActivity extends AppCompatActivity implements
                     }
                 });
             }
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理Handler回调
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
         }
     }
 

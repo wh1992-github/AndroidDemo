@@ -12,6 +12,9 @@ import com.alibaba.android.arouter.facade.template.IInterceptor;
 import com.example.group.activity.ARouterActivity;
 
 import java.util.Locale;
+/**
+ * 封装 Interceptor Impl 相关逻辑的类。
+ */
 
 @Interceptor(priority = 7, name = "TestInterceptor")
 public class InterceptorImpl implements IInterceptor {

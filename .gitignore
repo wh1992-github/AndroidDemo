@@ -9,3 +9,18 @@
 /gen
 /project.properties
 /target
+/.gradle-temp
+/.gradle-user-home
+
+# Backup and temporary files
+*.bak
+*.tmp
+*.swp
+*~
+*.orig
+
+# Java heap dumps
+*.hprof
+
+# Temporary sed files
+sed*

@@ -1,6 +1,9 @@
 package com.example.customview.widget.status
 
 import android.view.View
+/**
+ * 封装 Status Builder 相关逻辑的类。
+ */
 
 class StatusBuilder {
 

@@ -14,6 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 //接受输入文本的对话框
+/**
+ * 用于承载 Input Dialog 内容的 Fragment。
+ */
 public class InputDialogFragment extends DialogFragment {
     private static final String TAG = "InputDialogFragment";
     private String mSSID;
@@ -47,26 +50,33 @@ public class InputDialogFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        Activity activity = getActivity();
+        if (activity == null) {
+            return super.onCreateDialog(savedInstanceState);
+        }
+
         LinearLayout.LayoutParams rootParams = new LinearLayout.LayoutParams(
                 LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        LinearLayout ll_root = new LinearLayout(getActivity());
+        LinearLayout ll_root = new LinearLayout(activity);
         ll_root.setOrientation(LinearLayout.VERTICAL);
         ll_root.setLayoutParams(rootParams);
 
-        TextView tv_message = new TextView(getActivity());
+        TextView tv_message = new TextView(activity);
         tv_message.setText(mMessage);
         ll_root.addView(tv_message);
-        et_input = new EditText(getActivity());
+        et_input = new EditText(activity);
         ll_root.addView(et_input);
 
-        Builder builder = new AlertDialog.Builder(getActivity());
+        Builder builder = new AlertDialog.Builder(activity);
         builder.setView(ll_root);
         //builder.setMessage(mMessage);
         builder.setPositiveButton("确  定",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Log.d(TAG, "onClick ssid=" + mSSID + ",password=" + et_input.getText().toString() + ",type=" + mType);
-                        mCallbacks.onInput(mSSID, et_input.getText().toString(), mType);
+                        if (mCallbacks != null) {
+                            mCallbacks.onInput(mSSID, et_input.getText().toString(), mType);
+                        }
                     }
                 });
         return builder.create();

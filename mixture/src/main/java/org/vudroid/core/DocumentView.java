@@ -14,6 +14,9 @@ import org.vudroid.core.multitouch.MultiTouchZoom;
 
 import java.util.HashMap;
 import java.util.Map;
+/**
+ * 用于展示 Document 效果的自定义 View。
+ */
 
 public class DocumentView extends View implements ZoomListener {
     final ZoomModel zoomModel;

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.customview.R;
@@ -344,5 +344,23 @@ public class LoadingViewActivity extends AppCompatActivity {
             }
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理Timer资源
+        if (mTimerLVLineWithText != null) {
+            mTimerLVLineWithText.cancel();
+            mTimerLVLineWithText = null;
+        }
+        if (mTimerLVNews != null) {
+            mTimerLVNews.cancel();
+            mTimerLVNews = null;
+        }
+        // 清理Handler
+        if (mHandle != null) {
+            mHandle.removeCallbacksAndMessages(null);
+        }
+    }
 }
 

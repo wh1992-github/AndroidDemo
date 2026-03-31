@@ -6,6 +6,9 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Locale;
+/**
+ * 提供 File 相关工具方法的工具类。
+ */
 
 public class FileUtil {
     private static final String TAG = "FileUtil";

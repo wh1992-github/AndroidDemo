@@ -16,14 +16,14 @@ import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -53,6 +53,9 @@ import io.reactivex.schedulers.Schedulers;
  * @author test
  */
 //Wifi列表
+/**
+ * 用于展示 Wifi List 2 功能的 Activity。
+ */
 public class WifiList2Activity extends AppCompatActivity {
     private WifiManager wifiManager;
     private NetworkInfo lastNetworkInfo;
@@ -116,7 +119,7 @@ public class WifiList2Activity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        if (scanWifi != null && scanWifi.isDisposed()) {
+        if (scanWifi != null && !scanWifi.isDisposed()) {
             scanWifi.dispose();
         }
         unregisterReceiver(broadcastReceiver);

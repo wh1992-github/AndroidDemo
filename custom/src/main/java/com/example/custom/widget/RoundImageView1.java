@@ -4,9 +4,12 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Path;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.Log;
+/**
+ * 封装 Round Image View 1 相关逻辑的类。
+ */
 
 @SuppressLint("DrawAllocation")
 public class RoundImageView1 extends AppCompatImageView {

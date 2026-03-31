@@ -21,6 +21,9 @@ import android.view.animation.LinearInterpolator;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+/**
+ * 用于展示 LV Sun Set 效果的自定义 View。
+ */
 
 public class LVSunSetView extends View {
     public LVSunSetView(Context context) {

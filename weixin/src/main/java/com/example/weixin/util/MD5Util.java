@@ -1,6 +1,9 @@
 package com.example.weixin.util;
 
 import java.security.MessageDigest;
+/**
+ * 提供 MD 5 相关工具方法的工具类。
+ */
 
 public class MD5Util {
     private MD5Util() {

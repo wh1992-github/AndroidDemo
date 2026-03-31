@@ -1,7 +1,7 @@
 package com.example.customview.widget.banner.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.v4.view.PagerAdapter;
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -11,6 +11,9 @@ import com.example.customview.widget.banner.listener.OnPageClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于适配 Banner View Pager 数据的适配器。
+ */
 
 public class BannerViewPagerAdapter<T> extends PagerAdapter {
 

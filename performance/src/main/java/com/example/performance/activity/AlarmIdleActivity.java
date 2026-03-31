@@ -10,7 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,17 +19,19 @@ import android.widget.TextView;
 import com.example.performance.R;
 import com.example.performance.util.DateUtil;
 
+import java.lang.ref.WeakReference;
 import java.util.Locale;
 
 /**
  * Created by test on 2018/1/26.
  */
-@SuppressLint({"StaticFieldLeak", "SetTextI18n"})
+@SuppressLint("SetTextI18n")
 @TargetApi(Build.VERSION_CODES.M)
 public class AlarmIdleActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "AlarmIdleActivity";
     private Button btn_alarm;
-    private static TextView tv_alarm;
+    private static WeakReference<TextView> tv_alarm_ref;
+    private TextView tv_alarm;
     private static PendingIntent pIntent; //声明一个延迟意图对象
     private static AlarmManager mAlarmManager; //声明一个闹钟管理器对象
     private static String mDesc;
@@ -41,6 +43,7 @@ public class AlarmIdleActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_idle);
         tv_alarm = findViewById(R.id.tv_alarm);
+        tv_alarm_ref = new WeakReference<>(tv_alarm);
         btn_alarm = findViewById(R.id.btn_alarm);
         btn_alarm.setOnClickListener(this);
         //创建一个广播事件的意图
@@ -58,7 +61,15 @@ public class AlarmIdleActivity extends AppCompatActivity implements View.OnClick
     protected void onDestroy() {
         super.onDestroy();
         //取消已设定的闹钟提醒
-        mAlarmManager.cancel(pIntent);
+        if (mAlarmManager != null && pIntent != null) {
+            mAlarmManager.cancel(pIntent);
+        }
+        // 清理静态引用
+        if (tv_alarm_ref != null) {
+            tv_alarm_ref.clear();
+            tv_alarm_ref = null;
+        }
+        mDesc = "";
     }
 
     @Override
@@ -99,9 +110,10 @@ public class AlarmIdleActivity extends AppCompatActivity implements View.OnClick
         public void onReceive(Context context, Intent intent) {
             if (intent != null) {
                 Log.d(TAG, "AlarmReceiver onReceive");
-                if (tv_alarm != null) {
+                TextView tv = tv_alarm_ref != null ? tv_alarm_ref.get() : null;
+                if (tv != null) {
                     mDesc = String.format(Locale.getDefault(), "%s\n%s 闹钟时间到达", mDesc, DateUtil.getNowTime());
-                    tv_alarm.setText(mDesc);
+                    tv.setText(mDesc);
                     repeatAlarm(); //重复闹钟提醒设置
                 }
             }

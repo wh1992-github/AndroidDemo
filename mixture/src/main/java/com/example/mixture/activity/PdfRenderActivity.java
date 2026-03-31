@@ -10,10 +10,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.ParcelFileDescriptor;
-import android.support.v4.view.PagerTabStrip;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.viewpager.widget.PagerTabStrip;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
@@ -36,6 +36,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Map;
+/**
+ * 用于展示 Pdf Render 功能的 Activity。
+ */
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 

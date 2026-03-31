@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
+/**
+ * 封装 Viewer Preferences 相关逻辑的类。
+ */
 
 public class ViewerPreferences {
     private SharedPreferences sharedPreferences;

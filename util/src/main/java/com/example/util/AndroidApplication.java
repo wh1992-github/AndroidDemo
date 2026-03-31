@@ -5,6 +5,9 @@ import android.app.Application;
 import android.content.Context;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+/**
+ * 用于维护 Android Application 全局初始化逻辑的应用类。
+ */
 
 @SuppressLint("StaticFieldLeak")
 public class AndroidApplication extends Application {

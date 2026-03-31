@@ -2,12 +2,15 @@ package com.example.group.windowdialog;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Button;
+/**
+ * 用于展示 Drag 效果的自定义 View。
+ */
 
 @SuppressLint("AppCompatCustomView")
 public class DragView extends Button {

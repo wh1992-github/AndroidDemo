@@ -1,7 +1,7 @@
 package com.example.customview.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +17,9 @@ import com.example.customview.widget.StudyPlanProgressView;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于展示 Progress Bar 功能的 Activity。
+ */
 
 public class ProgressBarActivity extends AppCompatActivity {
     private static final String TAG = "ProgressBarActivity";

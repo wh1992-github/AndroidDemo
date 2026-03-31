@@ -2,6 +2,9 @@ package com.example.device.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+/**
+ * 提供 Date 相关工具方法的工具类。
+ */
 
 public class DateUtil {
 

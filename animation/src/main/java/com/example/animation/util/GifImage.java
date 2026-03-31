@@ -7,6 +7,9 @@ import java.io.InputStream;
 import java.util.Vector;
 
 //Handler for read & extract Bitmap from *.gif  
+/**
+ * 封装 Gif Image 相关逻辑的类。
+ */
 public class GifImage {
 
     //to store *.gif data, Bitmap & delay

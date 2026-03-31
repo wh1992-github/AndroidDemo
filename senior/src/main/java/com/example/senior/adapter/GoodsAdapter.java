@@ -20,6 +20,9 @@ import com.example.senior.activity.ShoppingDetailActivity;
 import com.example.senior.bean.GoodsInfo;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Goods 数据的适配器。
+ */
 
 public class GoodsAdapter extends BaseAdapter implements OnItemClickListener {
     private Context mContext; //声明一个上下文对象

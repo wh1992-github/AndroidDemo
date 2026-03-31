@@ -1,6 +1,9 @@
 package org.vudroid.core.events;
 
 import java.util.ArrayList;
+/**
+ * 封装 Event Dispatcher 相关逻辑的类。
+ */
 
 public class EventDispatcher {
     private final ArrayList<Object> listeners = new ArrayList<Object>();

@@ -2,13 +2,16 @@ package com.example.mixture.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
 import com.example.mixture.R;
+/**
+ * 用于承载 Html 内容的 Fragment。
+ */
 
 public class HtmlFragment extends Fragment {
     private static final String TAG = "HtmlFragment";
@@ -28,6 +31,9 @@ public class HtmlFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mContext = getActivity();
+        if (mContext == null) {
+            return null;
+        }
         if (getArguments() != null) {
             htmlPath = getArguments().getString("htmlPath");
         }

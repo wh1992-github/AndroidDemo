@@ -3,7 +3,7 @@ package com.example.network.activity;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;

@@ -8,6 +8,9 @@ import android.os.Environment;
 import android.os.StatFs;
 
 import java.io.File;
+/**
+ * 提供 SD Card 相关工具方法的工具类。
+ */
 
 public class SDCardUtils {
     private SDCardUtils() {

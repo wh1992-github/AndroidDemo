@@ -18,6 +18,9 @@ import android.widget.Scroller;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
+/**
+ * 用于展示 Image Surface 效果的自定义 View。
+ */
 
 @SuppressLint("LogNotTimber")
 public class ImageSurfaceView extends SurfaceView implements SurfaceHolder.Callback, OnGestureListener {

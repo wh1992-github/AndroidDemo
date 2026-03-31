@@ -26,6 +26,9 @@ import com.example.device.util.CameraUtil;
 
 import java.lang.reflect.Method;
 import java.util.regex.Pattern;
+/**
+ * 用于管理 Camera Configuration 相关流程的管理类。
+ */
 
 final class CameraConfigurationManager {
     private static final String TAG = "CameraConfigurationMana";

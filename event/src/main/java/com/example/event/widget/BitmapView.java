@@ -9,6 +9,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.example.event.util.BitmapUtil;
+/**
+ * 用于展示 Bitmap 效果的自定义 View。
+ */
 
 @SuppressLint("DrawAllocation")
 public class BitmapView extends View {

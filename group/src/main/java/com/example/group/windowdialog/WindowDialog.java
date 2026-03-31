@@ -5,8 +5,8 @@ import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -16,6 +16,9 @@ import android.widget.Toast;
 import com.example.group.R;
 
 //可以作为悬浮窗。
+/**
+ * 用于展示 Window 内容的对话框类。
+ */
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class WindowDialog extends Dialog {
     private static final String TAG = "WindowDialog";

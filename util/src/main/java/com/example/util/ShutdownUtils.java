@@ -6,6 +6,9 @@ import android.os.PowerManager;
 import android.os.SystemClock;
 
 import java.lang.reflect.Method;
+/**
+ * 提供 Shutdown 相关工具方法的工具类。
+ */
 
 public class ShutdownUtils {
     private static final String TAG = "ShutdownUtils";

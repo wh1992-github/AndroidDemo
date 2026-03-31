@@ -1,31 +1,32 @@
 package com.example.customview.activity
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
-import com.example.customview.R
+import com.example.customview.databinding.ActivityClearScreenBinding
 import com.example.customview.widget.ClearScreenMode
 import com.example.customview.widget.ClearScreenView
-import kotlinx.android.synthetic.main.activity_clear_screen.btn_quick_clear
-import kotlinx.android.synthetic.main.activity_clear_screen.btn_slow_clear
-import kotlinx.android.synthetic.main.activity_clear_screen.clear_screen_container
-import kotlinx.android.synthetic.main.activity_clear_screen.iv_clear_content
+/**
+ * 用于展示 Clear Screen 功能的 Activity。
+ */
 
 class ClearScreenActivity : AppCompatActivity(), ClearScreenView.OnClearScreenListener {
+    private lateinit var binding: ActivityClearScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_clear_screen)
+        binding = ActivityClearScreenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        clear_screen_container.addClearView(iv_clear_content)
+        binding.clearScreenContainer.addClearView(binding.ivClearContent)
 
-        clear_screen_container.setOnClearScreenListener(this)
+        binding.clearScreenContainer.setOnClearScreenListener(this)
 
-        btn_quick_clear.setOnClickListener {
-            clear_screen_container.clearScreenMode = ClearScreenMode.QUICK_SCROLL
+        binding.btnQuickClear.setOnClickListener {
+            binding.clearScreenContainer.clearScreenMode = ClearScreenMode.QUICK_SCROLL
         }
-        btn_slow_clear.setOnClickListener {
-            clear_screen_container.clearScreenMode = ClearScreenMode.SLOW_SCROLL
+        binding.btnSlowClear.setOnClickListener {
+            binding.clearScreenContainer.clearScreenMode = ClearScreenMode.SLOW_SCROLL
         }
     }
 

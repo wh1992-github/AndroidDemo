@@ -9,6 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 //智能安装服务
+/**
+ * 用于处理 Auto Install 相关后台工作的 Service。
+ */
 public class AutoInstallService extends AccessibilityService {
     private static final String TAG = "AutoInstallService";
     private Map<Integer, Boolean> handledMap = new HashMap<>();

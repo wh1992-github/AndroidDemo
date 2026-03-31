@@ -16,6 +16,9 @@ import com.example.custom.adapter.FriendAdapter.OnDeleteListener;
 import com.example.custom.bean.Friend;
 
 import java.util.List;
+/**
+ * 封装 Dialog Friend 相关逻辑的类。
+ */
 
 public class DialogFriend implements OnClickListener, OnDeleteListener {
     private Context mContext; //声明一个上下文对象

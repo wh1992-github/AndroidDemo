@@ -17,6 +17,9 @@ import java.security.spec.RSAPublicKeySpec;
 import javax.crypto.Cipher;
 
 //RSA 工具类。提供加密,解密,生成密钥对等方法。
+/**
+ * 提供 RSA 相关工具方法的工具类。
+ */
 public class RSAUtil {
     private static final String TAG = "RSAUtil";
     private static final String Algorithm = "RSA";

@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
@@ -19,6 +19,9 @@ import com.example.group.arouter.data.TestObj;
 import com.example.group.arouter.data.TestService;
 
 import java.lang.ref.WeakReference;
+/**
+ * 用于展示 A Router 功能的 Activity。
+ */
 
 @SuppressLint("NonConstantResourceId")
 public class ARouterActivity extends AppCompatActivity {

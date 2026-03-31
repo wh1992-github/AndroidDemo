@@ -1,4 +1,7 @@
 package com.example.customview.widget.banner.listener;
+/**
+ * 用于约束 On Page Change 回调能力的接口。
+ */
 
 public interface OnPageChangeListener {
 

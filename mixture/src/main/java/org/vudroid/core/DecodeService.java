@@ -5,6 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.RectF;
 import android.net.Uri;
 import android.view.View;
+/**
+ * 用于处理 Decode 相关后台工作的 Service。
+ */
 
 public interface DecodeService {
     void setContentResolver(ContentResolver contentResolver);

@@ -11,7 +11,7 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.BounceInterpolator;
@@ -144,6 +144,24 @@ public class InterpolatorActivity extends AppCompatActivity implements AnimatorL
 
     //在属性动画重复播放时触发
     public void onAnimationRepeat(Animator animation) {
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 取消所有动画
+        if (animAcce != null && animAcce.isRunning()) {
+            animAcce.cancel();
+        }
+        if (animDece != null && animDece.isRunning()) {
+            animDece.cancel();
+        }
+        if (animLinear != null && animLinear.isRunning()) {
+            animLinear.cancel();
+        }
+        if (animBounce != null && animBounce.isRunning()) {
+            animBounce.cancel();
+        }
     }
 
 }

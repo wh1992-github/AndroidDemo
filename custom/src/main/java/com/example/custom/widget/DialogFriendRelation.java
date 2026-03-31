@@ -17,6 +17,9 @@ import android.widget.LinearLayout;
 import com.example.custom.R;
 import com.example.custom.adapter.FriendRelationAdapter;
 import com.example.custom.util.Utils;
+/**
+ * 封装 Dialog Friend Relation 相关逻辑的类。
+ */
 
 public class DialogFriendRelation implements OnItemClickListener, OnDismissListener {
     private Context mContext; //声明一个上下文对象

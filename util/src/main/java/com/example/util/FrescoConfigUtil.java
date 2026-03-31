@@ -14,6 +14,9 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.imagepipeline.core.ImagePipelineFactory;
 
 import java.util.Locale;
+/**
+ * 提供 Fresco Config 相关工具方法的工具类。
+ */
 
 public class FrescoConfigUtil {
     private static final String TAG = "FrescoConfigUtil";

@@ -2,12 +2,15 @@ package com.example.group.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.group.R;
 
 import timber.log.Timber;
+/**
+ * 用于展示 Timber 功能的 Activity。
+ */
 
 @SuppressLint("NonConstantResourceId")
 public class TimberActivity extends AppCompatActivity {

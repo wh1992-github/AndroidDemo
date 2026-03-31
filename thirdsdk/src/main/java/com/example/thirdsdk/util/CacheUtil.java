@@ -15,6 +15,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 import java.util.Locale;
+/**
+ * 提供 Cache 相关工具方法的工具类。
+ */
 
 
 public class CacheUtil {

@@ -2,7 +2,7 @@ package com.example.media.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
@@ -11,6 +11,9 @@ import com.example.media.R;
 import com.example.media.service.StockService;
 import com.example.media.service.TrafficService;
 import com.example.media.util.AuthorityUtil;
+/**
+ * 用于展示 Float Window 功能的 Activity。
+ */
 
 public class FloatWindowActivity extends AppCompatActivity implements OnClickListener {
 

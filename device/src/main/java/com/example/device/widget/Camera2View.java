@@ -32,6 +32,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Locale;
+/**
+ * 用于展示 Camera 2 效果的自定义 View。
+ */
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class Camera2View extends TextureView {
@@ -331,6 +334,27 @@ public class Camera2View extends TextureView {
         public int compare(Size lhs, Size rhs) {
             return Long.signum((long) lhs.getWidth() * lhs.getHeight()
                     - (long) rhs.getWidth() * rhs.getHeight());
+        }
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        // 关闭相机资源
+        closeCamera();
+        // 清理Handler回调
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+        }
+        // 安全退出HandlerThread
+        if (mThreadHandler != null) {
+            mThreadHandler.quitSafely();
+            try {
+                mThreadHandler.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            mThreadHandler = null;
         }
     }
 

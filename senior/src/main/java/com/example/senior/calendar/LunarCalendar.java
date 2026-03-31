@@ -5,6 +5,9 @@ import com.example.senior.bean.CalendarTransfer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+/**
+ * 封装 Lunar Calendar 相关逻辑的类。
+ */
 
 public class LunarCalendar {
     private int year;

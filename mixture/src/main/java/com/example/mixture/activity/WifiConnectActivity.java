@@ -8,7 +8,7 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -188,6 +188,15 @@ public class WifiConnectActivity extends AppCompatActivity implements
             config.status = WifiConfiguration.Status.ENABLED;
         }
         return config;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理Handler回调
+        if (mHandler != null) {
+            mHandler.removeCallbacks(mRefresh);
+        }
     }
 
 }

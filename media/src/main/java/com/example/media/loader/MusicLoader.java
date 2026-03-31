@@ -9,6 +9,9 @@ import android.util.Log;
 import com.example.media.bean.MediaInfo;
 
 import java.util.ArrayList;
+/**
+ * 用于加载 Music 数据的加载器。
+ */
 
 public class MusicLoader {
     private static final String TAG = "MusicLoader";
@@ -41,20 +44,23 @@ public class MusicLoader {
         if (cursor == null) {
             return;
         }
-        //下面遍历结果集,并逐个添加到音乐队列
-        while (cursor.moveToNext()) {
-            MediaInfo music = new MediaInfo();
-            music.setId(cursor.getLong(0));
-            music.setTitle(cursor.getString(1));
-            music.setAlbum(cursor.getString(2));
-            music.setDuration(cursor.getInt(3));
-            music.setSize(cursor.getLong(4));
-            music.setArtist(cursor.getString(5));
-            music.setUrl(cursor.getString(6));
-            Log.d(TAG, music.getTitle() + " " + music.getDuration());
-            musicList.add(music);
+        try {
+            //下面遍历结果集,并逐个添加到音乐队列
+            while (cursor.moveToNext()) {
+                MediaInfo music = new MediaInfo();
+                music.setId(cursor.getLong(0));
+                music.setTitle(cursor.getString(1));
+                music.setAlbum(cursor.getString(2));
+                music.setDuration(cursor.getInt(3));
+                music.setSize(cursor.getLong(4));
+                music.setArtist(cursor.getString(5));
+                music.setUrl(cursor.getString(6));
+                Log.d(TAG, music.getTitle() + " " + music.getDuration());
+                musicList.add(music);
+            }
+        } finally {
+            cursor.close(); //确保关闭游标
         }
-        cursor.close(); //关闭游标
     }
 
     //获取音乐队列

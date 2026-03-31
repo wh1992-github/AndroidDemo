@@ -14,6 +14,9 @@ import android.view.View;
 import com.example.device.R;
 
 import java.util.ArrayList;
+/**
+ * 用于展示 Betting 效果的自定义 View。
+ */
 
 public class BettingView extends View {
     private static final String TAG = "BettingView";

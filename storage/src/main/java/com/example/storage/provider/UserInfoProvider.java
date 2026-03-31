@@ -9,6 +9,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 
 import com.example.storage.database.UserDBHelper;
+/**
+ * 用于提供 User Info 数据访问能力的 Provider。
+ */
 
 public class UserInfoProvider extends ContentProvider {
     private static final String TAG = "UserInfoProvider";

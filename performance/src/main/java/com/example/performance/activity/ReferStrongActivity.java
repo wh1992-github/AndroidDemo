@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,15 +12,17 @@ import android.widget.TextView;
 import com.example.performance.R;
 import com.example.performance.util.DateUtil;
 
+import java.lang.ref.WeakReference;
 import java.util.Locale;
 
 /**
  * Created by test on 2018/4/29.
  */
-@SuppressLint({"SetTextI18n", "StaticFieldLeak"})
+@SuppressLint("SetTextI18n")
 public class ReferStrongActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "ReferStrongActivity";
-    private static TextView tv_strong;
+    private static WeakReference<TextView> tv_strong_ref;
+    private TextView tv_strong;
     private Button btn_strong;
     private static String mDesc = "";
     private boolean isRunning = false; //定时任务是否正在运行
@@ -30,6 +32,7 @@ public class ReferStrongActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_refer_strong);
         tv_strong = findViewById(R.id.tv_strong);
+        tv_strong_ref = new WeakReference<>(tv_strong);
         btn_strong = findViewById(R.id.btn_strong);
         btn_strong.setOnClickListener(this);
         TextView tv_start = findViewById(R.id.tv_start);
@@ -70,10 +73,28 @@ public class ReferStrongActivity extends AppCompatActivity implements View.OnCli
     private static class StrongHandler extends Handler {
         //在收到消息时触发
         public void handleMessage(Message msg) {
-            mDesc = String.format(Locale.getDefault(), "%s%s 打印了一行测试日志\n",
-                    mDesc, DateUtil.getNowTime());
-            tv_strong.setText(mDesc);
+            TextView tv = tv_strong_ref != null ? tv_strong_ref.get() : null;
+            if (tv != null) {
+                mDesc = String.format(Locale.getDefault(), "%s%s 打印了一行测试日志\n",
+                        mDesc, DateUtil.getNowTime());
+                tv.setText(mDesc);
+            }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 移除Handler回调
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+        }
+        // 清理静态引用
+        if (tv_strong_ref != null) {
+            tv_strong_ref.clear();
+            tv_strong_ref = null;
+        }
+        mDesc = "";
     }
 
 }

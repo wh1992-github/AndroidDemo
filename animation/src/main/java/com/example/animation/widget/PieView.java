@@ -10,6 +10,9 @@ import android.graphics.RectF;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
+/**
+ * 用于展示 Pie 效果的自定义 View。
+ */
 
 @SuppressLint("DrawAllocation")
 public class PieView extends View {

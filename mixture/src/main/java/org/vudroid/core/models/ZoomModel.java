@@ -4,6 +4,9 @@ import org.vudroid.core.events.BringUpZoomControlsEvent;
 import org.vudroid.core.events.EventDispatcher;
 import org.vudroid.core.events.ZoomChangedEvent;
 import org.vudroid.core.events.ZoomListener;
+/**
+ * 用于描述 Zoom 数据的实体类。
+ */
 
 public class ZoomModel extends EventDispatcher {
     private float zoom = 1.0f;

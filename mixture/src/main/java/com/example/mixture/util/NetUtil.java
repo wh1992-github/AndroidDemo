@@ -4,6 +4,9 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import java.lang.reflect.Method;
+/**
+ * 提供 Net 相关工具方法的工具类。
+ */
 
 public class NetUtil {
     private static final String TAG = "NetUtil";

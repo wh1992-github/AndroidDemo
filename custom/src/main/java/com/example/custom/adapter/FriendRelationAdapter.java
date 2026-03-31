@@ -11,6 +11,9 @@ import com.example.custom.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
+/**
+ * 用于适配 Friend Relation 数据的适配器。
+ */
 
 public class FriendRelationAdapter extends BaseAdapter {
     private Context mContext; //声明一个上下文对象

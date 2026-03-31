@@ -13,6 +13,9 @@ import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
+/**
+ * 封装 Input Stream Scene 相关逻辑的类。
+ */
 
 public class InputStreamScene extends Scene {
     private static final String TAG = "InputStreamScene";

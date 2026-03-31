@@ -25,6 +25,9 @@ import com.example.device.util.DateUtil;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 用于展示 Camera 效果的自定义 View。
+ */
 
 public class CameraView extends SurfaceView {
     private static final String TAG = "CameraView";
@@ -215,8 +218,9 @@ public class CameraView extends SurfaceView {
             Rect rect = new Rect(0, 0, width, height);
             //创建一个YUV格式的图像对象
             YuvImage yuvImg = new YuvImage(data, imageFormat, width, height, null);
+            ByteArrayOutputStream bos = null;
             try {
-                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                bos = new ByteArrayOutputStream();
                 yuvImg.compressToJpeg(rect, 80, bos);
                 //从字节数组中解析出位图数据
                 Bitmap raw = BitmapFactory.decodeByteArray(
@@ -240,6 +244,14 @@ public class CameraView extends SurfaceView {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+            } finally {
+                if (bos != null) {
+                    try {
+                        bos.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
     };

@@ -22,6 +22,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+/**
+ * 封装 Crash Handler 相关逻辑的类。
+ */
 
 @SuppressLint({"StaticFieldLeak"})
 public class CrashHandler implements Thread.UncaughtExceptionHandler {

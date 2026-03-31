@@ -12,6 +12,9 @@ import android.util.TypedValue
 import android.view.View
 import com.example.customview.R
 import kotlin.math.min
+/**
+ * 用于展示 Study Plan Progress 效果的自定义 View。
+ */
 
 class StudyPlanProgressView @JvmOverloads constructor(
     context: Context,

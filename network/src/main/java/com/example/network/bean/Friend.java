@@ -1,4 +1,7 @@
 package com.example.network.bean;
+/**
+ * 封装 Friend 相关逻辑的类。
+ */
 
 public class Friend {
     public String device_id;

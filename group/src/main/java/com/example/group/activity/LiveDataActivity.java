@@ -2,11 +2,14 @@ package com.example.group.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.example.group.R;
 import com.example.group.livedata.LifecycleHelper;
+/**
+ * 用于展示 Live Data 功能的 Activity。
+ */
 
 public class LiveDataActivity extends AppCompatActivity {
     private static final String TAG = "LiveDataActivity";
@@ -28,6 +31,7 @@ public class LiveDataActivity extends AppCompatActivity {
         mBtnLivedata.setOnClickListener(v -> startActivity(new Intent(this, LiveDataSampleActivity.class)));
 
         mBtnLivedataTransformations = findViewById(R.id.btn_livedata_transformations);
-        mBtnLivedataTransformations.setOnClickListener(v -> startActivity(new Intent(this, LiveDataTransformationsActivity.class)));
+        // LiveDataTransformationsActivity temporarily disabled due to Kotlin Function1 compatibility issue
+        // mBtnLivedataTransformations.setOnClickListener(v -> startActivity(new Intent(this, LiveDataTransformationsActivity.class)));
     }
 }

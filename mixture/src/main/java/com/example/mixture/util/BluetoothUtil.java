@@ -13,6 +13,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
+/**
+ * 提供 Bluetooth 相关工具方法的工具类。
+ */
 
 public class BluetoothUtil {
     private static final String TAG = "BluetoothUtil";

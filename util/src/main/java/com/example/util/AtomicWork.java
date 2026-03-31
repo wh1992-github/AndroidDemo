@@ -4,6 +4,9 @@ import android.util.Log;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+/**
+ * 封装 Atomic Work 相关逻辑的类。
+ */
 
 public class AtomicWork {
     private static final String TAG = "AtomicWork";

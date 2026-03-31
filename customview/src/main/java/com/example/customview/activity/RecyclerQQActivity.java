@@ -3,9 +3,9 @@ package com.example.customview.activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,6 +14,9 @@ import com.example.customview.adapter.RecyclerQQAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于展示 Recycler QQ 功能的 Activity。
+ */
 
 public class RecyclerQQActivity extends AppCompatActivity implements RecyclerQQAdapter.onSlidingViewClickListener {
 

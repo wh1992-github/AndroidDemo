@@ -32,6 +32,9 @@ import com.aqi00.lib.util.FileResource;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于承载 File Save 内容的 Fragment。
+ */
 
 public class FileSaveFragment extends DialogFragment implements OnItemClickListener {
     private static final String TAG = "FileSaveFragment";

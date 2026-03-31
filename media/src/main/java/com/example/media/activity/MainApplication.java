@@ -8,6 +8,9 @@ import android.os.Build;
 
 import com.example.media.R;
 import com.example.media.util.NotifyUtil;
+/**
+ * 用于维护 Main Application 全局初始化逻辑的应用类。
+ */
 
 public class MainApplication extends Application {
     //声明一个当前应用的静态实例

@@ -10,6 +10,9 @@ import android.util.AttributeSet;
 import android.widget.ProgressBar;
 
 import java.util.Locale;
+/**
+ * 封装 Number Progress Bar 相关逻辑的类。
+ */
 
 public class NumberProgressBar extends ProgressBar {
     private TextPaint mTextPaint;

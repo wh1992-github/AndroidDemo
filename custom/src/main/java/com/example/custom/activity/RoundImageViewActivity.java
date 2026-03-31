@@ -2,7 +2,7 @@ package com.example.custom.activity;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -14,6 +14,9 @@ import com.example.custom.util.BitmapUtils;
 import com.example.custom.widget.RoundImageView1;
 import com.example.custom.widget.RoundImageView2;
 import com.example.custom.widget.RoundImageView3;
+/**
+ * 用于展示 Round Image View 功能的 Activity。
+ */
 
 public class RoundImageViewActivity extends AppCompatActivity {
 

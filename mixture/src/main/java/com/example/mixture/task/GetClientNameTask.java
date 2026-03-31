@@ -4,6 +4,9 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.mixture.activity.WifiShareActivity;
+/**
+ * 用于执行 Get Client Name 任务的任务类。
+ */
 
 public class GetClientNameTask extends AsyncTask<String, Void, String> {
     private static final String TAG = "GetClientNameTask";
@@ -19,7 +22,9 @@ public class GetClientNameTask extends AsyncTask<String, Void, String> {
 
     //线程已经完成处理
     protected void onPostExecute(String info) {
-        mListener.onFindName(info);
+        if (mListener != null) {
+            mListener.onFindName(info);
+        }
     }
 
     private FindNameListener mListener;//声明一个发现设备名称的监听器对象

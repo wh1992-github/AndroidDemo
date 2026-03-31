@@ -3,6 +3,9 @@ package com.example.hezi.viewpager.transformer;
 import android.view.View;
 
 import androidx.viewpager.widget.ViewPager;
+/**
+ * 封装 Gallery Transformer 相关逻辑的类。
+ */
 
 public class GalleryTransformer implements ViewPager.PageTransformer {
     private static final float MAX_ALPHA = 0.5f;

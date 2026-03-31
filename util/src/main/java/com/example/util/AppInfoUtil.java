@@ -12,6 +12,9 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 import java.util.List;
+/**
+ * 提供 App Info 相关工具方法的工具类。
+ */
 
 public class AppInfoUtil {
     private static final String TAG = "AppInfo_";

@@ -12,6 +12,9 @@ import java.nio.charset.StandardCharsets;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+/**
+ * 提供 Des 3 相关工具方法的工具类。
+ */
 
 @SuppressLint("GetInstance")
 public class Des3Util {

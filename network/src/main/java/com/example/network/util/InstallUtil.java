@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
-import android.support.v4.content.FileProvider;
+import androidx.core.content.FileProvider;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -13,6 +13,9 @@ import com.example.network.BuildConfig;
 import com.example.network.service.AutoInstallService;
 
 import java.io.File;
+/**
+ * 提供 Install 相关工具方法的工具类。
+ */
 
 public class InstallUtil {
     public static final String TAG = "InstallUtil";

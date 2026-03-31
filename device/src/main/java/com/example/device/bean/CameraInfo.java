@@ -3,6 +3,9 @@ package com.example.device.bean;
 import android.hardware.Camera;
 
 import java.util.List;
+/**
+ * 用于描述 Camera 数据的实体类。
+ */
 
 public class CameraInfo {
     public String camera_type;

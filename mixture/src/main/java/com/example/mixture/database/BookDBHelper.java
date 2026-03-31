@@ -103,7 +103,9 @@ public class BookDBHelper extends SQLiteOpenHelper {
             //如果存在同名记录,则更新记录
             //注意条件语句的等号后面要用单引号括起来
             if (!TextUtils.isEmpty(info.path)) {
-                String condition = String.format(Locale.getDefault(), "path='%s'", info.path);
+                // 转义单引号，防止SQL注入
+                String escapedPath = info.path.replace("'", "''");
+                String condition = String.format(Locale.getDefault(), "path='%s'", escapedPath);
                 tempArray = query(condition);
                 if (tempArray.size() > 0) {
                     continue;

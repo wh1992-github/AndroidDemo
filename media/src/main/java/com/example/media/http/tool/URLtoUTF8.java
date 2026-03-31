@@ -4,6 +4,9 @@ import android.util.Log;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
+/**
+ * 封装 UR Lto UTF 8 相关逻辑的类。
+ */
 
 public class URLtoUTF8 {
     private static final String TAG = "URLtoUTF8";

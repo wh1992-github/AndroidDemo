@@ -2,9 +2,9 @@ package com.example.group.widget;
 
 import android.content.Context;
 import android.os.Handler;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -20,6 +20,9 @@ import com.example.group.util.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 封装 Banner Pager 相关逻辑的类。
+ */
 
 public class BannerPager extends RelativeLayout implements View.OnClickListener {
     private static final String TAG = "BannerPager";

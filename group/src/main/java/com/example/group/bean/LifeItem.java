@@ -3,6 +3,9 @@ package com.example.group.bean;
 import com.example.group.R;
 
 import java.util.ArrayList;
+/**
+ * 用于描述 Life 数据的实体类。
+ */
 
 public class LifeItem {
     public int pic;

@@ -14,7 +14,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -88,6 +88,9 @@ public class BluetoothTransActivity extends AppCompatActivity implements
 
     //初始化蓝牙设备列表
     private void initBlueDevice() {
+        if (mBluetooth == null) {
+            return;
+        }
         mDeviceList.clear();
         //获取已经配对的蓝牙设备集合
         Set<BluetoothDevice> bondedDevices = mBluetooth.getBondedDevices();

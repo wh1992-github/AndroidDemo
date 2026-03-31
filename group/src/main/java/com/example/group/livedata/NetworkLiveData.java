@@ -1,6 +1,6 @@
 package com.example.group.livedata;
 
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -38,14 +38,23 @@ public class NetworkLiveData extends LiveData<NetworkInfo> {
     protected void onActive() {
         super.onActive();
         LogUtil.i(TAG, "onActive:");
-        mContext.registerReceiver(mNetworkReceiver, mIntentFilter);
+        try {
+            mContext.registerReceiver(mNetworkReceiver, mIntentFilter);
+        } catch (Exception e) {
+            LogUtil.e(TAG, "onActive: failed to register receiver: " + e.getMessage());
+        }
     }
 
     @Override
     protected void onInactive() {
         super.onInactive();
         LogUtil.i(TAG, "onInactive: ");
-        mContext.unregisterReceiver(mNetworkReceiver);
+        try {
+            mContext.unregisterReceiver(mNetworkReceiver);
+        } catch (IllegalArgumentException e) {
+            // 接收器可能已经注销，忽略异常
+            LogUtil.w(TAG, "onInactive: receiver already unregistered");
+        }
     }
 
     private static class NetworkReceiver extends BroadcastReceiver {

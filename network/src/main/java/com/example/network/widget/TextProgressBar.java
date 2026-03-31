@@ -9,6 +9,9 @@ import android.util.AttributeSet;
 import android.widget.ProgressBar;
 
 import com.example.network.util.Utils;
+/**
+ * 封装 Text Progress Bar 相关逻辑的类。
+ */
 
 public class TextProgressBar extends ProgressBar {
     private String mProgressText = ""; //进度文本

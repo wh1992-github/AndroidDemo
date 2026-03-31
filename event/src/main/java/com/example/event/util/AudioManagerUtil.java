@@ -4,6 +4,9 @@ import android.content.Context;
 import android.media.AudioManager;
 
 import static android.content.Context.AUDIO_SERVICE;
+/**
+ * 提供 Audio Manager 相关工具方法的工具类。
+ */
 
 public class AudioManagerUtil {
     private AudioManager mAudioManager;

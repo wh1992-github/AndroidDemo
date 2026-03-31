@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -179,6 +179,21 @@ public class WebSpanActivity extends AppCompatActivity {
             wv_spannable.requestFocus();
             //给网页视图设置默认的网页浏览客户端
             wv_spannable.setWebViewClient(new WebViewClient());
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理WebView资源,防止内存泄漏
+        if (wv_spannable != null) {
+            wv_spannable.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
+            wv_spannable.clearHistory();
+            wv_spannable.clearCache(true);
+            wv_spannable.onPause();
+            wv_spannable.removeAllViews();
+            wv_spannable.destroy();
+            wv_spannable = null;
         }
     }
 }

@@ -1,4 +1,7 @@
 package org.vudroid.core.events;
+/**
+ * 封装 Zoom Changed Event 相关逻辑的类。
+ */
 
 public class ZoomChangedEvent extends SafeEvent<ZoomListener> {
     private final float newZoom;

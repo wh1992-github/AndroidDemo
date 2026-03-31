@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+/**
+ * 封装 Run Command 相关逻辑的类。
+ */
 
 public class RunCommand {
     public static StringBuilder getRunResult(StringBuilder resultBuilder) {

@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.hezi.R;
+/**
+ * 用于承载 Home 内容的 Fragment。
+ */
 
 public class HomeFragment extends Fragment {
 

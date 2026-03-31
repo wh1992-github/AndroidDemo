@@ -1,4 +1,7 @@
 package com.example.mixture.bean;
+/**
+ * 封装 Wifi Connect 相关逻辑的类。
+ */
 
 public class WifiConnect {
     public String SSID;

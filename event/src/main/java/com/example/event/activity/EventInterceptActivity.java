@@ -1,7 +1,7 @@
 package com.example.event.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -12,6 +12,9 @@ import com.example.event.widget.InterceptLayout;
 import com.example.event.widget.InterceptLayout.InterceptListener;
 
 import java.util.Locale;
+/**
+ * 用于展示 Event Intercept 功能的 Activity。
+ */
 
 public class EventInterceptActivity extends AppCompatActivity implements
         OnClickListener, InterceptListener {

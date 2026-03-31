@@ -9,6 +9,9 @@ import org.apache.log4j.Logger;
 import java.io.File;
 
 import de.mindpipe.android.logging.log4j.LogConfigurator;
+/**
+ * 提供 Log 4 j 相关工具方法的工具类。
+ */
 
 public class Log4jUtil {
     private static final String TAG = "Log4jUtil";

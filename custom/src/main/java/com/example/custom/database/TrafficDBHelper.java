@@ -11,6 +11,9 @@ import com.example.custom.bean.AppInfo;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 提供 Traffic DB 相关工具方法的工具类。
+ */
 
 
 public class TrafficDBHelper extends SQLiteOpenHelper {

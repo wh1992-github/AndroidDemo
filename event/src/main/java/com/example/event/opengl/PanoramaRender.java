@@ -35,6 +35,9 @@ import static android.opengl.Matrix.frustumM;
 import static android.opengl.Matrix.rotateM;
 import static android.opengl.Matrix.scaleM;
 import static android.opengl.Matrix.translateM;
+/**
+ * 封装 Panorama Render 相关逻辑的类。
+ */
 
 public class PanoramaRender implements Renderer {
     private static final String TAG = "PanoramaRender";

@@ -8,7 +8,7 @@ import android.net.wifi.WifiManager.LocalOnlyHotspotCallback;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -192,6 +192,15 @@ public class WifiApActivity extends AppCompatActivity implements
         public void onFailed(int reason) {
             super.onFailed(reason);
             Log.d(TAG, "onFailed: ");
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理Handler回调
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
         }
     }
 

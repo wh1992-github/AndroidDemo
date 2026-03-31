@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.RectF;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +20,9 @@ import com.example.mixture.util.FileUtil;
 import org.vudroid.core.DecodeService;
 
 import java.io.File;
+/**
+ * 用于承载 Image 内容的 Fragment。
+ */
 
 public class ImageFragment extends Fragment {
     private static final String TAG = "ImageFragment";
@@ -41,6 +44,9 @@ public class ImageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mContext = getActivity();
+        if (mContext == null) {
+            return null;
+        }
         if (getArguments() != null) {
             mPath = getArguments().getString("path");
         }
@@ -77,16 +83,24 @@ public class ImageFragment extends Fragment {
                 //把位图对象保存成图片,下次直接读取存储卡上的图片文件
                 FileUtil.saveBitmap(mPath, bitmap);
                 //解码监听器在分线程中运行,调用runOnUiThread方法表示回到主线程操作界面
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        //把位图对象显示到ImageView控件
-                        iv_content.setImageBitmap(bitmap);
-                        if (mDialog != null && mDialog.isShowing()) {
-                            mDialog.dismiss(); //关闭进度对话框
+                if (getActivity() != null && !getActivity().isFinishing()) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //把位图对象显示到ImageView控件
+                            if (iv_content != null) {
+                                iv_content.setImageBitmap(bitmap);
+                            }
+                            if (mDialog != null && mDialog.isShowing()) {
+                                try {
+                                    mDialog.dismiss(); //关闭进度对话框
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         }, 1, new RectF(0, 0, 1, 1));
     }

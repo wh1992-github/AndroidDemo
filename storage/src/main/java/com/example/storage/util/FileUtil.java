@@ -11,6 +11,9 @@ import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 提供 File 相关工具方法的工具类。
+ */
 
 public class FileUtil {
 

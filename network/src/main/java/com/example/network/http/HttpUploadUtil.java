@@ -5,6 +5,9 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+/**
+ * 提供 Http Upload 相关工具方法的工具类。
+ */
 
 public class HttpUploadUtil {
     private static final String TAG = "HttpUploadUtil";

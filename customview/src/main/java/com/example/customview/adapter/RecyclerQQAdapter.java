@@ -2,7 +2,7 @@ package com.example.customview.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +15,9 @@ import com.example.customview.R;
 import com.example.customview.widget.RecyclerQQItemView;
 
 import java.util.List;
+/**
+ * 用于适配 Recycler QQ 数据的适配器。
+ */
 
 public class RecyclerQQAdapter extends RecyclerView.Adapter<RecyclerQQAdapter.MyViewHolder> implements RecyclerQQItemView.onSlidingButtonListener {
     private static final String TAG = "RecyclerViewAdapter";

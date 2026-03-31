@@ -3,6 +3,9 @@ package com.example.media.util;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
+/**
+ * 提供 Utils 相关工具方法的工具类。
+ */
 
 public class Utils {
     //根据手机的分辨率从 dp 的单位 转成为 px(像素)

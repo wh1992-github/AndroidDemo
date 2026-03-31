@@ -8,6 +8,9 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 import com.example.customview.R
+/**
+ * 用于展示 Arc 效果的自定义 View。
+ */
 
 class ArcView : View {
     private var mWidth = 0

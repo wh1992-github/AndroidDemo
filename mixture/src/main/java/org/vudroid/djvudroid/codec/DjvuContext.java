@@ -7,6 +7,9 @@ import org.vudroid.core.VuDroidLibraryLoader;
 import org.vudroid.core.codec.CodecContext;
 
 import java.util.concurrent.Semaphore;
+/**
+ * 封装 Djvu Context 相关逻辑的类。
+ */
 
 public class DjvuContext implements Runnable, CodecContext {
     static {

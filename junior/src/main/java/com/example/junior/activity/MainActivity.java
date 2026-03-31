@@ -2,10 +2,13 @@ package com.example.junior.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.junior.R;
+/**
+ * 用于展示 Main 功能的 Activity。
+ */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

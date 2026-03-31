@@ -6,6 +6,9 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+/**
+ * 封装 Udp Socket 相关逻辑的类。
+ */
 
 public class UdpSocket {
 

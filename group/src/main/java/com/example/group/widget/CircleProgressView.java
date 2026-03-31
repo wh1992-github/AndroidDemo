@@ -10,6 +10,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+/**
+ * 用于展示 Circle Progress 效果的自定义 View。
+ */
 
 public class CircleProgressView extends View {
     private static final String TAG = "CircleProgressView";

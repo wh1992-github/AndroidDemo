@@ -4,6 +4,9 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 import com.example.storage.database.UserDBHelper;
+/**
+ * 封装 User Info Content 相关逻辑的类。
+ */
 
 public class UserInfoContent implements BaseColumns {
     //这里的名称必须与AndroidManifest.xml里的android:authorities保持一致

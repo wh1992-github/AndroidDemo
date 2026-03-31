@@ -9,6 +9,9 @@ import android.content.pm.Signature;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+/**
+ * 提供 App Sign 相关工具方法的工具类。
+ */
 
 public class AppSignUtils {
     public static final String MD5 = "MD5";

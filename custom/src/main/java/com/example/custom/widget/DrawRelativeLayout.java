@@ -9,6 +9,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
+/**
+ * 用于组织 Draw Relative 界面内容的布局类。
+ */
 
 public class DrawRelativeLayout extends RelativeLayout {
     private int mDrawType = 0; //绘制类型

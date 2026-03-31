@@ -7,6 +7,9 @@ import java.net.SocketException;
 import java.util.Enumeration;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+/**
+ * 提供 Ip 相关工具方法的工具类。
+ */
 
 public class IpUtil {
     //获取设备IPv4地址对应的InetAddress对象

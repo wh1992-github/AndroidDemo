@@ -1,0 +1,2050 @@
+./gradlew: line 23: cd: "./: No such file or directory
+To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/8.0/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+Daemon will be stopped at the end of the build 
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+> Task :animation:preBuild UP-TO-DATE
+> Task :animation:preDebugBuild UP-TO-DATE
+> Task :animation:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :animation:compileDebugAidl NO-SOURCE
+> Task :animation:compileDebugRenderscript NO-SOURCE
+> Task :animation:generateDebugBuildConfig UP-TO-DATE
+> Task :animation:javaPreCompileDebug UP-TO-DATE
+> Task :animation:checkDebugAarMetadata UP-TO-DATE
+> Task :animation:generateDebugResValues UP-TO-DATE
+> Task :animation:mapDebugSourceSetPaths UP-TO-DATE
+> Task :animation:generateDebugResources UP-TO-DATE
+> Task :animation:mergeDebugResources UP-TO-DATE
+> Task :animation:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :animation:extractDeepLinksDebug UP-TO-DATE
+> Task :animation:processDebugMainManifest UP-TO-DATE
+> Task :animation:processDebugManifest UP-TO-DATE
+> Task :animation:processDebugManifestForPackage UP-TO-DATE
+> Task :animation:processDebugResources UP-TO-DATE
+> Task :animation:compileDebugJavaWithJavac UP-TO-DATE
+> Task :animation:mergeDebugShaders UP-TO-DATE
+> Task :animation:compileDebugShaders NO-SOURCE
+> Task :animation:generateDebugAssets UP-TO-DATE
+> Task :animation:mergeDebugAssets UP-TO-DATE
+> Task :animation:compressDebugAssets UP-TO-DATE
+> Task :animation:processDebugJavaRes NO-SOURCE
+> Task :animation:mergeDebugJavaResource UP-TO-DATE
+> Task :animation:checkDebugDuplicateClasses UP-TO-DATE
+> Task :animation:desugarDebugFileDependencies UP-TO-DATE
+> Task :animation:mergeExtDexDebug UP-TO-DATE
+> Task :animation:mergeLibDexDebug UP-TO-DATE
+> Task :animation:dexBuilderDebug UP-TO-DATE
+> Task :animation:mergeProjectDexDebug UP-TO-DATE
+> Task :animation:mergeDebugJniLibFolders UP-TO-DATE
+> Task :animation:mergeDebugNativeLibs NO-SOURCE
+> Task :animation:stripDebugDebugSymbols NO-SOURCE
+> Task :animation:validateSigningDebug UP-TO-DATE
+> Task :animation:writeDebugAppMetadata UP-TO-DATE
+> Task :animation:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :animation:packageDebug UP-TO-DATE
+> Task :animation:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :animation:assembleDebug UP-TO-DATE
+> Task :animation:preReleaseBuild UP-TO-DATE
+> Task :animation:compileReleaseAidl NO-SOURCE
+> Task :animation:compileReleaseRenderscript NO-SOURCE
+> Task :animation:generateReleaseBuildConfig UP-TO-DATE
+> Task :animation:javaPreCompileRelease UP-TO-DATE
+> Task :animation:checkReleaseAarMetadata UP-TO-DATE
+> Task :animation:generateReleaseResValues UP-TO-DATE
+> Task :animation:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :animation:generateReleaseResources UP-TO-DATE
+> Task :animation:mergeReleaseResources UP-TO-DATE
+> Task :animation:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :animation:extractDeepLinksRelease UP-TO-DATE
+> Task :animation:processReleaseMainManifest UP-TO-DATE
+> Task :animation:processReleaseManifest UP-TO-DATE
+> Task :animation:processReleaseManifestForPackage UP-TO-DATE
+> Task :animation:processReleaseResources UP-TO-DATE
+> Task :animation:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :animation:extractProguardFiles UP-TO-DATE
+> Task :animation:lintVitalAnalyzeRelease UP-TO-DATE
+> Task :animation:lintVitalReportRelease UP-TO-DATE
+> Task :animation:lintVitalRelease
+> Task :animation:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :animation:mergeReleaseNativeLibs NO-SOURCE
+> Task :animation:stripReleaseDebugSymbols NO-SOURCE
+> Task :animation:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :animation:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :animation:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :animation:dexBuilderRelease UP-TO-DATE
+> Task :animation:desugarReleaseFileDependencies UP-TO-DATE
+> Task :animation:mergeExtDexRelease UP-TO-DATE
+> Task :animation:mergeDexRelease UP-TO-DATE
+> Task :animation:mergeReleaseArtProfile UP-TO-DATE
+> Task :animation:compileReleaseArtProfile UP-TO-DATE
+> Task :animation:mergeReleaseShaders UP-TO-DATE
+> Task :animation:compileReleaseShaders NO-SOURCE
+> Task :animation:generateReleaseAssets UP-TO-DATE
+> Task :animation:mergeReleaseAssets UP-TO-DATE
+> Task :animation:compressReleaseAssets UP-TO-DATE
+> Task :animation:processReleaseJavaRes NO-SOURCE
+> Task :animation:mergeReleaseJavaResource UP-TO-DATE
+> Task :animation:optimizeReleaseResources UP-TO-DATE
+> Task :animation:collectReleaseDependencies UP-TO-DATE
+> Task :animation:sdkReleaseDependencyData UP-TO-DATE
+> Task :animation:writeReleaseAppMetadata UP-TO-DATE
+> Task :animation:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :animation:packageRelease UP-TO-DATE
+> Task :animation:createReleaseApkListingFileRedirect UP-TO-DATE
+> Task :animation:assembleRelease
+> Task :animation:assemble
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:compileDebugAidl NO-SOURCE
+> Task :app:compileDebugRenderscript NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:processDebugJavaRes NO-SOURCE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:dexBuilderDebug UP-TO-DATE
+> Task :app:mergeProjectDexDebug UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app:packageDebug UP-TO-DATE
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug UP-TO-DATE
+> Task :app:buildKotlinToolingMetadata UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:compileReleaseAidl NO-SOURCE
+> Task :app:compileReleaseRenderscript NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsRelease UP-TO-DATE
+> Task :app:generateReleaseResValues UP-TO-DATE
+> Task :app:generateReleaseResources UP-TO-DATE
+> Task :app:mergeReleaseResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesRelease UP-TO-DATE
+> Task :app:generateReleaseBuildConfig UP-TO-DATE
+> Task :app:checkReleaseAarMetadata UP-TO-DATE
+> Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksRelease UP-TO-DATE
+> Task :app:processReleaseMainManifest UP-TO-DATE
+> Task :app:processReleaseManifest UP-TO-DATE
+> Task :app:processReleaseManifestForPackage UP-TO-DATE
+> Task :app:processReleaseResources UP-TO-DATE
+> Task :app:compileReleaseKotlin UP-TO-DATE
+> Task :app:javaPreCompileRelease UP-TO-DATE
+> Task :app:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:lintVitalAnalyzeRelease UP-TO-DATE
+> Task :app:lintVitalReportRelease UP-TO-DATE
+> Task :app:lintVitalRelease
+> Task :app:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :app:mergeReleaseNativeLibs NO-SOURCE
+> Task :app:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :app:dexBuilderRelease UP-TO-DATE
+> Task :app:desugarReleaseFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexRelease UP-TO-DATE
+> Task :app:mergeDexRelease UP-TO-DATE
+> Task :app:mergeReleaseArtProfile UP-TO-DATE
+> Task :app:compileReleaseArtProfile UP-TO-DATE
+> Task :app:mergeReleaseShaders UP-TO-DATE
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets UP-TO-DATE
+> Task :app:compressReleaseAssets UP-TO-DATE
+> Task :app:processReleaseJavaRes NO-SOURCE
+> Task :app:mergeReleaseJavaResource UP-TO-DATE
+> Task :app:optimizeReleaseResources UP-TO-DATE
+> Task :app:collectReleaseDependencies UP-TO-DATE
+> Task :app:sdkReleaseDependencyData UP-TO-DATE
+> Task :app:writeReleaseAppMetadata UP-TO-DATE
+> Task :app:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :app:packageRelease UP-TO-DATE
+> Task :app:createReleaseApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleRelease
+> Task :app:assemble
+> Task :custom:preBuild UP-TO-DATE
+> Task :custom:preDebugBuild UP-TO-DATE
+> Task :custom:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :custom:compileDebugAidl NO-SOURCE
+> Task :custom:compileDebugRenderscript NO-SOURCE
+> Task :custom:generateDebugBuildConfig UP-TO-DATE
+> Task :custom:javaPreCompileDebug UP-TO-DATE
+> Task :custom:checkDebugAarMetadata UP-TO-DATE
+> Task :custom:generateDebugResValues UP-TO-DATE
+> Task :custom:mapDebugSourceSetPaths UP-TO-DATE
+> Task :custom:generateDebugResources UP-TO-DATE
+> Task :custom:mergeDebugResources UP-TO-DATE
+> Task :custom:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :custom:extractDeepLinksDebug UP-TO-DATE
+> Task :custom:processDebugMainManifest UP-TO-DATE
+> Task :custom:processDebugManifest UP-TO-DATE
+> Task :custom:processDebugManifestForPackage UP-TO-DATE
+> Task :custom:processDebugResources UP-TO-DATE
+> Task :custom:compileDebugJavaWithJavac UP-TO-DATE
+> Task :custom:mergeDebugShaders UP-TO-DATE
+> Task :custom:compileDebugShaders NO-SOURCE
+> Task :custom:generateDebugAssets UP-TO-DATE
+> Task :custom:mergeDebugAssets UP-TO-DATE
+> Task :custom:compressDebugAssets UP-TO-DATE
+> Task :custom:processDebugJavaRes NO-SOURCE
+> Task :custom:mergeDebugJavaResource UP-TO-DATE
+> Task :custom:checkDebugDuplicateClasses UP-TO-DATE
+> Task :custom:desugarDebugFileDependencies UP-TO-DATE
+> Task :custom:mergeExtDexDebug UP-TO-DATE
+> Task :custom:mergeLibDexDebug UP-TO-DATE
+> Task :custom:dexBuilderDebug UP-TO-DATE
+> Task :custom:mergeProjectDexDebug UP-TO-DATE
+> Task :custom:mergeDebugJniLibFolders UP-TO-DATE
+> Task :custom:mergeDebugNativeLibs NO-SOURCE
+> Task :custom:stripDebugDebugSymbols NO-SOURCE
+> Task :custom:validateSigningDebug UP-TO-DATE
+> Task :custom:writeDebugAppMetadata UP-TO-DATE
+> Task :custom:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :custom:packageDebug UP-TO-DATE
+> Task :custom:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :custom:assembleDebug UP-TO-DATE
+> Task :custom:preReleaseBuild UP-TO-DATE
+> Task :custom:compileReleaseAidl NO-SOURCE
+> Task :custom:compileReleaseRenderscript NO-SOURCE
+> Task :custom:generateReleaseBuildConfig UP-TO-DATE
+> Task :custom:javaPreCompileRelease UP-TO-DATE
+> Task :custom:checkReleaseAarMetadata UP-TO-DATE
+> Task :custom:generateReleaseResValues UP-TO-DATE
+> Task :custom:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :custom:generateReleaseResources UP-TO-DATE
+> Task :custom:mergeReleaseResources UP-TO-DATE
+> Task :custom:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :custom:extractDeepLinksRelease UP-TO-DATE
+> Task :custom:processReleaseMainManifest UP-TO-DATE
+> Task :custom:processReleaseManifest UP-TO-DATE
+> Task :custom:processReleaseManifestForPackage UP-TO-DATE
+> Task :custom:processReleaseResources UP-TO-DATE
+> Task :custom:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :custom:extractProguardFiles UP-TO-DATE
+> Task :custom:lintVitalAnalyzeRelease UP-TO-DATE
+> Task :custom:lintVitalReportRelease UP-TO-DATE
+> Task :custom:lintVitalRelease
+> Task :custom:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :custom:mergeReleaseNativeLibs NO-SOURCE
+> Task :custom:stripReleaseDebugSymbols NO-SOURCE
+> Task :custom:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :custom:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :custom:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :custom:dexBuilderRelease UP-TO-DATE
+> Task :custom:desugarReleaseFileDependencies UP-TO-DATE
+> Task :custom:mergeExtDexRelease UP-TO-DATE
+> Task :custom:mergeDexRelease UP-TO-DATE
+> Task :custom:mergeReleaseArtProfile UP-TO-DATE
+> Task :custom:compileReleaseArtProfile UP-TO-DATE
+> Task :custom:mergeReleaseShaders UP-TO-DATE
+> Task :custom:compileReleaseShaders NO-SOURCE
+> Task :custom:generateReleaseAssets UP-TO-DATE
+> Task :custom:mergeReleaseAssets UP-TO-DATE
+> Task :custom:compressReleaseAssets UP-TO-DATE
+> Task :custom:processReleaseJavaRes NO-SOURCE
+> Task :custom:mergeReleaseJavaResource UP-TO-DATE
+> Task :custom:optimizeReleaseResources UP-TO-DATE
+> Task :custom:collectReleaseDependencies UP-TO-DATE
+> Task :custom:sdkReleaseDependencyData UP-TO-DATE
+> Task :custom:writeReleaseAppMetadata UP-TO-DATE
+> Task :custom:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :custom:packageRelease UP-TO-DATE
+> Task :custom:createReleaseApkListingFileRedirect UP-TO-DATE
+> Task :custom:assembleRelease
+> Task :custom:assemble
+> Task :CustomToast:preBuild UP-TO-DATE
+> Task :CustomToast:preDebugBuild UP-TO-DATE
+> Task :CustomToast:compileDebugAidl NO-SOURCE
+> Task :CustomToast:mergeDebugJniLibFolders UP-TO-DATE
+> Task :CustomToast:mergeDebugNativeLibs NO-SOURCE
+> Task :CustomToast:stripDebugDebugSymbols NO-SOURCE
+> Task :CustomToast:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :CustomToast:compileDebugRenderscript NO-SOURCE
+> Task :CustomToast:generateDebugBuildConfig UP-TO-DATE
+> Task :CustomToast:generateDebugResValues UP-TO-DATE
+> Task :CustomToast:generateDebugResources UP-TO-DATE
+> Task :CustomToast:packageDebugResources UP-TO-DATE
+> Task :CustomToast:parseDebugLocalResources UP-TO-DATE
+> Task :CustomToast:processDebugManifest UP-TO-DATE
+> Task :CustomToast:generateDebugRFile UP-TO-DATE
+> Task :CustomToast:extractDebugAnnotations UP-TO-DATE
+> Task :CustomToast:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :CustomToast:javaPreCompileDebug UP-TO-DATE
+> Task :CustomToast:compileDebugJavaWithJavac UP-TO-DATE
+> Task :CustomToast:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :CustomToast:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :CustomToast:mergeDebugShaders UP-TO-DATE
+> Task :CustomToast:compileDebugShaders NO-SOURCE
+> Task :CustomToast:generateDebugAssets UP-TO-DATE
+> Task :CustomToast:packageDebugAssets UP-TO-DATE
+> Task :CustomToast:packageDebugRenderscript NO-SOURCE
+> Task :CustomToast:prepareDebugArtProfile UP-TO-DATE
+> Task :CustomToast:prepareLintJarForPublish UP-TO-DATE
+> Task :CustomToast:processDebugJavaRes NO-SOURCE
+> Task :CustomToast:mergeDebugJavaResource UP-TO-DATE
+> Task :CustomToast:syncDebugLibJars UP-TO-DATE
+> Task :CustomToast:writeDebugAarMetadata UP-TO-DATE
+> Task :CustomToast:bundleDebugAar UP-TO-DATE
+> Task :CustomToast:assembleDebug UP-TO-DATE
+> Task :CustomToast:preReleaseBuild UP-TO-DATE
+> Task :CustomToast:compileReleaseAidl NO-SOURCE
+> Task :CustomToast:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :CustomToast:mergeReleaseNativeLibs NO-SOURCE
+> Task :CustomToast:stripReleaseDebugSymbols NO-SOURCE
+> Task :CustomToast:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :CustomToast:compileReleaseRenderscript NO-SOURCE
+> Task :CustomToast:generateReleaseResValues UP-TO-DATE
+> Task :CustomToast:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :CustomToast:generateReleaseBuildConfig UP-TO-DATE
+> Task :CustomToast:generateReleaseResources UP-TO-DATE
+> Task :CustomToast:packageReleaseResources UP-TO-DATE
+> Task :CustomToast:parseReleaseLocalResources UP-TO-DATE
+> Task :CustomToast:processReleaseManifest UP-TO-DATE
+> Task :CustomToast:generateReleaseRFile UP-TO-DATE
+> Task :CustomToast:extractReleaseAnnotations UP-TO-DATE
+> Task :CustomToast:javaPreCompileRelease UP-TO-DATE
+> Task :CustomToast:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :CustomToast:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :CustomToast:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :CustomToast:mergeReleaseShaders UP-TO-DATE
+> Task :CustomToast:compileReleaseShaders NO-SOURCE
+> Task :CustomToast:generateReleaseAssets UP-TO-DATE
+> Task :CustomToast:packageReleaseAssets UP-TO-DATE
+> Task :CustomToast:packageReleaseRenderscript NO-SOURCE
+> Task :CustomToast:prepareReleaseArtProfile UP-TO-DATE
+> Task :CustomToast:processReleaseJavaRes NO-SOURCE
+> Task :CustomToast:mergeReleaseJavaResource UP-TO-DATE
+> Task :CustomToast:syncReleaseLibJars UP-TO-DATE
+> Task :CustomToast:writeReleaseAarMetadata UP-TO-DATE
+> Task :CustomToast:bundleReleaseAar UP-TO-DATE
+> Task :CustomToast:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :CustomToast:mergeReleaseResources UP-TO-DATE
+> Task :CustomToast:verifyReleaseResources UP-TO-DATE
+> Task :CustomToast:assembleRelease UP-TO-DATE
+> Task :CustomToast:assemble UP-TO-DATE
+> Task :customview:preBuild UP-TO-DATE
+> Task :customview:preDebugBuild UP-TO-DATE
+> Task :customview:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :customview:compileDebugAidl NO-SOURCE
+> Task :customview:compileDebugRenderscript NO-SOURCE
+> Task :customview:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :customview:generateDebugResValues UP-TO-DATE
+> Task :customview:generateDebugResources UP-TO-DATE
+> Task :customview:mergeDebugResources UP-TO-DATE
+> Task :customview:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :customview:generateDebugBuildConfig UP-TO-DATE
+> Task :customview:checkDebugAarMetadata UP-TO-DATE
+> Task :customview:mapDebugSourceSetPaths UP-TO-DATE
+> Task :customview:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :customview:extractDeepLinksDebug UP-TO-DATE
+> Task :customview:processDebugMainManifest UP-TO-DATE
+> Task :customview:processDebugManifest UP-TO-DATE
+> Task :customview:processDebugManifestForPackage UP-TO-DATE
+> Task :customview:processDebugResources UP-TO-DATE
+> Task :customview:compileDebugKotlin UP-TO-DATE
+> Task :customview:javaPreCompileDebug UP-TO-DATE
+> Task :customview:compileDebugJavaWithJavac UP-TO-DATE
+> Task :customview:mergeDebugShaders UP-TO-DATE
+> Task :customview:compileDebugShaders NO-SOURCE
+> Task :customview:generateDebugAssets UP-TO-DATE
+> Task :customview:mergeDebugAssets UP-TO-DATE
+> Task :customview:compressDebugAssets UP-TO-DATE
+> Task :customview:processDebugJavaRes NO-SOURCE
+> Task :customview:mergeDebugJavaResource UP-TO-DATE
+> Task :customview:checkDebugDuplicateClasses UP-TO-DATE
+> Task :customview:desugarDebugFileDependencies UP-TO-DATE
+> Task :customview:mergeExtDexDebug UP-TO-DATE
+> Task :customview:mergeLibDexDebug UP-TO-DATE
+> Task :customview:dexBuilderDebug UP-TO-DATE
+> Task :customview:mergeProjectDexDebug UP-TO-DATE
+> Task :customview:mergeDebugJniLibFolders UP-TO-DATE
+> Task :customview:mergeDebugNativeLibs NO-SOURCE
+> Task :customview:stripDebugDebugSymbols NO-SOURCE
+> Task :customview:validateSigningDebug UP-TO-DATE
+> Task :customview:writeDebugAppMetadata UP-TO-DATE
+> Task :customview:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :customview:packageDebug UP-TO-DATE
+> Task :customview:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :customview:assembleDebug UP-TO-DATE
+> Task :customview:buildKotlinToolingMetadata UP-TO-DATE
+> Task :customview:preReleaseBuild UP-TO-DATE
+> Task :customview:compileReleaseAidl NO-SOURCE
+> Task :customview:compileReleaseRenderscript NO-SOURCE
+> Task :customview:dataBindingMergeDependencyArtifactsRelease UP-TO-DATE
+> Task :customview:generateReleaseResValues UP-TO-DATE
+> Task :customview:generateReleaseResources UP-TO-DATE
+> Task :customview:mergeReleaseResources UP-TO-DATE
+> Task :customview:dataBindingGenBaseClassesRelease UP-TO-DATE
+> Task :customview:generateReleaseBuildConfig UP-TO-DATE
+> Task :customview:checkReleaseAarMetadata UP-TO-DATE
+> Task :customview:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :customview:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :customview:extractDeepLinksRelease UP-TO-DATE
+> Task :customview:processReleaseMainManifest UP-TO-DATE
+> Task :customview:processReleaseManifest UP-TO-DATE
+> Task :customview:processReleaseManifestForPackage UP-TO-DATE
+> Task :customview:processReleaseResources UP-TO-DATE
+> Task :customview:compileReleaseKotlin UP-TO-DATE
+> Task :customview:javaPreCompileRelease UP-TO-DATE
+> Task :customview:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :customview:extractProguardFiles UP-TO-DATE
+> Task :customview:lintVitalAnalyzeRelease UP-TO-DATE
+> Task :customview:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :customview:mergeReleaseNativeLibs NO-SOURCE
+> Task :customview:stripReleaseDebugSymbols NO-SOURCE
+> Task :customview:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :customview:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :customview:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :customview:dexBuilderRelease UP-TO-DATE
+> Task :customview:desugarReleaseFileDependencies UP-TO-DATE
+> Task :customview:mergeExtDexRelease UP-TO-DATE
+> Task :customview:mergeDexRelease UP-TO-DATE
+> Task :customview:mergeReleaseArtProfile UP-TO-DATE
+> Task :customview:compileReleaseArtProfile UP-TO-DATE
+> Task :customview:mergeReleaseShaders UP-TO-DATE
+> Task :customview:compileReleaseShaders NO-SOURCE
+> Task :customview:generateReleaseAssets UP-TO-DATE
+> Task :customview:mergeReleaseAssets UP-TO-DATE
+> Task :customview:compressReleaseAssets UP-TO-DATE
+> Task :customview:processReleaseJavaRes NO-SOURCE
+> Task :customview:mergeReleaseJavaResource UP-TO-DATE
+> Task :customview:optimizeReleaseResources UP-TO-DATE
+> Task :customview:collectReleaseDependencies UP-TO-DATE
+> Task :customview:sdkReleaseDependencyData UP-TO-DATE
+> Task :customview:writeReleaseAppMetadata UP-TO-DATE
+> Task :customview:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :customview:packageRelease UP-TO-DATE
+> Task :customview:createReleaseApkListingFileRedirect UP-TO-DATE
+> Task :device:preBuild UP-TO-DATE
+> Task :device:preDebugBuild UP-TO-DATE
+> Task :device:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :device:compileDebugAidl NO-SOURCE
+> Task :device:compileDebugRenderscript NO-SOURCE
+> Task :device:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :device:generateDebugResValues UP-TO-DATE
+> Task :device:generateDebugResources UP-TO-DATE
+> Task :device:mergeDebugResources UP-TO-DATE
+> Task :device:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :device:generateDebugBuildConfig UP-TO-DATE
+> Task :device:javaPreCompileDebug UP-TO-DATE
+> Task :device:checkDebugAarMetadata UP-TO-DATE
+> Task :device:mapDebugSourceSetPaths UP-TO-DATE
+> Task :device:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :device:extractDeepLinksDebug UP-TO-DATE
+> Task :device:processDebugMainManifest UP-TO-DATE
+> Task :device:processDebugManifest UP-TO-DATE
+> Task :device:processDebugManifestForPackage UP-TO-DATE
+> Task :device:processDebugResources UP-TO-DATE
+> Task :device:compileDebugJavaWithJavac UP-TO-DATE
+> Task :device:mergeDebugShaders UP-TO-DATE
+> Task :device:compileDebugShaders NO-SOURCE
+> Task :device:generateDebugAssets UP-TO-DATE
+> Task :device:mergeDebugAssets UP-TO-DATE
+> Task :device:compressDebugAssets UP-TO-DATE
+> Task :device:processDebugJavaRes NO-SOURCE
+> Task :device:mergeDebugJavaResource UP-TO-DATE
+> Task :device:checkDebugDuplicateClasses UP-TO-DATE
+> Task :device:desugarDebugFileDependencies UP-TO-DATE
+> Task :device:mergeExtDexDebug UP-TO-DATE
+> Task :device:mergeLibDexDebug UP-TO-DATE
+> Task :device:dexBuilderDebug UP-TO-DATE
+> Task :device:mergeProjectDexDebug UP-TO-DATE
+> Task :device:mergeDebugJniLibFolders UP-TO-DATE
+> Task :device:mergeDebugNativeLibs NO-SOURCE
+> Task :device:stripDebugDebugSymbols NO-SOURCE
+> Task :device:validateSigningDebug UP-TO-DATE
+> Task :device:writeDebugAppMetadata UP-TO-DATE
+> Task :device:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :device:packageDebug UP-TO-DATE
+> Task :device:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :device:assembleDebug UP-TO-DATE
+> Task :device:preReleaseBuild UP-TO-DATE
+> Task :device:compileReleaseAidl NO-SOURCE
+> Task :device:compileReleaseRenderscript NO-SOURCE
+> Task :device:dataBindingMergeDependencyArtifactsRelease UP-TO-DATE
+> Task :device:generateReleaseResValues UP-TO-DATE
+> Task :device:generateReleaseResources UP-TO-DATE
+> Task :device:mergeReleaseResources UP-TO-DATE
+> Task :device:dataBindingGenBaseClassesRelease UP-TO-DATE
+> Task :device:generateReleaseBuildConfig UP-TO-DATE
+> Task :device:javaPreCompileRelease UP-TO-DATE
+> Task :device:checkReleaseAarMetadata UP-TO-DATE
+> Task :device:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :device:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :device:extractDeepLinksRelease UP-TO-DATE
+> Task :device:processReleaseMainManifest UP-TO-DATE
+> Task :device:processReleaseManifest UP-TO-DATE
+> Task :device:processReleaseManifestForPackage UP-TO-DATE
+> Task :device:processReleaseResources UP-TO-DATE
+> Task :device:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :device:extractProguardFiles UP-TO-DATE
+> Task :device:lintVitalAnalyzeRelease UP-TO-DATE
+> Task :device:lintVitalReportRelease UP-TO-DATE
+> Task :device:lintVitalRelease
+> Task :device:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :device:mergeReleaseNativeLibs NO-SOURCE
+> Task :device:stripReleaseDebugSymbols NO-SOURCE
+> Task :device:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :device:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :device:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :device:dexBuilderRelease UP-TO-DATE
+> Task :device:desugarReleaseFileDependencies UP-TO-DATE
+> Task :device:mergeExtDexRelease UP-TO-DATE
+> Task :device:mergeDexRelease UP-TO-DATE
+> Task :device:mergeReleaseArtProfile UP-TO-DATE
+> Task :device:compileReleaseArtProfile UP-TO-DATE
+> Task :device:mergeReleaseShaders UP-TO-DATE
+> Task :device:compileReleaseShaders NO-SOURCE
+> Task :device:generateReleaseAssets UP-TO-DATE
+> Task :device:mergeReleaseAssets UP-TO-DATE
+> Task :device:compressReleaseAssets UP-TO-DATE
+> Task :device:processReleaseJavaRes NO-SOURCE
+> Task :device:mergeReleaseJavaResource UP-TO-DATE
+> Task :device:optimizeReleaseResources UP-TO-DATE
+> Task :device:collectReleaseDependencies UP-TO-DATE
+> Task :device:sdkReleaseDependencyData UP-TO-DATE
+> Task :device:writeReleaseAppMetadata UP-TO-DATE
+> Task :device:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :event:preBuild UP-TO-DATE
+> Task :event:preDebugBuild UP-TO-DATE
+> Task :event:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :filedialog:preBuild UP-TO-DATE
+> Task :filedialog:preDebugBuild UP-TO-DATE
+> Task :filedialog:compileDebugAidl NO-SOURCE
+> Task :event:compileDebugAidl NO-SOURCE
+> Task :filedialog:packageDebugRenderscript NO-SOURCE
+> Task :event:compileDebugRenderscript NO-SOURCE
+> Task :event:generateDebugBuildConfig UP-TO-DATE
+> Task :event:javaPreCompileDebug UP-TO-DATE
+> Task :filedialog:writeDebugAarMetadata UP-TO-DATE
+> Task :event:checkDebugAarMetadata UP-TO-DATE
+> Task :event:generateDebugResValues UP-TO-DATE
+> Task :filedialog:compileDebugRenderscript NO-SOURCE
+> Task :filedialog:generateDebugResValues UP-TO-DATE
+> Task :filedialog:generateDebugResources UP-TO-DATE
+> Task :filedialog:packageDebugResources UP-TO-DATE
+> Task :event:mapDebugSourceSetPaths UP-TO-DATE
+> Task :event:generateDebugResources UP-TO-DATE
+> Task :event:mergeDebugResources UP-TO-DATE
+> Task :event:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :event:extractDeepLinksDebug UP-TO-DATE
+> Task :filedialog:extractDeepLinksDebug UP-TO-DATE
+> Task :filedialog:processDebugManifest UP-TO-DATE
+> Task :event:processDebugMainManifest UP-TO-DATE
+> Task :event:processDebugManifest UP-TO-DATE
+> Task :event:processDebugManifestForPackage UP-TO-DATE
+> Task :filedialog:compileDebugLibraryResources UP-TO-DATE
+> Task :filedialog:parseDebugLocalResources UP-TO-DATE
+> Task :filedialog:generateDebugRFile UP-TO-DATE
+> Task :event:processDebugResources UP-TO-DATE
+> Task :filedialog:generateDebugBuildConfig UP-TO-DATE
+> Task :filedialog:javaPreCompileDebug UP-TO-DATE
+> Task :filedialog:compileDebugJavaWithJavac UP-TO-DATE
+> Task :filedialog:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :event:compileDebugJavaWithJavac UP-TO-DATE
+> Task :event:mergeDebugShaders UP-TO-DATE
+> Task :event:compileDebugShaders NO-SOURCE
+> Task :event:generateDebugAssets UP-TO-DATE
+> Task :filedialog:mergeDebugShaders UP-TO-DATE
+> Task :filedialog:compileDebugShaders NO-SOURCE
+> Task :filedialog:generateDebugAssets UP-TO-DATE
+> Task :filedialog:packageDebugAssets UP-TO-DATE
+> Task :event:mergeDebugAssets UP-TO-DATE
+> Task :event:compressDebugAssets UP-TO-DATE
+> Task :event:processDebugJavaRes NO-SOURCE
+> Task :filedialog:processDebugJavaRes NO-SOURCE
+> Task :filedialog:bundleLibResDebug NO-SOURCE
+> Task :event:mergeDebugJavaResource UP-TO-DATE
+> Task :event:checkDebugDuplicateClasses UP-TO-DATE
+> Task :event:desugarDebugFileDependencies UP-TO-DATE
+> Task :event:mergeExtDexDebug UP-TO-DATE
+> Task :filedialog:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :event:dexBuilderDebug UP-TO-DATE
+> Task :event:mergeLibDexDebug UP-TO-DATE
+> Task :event:mergeProjectDexDebug UP-TO-DATE
+> Task :event:mergeDebugJniLibFolders UP-TO-DATE
+> Task :filedialog:mergeDebugJniLibFolders UP-TO-DATE
+> Task :filedialog:mergeDebugNativeLibs NO-SOURCE
+> Task :filedialog:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :event:mergeDebugNativeLibs NO-SOURCE
+> Task :event:stripDebugDebugSymbols NO-SOURCE
+> Task :event:validateSigningDebug UP-TO-DATE
+> Task :event:writeDebugAppMetadata UP-TO-DATE
+> Task :event:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :event:packageDebug UP-TO-DATE
+> Task :event:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :event:assembleDebug UP-TO-DATE
+> Task :filedialog:preReleaseBuild UP-TO-DATE
+> Task :filedialog:compileReleaseAidl NO-SOURCE
+> Task :filedialog:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :filedialog:mergeReleaseNativeLibs NO-SOURCE
+> Task :filedialog:stripReleaseDebugSymbols NO-SOURCE
+> Task :filedialog:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :filedialog:compileReleaseRenderscript NO-SOURCE
+> Task :filedialog:generateReleaseResValues UP-TO-DATE
+> Task :filedialog:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :filedialog:generateReleaseBuildConfig UP-TO-DATE
+> Task :filedialog:generateReleaseResources UP-TO-DATE
+> Task :filedialog:packageReleaseResources UP-TO-DATE
+> Task :filedialog:parseReleaseLocalResources UP-TO-DATE
+> Task :filedialog:processReleaseManifest UP-TO-DATE
+> Task :filedialog:generateReleaseRFile UP-TO-DATE
+> Task :filedialog:extractReleaseAnnotations UP-TO-DATE
+> Task :filedialog:javaPreCompileRelease UP-TO-DATE
+> Task :filedialog:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :filedialog:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :filedialog:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :filedialog:mergeReleaseShaders UP-TO-DATE
+> Task :filedialog:compileReleaseShaders NO-SOURCE
+> Task :filedialog:generateReleaseAssets UP-TO-DATE
+> Task :filedialog:packageReleaseAssets UP-TO-DATE
+> Task :filedialog:packageReleaseRenderscript NO-SOURCE
+> Task :filedialog:prepareLintJarForPublish UP-TO-DATE
+> Task :filedialog:prepareReleaseArtProfile UP-TO-DATE
+> Task :filedialog:processReleaseJavaRes NO-SOURCE
+> Task :filedialog:mergeReleaseJavaResource UP-TO-DATE
+> Task :filedialog:syncReleaseLibJars UP-TO-DATE
+> Task :filedialog:writeReleaseAarMetadata UP-TO-DATE
+> Task :filedialog:bundleReleaseLocalLintAar UP-TO-DATE
+> Task :event:preReleaseBuild UP-TO-DATE
+> Task :event:compileReleaseAidl NO-SOURCE
+> Task :event:compileReleaseRenderscript NO-SOURCE
+> Task :event:generateReleaseBuildConfig UP-TO-DATE
+> Task :event:javaPreCompileRelease UP-TO-DATE
+> Task :event:checkReleaseAarMetadata UP-TO-DATE
+> Task :event:generateReleaseResValues UP-TO-DATE
+> Task :event:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :event:generateReleaseResources UP-TO-DATE
+> Task :event:mergeReleaseResources UP-TO-DATE
+> Task :event:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :event:extractDeepLinksRelease UP-TO-DATE
+> Task :filedialog:extractDeepLinksRelease UP-TO-DATE
+> Task :event:processReleaseMainManifest UP-TO-DATE
+> Task :event:processReleaseManifest UP-TO-DATE
+> Task :event:processReleaseManifestForPackage UP-TO-DATE
+> Task :filedialog:compileReleaseLibraryResources UP-TO-DATE
+> Task :event:processReleaseResources UP-TO-DATE
+> Task :filedialog:bundleLibCompileToJarRelease UP-TO-DATE
+> Task :event:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :event:extractProguardFiles UP-TO-DATE
+> Task :filedialog:bundleLibResRelease NO-SOURCE
+> Task :filedialog:bundleLibRuntimeToJarRelease UP-TO-DATE
+> Task :filedialog:createFullJarRelease UP-TO-DATE
+> Task :filedialog:writeReleaseLintModelMetadata UP-TO-DATE
+> Task :event:lintVitalAnalyzeRelease UP-TO-DATE
+> Task :event:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :filedialog:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :event:mergeReleaseNativeLibs NO-SOURCE
+> Task :event:stripReleaseDebugSymbols NO-SOURCE
+> Task :event:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :event:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :event:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :event:dexBuilderRelease UP-TO-DATE
+> Task :event:desugarReleaseFileDependencies UP-TO-DATE
+> Task :event:mergeExtDexRelease UP-TO-DATE
+> Task :event:mergeDexRelease UP-TO-DATE
+> Task :event:mergeReleaseArtProfile UP-TO-DATE
+> Task :event:compileReleaseArtProfile UP-TO-DATE
+> Task :event:mergeReleaseShaders UP-TO-DATE
+> Task :event:compileReleaseShaders NO-SOURCE
+> Task :event:generateReleaseAssets UP-TO-DATE
+> Task :event:mergeReleaseAssets UP-TO-DATE
+> Task :event:compressReleaseAssets UP-TO-DATE
+> Task :event:processReleaseJavaRes NO-SOURCE
+> Task :event:mergeReleaseJavaResource UP-TO-DATE
+> Task :event:optimizeReleaseResources UP-TO-DATE
+> Task :event:collectReleaseDependencies UP-TO-DATE
+> Task :event:sdkReleaseDependencyData UP-TO-DATE
+> Task :event:writeReleaseAppMetadata UP-TO-DATE
+> Task :event:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :filedialog:stripDebugDebugSymbols NO-SOURCE
+> Task :filedialog:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :filedialog:extractDebugAnnotations UP-TO-DATE
+> Task :filedialog:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :filedialog:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :filedialog:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :filedialog:prepareDebugArtProfile UP-TO-DATE
+> Task :filedialog:mergeDebugJavaResource UP-TO-DATE
+> Task :filedialog:syncDebugLibJars UP-TO-DATE
+> Task :filedialog:bundleDebugAar UP-TO-DATE
+> Task :filedialog:assembleDebug UP-TO-DATE
+> Task :filedialog:bundleReleaseAar UP-TO-DATE
+> Task :filedialog:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :filedialog:mergeReleaseResources UP-TO-DATE
+> Task :filedialog:verifyReleaseResources UP-TO-DATE
+> Task :filedialog:assembleRelease UP-TO-DATE
+> Task :filedialog:assemble UP-TO-DATE
+> Task :group:preBuild UP-TO-DATE
+> Task :group:preDebugBuild UP-TO-DATE
+> Task :group:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :CustomToast:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :group:compileDebugAidl NO-SOURCE
+> Task :group:compileDebugRenderscript NO-SOURCE
+> Task :group:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :group:generateDebugResValues UP-TO-DATE
+> Task :group:generateDebugResources UP-TO-DATE
+> Task :event:lintVitalReportRelease
+
+> Task :customview:lintVitalReportRelease
+Could not load custom lint check jar file D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\c3c2e10d6788bf5cb590642bca988f19\transformed\jetified-activity-1.8.0\jars\lint.jar
+java.lang.UnsupportedClassVersionError: androidx/activity/lint/ActivityIssueRegistry has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at com.intellij.util.lang.UrlClassLoader.consumeClassData(UrlClassLoader.java:257)
+	at com.intellij.util.lang.JdkZipResourceFile.findClass(JdkZipResourceFile.java:89)
+	at com.intellij.util.lang.JarLoader.findClass(JarLoader.java:63)
+	at com.intellij.util.lang.ClassPath.findClassInLoader(ClassPath.java:246)
+	at com.intellij.util.lang.ClassPath.findClassWithoutCache(ClassPath.java:235)
+	at com.intellij.util.lang.ClassPath.findClass(ClassPath.java:202)
+	at com.intellij.util.lang.UrlClassLoader.findClass(UrlClassLoader.java:209)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:588)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.loadIssueRegistry(JarFileIssueRegistry.kt:257)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.get(JarFileIssueRegistry.kt:183)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.get(JarFileIssueRegistry.kt:144)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.get$default(JarFileIssueRegistry.kt:119)
+	at com.android.tools.lint.client.api.LintDriver.registerCustomDetectors(LintDriver.kt:725)
+	at com.android.tools.lint.client.api.LintDriver.initializeExtraRegistries(LintDriver.kt:610)
+	at com.android.tools.lint.client.api.LintDriver.doAnalyze(LintDriver.kt:503)
+	at com.android.tools.lint.client.api.LintDriver.doAnalyze$default(LintDriver.kt:486)
+	at com.android.tools.lint.client.api.LintDriver.mergeOnly(LintDriver.kt:471)
+	at com.android.tools.lint.LintCliClient$mergeOnly$1.invoke(LintCliClient.kt:261)
+	at com.android.tools.lint.LintCliClient$mergeOnly$1.invoke(LintCliClient.kt:259)
+	at com.android.tools.lint.LintCliClient.run(LintCliClient.kt:289)
+	at com.android.tools.lint.LintCliClient.mergeOnly(LintCliClient.kt:259)
+	at com.android.tools.lint.Main.run(Main.java:1670)
+	at com.android.tools.lint.Main.run(Main.java:274)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.invokeLintMainRunMethod(AndroidLintWorkAction.kt:96)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.runLint(AndroidLintWorkAction.kt:85)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.execute(AndroidLintWorkAction.kt:61)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
+	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:169)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:187)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:120)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:162)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:249)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:109)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:114)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:157)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:126)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+> Task :group:mergeDebugResources UP-TO-DATE
+> Task :customview:lintVitalRelease
+> Task :customview:assembleRelease
+> Task :customview:assemble
+> Task :event:lintVitalRelease
+> Task :group:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :group:generateDebugBuildConfig UP-TO-DATE
+> Task :group:javaPreCompileDebug UP-TO-DATE
+> Task :CustomToast:compileDebugLibraryResources UP-TO-DATE
+> Task :group:checkDebugAarMetadata UP-TO-DATE
+> Task :group:mapDebugSourceSetPaths UP-TO-DATE
+> Task :group:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :CustomToast:extractDeepLinksDebug UP-TO-DATE
+> Task :group:extractDeepLinksDebug UP-TO-DATE
+> Task :group:processDebugMainManifest UP-TO-DATE
+> Task :group:processDebugManifest UP-TO-DATE
+> Task :group:processDebugManifestForPackage UP-TO-DATE
+> Task :group:processDebugResources UP-TO-DATE
+
+> Task :group:compileDebugJavaWithJavac
+注: ARouter::Compiler The user has configuration the module name, it was [group]
+注: ARouter::Compiler >>> AutowiredProcessor init. <<<
+注: ARouter::Compiler >>> Found autowired field, start... <<<
+注: ARouter::Compiler categories finished.
+注: ARouter::Compiler >>> Start process 5 field in TestActivity ... <<<
+注: ARouter::Compiler >>> TestActivity has been processed, TestActivity$$ARouter$$Autowired has been generated. <<<
+注: ARouter::Compiler >>> Start process 5 field in ParseActivity ... <<<
+注: ARouter::Compiler >>> ParseActivity has been processed, ParseActivity$$ARouter$$Autowired has been generated. <<<
+注: ARouter::Compiler >>> Autowired processor stop. <<<
+注: ARouter::Compiler The user has configuration the module name, it was [group]
+注: ARouter::Compiler >>> InterceptorProcessor init. <<<
+注: ARouter::Compiler >>> Found interceptors, size is 1 <<<
+注: ARouter::Compiler A interceptor verify over, its com.example.group.arouter.data.InterceptorImpl
+注: ARouter::Compiler >>> Interceptor group write over. <<<
+注: ARouter::Compiler The user has configuration the module name, it was [group]
+注: ARouter::Compiler >>> RouteProcessor init. <<<
+注: ARouter::Compiler >>> Found routes, start... <<<
+注: ARouter::Compiler >>> Found routes, size is 8 <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.ActivityOne <<<
+注: ARouter::Compiler >>> Start categories, group = com, path = /com/ActivityOne <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.InterceptorActivity <<<
+注: ARouter::Compiler >>> Start categories, group = com, path = /com/InterceptorActivity <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.ParseActivity <<<
+注: ARouter::Compiler >>> Start categories, group = com, path = /com/ParseActivity <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.ResultActivity <<<
+注: ARouter::Compiler >>> Start categories, group = com, path = /com/ActivityResult <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.TestActivity <<<
+注: ARouter::Compiler >>> Start categories, group = test, path = /test/activity <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.WebViewActivity <<<
+注: ARouter::Compiler >>> Start categories, group = com, path = /com/urlActivity <<<
+注: ARouter::Compiler >>> Found provider route: com.example.group.arouter.data.JsonServiceImpl <<<
+注: ARouter::Compiler >>> Start categories, group = service, path = /service/json <<<
+注: ARouter::Compiler >>> Found provider route: com.example.group.arouter.data.TestService <<<
+注: ARouter::Compiler >>> Start categories, group = service, path = /service/hello <<<
+注: ARouter::Compiler >>> Generated group: com<<<
+注: ARouter::Compiler >>> Generated group: test<<<
+注: ARouter::Compiler >>> Generated group: service<<<
+注: ARouter::Compiler >>> Generated provider map, name is ARouter$$Providers$$group <<<
+注: ARouter::Compiler >>> Generated root, name is ARouter$$Root$$group <<<
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: 某些输入文件使用了未经检查或不安全的操作。
+注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+
+> Task :group:mergeDebugShaders UP-TO-DATE
+> Task :group:compileDebugShaders NO-SOURCE
+> Task :device:packageRelease
+> Task :device:createReleaseApkListingFileRedirect
+> Task :device:assembleRelease
+> Task :device:assemble
+> Task :group:generateDebugAssets UP-TO-DATE
+> Task :group:mergeDebugAssets UP-TO-DATE
+> Task :group:compressDebugAssets UP-TO-DATE
+> Task :CustomToast:bundleLibResDebug NO-SOURCE
+> Task :group:processDebugJavaRes NO-SOURCE
+> Task :group:checkDebugDuplicateClasses UP-TO-DATE
+> Task :group:desugarDebugFileDependencies UP-TO-DATE
+> Task :CustomToast:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :group:mergeDebugJavaResource
+> Task :group:dexBuilderDebug
+> Task :group:mergeLibDexDebug UP-TO-DATE
+> Task :CustomToast:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :group:mergeDebugJniLibFolders UP-TO-DATE
+> Task :group:mergeDebugNativeLibs UP-TO-DATE
+> Task :group:stripDebugDebugSymbols UP-TO-DATE
+> Task :group:validateSigningDebug UP-TO-DATE
+> Task :group:writeDebugAppMetadata UP-TO-DATE
+> Task :group:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :CustomToast:bundleReleaseLocalLintAar UP-TO-DATE
+> Task :CustomToast:bundleLibResRelease NO-SOURCE
+> Task :CustomToast:bundleLibRuntimeToJarRelease UP-TO-DATE
+> Task :CustomToast:createFullJarRelease UP-TO-DATE
+> Task :CustomToast:writeReleaseLintModelMetadata UP-TO-DATE
+> Task :CustomToast:bundleLibCompileToJarRelease UP-TO-DATE
+> Task :group:preReleaseBuild UP-TO-DATE
+> Task :group:compileReleaseAidl NO-SOURCE
+> Task :group:compileReleaseRenderscript NO-SOURCE
+> Task :group:dataBindingMergeDependencyArtifactsRelease UP-TO-DATE
+> Task :group:generateReleaseResValues UP-TO-DATE
+> Task :group:generateReleaseResources UP-TO-DATE
+> Task :group:mergeReleaseResources UP-TO-DATE
+> Task :group:mergeProjectDexDebug
+> Task :group:dataBindingGenBaseClassesRelease
+> Task :group:generateReleaseBuildConfig
+> Task :group:javaPreCompileRelease
+> Task :group:checkReleaseAarMetadata
+> Task :group:mapReleaseSourceSetPaths
+> Task :group:createReleaseCompatibleScreenManifests
+> Task :CustomToast:extractDeepLinksRelease
+> Task :group:extractDeepLinksRelease
+> Task :CustomToast:compileReleaseLibraryResources
+> Task :group:processReleaseMainManifest
+> Task :group:processReleaseManifest
+> Task :group:extractProguardFiles
+> Task :CustomToast:copyReleaseJniLibsProjectOnly
+> Task :group:mergeReleaseJniLibFolders
+> Task :group:processReleaseManifestForPackage
+> Task :group:mergeReleaseNativeLibs
+> Task :group:checkReleaseDuplicateClasses
+> Task :group:mergeReleaseShaders
+> Task :group:compileReleaseShaders NO-SOURCE
+> Task :event:packageRelease
+> Task :event:createReleaseApkListingFileRedirect
+> Task :event:assembleRelease
+> Task :event:assemble
+> Task :group:generateReleaseAssets UP-TO-DATE
+> Task :group:stripReleaseDebugSymbols
+> Task :group:mergeExtDexDebug
+> Task :group:mergeReleaseAssets
+> Task :group:processReleaseJavaRes NO-SOURCE
+> Task :group:extractReleaseNativeSymbolTables
+> Task :group:compressReleaseAssets
+> Task :group:collectReleaseDependencies
+> Task :group:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :group:sdkReleaseDependencyData
+> Task :group:writeReleaseAppMetadata
+> Task :group:writeReleaseSigningConfigVersions
+> Task :hezi:preBuild UP-TO-DATE
+> Task :hezi:preDebugBuild UP-TO-DATE
+> Task :hezi:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :hezi:compileDebugAidl NO-SOURCE
+> Task :hezi:compileDebugRenderscript NO-SOURCE
+> Task :hezi:dataBindingMergeDependencyArtifactsDebug
+> Task :hezi:generateDebugResValues
+> Task :hezi:generateDebugResources
+> Task :group:processReleaseResources
+> Task :group:desugarReleaseFileDependencies
+> Task :group:mergeReleaseArtProfile
+> Task :hezi:mergeDebugResources
+
+> Task :group:compileReleaseJavaWithJavac
+注: ARouter::Compiler The user has configuration the module name, it was [group]
+注: ARouter::Compiler >>> AutowiredProcessor init. <<<
+注: ARouter::Compiler >>> Found autowired field, start... <<<
+注: ARouter::Compiler categories finished.
+注: ARouter::Compiler >>> Start process 5 field in ParseActivity ... <<<
+注: ARouter::Compiler >>> ParseActivity has been processed, ParseActivity$$ARouter$$Autowired has been generated. <<<
+注: ARouter::Compiler >>> Start process 5 field in TestActivity ... <<<
+注: ARouter::Compiler >>> TestActivity has been processed, TestActivity$$ARouter$$Autowired has been generated. <<<
+注: ARouter::Compiler >>> Autowired processor stop. <<<
+注: ARouter::Compiler The user has configuration the module name, it was [group]
+注: ARouter::Compiler >>> InterceptorProcessor init. <<<
+注: ARouter::Compiler >>> Found interceptors, size is 1 <<<
+注: ARouter::Compiler A interceptor verify over, its com.example.group.arouter.data.InterceptorImpl
+注: ARouter::Compiler >>> Interceptor group write over. <<<
+注: ARouter::Compiler The user has configuration the module name, it was [group]
+注: ARouter::Compiler >>> RouteProcessor init. <<<
+注: ARouter::Compiler >>> Found routes, start... <<<
+注: ARouter::Compiler >>> Found routes, size is 8 <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.ActivityOne <<<
+注: ARouter::Compiler >>> Start categories, group = com, path = /com/ActivityOne <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.InterceptorActivity <<<
+注: ARouter::Compiler >>> Start categories, group = com, path = /com/InterceptorActivity <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.ParseActivity <<<
+注: ARouter::Compiler >>> Start categories, group = com, path = /com/ParseActivity <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.ResultActivity <<<
+注: ARouter::Compiler >>> Start categories, group = com, path = /com/ActivityResult <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.TestActivity <<<
+注: ARouter::Compiler >>> Start categories, group = test, path = /test/activity <<<
+注: ARouter::Compiler >>> Found activity route: com.example.group.arouter.activity.WebViewActivity <<<
+注: ARouter::Compiler >>> Start categories, group = com, path = /com/urlActivity <<<
+注: ARouter::Compiler >>> Found provider route: com.example.group.arouter.data.JsonServiceImpl <<<
+注: ARouter::Compiler >>> Start categories, group = service, path = /service/json <<<
+注: ARouter::Compiler >>> Found provider route: com.example.group.arouter.data.TestService <<<
+注: ARouter::Compiler >>> Start categories, group = service, path = /service/hello <<<
+注: ARouter::Compiler >>> Generated group: com<<<
+注: ARouter::Compiler >>> Generated group: test<<<
+注: ARouter::Compiler >>> Generated group: service<<<
+注: ARouter::Compiler >>> Generated provider map, name is ARouter$$Providers$$group <<<
+注: ARouter::Compiler >>> Generated root, name is ARouter$$Root$$group <<<
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: 某些输入文件使用了未经检查或不安全的操作。
+注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+
+> Task :group:dexBuilderRelease
+> Task :hezi:dataBindingGenBaseClassesDebug
+> Task :hezi:generateDebugBuildConfig
+> Task :hezi:javaPreCompileDebug
+> Task :hezi:checkDebugAarMetadata
+> Task :hezi:mapDebugSourceSetPaths
+> Task :hezi:createDebugCompatibleScreenManifests
+> Task :hezi:extractDeepLinksDebug
+> Task :hezi:processDebugMainManifest
+> Task :hezi:processDebugManifest
+> Task :hezi:mergeDebugShaders
+> Task :hezi:compileDebugShaders NO-SOURCE
+> Task :hezi:generateDebugAssets UP-TO-DATE
+> Task :group:packageDebug
+> Task :group:createDebugApkListingFileRedirect
+> Task :group:assembleDebug
+> Task :hezi:mergeDebugAssets
+> Task :hezi:processDebugJavaRes NO-SOURCE
+> Task :hezi:mergeDebugJniLibFolders
+> Task :hezi:checkDebugDuplicateClasses
+> Task :hezi:mergeDebugNativeLibs NO-SOURCE
+> Task :hezi:stripDebugDebugSymbols NO-SOURCE
+> Task :hezi:mergeLibDexDebug
+> Task :hezi:validateSigningDebug
+> Task :hezi:writeDebugAppMetadata
+> Task :hezi:writeDebugSigningConfigVersions
+> Task :hezi:preReleaseBuild UP-TO-DATE
+> Task :hezi:compileReleaseAidl NO-SOURCE
+> Task :hezi:compileReleaseRenderscript NO-SOURCE
+> Task :hezi:dataBindingMergeDependencyArtifactsRelease
+> Task :hezi:generateReleaseResValues
+> Task :hezi:generateReleaseResources
+> Task :hezi:compressDebugAssets
+> Task :group:mergeReleaseJavaResource
+> Task :hezi:mergeDebugJavaResource
+> Task :hezi:desugarDebugFileDependencies
+
+> Task :group:lintVitalAnalyzeRelease
+Could not load custom lint check jar file D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\c3c2e10d6788bf5cb590642bca988f19\transformed\jetified-activity-1.8.0\jars\lint.jar
+java.lang.UnsupportedClassVersionError: androidx/activity/lint/ActivityIssueRegistry has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at com.intellij.util.lang.UrlClassLoader.consumeClassData(UrlClassLoader.java:257)
+	at com.intellij.util.lang.JdkZipResourceFile.findClass(JdkZipResourceFile.java:89)
+	at com.intellij.util.lang.JarLoader.findClass(JarLoader.java:63)
+	at com.intellij.util.lang.ClassPath.findClassInLoader(ClassPath.java:246)
+	at com.intellij.util.lang.ClassPath.findClassWithoutCache(ClassPath.java:235)
+	at com.intellij.util.lang.ClassPath.findClass(ClassPath.java:202)
+	at com.intellij.util.lang.UrlClassLoader.findClass(UrlClassLoader.java:209)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:588)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.loadIssueRegistry(JarFileIssueRegistry.kt:257)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.get(JarFileIssueRegistry.kt:183)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.get(JarFileIssueRegistry.kt:144)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.get$default(JarFileIssueRegistry.kt:119)
+	at com.android.tools.lint.client.api.LintDriver.registerCustomDetectors(LintDriver.kt:725)
+	at com.android.tools.lint.client.api.LintDriver.initializeExtraRegistries(LintDriver.kt:610)
+	at com.android.tools.lint.client.api.LintDriver.doAnalyze(LintDriver.kt:503)
+	at com.android.tools.lint.client.api.LintDriver.analyzeOnly(LintDriver.kt:448)
+	at com.android.tools.lint.LintCliClient$analyzeOnly$1.invoke(LintCliClient.kt:247)
+	at com.android.tools.lint.LintCliClient$analyzeOnly$1.invoke(LintCliClient.kt:247)
+	at com.android.tools.lint.LintCliClient.run(LintCliClient.kt:289)
+	at com.android.tools.lint.LintCliClient.run$default(LintCliClient.kt:272)
+	at com.android.tools.lint.LintCliClient.analyzeOnly(LintCliClient.kt:247)
+	at com.android.tools.lint.Main.run(Main.java:1668)
+	at com.android.tools.lint.Main.run(Main.java:274)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.invokeLintMainRunMethod(AndroidLintWorkAction.kt:96)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.runLint(AndroidLintWorkAction.kt:85)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.execute(AndroidLintWorkAction.kt:61)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
+	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:169)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:187)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:120)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:162)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:249)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:109)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:114)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:157)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:126)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+butterknife.lint.LintRegistry in D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\6ee47a13abedfcce31e00ed8221fd4c9\transformed\jetified-butterknife-runtime-10.2.3\jars\lint.jar does not specify a vendor; see IssueRegistry#vendor
+
+> Task :hezi:generateReleaseBuildConfig
+> Task :hezi:javaPreCompileRelease
+> Task :hezi:checkReleaseAarMetadata
+> Task :hezi:mapReleaseSourceSetPaths
+> Task :hezi:createReleaseCompatibleScreenManifests
+> Task :hezi:extractDeepLinksRelease
+> Task :hezi:processReleaseMainManifest
+> Task :hezi:processReleaseManifest
+> Task :hezi:extractProguardFiles
+> Task :hezi:mergeReleaseJniLibFolders
+> Task :hezi:mergeReleaseNativeLibs NO-SOURCE
+> Task :hezi:stripReleaseDebugSymbols NO-SOURCE
+> Task :hezi:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :hezi:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :hezi:processReleaseManifestForPackage
+> Task :hezi:checkReleaseDuplicateClasses
+> Task :hezi:mergeReleaseArtProfile UP-TO-DATE
+> Task :hezi:mergeReleaseShaders
+> Task :hezi:compileReleaseShaders NO-SOURCE
+> Task :hezi:generateReleaseAssets UP-TO-DATE
+> Task :hezi:mergeReleaseAssets
+> Task :hezi:processReleaseJavaRes NO-SOURCE
+> Task :hezi:collectReleaseDependencies
+> Task :hezi:sdkReleaseDependencyData
+> Task :hezi:writeReleaseAppMetadata
+> Task :hezi:writeReleaseSigningConfigVersions
+> Task :junior:preBuild UP-TO-DATE
+> Task :junior:preDebugBuild UP-TO-DATE
+> Task :junior:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :junior:compileDebugAidl NO-SOURCE
+> Task :junior:compileDebugRenderscript NO-SOURCE
+> Task :junior:generateDebugBuildConfig
+> Task :junior:javaPreCompileDebug
+> Task :junior:checkDebugAarMetadata
+> Task :hezi:processDebugManifestForPackage
+> Task :junior:generateDebugResValues
+> Task :junior:mapDebugSourceSetPaths
+> Task :junior:generateDebugResources
+> Task :hezi:compressReleaseAssets
+> Task :hezi:desugarReleaseFileDependencies
+> Task :hezi:mergeReleaseJavaResource
+> Task :hezi:mergeReleaseResources
+> Task :hezi:mergeExtDexDebug
+> Task :hezi:dataBindingGenBaseClassesRelease
+> Task :junior:createDebugCompatibleScreenManifests
+> Task :junior:extractDeepLinksDebug
+> Task :group:mergeExtDexRelease
+> Task :junior:processDebugMainManifest
+> Task :group:optimizeReleaseResources
+> Task :junior:processDebugManifest
+> Task :junior:mergeDebugShaders
+> Task :junior:compileDebugShaders NO-SOURCE
+> Task :hezi:processDebugResources
+> Task :junior:mergeDebugResources
+> Task :hezi:processReleaseResources
+> Task :hezi:mergeExtDexRelease
+
+> Task :hezi:compileDebugJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: D:\code\AndroidDemo\hezi\src\main\java\com\example\hezi\viewpager2\withTab\ShowFragment.java使用了未经检查或不安全的操作。
+注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+
+> Task :hezi:dexBuilderDebug
+> Task :hezi:mergeProjectDexDebug
+
+> Task :hezi:compileReleaseJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: D:\code\AndroidDemo\hezi\src\main\java\com\example\hezi\viewpager2\withTab\ShowFragment.java使用了未经检查或不安全的操作。
+注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+
+> Task :hezi:dexBuilderRelease
+> Task :junior:generateDebugAssets UP-TO-DATE
+> Task :junior:mergeDebugAssets
+> Task :junior:compressDebugAssets
+> Task :junior:processDebugJavaRes NO-SOURCE
+> Task :junior:checkDebugDuplicateClasses
+> Task :junior:desugarDebugFileDependencies
+> Task :junior:mergeDebugJniLibFolders
+> Task :junior:mergeLibDexDebug
+> Task :junior:mergeDebugNativeLibs NO-SOURCE
+> Task :junior:stripDebugDebugSymbols NO-SOURCE
+> Task :junior:validateSigningDebug
+> Task :junior:writeDebugAppMetadata
+> Task :junior:writeDebugSigningConfigVersions
+> Task :junior:preReleaseBuild UP-TO-DATE
+> Task :junior:compileReleaseAidl NO-SOURCE
+> Task :junior:compileReleaseRenderscript NO-SOURCE
+> Task :junior:generateReleaseBuildConfig
+> Task :junior:javaPreCompileRelease
+> Task :junior:checkReleaseAarMetadata
+> Task :junior:generateReleaseResValues
+> Task :junior:mapReleaseSourceSetPaths
+> Task :junior:generateReleaseResources
+> Task :junior:mergeDebugJavaResource
+> Task :group:mergeDexRelease
+> Task :junior:createReleaseCompatibleScreenManifests
+> Task :junior:extractDeepLinksRelease
+> Task :junior:processReleaseMainManifest
+> Task :junior:processReleaseManifest
+> Task :junior:processReleaseManifestForPackage
+> Task :junior:extractProguardFiles
+> Task :junior:mergeReleaseJniLibFolders
+> Task :junior:mergeReleaseNativeLibs NO-SOURCE
+> Task :junior:stripReleaseDebugSymbols NO-SOURCE
+> Task :junior:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :junior:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :junior:desugarReleaseFileDependencies
+> Task :junior:checkReleaseDuplicateClasses
+> Task :junior:mergeReleaseArtProfile
+> Task :junior:mergeReleaseShaders
+> Task :junior:compileReleaseShaders NO-SOURCE
+> Task :junior:generateReleaseAssets UP-TO-DATE
+> Task :junior:mergeReleaseAssets
+> Task :junior:compressReleaseAssets
+> Task :junior:processReleaseJavaRes NO-SOURCE
+> Task :junior:processDebugManifestForPackage
+> Task :junior:collectReleaseDependencies
+> Task :junior:sdkReleaseDependencyData
+> Task :junior:writeReleaseAppMetadata
+> Task :junior:writeReleaseSigningConfigVersions
+> Task :media:preBuild UP-TO-DATE
+> Task :media:preDebugBuild UP-TO-DATE
+> Task :media:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :media:compileDebugAidl NO-SOURCE
+> Task :media:compileDebugRenderscript NO-SOURCE
+> Task :media:generateDebugBuildConfig
+> Task :media:javaPreCompileDebug
+> Task :media:checkDebugAarMetadata
+> Task :media:generateDebugResValues
+> Task :media:mapDebugSourceSetPaths
+> Task :media:generateDebugResources
+> Task :junior:mergeReleaseJavaResource
+> Task :junior:mergeExtDexDebug
+> Task :group:compileReleaseArtProfile
+> Task :hezi:mergeDexRelease
+> Task :junior:processDebugResources
+> Task :hezi:compileReleaseArtProfile UP-TO-DATE
+> Task :media:mergeDebugResources
+> Task :junior:mergeExtDexRelease
+
+> Task :junior:compileDebugJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :junior:mergeReleaseResources
+> Task :junior:dexBuilderDebug
+> Task :junior:mergeProjectDexDebug
+> Task :hezi:packageDebug
+> Task :hezi:createDebugApkListingFileRedirect
+> Task :hezi:assembleDebug
+> Task :media:createDebugCompatibleScreenManifests
+> Task :media:extractDeepLinksDebug
+> Task :media:processDebugMainManifest
+> Task :media:processDebugManifest
+> Task :media:mergeDebugShaders
+> Task :media:compileDebugShaders NO-SOURCE
+> Task :media:generateDebugAssets UP-TO-DATE
+> Task :media:mergeDebugAssets
+> Task :media:compressDebugAssets
+> Task :media:processDebugJavaRes NO-SOURCE
+> Task :media:desugarDebugFileDependencies
+> Task :media:checkDebugDuplicateClasses
+> Task :media:mergeDebugJniLibFolders
+> Task :media:mergeDebugNativeLibs NO-SOURCE
+> Task :media:stripDebugDebugSymbols NO-SOURCE
+> Task :media:validateSigningDebug
+> Task :media:writeDebugAppMetadata
+> Task :media:mergeLibDexDebug
+> Task :media:writeDebugSigningConfigVersions
+> Task :media:preReleaseBuild UP-TO-DATE
+> Task :media:compileReleaseAidl NO-SOURCE
+> Task :media:compileReleaseRenderscript NO-SOURCE
+> Task :media:generateReleaseBuildConfig
+> Task :media:javaPreCompileRelease
+> Task :group:packageRelease
+> Task :group:createReleaseApkListingFileRedirect
+> Task :media:generateReleaseResValues
+> Task :media:checkReleaseAarMetadata
+> Task :media:mapReleaseSourceSetPaths
+> Task :media:generateReleaseResources
+> Task :media:mergeDebugJavaResource
+> Task :junior:processReleaseResources
+
+> Task :junior:compileReleaseJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :media:mergeExtDexDebug
+> Task :junior:dexBuilderRelease
+> Task :media:createReleaseCompatibleScreenManifests
+> Task :media:extractDeepLinksRelease
+> Task :media:processReleaseMainManifest
+> Task :media:processReleaseManifest
+> Task :media:extractProguardFiles
+> Task :media:mergeReleaseJniLibFolders
+> Task :media:mergeReleaseNativeLibs NO-SOURCE
+> Task :media:stripReleaseDebugSymbols NO-SOURCE
+> Task :media:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :media:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :junior:packageDebug
+> Task :junior:createDebugApkListingFileRedirect
+> Task :junior:assembleDebug
+> Task :media:desugarReleaseFileDependencies
+> Task :media:checkReleaseDuplicateClasses
+> Task :media:processDebugManifestForPackage
+> Task :media:mergeReleaseShaders
+> Task :media:compileReleaseShaders NO-SOURCE
+> Task :media:generateReleaseAssets UP-TO-DATE
+> Task :media:mergeReleaseAssets
+> Task :media:compressReleaseAssets
+> Task :media:processReleaseJavaRes NO-SOURCE
+> Task :media:collectReleaseDependencies
+> Task :media:sdkReleaseDependencyData
+> Task :media:writeReleaseAppMetadata
+> Task :media:writeReleaseSigningConfigVersions
+> Task :middle:preBuild UP-TO-DATE
+> Task :middle:preDebugBuild UP-TO-DATE
+> Task :middle:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :middle:compileDebugAidl NO-SOURCE
+> Task :middle:compileDebugRenderscript NO-SOURCE
+> Task :middle:generateDebugBuildConfig
+> Task :middle:javaPreCompileDebug
+> Task :middle:generateDebugResValues
+> Task :middle:checkDebugAarMetadata
+> Task :middle:mapDebugSourceSetPaths
+> Task :middle:generateDebugResources
+> Task :media:mergeReleaseJavaResource
+> Task :media:mergeReleaseResources
+com.example.media-main-27:/drawable/seekbar.xml:6: warn: generated id 'android:id/background' for external package 'android'.
+com.example.media-main-27:/drawable/seekbar.xml:14: warn: generated id 'android:id/progress' for external package 'android'.
+com.example.media-main-27:/drawable/seekbar.xml:10: warn: generated id 'android:id/secondaryProgress' for external package 'android'.
+
+> Task :middle:createDebugCompatibleScreenManifests
+> Task :middle:extractDeepLinksDebug
+> Task :media:processDebugResources
+> Task :middle:processDebugMainManifest
+> Task :middle:mergeDebugResources
+> Task :junior:mergeDexRelease
+> Task :media:mergeExtDexRelease
+
+> Task :media:compileDebugJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :junior:compileReleaseArtProfile
+> Task :media:dexBuilderDebug
+> Task :middle:processDebugManifest
+> Task :middle:mergeDebugShaders
+> Task :middle:compileDebugShaders NO-SOURCE
+> Task :middle:generateDebugAssets UP-TO-DATE
+> Task :middle:mergeDebugAssets
+> Task :middle:compressDebugAssets
+> Task :middle:processDebugJavaRes NO-SOURCE
+> Task :media:mergeProjectDexDebug
+> Task :middle:checkDebugDuplicateClasses
+> Task :middle:desugarDebugFileDependencies
+> Task :middle:mergeDebugJniLibFolders
+> Task :middle:mergeLibDexDebug
+> Task :middle:mergeDebugNativeLibs NO-SOURCE
+> Task :middle:stripDebugDebugSymbols NO-SOURCE
+> Task :middle:validateSigningDebug
+> Task :middle:writeDebugAppMetadata
+> Task :middle:writeDebugSigningConfigVersions
+> Task :middle:preReleaseBuild UP-TO-DATE
+> Task :media:processReleaseManifestForPackage
+> Task :middle:compileReleaseAidl NO-SOURCE
+> Task :middle:compileReleaseRenderscript NO-SOURCE
+> Task :middle:generateReleaseBuildConfig
+> Task :middle:javaPreCompileRelease
+> Task :middle:checkReleaseAarMetadata
+> Task :middle:generateReleaseResValues
+> Task :middle:mapReleaseSourceSetPaths
+> Task :middle:generateReleaseResources
+> Task :middle:mergeDebugJavaResource
+> Task :middle:createReleaseCompatibleScreenManifests
+> Task :middle:extractDeepLinksRelease
+> Task :middle:processReleaseMainManifest
+> Task :middle:processReleaseManifest
+> Task :middle:extractProguardFiles
+> Task :middle:mergeReleaseJniLibFolders
+> Task :middle:mergeReleaseNativeLibs NO-SOURCE
+> Task :middle:stripReleaseDebugSymbols NO-SOURCE
+> Task :middle:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :middle:mergeReleaseNativeDebugMetadata NO-SOURCE
+com.example.media-main-26:/drawable/seekbar.xml:6: warn: generated id 'android:id/background' for external package 'android'.
+com.example.media-main-26:/drawable/seekbar.xml:14: warn: generated id 'android:id/progress' for external package 'android'.
+com.example.media-main-26:/drawable/seekbar.xml:10: warn: generated id 'android:id/secondaryProgress' for external package 'android'.
+
+> Task :middle:desugarReleaseFileDependencies
+> Task :middle:checkReleaseDuplicateClasses
+> Task :middle:processDebugManifestForPackage
+> Task :media:processReleaseResources
+> Task :middle:mergeReleaseResources
+> Task :middle:mergeExtDexDebug
+> Task :middle:processDebugResources
+
+> Task :media:compileReleaseJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :middle:mergeExtDexRelease
+> Task :media:dexBuilderRelease
+
+> Task :middle:compileDebugJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :middle:dexBuilderDebug
+> Task :middle:mergeReleaseShaders
+> Task :middle:compileReleaseShaders NO-SOURCE
+> Task :middle:generateReleaseAssets UP-TO-DATE
+> Task :middle:mergeReleaseAssets
+> Task :middle:compressReleaseAssets
+> Task :middle:processReleaseJavaRes NO-SOURCE
+> Task :middle:mergeProjectDexDebug
+> Task :middle:collectReleaseDependencies
+> Task :middle:sdkReleaseDependencyData
+> Task :middle:writeReleaseAppMetadata
+> Task :middle:writeReleaseSigningConfigVersions
+> Task :mixture:preBuild UP-TO-DATE
+> Task :mixture:preDebugBuild UP-TO-DATE
+> Task :mixture:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :mixture:compileDebugAidl NO-SOURCE
+> Task :mixture:compileDebugRenderscript NO-SOURCE
+> Task :media:mergeReleaseArtProfile
+> Task :mixture:generateDebugBuildConfig
+> Task :mixture:javaPreCompileDebug
+> Task :mixture:generateDebugResValues
+> Task :mixture:checkDebugAarMetadata
+> Task :mixture:mapDebugSourceSetPaths
+> Task :mixture:generateDebugResources
+> Task :middle:mergeReleaseJavaResource
+> Task :media:mergeDexRelease
+> Task :junior:lintVitalAnalyzeRelease
+> Task :junior:lintVitalReportRelease
+> Task :junior:lintVitalRelease
+> Task :mixture:createDebugCompatibleScreenManifests
+> Task :mixture:extractDeepLinksDebug
+> Task :media:compileReleaseArtProfile
+
+> Task :mixture:processDebugMainManifest
+D:\code\AndroidDemo\mixture\src\main\AndroidManifest.xml:10:5-76 Warning:
+	Element uses-permission#android.permission.ACCESS_WIFI_STATE at AndroidManifest.xml:10:5-76 duplicated with element declared at AndroidManifest.xml:8:5-76
+
+> Task :mixture:processDebugManifest
+> Task :mixture:mergeDebugShaders
+> Task :mixture:compileDebugShaders NO-SOURCE
+> Task :mixture:generateDebugAssets UP-TO-DATE
+> Task :mixture:mergeDebugResources
+> Task :mixture:mergeDebugAssets
+> Task :middle:processReleaseManifestForPackage
+> Task :mixture:processDebugJavaRes NO-SOURCE
+> Task :hezi:optimizeReleaseResources
+> Task :mixture:checkDebugDuplicateClasses
+> Task :mixture:mergeLibDexDebug
+> Task :mixture:compressDebugAssets
+> Task :middle:processReleaseResources
+> Task :mixture:mergeDebugJavaResource
+> Task :mixture:desugarDebugFileDependencies
+> Task :mixture:configureNdkBuildDebug[arm64-v8a]
+
+> Task :middle:compileReleaseJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+
+> Task :middle:dexBuilderRelease
+> Task :media:optimizeReleaseResources
+> Task :middle:mergeDexRelease
+> Task :mixture:mergeExtDexDebug
+
+> Task :mixture:buildNdkBuildDebug[arm64-v8a]
+C/C++: D:/AndroidTool/SDK/ndk/23.1.7779620/build//../build/core/build-binary.mk:643: Android NDK: Module jni_mix depends on undefined modules: android_support    
+
+> Task :hezi:lintVitalAnalyzeRelease
+
+> Task :mixture:buildNdkBuildDebug[arm64-v8a]
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:54:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:58:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:90:39: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+C/C++:                 ip, sockfd, send_num, sizeof(send_buff));
+C/C++:                                       ^~~~~~~~~~~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:92:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:100:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:124:12: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:     return str_info;
+C/C++:            ^~~~~~~~
+
+> Task :middle:lintVitalAnalyzeRelease
+> Task :media:lintVitalAnalyzeRelease
+
+> Task :mixture:buildNdkBuildDebug[arm64-v8a]
+C/C++: 6 warnings generated.
+
+> Task :hezi:lintVitalReportRelease
+> Task :hezi:packageRelease
+> Task :hezi:lintVitalRelease
+> Task :hezi:createReleaseApkListingFileRedirect
+> Task :hezi:assembleRelease
+> Task :hezi:assemble
+> Task :media:lintVitalReportRelease
+> Task :media:lintVitalRelease
+> Task :middle:lintVitalReportRelease
+> Task :mixture:configureNdkBuildDebug[armeabi-v7a]
+> Task :middle:lintVitalRelease
+
+> Task :mixture:buildNdkBuildDebug[armeabi-v7a]
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:54:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:58:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:92:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:100:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:124:12: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:     return str_info;
+C/C++:            ^~~~~~~~
+C/C++: 5 warnings generated.
+
+> Task :mixture:configureNdkBuildDebug[x86]
+
+> Task :mixture:buildNdkBuildDebug[x86]
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:54:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:58:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:92:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:100:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:124:12: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:     return str_info;
+C/C++:            ^~~~~~~~
+C/C++: 5 warnings generated.
+
+> Task :group:lintVitalReportRelease
+Could not load custom lint check jar file D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\c3c2e10d6788bf5cb590642bca988f19\transformed\jetified-activity-1.8.0\jars\lint.jar
+java.lang.UnsupportedClassVersionError: androidx/activity/lint/ActivityIssueRegistry has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at com.intellij.util.lang.UrlClassLoader.consumeClassData(UrlClassLoader.java:257)
+	at com.intellij.util.lang.JdkZipResourceFile.findClass(JdkZipResourceFile.java:89)
+	at com.intellij.util.lang.JarLoader.findClass(JarLoader.java:63)
+	at com.intellij.util.lang.ClassPath.findClassInLoader(ClassPath.java:246)
+	at com.intellij.util.lang.ClassPath.findClassWithoutCache(ClassPath.java:235)
+	at com.intellij.util.lang.ClassPath.findClass(ClassPath.java:202)
+	at com.intellij.util.lang.UrlClassLoader.findClass(UrlClassLoader.java:209)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:588)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.loadIssueRegistry(JarFileIssueRegistry.kt:257)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.get(JarFileIssueRegistry.kt:183)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.get(JarFileIssueRegistry.kt:144)
+	at com.android.tools.lint.client.api.JarFileIssueRegistry$Factory.get$default(JarFileIssueRegistry.kt:119)
+	at com.android.tools.lint.client.api.LintDriver.registerCustomDetectors(LintDriver.kt:725)
+	at com.android.tools.lint.client.api.LintDriver.initializeExtraRegistries(LintDriver.kt:610)
+	at com.android.tools.lint.client.api.LintDriver.doAnalyze(LintDriver.kt:503)
+	at com.android.tools.lint.client.api.LintDriver.doAnalyze$default(LintDriver.kt:486)
+	at com.android.tools.lint.client.api.LintDriver.mergeOnly(LintDriver.kt:471)
+	at com.android.tools.lint.LintCliClient$mergeOnly$1.invoke(LintCliClient.kt:261)
+	at com.android.tools.lint.LintCliClient$mergeOnly$1.invoke(LintCliClient.kt:259)
+	at com.android.tools.lint.LintCliClient.run(LintCliClient.kt:289)
+	at com.android.tools.lint.LintCliClient.mergeOnly(LintCliClient.kt:259)
+	at com.android.tools.lint.Main.run(Main.java:1670)
+	at com.android.tools.lint.Main.run(Main.java:274)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.invokeLintMainRunMethod(AndroidLintWorkAction.kt:96)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.runLint(AndroidLintWorkAction.kt:85)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.execute(AndroidLintWorkAction.kt:61)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
+	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:169)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:187)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:120)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:162)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:249)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:109)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:114)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:157)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:126)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+> Task :mixture:configureNdkBuildDebug[x86_64]
+> Task :group:lintVitalRelease
+> Task :group:assembleRelease
+> Task :group:assemble
+
+> Task :mixture:buildNdkBuildDebug[x86_64]
+C/C++: D:/AndroidTool/SDK/ndk/23.1.7779620/build//../build/core/build-binary.mk:643: Android NDK: Module jni_mix depends on undefined modules: android_support    
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:54:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:58:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:90:39: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+C/C++:                 ip, sockfd, send_num, sizeof(send_buff));
+C/C++:                                       ^~~~~~~~~~~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:92:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:100:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:124:12: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:     return str_info;
+C/C++:            ^~~~~~~~
+C/C++: 6 warnings generated.
+
+> Task :middle:packageDebug
+> Task :junior:optimizeReleaseResources
+> Task :middle:createDebugApkListingFileRedirect
+> Task :middle:assembleDebug
+> Task :mixture:externalNativeBuildDebug
+> Task :mixture:mergeDebugJniLibFolders
+> Task :mixture:validateSigningDebug
+> Task :mixture:processDebugManifestForPackage
+> Task :mixture:writeDebugAppMetadata
+> Task :mixture:writeDebugSigningConfigVersions
+> Task :mixture:preReleaseBuild UP-TO-DATE
+> Task :mixture:compileReleaseAidl NO-SOURCE
+> Task :mixture:compileReleaseRenderscript NO-SOURCE
+> Task :middle:mergeReleaseArtProfile
+> Task :mixture:generateReleaseBuildConfig
+> Task :mixture:javaPreCompileRelease
+> Task :mixture:checkReleaseAarMetadata
+> Task :mixture:generateReleaseResValues
+> Task :mixture:mergeDebugNativeLibs
+> Task :mixture:mapReleaseSourceSetPaths
+> Task :middle:compileReleaseArtProfile
+> Task :media:packageDebug
+> Task :media:createDebugApkListingFileRedirect
+> Task :media:assembleDebug
+> Task :mixture:generateReleaseResources
+
+> Task :mixture:stripDebugDebugSymbols
+D:\AndroidTool\SDK\ndk\23.1.7779620\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe: error: 'D:\code\AndroidDemo\mixture\build\intermediates\merged_native_libs\debug\out\lib\armeabi-v7a\libjni_mix.so': The file was not recognized as a valid object file
+
+D:\AndroidTool\SDK\ndk\23.1.7779620\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe: error: 'D:\code\AndroidDemo\mixture\build\intermediates\merged_native_libs\debug\out\lib\armeabi-v7a\libvudroid.so': The file was not recognized as a valid object file
+
+Unable to strip the following libraries, packaging them as they are: libjni_mix.so, libvudroid.so.
+
+> Task :mixture:createReleaseCompatibleScreenManifests
+> Task :mixture:extractDeepLinksRelease
+
+> Task :mixture:processReleaseMainManifest
+D:\code\AndroidDemo\mixture\src\main\AndroidManifest.xml:10:5-76 Warning:
+	Element uses-permission#android.permission.ACCESS_WIFI_STATE at AndroidManifest.xml:10:5-76 duplicated with element declared at AndroidManifest.xml:8:5-76
+
+> Task :mixture:processReleaseManifest
+> Task :mixture:extractProguardFiles
+> Task :mixture:processDebugResources
+> Task :mixture:configureNdkBuildRelease[arm64-v8a]
+
+> Task :mixture:compileDebugJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: D:\code\AndroidDemo\mixture\src\main\java\com\example\mixture\wifi\AccessPoint.java使用了未经检查或不安全的操作。
+注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+
+> Task :mixture:dexBuilderDebug
+> Task :middle:optimizeReleaseResources
+> Task :mixture:mergeProjectDexDebug
+> Task :mixture:mergeReleaseResources
+
+> Task :mixture:buildNdkBuildRelease[arm64-v8a]
+C/C++: D:/AndroidTool/SDK/ndk/23.1.7779620/build//../build/core/build-binary.mk:643: Android NDK: Module jni_mix depends on undefined modules: android_support    
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:54:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:58:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:90:39: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+C/C++:                 ip, sockfd, send_num, sizeof(send_buff));
+C/C++:                                       ^~~~~~~~~~~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:92:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:100:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:124:12: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:     return str_info;
+C/C++:            ^~~~~~~~
+C/C++: 6 warnings generated.
+
+> Task :mixture:configureNdkBuildRelease[armeabi-v7a]
+
+> Task :mixture:buildNdkBuildRelease[armeabi-v7a]
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:54:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:58:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:92:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:100:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:124:12: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:     return str_info;
+C/C++:            ^~~~~~~~
+C/C++: 5 warnings generated.
+
+> Task :mixture:configureNdkBuildRelease[x86]
+
+> Task :mixture:buildNdkBuildRelease[x86]
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:54:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:58:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:92:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:100:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:124:12: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:     return str_info;
+C/C++:            ^~~~~~~~
+C/C++: 5 warnings generated.
+
+> Task :mixture:configureNdkBuildRelease[x86_64]
+> Task :media:packageRelease
+> Task :mixture:packageDebug
+> Task :media:createReleaseApkListingFileRedirect
+> Task :media:assembleRelease
+> Task :media:assemble
+> Task :mixture:createDebugApkListingFileRedirect
+> Task :mixture:assembleDebug
+
+> Task :mixture:buildNdkBuildRelease[x86_64]
+C/C++: D:/AndroidTool/SDK/ndk/23.1.7779620/build//../build/core/build-binary.mk:643: Android NDK: Module jni_mix depends on undefined modules: android_support    
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:54:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:58:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:90:39: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+C/C++:                 ip, sockfd, send_num, sizeof(send_buff));
+C/C++:                                       ^~~~~~~~~~~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:92:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:100:16: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:         return str_info;
+C/C++:                ^~~~~~~~
+C/C++: D:/code/AndroidDemo/mixture/src/main/jni/find_name.cpp:124:12: warning: address of stack memory associated with local variable 'str_info' returned [-Wreturn-stack-address]
+C/C++:     return str_info;
+C/C++:            ^~~~~~~~
+C/C++: 6 warnings generated.
+
+> Task :mixture:externalNativeBuildRelease
+> Task :mixture:mergeReleaseJniLibFolders
+> Task :mixture:checkReleaseDuplicateClasses
+> Task :mixture:mergeReleaseShaders
+> Task :mixture:compileReleaseShaders NO-SOURCE
+> Task :mixture:generateReleaseAssets UP-TO-DATE
+> Task :mixture:mergeReleaseNativeLibs
+> Task :mixture:mergeReleaseAssets
+> Task :mixture:processReleaseManifestForPackage
+> Task :mixture:processReleaseJavaRes NO-SOURCE
+> Task :mixture:desugarReleaseFileDependencies
+
+> Task :mixture:stripReleaseDebugSymbols
+D:\AndroidTool\SDK\ndk\23.1.7779620\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe: error: 'D:\code\AndroidDemo\mixture\build\intermediates\merged_native_libs\release\out\lib\armeabi-v7a\libvudroid.so': The file was not recognized as a valid object file
+
+D:\AndroidTool\SDK\ndk\23.1.7779620\toolchains\llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe: error: 'D:\code\AndroidDemo\mixture\build\intermediates\merged_native_libs\release\out\lib\armeabi-v7a\libjni_mix.so': The file was not recognized as a valid object file
+
+Unable to strip the following libraries, packaging them as they are: libjni_mix.so, libvudroid.so.
+
+> Task :mixture:collectReleaseDependencies
+> Task :junior:packageRelease
+> Task :junior:createReleaseApkListingFileRedirect
+> Task :junior:assembleRelease
+> Task :junior:assemble
+> Task :mixture:compressReleaseAssets
+> Task :mixture:mergeReleaseJavaResource
+> Task :mixture:sdkReleaseDependencyData
+> Task :mixture:writeReleaseAppMetadata
+> Task :mixture:writeReleaseSigningConfigVersions
+> Task :network:preBuild UP-TO-DATE
+> Task :network:preDebugBuild UP-TO-DATE
+> Task :network:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :network:compileDebugAidl NO-SOURCE
+> Task :network:compileDebugRenderscript NO-SOURCE
+> Task :network:generateDebugBuildConfig
+> Task :network:javaPreCompileDebug
+> Task :mixture:processReleaseResources
+> Task :network:checkDebugAarMetadata
+> Task :mixture:extractReleaseNativeSymbolTables
+
+> Task :mixture:compileReleaseJavaWithJavac
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: D:\code\AndroidDemo\mixture\src\main\java\com\example\mixture\wifi\AccessPoint.java使用了未经检查或不安全的操作。
+注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+
+> Task :mixture:dexBuilderRelease
+> Task :network:generateDebugResValues
+> Task :network:mapDebugSourceSetPaths
+> Task :network:generateDebugResources
+> Task :mixture:mergeReleaseNativeDebugMetadata
+> Task :network:createDebugCompatibleScreenManifests
+> Task :network:extractDeepLinksDebug
+> Task :network:processDebugMainManifest
+> Task :network:processDebugManifest
+> Task :network:mergeDebugShaders
+> Task :network:compileDebugShaders NO-SOURCE
+> Task :network:generateDebugAssets UP-TO-DATE
+> Task :network:mergeDebugAssets
+> Task :network:compressDebugAssets
+> Task :network:processDebugJavaRes NO-SOURCE
+> Task :network:desugarDebugFileDependencies
+> Task :network:checkDebugDuplicateClasses
+> Task :network:mergeDebugJniLibFolders
+> Task :network:mergeDebugResources
+> Task :network:mergeDebugNativeLibs NO-SOURCE
+> Task :network:stripDebugDebugSymbols NO-SOURCE
+> Task :network:validateSigningDebug
+> Task :network:processDebugManifestForPackage
+> Task :mixture:mergeExtDexRelease
+> Task :network:mergeLibDexDebug
+> Task :network:writeDebugAppMetadata
+> Task :network:writeDebugSigningConfigVersions
+> Task :network:preReleaseBuild UP-TO-DATE
+> Task :network:compileReleaseAidl NO-SOURCE
+> Task :network:compileReleaseRenderscript NO-SOURCE
+> Task :network:generateReleaseBuildConfig
+> Task :network:javaPreCompileRelease
+> Task :network:checkReleaseAarMetadata
+> Task :network:generateReleaseResValues
+> Task :network:mapReleaseSourceSetPaths
+> Task :network:generateReleaseResources
+> Task :network:mergeDebugJavaResource
+> Task :network:createReleaseCompatibleScreenManifests
+> Task :network:extractDeepLinksRelease
+> Task :network:processDebugResources
+> Task :network:processReleaseMainManifest
+> Task :network:mergeReleaseResources
+> Task :network:mergeExtDexDebug
+
+> Task :network:compileDebugJavaWithJavac FAILED
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:140: 错误: 无法从静态上下文中引用非静态 变量 mContext
+        LinearLayout ll_append = new LinearLayout(mContext);
+                                                  ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:143: 错误: 无法从静态上下文中引用非静态 变量 dip_margin
+        ll_params.setMargins(dip_margin, dip_margin, dip_margin, dip_margin);
+                             ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:143: 错误: 无法从静态上下文中引用非静态 变量 dip_margin
+        ll_params.setMargins(dip_margin, dip_margin, dip_margin, dip_margin);
+                                         ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:143: 错误: 无法从静态上下文中引用非静态 变量 dip_margin
+        ll_params.setMargins(dip_margin, dip_margin, dip_margin, dip_margin);
+                                                     ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:143: 错误: 无法从静态上下文中引用非静态 变量 dip_margin
+        ll_params.setMargins(dip_margin, dip_margin, dip_margin, dip_margin);
+                                                                 ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:148: 错误: 无法从静态上下文中引用非静态 变量 tv_show
+        TextView tv_append = getTextView(tv_show.getText().toString() + append, gravity);
+                                         ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:153: 错误: 无法从静态上下文中引用非静态 变量 ll_show
+        ll_show.addView(ll_append);
+        ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:155: 错误: 无法从静态上下文中引用非静态 变量 mHandler
+        mHandler.postDelayed(mScroll, 100);
+        ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:160: 错误: 无法从静态上下文中引用非静态 变量 mContext
+        TextView tv = new TextView(mContext);
+                                   ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:176: 错误: 无法从静态上下文中引用非静态 变量 sv_chat
+            sv_chat.fullScroll(ScrollView.FOCUS_DOWN);
+            ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:244: 错误: 无法从静态上下文中引用非静态 变量 mContext
+                if (mContext != null && content != null && content.length() > 0) { //接收成功
+                    ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:273: 错误: 无法从静态上下文中引用非静态 变量 mContext
+                        Toast.makeText(mContext, hint, Toast.LENGTH_SHORT).show();
+                                       ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:295: 错误: 无法从静态上下文中引用非静态 变量 mContext
+        LinearLayout ll_append = new LinearLayout(mContext);
+                                                  ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:298: 错误: 无法从静态上下文中引用非静态 变量 dip_margin
+        ll_params.setMargins(dip_margin, dip_margin, dip_margin, dip_margin);
+                             ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:298: 错误: 无法从静态上下文中引用非静态 变量 dip_margin
+        ll_params.setMargins(dip_margin, dip_margin, dip_margin, dip_margin);
+                                         ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:298: 错误: 无法从静态上下文中引用非静态 变量 dip_margin
+        ll_params.setMargins(dip_margin, dip_margin, dip_margin, dip_margin);
+                                                     ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:298: 错误: 无法从静态上下文中引用非静态 变量 dip_margin
+        ll_params.setMargins(dip_margin, dip_margin, dip_margin, dip_margin);
+                                                                 ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:303: 错误: 无法从静态上下文中引用非静态 变量 mContext
+        LinearLayout ll_content = new LinearLayout(mContext);
+                                                   ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:315: 错误: 无法从静态上下文中引用非静态 变量 mContext
+        RelativeLayout rl_content = new RelativeLayout(mContext);
+                                                       ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:319: 错误: 无法从静态上下文中引用非静态 变量 mContext
+        ImageView iv_append = new ImageView(mContext);
+                                            ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:321: 错误: 无法从静态上下文中引用非静态 变量 mContext
+                Utils.dip2px(mContext, MEDIA_WIDTH), LayoutParams.WRAP_CONTENT);
+                             ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:340: 错误: 无法从静态上下文中引用非静态 变量 mContext
+        TextProgressCircle tpc_progress = new TextProgressCircle(mContext);
+                                                                 ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:343: 错误: 无法从静态上下文中引用非静态 变量 mContext
+                    Utils.dip2px(mContext, MEDIA_WIDTH), Utils.dip2px(mContext, MEDIA_WIDTH));
+                                 ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:343: 错误: 无法从静态上下文中引用非静态 变量 mContext
+                    Utils.dip2px(mContext, MEDIA_WIDTH), Utils.dip2px(mContext, MEDIA_WIDTH));
+                                                                      ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:362: 错误: 无法从静态上下文中引用非静态 变量 ll_show
+        ll_show.addView(ll_append);
+        ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:364: 错误: 无法从静态上下文中引用非静态 变量 mHandler
+        mHandler.postDelayed(mScroll, 100);
+        ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:368: 错误: 无法从静态上下文中引用非静态 变量 mActivity
+            RefreshRunnable refresh = new RefreshRunnable(mActivity, new int[]{
+                                                          ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:371: 错误: 无法从静态上下文中引用非静态 变量 mHandler
+            mHandler.postDelayed(refresh, 100);
+            ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:383: 错误: 无法从静态上下文中引用非静态 变量 mContext
+                    Utils.dip2px(mContext, MEDIA_WIDTH), Utils.dip2px(mContext, height));
+                                 ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:383: 错误: 无法从静态上下文中引用非静态 变量 mContext
+                    Utils.dip2px(mContext, MEDIA_WIDTH), Utils.dip2px(mContext, height));
+                                                                      ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:387: 错误: 无法从静态上下文中引用非静态 变量 mContext
+                    Utils.dip2px(mContext, MEDIA_WIDTH), Utils.dip2px(mContext, height));
+                                 ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:387: 错误: 无法从静态上下文中引用非静态 变量 mContext
+                    Utils.dip2px(mContext, MEDIA_WIDTH), Utils.dip2px(mContext, height));
+                                                                      ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:406: 错误: 无法从静态上下文中引用非静态 变量 mContext
+        down.setDestinationInExternalFilesDir(mContext, Environment.DIRECTORY_DCIM, filename);
+                                              ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:462: 错误: 无法从静态上下文中引用非静态 变量 mHandler
+                mHandler.postDelayed(this, 100);
+                ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\ChatMainActivity.java:464: 错误: 无法从静态上下文中引用非静态 变量 mHandler
+                mHandler.postDelayed(mScroll, 100);
+                ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\QQContactActivity.java:142: 错误: 无法从静态上下文中引用非静态 变量 mContext
+                if (mContext != null && content != null && content.length() > 0) {
+                    ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\QQContactActivity.java:173: 错误: 无法从静态上下文中引用非静态 变量 mGroupOnline
+            mGroupOnline.friend_list = friendList;
+            ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\QQContactActivity.java:177: 错误: 无法从静态上下文中引用非静态 变量 mContext
+            Toast.makeText(mContext, hint, Toast.LENGTH_SHORT).show();
+                           ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\QQContactActivity.java:184: 错误: 无法从静态上下文中引用非静态 变量 mGroupOnline
+        all_group.add(mGroupOnline); //先往好友队列添加在线好友
+                      ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\QQContactActivity.java:185: 错误: 无法从静态上下文中引用非静态 变量 mGroupList
+        all_group.addAll(mGroupList); //再往好友队列添加各好友分组
+                         ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\QQContactActivity.java:187: 错误: 无法从静态上下文中引用非静态 变量 mContext
+        FriendExpandAdapter adapter = new FriendExpandAdapter(mContext, all_group);
+                                                              ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\QQContactActivity.java:189: 错误: 无法从静态上下文中引用非静态 变量 elv_friend
+        elv_friend.setAdapter(adapter);
+        ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\QQContactActivity.java:191: 错误: 无法从静态上下文中引用非静态 变量 elv_friend
+        elv_friend.setOnChildClickListener(adapter);
+        ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\QQContactActivity.java:193: 错误: 无法从静态上下文中引用非静态 变量 elv_friend
+        elv_friend.setOnGroupClickListener(adapter);
+        ^
+D:\code\AndroidDemo\network\src\main\java\com\example\network\activity\QQContactActivity.java:195: 错误: 无法从静态上下文中引用非静态 变量 elv_friend
+        elv_friend.expandGroup(0);
+        ^
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+45 个错误
+
+> Task :mixture:optimizeReleaseResources
+> Task :middle:packageRelease
+> Task :middle:createReleaseApkListingFileRedirect
+> Task :mixture:mergeReleaseArtProfile
+> Task :mixture:mergeDexRelease
+> Task :mixture:lintVitalAnalyzeRelease
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':network:compileDebugJavaWithJavac'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1m 21s
+982 actionable tasks: 440 executed, 542 up-to-date

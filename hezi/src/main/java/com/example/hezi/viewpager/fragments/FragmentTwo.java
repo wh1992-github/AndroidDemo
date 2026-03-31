@@ -16,6 +16,9 @@ import com.example.hezi.viewpager.transformer.ScaleTransformer;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 封装 Fragment Two 相关逻辑的类。
+ */
 
 public class FragmentTwo extends BaseFragment {
     private static final String TAG = "FragmentTwo";

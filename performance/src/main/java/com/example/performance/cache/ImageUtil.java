@@ -7,6 +7,9 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+/**
+ * 提供 Image 相关工具方法的工具类。
+ */
 
 public class ImageUtil {
 

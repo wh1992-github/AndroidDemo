@@ -7,6 +7,9 @@ import android.provider.MediaStore;
 
 import java.io.IOException;
 import java.util.HashMap;
+/**
+ * 提供 Video 相关工具方法的工具类。
+ */
 
 public class VideoUtils {
 

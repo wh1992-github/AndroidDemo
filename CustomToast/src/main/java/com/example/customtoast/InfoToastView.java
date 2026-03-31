@@ -8,6 +8,9 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+/**
+ * 用于展示 Info Toast 效果的自定义 View。
+ */
 
 public class InfoToastView extends View {
 

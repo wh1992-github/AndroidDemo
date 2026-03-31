@@ -1,6 +1,9 @@
 package org.vudroid.core.events;
 
 import java.lang.reflect.Method;
+/**
+ * 封装 Safe Event 相关逻辑的类。
+ */
 
 public abstract class SafeEvent<T> implements Event<T> {
     private final Class<?> listenerType;

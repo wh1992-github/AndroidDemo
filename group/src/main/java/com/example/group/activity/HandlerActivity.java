@@ -8,8 +8,8 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.os.MessageQueue;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.group.databinding.ActivityHandlerBinding;
 import com.example.group.util.LogUtil;
@@ -17,6 +17,9 @@ import com.example.group.util.LogUtil;
 import java.lang.reflect.Method;
 
 //Handler机制, 同步屏障
+/**
+ * 用于展示 Handler 功能的 Activity。
+ */
 @SuppressLint({"LogNotTimber", "DiscouragedPrivateApi"})
 @RequiresApi(api = Build.VERSION_CODES.M)
 public class HandlerActivity extends AppCompatActivity {
@@ -146,5 +149,24 @@ public class HandlerActivity extends AppCompatActivity {
         message.what = MESSAGE_TYPE_ASYN;
         message.setAsynchronous(true);
         mSyncHandler.sendMessageDelayed(message, 1000);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理所有Handler的消息和回调,防止内存泄漏
+        if (mMainHandler != null) {
+            mMainHandler.removeCallbacksAndMessages(null);
+        }
+        if (mWorkHandler != null) {
+            mWorkHandler.removeCallbacksAndMessages(null);
+        }
+        if (mSyncHandler != null) {
+            mSyncHandler.removeCallbacksAndMessages(null);
+        }
+        // 退出HandlerThread
+        if (mHandlerThread != null) {
+            mHandlerThread.quitSafely();
+        }
     }
 }

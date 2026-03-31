@@ -1,23 +1,31 @@
 package com.example.group.util;
 
-import android.support.v7.widget.RecyclerView;
-import android.viewbinding.ViewBinding;
+import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
 
 import io.reactivex.annotations.NonNull;
 
 /**
  * @author test
  */
-public class BaseViewHolder<T extends ViewBinding> extends RecyclerView.ViewHolder {
+public class BaseViewHolder<T> extends RecyclerView.ViewHolder {
 
     private final T mViewBinding;
 
     public BaseViewHolder(@NonNull T binding) {
-        super(binding.getRoot());
+        super(getRootView(binding));
         mViewBinding = binding;
     }
 
     public T getViewBinding() {
         return mViewBinding;
+    }
+
+    private static View getRootView(Object binding) {
+        try {
+            return (View) binding.getClass().getMethod("getRoot").invoke(binding);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Binding must expose getRoot()", e);
+        }
     }
 }

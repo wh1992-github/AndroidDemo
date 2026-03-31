@@ -7,6 +7,9 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 
 import com.example.group.util.LogUtil;
+/**
+ * 用于展示 Base Text 效果的自定义 View。
+ */
 
 @SuppressLint({"AppCompatCustomView", "ClickableViewAccessibility"})
 public class BaseTextView extends TextView {

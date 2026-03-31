@@ -3,6 +3,9 @@ package com.example.network.task;
 import android.os.AsyncTask;
 
 //模拟异步处理的线程
+/**
+ * 用于执行 Progress Async 任务的任务类。
+ */
 public class ProgressAsyncTask extends AsyncTask<String, Integer, String> {
     private String mBook; //书籍名称
 
@@ -32,25 +35,33 @@ public class ProgressAsyncTask extends AsyncTask<String, Integer, String> {
     //准备启动线程
     protected void onPreExecute() {
         //触发监听器的开始事件
-        mListener.onBegin(mBook);
+        if (mListener != null) {
+            mListener.onBegin(mBook);
+        }
     }
 
     //线程在通报处理进展
     protected void onProgressUpdate(Integer... values) {
         //触发监听器的进度更新事件
-        mListener.onUpdate(mBook, values[0], 0);
+        if (mListener != null) {
+            mListener.onUpdate(mBook, values[0], 0);
+        }
     }
 
     //线程已经完成处理
     protected void onPostExecute(String result) {
         //触发监听器的结束事件
-        mListener.onFinish(result);
+        if (mListener != null) {
+            mListener.onFinish(result);
+        }
     }
 
     //线程已经取消
     protected void onCancelled(String result) {
         //触发监听器的取消事件
-        mListener.onCancel(result);
+        if (mListener != null) {
+            mListener.onCancel(result);
+        }
     }
 
     private OnProgressListener mListener; //声明一个进度更新的监听器对象

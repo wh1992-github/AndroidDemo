@@ -11,6 +11,9 @@ import com.example.network.util.BitmapUtil;
 import com.example.network.util.DateUtil;
 
 //获取图片验证码的线程
+/**
+ * 用于执行 Get Image Code 任务的任务类。
+ */
 public class GetImageCodeTask extends AsyncTask<Void, Void, String> {
     private static final String TAG = "GetImageCodeTask";
     //请求图片验证码的服务地址
@@ -41,7 +44,9 @@ public class GetImageCodeTask extends AsyncTask<Void, Void, String> {
     //线程已经完成处理
     protected void onPostExecute(String path) {
         //HTTP调用完毕,触发监听器的得到验证码事件
-        mListener.onGetCode(path);
+        if (mListener != null) {
+            mListener.onGetCode(path);
+        }
     }
 
     private OnImageCodeListener mListener; //声明一个获取图片验证码的监听器对象

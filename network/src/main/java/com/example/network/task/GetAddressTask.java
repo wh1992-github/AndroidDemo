@@ -15,6 +15,9 @@ import org.json.JSONObject;
 import java.text.MessageFormat;
 
 //根据经纬度获取详细地址的线程
+/**
+ * 用于执行 Get Address 任务的任务类。
+ */
 public class GetAddressTask extends AsyncTask<Location, Void, String> {
     private static final String TAG = "GetAddressTask";
     private String mAddressUrl = "http://maps.google.cn/maps/api/geocode/json?latlng={0},{1}&sensor=true&language=zh-CN";
@@ -54,7 +57,9 @@ public class GetAddressTask extends AsyncTask<Location, Void, String> {
     //线程已经完成处理
     protected void onPostExecute(String address) {
         //HTTP调用完毕,触发监听器的找到地址事件
-        mListener.onFindAddress(address);
+        if (mListener != null) {
+            mListener.onFindAddress(address);
+        }
     }
 
     private OnAddressListener mListener; //声明一个查询详细地址的监听器对象

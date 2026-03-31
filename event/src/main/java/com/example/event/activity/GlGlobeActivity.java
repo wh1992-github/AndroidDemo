@@ -6,7 +6,7 @@ import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
 import android.opengl.GLUtils;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +20,9 @@ import java.util.ArrayList;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
+/**
+ * 用于展示 Gl Globe 功能的 Activity。
+ */
 
 public class GlGlobeActivity extends AppCompatActivity {
     private Bitmap mBitmap; //声明一个位图对象

@@ -1,8 +1,8 @@
 package com.example.customview.adapter;
 
 import android.annotation.SuppressLint;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +12,9 @@ import android.widget.TextView;
 import com.example.customview.R;
 
 import java.util.List;
+/**
+ * 封装 Hover Item Adapter 2 相关逻辑的类。
+ */
 
 @SuppressLint("RecyclerView")
 public class HoverItemAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

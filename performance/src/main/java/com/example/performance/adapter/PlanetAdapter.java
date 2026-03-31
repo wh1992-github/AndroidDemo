@@ -13,6 +13,9 @@ import com.example.performance.R;
 import com.example.performance.bean.Planet;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Planet 数据的适配器。
+ */
 
 public class PlanetAdapter extends BaseAdapter {
     private Context mContext;

@@ -9,6 +9,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import java.lang.reflect.Field;
 import java.util.Objects;
+/**
+ * 封装 Custom View Pager 相关逻辑的类。
+ */
 
 public class CustomViewPager extends ViewPager {
     private static final String TAG = "CustomViewPager";

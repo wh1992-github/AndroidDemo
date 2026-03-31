@@ -3,6 +3,9 @@ package com.example.custom.bean;
 import com.example.custom.R;
 
 import java.util.ArrayList;
+/**
+ * 封装 Planet 相关逻辑的类。
+ */
 
 public class Planet {
     public int image;

@@ -13,17 +13,18 @@ import android.widget.Toast
 import com.example.customview.R
 import com.example.customview.bean.VoteBean
 import com.example.customview.bean.VoteOption
-import kotlinx.android.synthetic.main.widget_vote_layout.view.vote_container_title
-import kotlinx.android.synthetic.main.widget_vote_layout.view.vote_container_vote_btn
-import kotlinx.android.synthetic.main.widget_vote_layout.view.vote_container_vote_result
-import kotlinx.android.synthetic.main.widget_vote_layout.view.vote_item_ll
+import com.example.customview.databinding.WidgetVoteLayoutBinding
 import java.lang.ref.WeakReference
+/**
+ * 用于展示 Vote Container 效果的自定义 View。
+ */
 
 class VoteContainerView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
+    private val binding = WidgetVoteLayoutBinding.inflate(LayoutInflater.from(context), this, true)
 
     private var voteViewHolders: ArrayList<VoteItemViewHolder> = arrayListOf()
 
@@ -43,9 +44,7 @@ class VoteContainerView @JvmOverloads constructor(
     }
 
     private fun initView() {
-        LayoutInflater.from(context).inflate(R.layout.widget_vote_layout, this)
-
-        vote_container_vote_btn.setOnClickListener {
+        binding.voteContainerVoteBtn.setOnClickListener {
             if (mData == null) return@setOnClickListener
             onVoteClickListener?.onVoteCommitBtnClick(mData, optionIds)
         }
@@ -61,27 +60,27 @@ class VoteContainerView @JvmOverloads constructor(
             optionIds.clear()
             setVoteStatus(data)
             setVoteBtnStatus()
-            vote_item_ll.removeAllViews()
+            binding.voteItemLl.removeAllViews()
             data.options?.forEachIndexed { index, voteOption ->
                 val viewHolder = onCreateViewHolder()
                 viewHolder.bind(index, voteOption, data)
                 voteViewHolders.add(viewHolder)
-                vote_item_ll.addView(viewHolder.voteView)
+                binding.voteItemLl.addView(viewHolder.voteView)
             }
         }
     }
 
     private fun setVoteTitle(title: String?) {
-        vote_container_title.text = title ?: ""
+        binding.voteContainerTitle.text = title ?: ""
     }
 
     private fun setVoteStatus(vote: VoteBean) {
         val isVoteMulti = vote.choiceType == VOTE_TYPE_MULTIPLE
         val voteResult = vote.sumVoteCount ?: 0
         val voted = vote.voted
-        vote_container_vote_btn.visibility =
+        binding.voteContainerVoteBtn.visibility =
             if (voted != true && isVoteMulti) View.VISIBLE else View.GONE
-        vote_container_vote_result.visibility = if (voted == true) View.VISIBLE else View.GONE
+        binding.voteContainerVoteResult.visibility = if (voted == true) View.VISIBLE else View.GONE
         setVoteResult("共${voteResult}人参与了投票")
     }
 
@@ -101,16 +100,16 @@ class VoteContainerView @JvmOverloads constructor(
     private fun setVoteBtnStatus() {
         val clickable = getOptionIdsSize() > 0
         if (clickable) {
-            vote_container_vote_btn.setBackgroundResource(R.drawable.shape_bg_clickable)
+            binding.voteContainerVoteBtn.setBackgroundResource(R.drawable.shape_bg_clickable)
         } else {
-            vote_container_vote_btn.setBackgroundResource(R.drawable.shape_bg_un_clickable)
+            binding.voteContainerVoteBtn.setBackgroundResource(R.drawable.shape_bg_un_clickable)
         }
-        vote_container_vote_btn.isClickable = clickable
+        binding.voteContainerVoteBtn.isClickable = clickable
     }
 
     fun refreshDataAfterVoteSuccess() {
-        vote_container_vote_result.visibility = View.VISIBLE
-        vote_container_vote_btn.visibility = View.GONE
+        binding.voteContainerVoteResult.visibility = View.VISIBLE
+        binding.voteContainerVoteBtn.visibility = View.GONE
         refreshVoteResult()
         startProgressAnim()
     }
@@ -133,7 +132,7 @@ class VoteContainerView @JvmOverloads constructor(
     }
 
     private fun setVoteResult(result: String?) {
-        vote_container_vote_result.text = result ?: ""
+        binding.voteContainerVoteResult.text = result ?: ""
     }
 
     private fun startProgressAnim() {

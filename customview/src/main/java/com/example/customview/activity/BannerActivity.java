@@ -2,8 +2,8 @@ package com.example.customview.activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
@@ -17,6 +17,9 @@ import com.example.customview.widget.banner.listener.OnPageClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于展示 Banner 功能的 Activity。
+ */
 
 public class BannerActivity extends AppCompatActivity {
 

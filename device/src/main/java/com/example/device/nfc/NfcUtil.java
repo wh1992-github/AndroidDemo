@@ -1,6 +1,9 @@
 package com.example.device.nfc;
 
 import java.util.Locale;
+/**
+ * 提供 Nfc 相关工具方法的工具类。
+ */
 
 public final class NfcUtil {
     private static final char[] HEX = {'0', '1', '2', '3', '4', '5', '6', '7',

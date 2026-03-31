@@ -19,6 +19,9 @@ import com.example.thirdsdk.adapter.ShareGridAdapter;
 import com.example.thirdsdk.bean.ShareChanels;
 
 import java.util.ArrayList;
+/**
+ * 用于展示 Share Grid 内容的对话框类。
+ */
 
 @SuppressLint("HandlerLeak")
 public class ShareGridDialog implements OnClickListener {

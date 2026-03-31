@@ -5,6 +5,9 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.Locale;
+/**
+ * 封装 Get Client Name 相关逻辑的类。
+ */
 
 public class GetClientName {
     private String remoteAddr;

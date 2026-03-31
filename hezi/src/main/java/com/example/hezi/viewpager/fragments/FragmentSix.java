@@ -17,6 +17,9 @@ import com.example.hezi.viewpager.RxBus;
 
 import rx.Subscription;
 import rx.functions.Action1;
+/**
+ * 封装 Fragment Six 相关逻辑的类。
+ */
 
 public class FragmentSix extends BaseFragment {
     private static final String TAG = "FragmentSix";

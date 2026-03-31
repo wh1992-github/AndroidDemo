@@ -2,14 +2,17 @@ package com.example.customview.activity;
 
 import android.animation.Animator;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.customview.R;
+/**
+ * 用于展示 Reveal Animation 功能的 Activity。
+ */
 
 public class RevealAnimationActivity extends AppCompatActivity {
 

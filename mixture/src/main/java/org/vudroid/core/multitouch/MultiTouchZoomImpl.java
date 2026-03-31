@@ -3,6 +3,9 @@ package org.vudroid.core.multitouch;
 import android.view.MotionEvent;
 
 import org.vudroid.core.models.ZoomModel;
+/**
+ * 封装 Multi Touch Zoom Impl 相关逻辑的类。
+ */
 
 public class MultiTouchZoomImpl implements MultiTouchZoom {
     private final ZoomModel zoomModel;

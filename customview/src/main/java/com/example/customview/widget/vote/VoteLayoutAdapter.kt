@@ -5,6 +5,9 @@ import android.view.ViewGroup
 import com.example.customview.bean.VoteBean
 import com.example.customview.bean.VoteOption
 import java.lang.ref.WeakReference
+/**
+ * 用于适配 Vote Layout 数据的适配器。
+ */
 
 class VoteLayoutAdapter(private val viewGroup: ViewGroup) {
 

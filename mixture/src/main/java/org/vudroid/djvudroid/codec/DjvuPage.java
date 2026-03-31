@@ -4,6 +4,9 @@ import android.graphics.Bitmap;
 import android.graphics.RectF;
 
 import org.vudroid.core.codec.CodecPage;
+/**
+ * 封装 Djvu Page 相关逻辑的类。
+ */
 
 public class DjvuPage implements CodecPage {
     private long pageHandle;

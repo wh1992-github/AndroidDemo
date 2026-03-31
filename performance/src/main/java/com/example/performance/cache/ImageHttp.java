@@ -7,6 +7,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
+/**
+ * 封装 Image Http 相关逻辑的类。
+ */
 
 public class ImageHttp {
 

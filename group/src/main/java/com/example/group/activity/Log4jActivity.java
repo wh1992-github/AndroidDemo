@@ -1,12 +1,15 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.group.R;
 import com.example.group.log4j.Log4jUtil;
+/**
+ * 用于展示 Log 4 j 功能的 Activity。
+ */
 
 public class Log4jActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Log4jActivity";

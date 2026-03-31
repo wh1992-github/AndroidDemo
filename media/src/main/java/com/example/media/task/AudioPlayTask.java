@@ -10,6 +10,9 @@ import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+/**
+ * 用于执行 Audio Play 任务的任务类。
+ */
 
 public class AudioPlayTask extends AsyncTask<String, Integer, Void> {
     private static final String TAG = "AudioPlayTask";
@@ -22,16 +25,18 @@ public class AudioPlayTask extends AsyncTask<String, Integer, Void> {
         int frequence = Integer.parseInt(arg0[1]); //第二个参数是音频的采样频率,单位赫兹
         int channel = Integer.parseInt(arg0[2]); //第三个参数是音频的声道配置
         int format = Integer.parseInt(arg0[3]); //第四个参数是音频的编码格式
+        DataInputStream dis = null;
+        AudioTrack track = null;
         try {
             //定义输入流,将音频写入到AudioTrack类中,实现播放
-            DataInputStream dis = new DataInputStream(
+            dis = new DataInputStream(
                     new BufferedInputStream(new FileInputStream(recordFile)));
             //根据定义好的几个配置,来获取合适的缓冲大小
             int bsize = AudioTrack.getMinBufferSize(frequence, channel, format);
             //定义缓冲区
             short[] buffer = new short[bsize / 4];
             //根据音频配置和缓冲区构建音轨播放实例
-            AudioTrack track = new AudioTrack(AudioManager.STREAM_MUSIC,
+            track = new AudioTrack(AudioManager.STREAM_MUSIC,
                     frequence, channel, format, bsize, AudioTrack.MODE_STREAM);
             //设置需要通知的时间周期为1秒
             track.setPositionNotificationPeriod(1000);
@@ -50,11 +55,25 @@ public class AudioPlayTask extends AsyncTask<String, Integer, Void> {
                 //然后将数据写入到音轨AudioTrack中
                 track.write(buffer, 0, buffer.length);
             }
-            //取消播放任务,或者读完了,都停止音轨播放
-            track.stop();
-            dis.close();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            //取消播放任务,或者读完了,都停止音轨播放
+            if (track != null) {
+                try {
+                    track.stop();
+                    track.release();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (dis != null) {
+                try {
+                    dis.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -71,6 +90,14 @@ public class AudioPlayTask extends AsyncTask<String, Integer, Void> {
         if (mListener != null) {
             mListener.onPlayFinish();
         }
+        //移除刷新播放进度的任务
+        mHandler.removeCallbacks(mPlayRun);
+    }
+
+    //线程已经取消
+    @Override
+    protected void onCancelled(Void result) {
+        super.onCancelled(result);
         //移除刷新播放进度的任务
         mHandler.removeCallbacks(mPlayRun);
     }

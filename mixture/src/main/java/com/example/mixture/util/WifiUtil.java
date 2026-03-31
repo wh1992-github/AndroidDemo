@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.util.ArrayList;
+/**
+ * 提供 Wifi 相关工具方法的工具类。
+ */
 
 public class WifiUtil {
     private static final String TAG = "WifiUtil";

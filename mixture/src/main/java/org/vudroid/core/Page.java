@@ -5,6 +5,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.text.TextPaint;
+/**
+ * 封装 Page 相关逻辑的类。
+ */
 
 public class Page {
     public final int index;

@@ -2,7 +2,7 @@ package com.example.weixin;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,7 +13,7 @@ import com.example.weixin.widget.ShareGridDialog;
 import com.tencent.connect.common.Constants;
 import com.tencent.tauth.Tencent;
 
-import net.sourceforge.simcpux.R;
+import com.example.weixin.R;
 
 /**
  * Created by test on 2017/12/18.

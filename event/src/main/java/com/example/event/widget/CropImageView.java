@@ -9,6 +9,9 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 
 import com.example.event.util.Utils;
+/**
+ * 用于展示 Crop Image 效果的自定义 View。
+ */
 
 @SuppressLint("ClickableViewAccessibility")
 public class CropImageView extends ImageView {

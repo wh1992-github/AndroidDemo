@@ -5,6 +5,9 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
+/**
+ * 提供 Toast 相关工具方法的工具类。
+ */
 
 @SuppressLint("StaticFieldLeak")
 public class ToastUtil {

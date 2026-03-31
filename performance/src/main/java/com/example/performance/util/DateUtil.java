@@ -3,6 +3,9 @@ package com.example.performance.util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+/**
+ * 提供 Date 相关工具方法的工具类。
+ */
 
 public class DateUtil {
 

@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace 'com.example.network'
     compileSdkVersion 34
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example.network"
@@ -21,12 +21,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lint {
+        abortOnError false
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     //gson库的最新版本号在这里查看 http://www.mvnrepository.com/artifact/com.google.code.gson/gson
     implementation "com.google.code.gson:gson:2.8.5"
     implementation project(':filedialog')

@@ -6,6 +6,9 @@ import android.telephony.TelephonyManager;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.text.DecimalFormat;
+/**
+ * 提供 Utils 相关工具方法的工具类。
+ */
 
 public class Utils {
 

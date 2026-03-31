@@ -16,6 +16,9 @@ import java.util.ArrayList;
  * Created by test on 2018/1/17.
  */
 //展示APK文件信息列表
+/**
+ * 用于适配 Apk Info 数据的适配器。
+ */
 public class ApkInfoAdapter extends BaseAdapter {
     private static final String TAG = "ApkInfoAdapter";
     private Context mContext;

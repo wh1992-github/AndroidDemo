@@ -11,6 +11,9 @@ import com.example.hezi.databinding.FragmentThreeBinding;
 import com.example.hezi.viewpager.LogUtil;
 import com.example.hezi.viewpager.adapter.ThreeAdapter;
 import com.example.hezi.viewpager.transformer.GalleryTransformer;
+/**
+ * 封装 Fragment Three 相关逻辑的类。
+ */
 
 public class FragmentThree extends BaseFragment {
     private static final String TAG = "FragmentThree";

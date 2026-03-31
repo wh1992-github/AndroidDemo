@@ -3,6 +3,9 @@ package com.example.hezi.viewpager.transformer;
 import android.view.View;
 
 import androidx.viewpager.widget.ViewPager;
+/**
+ * 封装 Scale Transformer 相关逻辑的类。
+ */
 
 public class ScaleTransformer implements ViewPager.PageTransformer {
     private static final float MIN_SCALE = 0.9f;

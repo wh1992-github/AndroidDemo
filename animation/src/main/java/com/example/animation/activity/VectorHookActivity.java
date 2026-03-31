@@ -8,12 +8,15 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 import com.example.animation.R;
+/**
+ * 用于展示 Vector Hook 功能的 Activity。
+ */
 
 public class VectorHookActivity extends AppCompatActivity implements OnClickListener {
     private ImageView iv_vector_hook; //声明一个图像视图对象

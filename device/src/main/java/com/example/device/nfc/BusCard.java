@@ -5,6 +5,9 @@ import android.nfc.tech.IsoDep;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
+/**
+ * 封装 Bus Card 相关逻辑的类。
+ */
 
 public class BusCard {
     private static final String TAG = "BusCard";

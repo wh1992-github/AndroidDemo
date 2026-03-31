@@ -14,6 +14,9 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+/**
+ * 封装 Message Transmit 相关逻辑的类。
+ */
 
 @SuppressLint("HandlerLeak")
 public class MessageTransmit implements Runnable {
@@ -23,6 +26,12 @@ public class MessageTransmit implements Runnable {
     private static final int SOCKET_PORT = 51000;
     private BufferedReader mReader = null; //声明一个缓存读取器对象
     private OutputStream mWriter = null; //声明一个输出流对象
+    private Handler mRecvHandler; //接收消息的Handler
+
+    // 构造函数，接受Handler参数
+    public MessageTransmit(Handler recvHandler) {
+        this.mRecvHandler = recvHandler;
+    }
 
     @Override
     public void run() {
@@ -43,6 +52,29 @@ public class MessageTransmit implements Runnable {
             Looper.loop();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            // 确保资源被正确关闭
+            try {
+                if (mReader != null) {
+                    mReader.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                if (mWriter != null) {
+                    mWriter.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                if (socket != null && !socket.isClosed()) {
+                    socket.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -73,8 +105,10 @@ public class MessageTransmit implements Runnable {
                     //获得一个默认的消息对象
                     Message msg = Message.obtain();
                     msg.obj = content; //消息描述
-                    //通知SocketActivity收到消息
-                    SocketActivity.mHandler.sendMessage(msg);
+                    //通知Activity收到消息（使用构造函数传入的Handler）
+                    if (mRecvHandler != null) {
+                        mRecvHandler.sendMessage(msg);
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();

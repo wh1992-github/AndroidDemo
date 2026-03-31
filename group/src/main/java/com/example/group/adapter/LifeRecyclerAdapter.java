@@ -1,7 +1,7 @@
 package com.example.group.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +12,9 @@ import com.example.group.R;
 import com.example.group.bean.LifeItem;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Life Recycler 数据的适配器。
+ */
 
 public class LifeRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context mContext; //声明一个上下文对象

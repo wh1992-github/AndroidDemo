@@ -1,4 +1,7 @@
 package com.example.senior.bean;
+/**
+ * 封装 Calendar Transfer 相关逻辑的类。
+ */
 
 public class CalendarTransfer {
     public String day_name;

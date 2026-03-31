@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/tl_head"
         app:navigationIcon="@drawable/icon_back"
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:textSize="17sp" />
 
         </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:textColor="#000000"
             android:textSize="17sp" />
 
-        <android.support.v4.view.ViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_content"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -53,7 +53,7 @@
                 android:id="@+id/pts_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-        </android.support.v4.view.ViewPager>
+        </androidx.viewpager.widget.ViewPager>
     </LinearLayout>
 
 </LinearLayout>

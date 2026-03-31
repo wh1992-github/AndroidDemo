@@ -5,6 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Handler;
 import android.widget.FrameLayout;
+/**
+ * 用于展示 Book 效果的自定义 View。
+ */
 
 public class BookView extends FrameLayout {
     private static final String TAG = "BookView";

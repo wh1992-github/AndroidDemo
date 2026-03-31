@@ -1,6 +1,9 @@
 package com.example.junior.util;
 
 import java.math.BigDecimal;
+/**
+ * 封装 Arith 相关逻辑的类。
+ */
 
 public class Arith {
     //默认除法运算精度

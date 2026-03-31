@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+/**
+ * 用于承载 Children 内容的 Fragment。
+ */
 
 public class ChildrenFragment extends BaseFragment {
     private static final String TAG = "ChildrenFragment";

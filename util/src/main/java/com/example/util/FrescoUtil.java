@@ -8,6 +8,9 @@ import com.facebook.drawee.controller.ControllerListener;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.image.ImageInfo;
+/**
+ * 提供 Fresco 相关工具方法的工具类。
+ */
 
 public class FrescoUtil {
     private static final String TAG = "FrescoUtil";

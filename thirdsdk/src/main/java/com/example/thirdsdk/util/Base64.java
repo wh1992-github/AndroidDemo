@@ -1,4 +1,7 @@
 package com.example.thirdsdk.util;
+/**
+ * 封装 Base 64 相关逻辑的类。
+ */
 
 public final class Base64 {
 

@@ -1,0 +1,126 @@
+./gradlew: line 23: cd: "./: No such file or directory
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+> Task :clean UP-TO-DATE
+> Task :animation:clean
+> Task :app:clean
+> Task :custom:clean UP-TO-DATE
+> Task :CustomToast:clean UP-TO-DATE
+> Task :customview:clean UP-TO-DATE
+> Task :device:clean UP-TO-DATE
+> Task :event:clean UP-TO-DATE
+> Task :filedialog:clean UP-TO-DATE
+> Task :group:clean UP-TO-DATE
+> Task :hezi:clean UP-TO-DATE
+> Task :junior:clean UP-TO-DATE
+> Task :media:clean UP-TO-DATE
+> Task :middle:clean UP-TO-DATE
+
+> Task :mixture:externalNativeBuildCleanDebug
+Clean jni_mix-x86
+
+> Task :mixture:externalNativeBuildCleanRelease
+> Task :mixture:clean
+> Task :network:clean UP-TO-DATE
+> Task :performance:clean UP-TO-DATE
+> Task :senior:clean UP-TO-DATE
+> Task :storage:clean UP-TO-DATE
+> Task :test:clean UP-TO-DATE
+> Task :util:clean UP-TO-DATE
+> Task :weixin:clean UP-TO-DATE
+> Task :animation:preBuild UP-TO-DATE
+> Task :animation:preDebugBuild UP-TO-DATE
+> Task :animation:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :animation:compileDebugAidl NO-SOURCE
+> Task :animation:compileDebugRenderscript NO-SOURCE
+> Task :animation:generateDebugBuildConfig
+> Task :animation:javaPreCompileDebug
+> Task :animation:generateDebugResValues
+> Task :animation:checkDebugAarMetadata
+> Task :animation:mapDebugSourceSetPaths
+> Task :animation:generateDebugResources
+> Task :animation:createDebugCompatibleScreenManifests
+> Task :animation:extractDeepLinksDebug
+
+> Task :animation:processDebugMainManifest
+package="com.example.animation" found in source AndroidManifest.xml: D:\code\AndroidDemo\animation\src\main\AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :animation:processDebugManifest
+> Task :animation:mergeDebugShaders
+> Task :animation:compileDebugShaders NO-SOURCE
+> Task :animation:generateDebugAssets UP-TO-DATE
+> Task :animation:mergeDebugResources
+> Task :animation:mergeDebugAssets
+> Task :animation:compressDebugAssets
+> Task :animation:processDebugJavaRes NO-SOURCE
+> Task :animation:checkDebugDuplicateClasses
+> Task :animation:desugarDebugFileDependencies
+> Task :animation:mergeDebugJniLibFolders
+> Task :animation:mergeLibDexDebug
+> Task :animation:mergeDebugNativeLibs NO-SOURCE
+> Task :animation:stripDebugDebugSymbols NO-SOURCE
+> Task :animation:validateSigningDebug
+> Task :animation:writeDebugAppMetadata
+> Task :animation:writeDebugSigningConfigVersions
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:compileDebugAidl NO-SOURCE
+> Task :app:compileDebugRenderscript NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsDebug
+> Task :app:generateDebugResValues
+> Task :app:generateDebugResources
+> Task :animation:mergeDebugJavaResource
+> Task :app:generateDebugBuildConfig
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+
+> Task :app:processDebugMainManifest
+package="com.example.helloworld" found in source AndroidManifest.xml: D:\code\AndroidDemo\app\src\main\AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :app:processDebugManifest
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugResources
+> Task :app:mergeDebugAssets
+> Task :app:dataBindingGenBaseClassesDebug
+> Task :app:processDebugJavaRes NO-SOURCE
+> Task :app:compressDebugAssets
+> Task :animation:mergeExtDexDebug
+> Task :app:checkDebugDuplicateClasses
+> Task :app:desugarDebugFileDependencies
+
+> Task :app:mergeExtDexDebug
+ERROR:D8: com.android.tools.r8.kotlin.H
+
+> Task :app:mergeExtDexDebug FAILED
+> Task :animation:processDebugManifestForPackage
+> Task :app:processDebugManifestForPackage
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:mergeExtDexDebug'.
+> Could not resolve all files for configuration ':app:debugRuntimeClasspath'.
+   > Failed to transform okio-jvm-3.6.0.jar (com.squareup.okio:okio-jvm:3.6.0) to match attributes {artifactType=android-dex, asm-transformed-variant=NONE, dexing-enable-desugaring=true, dexing-enable-jacoco-instrumentation=false, dexing-is-debuggable=true, dexing-min-sdk=23, org.gradle.category=library, org.gradle.libraryelements=jar, org.gradle.status=release, org.gradle.usage=java-runtime, org.jetbrains.kotlin.platform.type=jvm}.
+      > Execution failed for DexingWithClasspathTransform: D:\code\AndroidDemo\.gradle-user-home\caches\transforms-3\70718ac3302f4f790eaaf4a410145573\transformed\jetified-okio-jvm-3.6.0.jar.
+         > Error while dexing.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 53s
+66 actionable tasks: 47 executed, 19 up-to-date

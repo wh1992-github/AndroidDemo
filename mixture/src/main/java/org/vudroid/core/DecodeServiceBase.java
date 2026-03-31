@@ -22,6 +22,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+/**
+ * 封装 Decode Service Base 相关逻辑的类。
+ */
 
 public class DecodeServiceBase implements DecodeService {
     private static final int PAGE_POOL_SIZE = 16;

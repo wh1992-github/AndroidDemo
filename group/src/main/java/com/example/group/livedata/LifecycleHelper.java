@@ -1,11 +1,14 @@
 package com.example.group.livedata;
 
 import android.annotation.SuppressLint;
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleObserver;
-import android.arch.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.OnLifecycleEvent;
 
 import com.example.group.util.LogUtil;
+/**
+ * 提供 Lifecycle 相关工具方法的工具类。
+ */
 
 @SuppressLint("RestrictedApi")
 public class LifecycleHelper implements LifecycleObserver {

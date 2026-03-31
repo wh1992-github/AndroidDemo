@@ -11,12 +11,15 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
+/**
+ * 用于管理 Local Broadcast 相关流程的管理类。
+ */
 
 public final class LocalBroadcastManager {
     private static final String TAG = "LocalBroadcastManager";

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.network">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- 互联网 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -90,7 +89,7 @@
 
         <!-- 兼容Android7.0，把访问文件的Uri方式改为FileProvider -->
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.network.fileProvider"
             android:grantUriPermissions="true"
             android:exported="false">

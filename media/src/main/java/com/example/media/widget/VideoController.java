@@ -16,6 +16,9 @@ import android.widget.VideoView;
 import com.example.media.R;
 import com.example.media.util.DateUtil;
 import com.example.media.util.Utils;
+/**
+ * 封装 Video Controller 相关逻辑的类。
+ */
 
 public class VideoController extends RelativeLayout implements OnClickListener, OnSeekBarChangeListener {
     private static final String TAG = "VideoController";

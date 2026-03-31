@@ -16,6 +16,9 @@ import com.example.senior.calendar.SpecialCalendar;
 import com.example.senior.util.DateUtil;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Calendar Grid 数据的适配器。
+ */
 
 public class CalendarGridAdapter extends BaseAdapter {
     private static final String TAG = "CalendarGridAdapter";

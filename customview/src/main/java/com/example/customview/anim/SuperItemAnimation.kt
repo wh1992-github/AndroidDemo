@@ -1,7 +1,10 @@
 package com.example.customview.anim
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewPropertyAnimator
+/**
+ * 封装 Super Item Animation 相关逻辑的类。
+ */
 
 abstract class SuperItemAnimation(animDuration: Long = 200) : BaseItemAnimation() {
 

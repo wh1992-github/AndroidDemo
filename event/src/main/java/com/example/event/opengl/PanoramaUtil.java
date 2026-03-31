@@ -28,6 +28,9 @@ import static android.opengl.GLES20.glGenTextures;
 import static android.opengl.GLES20.glLinkProgram;
 import static android.opengl.GLES20.glShaderSource;
 import static android.opengl.GLES20.glTexParameterf;
+/**
+ * 提供 Panorama 相关工具方法的工具类。
+ */
 
 public class PanoramaUtil {
     private static String SOURCE_DEFAULT_NAME_FRAGMENT = "fragment.glsl";

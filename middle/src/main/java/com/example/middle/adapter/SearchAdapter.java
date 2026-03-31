@@ -18,6 +18,9 @@ import android.widget.TextView;
 import com.example.middle.R;
 
 import java.util.List;
+/**
+ * 用于适配 Search 数据的适配器。
+ */
 
 public class SearchAdapter extends BaseAdapter implements Filterable {
     private static final String TAG = "SearchAdapter";

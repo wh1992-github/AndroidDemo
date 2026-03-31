@@ -7,6 +7,9 @@ import android.content.pm.ResolveInfo;
 import android.text.TextUtils;
 
 import java.util.List;
+/**
+ * 提供 Broadcast 相关工具方法的工具类。
+ */
 
 public class BroadcastUtils {
 

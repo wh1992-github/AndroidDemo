@@ -1,15 +1,18 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Window;
 import android.widget.LinearLayout;
 
 import com.example.group.R;
 import com.example.group.adapter.RecyclerCollapseAdapter;
+/**
+ * 用于展示 Appbar Recycler 功能的 Activity。
+ */
 
 public class AppbarRecyclerActivity extends AppCompatActivity {
     private static final String[] yearArray = {"鼠年", "牛年", "虎年", "兔年", "龙年", "蛇年",

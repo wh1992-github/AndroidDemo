@@ -7,7 +7,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.widget.TextView;
@@ -89,6 +89,15 @@ public class WifiInfoActivity extends AppCompatActivity {
             desc = "\n当前无上网连接";
         }
         tv_info.setText(desc);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理Handler回调
+        if (mHandler != null) {
+            mHandler.removeCallbacks(mRefresh);
+        }
     }
 
 }

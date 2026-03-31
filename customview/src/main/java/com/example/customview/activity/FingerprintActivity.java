@@ -1,9 +1,9 @@
 package com.example.customview.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import com.example.customview.R;
 import com.example.customview.utils.FingerprintUtil;
+/**
+ * 用于展示 Fingerprint 功能的 Activity。
+ */
 
 public class FingerprintActivity extends AppCompatActivity {
     private static final String TAG = "FingerprintActivity";

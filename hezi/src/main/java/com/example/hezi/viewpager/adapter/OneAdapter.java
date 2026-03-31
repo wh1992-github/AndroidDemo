@@ -12,6 +12,9 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.hezi.viewpager.LogUtil;
 import com.example.hezi.viewpager.fragments.ChildrenFragment;
 import com.example.hezi.viewpager.fragments.FragmentPagerAdapter;
+/**
+ * 用于适配 One 数据的适配器。
+ */
 
 public class OneAdapter extends FragmentPagerAdapter {
     private static final String TAG = "OneAdapter";

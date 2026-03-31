@@ -10,6 +10,9 @@ import android.util.Log;
 import com.example.network.bean.ApkInfo;
 
 import java.util.ArrayList;
+/**
+ * 提供 Apk 相关工具方法的工具类。
+ */
 
 public class ApkUtil {
     private static final String TAG = "ApkUtil";
@@ -36,26 +39,29 @@ public class ApkUtil {
                 MediaStore.Files.getContentUri("external"),
                 null, "mime_type=\"application/vnd.android.package-archive\"", null, null);
         if (cursor != null) {
-            while (cursor.moveToNext()) {
-                //获取文件名
-                String title = cursor.getString(cursor.getColumnIndex(MediaStore.Files.FileColumns.TITLE));
-                //获取文件完整路径
-                String path = cursor.getString(cursor.getColumnIndex(MediaStore.Files.FileColumns.DATA));
-                //获取文件大小
-                int size = cursor.getInt(cursor.getColumnIndex(MediaStore.Files.FileColumns.SIZE));
-                PackageManager pm = context.getPackageManager();
-                //获取apk文件的包信息
-                PackageInfo pi = pm.getPackageArchiveInfo(path, PackageManager.GET_ACTIVITIES);
-                if (pi != null) {
-                    Log.d(TAG, "packageName=" + pi.packageName + ", versionName=" + pi.versionName);
-                    String pkg_name = pi.packageName; //包名
-                    String vs_name = pi.versionName; //版本名称
-                    int vs_code = pi.versionCode; //版本号
-                    //将该记录添加到apk文件信息列表
-                    appAray.add(new ApkInfo(title, path, size, pkg_name, vs_name, vs_code));
+            try {
+                while (cursor.moveToNext()) {
+                    //获取文件名
+                    String title = cursor.getString(cursor.getColumnIndex(MediaStore.Files.FileColumns.TITLE));
+                    //获取文件完整路径
+                    String path = cursor.getString(cursor.getColumnIndex(MediaStore.Files.FileColumns.DATA));
+                    //获取文件大小
+                    int size = cursor.getInt(cursor.getColumnIndex(MediaStore.Files.FileColumns.SIZE));
+                    PackageManager pm = context.getPackageManager();
+                    //获取apk文件的包信息
+                    PackageInfo pi = pm.getPackageArchiveInfo(path, PackageManager.GET_ACTIVITIES);
+                    if (pi != null) {
+                        Log.d(TAG, "packageName=" + pi.packageName + ", versionName=" + pi.versionName);
+                        String pkg_name = pi.packageName; //包名
+                        String vs_name = pi.versionName; //版本名称
+                        int vs_code = pi.versionCode; //版本号
+                        //将该记录添加到apk文件信息列表
+                        appAray.add(new ApkInfo(title, path, size, pkg_name, vs_name, vs_code));
+                    }
                 }
+            } finally {
+                cursor.close(); //确保关闭数据库游标
             }
-            cursor.close(); //关闭数据库游标
         }
         return appAray;
     }

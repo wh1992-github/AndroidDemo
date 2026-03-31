@@ -3,8 +3,8 @@ package com.example.mixture.activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,6 +13,9 @@ import com.example.mixture.util.FileUtil;
 import com.example.mixture.widget.ViewSlider;
 
 import java.util.ArrayList;
+/**
+ * 用于展示 Pdf Slider 功能的 Activity。
+ */
 
 public class PdfSliderActivity extends AppCompatActivity {
     private static final String TAG = "PdfSliderActivity";

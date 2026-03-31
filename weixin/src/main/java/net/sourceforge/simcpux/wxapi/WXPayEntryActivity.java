@@ -2,7 +2,7 @@ package net.sourceforge.simcpux.wxapi;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +16,10 @@ import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
-import net.sourceforge.simcpux.R;
+import com.example.weixin.R;
+/**
+ * 用于展示 WX Pay Entry 功能的 Activity。
+ */
 
 public class WXPayEntryActivity extends AppCompatActivity implements IWXAPIEventHandler {
     private static final String TAG = "WXPayEntryActivity";

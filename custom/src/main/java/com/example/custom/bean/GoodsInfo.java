@@ -3,6 +3,9 @@ package com.example.custom.bean;
 import com.example.custom.R;
 
 import java.util.ArrayList;
+/**
+ * 用于描述 Goods 数据的实体类。
+ */
 
 public class GoodsInfo {
     public long rowid; //行号

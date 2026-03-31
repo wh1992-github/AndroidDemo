@@ -5,6 +5,9 @@ import android.app.Application;
 import com.example.device.util.AdapterUtil;
 
 import me.jessyan.autosize.AutoSizeConfig;
+/**
+ * 用于维护 My App 全局初始化逻辑的应用类。
+ */
 
 public class MyApp extends Application {
     @Override

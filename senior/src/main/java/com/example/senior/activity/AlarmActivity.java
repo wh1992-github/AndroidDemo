@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,16 +22,17 @@ import android.widget.TextView;
 import com.example.senior.R;
 import com.example.senior.util.DateUtil;
 
+import java.lang.ref.WeakReference;
 import java.util.Calendar;
 import java.util.Locale;
 
 /**
  * Created by test on 2017/10/7.
  */
-@SuppressLint("StaticFieldLeak")
 public class AlarmActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "AlarmActivity";
-    private static TextView tv_alarm;
+    private static WeakReference<TextView> tv_alarm_ref;
+    private TextView tv_alarm;
     private int mDelay;
 
     @Override
@@ -39,6 +40,7 @@ public class AlarmActivity extends AppCompatActivity implements OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
         tv_alarm = findViewById(R.id.tv_alarm);
+        tv_alarm_ref = new WeakReference<>(tv_alarm);
         findViewById(R.id.btn_alarm).setOnClickListener(this);
         initDelaySpinner();
     }
@@ -99,10 +101,11 @@ public class AlarmActivity extends AppCompatActivity implements OnClickListener 
         public void onReceive(Context context, Intent intent) {
             if (intent != null) {
                 Log.d(TAG, "AlarmReceiver onReceive");
-                if (tv_alarm != null && !isArrived) {
+                TextView tv = tv_alarm_ref != null ? tv_alarm_ref.get() : null;
+                if (tv != null && !isArrived) {
                     isArrived = true;
                     mDesc = String.format(Locale.getDefault(), "%s\n%s 闹钟时间到达", mDesc, DateUtil.getNowTime());
-                    tv_alarm.setText(mDesc);
+                    tv.setText(mDesc);
                 }
             }
         }
@@ -130,6 +133,18 @@ public class AlarmActivity extends AppCompatActivity implements OnClickListener 
             //注销广播接收器,注销之后就不再接收广播
             unregisterReceiver(alarmReceiver);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理静态引用
+        if (tv_alarm_ref != null) {
+            tv_alarm_ref.clear();
+            tv_alarm_ref = null;
+        }
+        mDesc = "";
+        isArrived = false;
     }
 
     //声明一个闹钟的广播接收器

@@ -11,6 +11,9 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.hezi.databinding.FragmentOneBinding;
 import com.example.hezi.viewpager.LogUtil;
 import com.example.hezi.viewpager.adapter.OneAdapter;
+/**
+ * 封装 Fragment One 相关逻辑的类。
+ */
 
 public class FragmentOne extends BaseFragment {
     private static final String TAG = "FragmentOne";

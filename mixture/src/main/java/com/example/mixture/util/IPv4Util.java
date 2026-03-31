@@ -1,6 +1,9 @@
 package com.example.mixture.util;
 
 import java.net.InetAddress;
+/**
+ * 提供 I Pv 4 相关工具方法的工具类。
+ */
 
 public class IPv4Util {
     private static final int INADDRSZ = 4;

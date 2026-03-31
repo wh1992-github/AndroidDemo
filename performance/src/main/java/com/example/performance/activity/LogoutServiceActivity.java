@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,17 +20,19 @@ import android.widget.TextView;
 import com.example.performance.R;
 import com.example.performance.util.DateUtil;
 
+import java.lang.ref.WeakReference;
 import java.util.Locale;
 
 /**
  * Created by test on 2017/12/27.
  */
-@SuppressLint({"StaticFieldLeak", "SetTextI18n"})
+@SuppressLint("SetTextI18n")
 public class LogoutServiceActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "LogoutServiceActivity";
     private CheckBox ck_logout;
     private Button btn_alarm;
-    private static TextView tv_alarm;
+    private static WeakReference<TextView> tv_alarm_ref;
+    private TextView tv_alarm;
     private static PendingIntent pIntent; //声明一个延迟意图对象
     private static AlarmManager mAlarmManager; //声明一个闹钟管理器对象
     private static String mDesc;
@@ -43,6 +45,7 @@ public class LogoutServiceActivity extends AppCompatActivity implements OnClickL
         setContentView(R.layout.activity_logout_service);
         ck_logout = findViewById(R.id.ck_logout);
         tv_alarm = findViewById(R.id.tv_alarm);
+        tv_alarm_ref = new WeakReference<>(tv_alarm);
         btn_alarm = findViewById(R.id.btn_alarm);
         btn_alarm.setOnClickListener(this);
         //创建一个广播事件的意图
@@ -59,10 +62,18 @@ public class LogoutServiceActivity extends AppCompatActivity implements OnClickL
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (ck_logout.isChecked()) {
+        if (ck_logout != null && ck_logout.isChecked()) {
             //取消已设定的闹钟提醒
-            mAlarmManager.cancel(pIntent);
+            if (mAlarmManager != null && pIntent != null) {
+                mAlarmManager.cancel(pIntent);
+            }
         }
+        // 清理静态引用
+        if (tv_alarm_ref != null) {
+            tv_alarm_ref.clear();
+            tv_alarm_ref = null;
+        }
+        mDesc = "";
     }
 
     @Override
@@ -98,9 +109,10 @@ public class LogoutServiceActivity extends AppCompatActivity implements OnClickL
         public void onReceive(Context context, Intent intent) {
             if (intent != null) {
                 Log.d(TAG, "AlarmReceiver onReceive");
-                if (tv_alarm != null) {
+                TextView tv = tv_alarm_ref != null ? tv_alarm_ref.get() : null;
+                if (tv != null) {
                     mDesc = String.format(Locale.getDefault(), "%s\n%s 闹钟时间到达", mDesc, DateUtil.getNowTime());
-                    tv_alarm.setText(mDesc);
+                    tv.setText(mDesc);
                     repeatAlarm(); //重复闹钟提醒设置
                 }
             }

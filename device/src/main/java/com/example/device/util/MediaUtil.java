@@ -5,6 +5,9 @@ import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
+/**
+ * 提供 Media 相关工具方法的工具类。
+ */
 
 public class MediaUtil {
     private static final String TAG = "MediaUtil";

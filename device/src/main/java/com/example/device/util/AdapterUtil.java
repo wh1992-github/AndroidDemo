@@ -11,6 +11,9 @@ import android.util.Log;
 import android.util.TypedValue;
 
 import me.jessyan.autosize.utils.AutoSizeUtils;
+/**
+ * 提供 Adapter 相关工具方法的工具类。
+ */
 
 public class AdapterUtil {
     private static final String TAG = "AdapterUtil";

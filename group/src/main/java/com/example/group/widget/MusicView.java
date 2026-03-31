@@ -9,6 +9,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+/**
+ * 用于展示 Music 效果的自定义 View。
+ */
 
 public class MusicView extends View {
     private static final String TAG = "MusicView";

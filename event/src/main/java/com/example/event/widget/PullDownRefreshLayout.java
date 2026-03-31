@@ -13,6 +13,9 @@ import android.widget.LinearLayout;
 import com.example.event.R;
 import com.example.event.util.Utils;
 import com.example.event.widget.PullDownScrollView.ScrollListener;
+/**
+ * 用于组织 Pull Down Refresh 界面内容的布局类。
+ */
 
 @SuppressLint("ClickableViewAccessibility")
 public class PullDownRefreshLayout extends LinearLayout implements View.OnTouchListener, ScrollListener {

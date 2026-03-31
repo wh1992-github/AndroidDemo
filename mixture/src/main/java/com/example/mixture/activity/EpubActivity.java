@@ -4,10 +4,10 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.support.v4.view.PagerTabStrip;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.viewpager.widget.PagerTabStrip;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.View;
@@ -31,6 +31,9 @@ import nl.siegmann.epublib.domain.Metadata;
 import nl.siegmann.epublib.domain.Resource;
 import nl.siegmann.epublib.domain.Resources;
 import nl.siegmann.epublib.epub.EpubReader;
+/**
+ * 用于展示 Epub 功能的 Activity。
+ */
 
 public class EpubActivity extends AppCompatActivity {
     private static final String TAG = "EpubActivity";

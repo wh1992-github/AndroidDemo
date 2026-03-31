@@ -1,4 +1,7 @@
 package com.example.device.nfc;
+/**
+ * 封装 Byte Array Change 相关逻辑的类。
+ */
 
 public class ByteArrayChange {
 

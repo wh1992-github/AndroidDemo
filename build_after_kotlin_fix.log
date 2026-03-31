@@ -1,0 +1,750 @@
+./gradlew: line 23: cd: "./: No such file or directory
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+> Task :clean UP-TO-DATE
+> Task :animation:clean
+> Task :app:clean
+> Task :custom:clean UP-TO-DATE
+> Task :CustomToast:clean UP-TO-DATE
+> Task :customview:clean UP-TO-DATE
+> Task :device:clean UP-TO-DATE
+> Task :event:clean UP-TO-DATE
+> Task :filedialog:clean UP-TO-DATE
+> Task :group:clean UP-TO-DATE
+> Task :hezi:clean UP-TO-DATE
+> Task :junior:clean UP-TO-DATE
+> Task :media:clean UP-TO-DATE
+> Task :middle:clean UP-TO-DATE
+
+> Task :mixture:externalNativeBuildCleanDebug
+Clean jni_mix-x86
+
+> Task :mixture:externalNativeBuildCleanRelease
+> Task :mixture:clean
+> Task :network:clean UP-TO-DATE
+> Task :performance:clean UP-TO-DATE
+> Task :senior:clean UP-TO-DATE
+> Task :storage:clean UP-TO-DATE
+> Task :test:clean UP-TO-DATE
+> Task :util:clean UP-TO-DATE
+> Task :weixin:clean UP-TO-DATE
+> Task :animation:preBuild UP-TO-DATE
+> Task :animation:preDebugBuild UP-TO-DATE
+> Task :animation:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :animation:compileDebugAidl NO-SOURCE
+> Task :animation:compileDebugRenderscript NO-SOURCE
+> Task :animation:generateDebugBuildConfig
+> Task :animation:javaPreCompileDebug
+> Task :animation:generateDebugResValues
+> Task :animation:checkDebugAarMetadata
+> Task :animation:mapDebugSourceSetPaths
+> Task :animation:generateDebugResources
+> Task :animation:createDebugCompatibleScreenManifests
+> Task :animation:extractDeepLinksDebug
+
+> Task :animation:processDebugMainManifest
+package="com.example.animation" found in source AndroidManifest.xml: D:\code\AndroidDemo\animation\src\main\AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :animation:processDebugManifest
+> Task :animation:mergeDebugShaders
+> Task :animation:compileDebugShaders NO-SOURCE
+> Task :animation:generateDebugAssets UP-TO-DATE
+> Task :animation:mergeDebugResources
+> Task :animation:mergeDebugAssets
+> Task :animation:compressDebugAssets
+> Task :animation:processDebugJavaRes NO-SOURCE
+> Task :animation:checkDebugDuplicateClasses
+> Task :animation:desugarDebugFileDependencies
+> Task :animation:mergeDebugJavaResource
+> Task :animation:mergeDebugJniLibFolders
+> Task :animation:mergeLibDexDebug
+> Task :animation:mergeDebugNativeLibs NO-SOURCE
+> Task :animation:stripDebugDebugSymbols NO-SOURCE
+> Task :animation:validateSigningDebug
+> Task :animation:writeDebugAppMetadata
+> Task :animation:writeDebugSigningConfigVersions
+> Task :animation:preReleaseBuild UP-TO-DATE
+> Task :animation:compileReleaseAidl NO-SOURCE
+> Task :animation:compileReleaseRenderscript NO-SOURCE
+> Task :animation:generateReleaseBuildConfig
+> Task :animation:javaPreCompileRelease
+> Task :animation:generateReleaseResValues
+> Task :animation:checkReleaseAarMetadata
+> Task :animation:mapReleaseSourceSetPaths
+> Task :animation:generateReleaseResources
+> Task :animation:createReleaseCompatibleScreenManifests
+> Task :animation:extractDeepLinksRelease
+
+> Task :animation:processReleaseMainManifest
+package="com.example.animation" found in source AndroidManifest.xml: D:\code\AndroidDemo\animation\src\main\AndroidManifest.xml.
+Setting the namespace via a source AndroidManifest.xml's package attribute is deprecated.
+Please instead set the namespace (or testNamespace) in the module's build.gradle file, as described here: https://developer.android.com/studio/build/configure-app-module#set-namespace
+This migration can be done automatically using the AGP Upgrade Assistant, please refer to https://developer.android.com/studio/build/agp-upgrade-assistant for more information.
+
+> Task :animation:processReleaseManifest
+> Task :animation:extractProguardFiles
+> Task :animation:mergeReleaseJniLibFolders
+> Task :animation:mergeReleaseNativeLibs NO-SOURCE
+> Task :animation:stripReleaseDebugSymbols NO-SOURCE
+> Task :animation:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :animation:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :animation:checkReleaseDuplicateClasses
+> Task :animation:desugarReleaseFileDependencies
+> Task :animation:mergeExtDexDebug
+> Task :animation:mergeReleaseResources
+> Task :animation:processDebugManifestForPackage
+> Task :animation:mergeReleaseShaders
+> Task :animation:compileReleaseShaders NO-SOURCE
+> Task :animation:generateReleaseAssets UP-TO-DATE
+> Task :animation:mergeReleaseAssets
+> Task :animation:compressReleaseAssets
+> Task :animation:processReleaseJavaRes NO-SOURCE
+> Task :animation:collectReleaseDependencies
+> Task :animation:sdkReleaseDependencyData
+> Task :animation:writeReleaseAppMetadata
+> Task :animation:writeReleaseSigningConfigVersions
+> Task :animation:preDebugAndroidTestBuild SKIPPED
+> Task :animation:processDebugAndroidTestManifest
+> Task :animation:compileDebugAndroidTestRenderscript NO-SOURCE
+> Task :animation:generateDebugAndroidTestResValues
+> Task :animation:preDebugUnitTestBuild UP-TO-DATE
+> Task :animation:processDebugUnitTestJavaRes NO-SOURCE
+> Task :animation:javaPreCompileDebugUnitTest
+> Task :animation:processReleaseManifestForPackage
+> Task :animation:mergeReleaseJavaResource
+> Task :animation:preReleaseUnitTestBuild UP-TO-DATE
+> Task :animation:processReleaseUnitTestJavaRes NO-SOURCE
+> Task :app:preBuild UP-TO-DATE
+> Task :animation:javaPreCompileReleaseUnitTest
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :animation:mergeReleaseArtProfile
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:compileDebugAidl NO-SOURCE
+> Task :app:compileDebugRenderscript NO-SOURCE
+> Task :animation:mergeExtDexRelease
+> Task :app:dataBindingMergeDependencyArtifactsDebug
+> Task :app:generateDebugResValues
+> Task :app:generateDebugResources
+> Task :animation:processReleaseResources
+> Task :app:mergeDebugResources
+
+> Task :animation:compileReleaseJavaWithJavac
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\AnimSetActivity.java:4: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\AnimSetActivity.java:21: 错误: 找不到符号
+public class AnimSetActivity extends AppCompatActivity implements OnClickListener, AnimationListener {
+                                     ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\BannerAnimActivity.java:4: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\BannerAnimActivity.java:20: 错误: 找不到符号
+public class BannerAnimActivity extends AppCompatActivity implements BannerClickListener {
+                                        ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ExpandActivity.java:4: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ExpandActivity.java:12: 错误: 找不到符号
+public class ExpandActivity extends AppCompatActivity {
+                                    ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FadeAnimActivity.java:6: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FadeAnimActivity.java:16: 错误: 找不到符号
+public class FadeAnimActivity extends AppCompatActivity implements OnClickListener {
+                                      ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:5: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:15: 错误: 找不到符号
+public class FrameAnimActivity extends AppCompatActivity implements OnClickListener {
+                                       ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:11: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:24: 错误: 找不到符号
+public class GifActivity extends AppCompatActivity {
+                                 ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\InterpolatorActivity.java:14: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\InterpolatorActivity.java:31: 错误: 找不到符号
+public class InterpolatorActivity extends AppCompatActivity implements AnimatorListener {
+                                          ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\MainActivity.java:5: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\MainActivity.java:14: 错误: 找不到符号
+public class MainActivity extends AppCompatActivity implements OnClickListener {
+                                  ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\MosaicActivity.java:6: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\MosaicActivity.java:20: 错误: 找不到符号
+public class MosaicActivity extends AppCompatActivity {
+                                    ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ObjectAnimActivity.java:9: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ObjectAnimActivity.java:22: 错误: 找不到符号
+public class ObjectAnimActivity extends AppCompatActivity {
+                                        ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ObjectGroupActivity.java:8: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ObjectGroupActivity.java:19: 错误: 找不到符号
+public class ObjectGroupActivity extends AppCompatActivity implements OnClickListener {
+                                         ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ObjectXmlActivity.java:8: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ObjectXmlActivity.java:19: 错误: 找不到符号
+public class ObjectXmlActivity extends AppCompatActivity implements OnClickListener {
+                                       ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\PaySuccessActivity.java:11: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\PaySuccessActivity.java:12: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatDelegate;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\PaySuccessActivity.java:23: 错误: 找不到符号
+public class PaySuccessActivity extends AppCompatActivity implements OnClickListener {
+                                        ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\PieActivity.java:4: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\PieActivity.java:14: 错误: 找不到符号
+public class PieActivity extends AppCompatActivity implements OnClickListener {
+                                 ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ScrollerActivity.java:5: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ScrollerActivity.java:19: 错误: 找不到符号
+public class ScrollerActivity extends AppCompatActivity implements OnTouchListener, OnGestureListener {
+                                      ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ShutterActivity.java:6: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ShutterActivity.java:20: 错误: 找不到符号
+public class ShutterActivity extends AppCompatActivity {
+                                     ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\SwingAnimActivity.java:4: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\SwingAnimActivity.java:16: 错误: 找不到符号
+public class SwingAnimActivity extends AppCompatActivity implements OnClickListener {
+                                       ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\TweenAnimActivity.java:4: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\TweenAnimActivity.java:24: 错误: 找不到符号
+public class TweenAnimActivity extends AppCompatActivity implements AnimationListener {
+                                       ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\VectorDrawableActivity.java:4: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\VectorDrawableActivity.java:14: 错误: 找不到符号
+public class VectorDrawableActivity extends AppCompatActivity implements OnClickListener {
+                                            ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\VectorHookActivity.java:11: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\VectorHookActivity.java:21: 错误: 找不到符号
+public class VectorHookActivity extends AppCompatActivity implements OnClickListener {
+                                        ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\VectorSmileActivity.java:5: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\VectorSmileActivity.java:15: 错误: 找不到符号
+public class VectorSmileActivity extends AppCompatActivity implements OnClickListener {
+                                         ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\WeixinAnimActivity.java:4: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\WeixinAnimActivity.java:17: 错误: 找不到符号
+public class WeixinAnimActivity extends AppCompatActivity {
+                                        ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\YingjiActivity.java:17: 错误: 程序包android.support.v7.app不存在
+import android.support.v7.app.AppCompatActivity;
+                             ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\YingjiActivity.java:41: 错误: 找不到符号
+public class YingjiActivity extends AppCompatActivity implements
+                                    ^
+  符号: 类 AppCompatActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\AnimSetActivity.java:25: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\AnimSetActivity.java:27: 错误: 找不到符号
+        super.onCreate(savedInstanceState);
+        ^
+  符号:   变量 super
+  位置: 类 AnimSetActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\AnimSetActivity.java:28: 错误: 找不到符号
+        setContentView(R.layout.activity_anim_set);
+        ^
+  符号:   方法 setContentView(int)
+  位置: 类 AnimSetActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\AnimSetActivity.java:30: 错误: 找不到符号
+        iv_anim_set = findViewById(R.id.iv_anim_set);
+                      ^
+  符号:   方法 findViewById(int)
+  位置: 类 AnimSetActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\BannerAnimActivity.java:24: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\BannerAnimActivity.java:26: 错误: 找不到符号
+        super.onCreate(savedInstanceState);
+        ^
+  符号:   变量 super
+  位置: 类 BannerAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\BannerAnimActivity.java:27: 错误: 找不到符号
+        setContentView(R.layout.activity_banner_anim);
+        ^
+  符号:   方法 setContentView(int)
+  位置: 类 BannerAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\BannerAnimActivity.java:28: 错误: 找不到符号
+        tv_flipper = findViewById(R.id.tv_flipper);
+                     ^
+  符号:   方法 findViewById(int)
+  位置: 类 BannerAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\BannerAnimActivity.java:30: 错误: 找不到符号
+        BannerFlipper banner = findViewById(R.id.banner_flipper);
+                               ^
+  符号:   方法 findViewById(int)
+  位置: 类 BannerAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\BannerAnimActivity.java:32: 错误: 不兼容的类型: BannerAnimActivity无法转换为Context
+        params.height = (int) (Utils.getScreenWidth(this) * 250f / 640f);
+                                                    ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ExpandActivity.java:15: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ExpandActivity.java:17: 错误: 找不到符号
+        super.onCreate(savedInstanceState);
+        ^
+  符号:   变量 super
+  位置: 类 ExpandActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ExpandActivity.java:18: 错误: 找不到符号
+        setContentView(R.layout.activity_expand);
+        ^
+  符号:   方法 setContentView(int)
+  位置: 类 ExpandActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\ExpandActivity.java:20: 错误: 找不到符号
+        ExpandTextLayout etl_content = findViewById(R.id.etl_content);
+                                       ^
+  符号:   方法 findViewById(int)
+  位置: 类 ExpandActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FadeAnimActivity.java:19: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FadeAnimActivity.java:21: 错误: 找不到符号
+        super.onCreate(savedInstanceState);
+        ^
+  符号:   变量 super
+  位置: 类 FadeAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FadeAnimActivity.java:22: 错误: 找不到符号
+        setContentView(R.layout.activity_fade_anim);
+        ^
+  符号:   方法 setContentView(int)
+  位置: 类 FadeAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FadeAnimActivity.java:24: 错误: 找不到符号
+        iv_fade_anim = findViewById(R.id.iv_fade_anim);
+                       ^
+  符号:   方法 findViewById(int)
+  位置: 类 FadeAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FadeAnimActivity.java:28: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FadeAnimActivity.java:30: 错误: 找不到符号
+        super.onResume();
+        ^
+  符号:   变量 super
+  位置: 类 FadeAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FadeAnimActivity.java:45: 错误: 找不到符号
+                getResources().getDrawable(R.drawable.fade_begin),
+                ^
+  符号:   方法 getResources()
+  位置: 类 FadeAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FadeAnimActivity.java:46: 错误: 找不到符号
+                getResources().getDrawable(R.drawable.fade_end)
+                ^
+  符号:   方法 getResources()
+  位置: 类 FadeAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:19: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:21: 错误: 找不到符号
+        super.onCreate(savedInstanceState);
+        ^
+  符号:   变量 super
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:22: 错误: 找不到符号
+        setContentView(R.layout.activity_frame_anim);
+        ^
+  符号:   方法 setContentView(int)
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:24: 错误: 找不到符号
+        iv_frame_anim = findViewById(R.id.iv_frame_anim);
+                        ^
+  符号:   方法 findViewById(int)
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:35: 错误: 找不到符号
+        ad_frame.addFrame(getResources().getDrawable(R.drawable.flow_p1), 50);
+                          ^
+  符号:   方法 getResources()
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:36: 错误: 找不到符号
+        ad_frame.addFrame(getResources().getDrawable(R.drawable.flow_p2), 50);
+                          ^
+  符号:   方法 getResources()
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:37: 错误: 找不到符号
+        ad_frame.addFrame(getResources().getDrawable(R.drawable.flow_p3), 50);
+                          ^
+  符号:   方法 getResources()
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:38: 错误: 找不到符号
+        ad_frame.addFrame(getResources().getDrawable(R.drawable.flow_p4), 50);
+                          ^
+  符号:   方法 getResources()
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:39: 错误: 找不到符号
+        ad_frame.addFrame(getResources().getDrawable(R.drawable.flow_p5), 50);
+                          ^
+  符号:   方法 getResources()
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:40: 错误: 找不到符号
+        ad_frame.addFrame(getResources().getDrawable(R.drawable.flow_p6), 50);
+                          ^
+  符号:   方法 getResources()
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:41: 错误: 找不到符号
+        ad_frame.addFrame(getResources().getDrawable(R.drawable.flow_p7), 50);
+                          ^
+  符号:   方法 getResources()
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\FrameAnimActivity.java:42: 错误: 找不到符号
+        ad_frame.addFrame(getResources().getDrawable(R.drawable.flow_p8), 50);
+                          ^
+  符号:   方法 getResources()
+  位置: 类 FrameAnimActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:29: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:31: 错误: 找不到符号
+        super.onCreate(savedInstanceState);
+        ^
+  符号:   变量 super
+  位置: 类 GifActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:32: 错误: 找不到符号
+        setContentView(R.layout.activity_gif);
+        ^
+  符号:   方法 setContentView(int)
+  位置: 类 GifActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:34: 错误: 找不到符号
+        iv_gif = findViewById(R.id.iv_gif);
+                 ^
+  符号:   方法 findViewById(int)
+  位置: 类 GifActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:35: 错误: 找不到符号
+        mGifView1 = findViewById(R.id.gif1);
+                    ^
+  符号:   方法 findViewById(int)
+  位置: 类 GifActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:36: 错误: 找不到符号
+        mGifView2 = findViewById(R.id.gif2);
+                    ^
+  符号:   方法 findViewById(int)
+  位置: 类 GifActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:51: 错误: 找不到符号
+                ImageDecoder.Source source = ImageDecoder.createSource(getResources(), R.drawable.welcome);
+                                                                       ^
+  符号:   方法 getResources()
+  位置: 类 GifActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:69: 错误: 找不到符号
+        InputStream is = getResources().openRawResource(R.raw.welcome);
+                         ^
+  符号:   方法 getResources()
+  位置: 类 GifActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:80: 错误: 找不到符号
+                BitmapDrawable bitmapDrawable = new BitmapDrawable(getResources(), frame.image);
+                                                                   ^
+  符号:   方法 getResources()
+  位置: 类 GifActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:90: 错误: 对于makeText(GifActivity,String,int), 找不到合适的方法
+            Toast.makeText(this, "该图片不是gif格式", Toast.LENGTH_LONG).show();
+                 ^
+    方法 Toast.makeText(Context,CharSequence,int)不适用
+      (参数不匹配; GifActivity无法转换为Context)
+    方法 Toast.makeText(Context,int,int)不适用
+      (参数不匹配; GifActivity无法转换为Context)
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\GifActivity.java:92: 错误: 对于makeText(GifActivity,String,int), 找不到合适的方法
+            Toast.makeText(this, "gif图片读取失败:" + code, Toast.LENGTH_LONG).show();
+                 ^
+    方法 Toast.makeText(Context,CharSequence,int)不适用
+      (参数不匹配; GifActivity无法转换为Context)
+    方法 Toast.makeText(Context,int,int)不适用
+      (参数不匹配; GifActivity无法转换为Context)
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\InterpolatorActivity.java:35: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\InterpolatorActivity.java:37: 错误: 找不到符号
+        super.onCreate(savedInstanceState);
+        ^
+  符号:   变量 super
+  位置: 类 InterpolatorActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\InterpolatorActivity.java:38: 错误: 找不到符号
+        setContentView(R.layout.activity_interpolator);
+        ^
+  符号:   方法 setContentView(int)
+  位置: 类 InterpolatorActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\InterpolatorActivity.java:40: 错误: 找不到符号
+        tv_interpolator = findViewById(R.id.tv_interpolator);
+                          ^
+  符号:   方法 findViewById(int)
+  位置: 类 InterpolatorActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\InterpolatorActivity.java:47: 错误: 无法推断ArrayAdapter<>的类型参数
+        ArrayAdapter<String> interpolatorAdapter = new ArrayAdapter<>(this,
+                                                   ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\InterpolatorActivity.java:49: 错误: 找不到符号
+        Spinner sp_interpolator = findViewById(R.id.sp_interpolator);
+                                  ^
+  符号:   方法 findViewById(int)
+  位置: 类 InterpolatorActivity
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\MainActivity.java:16: 错误: 方法不会覆盖或实现超类型的方法
+    @Override
+    ^
+D:\code\AndroidDemo\animation\src\main\java\com\example\animation\activity\MainActivity.java:18: 错误: 找不到符号
+        super.onCreate(savedInstanceState);
+        ^
+  符号:   变量 super
+  位置: 类 MainActivity
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: 某些消息已经过简化; 请使用 -Xdiags:verbose 重新编译以获得完整输出
+100 个错误
+
+> Task :animation:compileReleaseJavaWithJavac FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':animation:compileReleaseJavaWithJavac'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':animation:compileReleaseJavaWithJavac'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:142)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:282)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:140)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:128)
+	at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:56)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:69)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:327)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:307)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:293)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:417)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:339)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: Compilation failed; see the compiler error output for details.
+	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:56)
+	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:39)
+	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.delegateAndHandleErrors(NormalizingJavaCompiler.java:97)
+	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.execute(NormalizingJavaCompiler.java:51)
+	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.execute(NormalizingJavaCompiler.java:37)
+	at org.gradle.api.internal.tasks.compile.AnnotationProcessorDiscoveringCompiler.execute(AnnotationProcessorDiscoveringCompiler.java:51)
+	at org.gradle.api.internal.tasks.compile.AnnotationProcessorDiscoveringCompiler.execute(AnnotationProcessorDiscoveringCompiler.java:37)
+	at org.gradle.api.internal.tasks.compile.ModuleApplicationNameWritingCompiler.execute(ModuleApplicationNameWritingCompiler.java:46)
+	at org.gradle.api.internal.tasks.compile.ModuleApplicationNameWritingCompiler.execute(ModuleApplicationNameWritingCompiler.java:36)
+	at org.gradle.jvm.toolchain.internal.DefaultToolchainJavaCompiler.execute(DefaultToolchainJavaCompiler.java:57)
+	at org.gradle.api.tasks.compile.JavaCompile.lambda$createToolchainCompiler$1(JavaCompile.java:232)
+	at org.gradle.api.internal.tasks.compile.CleaningJavaCompiler.execute(CleaningJavaCompiler.java:53)
+	at org.gradle.api.internal.tasks.compile.incremental.IncrementalCompilerFactory.lambda$createRebuildAllCompiler$0(IncrementalCompilerFactory.java:52)
+	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.execute(SelectiveCompiler.java:67)
+	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.execute(SelectiveCompiler.java:41)
+	at org.gradle.api.internal.tasks.compile.incremental.IncrementalResultStoringCompiler.execute(IncrementalResultStoringCompiler.java:66)
+	at org.gradle.api.internal.tasks.compile.incremental.IncrementalResultStoringCompiler.execute(IncrementalResultStoringCompiler.java:52)
+	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCompiler$2.call(CompileJavaBuildOperationReportingCompiler.java:59)
+	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCompiler$2.call(CompileJavaBuildOperationReportingCompiler.java:51)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCompiler.execute(CompileJavaBuildOperationReportingCompiler.java:51)
+	at org.gradle.api.tasks.compile.JavaCompile.performCompilation(JavaCompile.java:279)
+	at org.gradle.api.tasks.compile.JavaCompile.performIncrementalCompilation(JavaCompile.java:165)
+	at org.gradle.api.tasks.compile.JavaCompile.compile(JavaCompile.java:146)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+	at org.gradle.api.internal.project.taskfactory.IncrementalInputsTaskAction.doExecute(IncrementalInputsTaskAction.java:32)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+	at org.gradle.api.internal.project.taskfactory.AbstractIncrementalTaskAction.execute(AbstractIncrementalTaskAction.java:25)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:236)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:221)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:204)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:187)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:165)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:89)
+	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:40)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:53)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:50)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:50)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:40)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:68)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:38)
+	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:41)
+	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:74)
+	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+	at org.gradle.internal.execution.steps.CreateOutputsStep.execute(CreateOutputsStep.java:51)
+	at org.gradle.internal.execution.steps.CreateOutputsStep.execute(CreateOutputsStep.java:29)
+	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.executeDelegateBroadcastingChanges(CaptureStateAfterExecutionStep.java:124)
+	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.execute(CaptureStateAfterExecutionStep.java:80)
+	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.execute(CaptureStateAfterExecutionStep.java:58)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:48)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:36)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:181)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:71)
+	at org.gradle.internal.Either$Right.fold(Either.java:175)
+	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:59)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:69)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:47)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:25)
+	at org.gradle.internal.execution.steps.RecordOutputsStep.execute(RecordOutputsStep.java:36)
+	at org.gradle.internal.execution.steps.RecordOutputsStep.execute(RecordOutputsStep.java:22)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:110)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:56)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:56)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:38)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:73)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:44)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:89)
+	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:50)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:114)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:57)
+	at org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep.execute(CaptureStateBeforeExecutionStep.java:76)
+	at org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep.execute(CaptureStateBeforeExecutionStep.java:50)
+	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.executeWithNoEmptySources(SkipEmptyWorkStep.java:254)
+	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.executeWithNoEmptySources(SkipEmptyWorkStep.java:209)
+	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.execute(SkipEmptyWorkStep.java:88)
+	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.execute(SkipEmptyWorkStep.java:56)
+	at org.gradle.internal.execution.steps.RemoveUntrackedExecutionStateStep.execute(RemoveUntrackedExecutionStateStep.java:32)
+	at org.gradle.internal.execution.steps.RemoveUntrackedExecutionStateStep.execute(RemoveUntrackedExecutionStateStep.java:21)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:43)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:31)
+	at org.gradle.internal.execution.steps.AssignWorkspaceStep.lambda$execute$0(AssignWorkspaceStep.java:40)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:281)
+	at org.gradle.internal.execution.steps.AssignWorkspaceStep.execute(AssignWorkspaceStep.java:40)
+	at org.gradle.internal.execution.steps.AssignWorkspaceStep.execute(AssignWorkspaceStep.java:30)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:37)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:27)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:44)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:33)
+	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:76)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:139)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:128)
+	at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:56)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:69)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:327)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:307)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:293)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:417)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:339)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1m 55s
+81 actionable tasks: 62 executed, 19 up-to-date

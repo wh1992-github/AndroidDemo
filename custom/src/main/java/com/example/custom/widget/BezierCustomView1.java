@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.PorterDuff;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +16,9 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+/**
+ * 封装 Bezier Custom View 1 相关逻辑的类。
+ */
 
 @SuppressLint("DrawAllocation")
 public class BezierCustomView1 extends View {

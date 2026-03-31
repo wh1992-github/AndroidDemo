@@ -3,6 +3,9 @@ package com.example.hezi.viewpager.fragments;
 import android.app.Fragment;
 
 import java.util.HashMap;
+/**
+ * 用于创建 Fragment 实例的工厂类。
+ */
 
 public class FragmentFactory {
     private static HashMap<Integer, Fragment> mSavedFragment = new HashMap<Integer, Fragment>();

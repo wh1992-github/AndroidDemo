@@ -10,11 +10,14 @@ import com.example.mixture.util.BluetoothConnector;
 import com.example.mixture.util.BluetoothUtil;
 
 //蓝牙服务端开启侦听任务,一旦有客户端连接进来,就返回该客户端的蓝牙Socket
+/**
+ * 用于执行 Blue Accept 任务的任务类。
+ */
 public class BlueAcceptTask extends AsyncTask<Void, Void, BluetoothSocket> {
     private static final String TAG = "BlueAcceptTask";
     private static final String NAME_SECURE = "BluetoothChatSecure";
     private static final String NAME_INSECURE = "BluetoothChatInsecure";
-    private static BluetoothServerSocket mServerSocket; //声明一个蓝牙服务端套接字对象
+    private BluetoothServerSocket mServerSocket; //声明一个蓝牙服务端套接字对象
 
     public BlueAcceptTask(boolean secure) {
         Log.d(TAG, "BlueAcceptTask");
@@ -63,7 +66,31 @@ public class BlueAcceptTask extends AsyncTask<Void, Void, BluetoothSocket> {
     //线程已经完成处理
     protected void onPostExecute(BluetoothSocket socket) {
         //侦听结束,通知监听器是哪个客户端Socket连了进来
-        mListener.onBlueAccept(socket);
+        if (mListener != null) {
+            mListener.onBlueAccept(socket);
+        }
+        //关闭服务端套接字
+        closeServerSocket();
+    }
+
+    //线程已经取消
+    @Override
+    protected void onCancelled(BluetoothSocket socket) {
+        super.onCancelled(socket);
+        //关闭服务端套接字
+        closeServerSocket();
+    }
+
+    //关闭服务端套接字
+    private void closeServerSocket() {
+        if (mServerSocket != null) {
+            try {
+                mServerSocket.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            mServerSocket = null;
+        }
     }
 
     private BlueAcceptListener mListener; //声明一个蓝牙侦听的监听器对象

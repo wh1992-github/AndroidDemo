@@ -9,6 +9,9 @@ import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
+/**
+ * 提供 Measure 相关工具方法的工具类。
+ */
 
 public class MeasureUtil {
 

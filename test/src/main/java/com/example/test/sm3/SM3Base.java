@@ -1,4 +1,7 @@
 package com.example.test.sm3;
+/**
+ * 封装 SM 3 Base 相关逻辑的类。
+ */
 
 public class SM3Base {
     public static final byte[] iv = {0x73, (byte) 0x80, 0x16, 0x6f, 0x49,

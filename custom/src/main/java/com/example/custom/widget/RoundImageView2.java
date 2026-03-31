@@ -11,8 +11,11 @@ import android.graphics.RectF;
 import android.graphics.Xfermode;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.util.AttributeSet;
+/**
+ * 封装 Round Image View 2 相关逻辑的类。
+ */
 
 @SuppressLint("DrawAllocation")
 public class RoundImageView2 extends AppCompatImageView {

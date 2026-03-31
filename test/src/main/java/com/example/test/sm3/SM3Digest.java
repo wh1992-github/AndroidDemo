@@ -1,6 +1,9 @@
 package com.example.test.sm3;
 
 import org.bouncycastle.util.encoders.Hex;
+/**
+ * 封装 SM 3 Digest 相关逻辑的类。
+ */
 
 public class SM3Digest {
     //SM3值的长度

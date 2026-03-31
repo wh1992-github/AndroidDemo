@@ -1,13 +1,13 @@
 package com.example.group.activity;
 
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,6 +17,9 @@ import com.example.group.livedata.OneFragment;
 import com.example.group.livedata.TestViewModel;
 import com.example.group.livedata.TwoFragment;
 import com.example.group.util.LogUtil;
+/**
+ * 用于展示 Live Data Sample 功能的 Activity。
+ */
 
 public class LiveDataSampleActivity extends AppCompatActivity {
     private static final String TAG = "LiveDataSampleActivity";

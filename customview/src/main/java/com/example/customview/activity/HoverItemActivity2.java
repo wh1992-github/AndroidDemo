@@ -1,9 +1,9 @@
 package com.example.customview.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -13,6 +13,9 @@ import com.example.customview.adapter.HoverItemAdapter2;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 封装 Hover Item Activity 2 相关逻辑的类。
+ */
 
 public class HoverItemActivity2 extends AppCompatActivity {
     private static final String TAG = "MainActivity";

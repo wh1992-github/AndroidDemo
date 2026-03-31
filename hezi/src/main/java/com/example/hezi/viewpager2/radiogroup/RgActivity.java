@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.hezi.R;
+/**
+ * 用于展示 Rg 功能的 Activity。
+ */
 
 public class RgActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 

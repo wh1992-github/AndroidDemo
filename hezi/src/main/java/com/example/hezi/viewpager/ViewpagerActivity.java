@@ -33,6 +33,9 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorT
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.SimplePagerTitleView;
 
 import java.lang.reflect.Field;
+/**
+ * 用于展示 Viewpager 功能的 Activity。
+ */
 
 public class ViewpagerActivity extends FragmentActivity implements ViewPager.OnPageChangeListener, SlideTopBar.ItemChangeListener {
     private static final String TAG = "MainActivity";

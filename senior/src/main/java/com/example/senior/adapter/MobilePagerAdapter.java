@@ -1,13 +1,16 @@
 package com.example.senior.adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.senior.bean.GoodsInfo;
 import com.example.senior.fragment.DynamicFragment;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Mobile Pager 数据的适配器。
+ */
 
 public class MobilePagerAdapter extends FragmentStatePagerAdapter {
     private ArrayList<GoodsInfo> mGoodsList = new ArrayList<>(); //声明一个商品队列

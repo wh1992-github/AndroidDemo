@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +16,7 @@ import com.example.custom.R;
 import com.example.custom.service.BindImmediateService;
 import com.example.custom.util.DateUtil;
 
+import java.lang.ref.WeakReference;
 import java.util.Locale;
 
 /**
@@ -23,15 +24,18 @@ import java.util.Locale;
  */
 public class BindImmediateActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "BindImmediateActivity";
-    private static TextView tv_immediate;
+    private static WeakReference<TextView> tv_immediate_ref;
+    private TextView tv_immediate;
     private Intent mIntent; //声明一个意图对象
     private static String mDesc = "";
+    private boolean mIsBound = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bind_immediate);
         tv_immediate = findViewById(R.id.tv_immediate);
+        tv_immediate_ref = new WeakReference<>(tv_immediate);
         findViewById(R.id.btn_start_bind).setOnClickListener(this);
         findViewById(R.id.btn_unbind).setOnClickListener(this);
         //创建一个通往立即绑定服务的意图
@@ -41,22 +45,33 @@ public class BindImmediateActivity extends AppCompatActivity implements OnClickL
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_start_bind) { //点击了绑定服务按钮
-            //绑定服务。如果服务未启动,则系统先启动该服务再进行绑定
-            boolean bindFlag = bindService(mIntent, mFirstConn, Context.BIND_AUTO_CREATE);
-            Log.d(TAG, "bindFlag=" + bindFlag);
+            if (!mIsBound) {
+                //绑定服务。如果服务未启动,则系统先启动该服务再进行绑定
+                boolean bindFlag = bindService(mIntent, mFirstConn, Context.BIND_AUTO_CREATE);
+                if (bindFlag) {
+                    mIsBound = true;
+                }
+                Log.d(TAG, "bindFlag=" + bindFlag);
+            }
         } else if (v.getId() == R.id.btn_unbind) { //点击了解绑服务按钮
-            if (mBindService != null) {
+            if (mIsBound) {
                 //解绑服务。如果先前服务立即绑定,则此时解绑之后自动停止服务
-                unbindService(mFirstConn);
+                try {
+                    unbindService(mFirstConn);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 mBindService = null;
+                mIsBound = false;
             }
         }
     }
 
     public static void showText(String desc) {
-        if (tv_immediate != null) {
+        TextView tv = tv_immediate_ref != null ? tv_immediate_ref.get() : null;
+        if (tv != null) {
             mDesc = String.format(Locale.getDefault(), "%s%s %s\n", mDesc, DateUtil.getNowDateTime("HH:mm:ss"), desc);
-            tv_immediate.setText(mDesc);
+            tv.setText(mDesc);
         }
     }
 
@@ -77,4 +92,24 @@ public class BindImmediateActivity extends AppCompatActivity implements OnClickL
             Log.d(TAG, "onServiceDisconnected");
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理静态引用
+        if (tv_immediate_ref != null) {
+            tv_immediate_ref.clear();
+            tv_immediate_ref = null;
+        }
+        mDesc = "";
+        // 解绑Service
+        if (mIsBound) {
+            try {
+                unbindService(mFirstConn);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            mIsBound = false;
+        }
+    }
 }

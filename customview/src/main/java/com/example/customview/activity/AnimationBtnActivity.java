@@ -1,11 +1,14 @@
 package com.example.customview.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.example.customview.R;
 import com.example.customview.widget.AnimationButton;
+/**
+ * 用于展示 Animation Btn 功能的 Activity。
+ */
 
 public class AnimationBtnActivity extends AppCompatActivity {
 

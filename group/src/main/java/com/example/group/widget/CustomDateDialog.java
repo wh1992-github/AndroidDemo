@@ -10,6 +10,9 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.example.group.R;
+/**
+ * 用于展示 Custom Date 内容的对话框类。
+ */
 
 public class CustomDateDialog implements OnClickListener {
     private Dialog dialog; //声明一个对话框对象

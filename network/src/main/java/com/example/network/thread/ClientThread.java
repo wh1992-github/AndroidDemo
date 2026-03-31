@@ -15,6 +15,9 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
+/**
+ * 封装 Client Thread 相关逻辑的类。
+ */
 
 @SuppressLint("HandlerLeak")
 public class ClientThread implements Runnable {
@@ -86,6 +89,29 @@ public class ClientThread implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
             notify(99, e.getMessage());
+        } finally {
+            // 确保资源被正确关闭
+            try {
+                if (mReader != null) {
+                    mReader.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                if (mWriter != null) {
+                    mWriter.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                if (socket != null && !socket.isClosed()) {
+                    socket.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -119,8 +145,16 @@ public class ClientThread implements Runnable {
             mContext.sendBroadcast(intent2);
         } else { //正常消息
             int pos = message.indexOf(SPLIT_LINE);
-            String head = message.substring(0, pos - 1);
+            if (pos <= 0) {
+                Log.w(TAG, "Invalid message format: SPLIT_LINE not found or at beginning");
+                return;
+            }
+            String head = message.substring(0, pos);
             String[] splitArray = head.split(SPLIT_ITEM);
+            if (splitArray.length == 0) {
+                Log.w(TAG, "Invalid message format: empty split array");
+                return;
+            }
             String action = "";
             if (splitArray[0].equals(RECVMSG) //接收到聊天消息（含文本消息、图片消息、音频消息）
                     || splitArray[0].equals(RECVPHOTO)

@@ -11,6 +11,9 @@ import android.graphics.SurfaceTexture;
 import android.util.AttributeSet;
 import android.view.TextureView;
 import android.view.TextureView.SurfaceTextureListener;
+/**
+ * 用于展示 Turn Texture 效果的自定义 View。
+ */
 
 public class TurnTextureView extends TextureView implements SurfaceTextureListener, Runnable {
     private Paint mPaint; //声明一个画笔对象

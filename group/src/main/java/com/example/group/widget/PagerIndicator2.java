@@ -9,6 +9,9 @@ import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
 import com.example.group.util.Utils;
+/**
+ * 封装 Pager Indicator 2 相关逻辑的类。
+ */
 
 public class PagerIndicator2 extends LinearLayout {
     private static final String TAG = "PagerIndicator";

@@ -11,6 +11,9 @@ import com.example.thirdsdk.VoiceSettingsActivity;
 import com.example.thirdsdk.widget.SettingTextWatcher;
 
 //语音识别设置界面
+/**
+ * 用于承载 Recognize Settings 内容的 Fragment。
+ */
 public class RecognizeSettingsFragment extends PreferenceFragment implements OnPreferenceChangeListener {
     private EditTextPreference mVadbosPreference;
     private EditTextPreference mVadeosPreference;

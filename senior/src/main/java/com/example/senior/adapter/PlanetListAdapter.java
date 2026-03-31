@@ -17,6 +17,9 @@ import com.example.senior.bean.Planet;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 用于适配 Planet List 数据的适配器。
+ */
 
 
 public class PlanetListAdapter extends BaseAdapter implements

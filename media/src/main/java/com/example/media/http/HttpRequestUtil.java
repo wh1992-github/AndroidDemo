@@ -15,6 +15,9 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
+/**
+ * 提供 Http Request 相关工具方法的工具类。
+ */
 
 public class HttpRequestUtil {
     private static final String TAG = "HttpRequestUtil";
@@ -102,21 +105,34 @@ public class HttpRequestUtil {
     //get图片数据
     public static HttpRespData getImage(HttpReqData req_data) {
         HttpRespData resp_data = new HttpRespData();
+        InputStream is = null;
+        HttpURLConnection conn = null;
         try {
             URL url = new URL(req_data.url);
             //创建指定网络地址的HTTP连接
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn = (HttpURLConnection) url.openConnection();
             setConnHeader(conn, "GET", req_data);
             conn.connect(); //开始连接
             //从HTTP连接获取输入流
-            InputStream is = conn.getInputStream();
+            is = conn.getInputStream();
             //对输入流中的数据进行解码,得到位图对象
             resp_data.bitmap = BitmapFactory.decodeStream(is);
             resp_data.cookie = conn.getHeaderField("Set-Cookie");
-            conn.disconnect(); //断开连接
         } catch (Exception e) {
             e.printStackTrace();
             resp_data.err_msg = e.getMessage();
+        } finally {
+            // 确保资源被正确关闭
+            try {
+                if (is != null) {
+                    is.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (conn != null) {
+                conn.disconnect(); //断开连接
+            }
         }
         return resp_data;
     }
@@ -153,25 +169,34 @@ public class HttpRequestUtil {
         HttpRespData resp_data = new HttpRespData();
         String s_url = req_data.url;
         Log.d(TAG, "s_url=" + s_url + ", params=" + req_data.params.toString());
+        PrintWriter out = null;
+        HttpURLConnection conn = null;
         try {
             URL url = new URL(s_url);
             //创建指定网络地址的HTTP连接
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn = (HttpURLConnection) url.openConnection();
             setConnHeader(conn, "POST", req_data);
             conn.setDoOutput(true);
             conn.setDoInput(true);
             conn.connect(); //开始连接
-            PrintWriter out = new PrintWriter(conn.getOutputStream());
+            out = new PrintWriter(conn.getOutputStream());
             out.print(req_data.params.toString());
             out.flush();
             //对输入流中的数据进行解压,得到原始的应答字符串
             resp_data.content = StreamTool.getUnzipStream(conn.getInputStream(),
                     conn.getHeaderField("Content-Encoding"), req_data.charset);
             resp_data.cookie = getRespCookie(conn, req_data);
-            conn.disconnect(); //断开连接
         } catch (Exception e) {
             e.printStackTrace();
             resp_data.err_msg = e.getMessage();
+        } finally {
+            // 确保资源被正确关闭
+            if (out != null) {
+                out.close();
+            }
+            if (conn != null) {
+                conn.disconnect(); //断开连接
+            }
         }
         return resp_data;
     }
@@ -183,9 +208,11 @@ public class HttpRequestUtil {
         Log.d(TAG, "s_url=" + s_url);
         String end = "\r\n";
         String hyphens = "--";
+        OutputStream out = null;
+        HttpURLConnection conn = null;
         try {
             URL url = new URL(s_url);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn = (HttpURLConnection) url.openConnection();
             setConnHeader(conn, "POST", req_data);
             conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + req_data.boundary);
             conn.setRequestProperty("Cache-Control", "no-cache");
@@ -206,7 +233,7 @@ public class HttpRequestUtil {
             if (map.size() > 0) {
                 buffer.append(hyphens + req_data.boundary + end);
                 byte[] param_data = buffer.toString().getBytes(req_data.charset);
-                OutputStream out = conn.getOutputStream();
+                out = conn.getOutputStream();
                 out.write(param_data);
                 out.flush();
             }
@@ -216,10 +243,21 @@ public class HttpRequestUtil {
             resp_data.content = StreamTool.getUnzipStream(conn.getInputStream(),
                     conn.getHeaderField("Content-Encoding"), req_data.charset);
             resp_data.cookie = conn.getHeaderField("Set-Cookie");
-            conn.disconnect(); //断开连接
         } catch (Exception e) {
             e.printStackTrace();
             resp_data.err_msg = e.getMessage();
+        } finally {
+            // 确保资源被正确关闭
+            try {
+                if (out != null) {
+                    out.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (conn != null) {
+                conn.disconnect(); //断开连接
+            }
         }
         return resp_data;
     }

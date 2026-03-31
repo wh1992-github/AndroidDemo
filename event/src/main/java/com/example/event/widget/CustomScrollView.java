@@ -6,6 +6,9 @@ import android.view.MotionEvent;
 import android.widget.ScrollView;
 
 import com.example.event.util.Utils;
+/**
+ * 用于展示 Custom Scroll 效果的自定义 View。
+ */
 
 public class CustomScrollView extends ScrollView {
     private float mOffsetX, mOffsetY; //横纵方向上的偏移

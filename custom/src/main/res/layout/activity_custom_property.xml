@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="10dp">
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_content"
         android:layout_width="match_parent"
         android:layout_height="400dp">
@@ -20,5 +20,5 @@
             app:customBackground="@drawable/xiaomi"
             app:customOrientation="vertical"
             app:customGravity="top" />
-    </android.support.v4.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
 </LinearLayout>

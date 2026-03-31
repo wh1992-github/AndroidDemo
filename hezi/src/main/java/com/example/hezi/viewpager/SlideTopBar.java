@@ -11,6 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.hezi.R;
+/**
+ * 封装 Slide Top Bar 相关逻辑的类。
+ */
 
 public class SlideTopBar extends HorizontalScrollView {
     private static final String TAG = "SlideTopBar";

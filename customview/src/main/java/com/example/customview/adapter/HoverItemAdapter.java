@@ -1,6 +1,6 @@
 package com.example.customview.adapter;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -8,6 +8,9 @@ import com.example.customview.R;
 import com.example.customview.bean.UserBean;
 
 import java.util.List;
+/**
+ * 用于适配 Hover Item 数据的适配器。
+ */
 
 public class HoverItemAdapter extends BaseQuickAdapter<UserBean, BaseViewHolder> {
 

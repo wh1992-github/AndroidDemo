@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.middle">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- 拨打电话 -->
     <uses-feature

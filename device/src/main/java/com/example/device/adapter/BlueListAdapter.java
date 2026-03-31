@@ -13,6 +13,9 @@ import com.example.device.bean.BlueDevice;
 import java.util.ArrayList;
 
 //展示蓝牙设备列表的适配器
+/**
+ * 用于适配 Blue List 数据的适配器。
+ */
 public class BlueListAdapter extends BaseAdapter {
     private static final String TAG = "BlueListAdapter";
     private Context mContext;

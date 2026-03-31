@@ -1,11 +1,14 @@
 package com.example.senior.adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.senior.calendar.Constant;
 import com.example.senior.fragment.CalendarFragment;
+/**
+ * 用于适配 Calendar Pager 数据的适配器。
+ */
 
 public class CalendarPagerAdapter extends FragmentStatePagerAdapter {
     private int mYear; //声明当前日历所处的年份

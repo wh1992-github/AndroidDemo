@@ -1,4 +1,7 @@
 package com.example.network.http.tool;
+/**
+ * 用于描述 Http Req 数据的实体类。
+ */
 
 public class HttpReqData {
     public String url;

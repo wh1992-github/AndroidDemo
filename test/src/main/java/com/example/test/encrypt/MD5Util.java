@@ -2,6 +2,9 @@ package com.example.test.encrypt;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+/**
+ * 提供 MD 5 相关工具方法的工具类。
+ */
 
 public class MD5Util {
 

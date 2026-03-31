@@ -1,6 +1,9 @@
 package com.example.media.util;
 
 import java.text.NumberFormat;
+/**
+ * 提供 Flow 相关工具方法的工具类。
+ */
 
 public class FlowUtil {
     private static final float divUnit = 1024.00f;

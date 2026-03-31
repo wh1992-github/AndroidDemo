@@ -10,6 +10,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+/**
+ * 提供 Db 相关工具方法的工具类。
+ */
 
 
 public class DbHelper extends SQLiteOpenHelper {

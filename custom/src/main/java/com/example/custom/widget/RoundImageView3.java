@@ -10,8 +10,11 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.util.AttributeSet;
+/**
+ * 封装 Round Image View 3 相关逻辑的类。
+ */
 
 public class RoundImageView3 extends AppCompatImageView {
     private static final int radius = 20;

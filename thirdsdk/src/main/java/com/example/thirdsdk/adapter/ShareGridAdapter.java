@@ -32,6 +32,9 @@ import com.tencent.tauth.UiError;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Share Grid 数据的适配器。
+ */
 
 @SuppressLint("StaticFieldLeak")
 public class ShareGridAdapter extends BaseAdapter implements OnItemClickListener {

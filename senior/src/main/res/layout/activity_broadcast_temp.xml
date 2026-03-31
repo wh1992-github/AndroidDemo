@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="10dp">
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -14,5 +14,5 @@
             android:id="@+id/pts_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-    </android.support.v4.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
 </LinearLayout>

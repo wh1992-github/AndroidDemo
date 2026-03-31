@@ -2,7 +2,7 @@ package com.example.group.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -16,6 +16,9 @@ import com.example.group.touchevent.BaseTextView;
 import com.example.group.util.LogUtil;
 
 //事件分发机制
+/**
+ * 用于展示 Touch Event 功能的 Activity。
+ */
 @SuppressLint("ClickableViewAccessibility")
 public class TouchEventActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";

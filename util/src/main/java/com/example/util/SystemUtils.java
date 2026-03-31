@@ -66,7 +66,17 @@ public class SystemUtils {
     //获取顶端activity的包名,Android新版本需要系统应用才可判断
     public static String getTopActivity(Context context) {
         ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        String activityName = am.getRunningTasks(1).get(0).topActivity.getClassName();
+        List<RunningTaskInfo> tasks = am.getRunningTasks(1);
+        if (tasks == null || tasks.isEmpty()) {
+            LogUtil.w(TAG, "getTopActivity: no running tasks");
+            return null;
+        }
+        ComponentName topActivity = tasks.get(0).topActivity;
+        if (topActivity == null) {
+            LogUtil.w(TAG, "getTopActivity: topActivity is null");
+            return null;
+        }
+        String activityName = topActivity.getClassName();
         LogUtil.i(TAG, "getTopActivity: activityName = " + activityName);
         return activityName;
     }
@@ -75,7 +85,17 @@ public class SystemUtils {
     public static boolean isTop(Context context, String destPkgName) {
         boolean isRunning = false;
         ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        String packageName = am.getRunningTasks(1).get(0).topActivity.getPackageName();
+        List<RunningTaskInfo> tasks = am.getRunningTasks(1);
+        if (tasks == null || tasks.isEmpty()) {
+            LogUtil.w(TAG, "isTop: no running tasks");
+            return false;
+        }
+        ComponentName topActivity = tasks.get(0).topActivity;
+        if (topActivity == null) {
+            LogUtil.w(TAG, "isTop: topActivity is null");
+            return false;
+        }
+        String packageName = topActivity.getPackageName();
         LogUtil.i(TAG, "isTop: packageName = " + packageName);
         if (!TextUtils.isEmpty(packageName) && packageName.equals(destPkgName)) {
             isRunning = true;
@@ -88,8 +108,15 @@ public class SystemUtils {
         boolean isRunning = false;
         ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         List<RunningTaskInfo> tasks = am.getRunningTasks(100);
+        if (tasks == null) {
+            LogUtil.w(TAG, "isRunning: tasks is null");
+            return false;
+        }
         for (RunningTaskInfo info : tasks) {
             ComponentName base = info.baseActivity;
+            if (base == null) {
+                continue;  // baseActivity可能为null，跳过
+            }
             String pkgName = base.getPackageName();
             if (!TextUtils.isEmpty(pkgName) && pkgName.equals(destPkgName)) {
                 isRunning = true;
@@ -121,6 +148,10 @@ public class SystemUtils {
     public static Intent getLauncherIntent2(Context context, String pkgName) {
         LauncherApps launcherApps = (LauncherApps) context.getSystemService(Context.LAUNCHER_APPS_SERVICE);
         List<LauncherActivityInfo> apps = launcherApps.getActivityList(pkgName, Process.myUserHandle());
+        if (apps == null || apps.isEmpty()) {
+            LogUtil.w(TAG, "getLauncherIntent2: no launcher activities found for " + pkgName);
+            return null;
+        }
         ComponentName componentName = apps.get(0).getComponentName();
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);

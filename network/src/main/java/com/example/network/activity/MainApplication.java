@@ -9,6 +9,9 @@ import com.example.network.thread.ClientThread;
 import com.example.network.util.DateUtil;
 
 import java.util.Locale;
+/**
+ * 用于维护 Main Application 全局初始化逻辑的应用类。
+ */
 
 public class MainApplication extends Application {
     private static final String TAG = "MainApplication";

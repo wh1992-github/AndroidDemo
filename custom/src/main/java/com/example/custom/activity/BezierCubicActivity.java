@@ -1,13 +1,16 @@
 package com.example.custom.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
 import com.example.custom.R;
 import com.example.custom.widget.BezierCubicView;
 
 //三阶贝塞尔曲线
+/**
+ * 用于展示 Bezier Cubic 功能的 Activity。
+ */
 public class BezierCubicActivity extends AppCompatActivity {
     private BezierCubicView cubicView;
     private RadioGroup radioGroup;

@@ -5,7 +5,7 @@ import android.animation.ObjectAnimator;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -69,6 +69,15 @@ public class ObjectGroupActivity extends AppCompatActivity implements OnClickLis
             } else { //属性动画尚未播放
                 animSet.start(); //开始播放属性动画
             }
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 取消动画
+        if (animSet != null && animSet.isRunning()) {
+            animSet.cancel();
         }
     }
 

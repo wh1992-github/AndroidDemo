@@ -10,9 +10,12 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Build.VERSION;
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
+/**
+ * 提供 Service 相关工具方法的工具类。
+ */
 
 public class ServiceHelper {
     private static final String TAG = "ServiceHelper";

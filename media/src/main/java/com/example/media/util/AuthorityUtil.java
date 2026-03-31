@@ -11,6 +11,9 @@ import android.os.Build;
 import android.provider.Settings;
 
 import java.lang.reflect.Method;
+/**
+ * 提供 Authority 相关工具方法的工具类。
+ */
 
 public class AuthorityUtil {
 

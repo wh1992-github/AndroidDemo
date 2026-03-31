@@ -10,6 +10,9 @@ import android.view.KeyEvent;
 
 import java.text.SimpleDateFormat;
 import java.util.Objects;
+/**
+ * 用于接收 Time Change 相关广播的接收器。
+ */
 
 @SuppressLint("SimpleDateFormat")
 public class TimeChangeReceiver extends BroadcastReceiver {

@@ -19,6 +19,9 @@ import com.example.custom.widget.DialogFriendRelation;
 import com.example.custom.widget.DialogFriendRelation.onSelectRelationListener;
 
 import java.util.List;
+/**
+ * 用于适配 Friend 数据的适配器。
+ */
 
 public class FriendAdapter extends BaseAdapter implements onSelectRelationListener {
     private Context mContext; //声明一个上下文对象

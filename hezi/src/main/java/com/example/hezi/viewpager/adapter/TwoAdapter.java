@@ -11,6 +11,9 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.example.hezi.databinding.VpItemBinding;
 
 import java.util.List;
+/**
+ * 用于适配 Two 数据的适配器。
+ */
 
 public class TwoAdapter extends PagerAdapter {
     private List<Integer> list;

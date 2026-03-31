@@ -14,6 +14,9 @@ import com.example.media.util.FlowUtil;
 import com.example.media.widget.FloatWindow;
 
 import java.util.Locale;
+/**
+ * 用于处理 Traffic 相关后台工作的 Service。
+ */
 
 @SuppressLint("SetTextI18n")
 public class TrafficService extends Service {

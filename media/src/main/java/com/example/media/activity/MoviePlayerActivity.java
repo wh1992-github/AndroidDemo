@@ -2,7 +2,7 @@ package com.example.media.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,6 +18,9 @@ import com.example.media.bean.MediaInfo;
 import com.example.media.loader.MovieLoader;
 
 import java.util.Map;
+/**
+ * 用于展示 Movie Player 功能的 Activity。
+ */
 
 public class MoviePlayerActivity extends AppCompatActivity implements
         OnClickListener, OnItemClickListener, FileSelectCallbacks {

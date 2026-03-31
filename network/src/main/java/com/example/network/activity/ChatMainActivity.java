@@ -20,7 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -47,6 +47,7 @@ import com.example.network.util.DateUtil;
 import com.example.network.util.Utils;
 import com.example.network.widget.TextProgressCircle;
 
+import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -54,28 +55,30 @@ import java.util.Map;
 /**
  * Created by test on 2017/11/11.
  */
-@SuppressLint({"SetTextI18n", "StaticFieldLeak", "HardwareIds", "RtlHardcoded"})
+@SuppressLint({"SetTextI18n", "HardwareIds", "RtlHardcoded"})
 public class ChatMainActivity extends AppCompatActivity implements
         OnClickListener, FileSelectCallbacks, OnUploadHttpListener {
     private static final String TAG = "ChatMainActivity";
-    private static Context mContext;
-    private static Activity mActivity;
+    private static WeakReference<ChatMainActivity> activityRef; // WeakReference for static BroadcastReceiver
+    private Context mContext;  // 改为实例变量，防止内存泄漏
+    private Activity mActivity;  // 改为实例变量，防止内存泄漏
     private TextView tv_other;
     private EditText et_input;
-    private static TextView tv_show;
-    private static ScrollView sv_chat; //声明一个滚动视图对象
-    private static LinearLayout ll_show; //声明一个聊天窗口的线性布局对象
+    private TextView tv_show;  // 改为实例变量，防止内存泄漏
+    private ScrollView sv_chat; //声明一个滚动视图对象 - 改为实例变量
+    private LinearLayout ll_show; //声明一个聊天窗口的线性布局对象 - 改为实例变量
     private String mOtherId; //对方的设备编号
-    private static int dip_margin; //每条聊天记录的四周空白距离
-    private static int TYPE_PHOTO = 0; //图片消息
-    private static int TYPE_SOUND = 1; //音频消息
-    private static Handler mHandler = new Handler(); //声明一个处理器对象
-    private static int MEDIA_WIDTH = 150;
+    private int dip_margin; //每条聊天记录的四周空白距离 - 改为实例变量
+    private static final int TYPE_PHOTO = 0; //图片消息
+    private static final int TYPE_SOUND = 1; //音频消息
+    private Handler mHandler = new Handler(); //声明一个处理器对象 - 改为实例变量
+    private static final int MEDIA_WIDTH = 150;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_main);
+        activityRef = new WeakReference<>(this); // Set WeakReference for static BroadcastReceiver
         mContext = getApplicationContext();
         mActivity = this;
         tv_other = findViewById(R.id.tv_other);
@@ -131,7 +134,7 @@ public class ChatMainActivity extends AppCompatActivity implements
     }
 
     //在聊天窗口中添加文本消息
-    private static void appendMsg(String deviceId, String append) {
+    private void appendMsg(String deviceId, String append) {
         //我方消息靠右对齐,对方消息靠左对齐
         int gravity = deviceId.equals(Build.SERIAL) ? Gravity.RIGHT : Gravity.LEFT;
         //我方消息背景色为蓝色,对方消息背景色为红色
@@ -156,7 +159,7 @@ public class ChatMainActivity extends AppCompatActivity implements
     }
 
     //获得一个消息内容的文本视图模板
-    private static TextView getTextView(String content, int gravity) {
+    private TextView getTextView(String content, int gravity) {
         TextView tv = new TextView(mContext);
         tv.setText(content);
         tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
@@ -169,7 +172,7 @@ public class ChatMainActivity extends AppCompatActivity implements
     }
 
     //定义一个聊天窗口的滚动任务
-    private static Runnable mScroll = new Runnable() {
+    private Runnable mScroll = new Runnable() {
         @Override
         public void run() {
             //让滚动视图滚动到底部
@@ -179,7 +182,7 @@ public class ChatMainActivity extends AppCompatActivity implements
 
     private String mUploadUrl = ClientThread.REQUEST_URL + "/uploadServlet"; //文件上传地址
     private String mFileName; //文件名称
-    private static String mFilePath; //文件所在目录
+    private String mFilePath; //文件所在目录
     private int mType; //文件类型。TYPE_PHOTO表示图片文件,TYPE_SOUND表示音频文件
 
     //点击文件选择对话框的确定按钮后触发
@@ -237,44 +240,57 @@ public class ChatMainActivity extends AppCompatActivity implements
 
         @Override
         public void onReceive(Context context, Intent intent) {
+            ChatMainActivity activity = activityRef != null ? activityRef.get() : null;
+            if (activity == null) {
+                Log.w(TAG, "Activity is null, ignoring broadcast");
+                return;
+            }
             if (intent != null) {
                 Log.d(TAG, "onReceive");
                 //从广播意图中解包得到收到的消息内容
                 String content = intent.getStringExtra(ClientThread.CONTENT);
-                if (mContext != null && content != null && content.length() > 0) { //接收成功
+                if (activity.mContext != null && content != null && content.length() > 0) { //接收成功
                     int pos = content.indexOf(ClientThread.SPLIT_LINE);
+                    if (pos <= 0) {
+                        Log.w(TAG, "Invalid message format: SPLIT_LINE not found or at beginning");
+                        return;
+                    }
                     String head = content.substring(0, pos);  //消息头部
                     String body = content.substring(pos + 1); //消息主体
                     String[] splitArray = head.split(ClientThread.SPLIT_ITEM);
+                    if (splitArray.length < 4) {
+                        Log.w(TAG, "Invalid message format: insufficient split parts");
+                        return;
+                    }
                     String action = splitArray[0];
                     if (action.equals(ClientThread.RECVMSG)) { //文本消息
                         //拼接文本消息的消息内容
                         String append = String.format(Locale.getDefault(), "%s %s\n%s",
                                 splitArray[2], DateUtil.formatTime(splitArray[3]), body);
                         //在聊天窗口中添加文本消息
-                        appendMsg(splitArray[1], append);
+                        activity.appendMsg(splitArray[1], append);
                     } else if (action.equals(ClientThread.RECVPHOTO) //图片消息或者音频消息
                             || action.equals(ClientThread.RECVSOUND)) {
                         //拼接多媒体消息的消息标题
                         String title = String.format(Locale.getDefault(), "%s %s", splitArray[2],
                                 DateUtil.formatTime(splitArray[3]));
                         //在聊天窗口中添加多媒体消息
-                        showMedia(action, splitArray[1], title, body);
+                        activity.showMedia(action, splitArray[1], title, body);
                     } else { //接收失败
                         String hint = String.format(Locale.getDefault(), "%s\n%s", splitArray[0], body);
-                        Toast.makeText(mContext, hint, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity.mContext, hint, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         }
     }
 
-    private static int mBeginViewId = 0x7F24FFF0;
-    private static DownloadManager mDownloadManager; //声明一个下载管理器对象
-    private static long mDownloadId = 0; //当前任务的下载编号
+    private int mBeginViewId = 0x7F24FFF0;
+    private DownloadManager mDownloadManager; //声明一个下载管理器对象
+    private long mDownloadId = 0; //当前任务的下载编号
 
     //在聊天窗口中添加多媒体消息
-    private static void showMedia(String action, String deviceId, String title, String url) {
+    private void showMedia(String action, String deviceId, String title, String url) {
         Log.d(TAG, "showMedia action=" + action + ", url=" + url);
         boolean isLocalPath = !url.contains("http://");
         //我方消息靠右对齐,对方消息靠左对齐
@@ -357,7 +373,7 @@ public class ChatMainActivity extends AppCompatActivity implements
         if (!isLocalPath) { //不是本地文件
             downloadFile(url); //开始下载多媒体文件
             //创建一个下载进度的刷新任务
-            RefreshRunnable refresh = new RefreshRunnable(new int[]{
+            RefreshRunnable refresh = new RefreshRunnable(mActivity, new int[]{
                     type, rl_content.getId(), iv_append.getId(), tpc_progress.getId(), tv_detail.getId()});
             //延迟100毫秒后启动下载进度的刷新任务
             mHandler.postDelayed(refresh, 100);
@@ -365,7 +381,7 @@ public class ChatMainActivity extends AppCompatActivity implements
     }
 
     //获取图像视图实际的布局参数
-    private static ViewGroup.LayoutParams getImageParam(String imagePath, int type) {
+    private ViewGroup.LayoutParams getImageParam(String imagePath, int type) {
         //从指定路径的图片文件获取位图对象
         Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
         //重新计算图片消息的高度
@@ -382,7 +398,7 @@ public class ChatMainActivity extends AppCompatActivity implements
     }
 
     //下载对方发来的多媒体文件（包括图片和音频）
-    private static void downloadFile(String url) {
+    private void downloadFile(String url) {
         String filename = url.substring(url.lastIndexOf("/") + 1);
         //根据多媒体的下载地址构建一个Uri对象
         Uri uri = Uri.parse(url);
@@ -401,20 +417,22 @@ public class ChatMainActivity extends AppCompatActivity implements
     }
 
     //定义一个下载进度的刷新任务
-    private static class RefreshRunnable implements Runnable {
+    private class RefreshRunnable implements Runnable {
         private String mMediaPath;  //多媒体文件的保存路径
         private int mType; //多媒体文件的文件类型
         private RelativeLayout rl_content; //存放多媒体消息的相对布局
         private ImageView iv_append; //该图像视图用于展示消息图片
         private TextProgressCircle tpc_progress; //声明一个文本进度圈对象
         private TextView tv_detail; //该文本视图用于展示消息详情。图片消息则展示图片大小,音频消息则展示播放时长
+        private Activity mActivity; //持有Activity引用
 
-        public RefreshRunnable(int[] resIds) {
+        public RefreshRunnable(Activity activity, int[] resIds) {
+            this.mActivity = activity;
             mType = resIds[0];
-            rl_content = mActivity.findViewById(resIds[1]);
-            iv_append = mActivity.findViewById(resIds[2]);
-            tpc_progress = mActivity.findViewById(resIds[3]);
-            tv_detail = mActivity.findViewById(resIds[4]);
+            rl_content = activity.findViewById(resIds[1]);
+            iv_append = activity.findViewById(resIds[2]);
+            tpc_progress = activity.findViewById(resIds[3]);
+            tv_detail = activity.findViewById(resIds[4]);
         }
 
         @Override
@@ -473,16 +491,42 @@ public class ChatMainActivity extends AppCompatActivity implements
                         player.prepare();
                         //显示音频文件的播放时长
                         tv_detail.setText((player.getDuration() / 1000) + "秒");
+                        //播放完成后释放资源，防止内存泄漏
+                        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                try {
+                                    if (mp != null) {
+                                        mp.release();
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
                         //设置音频消息的点击事件。一旦点击它就开始播放声音
                         rl_content.setOnClickListener(new OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                //媒体播放器开始播放
-                                player.start();
+                                try {
+                                    //媒体播放器开始播放
+                                    if (!player.isPlaying()) {
+                                        player.start();
+                                    }
+                                } catch (IllegalStateException e) {
+                                    // MediaPlayer可能已经被释放
+                                    e.printStackTrace();
+                                }
                             }
                         });
                     } catch (Exception e) {
                         e.printStackTrace();
+                        // 如果准备失败，释放MediaPlayer
+                        try {
+                            player.release();
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
                     }
                 }
             }
@@ -508,6 +552,20 @@ public class ChatMainActivity extends AppCompatActivity implements
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             //注销广播接收器,注销之后就不再接收广播
             unregisterReceiver(msgReceiver);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理WeakReference，防止内存泄漏
+        if (activityRef != null) {
+            activityRef.clear();
+            activityRef = null;
+        }
+        // 清理Handler，防止内存泄漏
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
         }
     }
 

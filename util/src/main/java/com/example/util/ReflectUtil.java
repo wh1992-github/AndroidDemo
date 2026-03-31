@@ -2,8 +2,8 @@ package com.example.util;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import android.util.Log;
 
 import java.lang.reflect.Constructor;
@@ -145,6 +145,9 @@ public class ReflectUtil {
         }
     }
 }
+/**
+ * 封装 Person 相关逻辑的类。
+ */
 
 class Person {
     String name;

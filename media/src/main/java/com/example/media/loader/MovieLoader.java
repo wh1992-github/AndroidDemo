@@ -45,20 +45,23 @@ public class MovieLoader {
         if (cursor == null) {
             return;
         }
-        //下面遍历结果集,并逐个添加到影视队列
-        while (cursor.moveToNext()) {
-            MediaInfo movie = new MediaInfo();
-            movie.setId(cursor.getLong(0));
-            movie.setTitle(cursor.getString(1));
-            movie.setAlbum(cursor.getString(2));
-            movie.setDuration(cursor.getInt(3));
-            movie.setSize(cursor.getLong(4));
-            movie.setArtist(cursor.getString(5));
-            movie.setUrl(cursor.getString(6));
-            Log.d(TAG, movie.getTitle() + " " + movie.getDuration() + " " + movie.getArtist());
-            movieList.add(movie);
+        try {
+            //下面遍历结果集,并逐个添加到影视队列
+            while (cursor.moveToNext()) {
+                MediaInfo movie = new MediaInfo();
+                movie.setId(cursor.getLong(0));
+                movie.setTitle(cursor.getString(1));
+                movie.setAlbum(cursor.getString(2));
+                movie.setDuration(cursor.getInt(3));
+                movie.setSize(cursor.getLong(4));
+                movie.setArtist(cursor.getString(5));
+                movie.setUrl(cursor.getString(6));
+                Log.d(TAG, movie.getTitle() + " " + movie.getDuration() + " " + movie.getArtist());
+                movieList.add(movie);
+            }
+        } finally {
+            cursor.close(); //确保关闭游标
         }
-        cursor.close(); //关闭游标
     }
 
     //获取影视队列

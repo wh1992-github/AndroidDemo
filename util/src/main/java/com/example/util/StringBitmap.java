@@ -5,6 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+/**
+ * 封装 String Bitmap 相关逻辑的类。
+ */
 
 public class StringBitmap {
 

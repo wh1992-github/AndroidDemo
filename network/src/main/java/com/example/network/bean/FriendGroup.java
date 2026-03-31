@@ -1,6 +1,9 @@
 package com.example.network.bean;
 
 import java.util.ArrayList;
+/**
+ * 封装 Friend Group 相关逻辑的类。
+ */
 
 public class FriendGroup {
     public String title;

@@ -4,6 +4,9 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
+/**
+ * 提供 Net Work 相关工具方法的工具类。
+ */
 
 public class NetWorkUtils {
     private static final String TAG = "NetWorkUtils";

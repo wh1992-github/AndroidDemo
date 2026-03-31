@@ -19,6 +19,9 @@ import com.example.storage.bean.SmsContent;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 提供 Communication 相关工具方法的工具类。
+ */
 
 public class CommunicationUtil {
     private static final String TAG = "CommunicationUtil";
@@ -157,7 +160,9 @@ public class CommunicationUtil {
         ArrayList<SmsContent> smsArray = new ArrayList<SmsContent>();
         String selection = "";
         if (phone != null && phone.length() > 0) {
-            selection = String.format(Locale.getDefault(), "address='%s'", phone);
+            // 转义单引号，防止SQL注入
+            String escapedPhone = phone.replace("'", "''");
+            selection = String.format(Locale.getDefault(), "address='%s'", escapedPhone);
         }
         if (gaps > 0) {
             selection = String.format(Locale.getDefault(), "%s%sdate>%d", selection,

@@ -2,7 +2,7 @@ package com.example.middle.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.text.TextUtils.TruncateAt;
 import android.view.View;
@@ -13,6 +13,9 @@ import android.widget.TextView;
 import com.example.middle.R;
 
 import java.util.Locale;
+/**
+ * 用于展示 Text Check 功能的 Activity。
+ */
 
 @SuppressLint({"SetTextI18n"})
 public class TextCheckActivity extends AppCompatActivity implements OnClickListener {

@@ -1,5 +1,6 @@
 package com.example.weixin.task;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -24,6 +25,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
+/**
+ * 用于执行 Get Prepay Id 任务的任务类。
+ */
 
 public class GetPrepayIdTask extends AsyncTask<String, Void, GetPrepayIdResult> {
     private static final String TAG = "GetPrepayIdTask";
@@ -63,8 +67,20 @@ public class GetPrepayIdTask extends AsyncTask<String, Void, GetPrepayIdResult> 
 
     @Override
     protected void onPostExecute(GetPrepayIdResult result) {
-        if (mDialog != null) {
-            mDialog.dismiss();
+        if (mDialog != null && mDialog.isShowing()) {
+            try {
+                mDialog.dismiss();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            mDialog = null;
+        }
+        // 检查Context是否仍然有效
+        if (mContext == null) {
+            return;
+        }
+        if (mContext instanceof Activity && ((Activity) mContext).isFinishing()) {
+            return;
         }
         if (result.localRetCode == LocalRetCode.ERR_OK) {
             Toast.makeText(mContext, "获取prepayid成功", Toast.LENGTH_LONG).show();

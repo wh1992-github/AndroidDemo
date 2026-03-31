@@ -1,11 +1,14 @@
 package com.example.test.encrypt;
 
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.util.Log;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+/**
+ * 提供 Base 64 相关工具方法的工具类。
+ */
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class Base64Util {

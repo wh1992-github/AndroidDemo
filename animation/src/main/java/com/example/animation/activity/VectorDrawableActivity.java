@@ -1,12 +1,15 @@
 package com.example.animation.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 import com.example.animation.R;
+/**
+ * 用于展示 Vector Drawable 功能的 Activity。
+ */
 
 public class VectorDrawableActivity extends AppCompatActivity implements OnClickListener {
     private ImageView iv_vector; //声明一个图像视图对象

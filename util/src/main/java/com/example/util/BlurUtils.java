@@ -7,6 +7,9 @@ import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
+/**
+ * 提供 Blur 相关工具方法的工具类。
+ */
 
 public class BlurUtils {
     /**

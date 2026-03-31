@@ -10,6 +10,9 @@ import android.widget.DatePicker;
  * Created by test on 2018/1/2.
  */
 //由日期选择器派生出月份选择器
+/**
+ * 封装 Month Picker 相关逻辑的类。
+ */
 public class MonthPicker extends DatePicker {
     public MonthPicker(Context context, AttributeSet attrs) {
         super(context, attrs);

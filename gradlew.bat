@@ -16,6 +16,14 @@ set APP_HOME=%DIRNAME%
 @rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 set DEFAULT_JVM_OPTS=
 
+@rem Keep wrapper downloads inside the project unless the caller already chose a home.
+if not defined GRADLE_USER_HOME set GRADLE_USER_HOME=%APP_HOME%\.gradle-user-home
+
+@rem Java does not reliably honor HTTP_PROXY/HTTPS_PROXY env vars, so forward them explicitly.
+set DEFAULT_JVM_OPTS=%DEFAULT_JVM_OPTS% "-Djava.net.useSystemProxies=true"
+if defined HTTPS_PROXY call :appendProxyOpts https "%HTTPS_PROXY%"
+if defined HTTP_PROXY call :appendProxyOpts http "%HTTP_PROXY%"
+
 @rem Find java.exe
 if defined JAVA_HOME goto findJavaFromJavaHome
 
@@ -82,3 +90,17 @@ exit /b 1
 if "%OS%"=="Windows_NT" endlocal
 
 :omega
+goto :eof
+
+:appendProxyOpts
+set "_PROXY_URL=%~2"
+set "_PROXY_URL=%_PROXY_URL:http://=%"
+set "_PROXY_URL=%_PROXY_URL:https://=%"
+for /f "tokens=1 delims=/" %%a in ("%_PROXY_URL%") do set "_PROXY_HOSTPORT=%%a"
+for /f "tokens=1,2 delims=:" %%a in ("%_PROXY_HOSTPORT%") do set "_PROXY_HOST=%%a"& set "_PROXY_PORT=%%b"
+if defined _PROXY_HOST if defined _PROXY_PORT set DEFAULT_JVM_OPTS=%DEFAULT_JVM_OPTS% "-D%~1.proxyHost=%_PROXY_HOST%" "-D%~1.proxyPort=%_PROXY_PORT%"
+set "_PROXY_URL="
+set "_PROXY_HOSTPORT="
+set "_PROXY_HOST="
+set "_PROXY_PORT="
+exit /b 0

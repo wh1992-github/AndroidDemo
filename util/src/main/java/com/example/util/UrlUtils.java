@@ -5,6 +5,9 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+/**
+ * 提供 Url 相关工具方法的工具类。
+ */
 
 public class UrlUtils {
     private static final String TAG = "UrlUtils";

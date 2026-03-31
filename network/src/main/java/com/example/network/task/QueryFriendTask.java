@@ -9,6 +9,9 @@ import com.example.network.http.tool.HttpRespData;
 import com.example.network.thread.ClientThread;
 
 //查询好友列表的线程
+/**
+ * 用于执行 Query Friend 任务的任务类。
+ */
 public class QueryFriendTask extends AsyncTask<Void, Void, String> {
     private static final String TAG = "QueryFriendTask";
     private String mQueryUrl = ClientThread.REQUEST_URL + "/queryFriend"; //查询好友列表的服务地址
@@ -32,7 +35,9 @@ public class QueryFriendTask extends AsyncTask<Void, Void, String> {
     //线程已经完成处理
     protected void onPostExecute(String resp) {
         //HTTP调用完毕,触发监听器的获得好友事件
-        mListener.onQueryFriend(resp);
+        if (mListener != null) {
+            mListener.onQueryFriend(resp);
+        }
     }
 
     private OnQueryFriendListener mListener; //声明一个查询好友的监听器对象

@@ -2,6 +2,9 @@ package com.example.media.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+/**
+ * 用于描述 Media 数据的实体类。
+ */
 
 public class MediaInfo implements Parcelable {
     private long id; //编号

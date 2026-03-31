@@ -11,7 +11,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,14 +24,18 @@ import com.example.network.R;
 import com.example.network.bean.PackageInfo;
 import com.example.network.util.DateUtil;
 
+import java.lang.ref.WeakReference;
+
 /**
  * Created by test on 2017/11/11.
  */
 @SuppressLint("SetTextI18n")
 public class DownloadApkActivity extends AppCompatActivity {
     private static final String TAG = "DownloadApkActivity";
-    private static Spinner sp_apk_url;
-    private static TextView tv_apk_result;
+    private static WeakReference<Spinner> sp_apk_url_ref;
+    private static WeakReference<TextView> tv_apk_result_ref;
+    private Spinner sp_apk_url;
+    private TextView tv_apk_result;
     private boolean isFirstSelect = true; //是否首次选择
     private DownloadManager mDownloadManager; //声明一个下载管理器对象
     private static long mDownloadId = 0; //下载编号
@@ -41,6 +45,7 @@ public class DownloadApkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download_apk);
         tv_apk_result = findViewById(R.id.tv_apk_result);
+        tv_apk_result_ref = new WeakReference<>(tv_apk_result);
         //从系统服务中获取下载管理器
         mDownloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
         initApkSpinner();
@@ -51,6 +56,7 @@ public class DownloadApkActivity extends AppCompatActivity {
         ArrayAdapter<String> apkUrlAdapter = new ArrayAdapter<>(this,
                 R.layout.item_select, PackageInfo.mNameArray);
         sp_apk_url = findViewById(R.id.sp_apk_url);
+        sp_apk_url_ref = new WeakReference<>(sp_apk_url);
         sp_apk_url.setPrompt("请选择要下载的安装包");
         sp_apk_url.setAdapter(apkUrlAdapter);
         sp_apk_url.setOnItemSelectedListener(new ApkUrlSelectedListener());
@@ -96,16 +102,19 @@ public class DownloadApkActivity extends AppCompatActivity {
     public static class DownloadCompleteReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE)
-                    && tv_apk_result != null) { //下载完毕
-                //从意图中解包获得下载编号
-                long downId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
-                Log.d(TAG, " download complete! id : " + downId + ", mDownloadId=" + mDownloadId);
-                tv_apk_result.setVisibility(View.VISIBLE);
-                //拼接下载任务的完成描述
-                tv_apk_result.setText(DateUtil.getNowDateTime() + " 编号"
-                        + downId + "的下载任务已完成");
-                sp_apk_url.setEnabled(true);
+            if (intent.getAction().equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE)) { //下载完毕
+                TextView tvResult = tv_apk_result_ref != null ? tv_apk_result_ref.get() : null;
+                Spinner spUrl = sp_apk_url_ref != null ? sp_apk_url_ref.get() : null;
+                if (tvResult != null && spUrl != null) {
+                    //从意图中解包获得下载编号
+                    long downId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+                    Log.d(TAG, " download complete! id : " + downId + ", mDownloadId=" + mDownloadId);
+                    tvResult.setVisibility(View.VISIBLE);
+                    //拼接下载任务的完成描述
+                    tvResult.setText(DateUtil.getNowDateTime() + " 编号"
+                            + downId + "的下载任务已完成");
+                    spUrl.setEnabled(true);
+                }
             }
         }
     }
@@ -115,16 +124,18 @@ public class DownloadApkActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             Log.d(TAG, " NotificationClickReceiver onReceive");
-            if (intent.getAction().equals(DownloadManager.ACTION_NOTIFICATION_CLICKED)
-                    && tv_apk_result != null) { //点击了通知栏
-                //从意图中解包获得被点击通知的下载编号
-                long[] downIds = intent.getLongArrayExtra(
-                        DownloadManager.EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS);
-                for (long downId : downIds) {
-                    Log.d(TAG, " notify click! id : " + downId + ", mDownloadId=" + mDownloadId);
-                    if (downId == mDownloadId) { //找到当前的下载任务
-                        tv_apk_result.setText(DateUtil.getNowDateTime() + " 编号"
-                                + downId + "的下载进度条被点击了一下");
+            if (intent.getAction().equals(DownloadManager.ACTION_NOTIFICATION_CLICKED)) { //点击了通知栏
+                TextView tvResult = tv_apk_result_ref != null ? tv_apk_result_ref.get() : null;
+                if (tvResult != null) {
+                    //从意图中解包获得被点击通知的下载编号
+                    long[] downIds = intent.getLongArrayExtra(
+                            DownloadManager.EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS);
+                    for (long downId : downIds) {
+                        Log.d(TAG, " notify click! id : " + downId + ", mDownloadId=" + mDownloadId);
+                        if (downId == mDownloadId) { //找到当前的下载任务
+                            tvResult.setText(DateUtil.getNowDateTime() + " 编号"
+                                    + downId + "的下载进度条被点击了一下");
+                        }
                     }
                 }
             }
@@ -155,6 +166,21 @@ public class DownloadApkActivity extends AppCompatActivity {
             unregisterReceiver(completeReceiver);
             unregisterReceiver(clickReceiver);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理静态引用
+        if (sp_apk_url_ref != null) {
+            sp_apk_url_ref.clear();
+            sp_apk_url_ref = null;
+        }
+        if (tv_apk_result_ref != null) {
+            tv_apk_result_ref.clear();
+            tv_apk_result_ref = null;
+        }
+        mDownloadId = 0;
     }
 
     //声明一个下载完成的广播接收器

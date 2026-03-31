@@ -12,6 +12,9 @@ import com.example.hezi.viewpager2.horizontal.HorizontalActivity;
 import com.example.hezi.viewpager2.radiogroup.RgActivity;
 import com.example.hezi.viewpager2.vertical.VerticalActivity;
 import com.example.hezi.viewpager2.withTab.TabActivity;
+/**
+ * 用于展示 View Pager 2 功能的 Activity。
+ */
 
 public class ViewPager2Activity extends AppCompatActivity implements View.OnClickListener {
 

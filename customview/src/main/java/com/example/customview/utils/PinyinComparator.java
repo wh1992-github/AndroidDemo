@@ -4,6 +4,9 @@ package com.example.customview.utils;
 import com.example.customview.bean.UserBean;
 
 import java.util.Comparator;
+/**
+ * 封装 Pinyin Comparator 相关逻辑的类。
+ */
 
 public class PinyinComparator implements Comparator<UserBean> {
 

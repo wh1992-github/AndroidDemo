@@ -9,6 +9,9 @@ import android.util.Log;
 import java.text.DecimalFormat;
 import java.util.Locale;
 import java.util.TimeZone;
+/**
+ * 提供 Time 相关工具方法的工具类。
+ */
 
 public class TimeUtils {
     private static final String TAG = "TimeUtils";

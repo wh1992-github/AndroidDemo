@@ -11,6 +11,9 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+/**
+ * 用于展示 Turn Surface 效果的自定义 View。
+ */
 
 public class TurnSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
     private Paint mPaint1, mPaint2; //声明两个画笔对象

@@ -11,6 +11,9 @@ import com.example.mixture.R;
 import com.example.mixture.bean.ClientScanResult;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Client List 数据的适配器。
+ */
 
 public class ClientListAdapter extends BaseAdapter {
     private static final String TAG = "ClientListAdapter";

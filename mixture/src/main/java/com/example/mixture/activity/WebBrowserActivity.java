@@ -6,7 +6,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -198,5 +198,29 @@ public class WebBrowserActivity extends AppCompatActivity implements OnClickList
             //此处操作文件下载
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理ProgressDialog
+        if (mDialog != null && mDialog.isShowing()) {
+            try {
+                mDialog.dismiss();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            mDialog = null;
+        }
+        // 清理WebView资源,防止内存泄漏
+        if (wv_web != null) {
+            wv_web.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
+            wv_web.clearHistory();
+            wv_web.clearCache(true);
+            wv_web.onPause();
+            wv_web.removeAllViews();
+            wv_web.destroy();
+            wv_web = null;
+        }
+    }
 
 }

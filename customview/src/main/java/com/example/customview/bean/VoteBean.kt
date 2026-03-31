@@ -1,4 +1,7 @@
 package com.example.customview.bean
+/**
+ * 用于描述 Vote 数据的实体类。
+ */
 
 class VoteBean(
     val id: Int = 0,
@@ -9,6 +12,9 @@ class VoteBean(
     val sumVoteCount: Int?,
     val options: ArrayList<VoteOption>?
 )
+/**
+ * 封装 Vote Option 相关逻辑的类。
+ */
 
 data class VoteOption(
     var id: Int?,

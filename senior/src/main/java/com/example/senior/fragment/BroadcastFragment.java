@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.LocalBroadcastManager;
+import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +19,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.senior.R;
+/**
+ * 用于承载 Broadcast 内容的 Fragment。
+ */
 
 public class BroadcastFragment extends Fragment {
     private static final String TAG = "BroadcastFragment";

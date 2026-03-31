@@ -1,4 +1,7 @@
 package com.example.senior.bean;
+/**
+ * 封装 Schedule Arrange 相关逻辑的类。
+ */
 
 public class ScheduleArrange {
     public int xuhao;

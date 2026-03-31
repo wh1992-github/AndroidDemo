@@ -1,8 +1,11 @@
 package com.example.group.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.util.Log;
+/**
+ * 用于承载 Glide 内容的 Fragment。
+ */
 
 public class GlideFragment extends Fragment {
     private static final String TAG = "GlideFragment";

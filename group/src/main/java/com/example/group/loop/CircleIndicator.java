@@ -8,7 +8,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
 import android.os.Build;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -17,6 +17,9 @@ import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 
 import com.example.group.R;
+/**
+ * 封装 Circle Indicator 相关逻辑的类。
+ */
 
 @SuppressLint("ResourceType")
 public class CircleIndicator extends LinearLayout {

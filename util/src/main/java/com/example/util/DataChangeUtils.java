@@ -7,6 +7,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+/**
+ * 提供 Data Change 相关工具方法的工具类。
+ */
 
 public class DataChangeUtils {
 

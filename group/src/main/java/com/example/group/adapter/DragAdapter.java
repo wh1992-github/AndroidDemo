@@ -1,7 +1,7 @@
 package com.example.group.adapter;
 
 import android.annotation.SuppressLint;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +12,9 @@ import com.example.group.R;
 
 import java.util.Collections;
 import java.util.List;
+/**
+ * 用于适配 Drag 数据的适配器。
+ */
 
 public class DragAdapter extends RecyclerView.Adapter<DragAdapter.DragViewHolder> {
     private static final String TAG = "DragAdapter";

@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+/**
+ * 提供 App 相关工具方法的工具类。
+ */
 
 @SuppressLint("WrongConstant")
 public class AppUtil {

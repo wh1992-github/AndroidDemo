@@ -6,6 +6,9 @@ import com.example.mixture.bean.ClientScanResult;
 import com.example.mixture.util.WifiUtil;
 
 import java.util.ArrayList;
+/**
+ * 用于执行 Get Client List 任务的任务类。
+ */
 
 public class GetClientListTask extends AsyncTask<Void, Void, ArrayList<ClientScanResult>> {
 
@@ -17,7 +20,9 @@ public class GetClientListTask extends AsyncTask<Void, Void, ArrayList<ClientSca
 
     //线程已经完成处理
     protected void onPostExecute(ArrayList<ClientScanResult> clientList) {
-        mListener.onGetClient(clientList);
+        if (mListener != null) {
+            mListener.onGetClient(clientList);
+        }
     }
 
     private GetClientListener mListener; //声明一个获得客户端的监听器对象

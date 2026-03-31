@@ -9,6 +9,9 @@ import com.example.mixture.bean.MacDevice;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 封装 Mac Device DB 相关逻辑的类。
+ */
 
 public class MacDeviceDB {
     private static final String TAG = "MacDeviceDB";

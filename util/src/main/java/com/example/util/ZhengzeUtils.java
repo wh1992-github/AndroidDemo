@@ -2,6 +2,9 @@ package com.example.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+/**
+ * 提供 Zhengze 相关工具方法的工具类。
+ */
 
 public class ZhengzeUtils {
     private static final String TAG = "ZhengzeUtils";

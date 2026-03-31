@@ -1,7 +1,7 @@
 package com.example.animation.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import com.example.animation.R;
 
 //仿微信摇一摇动画效果
+/**
+ * 用于展示 Weixin Anim 功能的 Activity。
+ */
 public class WeixinAnimActivity extends AppCompatActivity {
     private ImageView mIvUp;
     private ImageView mIvDown;

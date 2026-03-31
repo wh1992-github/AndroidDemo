@@ -8,6 +8,9 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.hezi.R;
 import com.google.android.material.tabs.TabLayout;
+/**
+ * 用于展示 Tab 功能的 Activity。
+ */
 
 public class TabActivity extends AppCompatActivity {
 

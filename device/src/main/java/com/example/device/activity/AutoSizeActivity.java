@@ -6,8 +6,8 @@ import android.content.res.Resources;
 import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -18,6 +18,9 @@ import com.example.device.databinding.ActivityAutoSizeBinding;
 import com.example.device.util.AdapterUtil;
 
 import me.jessyan.autosize.utils.AutoSizeUtils;
+/**
+ * 用于展示 Auto Size 功能的 Activity。
+ */
 
 @SuppressLint({"NonConstantResourceId", "SdCardPath"})
 @RequiresApi(api = Build.VERSION_CODES.R)

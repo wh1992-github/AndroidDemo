@@ -1,34 +1,30 @@
 package com.example.customview.activity
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import com.example.customview.R
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.customview.adapter.ItemAnimAdapter
 import com.example.customview.anim.RotateXItemAnimation
 import com.example.customview.anim.RotateYItemAnimation
 import com.example.customview.anim.ScaleItemAnimation
 import com.example.customview.anim.SlideItemAnimation
-import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.add_btn
-import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.normal_btn
-import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.recycler_view
-import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.remove_btn
-import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.reverse_btn
-import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.rotate_x_btn
-import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.rotate_y_btn
-import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.scale_btn
-import kotlinx.android.synthetic.main.activity_recycler_view_item_anim.slide_btn
+import com.example.customview.databinding.ActivityRecyclerViewItemAnimBinding
 import kotlin.random.Random
+/**
+ * 用于展示 Recycler View Item Anim 功能的 Activity。
+ */
 
 class RecyclerViewItemAnimActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRecyclerViewItemAnimBinding
 
     var adapter: ItemAnimAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recycler_view_item_anim)
+        binding = ActivityRecyclerViewItemAnimBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initListener()
         initView()
         initData()
@@ -36,28 +32,28 @@ class RecyclerViewItemAnimActivity : AppCompatActivity() {
 
     private fun initView() {
         adapter = ItemAnimAdapter(arrayListOf())
-        recycler_view.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        recycler_view.adapter = adapter
-        recycler_view.itemAnimator = DefaultItemAnimator()
+        binding.recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.itemAnimator = DefaultItemAnimator()
     }
 
     private fun initListener() {
-        normal_btn.setOnClickListener { setReverseLayout(false) }
-        reverse_btn.setOnClickListener { setReverseLayout(true) }
-        scale_btn.setOnClickListener { setItemAnimation(ScaleItemAnimation()) }
-        slide_btn.setOnClickListener { setItemAnimation(SlideItemAnimation()) }
-        rotate_x_btn.setOnClickListener { setItemAnimation(RotateXItemAnimation()) }
-        rotate_y_btn.setOnClickListener { setItemAnimation(RotateYItemAnimation()) }
+        binding.normalBtn.setOnClickListener { setReverseLayout(false) }
+        binding.reverseBtn.setOnClickListener { setReverseLayout(true) }
+        binding.scaleBtn.setOnClickListener { setItemAnimation(ScaleItemAnimation()) }
+        binding.slideBtn.setOnClickListener { setItemAnimation(SlideItemAnimation()) }
+        binding.rotateXBtn.setOnClickListener { setItemAnimation(RotateXItemAnimation()) }
+        binding.rotateYBtn.setOnClickListener { setItemAnimation(RotateYItemAnimation()) }
 
-        add_btn.setOnClickListener {
+        binding.addBtn.setOnClickListener {
             adapter?.addData(0, getItemData())
-            (recycler_view.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(0, 0)
+            (binding.recyclerView.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(0, 0)
         }
 
-        remove_btn.setOnClickListener {
+        binding.removeBtn.setOnClickListener {
             if (adapter?.data?.size ?: 0 > 0) {
                 adapter?.remove(0)
-                (recycler_view.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(
+                (binding.recyclerView.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(
                     0,
                     0
                 )
@@ -66,7 +62,7 @@ class RecyclerViewItemAnimActivity : AppCompatActivity() {
     }
 
     private fun setReverseLayout(reverseLayout: Boolean) {
-        recycler_view.layoutManager =
+        binding.recyclerView.layoutManager =
             LinearLayoutManager(this, RecyclerView.VERTICAL, reverseLayout)
         adapter?.data?.clear()
         adapter?.notifyDataSetChanged()
@@ -75,7 +71,7 @@ class RecyclerViewItemAnimActivity : AppCompatActivity() {
     private fun setItemAnimation(itemAnimation: RecyclerView.ItemAnimator) {
         adapter?.data?.clear()
         adapter?.notifyDataSetChanged()
-        recycler_view.itemAnimator = itemAnimation
+        binding.recyclerView.itemAnimator = itemAnimation
     }
 
     private fun initData(): ArrayList<String> {

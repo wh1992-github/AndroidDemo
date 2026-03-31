@@ -9,6 +9,9 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 
 import com.example.performance.R;
+/**
+ * 用于展示 Custom 内容的对话框类。
+ */
 
 public class CustomDialog implements OnClickListener {
     private Dialog dialog; //声明一个对话框对象

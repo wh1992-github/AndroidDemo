@@ -3,7 +3,7 @@ package com.example.senior.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.senior.R;
+/**
+ * 用于承载 Dynamic 内容的 Fragment。
+ */
 
 public class DynamicFragment extends Fragment {
     private static final String TAG = "DynamicFragment";

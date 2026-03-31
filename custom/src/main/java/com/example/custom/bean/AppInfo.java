@@ -1,6 +1,9 @@
 package com.example.custom.bean;
 
 import android.graphics.drawable.Drawable;
+/**
+ * 用于描述 App 数据的实体类。
+ */
 
 public class AppInfo {
     public int uid;

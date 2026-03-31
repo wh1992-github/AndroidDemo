@@ -3,12 +3,12 @@ package com.example.group.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +20,9 @@ import com.example.group.bean.GoodsInfo;
 import com.example.group.widget.SpacesItemDecoration;
 
 import java.util.ArrayList;
+/**
+ * 用于承载 Clothes 内容的 Fragment。
+ */
 
 public class ClothesFragment extends Fragment implements OnRefreshListener {
     private static final String TAG = "ClothesFragment";

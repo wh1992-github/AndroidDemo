@@ -1,4 +1,7 @@
 package com.example.thirdsdk.bean;
+/**
+ * 封装 Share Chanels 相关逻辑的类。
+ */
 
 public class ShareChanels {
     public String channelName;

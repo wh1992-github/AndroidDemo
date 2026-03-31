@@ -10,6 +10,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.example.animation.R;
+/**
+ * 用于展示 Gif 效果的自定义 View。
+ */
 
 public class GifView extends View {
     //默认为2秒

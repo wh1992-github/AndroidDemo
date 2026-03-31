@@ -1,11 +1,11 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import android.util.Log;
 
 import com.example.group.R;
@@ -13,6 +13,9 @@ import com.example.group.adapter.DragAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于展示 Recycler Drag 功能的 Activity。
+ */
 
 public class RecyclerDragActivity extends AppCompatActivity {
     private static final String TAG = "RecyclerDragActivity";

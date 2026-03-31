@@ -1,6 +1,9 @@
 package com.example.media.widget;
 
 import android.view.View;
+/**
+ * 封装 Recycler Extras 相关逻辑的类。
+ */
 
 public class RecyclerExtras {
 

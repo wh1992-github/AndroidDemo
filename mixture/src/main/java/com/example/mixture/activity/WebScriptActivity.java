@@ -6,7 +6,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.JavascriptInterface;
@@ -17,6 +17,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.mixture.R;
+/**
+ * 用于展示 Web Script 功能的 Activity。
+ */
 
 public class WebScriptActivity extends AppCompatActivity implements OnClickListener {
     private static final String TAG = "WebScriptActivity";
@@ -160,5 +163,21 @@ public class WebScriptActivity extends AppCompatActivity implements OnClickListe
         }
 
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理WebView资源,防止内存泄漏
+        if (wv_js != null) {
+            wv_js.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
+            wv_js.clearHistory();
+            wv_js.clearCache(true);
+            wv_js.removeJavascriptInterface("client");
+            wv_js.onPause();
+            wv_js.removeAllViews();
+            wv_js.destroy();
+            wv_js = null;
+        }
+    }
 
 }

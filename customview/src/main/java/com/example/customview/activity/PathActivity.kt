@@ -1,18 +1,21 @@
 package com.example.customview.activity
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import com.example.customview.R
-import kotlinx.android.synthetic.main.activity_path.car_anim_view
-import kotlinx.android.synthetic.main.activity_path.start_btn
+import androidx.appcompat.app.AppCompatActivity
+import com.example.customview.databinding.ActivityPathBinding
+/**
+ * 用于展示 Path 功能的 Activity。
+ */
 
 class PathActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPathBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_path)
-        start_btn.setOnClickListener {
-            car_anim_view.startAnim()
+        binding = ActivityPathBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.startBtn.setOnClickListener {
+            binding.carAnimView.startAnim()
         }
     }
 }

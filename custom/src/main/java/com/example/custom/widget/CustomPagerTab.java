@@ -4,13 +4,16 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.support.v4.view.PagerTabStrip;
+import androidx.viewpager.widget.PagerTabStrip;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 
 import com.example.custom.R;
 import com.example.custom.util.Utils;
+/**
+ * 封装 Custom Pager Tab 相关逻辑的类。
+ */
 
 public class CustomPagerTab extends PagerTabStrip {
     private static final String TAG = "CustomPagerTab";

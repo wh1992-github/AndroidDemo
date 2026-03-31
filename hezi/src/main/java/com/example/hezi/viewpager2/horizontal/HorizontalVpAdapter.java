@@ -17,6 +17,9 @@ import com.example.hezi.R;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于适配 Horizontal Vp 数据的适配器。
+ */
 
 public class HorizontalVpAdapter extends RecyclerView.Adapter<HorizontalVpAdapter.HorizontalVpViewHolder> {
     private static final String TAG = "HorizontalActivity";

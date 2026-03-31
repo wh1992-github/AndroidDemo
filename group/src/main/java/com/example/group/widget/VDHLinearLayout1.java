@@ -1,7 +1,7 @@
 package com.example.group.widget;
 
 import android.content.Context;
-import android.support.v4.widget.ViewDragHelper;
+import androidx.customview.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -10,6 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.example.group.R;
+/**
+ * 封装 VDH Linear Layout 1 相关逻辑的类。
+ */
 
 public class VDHLinearLayout1 extends LinearLayout {
     private static final int MIN_TOP = 100; //距离顶部最小的距离

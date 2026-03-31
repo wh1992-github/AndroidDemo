@@ -2,12 +2,15 @@ package com.example.group.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.group.R;
+/**
+ * 用于承载 Book Cover 内容的 Fragment。
+ */
 
 public class BookCoverFragment extends Fragment {
     protected View mView; //声明一个视图对象

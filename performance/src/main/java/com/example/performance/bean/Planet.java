@@ -3,6 +3,9 @@ package com.example.performance.bean;
 import com.example.performance.R;
 
 import java.util.ArrayList;
+/**
+ * 封装 Planet 相关逻辑的类。
+ */
 
 public class Planet {
     public int image;

@@ -22,6 +22,9 @@ import com.example.network.bean.MailItem;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 用于适配 Mail Expand 数据的适配器。
+ */
 
 public class MailExpandAdapter implements ExpandableListAdapter, OnGroupClickListener, OnChildClickListener {
     private static final String TAG = "MailExpandAdapter";

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/tl_head"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="3dp" />
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_grid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:descendantFocusability="blocksDescendants">
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_combine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

@@ -11,6 +11,9 @@ import com.example.thirdsdk.VoiceSettingsActivity;
 import com.example.thirdsdk.widget.SettingTextWatcher;
 
 //语音合成设置界面
+/**
+ * 用于承载 Compose Settings 内容的 Fragment。
+ */
 public class ComposeSettingsFragment extends PreferenceFragment implements OnPreferenceChangeListener {
     private EditTextPreference mSpeedPreference;
     private EditTextPreference mPitchPreference;

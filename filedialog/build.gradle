@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.aqi00.lib'
     compileSdkVersion 34
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
         minSdkVersion 23
@@ -18,5 +18,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+    lint {
+        abortOnError false
     }
 }

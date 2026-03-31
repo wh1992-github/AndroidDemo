@@ -1,7 +1,7 @@
 package com.example.group.arouter.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
@@ -9,6 +9,9 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.group.R;
 import com.example.group.arouter.data.ARouterConstants;
+/**
+ * 用于展示 Test 功能的 Activity。
+ */
 
 @Route(path = ARouterConstants.TEST_ACTIVITY)
 public class TestActivity extends AppCompatActivity {

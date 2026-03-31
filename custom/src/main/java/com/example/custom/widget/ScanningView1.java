@@ -16,10 +16,14 @@ import com.example.custom.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
+/**
+ * 封装 Scanning View 1 相关逻辑的类。
+ */
 
 public class ScanningView1 extends FrameLayout {
 
     private final Handler mHandler = new Handler(Looper.getMainLooper());
+    private Timer mTimer; // 保存Timer引用以便后续取消
 
     public ScanningView1(Context context) {
         this(context, null);
@@ -34,12 +38,24 @@ public class ScanningView1 extends FrameLayout {
     }
 
     public void startAnim() {
-        new Timer().schedule(new TimerTask() {
+        // 取消之前的Timer
+        if (mTimer != null) {
+            mTimer.cancel();
+        }
+        mTimer = new Timer();
+        mTimer.schedule(new TimerTask() {
             @Override
             public void run() {
                 mHandler.post(() -> addMoveCircle());
             }
         }, 0, 1000);
+    }
+
+    public void stopAnim() {
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer = null;
+        }
     }
 
     private void addMoveCircle() {
@@ -77,5 +93,19 @@ public class ScanningView1 extends FrameLayout {
         });
         animatorSet.setInterpolator(new AccelerateDecelerateInterpolator());
         animatorSet.start();
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        // 清理Timer,防止内存泄漏
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer = null;
+        }
+        // 清理Handler
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+        }
     }
 }

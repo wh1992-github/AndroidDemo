@@ -2,6 +2,9 @@ package com.example.group.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+/**
+ * 封装 Person 相关逻辑的类。
+ */
 
 public class Person implements Parcelable {
 

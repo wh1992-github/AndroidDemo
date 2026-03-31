@@ -6,7 +6,7 @@ import android.annotation.TargetApi;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -92,6 +92,24 @@ public class ObjectAnimActivity extends AppCompatActivity {
         if (anim != null) {
             anim.setDuration(3000); //设置动画的播放时长
             anim.start(); //开始播放属性动画
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 取消所有动画
+        if (alphaAnim != null && alphaAnim.isRunning()) {
+            alphaAnim.cancel();
+        }
+        if (translateAnim != null && translateAnim.isRunning()) {
+            translateAnim.cancel();
+        }
+        if (scaleAnim != null && scaleAnim.isRunning()) {
+            scaleAnim.cancel();
+        }
+        if (rotateAnim != null && rotateAnim.isRunning()) {
+            rotateAnim.cancel();
         }
     }
 

@@ -3,6 +3,9 @@ package org.vudroid.core.utils;
 import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
+/**
+ * 封装 Path From Uri 相关逻辑的类。
+ */
 
 public class PathFromUri {
     public static String retrieve(ContentResolver resolver, Uri uri) {

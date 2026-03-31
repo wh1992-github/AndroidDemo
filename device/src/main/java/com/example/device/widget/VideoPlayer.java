@@ -19,6 +19,9 @@ import com.example.device.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
+/**
+ * 封装 Video Player 相关逻辑的类。
+ */
 
 public class VideoPlayer extends LinearLayout implements
         OnCompletionListener, OnCheckedChangeListener {
@@ -82,7 +85,20 @@ public class VideoPlayer extends LinearLayout implements
             mTimer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    pb_play.setProgress(mMediaPlayer.getCurrentPosition());
+                    // 使用post()将UI更新操作发送到UI线程执行
+                    post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (mMediaPlayer != null) {
+                                try {
+                                    pb_play.setProgress(mMediaPlayer.getCurrentPosition());
+                                } catch (IllegalStateException e) {
+                                    // MediaPlayer可能处于无效状态
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    });
                 }
             }, 0, 1000);
         } catch (Exception e) {
@@ -108,13 +124,47 @@ public class VideoPlayer extends LinearLayout implements
                 if (isFinished) {
                     play(); //重新播放
                 } else {
-                    mMediaPlayer.start(); //媒体播放器恢复播放
+                    if (mMediaPlayer != null) {
+                        try {
+                            mMediaPlayer.start(); //媒体播放器恢复播放
+                        } catch (IllegalStateException e) {
+                            Log.e(TAG, "MediaPlayer is in invalid state for start()", e);
+                        }
+                    }
                 }
                 isFinished = false;
             } else { //暂停播放
                 ck_play.setText("开始播放");
-                mMediaPlayer.pause(); //媒体播放器暂停播放
+                if (mMediaPlayer != null) {
+                    try {
+                        mMediaPlayer.pause(); //媒体播放器暂停播放
+                    } catch (IllegalStateException e) {
+                        Log.e(TAG, "MediaPlayer is in invalid state for pause()", e);
+                    }
+                }
             }
+        }
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        // 清理Timer,防止内存泄漏
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer = null;
+        }
+        // 释放MediaPlayer资源
+        if (mMediaPlayer != null) {
+            try {
+                if (mMediaPlayer.isPlaying()) {
+                    mMediaPlayer.stop();
+                }
+                mMediaPlayer.release();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            mMediaPlayer = null;
         }
     }
 

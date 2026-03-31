@@ -12,6 +12,9 @@ import com.facebook.rebound.SimpleSpringListener;
 import com.facebook.rebound.Spring;
 import com.facebook.rebound.SpringConfig;
 import com.facebook.rebound.SpringSystem;
+/**
+ * 封装 Tasty Toast 相关逻辑的类。
+ */
 
 public class TastyToast {
     private static final String TAG = "TastyToast";

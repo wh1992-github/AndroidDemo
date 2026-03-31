@@ -7,14 +7,17 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
+/**
+ * 用于处理 Window 相关后台工作的 Service。
+ */
 
 @SuppressLint("LongLogTag")
 @RequiresApi(api = Build.VERSION_CODES.O)

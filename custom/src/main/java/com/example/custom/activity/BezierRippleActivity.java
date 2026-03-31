@@ -1,12 +1,15 @@
 package com.example.custom.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.custom.R;
 import com.example.custom.widget.BezierRippleView;
 
 //水波纹贝塞尔曲线
+/**
+ * 用于展示 Bezier Ripple 功能的 Activity。
+ */
 public class BezierRippleActivity extends AppCompatActivity {
     private BezierRippleView waveRippleView;
 

@@ -12,6 +12,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+/**
+ * 封装 Loading View 1 相关逻辑的类。
+ */
 
 @SuppressLint("DrawAllocation")
 public class LoadingView1 extends View {

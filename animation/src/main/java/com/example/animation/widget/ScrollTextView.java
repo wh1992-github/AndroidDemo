@@ -7,6 +7,9 @@ import android.widget.Scroller;
 import android.widget.TextView;
 
 //平滑滚动的文本视图
+/**
+ * 用于展示 Scroll Text 效果的自定义 View。
+ */
 @SuppressLint("AppCompatCustomView")
 public class ScrollTextView extends TextView {
     private final Scroller mScroller; //声明一个滚动器对象

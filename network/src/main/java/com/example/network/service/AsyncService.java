@@ -3,6 +3,9 @@ package com.example.network.service;
 import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
+/**
+ * 用于处理 Async 相关后台工作的 Service。
+ */
 
 public class AsyncService extends IntentService {
     private static final String TAG = "AsyncService";

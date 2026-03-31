@@ -14,6 +14,9 @@ import androidx.annotation.Nullable;
 import com.example.hezi.viewpager.EventBean;
 import com.example.hezi.viewpager.LogUtil;
 import com.example.hezi.viewpager.RxBus;
+/**
+ * 封装 Fragment Seven 相关逻辑的类。
+ */
 
 public class FragmentSeven extends BaseFragment {
     private static final String TAG = "FragmentSeven";

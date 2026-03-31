@@ -17,6 +17,9 @@ import android.view.MotionEvent
 import android.view.View
 import com.example.customview.R
 import kotlin.math.atan2
+/**
+ * 用于展示 Car Move 效果的自定义 View。
+ */
 
 class CarMoveView @JvmOverloads constructor(
     context: Context,

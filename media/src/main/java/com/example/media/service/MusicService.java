@@ -19,6 +19,9 @@ import com.example.media.activity.MusicDetailActivity;
 import com.example.media.R;
 import com.example.media.bean.MediaInfo;
 import com.example.media.util.DateUtil;
+/**
+ * 用于处理 Music 相关后台工作的 Service。
+ */
 
 public class MusicService extends Service {
     private static final String TAG = "MusicService";

@@ -13,6 +13,9 @@ import com.example.customview.R;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于组织 Flow 界面内容的布局类。
+ */
 
 public class FlowLayout extends RelativeLayout {
     private static final String TAG = "FlowLayout";

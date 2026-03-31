@@ -11,6 +11,9 @@ import android.util.AttributeSet;
 import android.widget.SeekBar;
 
 import java.util.Locale;
+/**
+ * 封装 Number Seek Bar 相关逻辑的类。
+ */
 
 @SuppressLint("AppCompatCustomView")
 public class NumberSeekBar extends SeekBar {

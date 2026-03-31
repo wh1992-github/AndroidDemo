@@ -5,6 +5,9 @@ import android.util.Log;
 import java.text.DecimalFormat;
 
 //工资个税计算方法
+/**
+ * 封装 Gong Zi 相关逻辑的类。
+ */
 public class GongZi {
     private static final String TAG = "GongZi";
     //每个月的基本工资

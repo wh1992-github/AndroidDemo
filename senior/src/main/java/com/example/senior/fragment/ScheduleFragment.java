@@ -5,9 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.LocalBroadcastManager;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +28,9 @@ import com.example.senior.util.DateUtil;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 用于承载 Schedule 内容的 Fragment。
+ */
 
 public class ScheduleFragment extends Fragment {
     private static final String TAG = "ScheduleFragment";
@@ -53,6 +56,10 @@ public class ScheduleFragment extends Fragment {
     //创建碎片视图
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContext = getActivity(); //获取活动页面的上下文
+        // 检查Fragment是否已附加到Activity
+        if (mContext == null) {
+            return null;
+        }
         if (getArguments() != null) { //如果碎片携带有包裹,则打开包裹获取参数信息
             mSelectedWeek = getArguments().getInt("week", 1);
         }
@@ -137,6 +144,10 @@ public class ScheduleFragment extends Fragment {
                 new IntentFilter(ScheduleActivity.ACTION_FRAGMENT_SELECTED));
         //获得数据库帮助器的实例
         mArrangeHelper = new ScheduleArrangeHelper(mContext, DbHelper.db_name, null, 1);
+        // 检查tranArray是否为空，防止数组越界
+        if (tranArray == null || tranArray.isEmpty()) {
+            return;
+        }
         CalendarTransfer begin_trans = tranArray.get(0);
         String begin_day = String.format(Locale.getDefault(), "%s%02d%02d", begin_trans.solar_year, begin_trans.solar_month, begin_trans.solar_day);
         CalendarTransfer end_trans = tranArray.get(tranArray.size() - 1);

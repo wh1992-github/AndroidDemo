@@ -6,10 +6,10 @@ import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.util.Log;
@@ -28,6 +28,9 @@ import com.example.customview.utils.ShaderSpan;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于展示 Text Switcher 功能的 Activity。
+ */
 
 public class TextSwitcherActivity extends AppCompatActivity {
     private static final String TAG = "TextSwitcherActivity";
@@ -82,13 +85,17 @@ public class TextSwitcherActivity extends AppCompatActivity {
             //设置渐变色
             int[] colors = new int[]{Color.RED, Color.BLUE, Color.RED, Color.BLUE, Color.RED};
             float[] positions = new float[]{0.1f, 0.3f, 0.5f, 0.7f, 0.9f};
-            TextView textView = (TextView) mTextSwitcher.getCurrentView();
-            Paint.FontMetrics fm = textView.getPaint().getFontMetrics();
-            float width = textView.getPaint().measureText(mList.get(mCount));
-            LinearGradient linearGradient = new LinearGradient((textView.getMeasuredWidth() - width) / 2, 0, (textView.getMeasuredWidth() - width) / 2 + width, 0, colors, positions, Shader.TileMode.CLAMP);
-            SpannableString spannableString = new SpannableString(mList.get(mCount));
-            spannableString.setSpan(new ShaderSpan(linearGradient), 0, textView.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            textView.setText(spannableString);
+            View currentView = mTextSwitcher.getCurrentView();
+            // 检查View类型，防止ClassCastException
+            if (currentView instanceof TextView) {
+                TextView textView = (TextView) currentView;
+                Paint.FontMetrics fm = textView.getPaint().getFontMetrics();
+                float width = textView.getPaint().measureText(mList.get(mCount));
+                LinearGradient linearGradient = new LinearGradient((textView.getMeasuredWidth() - width) / 2, 0, (textView.getMeasuredWidth() - width) / 2 + width, 0, colors, positions, Shader.TileMode.CLAMP);
+                SpannableString spannableString = new SpannableString(mList.get(mCount));
+                spannableString.setSpan(new ShaderSpan(linearGradient), 0, textView.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                textView.setText(spannableString);
+            }
         });
 
         binding.button2.setOnClickListener(v -> {
@@ -101,13 +108,17 @@ public class TextSwitcherActivity extends AppCompatActivity {
             //设置渐变色
             int[] colors = new int[]{Color.RED, Color.BLUE, Color.RED, Color.BLUE, Color.RED};
             float[] positions = new float[]{0.1f, 0.3f, 0.5f, 0.7f, 0.9f};
-            TextView textView = (TextView) mTextSwitcher.getCurrentView();
-            Paint.FontMetrics fm = textView.getPaint().getFontMetrics();
-            float width = textView.getPaint().measureText(mList.get(mCount));
-            LinearGradient linearGradient = new LinearGradient((textView.getMeasuredWidth() - width) / 2, 0, (textView.getMeasuredWidth() - width) / 2 + width, 0, colors, positions, Shader.TileMode.CLAMP);
-            SpannableString spannableString = new SpannableString(mList.get(mCount));
-            spannableString.setSpan(new ShaderSpan(linearGradient), 0, textView.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            textView.setText(spannableString);
+            View currentView = mTextSwitcher.getCurrentView();
+            // 检查View类型，防止ClassCastException
+            if (currentView instanceof TextView) {
+                TextView textView = (TextView) currentView;
+                Paint.FontMetrics fm = textView.getPaint().getFontMetrics();
+                float width = textView.getPaint().measureText(mList.get(mCount));
+                LinearGradient linearGradient = new LinearGradient((textView.getMeasuredWidth() - width) / 2, 0, (textView.getMeasuredWidth() - width) / 2 + width, 0, colors, positions, Shader.TileMode.CLAMP);
+                SpannableString spannableString = new SpannableString(mList.get(mCount));
+                spannableString.setSpan(new ShaderSpan(linearGradient), 0, textView.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                textView.setText(spannableString);
+            }
         });
 
         binding.button3.setOnClickListener(v -> {

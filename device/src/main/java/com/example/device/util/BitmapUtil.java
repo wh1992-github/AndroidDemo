@@ -15,6 +15,9 @@ import java.nio.ByteBuffer;
 import java.util.Locale;
 
 //import android.support.media.ExifInterface;
+/**
+ * 提供 Bitmap 相关工具方法的工具类。
+ */
 
 public class BitmapUtil {
 

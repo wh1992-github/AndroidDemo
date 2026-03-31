@@ -10,6 +10,9 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
+/**
+ * 提供 MD 5 相关工具方法的工具类。
+ */
 
 public class MD5Util {
     private static final String TAG = "MD5Utils";

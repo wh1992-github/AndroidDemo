@@ -1,7 +1,7 @@
 package com.example.event.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -12,6 +12,9 @@ import com.example.event.widget.NotDispatchLayout;
 import com.example.event.widget.NotDispatchLayout.NotDispatchListener;
 
 import java.util.Locale;
+/**
+ * 用于展示 Event Dispatch 功能的 Activity。
+ */
 
 public class EventDispatchActivity extends AppCompatActivity implements
         OnClickListener, NotDispatchListener {

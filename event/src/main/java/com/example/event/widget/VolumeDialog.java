@@ -12,6 +12,9 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.example.event.R;
+/**
+ * 用于展示 Volume 内容的对话框类。
+ */
 
 public class VolumeDialog implements OnSeekBarChangeListener {
     private Dialog dialog; //声明一个对话框对象

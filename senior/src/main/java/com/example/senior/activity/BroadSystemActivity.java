@@ -6,21 +6,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.senior.R;
 import com.example.senior.util.DateUtil;
 
+import java.lang.ref.WeakReference;
 import java.util.Locale;
 import java.util.Set;
 
 /**
  * Created by test on 2017/10/7.
  */
-@SuppressLint("StaticFieldLeak")
 public class BroadSystemActivity extends AppCompatActivity {
-    private static TextView tv_system;
+    private static WeakReference<TextView> tv_system_ref;
+    private TextView tv_system;
     private static String desc = "开始侦听分钟广播,请稍等。注意要保持屏幕亮着,才能正常收到广播";
 
     @Override
@@ -28,6 +29,7 @@ public class BroadSystemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_broadcast_system);
         tv_system = findViewById(R.id.tv_system);
+        tv_system_ref = new WeakReference<>(tv_system);
         tv_system.setText(desc);
     }
 
@@ -49,6 +51,17 @@ public class BroadSystemActivity extends AppCompatActivity {
         unregisterReceiver(timeReceiver);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 清理静态引用
+        if (tv_system_ref != null) {
+            tv_system_ref.clear();
+            tv_system_ref = null;
+        }
+        desc = "开始侦听分钟广播,请稍等。注意要保持屏幕亮着,才能正常收到广播";
+    }
+
     //声明一个分钟广播的接收器
     private TimeReceiver timeReceiver;
 
@@ -58,15 +71,18 @@ public class BroadSystemActivity extends AppCompatActivity {
         //一旦接收到分钟变更的广播,马上触发接收器的onReceive方法
         public void onReceive(Context context, Intent intent) {
             if (intent != null) {
-                Bundle bundle = intent.getExtras(); //获取广播携带的包裹
-                Set<String> key_set = bundle.keySet();
-                String content = "";
-                for (String key : key_set) {
-                    content = String.format(Locale.getDefault(), "%s\n%s=%s", content, key, bundle.get(key));
+                TextView tv = tv_system_ref != null ? tv_system_ref.get() : null;
+                if (tv != null) {
+                    Bundle bundle = intent.getExtras(); //获取广播携带的包裹
+                    Set<String> key_set = bundle.keySet();
+                    String content = "";
+                    for (String key : key_set) {
+                        content = String.format(Locale.getDefault(), "%s\n%s=%s", content, key, bundle.get(key));
+                    }
+                    desc = String.format(Locale.getDefault(), "%s\n%s 收到一个%s广播, 内容是%s", desc,
+                            DateUtil.getNowTime(), intent.getAction(), content);
+                    tv.setText(desc);
                 }
-                desc = String.format(Locale.getDefault(), "%s\n%s 收到一个%s广播, 内容是%s", desc,
-                        DateUtil.getNowTime(), intent.getAction(), content);
-                tv_system.setText(desc);
             }
         }
     }

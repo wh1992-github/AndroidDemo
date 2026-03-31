@@ -4,6 +4,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
+/**
+ * 用于组织 Not Dispatch 界面内容的布局类。
+ */
 
 public class NotDispatchLayout extends LinearLayout {
 

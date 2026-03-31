@@ -28,6 +28,9 @@ import com.example.media.widget.FloatWindow;
 import com.example.media.widget.FloatWindow.FloatClickListener;
 
 import java.nio.ByteBuffer;
+/**
+ * 用于处理 Record 相关后台工作的 Service。
+ */
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class RecordService extends Service implements FloatClickListener {

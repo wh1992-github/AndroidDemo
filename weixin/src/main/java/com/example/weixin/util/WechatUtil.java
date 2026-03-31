@@ -44,6 +44,9 @@ import java.util.List;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+/**
+ * 提供 Wechat 相关工具方法的工具类。
+ */
 
 public class WechatUtil {
 

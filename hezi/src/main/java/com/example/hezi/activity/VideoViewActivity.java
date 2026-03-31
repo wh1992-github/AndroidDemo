@@ -18,6 +18,9 @@ import com.example.hezi.drawable.RoundRectDrawable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
+/**
+ * 用于展示 Video View 功能的 Activity。
+ */
 
 public class VideoViewActivity extends AppCompatActivity {
     private static final String TAG = "VideoViewActivity";

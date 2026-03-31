@@ -8,8 +8,8 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
@@ -59,11 +59,13 @@ public class PdfTurnActivity extends AppCompatActivity {
         if (imgArray != null && imgArray.size() > 0) {
             //从指定路径的图片文件中获取位图数据
             Bitmap bitmap = BitmapFactory.decodeFile(imgArray.get(0));
-            int iv_height = bitmap.getHeight() < Utils.dip2px(this, 300)
-                    ? Utils.dip2px(this, 300) : bitmap.getHeight();
-            //在卷曲视图上显示位图图像
-            showImage(iv_height);
-            bitmap.recycle(); //回收位图对象
+            if (bitmap != null) {
+                int iv_height = bitmap.getHeight() < Utils.dip2px(this, 300)
+                        ? Utils.dip2px(this, 300) : bitmap.getHeight();
+                //在卷曲视图上显示位图图像
+                showImage(iv_height);
+                bitmap.recycle(); //回收位图对象
+            }
         }
     }
 

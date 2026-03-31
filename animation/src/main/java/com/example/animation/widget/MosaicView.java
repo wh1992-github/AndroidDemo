@@ -12,6 +12,9 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
+/**
+ * 用于展示 Mosaic 效果的自定义 View。
+ */
 
 @SuppressLint("DrawAllocation")
 public class MosaicView extends View {

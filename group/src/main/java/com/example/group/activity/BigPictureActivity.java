@@ -9,6 +9,9 @@ import com.example.group.R;
 import com.example.group.bigpicture.ImageSurfaceView;
 
 import java.io.IOException;
+/**
+ * 用于展示 Big Picture 功能的 Activity。
+ */
 
 public class BigPictureActivity extends Activity {
     private static final String TAG = "BigPictureActivity";

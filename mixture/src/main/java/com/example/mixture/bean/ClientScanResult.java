@@ -1,4 +1,7 @@
 package com.example.mixture.bean;
+/**
+ * 用于描述 Client Scan 数据的实体类。
+ */
 
 public class ClientScanResult {
     private String IpAddr; //设备的IP地址

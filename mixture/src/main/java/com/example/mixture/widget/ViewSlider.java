@@ -15,6 +15,9 @@ import android.widget.LinearLayout;
 import com.example.mixture.util.Utils;
 
 import java.util.ArrayList;
+/**
+ * 封装 View Slider 相关逻辑的类。
+ */
 
 @SuppressLint("ClickableViewAccessibility")
 public class ViewSlider extends FrameLayout implements BookView.OnScrollListener {

@@ -1,7 +1,7 @@
 package com.example.group.loop;
 
 import android.app.Activity;
-import android.support.v4.view.PagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.group.R;
+/**
+ * 用于适配 Banner Pager 数据的适配器。
+ */
 
 public class BannerPagerAdapter extends PagerAdapter {
 

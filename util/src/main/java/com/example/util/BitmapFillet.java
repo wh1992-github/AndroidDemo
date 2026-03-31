@@ -8,6 +8,9 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+/**
+ * 封装 Bitmap Fillet 相关逻辑的类。
+ */
 
 public class BitmapFillet {
     public static final int CORNER_NONE = 0;

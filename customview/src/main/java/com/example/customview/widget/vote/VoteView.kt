@@ -16,6 +16,9 @@ import android.view.View
 import android.view.animation.DecelerateInterpolator
 import com.example.customview.R
 import kotlin.math.max
+/**
+ * 用于展示 Vote 效果的自定义 View。
+ */
 
 class VoteView @JvmOverloads constructor(
     context: Context,

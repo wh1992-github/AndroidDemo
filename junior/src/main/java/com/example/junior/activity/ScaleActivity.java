@@ -1,7 +1,7 @@
 package com.example.junior.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -11,6 +11,9 @@ import com.example.junior.R;
  * Created by test on 2017/9/15.
  */
 //页面类直接实现点击监听器的接口View.OnClickListener
+/**
+ * 用于展示 Scale 功能的 Activity。
+ */
 public class ScaleActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView iv_scale; //声明一个图像视图的对象
 

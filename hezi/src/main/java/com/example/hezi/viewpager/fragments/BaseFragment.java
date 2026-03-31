@@ -9,6 +9,9 @@ import com.example.hezi.viewpager.ViewpagerActivity;
 import java.util.ArrayList;
 
 import rx.Subscription;
+/**
+ * 用于承载 Base 内容的 Fragment。
+ */
 
 public abstract class BaseFragment extends Fragment {
     private static final String TAG = "BaseFragment";

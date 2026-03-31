@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.hezi.R;
 import com.example.hezi.viewpager.ViewpagerActivity;
 import com.example.hezi.viewpager2.ViewPager2Activity;
+/**
+ * 用于展示 Main 功能的 Activity。
+ */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

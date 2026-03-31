@@ -6,6 +6,9 @@ import android.content.SharedPreferences.Editor;
 
 import java.util.Map;
 import java.util.Set;
+/**
+ * 提供 Preference 相关工具方法的工具类。
+ */
 
 public class PreferenceUtils {
     private static final String TAG = "PreferenceUtils";

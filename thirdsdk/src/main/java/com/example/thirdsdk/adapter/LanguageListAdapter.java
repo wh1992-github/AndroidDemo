@@ -11,6 +11,9 @@ import com.example.thirdsdk.R;
 import com.example.thirdsdk.bean.Language;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Language List 数据的适配器。
+ */
 
 
 public class LanguageListAdapter extends BaseAdapter {

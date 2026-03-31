@@ -2,6 +2,9 @@ package com.example.media.task;
 
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+/**
+ * 用于执行 Gesture 任务的任务类。
+ */
 
 public class GestureTask implements GestureDetector.OnGestureListener {
     private float mFlipGap = 20f; //滑动距离的阈值

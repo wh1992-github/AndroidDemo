@@ -10,7 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -75,6 +75,9 @@ public class BluetoothActivity extends AppCompatActivity implements
 
     //初始化蓝牙设备列表
     private void initBlueDevice() {
+        if (mBluetooth == null) {
+            return;
+        }
         mDeviceList.clear();
         //获取已经配对的蓝牙设备集合
         Set<BluetoothDevice> bondedDevices = mBluetooth.getBondedDevices();
@@ -185,7 +188,22 @@ public class BluetoothActivity extends AppCompatActivity implements
         super.onStop();
         cancelDiscovery(); //取消蓝牙设备的搜索
         //注销蓝牙设备搜索的广播接收器
-        unregisterReceiver(discoveryReceiver);
+        try {
+            unregisterReceiver(discoveryReceiver);
+        } catch (IllegalArgumentException e) {
+            // 接收器可能已经注销，忽略异常
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 作为兜底，确保BroadcastReceiver被注销
+        try {
+            unregisterReceiver(discoveryReceiver);
+        } catch (IllegalArgumentException e) {
+            // 接收器可能已经注销，忽略异常
+        }
     }
 
     //蓝牙设备的搜索结果通过广播返回

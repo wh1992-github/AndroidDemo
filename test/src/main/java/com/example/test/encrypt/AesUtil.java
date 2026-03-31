@@ -10,6 +10,9 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+/**
+ * 提供 Aes 相关工具方法的工具类。
+ */
 
 @SuppressLint({"GetInstance", "DeletedProvider"})
 public class AesUtil {

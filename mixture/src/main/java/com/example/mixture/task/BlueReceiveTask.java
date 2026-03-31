@@ -5,6 +5,9 @@ import android.os.Handler;
 import android.util.Log;
 
 //服务端开启的数据接收线程
+/**
+ * 用于执行 Blue Receive 任务的任务类。
+ */
 public class BlueReceiveTask extends Thread {
     private static final String TAG = "BlueReceiveTask";
     private BluetoothSocket mSocket; //声明一个蓝牙套接字对象

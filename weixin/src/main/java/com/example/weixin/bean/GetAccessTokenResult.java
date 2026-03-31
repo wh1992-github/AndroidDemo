@@ -3,6 +3,9 @@ package com.example.weixin.bean;
 import android.util.Log;
 
 import org.json.JSONObject;
+/**
+ * 用于描述 Get Access Token 数据的实体类。
+ */
 
 public class GetAccessTokenResult {
     private static final String TAG = "GetAccessTokenResult";

@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+/**
+ * 封装 JDK 相关逻辑的类。
+ */
 
 public class JDK {
     private static final String TAG = "Constants---";
@@ -95,6 +98,10 @@ public class JDK {
         StringBuilder stringBuilder = new StringBuilder();
         for (int days = Math.min(mList.size(), total_day); days >= cycle_day; days -= cycle_day) {
             List<Float> list = mList.subList(Math.max(mList.size() - days, 0), Math.max(mList.size() - days + cycle_day, 1));
+            // 检查list是否为空，防止数组越界
+            if (list == null || list.isEmpty()) {
+                continue;
+            }
             //盈亏百分比: 在 2% - 6% 之间 选择最优
             for (int buyThreshold = 200; buyThreshold <= 600; buyThreshold += 20) {
                 for (int sellThreshold = 200; sellThreshold <= 600; sellThreshold += 20) {
@@ -158,6 +165,11 @@ public class JDK {
     }
 
     public void printMoney(String gupiao, List<Float> list, int day, float buy, float sell) {
+        // 检查list是否为空，防止数组越界
+        if (list == null || list.isEmpty()) {
+            Log.w(TAG, "printMoney: list is empty, skipping");
+            return;
+        }
         float trackedPrice = list.get(0);
         float capital = 10000;
         float buy_price = 0;
@@ -279,9 +291,11 @@ public class JDK {
         stats.maxPrice = 0;
         stats.minLine = "";
         stats.maxLine = "";
+        BufferedReader bufferedReader = null;
+        InputStream inputStream = null;
         try {
-            InputStream inputStream = context.getResources().getAssets().open(name);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            inputStream = context.getResources().getAssets().open(name);
+            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String lines;
             while ((lines = bufferedReader.readLine()) != null) {
                 if (lines.contains(String.valueOf(year)) && (lines.contains("-" + month + "-"))) {
@@ -298,9 +312,20 @@ public class JDK {
                     }
                 }
             }
-            bufferedReader.close();
         } catch (IOException e) {
             Log.i(TAG, "printMonth: e = " + e.getMessage());
+        } finally {
+            // 确保资源被正确关闭
+            try {
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+            } catch (IOException e) {
+                Log.e(TAG, "getMonthStats: close error = " + e.getMessage());
+            }
         }
         stats.average = days > 0 ? sum / days : 0;
         return stats;
@@ -312,19 +337,32 @@ public class JDK {
     public void printBestBuySell(Context context, String fileName) {
         // 读取所有数据行
         List<String> allLines = new ArrayList<>();
+        BufferedReader bufferedReader = null;
+        InputStream inputStream = null;
         try {
-            InputStream inputStream = context.getResources().getAssets().open(fileName);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            inputStream = context.getResources().getAssets().open(fileName);
+            bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 if (!TextUtils.isEmpty(line)) {
                     allLines.add(line);
                 }
             }
-            bufferedReader.close();
         } catch (IOException e) {
             Log.e(TAG, "printBestBuySell: e = " + e.getMessage());
             return;
+        } finally {
+            // 确保资源被正确关闭
+            try {
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+            } catch (IOException e) {
+                Log.e(TAG, "printBestBuySell: close error = " + e.getMessage());
+            }
         }
 
         // 按年月分组: key = "2016-01", value = list of lines

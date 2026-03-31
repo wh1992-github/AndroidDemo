@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+/**
+ * 封装 Generate Value Files 相关逻辑的类。
+ */
 
 public class GenerateValueFiles {
 

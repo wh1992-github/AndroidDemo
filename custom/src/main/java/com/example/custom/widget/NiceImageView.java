@@ -12,12 +12,15 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.Xfermode;
 import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.annotation.ColorInt;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
 import com.example.custom.R;
+/**
+ * 用于展示 Nice Image 效果的自定义 View。
+ */
 
 public class NiceImageView extends AppCompatImageView {
     private Context context;

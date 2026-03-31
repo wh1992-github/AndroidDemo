@@ -11,6 +11,9 @@ import com.example.storage.bean.GoodsInfo;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 提供 Goods DB 相关工具方法的工具类。
+ */
 
 
 public class GoodsDBHelper extends SQLiteOpenHelper {

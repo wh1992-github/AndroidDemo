@@ -12,6 +12,9 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.event.util.Utils;
+/**
+ * 用于展示 Meitu 效果的自定义 View。
+ */
 
 @SuppressLint("ClickableViewAccessibility")
 public class MeituView extends View {

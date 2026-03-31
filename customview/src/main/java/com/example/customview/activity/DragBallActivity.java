@@ -1,8 +1,8 @@
 package com.example.customview.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import com.example.customview.R;
 import com.example.customview.widget.DragBallView;
+/**
+ * 用于展示 Drag Ball 功能的 Activity。
+ */
 
 public class DragBallActivity extends AppCompatActivity {
     private Button resetBtn, msgCountBtn;

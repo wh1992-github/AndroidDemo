@@ -1,10 +1,10 @@
 package com.example.customview.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.example.customview.R;
@@ -18,6 +18,9 @@ import com.example.customview.widget.IndexView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+/**
+ * 用于展示 Hover Item 功能的 Activity。
+ */
 
 public class HoverItemActivity extends AppCompatActivity {
     private RecyclerView recyclerView;

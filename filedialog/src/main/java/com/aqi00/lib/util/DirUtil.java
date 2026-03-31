@@ -5,6 +5,9 @@ import android.os.Environment;
 
 import java.io.File;
 import java.util.Locale;
+/**
+ * 提供 Dir 相关工具方法的工具类。
+ */
 
 public class DirUtil {
 

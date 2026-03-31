@@ -1,4 +1,7 @@
 package com.example.media.bean;
+/**
+ * 封装 Lrc Content 相关逻辑的类。
+ */
 
 public class LrcContent {
     private String lrcStr; //这行歌词的文字内容

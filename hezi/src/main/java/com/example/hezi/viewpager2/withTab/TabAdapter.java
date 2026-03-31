@@ -7,6 +7,9 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 用于适配 Tab 数据的适配器。
+ */
 
 public class TabAdapter extends FragmentStateAdapter {
 

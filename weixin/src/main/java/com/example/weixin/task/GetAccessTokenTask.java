@@ -1,5 +1,6 @@
 package com.example.weixin.task;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -12,6 +13,9 @@ import com.example.weixin.bean.WechatConstants;
 import com.example.weixin.util.WechatUtil;
 
 import java.util.Locale;
+/**
+ * 用于执行 Get Access Token 任务的任务类。
+ */
 
 public class GetAccessTokenTask extends AsyncTask<String, Void, GetAccessTokenResult> {
     private static final String TAG = "GetAccessTokenTask";
@@ -48,8 +52,20 @@ public class GetAccessTokenTask extends AsyncTask<String, Void, GetAccessTokenRe
 
     @Override
     protected void onPostExecute(GetAccessTokenResult result) {
-        if (mDialog != null) {
-            mDialog.dismiss();
+        if (mDialog != null && mDialog.isShowing()) {
+            try {
+                mDialog.dismiss();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            mDialog = null;
+        }
+        // 检查Context是否仍然有效
+        if (mContext == null) {
+            return;
+        }
+        if (mContext instanceof Activity && ((Activity) mContext).isFinishing()) {
+            return;
         }
         Log.d(TAG, "RetCode=" + result.localRetCode + ", errCode=" + result.errCode + ", errMsg=" + result.errMsg);
         if (result.localRetCode == LocalRetCode.ERR_OK) {

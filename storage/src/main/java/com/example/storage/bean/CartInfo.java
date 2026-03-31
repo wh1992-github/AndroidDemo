@@ -1,4 +1,7 @@
 package com.example.storage.bean;
+/**
+ * 用于描述 Cart 数据的实体类。
+ */
 
 public class CartInfo {
     public long rowid;

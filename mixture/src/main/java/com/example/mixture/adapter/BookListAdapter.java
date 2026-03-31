@@ -15,6 +15,9 @@ import com.example.mixture.bean.BookInfo;
 import com.example.mixture.util.FileUtil;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Book List 数据的适配器。
+ */
 
 @SuppressLint("SetTextI18n")
 public class BookListAdapter extends BaseAdapter {

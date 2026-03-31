@@ -3,7 +3,7 @@ package com.example.mixture.activity;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 

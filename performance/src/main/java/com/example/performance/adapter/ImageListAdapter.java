@@ -12,6 +12,9 @@ import android.widget.TextView;
 import com.example.performance.R;
 import com.example.performance.cache.ImageCache;
 import com.example.performance.cache.ImageCacheConfig;
+/**
+ * 用于适配 Image List 数据的适配器。
+ */
 
 @SuppressLint("SetTextI18n")
 public class ImageListAdapter extends BaseAdapter {

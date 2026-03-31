@@ -3,6 +3,9 @@ package com.example.customview.widget.status
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
+/**
+ * 用于组织 Status 界面内容的布局类。
+ */
 
 class StatusLayout : FrameLayout {
 

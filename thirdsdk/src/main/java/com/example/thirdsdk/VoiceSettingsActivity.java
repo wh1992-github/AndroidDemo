@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.thirdsdk.fragment.ComposeSettingsFragment;
 import com.example.thirdsdk.fragment.RecognizeSettingsFragment;
+/**
+ * 用于展示 Voice Settings 功能的 Activity。
+ */
 
 public class VoiceSettingsActivity extends AppCompatActivity {
     public static final String PREFER_NAME = "com.example.thirdsdk";

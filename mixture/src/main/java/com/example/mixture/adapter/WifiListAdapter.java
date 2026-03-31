@@ -18,6 +18,9 @@ import com.example.mixture.bean.WifiConnect;
 import com.example.mixture.widget.InputDialogFragment;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Wifi List 数据的适配器。
+ */
 
 public class WifiListAdapter extends BaseAdapter {
     private static final String TAG = "WifiListAdapter";

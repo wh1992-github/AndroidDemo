@@ -34,6 +34,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 //展示应用包信息列表
+/**
+ * 用于适配 Package Info 数据的适配器。
+ */
 @SuppressLint("SetTextI18n")
 public class PackageInfoAdapter extends BaseAdapter {
     private static final String TAG = "PackageInfoAdapter";

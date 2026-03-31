@@ -18,6 +18,9 @@ package com.app.zxing.view;
 
 import com.google.zxing.ResultPoint;
 import com.google.zxing.ResultPointCallback;
+/**
+ * 用于处理 Viewfinder Result Point 回调逻辑的回调类型。
+ */
 
 public final class ViewfinderResultPointCallback implements ResultPointCallback {
 

@@ -1,8 +1,8 @@
 package com.example.group.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,6 +21,9 @@ import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 用于适配 Recycler Combine 数据的适配器。
+ */
 
 public class RecyclerCombineAdapter extends RecyclerView.Adapter<ViewHolder> implements OnItemClickListener, OnItemLongClickListener {
     private static final String TAG = "RecyclerCombineAdapter";

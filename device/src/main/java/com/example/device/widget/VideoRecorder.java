@@ -25,6 +25,9 @@ import com.example.device.util.MediaUtil;
 
 import java.util.Timer;
 import java.util.TimerTask;
+/**
+ * 封装 Video Recorder 相关逻辑的类。
+ */
 
 public class VideoRecorder extends LinearLayout implements
         OnErrorListener, OnInfoListener, OnCheckedChangeListener {
@@ -81,7 +84,13 @@ public class VideoRecorder extends LinearLayout implements
             mTimer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    pb_record.setProgress(mTimeCount++);
+                    // 使用post()将UI更新操作发送到UI线程执行
+                    post(new Runnable() {
+                        @Override
+                        public void run() {
+                            pb_record.setProgress(mTimeCount++);
+                        }
+                    });
                 }
             }, 0, 1000);
         } catch (Exception e) {
@@ -241,6 +250,19 @@ public class VideoRecorder extends LinearLayout implements
                 stop();
             }
         }
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        // 清理Timer,防止内存泄漏
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer = null;
+        }
+        // 停止录制并释放资源
+        cancelRecord();
+        freeCamera();
     }
 
 }

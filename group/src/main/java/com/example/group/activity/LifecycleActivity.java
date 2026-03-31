@@ -2,13 +2,16 @@ package com.example.group.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.group.R;
 import com.example.group.livedata.LifecycleHelper;
 import com.example.group.livedata.MyLifecycleService;
+/**
+ * 用于展示 Lifecycle 功能的 Activity。
+ */
 
 public class LifecycleActivity extends AppCompatActivity {
     private static final String TAG = "LifecycleActivity";

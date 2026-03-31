@@ -4,7 +4,7 @@
     android:padding="5dp"
     android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_combine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -9,13 +9,16 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
 import com.example.performance.R;
+/**
+ * 用于展示 Notification 功能的 Activity。
+ */
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class NotificationActivity extends AppCompatActivity implements View.OnClickListener {
@@ -76,7 +79,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
     //.setPriority(Notification.PRIORITY_MAX)
     private void startNotify() {
         Intent mainIntent = new Intent(this, ResultActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         if (notificationManager == null) {
             return;
@@ -103,7 +106,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
 
     private void updateNotify() {
         Intent mainIntent = new Intent(this, ResultActivity.class);
-        PendingIntent mPendingIntent = PendingIntent.getActivity(this, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent mPendingIntent = PendingIntent.getActivity(this, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         if (notificationManager == null) {
             return;
@@ -142,7 +145,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
     //普通的Notification
     private void openNormalNotify() {
         Intent intent = new Intent(this, ResultActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
         Notification.Builder builder = new Notification.Builder(this);
         builder.setAutoCancel(true);
         builder.setContentTitle("Title");
@@ -165,7 +168,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
     //折叠式Notification
     private void openFoldNotify() {
         Intent intent = new Intent(this, ResultActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
         Notification.Builder builder = new Notification.Builder(this);
         builder.setAutoCancel(true);
         builder.setContentTitle("Title");
@@ -191,7 +194,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
     //悬挂式Notification
     private void openFlyNotify() {
         Intent intent = new Intent(this, ResultActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
         Notification.Builder builder = new Notification.Builder(this);
         builder.setAutoCancel(true);
         builder.setContentTitle("Title");

@@ -2,7 +2,7 @@ package com.example.storage.activity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.storage.R;

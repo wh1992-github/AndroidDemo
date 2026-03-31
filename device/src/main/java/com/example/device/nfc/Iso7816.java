@@ -4,6 +4,9 @@ import android.nfc.tech.IsoDep;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;
+/**
+ * 封装 Iso 7816 相关逻辑的类。
+ */
 
 public class Iso7816 {
     private static final byte[] EMPTY = {0};

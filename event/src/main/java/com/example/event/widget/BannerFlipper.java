@@ -18,6 +18,9 @@ import com.example.event.R;
 import com.example.event.util.Utils;
 
 import java.util.ArrayList;
+/**
+ * 封装 Banner Flipper 相关逻辑的类。
+ */
 
 public class BannerFlipper extends RelativeLayout {
     private static final String TAG = "BannerFlipper";

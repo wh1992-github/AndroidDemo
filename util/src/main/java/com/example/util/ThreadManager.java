@@ -6,6 +6,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+/**
+ * 用于管理 Thread 相关流程的管理类。
+ */
 
 public class ThreadManager {
     private static final String TAG = "ThreadManager";

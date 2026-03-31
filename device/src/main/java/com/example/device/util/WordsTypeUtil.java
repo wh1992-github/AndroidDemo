@@ -5,6 +5,9 @@ import android.util.Log;
 import java.io.IOException;
 
 import taobe.tec.jcc.JChineseConvertor;
+/**
+ * 提供 Words Type 相关工具方法的工具类。
+ */
 
 public class WordsTypeUtil {
     private static final String TAG = "WordsTypeUtil";

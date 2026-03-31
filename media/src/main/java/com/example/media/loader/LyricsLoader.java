@@ -13,6 +13,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+/**
+ * 用于加载 Lyrics 数据的加载器。
+ */
 
 public class LyricsLoader {
     private static final String TAG = "LyricsLoader";
@@ -35,11 +38,12 @@ public class LyricsLoader {
         String extendName = "." + MediaUtil.getExtendName(path);
         //音频文件的同目录下应当存在扩展名为lrc的同名歌词文件
         File f = new File(path.replace(extendName, ".lrc"));
+        BufferedReader br = null;
         try {
             //创建一个文件输入流对象
             FileInputStream fis = new FileInputStream(f);
             InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
-            BufferedReader br = new BufferedReader(isr);
+            br = new BufferedReader(isr);
             String s;
             while ((s = br.readLine()) != null) {
                 //处理每行开头标记用的方括号
@@ -79,6 +83,14 @@ public class LyricsLoader {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 

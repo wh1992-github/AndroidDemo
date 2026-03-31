@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+/**
+ * 提供 Status Bar 相关工具方法的工具类。
+ */
 
 public class StatusBarUtil {
     private static final String TAG_FAKE_STATUS_BAR_VIEW = "statusBarView";

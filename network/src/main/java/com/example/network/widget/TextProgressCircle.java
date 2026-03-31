@@ -12,6 +12,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.example.network.util.Utils;
+/**
+ * 封装 Text Progress Circle 相关逻辑的类。
+ */
 
 @SuppressLint("DrawAllocation")
 public class TextProgressCircle extends View {

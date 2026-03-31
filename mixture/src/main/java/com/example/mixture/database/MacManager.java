@@ -9,6 +9,9 @@ import com.example.mixture.bean.MacDevice;
 
 import java.util.ArrayList;
 import java.util.Locale;
+/**
+ * 用于管理 Mac 相关流程的管理类。
+ */
 
 public class MacManager {
     private static final String TAG = "MacManager";

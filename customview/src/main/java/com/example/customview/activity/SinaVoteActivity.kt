@@ -1,22 +1,26 @@
 package com.example.customview.activity
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import com.example.customview.R
+import androidx.appcompat.app.AppCompatActivity
 import com.example.customview.bean.VoteBean
 import com.example.customview.bean.VoteOption
 import com.example.customview.data.getMockData
+import com.example.customview.databinding.ActivitySinaVoteBinding
 import com.example.customview.widget.vote.VoteLayoutAdapter
-import kotlinx.android.synthetic.main.activity_sina_vote.vote_ll
+/**
+ * 用于展示 Sina Vote 功能的 Activity。
+ */
 
 class SinaVoteActivity : AppCompatActivity(), VoteLayoutAdapter.OnVoteClickListener {
+    private lateinit var binding: ActivitySinaVoteBinding
 
     var voteLayoutAdapter: VoteLayoutAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sina_vote)
-        voteLayoutAdapter = VoteLayoutAdapter(vote_ll)
+        binding = ActivitySinaVoteBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        voteLayoutAdapter = VoteLayoutAdapter(binding.voteLl)
         voteLayoutAdapter?.setData(getMockData())
         voteLayoutAdapter?.onVoteClickListener = this
     }

@@ -2,6 +2,9 @@ package com.example.animation.widget;
 
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
+/**
+ * 封装 Swing Animation 相关逻辑的类。
+ */
 
 public class SwingAnimation extends Animation {
     private final float mMiddleDegrees; //中间的角度

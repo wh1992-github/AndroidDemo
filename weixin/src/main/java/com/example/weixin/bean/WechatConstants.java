@@ -1,4 +1,7 @@
 package com.example.weixin.bean;
+/**
+ * 封装 Wechat Constants 相关逻辑的类。
+ */
 
 public class WechatConstants {
     //APP_ID 替换为你的应用从官方网站申请到的合法appId

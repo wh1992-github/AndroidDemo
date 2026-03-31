@@ -1,7 +1,7 @@
 package com.example.senior.adapter;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +16,9 @@ import android.widget.Toast;
 import com.example.senior.R;
 
 import java.util.ArrayList;
+/**
+ * 用于适配 Launch Simple 数据的适配器。
+ */
 
 public class LaunchSimpleAdapter extends PagerAdapter {
     private Context mContext; //声明一个上下文对象

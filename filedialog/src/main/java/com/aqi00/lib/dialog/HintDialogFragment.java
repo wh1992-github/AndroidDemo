@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+/**
+ * 用于承载 Hint Dialog 内容的 Fragment。
+ */
 
 public class HintDialogFragment extends DialogFragment {
     private static final String TAG = "HintDialogFragment";

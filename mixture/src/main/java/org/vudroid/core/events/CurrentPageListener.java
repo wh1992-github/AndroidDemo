@@ -1,4 +1,7 @@
 package org.vudroid.core.events;
+/**
+ * 用于约束 Current Page 回调能力的接口。
+ */
 
 public interface CurrentPageListener {
     void currentPageChanged(int pageIndex);

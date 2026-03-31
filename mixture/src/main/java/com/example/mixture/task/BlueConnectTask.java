@@ -9,6 +9,9 @@ import android.util.Log;
 import com.example.mixture.util.BluetoothConnector;
 
 //输入对方设备的蓝牙设备对象BluetoothDevice,输出该设备的蓝牙套接字对象BluetoothSocket
+/**
+ * 用于执行 Blue Connect 任务的任务类。
+ */
 public class BlueConnectTask extends AsyncTask<BluetoothDevice, Void, BluetoothSocket> {
     private static final String TAG = "BlueConnectTask";
     private String mAddress; //对方蓝牙设备的MAC地址
@@ -38,7 +41,9 @@ public class BlueConnectTask extends AsyncTask<BluetoothDevice, Void, BluetoothS
     //线程已经完成处理
     protected void onPostExecute(BluetoothSocket socket) {
         //连接完成,通知监听器该地址已具备蓝牙套接字
-        mListener.onBlueConnect(mAddress, socket);
+        if (mListener != null) {
+            mListener.onBlueConnect(mAddress, socket);
+        }
     }
 
     private BlueConnectListener mListener; //声明一个蓝牙连接的监听器对象

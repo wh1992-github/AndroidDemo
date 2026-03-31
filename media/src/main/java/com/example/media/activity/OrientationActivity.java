@@ -2,13 +2,16 @@ package com.example.media.activity;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.media.R;
 import com.example.media.util.DateUtil;
 
 import java.util.Locale;
+/**
+ * 用于展示 Orientation 功能的 Activity。
+ */
 
 public class OrientationActivity extends AppCompatActivity {
     private TextView tv_orientation;

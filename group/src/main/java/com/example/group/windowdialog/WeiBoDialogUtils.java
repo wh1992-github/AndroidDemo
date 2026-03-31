@@ -7,6 +7,9 @@ import android.view.Window;
 import android.widget.LinearLayout;
 
 import com.example.group.R;
+/**
+ * 提供 Wei Bo Dialog 相关工具方法的工具类。
+ */
 
 public class WeiBoDialogUtils {
 

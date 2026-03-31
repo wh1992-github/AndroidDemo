@@ -2,6 +2,9 @@ package com.example.senior.calendar;
 
 import java.util.Calendar;
 import java.util.Locale;
+/**
+ * 封装 Solar Term 相关逻辑的类。
+ */
 
 public class SolarTerm {
     //========角度变换===============

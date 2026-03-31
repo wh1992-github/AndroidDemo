@@ -7,13 +7,16 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.util.DisplayMetrics;
 import android.view.PixelCopy;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+/**
+ * 提供 Screen 相关工具方法的工具类。
+ */
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class ScreenUtils {

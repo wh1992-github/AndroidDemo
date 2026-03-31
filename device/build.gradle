@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace 'com.example.device'
     compileSdkVersion 33
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example.device"
@@ -25,12 +25,15 @@ android {
     buildFeatures {
         viewBinding true
     }
+    lint {
+        abortOnError false
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 //   implementation 'com.android.support:exifinterface:28.0.0'
 
     implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'

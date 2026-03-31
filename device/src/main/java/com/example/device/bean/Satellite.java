@@ -1,4 +1,7 @@
 package com.example.device.bean;
+/**
+ * 封装 Satellite 相关逻辑的类。
+ */
 
 public class Satellite {
     public int seq;

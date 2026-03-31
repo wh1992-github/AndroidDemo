@@ -4,6 +4,9 @@ import android.app.ActivityManager;
 import android.content.Context;
 
 import java.util.List;
+/**
+ * 提供 Service 相关工具方法的工具类。
+ */
 
 public class ServiceUtil {
     private static final String TAG = "ServiceUtil";

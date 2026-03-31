@@ -1,6 +1,9 @@
 package com.example.senior.calendar;
 
 import com.example.senior.R;
+/**
+ * 封装 Constant 相关逻辑的类。
+ */
 
 public class Constant {
 

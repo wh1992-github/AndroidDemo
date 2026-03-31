@@ -6,6 +6,9 @@ import android.util.Log;
 import com.example.network.http.HttpUploadUtil;
 
 //上传文件的线程
+/**
+ * 用于执行 Upload Http 任务的任务类。
+ */
 public class UploadHttpTask extends AsyncTask<String, Void, String> {
     private static final String TAG = "UploadHttpTask";
 
@@ -27,7 +30,9 @@ public class UploadHttpTask extends AsyncTask<String, Void, String> {
     //线程已经完成处理
     protected void onPostExecute(String result) {
         //HTTP上传完毕,触发监听器的上传结束事件
-        mListener.onUploadFinish(result);
+        if (mListener != null) {
+            mListener.onUploadFinish(result);
+        }
     }
 
     private OnUploadHttpListener mListener; //声明一个文件上传的监听器对象

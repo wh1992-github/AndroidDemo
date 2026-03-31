@@ -1,6 +1,9 @@
 package com.example.util;
 
 import android.text.TextUtils;
+/**
+ * 提供 String 相关工具方法的工具类。
+ */
 
 public class StringUtils {
     /**

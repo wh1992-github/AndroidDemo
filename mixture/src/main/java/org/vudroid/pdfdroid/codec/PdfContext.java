@@ -5,6 +5,9 @@ import android.content.ContentResolver;
 import org.vudroid.core.VuDroidLibraryLoader;
 import org.vudroid.core.codec.CodecContext;
 import org.vudroid.core.codec.CodecDocument;
+/**
+ * 封装 Pdf Context 相关逻辑的类。
+ */
 
 public class PdfContext implements CodecContext {
     static {

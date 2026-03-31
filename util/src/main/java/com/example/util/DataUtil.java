@@ -1,4 +1,7 @@
 package com.example.util;
+/**
+ * 提供 Data 相关工具方法的工具类。
+ */
 
 public class DataUtil {
 
