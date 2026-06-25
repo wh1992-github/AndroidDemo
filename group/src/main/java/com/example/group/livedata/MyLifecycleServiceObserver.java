@@ -1,9 +1,10 @@
 package com.example.group.livedata;
 
+import android.util.Log;
+
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
-import android.util.Log;
 /**
  * 封装 My Lifecycle Service Observer 相关逻辑的类。
  */

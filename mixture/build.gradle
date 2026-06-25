@@ -11,7 +11,7 @@ configurations.all {
 android {
     namespace 'com.example.mixture'
     compileSdkVersion 34
-
+    ndkVersion "25.2.9519653"
     defaultConfig {
         applicationId "com.example.mixture"
         minSdkVersion 23

@@ -2,22 +2,24 @@ package com.example.group.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.group.R;
 import com.example.group.adapter.RecyclerCombineAdapter;
 import com.example.group.adapter.RecyclerGridAdapter;
 import com.example.group.bean.GoodsInfo;
 import com.example.group.constant.ImageList;
+import com.example.group.databinding.ActivityDepartmentHomeBinding;
 import com.example.group.util.DateUtil;
 import com.example.group.util.MenuUtil;
 import com.example.group.util.Utils;
@@ -32,15 +34,17 @@ import java.util.Locale;
  */
 
 public class DepartmentHomeActivity extends AppCompatActivity implements BannerClickListener {
+    private ActivityDepartmentHomeBinding binding;
     private static final String TAG = "DepartmentHomeActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_department_home);
+        binding = ActivityDepartmentHomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫tl_head的工具栏
-        Toolbar tl_head = findViewById(R.id.tl_head);
+        Toolbar tl_head = binding.tlHead;
         //设置工具栏的标题文字
         tl_head.setTitle("商城首页");
         //使用tl_head替换系统自带的ActionBar
@@ -52,7 +56,7 @@ public class DepartmentHomeActivity extends AppCompatActivity implements BannerC
 
     private void initBanner() {
         //从布局文件中获取名叫banner_pager的横幅轮播条
-        BannerPager banner = findViewById(R.id.banner_pager);
+        BannerPager banner = binding.bannerPager;
         //获取横幅轮播条的布局参数
         LayoutParams params = (LayoutParams) banner.getLayoutParams();
         params.height = (int) (Utils.getScreenWidth(this) * 250f / 640f);
@@ -74,7 +78,7 @@ public class DepartmentHomeActivity extends AppCompatActivity implements BannerC
 
     private void initGrid() {
         //从布局文件中获取名叫rv_grid的循环视图
-        RecyclerView rv_grid = findViewById(R.id.rv_grid);
+        RecyclerView rv_grid = binding.rvGrid;
         //创建一个垂直方向的网格布局管理器
         GridLayoutManager manager = new GridLayoutManager(this, 5);
         //设置循环视图的布局管理器
@@ -95,7 +99,7 @@ public class DepartmentHomeActivity extends AppCompatActivity implements BannerC
 
     private void initCombine() {
         //从布局文件中获取名叫rv_combine的循环视图
-        RecyclerView rv_combine = findViewById(R.id.rv_combine);
+        RecyclerView rv_combine = binding.rvCombine;
         //创建一个四列的网格布局管理器
         GridLayoutManager manager = new GridLayoutManager(this, 4);
         //设置网格布局管理器的占位规则

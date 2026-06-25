@@ -1,32 +1,35 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.group.R;
 import com.example.group.adapter.RecyclerCombineAdapter;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.databinding.ActivityRecyclerCombineBinding;
 import com.example.group.widget.SpacesItemDecoration;
 
 /**
  * Created by test on 2017/10/21.
  */
 public class RecyclerCombineActivity extends AppCompatActivity {
+    private ActivityRecyclerCombineBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_combine);
+        binding = ActivityRecyclerCombineBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         initRecyclerCombine(); //初始化合并网格布局的循环视图
     }
 
     //初始化合并网格布局的循环视图
     private void initRecyclerCombine() {
         //从布局文件中获取名叫rv_combine的循环视图
-        RecyclerView rv_combine = findViewById(R.id.rv_combine);
+        RecyclerView rv_combine = binding.rvCombine;
         //创建一个四列的网格布局管理器
         GridLayoutManager manager = new GridLayoutManager(this, 4);
         //设置网格布局管理器的占位规则

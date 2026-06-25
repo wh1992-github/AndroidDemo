@@ -2,11 +2,13 @@ package com.example.group.rxjava;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityRxjava01Binding;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -33,26 +35,28 @@ import io.reactivex.schedulers.Schedulers;
  */
 @SuppressLint({"LogNotTimber", "NonConstantResourceId"})
 public class RxJavaActivity01 extends AppCompatActivity implements View.OnClickListener {
+    private ActivityRxjava01Binding binding;
     private static final String TAG = "RxJavaActivity01";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rxjava01);
+        binding = ActivityRxjava01Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        findViewById(R.id.btn_create).setOnClickListener(this);
-        findViewById(R.id.btn_empty).setOnClickListener(this);
-        findViewById(R.id.btn_error).setOnClickListener(this);
-        findViewById(R.id.btn_never).setOnClickListener(this);
-        findViewById(R.id.btn_just).setOnClickListener(this);
-        findViewById(R.id.btn_fromArray).setOnClickListener(this);
-        findViewById(R.id.btn_fromIterable).setOnClickListener(this);
-        findViewById(R.id.btn_defer).setOnClickListener(this);
-        findViewById(R.id.btn_timer).setOnClickListener(this);
-        findViewById(R.id.btn_interval).setOnClickListener(this);
-        findViewById(R.id.btn_intervalRange).setOnClickListener(this);
-        findViewById(R.id.btn_range).setOnClickListener(this);
-        findViewById(R.id.btn_count_down).setOnClickListener(this);
+        binding.btnCreate.setOnClickListener(this);
+        binding.btnEmpty.setOnClickListener(this);
+        binding.btnError.setOnClickListener(this);
+        binding.btnNever.setOnClickListener(this);
+        binding.btnJust.setOnClickListener(this);
+        binding.btnFromArray.setOnClickListener(this);
+        binding.btnFromIterable.setOnClickListener(this);
+        binding.btnDefer.setOnClickListener(this);
+        binding.btnTimer.setOnClickListener(this);
+        binding.btnInterval.setOnClickListener(this);
+        binding.btnIntervalRange.setOnClickListener(this);
+        binding.btnRange.setOnClickListener(this);
+        binding.btnCountDown.setOnClickListener(this);
 
         //观察者不对被观察者发送的事件做出响应(但是被观察者还可以继续发送事件)
         //public final Disposable subscribe()

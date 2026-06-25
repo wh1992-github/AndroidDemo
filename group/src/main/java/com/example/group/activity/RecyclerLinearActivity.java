@@ -1,33 +1,36 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.widget.LinearLayout;
 
-import com.example.group.R;
 import com.example.group.adapter.RecyclerLinearAdapter;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.databinding.ActivityRecyclerLinearBinding;
 import com.example.group.widget.SpacesItemDecoration;
 
 /**
  * Created by test on 2017/10/21.
  */
 public class RecyclerLinearActivity extends AppCompatActivity {
+    private ActivityRecyclerLinearBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_linear);
+        binding = ActivityRecyclerLinearBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         initRecyclerLinear(); //初始化线性布局的循环视图
     }
 
     //初始化线性布局的循环视图
     private void initRecyclerLinear() {
         //从布局文件中获取名叫rv_linear的循环视图
-        RecyclerView rv_linear = findViewById(R.id.rv_linear);
+        RecyclerView rv_linear = binding.rvLinear;
         //创建一个垂直方向的线性布局管理器
         LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
         //设置循环视图的布局管理器

@@ -6,19 +6,15 @@ buildscript {
         agp_version = '7.4.2'
     }
     repositories {
-        google()
-        mavenCentral()
-        maven { url 'https://plugins.gradle.org/m2/' }
-        maven { url "https://jitpack.io" }
+        // 添加阿里云 maven 地址
+        // 阿里云聚合公共仓库，一个顶多个
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-        //maven { url 'https://dl.bintray.com/guardian/android' }
-        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
-        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
-        maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+        // 官方兜底（放后面）
+        google()
+        mavenCentral()
+        // jitpack放最后，github源码打包aar才用到
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         //下面的版本号就是Android Studio的版本号
@@ -32,19 +28,15 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
-        mavenCentral()
-        maven { url 'https://plugins.gradle.org/m2/' }
-        maven { url "https://jitpack.io" }
+        // 添加阿里云 maven 地址
+        // 阿里云聚合公共仓库，一个顶多个
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-        //maven { url 'https://dl.bintray.com/guardian/android' }
-        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
-        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
-        maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+        // 官方兜底（放后面）
+        google()
+        mavenCentral()
+        // jitpack放最后，github源码打包aar才用到
+        maven { url "https://jitpack.io" }
     }
 }
 

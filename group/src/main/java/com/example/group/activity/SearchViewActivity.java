@@ -7,9 +7,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,7 +18,13 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewbinding.ViewBindings;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivitySearchViewBinding;
 import com.example.group.util.DateUtil;
 import com.example.group.util.MenuUtil;
 
@@ -30,6 +33,7 @@ import com.example.group.util.MenuUtil;
  */
 @SuppressLint("SetTextI18n")
 public class SearchViewActivity extends AppCompatActivity {
+    private ActivitySearchViewBinding binding;
     private static final String TAG = "SearchViewActivity";
     private TextView tv_desc;
     private SearchView.SearchAutoComplete sac_key; //声明一个搜索自动完成的编辑框对象
@@ -39,14 +43,15 @@ public class SearchViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_search_view);
+        binding = ActivitySearchViewBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫tl_head的工具栏
-        Toolbar tl_head = findViewById(R.id.tl_head);
+        Toolbar tl_head = binding.tlHead;
         //设置工具栏的标题文字
         tl_head.setTitle("搜索框页面");
         //使用tl_head替换系统自带的ActionBar
         setSupportActionBar(tl_head);
-        tv_desc = findViewById(R.id.tv_desc);
+        tv_desc = binding.tvDesc;
     }
 
     //根据菜单项初始化搜索框
@@ -73,7 +78,7 @@ public class SearchViewActivity extends AppCompatActivity {
         //设置搜索框的可搜索信息
         searchView.setSearchableInfo(info);
         //从搜索框中获取名叫search_src_text的自动完成编辑框
-        sac_key = searchView.findViewById(R.id.search_src_text);
+        sac_key = ViewBindings.findChildViewById(searchView, R.id.search_src_text);
         //设置自动完成编辑框的文本颜色
         sac_key.setTextColor(Color.WHITE);
         //设置自动完成编辑框的提示文本颜色

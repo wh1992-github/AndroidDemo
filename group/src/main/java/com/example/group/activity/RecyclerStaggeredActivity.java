@@ -1,33 +1,36 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-import android.widget.LinearLayout;
 
-import com.example.group.R;
 import com.example.group.adapter.RecyclerStaggeredAdapter;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.databinding.ActivityRecyclerStaggeredBinding;
 import com.example.group.widget.SpacesItemDecoration;
 
 /**
  * Created by test on 2017/10/21.
  */
 public class RecyclerStaggeredActivity extends AppCompatActivity {
+    private ActivityRecyclerStaggeredBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_staggered);
+        binding = ActivityRecyclerStaggeredBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         initRecyclerStaggered(); //初始化瀑布流布局的循环视图
     }
 
     //初始化瀑布流布局的循环视图
     private void initRecyclerStaggered() {
         //从布局文件中获取名叫rv_staggered的循环视图
-        RecyclerView rv_staggered = findViewById(R.id.rv_staggered);
+        RecyclerView rv_staggered = binding.rvStaggered;
         //创建一个垂直方向的瀑布流布局管理器
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(
                 3, LinearLayout.VERTICAL);

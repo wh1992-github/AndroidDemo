@@ -2,11 +2,12 @@ package com.example.group.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.group.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.group.databinding.ActivityLifeCycleBinding;
 import com.example.group.livedata.LifecycleHelper;
 import com.example.group.livedata.MyLifecycleService;
 /**
@@ -14,6 +15,7 @@ import com.example.group.livedata.MyLifecycleService;
  */
 
 public class LifecycleActivity extends AppCompatActivity {
+    private ActivityLifeCycleBinding binding;
     private static final String TAG = "LifecycleActivity";
     private Button mBtnOpen;
     private Button mBtnClose;
@@ -23,10 +25,11 @@ public class LifecycleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_life_cycle);
+        binding = ActivityLifeCycleBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        mBtnOpen = findViewById(R.id.btn_open);
-        mBtnClose = findViewById(R.id.btn_close);
+        mBtnOpen = binding.btnOpen;
+        mBtnClose = binding.btnClose;
 
         Intent intent = new Intent(LifecycleActivity.this, MyLifecycleService.class);
         mBtnOpen.setOnClickListener(new View.OnClickListener() {

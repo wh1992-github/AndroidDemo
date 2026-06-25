@@ -1,15 +1,17 @@
 package com.example.group.widget;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.customview.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.example.group.R;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.customview.widget.ViewDragHelper;
+
+import com.example.group.databinding.ActivityViewDrag2Binding;
+
 /**
  * 封装 VDH Linear Layout 2 相关逻辑的类。
  */
@@ -17,11 +19,10 @@ import com.example.group.R;
 public class VDHLinearLayout2 extends LinearLayout {
 
     private ViewDragHelper mViewDragHelper;
-    private View mDragView;
-    private View mEdgeDragView;
-    private View mAutoBackView;
     private int mAutoBackViewOriginLeft;
     private int mAutoBackViewOriginTop;
+
+    private ActivityViewDrag2Binding mBinding;
 
     public VDHLinearLayout2(Context context) {
         this(context, null);
@@ -42,7 +43,7 @@ public class VDHLinearLayout2 extends LinearLayout {
             @Override
             public boolean tryCaptureView(@NonNull View child, int pointerId) {
                 //true表示允许拖动，false表示不允许拖动
-                return child == mDragView || child == mAutoBackView;
+                return child == mBinding.dragView || child == mBinding.autoBackView;
             }
 
             //确认可以拖动capturedChild的回调
@@ -66,7 +67,7 @@ public class VDHLinearLayout2 extends LinearLayout {
             //松开子View时的回调
             @Override
             public void onViewReleased(@NonNull View releasedChild, float xvel, float yvel) {
-                if (releasedChild == mAutoBackView) {
+                if (releasedChild == mBinding.autoBackView) {
                     mViewDragHelper.settleCapturedViewAt(mAutoBackViewOriginLeft, mAutoBackViewOriginTop);
                     invalidate();
                 }
@@ -84,7 +85,7 @@ public class VDHLinearLayout2 extends LinearLayout {
 
             @Override
             public void onEdgeDragStarted(int edgeFlags, int pointerId) {
-                mViewDragHelper.captureChildView(mEdgeDragView, pointerId);
+                mViewDragHelper.captureChildView(mBinding.edgeDragView, pointerId);
             }
 
             @Override
@@ -122,15 +123,13 @@ public class VDHLinearLayout2 extends LinearLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mDragView = findViewById(R.id.dragView);
-        mEdgeDragView = findViewById(R.id.edgeDragView);
-        mAutoBackView = findViewById(R.id.autoBackView);
+        mBinding = ActivityViewDrag2Binding.bind(this);
     }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
-        mAutoBackViewOriginLeft = mAutoBackView.getLeft();
-        mAutoBackViewOriginTop = mAutoBackView.getTop();
+        mAutoBackViewOriginLeft = mBinding.autoBackView.getLeft();
+        mAutoBackViewOriginTop = mBinding.autoBackView.getTop();
     }
 }

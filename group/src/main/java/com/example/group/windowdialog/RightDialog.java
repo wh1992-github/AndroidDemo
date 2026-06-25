@@ -10,11 +10,13 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.example.group.R;
+import com.example.group.databinding.DialogRightBinding;
 /**
  * 用于展示 Right 内容的对话框类。
  */
 
 public class RightDialog extends Dialog implements View.OnClickListener {
+    private DialogRightBinding binding;
     private OnItemClickListener mListener;
     private TextView mTv1, mTv2, mTv3;
 
@@ -26,7 +28,8 @@ public class RightDialog extends Dialog implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dialog_right);
+        binding = DialogRightBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         initView();
     }
 
@@ -37,9 +40,9 @@ public class RightDialog extends Dialog implements View.OnClickListener {
         layoutParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
         layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
         window.setAttributes(layoutParams);
-        mTv1 = findViewById(R.id.tv1);
-        mTv2 = findViewById(R.id.tv2);
-        mTv3 = findViewById(R.id.tv3);
+        mTv1 = binding.tv1;
+        mTv2 = binding.tv2;
+        mTv3 = binding.tv3;
         mTv1.setOnClickListener(this);
         mTv2.setOnClickListener(this);
         mTv3.setOnClickListener(this);

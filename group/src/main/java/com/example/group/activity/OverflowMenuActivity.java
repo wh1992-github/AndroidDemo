@@ -2,15 +2,17 @@ package com.example.group.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityOverflowMenuBinding;
 import com.example.group.util.DateUtil;
 import com.example.group.util.MenuUtil;
 
@@ -19,20 +21,22 @@ import com.example.group.util.MenuUtil;
  */
 @SuppressLint("SetTextI18n")
 public class OverflowMenuActivity extends AppCompatActivity {
+    private ActivityOverflowMenuBinding binding;
     private TextView tv_desc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_overflow_menu);
+        binding = ActivityOverflowMenuBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫tl_head的工具栏
-        Toolbar tl_head = findViewById(R.id.tl_head);
+        Toolbar tl_head = binding.tlHead;
         //设置工具栏的标题文字
         tl_head.setTitle("溢出菜单页面");
         //使用tl_head替换系统自带的ActionBar
         setSupportActionBar(tl_head);
-        tv_desc = findViewById(R.id.tv_desc);
+        tv_desc = binding.tvDesc;
     }
 
     @Override

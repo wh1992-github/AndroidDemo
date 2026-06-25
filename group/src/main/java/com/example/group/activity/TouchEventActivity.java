@@ -2,11 +2,15 @@ package com.example.group.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewbinding.ViewBindings;
 
 import com.example.group.R;
+import com.example.group.databinding.ActivityTouchEventBinding;
 import com.example.group.touchevent.BaseButton;
 import com.example.group.touchevent.BaseFrameLayout;
 import com.example.group.touchevent.BaseImageView;
@@ -21,6 +25,7 @@ import com.example.group.util.LogUtil;
  */
 @SuppressLint("ClickableViewAccessibility")
 public class TouchEventActivity extends AppCompatActivity implements View.OnClickListener {
+    private ActivityTouchEventBinding binding;
     private static final String TAG = "MainActivity";
     private BaseFrameLayout mFrameLayout;
     private BaseRelativeLayout mRelativeLayout;
@@ -33,12 +38,14 @@ public class TouchEventActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_touch_event);
-        mFrameLayout = findViewById(R.id.framelayout);
-        mRelativeLayout = findViewById(R.id.relativelayout);
-        mLinearLayout = findViewById(R.id.linearlayout);
-        mTextView = findViewById(R.id.textview);
-        mImageView = findViewById(R.id.imageview);
-        mButton = findViewById(R.id.button);
+        binding = ActivityTouchEventBinding.bind(getWindow().getDecorView());
+
+        mFrameLayout = binding.framelayout;
+        mRelativeLayout = binding.relativelayout;
+        mLinearLayout = binding.linearlayout;
+        mTextView = binding.textview;
+        mImageView = binding.imageview;
+        mButton = binding.button;
 
         //注释掉和放开,结果是不一样的,可以看log加深理解
         //mFrameLayout.setOnClickListener(this);
@@ -46,7 +53,7 @@ public class TouchEventActivity extends AppCompatActivity implements View.OnClic
         //mLinearLayout.setOnClickListener(this);
         //mTextView.setOnClickListener(this);
         //mImageView.setOnClickListener(this);
-        //mButton.setOnClickListener(this);
+        mButton.setOnClickListener(this);
     }
 
     @Override

@@ -2,11 +2,13 @@ package com.example.group.rxjava;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityRxjava04Binding;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -29,27 +31,29 @@ import io.reactivex.observables.GroupedObservable;
  */
 @SuppressLint({"LogNotTimber", "NonConstantResourceId", "CheckResult"})
 public class RxJavaActivity04 extends AppCompatActivity implements View.OnClickListener {
+    private ActivityRxjava04Binding binding;
     private static final String TAG = "RxJavaActivity04";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rxjava04);
+        binding = ActivityRxjava04Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        findViewById(R.id.btn_filter).setOnClickListener(this);
-        findViewById(R.id.btn_ofType).setOnClickListener(this);
-        findViewById(R.id.btn_elementAt).setOnClickListener(this);
-        findViewById(R.id.btn_distinct).setOnClickListener(this);
-        findViewById(R.id.btn_debounce).setOnClickListener(this);
-        findViewById(R.id.btn_first).setOnClickListener(this);
-        findViewById(R.id.btn_last).setOnClickListener(this);
-        findViewById(R.id.btn_skip).setOnClickListener(this);
-        findViewById(R.id.btn_take).setOnClickListener(this);
-        findViewById(R.id.btn_groupBy).setOnClickListener(this);
-        findViewById(R.id.btn_cast).setOnClickListener(this);
-        findViewById(R.id.btn_scan).setOnClickListener(this);
-        findViewById(R.id.btn_join).setOnClickListener(this);
-        findViewById(R.id.btn_groupJoin).setOnClickListener(this);
+        binding.btnFilter.setOnClickListener(this);
+        binding.btnOfType.setOnClickListener(this);
+        binding.btnElementAt.setOnClickListener(this);
+        binding.btnDistinct.setOnClickListener(this);
+        binding.btnDebounce.setOnClickListener(this);
+        binding.btnFirst.setOnClickListener(this);
+        binding.btnLast.setOnClickListener(this);
+        binding.btnSkip.setOnClickListener(this);
+        binding.btnTake.setOnClickListener(this);
+        binding.btnGroupBy.setOnClickListener(this);
+        binding.btnCast.setOnClickListener(this);
+        binding.btnScan.setOnClickListener(this);
+        binding.btnJoin.setOnClickListener(this);
+        binding.btnGroupJoin.setOnClickListener(this);
     }
 
     @Override

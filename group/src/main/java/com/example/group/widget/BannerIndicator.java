@@ -1,8 +1,6 @@
 package com.example.group.widget;
 
 import android.content.Context;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.example.group.R;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.group.databinding.BannerIndicatorBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,11 +62,13 @@ public class BannerIndicator extends RelativeLayout implements View.OnClickListe
     //初始化视图
     private void initView() {
         //根据布局文件banner_indicator.xml生成视图对象
-        View view = LayoutInflater.from(mContext).inflate(R.layout.banner_indicator, null);
+        BannerIndicatorBinding binding = BannerIndicatorBinding.inflate(
+                LayoutInflater.from(mContext), this, false);
+        View view = binding.getRoot();
         //从布局文件中获取名叫vp_banner的翻页视图
-        vp_banner = view.findViewById(R.id.vp_banner);
+        vp_banner = binding.vpBanner;
         //从布局文件中获取名叫pi_banner的翻页指示器
-        pi_banner = view.findViewById(R.id.pi_banner);
+        pi_banner = binding.piBanner;
         addView(view); //将该布局视图添加到横幅指示器中
     }
 

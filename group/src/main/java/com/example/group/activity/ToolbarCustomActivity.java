@@ -2,8 +2,6 @@ package com.example.group.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +10,11 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityToolbarCustomBinding;
 import com.example.group.util.DateUtil;
 import com.example.group.util.MenuUtil;
 import com.example.group.widget.CustomDateDialog;
@@ -26,6 +28,7 @@ import java.util.Locale;
  */
 @SuppressLint({"SetTextI18n"})
 public class ToolbarCustomActivity extends AppCompatActivity implements OnClickListener, OnDateSetListener {
+    private ActivityToolbarCustomBinding binding;
     private static final String TAG = "ToolbarCustomActivity";
     private TextView tv_day;
     private TextView tv_desc;
@@ -34,13 +37,14 @@ public class ToolbarCustomActivity extends AppCompatActivity implements OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_toolbar_custom);
+        binding = ActivityToolbarCustomBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫tl_head的工具栏
-        Toolbar tl_head = findViewById(R.id.tl_head);
+        Toolbar tl_head = binding.tlHead;
         //使用tl_head替换系统自带的ActionBar
         setSupportActionBar(tl_head);
-        tv_day = findViewById(R.id.tv_day);
-        tv_desc = findViewById(R.id.tv_desc);
+        tv_day = binding.tvDay;
+        tv_desc = binding.tvDesc;
         tv_day.setText(DateUtil.getNowDateTime("yyyy年MM月dd日"));
         tv_day.setOnClickListener(this);
     }
