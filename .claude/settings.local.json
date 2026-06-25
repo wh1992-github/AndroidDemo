@@ -45,7 +45,8 @@
       "Bash(taskkill:*)",
       "Bash(grep:*)",
       "Bash(cmd /c \"gradlew assembleDebug assembleRelease > build_result.log 2>&1 && echo BUILD_SUCCESS || echo BUILD_FAILED\")",
-      "Bash(.\\\\gradlew.bat assembleDebug:*)"
+      "Bash(.\\\\gradlew.bat assembleDebug:*)",
+      "Bash(claude:*)"
     ]
   }
 }

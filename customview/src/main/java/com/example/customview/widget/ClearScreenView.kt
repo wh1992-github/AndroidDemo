@@ -5,12 +5,14 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.VelocityTracker
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import kotlin.math.abs
+
 /**
  * 用于定义 Clear Screen Type 相关取值范围的枚举类型。
  */
@@ -19,6 +21,7 @@ enum class ClearScreenType {
     LEFT_TO_RIGHT,//从左滑到右清屏
     RIGHT_TO_LEFT //从右滑到左清屏
 }
+
 /**
  * 用于定义 Clear Screen Status 相关取值范围的枚举类型。
  */
@@ -27,6 +30,7 @@ enum class ClearScreenStatus {
     NORMAL,//正常状态
     CLEARED//已经清屏状态
 }
+
 /**
  * 用于定义 Clear Screen Mode 相关取值范围的枚举类型。
  */
@@ -35,6 +39,7 @@ enum class ClearScreenMode {
     QUICK_SCROLL,//快速滑动才触发清屏
     SLOW_SCROLL//滑动出发清屏
 }
+
 /**
  * 用于展示 Clear Screen 效果的自定义 View。
  */
@@ -129,11 +134,10 @@ class ClearScreenView @JvmOverloads constructor(
 
     private fun initView() {
         val view = View(mContext)
-        view.layoutParams = ViewGroup.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.MATCH_PARENT
-        )
-        view.isClickable = true
+            .apply {
+                layoutParams = ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+                isClickable = true
+            }
         addView(view, 0)
     }
 

@@ -9,11 +9,13 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 
 import com.example.group.R;
+import com.example.group.databinding.ActivityDepartmentStoreBinding;
 
 /**
  * Created by test on 2017/10/21.
  */
 public class DepartmentStoreActivity extends ActivityGroup implements OnClickListener {
+    private ActivityDepartmentStoreBinding binding;
     private static final String TAG = "DepartmentStoreActivity";
     private Bundle mBundle = new Bundle(); //声明一个包裹对象
     private LinearLayout ll_container, ll_first, ll_second, ll_third;
@@ -21,12 +23,13 @@ public class DepartmentStoreActivity extends ActivityGroup implements OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_department_store);
+        binding = ActivityDepartmentStoreBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫ll_container的线性布局,用于存放内容视图
-        ll_container = findViewById(R.id.ll_container);
-        ll_first = findViewById(R.id.ll_first); //获取第一个标签的线性布局
-        ll_second = findViewById(R.id.ll_second); //获取第二个标签的线性布局
-        ll_third = findViewById(R.id.ll_third); //获取第三个标签的线性布局
+        ll_container = binding.llContainer;
+        ll_first = binding.llFirst; //获取第一个标签的线性布局
+        ll_second = binding.llSecond; //获取第二个标签的线性布局
+        ll_third = binding.llThird; //获取第三个标签的线性布局
         ll_first.setOnClickListener(this); //给第一个标签注册点击监听器
         ll_second.setOnClickListener(this); //给第二个标签注册点击监听器
         ll_third.setOnClickListener(this); //给第三个标签注册点击监听器

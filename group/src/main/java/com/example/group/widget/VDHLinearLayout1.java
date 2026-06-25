@@ -1,24 +1,25 @@
 package com.example.group.widget;
 
 import android.content.Context;
-import androidx.customview.widget.ViewDragHelper;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 
-import com.example.group.R;
+import androidx.annotation.RequiresApi;
+import androidx.customview.widget.ViewDragHelper;
+
+import com.example.group.databinding.ActivityViewDrag1Binding;
+
 /**
  * 封装 VDH Linear Layout 1 相关逻辑的类。
  */
 
+@RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
 public class VDHLinearLayout1 extends LinearLayout {
     private static final int MIN_TOP = 100; //距离顶部最小的距离
-    private ScrollView mScrollView;
-    private Button mDragButton;
-    private ScrollView mBottomView;
+    private ActivityViewDrag1Binding mBinding;
 
     private int mDragBtnHeight;
     private ViewDragHelper mViewDragHelper;
@@ -40,7 +41,7 @@ public class VDHLinearLayout1 extends LinearLayout {
         mViewDragHelper = ViewDragHelper.create(this, 1.0f, new ViewDragHelper.Callback() {
             @Override
             public boolean tryCaptureView(View child, int pointerId) {
-                return child == mDragButton; //只处理dragBtn
+                return child == mBinding.dragBtn; //只处理dragBtn
             }
 
             @Override
@@ -65,14 +66,14 @@ public class VDHLinearLayout1 extends LinearLayout {
                 super.onViewPositionChanged(changedView, left, top, dx, dy);
 
                 //改变底部区域高度
-                LayoutParams bottomViewLayoutParams = (LayoutParams) mBottomView.getLayoutParams();
+                LayoutParams bottomViewLayoutParams = (LayoutParams) mBinding.bottomView.getLayoutParams();
                 bottomViewLayoutParams.height = bottomViewLayoutParams.height + dy * -1;
-                mBottomView.setLayoutParams(bottomViewLayoutParams);
+                mBinding.bottomView.setLayoutParams(bottomViewLayoutParams);
 
                 //改变顶部区域高度
-                LayoutParams topViewLayoutParams = (LayoutParams) mScrollView.getLayoutParams();
+                LayoutParams topViewLayoutParams = (LayoutParams) mBinding.topView.getLayoutParams();
                 topViewLayoutParams.height = topViewLayoutParams.height + dy;
-                mScrollView.setLayoutParams(topViewLayoutParams);
+                mBinding.topView.setLayoutParams(topViewLayoutParams);
             }
         });
     }
@@ -91,14 +92,12 @@ public class VDHLinearLayout1 extends LinearLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mScrollView = (ScrollView) findViewById(R.id.topView);
-        mDragButton = (Button) findViewById(R.id.dragBtn);
-        mBottomView = (ScrollView) findViewById(R.id.bottomView);
+        mBinding = ActivityViewDrag1Binding.bind(this);
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        mDragBtnHeight = mDragButton.getMeasuredHeight();
+        mDragBtnHeight = mBinding.dragBtn.getMeasuredHeight();
     }
 }

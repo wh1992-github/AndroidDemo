@@ -3,13 +3,14 @@ package com.example.group.activity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.example.group.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.group.databinding.ActivityProgressbarSeekbarBinding;
 import com.example.group.widget.NumberProgressBar;
 import com.example.group.widget.NumberSeekBar;
 /**
@@ -18,6 +19,7 @@ import com.example.group.widget.NumberSeekBar;
 
 @SuppressLint({"LongLogTag", "SetTextI18n"})
 public class ProgressBarSeekBarActivity extends AppCompatActivity {
+    private ActivityProgressbarSeekbarBinding binding;
     private static final String TAG = "ProgressBarActivity";
     private TextView mTv1, mTv2;
     private SeekBar mSeekBar;
@@ -45,13 +47,14 @@ public class ProgressBarSeekBarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_progressbar_seekbar);
-        mTv1 = findViewById(R.id.tv1);
-        mTv2 = findViewById(R.id.tv2);
-        mProgressBar = findViewById(R.id.progressbar);
-        mSeekBar = findViewById(R.id.seekbar);
-        mNumberSeekBar = findViewById(R.id.numberSeekBar);
-        mNumberProgressBar = findViewById(R.id.numberProgressBar);
+        binding = ActivityProgressbarSeekbarBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        mTv1 = binding.tv1;
+        mTv2 = binding.tv2;
+        mProgressBar = binding.progressbar;
+        mSeekBar = binding.seekbar;
+        mNumberSeekBar = binding.numberSeekBar;
+        mNumberProgressBar = binding.numberProgressBar;
         mHandler.postDelayed(runnable, 100);
 
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

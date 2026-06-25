@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.group.R;
+import com.example.group.databinding.ThridDialogLoadingBinding;
 /**
  * 提供 Dialog Third 相关工具方法的工具类。
  */
@@ -18,9 +19,10 @@ public class DialogThirdUtils {
 
     public static Dialog showWaitDialog(Context context) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.thrid_dialog_loading, null);
+        ThridDialogLoadingBinding binding = ThridDialogLoadingBinding.inflate(inflater);
+        LinearLayout layout = (LinearLayout) binding.getRoot();
 
-        ImageView spaceshipImage = layout.findViewById(R.id.img);
+        ImageView spaceshipImage = binding.img;
         Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotate_animation);
         spaceshipImage.startAnimation(animation);
         Dialog loadingDialog = new Dialog(context, R.style.MyDialogStyle);

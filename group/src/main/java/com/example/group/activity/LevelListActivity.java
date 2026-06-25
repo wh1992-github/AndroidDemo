@@ -1,17 +1,20 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityLevelListBinding;
 /**
  * 用于展示 Level List 功能的 Activity。
  */
 
 public class LevelListActivity extends AppCompatActivity implements View.OnClickListener {
+    private ActivityLevelListBinding binding;
     private static final String TAG = "LevelListActivity";
     private Button mBtnLevel1;
     private Button mBtnLevel2;
@@ -20,13 +23,14 @@ public class LevelListActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_list);
+        binding = ActivityLevelListBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        mBtnLevel1 = findViewById(R.id.btn_level_01);
-        mBtnLevel2 = findViewById(R.id.btn_level_02);
+        mBtnLevel1 = binding.btnLevel01;
+        mBtnLevel2 = binding.btnLevel02;
         mBtnLevel1.setOnClickListener(this);
         mBtnLevel2.setOnClickListener(this);
-        mIv = findViewById(R.id.iv_drawable);
+        mIv = binding.ivDrawable;
         mIv.setImageLevel(8);
     }
 

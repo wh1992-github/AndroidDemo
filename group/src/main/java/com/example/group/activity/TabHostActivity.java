@@ -9,11 +9,13 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 
 import com.example.group.R;
+import com.example.group.databinding.ActivityTabHostBinding;
 
 /**
  * Created by test on 2017/10/21.
  */
 public class TabHostActivity extends TabActivity implements OnClickListener {
+    private ActivityTabHostBinding binding;
     private static final String TAG = "TabHostActivity";
     private Bundle mBundle = new Bundle(); //声明一个包裹对象
     private TabHost tab_host; //声明一个标签栏对象
@@ -25,11 +27,12 @@ public class TabHostActivity extends TabActivity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab_host);
+        binding = ActivityTabHostBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         mBundle.putString("tag", TAG); //往包裹中存入名叫tag的标记串
-        ll_first = findViewById(R.id.ll_first); //获取第一个标签的线性布局
-        ll_second = findViewById(R.id.ll_second); //获取第二个标签的线性布局
-        ll_third = findViewById(R.id.ll_third); //获取第三个标签的线性布局
+        ll_first = binding.llFirst; //获取第一个标签的线性布局
+        ll_second = binding.llSecond; //获取第二个标签的线性布局
+        ll_third = binding.llThird; //获取第三个标签的线性布局
         ll_first.setOnClickListener(this); //给第一个标签注册点击监听器
         ll_second.setOnClickListener(this); //给第二个标签注册点击监听器
         ll_third.setOnClickListener(this); //给第三个标签注册点击监听器

@@ -1,8 +1,6 @@
 package com.example.group.adapter;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,8 +10,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
+
 import com.example.group.R;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.databinding.ItemLinearBinding;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemDeleteClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
@@ -122,11 +124,12 @@ public class LinearDynamicAdapter extends RecyclerView.Adapter<ViewHolder>
 
         public ItemHolder(View v) {
             super(v);
-            ll_item = v.findViewById(R.id.ll_item);
-            iv_pic = v.findViewById(R.id.iv_pic);
-            tv_title = v.findViewById(R.id.tv_title);
-            tv_desc = v.findViewById(R.id.tv_desc);
-            tv_delete = v.findViewById(R.id.tv_delete);
+            ItemLinearBinding binding = ItemLinearBinding.bind(v);
+            ll_item = binding.llItem;
+            iv_pic = binding.ivPic;
+            tv_title = binding.tvTitle;
+            tv_desc = binding.tvDesc;
+            tv_delete = binding.tvDelete;
         }
 
     }

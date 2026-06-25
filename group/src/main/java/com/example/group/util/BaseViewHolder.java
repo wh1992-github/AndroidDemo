@@ -1,7 +1,8 @@
 package com.example.group.util;
 
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import io.reactivex.annotations.NonNull;
 

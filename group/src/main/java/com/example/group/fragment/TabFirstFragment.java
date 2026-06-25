@@ -2,13 +2,14 @@ package com.example.group.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.group.R;
+import androidx.fragment.app.Fragment;
+
+import com.example.group.databinding.FragmentTabFirstBinding;
 
 import java.util.Locale;
 /**
@@ -24,11 +25,12 @@ public class TabFirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContext = getActivity(); //获取活动页面的上下文
         //根据布局文件fragment_tab_first.xml生成视图对象
-        mView = inflater.inflate(R.layout.fragment_tab_first, container, false);
+        FragmentTabFirstBinding binding = FragmentTabFirstBinding.inflate(inflater, container, false);
+        mView = binding.getRoot();
         //根据碎片标签栏传来的参数拼接文本字符串
         String desc = String.format(Locale.getDefault(), "我是%s页面,来自%s",
                 "首页", getArguments().getString("tag"));
-        TextView tv_first = mView.findViewById(R.id.tv_first);
+        TextView tv_first = binding.tvFirst;
         tv_first.setText(desc);
 
         return mView;

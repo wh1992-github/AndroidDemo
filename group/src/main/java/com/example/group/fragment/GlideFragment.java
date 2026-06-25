@@ -1,8 +1,9 @@
 package com.example.group.fragment;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.util.Log;
+
+import androidx.fragment.app.Fragment;
 /**
  * 用于承载 Glide 内容的 Fragment。
  */

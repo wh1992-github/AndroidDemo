@@ -71,13 +71,17 @@ class CarMoveView @JvmOverloads constructor(
     }
 
     private fun initPaint() {
-        mPaint.color = mPathColor
-        mPaint.style = Paint.Style.STROKE
-        mPaint.isAntiAlias = true
+        mPaint = Paint().apply {
+            color = mPathColor
+            style = Paint.Style.STROKE
+            isAntiAlias = true
+        }
 
-        mCarPaint.color = mPathColor
-        mCarPaint.style = Paint.Style.FILL
-        mCarPaint.isAntiAlias = true
+        mCarPaint = Paint().apply {
+            color = mPathColor
+            style = Paint.Style.FILL
+            isAntiAlias = true
+        }
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -144,27 +148,28 @@ class CarMoveView @JvmOverloads constructor(
 
     fun startAnim() {
         isMoveCar = true
-        val valueAnimator = ValueAnimator.ofFloat(0f, pathMeasure.length)
-        valueAnimator.duration = mDuration * 1000L
-        valueAnimator.addUpdateListener {
-            val distance: Float = it.animatedValue as Float
-            pathMeasure.getPosTan(distance, pos, tan)
-            invalidate()
+        ValueAnimator.ofFloat(0f, pathMeasure.length).apply {
+            duration = mDuration * 1000L
+            addUpdateListener {
+                val distance = it.animatedValue as Float
+                pathMeasure.getPosTan(distance, pos, tan)
+                invalidate()
+            }
+            addListener(object : Animator.AnimatorListener {
+                override fun onAnimationRepeat(animation: Animator) {}
+
+                override fun onAnimationEnd(animation: Animator) {
+                    isMoveCar = false
+                }
+
+                override fun onAnimationCancel(animation: Animator) {
+                    isMoveCar = false
+                }
+
+                override fun onAnimationStart(animation: Animator) {}
+
+            })
+            start()
         }
-        valueAnimator.addListener(object : Animator.AnimatorListener {
-            override fun onAnimationRepeat(animation: Animator) {}
-
-            override fun onAnimationEnd(animation: Animator) {
-                isMoveCar = false
-            }
-
-            override fun onAnimationCancel(animation: Animator) {
-                isMoveCar = false
-            }
-
-            override fun onAnimationStart(animation: Animator) {}
-
-        })
-        valueAnimator.start()
     }
 }

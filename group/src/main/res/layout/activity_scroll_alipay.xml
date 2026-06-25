@@ -20,6 +20,7 @@
             app:contentScrim="@color/blue_dark">
 
             <include
+                android:id="@+id/life_pay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/toolbar_height"

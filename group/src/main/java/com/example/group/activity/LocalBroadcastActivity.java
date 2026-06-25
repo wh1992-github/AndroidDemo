@@ -3,25 +3,28 @@ package com.example.group.activity;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.example.group.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.group.databinding.ActivityLocalBroadcastBinding;
 import com.example.group.util.LocalBroadcastManager;
 /**
  * 用于展示 Local Broadcast 功能的 Activity。
  */
 
 public class LocalBroadcastActivity extends AppCompatActivity {
+    private ActivityLocalBroadcastBinding binding;
     private static final String TAG = "LocalBroadcastActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate: ");
-        setContentView(R.layout.activity_local_broadcast);
-        findViewById(R.id.button).setOnClickListener(this::onClick);
+        binding = ActivityLocalBroadcastBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        binding.button.setOnClickListener(this::onClick);
 
         IntentFilter filter = new IntentFilter();
         filter.addAction("com.fuxi.test.custom");

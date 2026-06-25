@@ -172,9 +172,10 @@ class VoteView @JvmOverloads constructor(
     }
 
     private fun initPaint() {
-        iconPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-        iconPaint?.isFilterBitmap = true
-        iconPaint?.isDither = true
+        iconPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            isFilterBitmap = true
+            isDither = true
+        }
 
         bgPaint = getPaint(dp2px(0.5f), Color.WHITE, Paint.Style.FILL)
         progressPaint = getPaint(dp2px(0.5f), unCheckedProgressColor, Paint.Style.FILL)
@@ -184,24 +185,22 @@ class VoteView @JvmOverloads constructor(
         voteResultTextPaint = getTextPaint(uncheckedResultTextColor, textPaintSize.toFloat())
     }
 
-    private fun getPaint(strokeWidth: Float, color: Int, style: Paint.Style): Paint {
-        val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-        paint.strokeWidth = strokeWidth
-        paint.color = color
-        paint.isAntiAlias = true
-        paint.style = style
-        return paint
-    }
+    private fun getPaint(strokeWidth: Float, color: Int, style: Paint.Style): Paint =
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            this.strokeWidth = strokeWidth
+            this.color = color
+            isAntiAlias = true
+            this.style = style
+        }
 
-    private fun getTextPaint(color: Int, textSize: Float): Paint {
-        val textPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-        textPaint.textSize = textSize
-        textPaint.color = color
-        textPaint.textAlign = Paint.Align.CENTER
-        textPaint.isAntiAlias = true
-//       textPaint.typeface = Typeface.DEFAULT_BOLD
-        return textPaint
-    }
+    private fun getTextPaint(color: Int, textSize: Float): Paint =
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            this.textSize = textSize
+            this.color = color
+            textAlign = Paint.Align.CENTER
+            isAntiAlias = true
+//          typeface = Typeface.DEFAULT_BOLD
+        }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
@@ -447,13 +446,15 @@ class VoteView @JvmOverloads constructor(
         if (valueAnimator == null) {
             valueAnimator = ValueAnimator.ofFloat(0f, 1f)
         }
-        valueAnimator?.duration = animDuration
-        valueAnimator?.interpolator = DecelerateInterpolator()
-        valueAnimator?.addUpdateListener {
-            mScale = it.animatedValue as Float
-            invalidate()
+        valueAnimator?.apply {
+            duration = animDuration
+            interpolator = DecelerateInterpolator()
+            addUpdateListener {
+                mScale = it.animatedValue as Float
+                invalidate()
+            }
+            start()
         }
-        valueAnimator?.start()
     }
 
     fun onDestroy() {

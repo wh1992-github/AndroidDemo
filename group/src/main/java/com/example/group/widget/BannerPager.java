@@ -2,9 +2,6 @@ package com.example.group.widget;
 
 import android.content.Context;
 import android.os.Handler;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -15,7 +12,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener;
+
 import com.example.group.R;
+import com.example.group.databinding.BannerPagerBinding;
 import com.example.group.util.Utils;
 
 import java.util.ArrayList;
@@ -105,11 +107,13 @@ public class BannerPager extends RelativeLayout implements View.OnClickListener 
     //初始化视图
     private void initView() {
         //根据布局文件banner_pager.xml生成视图对象
-        View view = LayoutInflater.from(mContext).inflate(R.layout.banner_pager, null);
+        BannerPagerBinding binding = BannerPagerBinding.inflate(
+                LayoutInflater.from(mContext), this, false);
+        View view = binding.getRoot();
         //从布局文件中获取名叫vp_banner的翻页视图
-        vp_banner = view.findViewById(R.id.vp_banner);
+        vp_banner = binding.vpBanner;
         //从布局文件中获取名叫rg_indicator的单选组
-        rg_indicator = view.findViewById(R.id.rg_indicator);
+        rg_indicator = binding.rgIndicator;
         addView(view); //将该布局视图添加到横幅轮播条
     }
 
