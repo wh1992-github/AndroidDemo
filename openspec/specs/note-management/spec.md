@@ -1,5 +1,7 @@
 # Note Management Specification
 
+> **状态：规划中 / 未实现**。本规格描述的是规划中的笔记管理功能，当前代码库中（含 `app` 模块）尚无对应的 Activity、数据模型或存储实现。请勿将其理解为已交付功能。
+
 ## Requirements
 
 ### Requirement: 创建笔记

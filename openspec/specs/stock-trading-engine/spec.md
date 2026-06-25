@@ -1,3 +1,20 @@
+## 业务行为基线（与 JDK.java 当前实现一致）
+
+> 以下参数来自 `app/src/main/java/com/example/helloworld/JDK.java`，作为回归验证的基准。修改算法时若需调整，应同步更新本节。
+
+| 参数 | 当前值 | 代码位置参考 |
+| --- | --- | --- |
+| 极值追踪窗口 | 10 个交易日 | `int day = 10` |
+| 回测周期 | 240 个交易日 | `int cycle_day = 240` |
+| 统计总区间 | 480 个交易日 | `int total_day = 480` |
+| 买入/卖出阈值搜索范围 | 2% ~ 6%，步长 0.2%（循环 200~600，步进 20） | `printTest` 双层阈值循环 |
+| 每次买入初始资金 | 10000 元 | `capital = 10000` |
+| 每次卖出手续费 | 15 元 | 卖出结算处 |
+| 数据源 | assets 行情 txt（`YYYY-MM-DD,星期------价格`）或 `Constants.getData()` 硬编码数据 | — |
+| 结果输出 | Logcat，TAG `Constants---` | `Log.i` |
+
+方法职责：`start`（入口，调用 printTest）、`printTest`（阈值穷举回测）、`printMoney`（按固定阈值模拟逐笔交易）、`printMonth`（月度统计，当前调用处已注释）、`printBestBuySell`（月度最低买→次月最高卖）。
+
 ## Requirements
 
 ### Requirement: 滑动窗口极值追踪

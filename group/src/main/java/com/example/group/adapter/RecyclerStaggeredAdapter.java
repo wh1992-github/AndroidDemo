@@ -2,8 +2,6 @@ package com.example.group.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,8 +12,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
+
 import com.example.group.R;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.databinding.ItemStaggeredBinding;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
 
@@ -102,9 +104,10 @@ public class RecyclerStaggeredAdapter extends RecyclerView.Adapter<ViewHolder> i
 
         public ItemHolder(View v) {
             super(v);
-            ll_item = v.findViewById(R.id.ll_item);
-            iv_pic = v.findViewById(R.id.iv_pic);
-            tv_title = v.findViewById(R.id.tv_title);
+            ItemStaggeredBinding binding = ItemStaggeredBinding.bind(v);
+            ll_item = binding.llItem;
+            iv_pic = binding.ivPic;
+            tv_title = binding.tvTitle;
         }
     }
 

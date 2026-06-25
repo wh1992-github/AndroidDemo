@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 
-import com.example.group.R;
 import com.example.group.bigpicture.ImageSurfaceView;
+import com.example.group.databinding.ActivityBigPictureBinding;
 
 import java.io.IOException;
 /**
@@ -14,6 +14,7 @@ import java.io.IOException;
  */
 
 public class BigPictureActivity extends Activity {
+    private ActivityBigPictureBinding binding;
     private static final String TAG = "BigPictureActivity";
     private static final String MAP_FILE = "world.jpg";
 
@@ -23,8 +24,9 @@ public class BigPictureActivity extends Activity {
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_big_picture);
-        imageSurfaceView = findViewById(R.id.worldview);
+        binding = ActivityBigPictureBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        imageSurfaceView = binding.worldview;
         try {
             imageSurfaceView.setInputStream(getAssets().open(MAP_FILE));
             imageSurfaceView.post(() -> {

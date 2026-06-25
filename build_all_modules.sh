@@ -1,4 +1,7 @@
 #!/bin/bash
+# 逐个模块构建（Git Bash / macOS / Linux 通用）。
+# 注意：复用同一个 Gradle daemon，不要在循环中加 --no-daemon，
+# 否则频繁启停 daemon 会导致 R.jar 等中间产物出现文件锁冲突。
 
 echo "========================================"
 echo "Starting build for all modules"
@@ -65,7 +68,7 @@ for module in "${modules[@]}"; do
     echo "[INFO] Building $module:assembleDebug..."
     echo "[INFO] Building $module:assembleDebug..." >> "$LOG_FILE"
 
-    if ./gradlew.bat ":$module:assembleDebug" --continue >> "$LOG_FILE" 2>&1; then
+    if ./gradlew ":$module:assembleDebug" >> "$LOG_FILE" 2>&1; then
         echo "[SUCCESS] $module:assembleDebug completed successfully"
         echo "[SUCCESS] $module:assembleDebug completed successfully" >> "$LOG_FILE"
         ((SUCCESS_COUNT++))
@@ -80,7 +83,7 @@ for module in "${modules[@]}"; do
     echo "[INFO] Building $module:assembleRelease..."
     echo "[INFO] Building $module:assembleRelease..." >> "$LOG_FILE"
 
-    if ./gradlew.bat ":$module:assembleRelease" --continue >> "$LOG_FILE" 2>&1; then
+    if ./gradlew ":$module:assembleRelease" >> "$LOG_FILE" 2>&1; then
         echo "[SUCCESS] $module:assembleRelease completed successfully"
         echo "[SUCCESS] $module:assembleRelease completed successfully" >> "$LOG_FILE"
         ((SUCCESS_COUNT++))

@@ -8,13 +8,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.group.R;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.group.databinding.ActivityWindowDialogBinding;
 import com.example.group.windowdialog.BottomDialog;
 import com.example.group.windowdialog.CenterDialog;
 import com.example.group.windowdialog.DialogThirdUtils;
@@ -30,6 +31,7 @@ import com.example.group.windowdialog.WindowService;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class WindowDialogActivity extends AppCompatActivity implements OnItemClickListener {
+    private ActivityWindowDialogBinding binding;
     private static final String TAG = "MainActivity";
     private Button mBtn1, mBtn2, mBtn3, mBtn4, mBtn5, mBtn6, mBtn7, mBtn8, mBtn9, mBtn19, mBtn20;
     private RightDialog mRightDialog;
@@ -56,19 +58,20 @@ public class WindowDialogActivity extends AppCompatActivity implements OnItemCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_window_dialog);
+        binding = ActivityWindowDialogBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        mBtn1 = findViewById(R.id.btn1);
-        mBtn2 = findViewById(R.id.btn2);
-        mBtn3 = findViewById(R.id.btn3);
-        mBtn4 = findViewById(R.id.btn4);
-        mBtn5 = findViewById(R.id.btn5);
-        mBtn6 = findViewById(R.id.btn6);
-        mBtn7 = findViewById(R.id.btn7);
-        mBtn8 = findViewById(R.id.btn8);
-        mBtn9 = findViewById(R.id.btn9);
-        mBtn19 = findViewById(R.id.btn19);
-        mBtn20 = findViewById(R.id.btn20);
+        mBtn1 = binding.btn1;
+        mBtn2 = binding.btn2;
+        mBtn3 = binding.btn3;
+        mBtn4 = binding.btn4;
+        mBtn5 = binding.btn5;
+        mBtn6 = binding.btn6;
+        mBtn7 = binding.btn7;
+        mBtn8 = binding.btn8;
+        mBtn9 = binding.btn9;
+        mBtn19 = binding.btn19;
+        mBtn20 = binding.btn20;
 
         mRightDialog = new RightDialog(this, this);
         mBottomDialog = new BottomDialog(this, this);

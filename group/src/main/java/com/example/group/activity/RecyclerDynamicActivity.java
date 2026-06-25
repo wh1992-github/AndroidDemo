@@ -1,18 +1,20 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.group.R;
 import com.example.group.adapter.LinearDynamicAdapter;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.databinding.ActivityRecyclerDynamicBinding;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemDeleteClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
@@ -27,6 +29,7 @@ import java.util.Locale;
 
 public class RecyclerDynamicActivity extends AppCompatActivity implements OnClickListener,
         OnItemClickListener, OnItemLongClickListener, OnItemDeleteClickListener {
+    private ActivityRecyclerDynamicBinding binding;
     private RecyclerView rv_dynamic; //声明一个循环视图对象
     private LinearDynamicAdapter mAdapter; //声明一个线性适配器对象
     private ArrayList<GoodsInfo> mPublicArray; //当前公众号信息队列
@@ -35,15 +38,16 @@ public class RecyclerDynamicActivity extends AppCompatActivity implements OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_dynamic);
-        findViewById(R.id.btn_recycler_add).setOnClickListener(this);
+        binding = ActivityRecyclerDynamicBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        binding.btnRecyclerAdd.setOnClickListener(this);
         initRecyclerDynamic(); //初始化动态线性布局的循环视图
     }
 
     //初始化动态线性布局的循环视图
     private void initRecyclerDynamic() {
         //从布局文件中获取名叫rv_dynamic的循环视图
-        rv_dynamic = findViewById(R.id.rv_dynamic);
+        rv_dynamic = binding.rvDynamic;
         //创建一个垂直方向的线性布局管理器
         LinearLayoutManager manager = new LinearLayoutManager(
                 this, LinearLayout.VERTICAL, false);

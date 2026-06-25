@@ -1,4 +1,4 @@
-﻿---
+---
 name: stock-file-analysis
 description: Analyze a user-provided stock history file and return the latest analysis result, whether the latest date is a buy point or sell point, and the concrete reasons. Use when the user gives a stock data file path, uploads a stock history table, or asks you to judge if today is a buy point or sell point from historical price and volume data.
 ---
@@ -18,20 +18,18 @@ The expected output is:
 
 ## File Expectations
 
-Prefer files that contain at least:
-- date
-- close price
-- change percent
-- amplitude
-- volume or total hands
+The project's data files live in `app/src/main/assets/` and use this exact format, one row per trading day:
 
-Optional but useful:
-- open
-- high
-- low
-- amount
+```text
+YYYY-MM-DD,weekday------close
+2016-01-04,一------20.78
+```
 
-If the file is missing a required field, say exactly what is missing and stop.
+- The price is the text after `------` (6 characters, parsed as float).
+- Weekday is a single Chinese character (一/二/三/四/五/六/日).
+- These files contain **only date, weekday, and close price** — no change percent, amplitude, or volume.
+
+Generic user-provided CSV files with extra columns (open/high/low/volume) are also acceptable. If a requested check needs a field the file does not have (e.g. volume), say so explicitly and skip that check instead of fabricating values.
 
 ## Analysis Workflow
 
@@ -44,43 +42,33 @@ If the file is missing a required field, say exactly what is missing and stop.
 
 ## Buy/Sell Logic
 
-Default buy/sell point calculation:
+Default buy/sell point calculation (aligned with `app/src/main/java/com/example/helloworld/JDK.java`):
 
 - Use the latest close as the anchor price.
-- For each `n` in `10..15`:
-  - find the lowest close in the previous `n` trading days, excluding the latest day
-  - compute rise from that low to the latest close
-  - treat this as a buy-point candidate
-  - find the highest close in the previous `n` trading days, excluding the latest day
-  - compute drop from that high to the latest close
-  - treat this as a sell-point candidate
+- Use a fixed window of `n = 10` trading days (`int day = 10` in JDK.java) to track the local lowest/highest close.
+- Compute the rise from the tracked low to the latest close (buy-point candidate) and the drop from the tracked high (sell-point candidate).
+- The project's backtest searches thresholds from `2%` to `6%` in `0.2%` steps (loop 200..600 step 20), with a 240-day cycle, 480-day window, initial capital 10000 and a 15-unit fee per sell.
 
 Default threshold guidance:
-- `2% ~ 8%` rise from recent low: buy-point range
-- `2% ~ 8%` drop from recent high: sell-point range
+- `2% ~ 6%` rise from recent low: buy-point range
+- `2% ~ 6%` drop from recent high: sell-point range
 
 If the user gives a different `n` or threshold, use the user's version instead.
 
 ## Trend And Volume Checks
 
-Always add context from trend and volume:
+Add trend context when enough rows exist:
 
-- compute recent moving averages when enough rows exist:
-  - `MA5`
-  - `MA10`
-  - `MA20`
-- compare latest close against these moving averages
-- compare latest volume against:
-  - 5-day average volume
-  - 10-day average volume
-  - 20-day average volume
+- compute recent moving averages: `MA5`, `MA10`, `MA20`
+- compare the latest close against these moving averages
+
+Volume checks apply **only if the input file actually contains a volume column**. The project's own `assets/*.txt` files do not, so for those files skip all volume checks and state that volume data is unavailable.
 
 Interpretation rules:
 
 - If price is above `MA5/MA10/MA20`, trend is relatively strong.
 - If price is below `MA5/MA10/MA20`, trend is relatively weak.
-- If latest volume is clearly above recent averages, mention expansion.
-- If latest volume is below recent averages, mention weak confirmation.
+- If volume is available and clearly above recent averages, mention expansion; if below, mention weak confirmation.
 - If the price matches a buy-point range but trend is still weak, downgrade the buy conclusion.
 - If the price matches a sell-point range but the stock has already fallen well beyond the range, say it is no longer an ideal sell point.
 
@@ -95,16 +83,16 @@ Latest date: YYYY-MM-DD
 Latest close: X.XXX
 
 Buy-point analysis:
-- n=10: ...
-- n=11: ...
-...
+- tracked 10-day low: ...
+- rise from low: ...
+- threshold in 2%~6%: ...
 
 Sell-point analysis:
-- n=10: ...
-- n=11: ...
-...
+- tracked 10-day high: ...
+- drop from high: ...
+- threshold in 2%~6%: ...
 
-Trend and volume:
+Trend (and volume if available):
 - ...
 
 Final judgment:

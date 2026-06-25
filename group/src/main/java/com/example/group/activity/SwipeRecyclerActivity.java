@@ -2,19 +2,21 @@ package com.example.group.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
+
 import com.example.group.R;
 import com.example.group.adapter.LinearDynamicAdapter;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.databinding.ActivitySwipeRecyclerBinding;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemDeleteClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
@@ -29,6 +31,7 @@ import java.util.Locale;
 
 public class SwipeRecyclerActivity extends AppCompatActivity implements OnRefreshListener,
         OnItemClickListener, OnItemLongClickListener, OnItemDeleteClickListener {
+    private ActivitySwipeRecyclerBinding binding;
     private SwipeRefreshLayout srl_dynamic; //声明一个下拉刷新布局对象
     private RecyclerView rv_dynamic; //声明一个循环视图对象
     private LinearDynamicAdapter mAdapter; //声明一个线性适配器对象
@@ -38,9 +41,10 @@ public class SwipeRecyclerActivity extends AppCompatActivity implements OnRefres
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_swipe_recycler);
+        binding = ActivitySwipeRecyclerBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫srl_dynamic的下拉刷新布局
-        srl_dynamic = findViewById(R.id.srl_dynamic);
+        srl_dynamic = binding.srlDynamic;
         //给srl_dynamic设置下拉刷新监听器
         srl_dynamic.setOnRefreshListener(this);
         //设置下拉刷新布局的进度圆圈颜色
@@ -52,7 +56,7 @@ public class SwipeRecyclerActivity extends AppCompatActivity implements OnRefres
     //初始化动态线性布局的循环视图
     private void initRecyclerDynamic() {
         //从布局文件中获取名叫rv_dynamic的循环视图
-        rv_dynamic = findViewById(R.id.rv_dynamic);
+        rv_dynamic = binding.rvDynamic;
         //创建一个垂直方向的线性布局管理器
         LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
         //设置循环视图的布局管理器

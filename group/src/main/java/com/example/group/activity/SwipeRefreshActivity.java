@@ -2,27 +2,31 @@ package com.example.group.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivitySwipeRefreshBinding;
 
 /**
  * Created by test on 2017/10/21.
  */
 public class SwipeRefreshActivity extends AppCompatActivity implements OnRefreshListener {
+    private ActivitySwipeRefreshBinding binding;
     private TextView tv_simple;
     private SwipeRefreshLayout srl_simple; //声明一个下拉刷新布局对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_swipe_refresh);
-        tv_simple = findViewById(R.id.tv_simple);
+        binding = ActivitySwipeRefreshBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        tv_simple = binding.tvSimple;
         //从布局文件中获取名叫srl_simple的下拉刷新布局
-        srl_simple = findViewById(R.id.srl_simple);
+        srl_simple = binding.srlSimple;
         //给srl_simple设置下拉刷新监听器
         srl_simple.setOnRefreshListener(this);
         //设置下拉刷新布局的进度圆圈颜色
@@ -49,4 +53,3 @@ public class SwipeRefreshActivity extends AppCompatActivity implements OnRefresh
     };
 
 }
-

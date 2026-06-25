@@ -10,7 +10,6 @@
       "Bash(tee:*)",
       "Bash(chmod:*)",
       "Bash(bash:*)",
-      "Bash(python add_namespace.py:*)",
       "Bash(./gradlew clean assembleDebug:*)",
       "Bash(./gradlew assembleDebug:*)",
       "Bash(find:*)",
@@ -39,13 +38,12 @@
       "Bash(git restore:*)",
       "Bash(dir:*)",
       "Bash(findstr:*)",
-      "Bash(cmd //c build_all_modules.bat)",
       "Bash(unzip:*)",
       "Bash(tasklist:*)",
       "Bash(taskkill:*)",
       "Bash(grep:*)",
-      "Bash(cmd /c \"gradlew assembleDebug assembleRelease > build_result.log 2>&1 && echo BUILD_SUCCESS || echo BUILD_FAILED\")",
-      "Bash(.\\\\gradlew.bat assembleDebug:*)"
+      "Bash(.\\\\gradlew.bat assembleDebug:*)",
+      "Bash(claude:*)"
     ]
   }
 }

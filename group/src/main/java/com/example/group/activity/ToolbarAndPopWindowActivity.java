@@ -5,10 +5,6 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,13 +15,21 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityToolbarPopwindowBinding;
+import com.example.group.databinding.PopwindowBinding;
 /**
  * 用于展示 Toolbar And Pop Window 功能的 Activity。
  */
 
 @SuppressLint("RtlHardcoded")
 public class ToolbarAndPopWindowActivity extends AppCompatActivity implements View.OnClickListener {
+    private ActivityToolbarPopwindowBinding binding;
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -37,11 +41,12 @@ public class ToolbarAndPopWindowActivity extends AppCompatActivity implements Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_toolbar_popwindow);
+        binding = ActivityToolbarPopwindowBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
         mToast.setGravity(Gravity.CENTER, 0, 0);
 
-        mToolbar = findViewById(R.id.toolbar);
+        mToolbar = binding.toolbar;
         //App Logo
         mToolbar.setLogo(R.mipmap.ic_launcher);
         //主标题,默认为app_label的名字,此处为空
@@ -68,8 +73,8 @@ public class ToolbarAndPopWindowActivity extends AppCompatActivity implements Vi
         });
 
         //设置侧或布局
-        mDrawerLayout = findViewById(R.id.drawerlayout);
-        mLlTab = findViewById(R.id.ll_tabs);
+        mDrawerLayout = binding.drawerlayout;
+        mLlTab = binding.llTabs;
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close);
         mDrawerToggle.syncState();
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -101,14 +106,14 @@ public class ToolbarAndPopWindowActivity extends AppCompatActivity implements Vi
             }
         });
         //ToolBar里面还可以包含子控件
-        mToolbar.findViewById(R.id.tv_title).setOnClickListener(new View.OnClickListener() {
+        binding.tvTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mToast.setText("点击首页");
                 mToast.show();
             }
         });
-        mToolbar.findViewById(R.id.btn_diy).setOnClickListener(new View.OnClickListener() {
+        binding.btnDiy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mToast.setText("点击自定义按钮");
@@ -136,7 +141,8 @@ public class ToolbarAndPopWindowActivity extends AppCompatActivity implements Vi
         int yOffset = frame.top + mToolbar.getHeight();
         if (null == mPopupWindow) {
             //初始化PopupWindow的布局
-            View popView = getLayoutInflater().inflate(R.layout.popwindow, null);
+            PopwindowBinding popBinding = PopwindowBinding.inflate(getLayoutInflater());
+            View popView = popBinding.getRoot();
             //popView即popupWindow的布局，ture设置focusAble.
             mPopupWindow = new PopupWindow(popView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
             //必须设置BackgroundDrawable后setOutsideTouchable(true)才会有效
@@ -150,9 +156,9 @@ public class ToolbarAndPopWindowActivity extends AppCompatActivity implements Vi
             //显示在某个view下面
 //          mPopupWindow.showAsDropDown(mToolbar);
             //设置item的点击监听
-            popView.findViewById(R.id.ll_item1).setOnClickListener(this);
-            popView.findViewById(R.id.ll_item2).setOnClickListener(this);
-            popView.findViewById(R.id.ll_item3).setOnClickListener(this);
+            popBinding.llItem1.setOnClickListener(this);
+            popBinding.llItem2.setOnClickListener(this);
+            popBinding.llItem3.setOnClickListener(this);
         } else {
             mPopupWindow.showAtLocation(mToolbar, Gravity.RIGHT | Gravity.TOP, 40, yOffset);
         }

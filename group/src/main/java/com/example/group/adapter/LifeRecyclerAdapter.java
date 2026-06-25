@@ -1,15 +1,17 @@
 package com.example.group.adapter;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.group.R;
 import com.example.group.bean.LifeItem;
+import com.example.group.databinding.ItemLifeBinding;
 
 import java.util.ArrayList;
 /**
@@ -61,8 +63,9 @@ public class LifeRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         public ItemHolder(View v) {
             super(v);
-            iv_pic = v.findViewById(R.id.iv_pic);
-            tv_title = v.findViewById(R.id.tv_title);
+            ItemLifeBinding binding = ItemLifeBinding.bind(v);
+            iv_pic = binding.ivPic;
+            tv_title = binding.tvTitle;
         }
     }
 

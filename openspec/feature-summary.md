@@ -1,6 +1,6 @@
 # AndroidDemo 项目功能点总结
 
-这是一个包含 **20 个模块、350+ Activity、100+ 自定义 View、20+ Service** 的综合性 Android 学习/演示项目，覆盖了 Android 开发的方方面面。
+这是一个包含 **21 个参与构建的模块（19 个可运行 App + 2 个 library）、400+ Activity、100+ 自定义 View、19 个 Service** 的综合性 Android 学习/演示项目，覆盖了 Android 开发的方方面面。第15章的 `thirdsdk` 模块仍在目录中，但已从 `settings.gradle` 注释，默认不参与构建。
 
 ---
 
@@ -12,7 +12,7 @@
 |--------|--------|------|
 | 闹钟管理 | AlarmActivity | 定时闹钟调度与时间变更监听 |
 | 时间变更监听 | TimeChangeReceiver | 系统时间变更广播接收 |
-| 股票分析系统 | StockAnalysis 等 | 数据解析、回测、技术指标计算、预测算法、交易管理 |
+| 股票分析系统 | JDK、Constants.kt | 核心算法在 JDK.java（回测/买卖点/月度统计），数据来自 assets 的股票 txt 与 Constants.kt 硬编码常量，结果输出到 Logcat（TAG `Constants---`）；**不存在 StockAnalysis 类** |
 | 自定义圆角 View | CircleCornerView | 圆角视图组件 |
 | 资源生成工具 | GenerateValueFiles | 资源文件生成工具类 |
 
@@ -542,13 +542,15 @@
 
 ## 总计统计
 
-| 指标 | 数量 |
+| 指标 | 数量（以源码实测为准） |
 |------|------|
-| 模块数 | 20 |
-| Activity 数 | 350+ |
+| 参与构建的模块数 | 21（19 application + 2 library），另 thirdsdk 1 个已注释 |
+| Activity 数 | 400+（含 434 个 `*Activity` 源文件） |
 | 自定义 View 数 | 100+ |
-| Service 数 | 20+ |
-| 工具类数 | 60+ |
+| Service 数 | 19 |
+| 工具类数 | 60+（util 模块） |
+
+> 本清单为功能索引，具体类名与现状以源码为准；主模块股票分析的实际实现见 `app/src/main/java/com/example/helloworld/JDK.java`，而非早期文档中提及的 StockAnalysis。更新时间：2026-11。
 
 ## 技术领域覆盖
 

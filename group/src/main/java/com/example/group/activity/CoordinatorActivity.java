@@ -2,20 +2,23 @@ package com.example.group.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityCoordinatorBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 /**
  * 用于展示 Coordinator 功能的 Activity。
  */
 
 public class CoordinatorActivity extends AppCompatActivity implements View.OnClickListener {
+    private ActivityCoordinatorBinding binding;
     private CoordinatorLayout cl_main; //声明一个协调布局对象
     private FloatingActionButton mBtnFab;//声明一个悬浮按钮对象
     private Button mBtnSnackBarSimple;
@@ -26,17 +29,18 @@ public class CoordinatorActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coordinator);
+        binding = ActivityCoordinatorBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫cl_main的协调布局
-        cl_main = findViewById(R.id.cl_main);
+        cl_main = binding.clMain;
         //从布局文件中获取名叫fab_btn的悬浮按钮
-        mBtnSnackBarSimple = findViewById(R.id.btn_snackbar_simple);
+        mBtnSnackBarSimple = binding.btnSnackbarSimple;
         mBtnSnackBarSimple.setOnClickListener(this);
-        mBtnSnackBarAction = findViewById(R.id.btn_snackbar_action);
+        mBtnSnackBarAction = binding.btnSnackbarAction;
         mBtnSnackBarAction.setOnClickListener(this);
-        mBtnFloating = findViewById(R.id.btn_floating);
+        mBtnFloating = binding.btnFloating;
         mBtnFloating.setOnClickListener(this);
-        mBtnFab = findViewById(R.id.fab_btn);
+        mBtnFab = binding.fabBtn;
         mBtnFab.setOnClickListener(this);
     }
 

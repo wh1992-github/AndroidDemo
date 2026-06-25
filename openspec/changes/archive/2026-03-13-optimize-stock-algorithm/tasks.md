@@ -19,5 +19,5 @@
 
 ## 4. 清理
 
-- [x] 4.1 确认并删除未使用的 `getAverage5` 方法
+- [ ] 4.1 确认并删除未使用的 `getAverage5` 方法（注：归档时未完成，`JDK.java` 中该方法仍保留）
 - [x] 4.2 清理 `printTest` 中未使用的静态变量 `buy_min`/`sell_min`/`buy_max`/`sell_max`（改为局部变量）

@@ -16,12 +16,12 @@ Use the workflow defined in:
 
 1. Read the file and detect the latest valid trading date.
 2. Compute buy-point and sell-point checks using the latest close as the anchor.
-3. Default to checking `n=10..15` unless the user gives a different range.
-4. Default to using the `2%~8%` range for buy/sell candidates unless the user overrides it.
+3. Default to a fixed `n=10` trading-day window (matching `JDK.java`) unless the user gives a different value.
+4. Default to using the `2%~6%` range for buy/sell candidates unless the user overrides it.
 5. Always combine:
    - recent low/high close analysis
    - moving-average trend
-   - recent volume comparison
+   - volume comparison **only if the file contains a volume column** (the project's `assets/*.txt` files do not)
 6. Give a direct judgment:
    - `BUY`
    - `SELL`
@@ -42,7 +42,7 @@ Buy-point analysis:
 Sell-point analysis:
 - ...
 
-Trend and volume:
+Trend (and volume if available):
 - ...
 
 Final judgment:

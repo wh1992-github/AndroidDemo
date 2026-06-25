@@ -2,12 +2,6 @@ package com.example.group.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import com.google.android.material.appbar.AppBarLayout.LayoutParams;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -16,13 +10,22 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.group.R;
 import com.example.group.adapter.RecyclerCollapseAdapter;
+import com.example.group.databinding.ActivityScrollFlagBinding;
+import com.google.android.material.appbar.AppBarLayout.LayoutParams;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 /**
  * Created by test on 2017/9/3.
  */
 public class ScrollFlagActivity extends AppCompatActivity {
+    private ActivityScrollFlagBinding binding;
     private CollapsingToolbarLayout ctl_title; //声明一个可折叠布局对象
     private String[] yearArray = {"鼠年", "牛年", "虎年", "兔年", "龙年", "蛇年",
             "马年", "羊年", "猴年", "鸡年", "狗年", "猪年"};
@@ -31,20 +34,21 @@ public class ScrollFlagActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_scroll_flag);
+        binding = ActivityScrollFlagBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫tl_title的工具栏
-        Toolbar tl_title = findViewById(R.id.tl_title);
+        Toolbar tl_title = binding.tlTitle;
         //设置工具栏的背景
         tl_title.setBackgroundColor(Color.YELLOW);
         //使用tl_title替换系统自带的ActionBar
         setSupportActionBar(tl_title);
         //从布局文件中获取名叫ctl_title的可折叠布局
-        ctl_title = findViewById(R.id.ctl_title);
+        ctl_title = binding.ctlTitle;
         //设置可折叠布局的标题文字
         ctl_title.setTitle("滚动标志");
         initFlagSpinner();
         //从布局文件中获取名叫rv_main的循环视图
-        RecyclerView rv_main = findViewById(R.id.rv_main);
+        RecyclerView rv_main = binding.rvMain;
         //创建一个垂直方向的线性布局管理器
         LinearLayoutManager llm = new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
         //设置循环视图的布局管理器
@@ -75,7 +79,7 @@ public class ScrollFlagActivity extends AppCompatActivity {
         ArrayAdapter<String> flagAdapter = new ArrayAdapter<>(this,
                 R.layout.item_select, descArray);
         flagAdapter.setDropDownViewResource(R.layout.item_dropdown);
-        Spinner sp_style = findViewById(R.id.sp_flag);
+        Spinner sp_style = binding.spFlag;
         sp_style.setPrompt("请选择滚动标志");
         sp_style.setAdapter(flagAdapter);
         //设置下拉框列表的选择监听器

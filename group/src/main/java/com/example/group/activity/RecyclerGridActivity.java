@@ -1,32 +1,35 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.group.R;
 import com.example.group.adapter.RecyclerGridAdapter;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.databinding.ActivityRecyclerGridBinding;
 import com.example.group.widget.SpacesItemDecoration;
 
 /**
  * Created by test on 2017/10/21.
  */
 public class RecyclerGridActivity extends AppCompatActivity {
+    private ActivityRecyclerGridBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_grid);
+        binding = ActivityRecyclerGridBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         initRecyclerGrid(); //初始化网格布局的循环视图
     }
 
     //初始化网格布局的循环视图
     private void initRecyclerGrid() {
         //从布局文件中获取名叫rv_grid的循环视图
-        RecyclerView rv_grid = findViewById(R.id.rv_grid);
+        RecyclerView rv_grid = binding.rvGrid;
         //创建一个垂直方向的网格布局管理器
         GridLayoutManager manager = new GridLayoutManager(this, 5);
         //设置循环视图的布局管理器
