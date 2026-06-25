@@ -1,17 +1,18 @@
 package com.example.group.livedata;
 
 import android.annotation.SuppressLint;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.group.R;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.example.group.activity.LiveDataSampleActivity;
+import com.example.group.databinding.FragmentTextBinding;
 import com.example.group.util.LogUtil;
 /**
  * 用于承载 One 内容的 Fragment。
@@ -48,18 +49,15 @@ public class OneFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_text, container, false);
-        initView();
+        FragmentTextBinding binding = FragmentTextBinding.inflate(inflater, container, false);
+        mView = binding.getRoot();
+        mTvName = binding.tvName;
         return mView;
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-    }
-
-    private void initView() {
-        mTvName = mView.findViewById(R.id.tv_name);
     }
 
 }

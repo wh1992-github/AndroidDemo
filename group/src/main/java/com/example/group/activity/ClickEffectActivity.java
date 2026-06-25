@@ -1,25 +1,29 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityClickEffectBinding;
 /**
  * 用于展示 Click Effect 功能的 Activity。
  */
 
 public class ClickEffectActivity extends AppCompatActivity {
+    private ActivityClickEffectBinding binding;
     private static final String TAG = "ClickEffectActivity";
     private TextView mTextView1, mTextView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_click_effect);
-        mTextView1 = findViewById(R.id.textview1);
-        mTextView2 = findViewById(R.id.textview2);
+        binding = ActivityClickEffectBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        mTextView1 = binding.textview1;
+        mTextView2 = binding.textview2;
         setClickEffect();
     }
 

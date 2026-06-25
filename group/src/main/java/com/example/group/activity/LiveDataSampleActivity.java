@@ -1,17 +1,19 @@
 package com.example.group.activity;
 
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityLiveDataSampleBinding;
 import com.example.group.livedata.NetworkLiveData;
 import com.example.group.livedata.OneFragment;
 import com.example.group.livedata.TestViewModel;
@@ -22,6 +24,7 @@ import com.example.group.util.LogUtil;
  */
 
 public class LiveDataSampleActivity extends AppCompatActivity {
+    private ActivityLiveDataSampleBinding binding;
     private static final String TAG = "LiveDataSampleActivity";
     private static final String mKey = "LiveData";
 
@@ -38,7 +41,8 @@ public class LiveDataSampleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_live_data_sample);
+        binding = ActivityLiveDataSampleBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         initView();
         initData();
     }
@@ -50,9 +54,9 @@ public class LiveDataSampleActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mTvName = findViewById(R.id.tv_name);
-        mTvNameForever = findViewById(R.id.tv_name_forever);
-        mBtnChangeName = findViewById(R.id.btn_change_name);
+        mTvName = binding.tvName;
+        mTvNameForever = binding.tvNameForever;
+        mBtnChangeName = binding.btnChangeName;
         mBtnChangeName.setOnClickListener(v -> {
             i++;
             String name = mNames[i % mNames.length];

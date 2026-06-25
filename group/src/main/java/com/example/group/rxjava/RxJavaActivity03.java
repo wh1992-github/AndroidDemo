@@ -2,11 +2,13 @@ package com.example.group.rxjava;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityRxjava03Binding;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -29,24 +31,26 @@ import io.reactivex.functions.Predicate;
  */
 @SuppressLint({"LogNotTimber", "NonConstantResourceId"})
 public class RxJavaActivity03 extends AppCompatActivity implements View.OnClickListener {
+    private ActivityRxjava03Binding binding;
     private static final String TAG = "RxJavaActivity03";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rxjava03);
+        binding = ActivityRxjava03Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        findViewById(R.id.btn_delay).setOnClickListener(this);
-        findViewById(R.id.btn_doNext).setOnClickListener(this);
-        findViewById(R.id.btn_doOnError).setOnClickListener(this);
-        findViewById(R.id.btn_doOnFinally).setOnClickListener(this);
-        findViewById(R.id.btn_onErrorReturn).setOnClickListener(this);
-        findViewById(R.id.btn_onErrorResumeNext).setOnClickListener(this);
-        findViewById(R.id.btn_onExceptionResumeNext).setOnClickListener(this);
-        findViewById(R.id.btn_retry).setOnClickListener(this);
-        findViewById(R.id.btn_retryWhen).setOnClickListener(this);
-        findViewById(R.id.btn_repeat).setOnClickListener(this);
-        findViewById(R.id.btn_repeatWhen).setOnClickListener(this);
+        binding.btnDelay.setOnClickListener(this);
+        binding.btnDoNext.setOnClickListener(this);
+        binding.btnDoOnError.setOnClickListener(this);
+        binding.btnDoOnFinally.setOnClickListener(this);
+        binding.btnOnErrorReturn.setOnClickListener(this);
+        binding.btnOnErrorResumeNext.setOnClickListener(this);
+        binding.btnOnExceptionResumeNext.setOnClickListener(this);
+        binding.btnRetry.setOnClickListener(this);
+        binding.btnRetryWhen.setOnClickListener(this);
+        binding.btnRepeat.setOnClickListener(this);
+        binding.btnRepeatWhen.setOnClickListener(this);
     }
 
     @Override

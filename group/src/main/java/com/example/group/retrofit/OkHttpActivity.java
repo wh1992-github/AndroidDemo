@@ -3,14 +3,16 @@ package com.example.group.retrofit;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Environment;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityOkhttpBinding;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
@@ -51,26 +53,28 @@ import okio.BufferedSink;
  */
 @SuppressLint({"LogNotTimber", "NonConstantResourceId"})
 public class OkHttpActivity extends AppCompatActivity implements View.OnClickListener {
+    private ActivityOkhttpBinding binding;
     private static final String TAG = "OkHttpActivity";
     private OkHttpClient mOkHttpClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_okhttp);
+        binding = ActivityOkhttpBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        findViewById(R.id.btn_get_sync).setOnClickListener(this);
-        findViewById(R.id.btn_get_async).setOnClickListener(this);
-        findViewById(R.id.btn_post_sync_str).setOnClickListener(this);
-        findViewById(R.id.btn_post_async_str).setOnClickListener(this);
-        findViewById(R.id.btn_post_key_value).setOnClickListener(this);
-        findViewById(R.id.btn_post_key_value_more).setOnClickListener(this);
-        findViewById(R.id.btn_post_file).setOnClickListener(this);
-        findViewById(R.id.btn_post_form).setOnClickListener(this);
-        findViewById(R.id.btn_post_streaming).setOnClickListener(this);
-        findViewById(R.id.btn_post_multipart).setOnClickListener(this);
-        findViewById(R.id.btn_header_set_read).setOnClickListener(this);
-        findViewById(R.id.btn_timeout).setOnClickListener(this);
+        binding.btnGetSync.setOnClickListener(this);
+        binding.btnGetAsync.setOnClickListener(this);
+        binding.btnPostSyncStr.setOnClickListener(this);
+        binding.btnPostAsyncStr.setOnClickListener(this);
+        binding.btnPostKeyValue.setOnClickListener(this);
+        binding.btnPostKeyValueMore.setOnClickListener(this);
+        binding.btnPostFile.setOnClickListener(this);
+        binding.btnPostForm.setOnClickListener(this);
+        binding.btnPostStreaming.setOnClickListener(this);
+        binding.btnPostMultipart.setOnClickListener(this);
+        binding.btnHeaderSetRead.setOnClickListener(this);
+        binding.btnTimeout.setOnClickListener(this);
 
         //方式一：创建OkHttpClient实例,使用默认构造函数，创建默认配置OkHttpClient(官方建议全局只有一个实例)
         //mOkHttpClient = new OkHttpClient();

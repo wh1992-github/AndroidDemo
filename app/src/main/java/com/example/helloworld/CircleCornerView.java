@@ -27,6 +27,11 @@ public class CircleCornerView extends LinearLayout {
     }
 
     @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+    }
+
+    @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
         width = getWidth();

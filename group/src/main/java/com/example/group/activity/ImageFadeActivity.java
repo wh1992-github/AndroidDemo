@@ -2,21 +2,24 @@ package com.example.group.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Window;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.group.R;
 import com.example.group.adapter.RecyclerCollapseAdapter;
+import com.example.group.databinding.ActivityImageFadeBinding;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 /**
  * Created by test on 2017/9/3.
  */
 public class ImageFadeActivity extends AppCompatActivity {
+    private ActivityImageFadeBinding binding;
     private String[] yearArray = {"鼠年", "牛年", "虎年", "兔年", "龙年", "蛇年",
             "马年", "羊年", "猴年", "鸡年", "狗年", "猪年"};
 
@@ -24,13 +27,14 @@ public class ImageFadeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_image_fade);
+        binding = ActivityImageFadeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫tl_title的工具栏
-        Toolbar tl_title = findViewById(R.id.tl_title);
+        Toolbar tl_title = binding.tlTitle;
         //使用tl_title替换系统自带的ActionBar
         setSupportActionBar(tl_title);
         //从布局文件中获取名叫ctl_title的可折叠布局
-        CollapsingToolbarLayout ctl_title = findViewById(R.id.ctl_title);
+        CollapsingToolbarLayout ctl_title = binding.ctlTitle;
         //设置可折叠布局的标题文字
         ctl_title.setTitle(getString(R.string.toolbar_name));
         //设置可折叠布局伸展之后的文字颜色
@@ -38,7 +42,7 @@ public class ImageFadeActivity extends AppCompatActivity {
         //设置可折叠布局收缩之后的文字颜色
         ctl_title.setCollapsedTitleTextColor(Color.RED);
         //从布局文件中获取名叫rv_main的循环视图
-        RecyclerView rv_main = findViewById(R.id.rv_main);
+        RecyclerView rv_main = binding.rvMain;
         //创建一个垂直方向的线性布局管理器
         LinearLayoutManager llm = new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
         //设置循环视图的布局管理器

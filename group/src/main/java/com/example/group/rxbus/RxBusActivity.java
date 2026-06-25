@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.group.R;
+import com.example.group.databinding.ActivityRxbusBinding;
 
 import rx.Subscription;
 import rx.functions.Action1;
@@ -15,14 +15,16 @@ import rx.functions.Action1;
  */
 @SuppressLint("SetTextI18n")
 public class RxBusActivity extends RxBusBaseActivity {
+    private ActivityRxbusBinding binding;
     private TextView tvContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rxbus);
+        binding = ActivityRxbusBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        tvContent = findViewById(R.id.tv_content);
+        tvContent = binding.tvContent;
         receiverEvent();
     }
 

@@ -49,6 +49,7 @@
         <activity android:name=".activity.LoadingViewMacActivity" />
         <activity android:name=".activity.FlowActivity" />
         <activity android:name=".activity.TextSwitcherActivity" />
+        <activity android:name=".activity.WaveViewActivity" />
     </application>
 
 </manifest>

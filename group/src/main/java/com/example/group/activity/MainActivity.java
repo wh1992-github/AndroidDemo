@@ -2,74 +2,78 @@ package com.example.group.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityMainBinding;
 import com.example.group.rxbus.RxBusActivity;
 
 /**
  * Created by test on 2017/10/21.
  */
 public class MainActivity extends AppCompatActivity implements OnClickListener {
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        findViewById(R.id.btn_tab_button).setOnClickListener(this);
-        findViewById(R.id.btn_tab_host).setOnClickListener(this);
-        findViewById(R.id.btn_tab_group).setOnClickListener(this);
-        findViewById(R.id.btn_tab_fragment).setOnClickListener(this);
-        findViewById(R.id.btn_toolbar).setOnClickListener(this);
-        findViewById(R.id.btn_seekbar).setOnClickListener(this);
-        findViewById(R.id.btn_click_effect).setOnClickListener(this);
-        findViewById(R.id.btn_touch_event).setOnClickListener(this);
-        findViewById(R.id.btn_window_dialog).setOnClickListener(this);
-        findViewById(R.id.btn_local_broadcast).setOnClickListener(this);
-        findViewById(R.id.btn_handler).setOnClickListener(this);
-        findViewById(R.id.btn_toast).setOnClickListener(this);
-        findViewById(R.id.btn_toolbar_custom).setOnClickListener(this);
-        findViewById(R.id.btn_overflow_menu).setOnClickListener(this);
-        findViewById(R.id.btn_search_view).setOnClickListener(this);
-        findViewById(R.id.btn_tab_layout).setOnClickListener(this);
-        findViewById(R.id.btn_tab_custom).setOnClickListener(this);
-        findViewById(R.id.btn_banner_indicator).setOnClickListener(this);
-        findViewById(R.id.btn_banner_pager).setOnClickListener(this);
-        findViewById(R.id.btn_banner_top).setOnClickListener(this);
-        findViewById(R.id.btn_recycler_linear).setOnClickListener(this);
-        findViewById(R.id.btn_recycler_grid).setOnClickListener(this);
-        findViewById(R.id.btn_recycler_combine).setOnClickListener(this);
-        findViewById(R.id.btn_recycler_staggered).setOnClickListener(this);
-        findViewById(R.id.btn_recycler_dynamic).setOnClickListener(this);
-        findViewById(R.id.btn_recycler_drag).setOnClickListener(this);
-        findViewById(R.id.btn_view_drag1).setOnClickListener(this);
-        findViewById(R.id.btn_view_drag2).setOnClickListener(this);
-        findViewById(R.id.btn_coordinator).setOnClickListener(this);
-        findViewById(R.id.btn_appbar_recycler).setOnClickListener(this);
-        findViewById(R.id.btn_appbar_nested).setOnClickListener(this);
-        findViewById(R.id.btn_collapse_pin).setOnClickListener(this);
-        findViewById(R.id.btn_collapse_parallax).setOnClickListener(this);
-        findViewById(R.id.btn_image_fade).setOnClickListener(this);
-        findViewById(R.id.btn_scroll_flag).setOnClickListener(this);
-        findViewById(R.id.btn_scroll_alipay).setOnClickListener(this);
-        findViewById(R.id.btn_swipe_refresh).setOnClickListener(this);
-        findViewById(R.id.btn_swipe_recycler).setOnClickListener(this);
-        findViewById(R.id.btn_department_store).setOnClickListener(this);
-        findViewById(R.id.btn_live_data).setOnClickListener(this);
-        findViewById(R.id.btn_arouter).setOnClickListener(this);
-        findViewById(R.id.btn_glide).setOnClickListener(this);
-        findViewById(R.id.btn_timber).setOnClickListener(this);
-        findViewById(R.id.btn_orientation).setOnClickListener(this);
-        findViewById(R.id.btn_big_picture).setOnClickListener(this);
-        findViewById(R.id.btn_mmkv).setOnClickListener(this);
-        findViewById(R.id.btn_level_list).setOnClickListener(this);
-        findViewById(R.id.btn_rxjava).setOnClickListener(this);
-        findViewById(R.id.btn_log4j).setOnClickListener(this);
-        findViewById(R.id.btn_rx_bus).setOnClickListener(this);
-        findViewById(R.id.btn_view_pager).setOnClickListener(this);
+        binding.btnTabButton.setOnClickListener(this);
+        binding.btnTabHost.setOnClickListener(this);
+        binding.btnTabGroup.setOnClickListener(this);
+        binding.btnTabFragment.setOnClickListener(this);
+        binding.btnToolbar.setOnClickListener(this);
+        binding.btnSeekbar.setOnClickListener(this);
+        binding.btnClickEffect.setOnClickListener(this);
+        binding.btnTouchEvent.setOnClickListener(this);
+        binding.btnWindowDialog.setOnClickListener(this);
+        binding.btnLocalBroadcast.setOnClickListener(this);
+        binding.btnHandler.setOnClickListener(this);
+        binding.btnToast.setOnClickListener(this);
+        binding.btnToolbarCustom.setOnClickListener(this);
+        binding.btnOverflowMenu.setOnClickListener(this);
+        binding.btnSearchView.setOnClickListener(this);
+        binding.btnTabLayout.setOnClickListener(this);
+        binding.btnTabCustom.setOnClickListener(this);
+        binding.btnBannerIndicator.setOnClickListener(this);
+        binding.btnBannerPager.setOnClickListener(this);
+        binding.btnBannerTop.setOnClickListener(this);
+        binding.btnRecyclerLinear.setOnClickListener(this);
+        binding.btnRecyclerGrid.setOnClickListener(this);
+        binding.btnRecyclerCombine.setOnClickListener(this);
+        binding.btnRecyclerStaggered.setOnClickListener(this);
+        binding.btnRecyclerDynamic.setOnClickListener(this);
+        binding.btnRecyclerDrag.setOnClickListener(this);
+        binding.btnViewDrag1.setOnClickListener(this);
+        binding.btnViewDrag2.setOnClickListener(this);
+        binding.btnCoordinator.setOnClickListener(this);
+        binding.btnAppbarRecycler.setOnClickListener(this);
+        binding.btnAppbarNested.setOnClickListener(this);
+        binding.btnCollapsePin.setOnClickListener(this);
+        binding.btnCollapseParallax.setOnClickListener(this);
+        binding.btnImageFade.setOnClickListener(this);
+        binding.btnScrollFlag.setOnClickListener(this);
+        binding.btnScrollAlipay.setOnClickListener(this);
+        binding.btnSwipeRefresh.setOnClickListener(this);
+        binding.btnSwipeRecycler.setOnClickListener(this);
+        binding.btnDepartmentStore.setOnClickListener(this);
+        binding.btnLiveData.setOnClickListener(this);
+        binding.btnArouter.setOnClickListener(this);
+        binding.btnGlide.setOnClickListener(this);
+        binding.btnTimber.setOnClickListener(this);
+        binding.btnOrientation.setOnClickListener(this);
+        binding.btnBigPicture.setOnClickListener(this);
+        binding.btnMmkv.setOnClickListener(this);
+        binding.btnLevelList.setOnClickListener(this);
+        binding.btnRxjava.setOnClickListener(this);
+        binding.btnLog4j.setOnClickListener(this);
+        binding.btnRxBus.setOnClickListener(this);
+        binding.btnViewPager.setOnClickListener(this);
     }
 
     @Override

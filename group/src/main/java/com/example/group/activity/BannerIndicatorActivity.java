@@ -1,12 +1,13 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.example.group.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.constant.ImageList;
+import com.example.group.databinding.ActivityBannerIndicatorBinding;
 import com.example.group.util.Utils;
 import com.example.group.widget.BannerIndicator;
 import com.example.group.widget.BannerIndicator.BannerClickListener;
@@ -18,16 +19,18 @@ import java.util.Locale;
  */
 
 public class BannerIndicatorActivity extends AppCompatActivity implements BannerClickListener {
+    private ActivityBannerIndicatorBinding binding;
     private static final String TAG = "BannerIndicatorActivity";
     private TextView tv_pager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_banner_indicator);
-        tv_pager = findViewById(R.id.tv_pager);
+        binding = ActivityBannerIndicatorBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        tv_pager = binding.tvPager;
         //从布局文件中获取名叫banner_indicator的横幅指示器
-        BannerIndicator banner = findViewById(R.id.banner_indicator);
+        BannerIndicator banner = binding.bannerIndicator;
         LayoutParams params = (LayoutParams) banner.getLayoutParams();
         params.height = (int) (Utils.getScreenWidth(this) * 250f / 640f);
         //设置横幅指示器的布局参数

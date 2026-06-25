@@ -5,15 +5,17 @@ import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+
 import com.example.group.R;
+import com.example.group.databinding.DialogWindowBinding;
 
 //可以作为悬浮窗。
 /**
@@ -36,8 +38,9 @@ public class WindowDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initWindow();
-        setContentView(R.layout.dialog_window);
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        DialogWindowBinding binding = DialogWindowBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "点击了Button", Toast.LENGTH_SHORT).show();

@@ -344,7 +344,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="240dp"
                 android:orientation="horizontal">
 
                 <com.example.customview.loadingview.LVSunSetView
@@ -354,6 +354,18 @@
                     android:layout_centerInParent="true"
                     android:layout_weight="1"
                     android:onClick="startAnim" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:gravity="center|top"
+                android:orientation="horizontal">
+
+                <com.example.customview.widget.RotatingHaloView
+                    android:layout_width="240dp"
+                    android:layout_height="160dp" />
 
             </LinearLayout>
 

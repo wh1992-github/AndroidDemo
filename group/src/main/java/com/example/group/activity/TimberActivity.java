@@ -2,10 +2,12 @@ package com.example.group.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityTimberBinding;
 
 import timber.log.Timber;
 /**
@@ -14,13 +16,15 @@ import timber.log.Timber;
 
 @SuppressLint("NonConstantResourceId")
 public class TimberActivity extends AppCompatActivity {
+    private ActivityTimberBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timber);
-        findViewById(R.id.btn1).setOnClickListener(this::onClick);
-        findViewById(R.id.btn2).setOnClickListener(this::onClick);
+        binding = ActivityTimberBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        binding.btn1.setOnClickListener(this::onClick);
+        binding.btn2.setOnClickListener(this::onClick);
     }
 
     private void onClick(View view) {

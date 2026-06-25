@@ -4,13 +4,15 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityGlideBinding;
 import com.example.group.fragment.GlideFragment;
 
 /**
@@ -32,6 +34,7 @@ import com.example.group.fragment.GlideFragment;
  */
 @SuppressLint("NonConstantResourceId")
 public class GlideActivity extends AppCompatActivity {
+    private ActivityGlideBinding binding;
     private static final String TAG = "GlideActivity";
     private static final String FRAGMENT_TAG = "fragment_glide";
     private final Handler mHandler = new Handler(Looper.getMainLooper());
@@ -39,9 +42,10 @@ public class GlideActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_glide);
-        findViewById(R.id.btn1).setOnClickListener(this::onClick);
-        findViewById(R.id.btn2).setOnClickListener(this::onClick);
+        binding = ActivityGlideBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        binding.btn1.setOnClickListener(this::onClick);
+        binding.btn2.setOnClickListener(this::onClick);
     }
 
     private void onClick(View view) {

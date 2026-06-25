@@ -2,11 +2,13 @@ package com.example.group.rxjava;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityRxjava02Binding;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -31,27 +33,29 @@ import io.reactivex.functions.Function;
  */
 @SuppressLint({"LogNotTimber", "NonConstantResourceId", "CheckResult"})
 public class RxJavaActivity02 extends AppCompatActivity implements View.OnClickListener {
+    private ActivityRxjava02Binding binding;
     private static final String TAG = "RxJavaActivity02";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rxjava02);
+        binding = ActivityRxjava02Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        findViewById(R.id.btn_map).setOnClickListener(this);
-        findViewById(R.id.btn_flatMap).setOnClickListener(this);
-        findViewById(R.id.btn_concatMap).setOnClickListener(this);
-        findViewById(R.id.btn_buffer).setOnClickListener(this);
-        findViewById(R.id.btn_concatAndConcatArray).setOnClickListener(this);
-        findViewById(R.id.btn_merge).setOnClickListener(this);
-        findViewById(R.id.btn_concatDelayError).setOnClickListener(this);
-        findViewById(R.id.btn_mergeDelayError).setOnClickListener(this);
-        findViewById(R.id.btn_startWithAndStartWithArray).setOnClickListener(this);
-        findViewById(R.id.btn_zip).setOnClickListener(this);
-        findViewById(R.id.btn_combineLatest).setOnClickListener(this);
-        findViewById(R.id.btn_reduce).setOnClickListener(this);
-        findViewById(R.id.btn_collect).setOnClickListener(this);
-        findViewById(R.id.btn_count).setOnClickListener(this);
+        binding.btnMap.setOnClickListener(this);
+        binding.btnFlatMap.setOnClickListener(this);
+        binding.btnConcatMap.setOnClickListener(this);
+        binding.btnBuffer.setOnClickListener(this);
+        binding.btnConcatAndConcatArray.setOnClickListener(this);
+        binding.btnMerge.setOnClickListener(this);
+        binding.btnConcatDelayError.setOnClickListener(this);
+        binding.btnMergeDelayError.setOnClickListener(this);
+        binding.btnStartWithAndStartWithArray.setOnClickListener(this);
+        binding.btnZip.setOnClickListener(this);
+        binding.btnCombineLatest.setOnClickListener(this);
+        binding.btnReduce.setOnClickListener(this);
+        binding.btnCollect.setOnClickListener(this);
+        binding.btnCount.setOnClickListener(this);
     }
 
     @Override

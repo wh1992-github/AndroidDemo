@@ -1,8 +1,9 @@
 package com.example.group.widget;
 
 import android.graphics.Rect;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 /**
  * 封装 Spaces Item Decoration 相关逻辑的类。
  */
