@@ -3,10 +3,12 @@ package com.example.group.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityRxjavaBinding;
 import com.example.group.retrofit.OkHttpActivity;
 import com.example.group.retrofit.RetrofitActivity;
 import com.example.group.rxjava.RxJavaActivity01;
@@ -19,18 +21,20 @@ import com.example.group.rxjava.RxJavaActivity04;
 
 @SuppressLint("NonConstantResourceId")
 public class RxJavaRetrofitOkHttpActivity extends AppCompatActivity implements View.OnClickListener {
+    private ActivityRxjavaBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rxjava);
+        binding = ActivityRxjavaBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        findViewById(R.id.btn_rxjava2_01).setOnClickListener(this);
-        findViewById(R.id.btn_rxjava2_02).setOnClickListener(this);
-        findViewById(R.id.btn_rxjava2_03).setOnClickListener(this);
-        findViewById(R.id.btn_rxjava2_04).setOnClickListener(this);
-        findViewById(R.id.btn_retrofit).setOnClickListener(this);
-        findViewById(R.id.btn_okhttp).setOnClickListener(this);
+        binding.btnRxjava201.setOnClickListener(this);
+        binding.btnRxjava202.setOnClickListener(this);
+        binding.btnRxjava203.setOnClickListener(this);
+        binding.btnRxjava204.setOnClickListener(this);
+        binding.btnRetrofit.setOnClickListener(this);
+        binding.btnOkhttp.setOnClickListener(this);
     }
 
     @Override

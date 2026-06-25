@@ -1,15 +1,17 @@
 package com.example.group.adapter;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
+
 import com.example.group.R;
+import com.example.group.databinding.ItemCollapseBinding;
 /**
  * 用于适配 Recycler Collapse 数据的适配器。
  */
@@ -61,9 +63,10 @@ public class RecyclerCollapseAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         public TitleHolder(View v) {
             super(v);
-            ll_item = v.findViewById(R.id.ll_item);
-            tv_seq = v.findViewById(R.id.tv_seq);
-            tv_title = v.findViewById(R.id.tv_title);
+            ItemCollapseBinding binding = ItemCollapseBinding.bind(v);
+            ll_item = binding.llItem;
+            tv_seq = binding.tvSeq;
+            tv_title = binding.tvTitle;
         }
     }
 

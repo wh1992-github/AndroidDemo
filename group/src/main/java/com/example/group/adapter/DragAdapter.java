@@ -1,14 +1,16 @@
 package com.example.group.adapter;
 
 import android.annotation.SuppressLint;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.group.R;
+import com.example.group.databinding.DragItemBinding;
 
 import java.util.Collections;
 import java.util.List;
@@ -63,7 +65,7 @@ public class DragAdapter extends RecyclerView.Adapter<DragAdapter.DragViewHolder
 
         public DragViewHolder(View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.txt_item);
+            textView = DragItemBinding.bind(itemView).txtItem;
         }
     }
 }

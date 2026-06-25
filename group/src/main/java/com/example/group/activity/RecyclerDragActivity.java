@@ -1,15 +1,16 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.ItemTouchHelper;
-import android.util.Log;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.group.R;
 import com.example.group.adapter.DragAdapter;
+import com.example.group.databinding.ActivityRecyclerDragBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.List;
  */
 
 public class RecyclerDragActivity extends AppCompatActivity {
+    private ActivityRecyclerDragBinding binding;
     private static final String TAG = "RecyclerDragActivity";
     private RecyclerView mRecyclerView;
     private DragAdapter mDragAdapter;
@@ -27,7 +29,8 @@ public class RecyclerDragActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_drag);
+        binding = ActivityRecyclerDragBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         initData();
         initView();
     }
@@ -40,7 +43,7 @@ public class RecyclerDragActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mRecyclerView = findViewById(R.id.rv_drag_layout);
+        mRecyclerView = binding.rvDragLayout;
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         mDragAdapter = new DragAdapter(mDragList);
         mRecyclerView.setAdapter(mDragAdapter);

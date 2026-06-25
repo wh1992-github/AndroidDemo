@@ -4,20 +4,23 @@ import android.annotation.SuppressLint;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivitySearchResultBinding;
 
 /**
  * Created by test on 2017/10/21.
  */
 @SuppressLint("SetTextI18n")
 public class SearchResultActivity extends AppCompatActivity {
+    private ActivitySearchResultBinding binding;
     private static final String TAG = "SearchResultActivity";
     private TextView tv_search_result;
 
@@ -25,9 +28,10 @@ public class SearchResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_search_result);
+        binding = ActivitySearchResultBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫tl_result的工具栏
-        Toolbar tl_result = findViewById(R.id.tl_result);
+        Toolbar tl_result = binding.tlResult;
         //设置工具栏的背景
         tl_result.setBackgroundResource(R.color.blue_light);
         //设置工具栏的标志图片
@@ -38,7 +42,7 @@ public class SearchResultActivity extends AppCompatActivity {
         tl_result.setNavigationIcon(R.drawable.ic_back);
         //使用tl_result替换系统自带的ActionBar
         setSupportActionBar(tl_result);
-        tv_search_result = findViewById(R.id.tv_search_result);
+        tv_search_result = binding.tvSearchResult;
         //执行搜索查询操作
         doSearchQuery(getIntent());
     }

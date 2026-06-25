@@ -1,12 +1,13 @@
 package com.example.group.livedata;
 
-import androidx.lifecycle.LiveData;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+
+import androidx.lifecycle.LiveData;
 
 import com.example.group.util.LogUtil;
 

@@ -1,22 +1,24 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener;
-import com.google.android.material.tabs.TabLayout.Tab;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener;
+
 import com.example.group.R;
 import com.example.group.adapter.GoodsPagerAdapter;
+import com.example.group.databinding.ActivityTabLayoutBinding;
 import com.example.group.util.DateUtil;
 import com.example.group.util.MenuUtil;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener;
+import com.google.android.material.tabs.TabLayout.Tab;
 
 import java.util.ArrayList;
 
@@ -24,6 +26,7 @@ import java.util.ArrayList;
  * Created by test on 2017/10/21.
  */
 public class TabLayoutActivity extends AppCompatActivity implements OnTabSelectedListener {
+    private ActivityTabLayoutBinding binding;
     private static final String TAG = "TabLayoutActivity";
     private ViewPager vp_content; //定义一个翻页视图对象
     private TabLayout tab_title; //定义一个标签布局对象
@@ -33,9 +36,10 @@ public class TabLayoutActivity extends AppCompatActivity implements OnTabSelecte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_tab_layout);
+        binding = ActivityTabLayoutBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫tl_head的工具栏
-        Toolbar tl_head = findViewById(R.id.tl_head);
+        Toolbar tl_head = binding.tlHead;
         //使用tl_head替换系统自带的ActionBar
         setSupportActionBar(tl_head);
         mTitleArray.add("商品");
@@ -47,7 +51,7 @@ public class TabLayoutActivity extends AppCompatActivity implements OnTabSelecte
     //初始化标签布局
     private void initTabLayout() {
         //从布局文件中获取名叫tab_title的标签布局
-        tab_title = findViewById(R.id.tab_title);
+        tab_title = binding.tabTitle;
         //给tab_title添加一个指定文字的标签
         tab_title.addTab(tab_title.newTab().setText(mTitleArray.get(0)));
         //给tab_title添加一个指定文字的标签
@@ -59,7 +63,7 @@ public class TabLayoutActivity extends AppCompatActivity implements OnTabSelecte
     //初始化标签翻页
     private void initTabViewPager() {
         //从布局文件中获取名叫vp_content的翻页视图
-        vp_content = findViewById(R.id.vp_content);
+        vp_content = binding.vpContent;
         //构建一个商品信息的翻页适配器
         GoodsPagerAdapter adapter = new GoodsPagerAdapter(
                 getSupportFragmentManager(), mTitleArray);

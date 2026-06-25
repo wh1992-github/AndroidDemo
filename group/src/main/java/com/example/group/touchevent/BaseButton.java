@@ -65,6 +65,6 @@ public class BaseButton extends Button implements View.OnTouchListener {
             LogUtil.i(TAG, "OnTouchListener: BaseButton MOVE");
         }
         //返回值会影响后续事件的分发
-        return false;
+        return true;
     }
 }

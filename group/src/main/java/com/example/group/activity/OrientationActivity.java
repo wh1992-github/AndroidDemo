@@ -3,13 +3,14 @@ package com.example.group.activity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.OrientationEventListener;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.group.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.group.databinding.ActivityOrientationBinding;
 
 @SuppressLint("LogNotTimber")
 //屏幕方向自适应
@@ -17,6 +18,7 @@ import com.example.group.R;
  * 用于展示 Orientation 功能的 Activity。
  */
 public class OrientationActivity extends AppCompatActivity {
+    private ActivityOrientationBinding binding;
     private static final String TAG = "OrientationActivity";
     private int mOrientation = OrientationEventListener.ORIENTATION_UNKNOWN;
     private MyOrientationEventListener mOrientationListener;
@@ -25,11 +27,12 @@ public class OrientationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_orientation);
-        mTv1 = findViewById(R.id.tv1);
-        mTv2 = findViewById(R.id.tv2);
-        mTv3 = findViewById(R.id.tv3);
-        mTv4 = findViewById(R.id.tv4);
+        binding = ActivityOrientationBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        mTv1 = binding.tv1;
+        mTv2 = binding.tv2;
+        mTv3 = binding.tv3;
+        mTv4 = binding.tv4;
         mTv2.setVisibility(View.INVISIBLE);
         mTv3.setVisibility(View.INVISIBLE);
         mTv4.setVisibility(View.INVISIBLE);

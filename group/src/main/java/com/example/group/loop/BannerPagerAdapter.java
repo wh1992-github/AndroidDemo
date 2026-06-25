@@ -1,14 +1,16 @@
 package com.example.group.loop;
 
 import android.app.Activity;
-import androidx.viewpager.widget.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.viewpager.widget.PagerAdapter;
+
 import com.example.group.R;
+import com.example.group.databinding.RecommendPageItemBinding;
 /**
  * 用于适配 Banner Pager 数据的适配器。
  */
@@ -55,9 +57,11 @@ public class BannerPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        View view = LayoutInflater.from(mActivity.getApplicationContext()).inflate(R.layout.recommend_page_item, container, false);
-        ImageView imageView = view.findViewById(R.id.image);
-        TextView textView = view.findViewById(R.id.image_desc);
+        RecommendPageItemBinding binding = RecommendPageItemBinding.inflate(
+                LayoutInflater.from(mActivity.getApplicationContext()), container, false);
+        View view = binding.getRoot();
+        ImageView imageView = binding.image;
+        TextView textView = binding.imageDesc;
         textView.setText(TextIds[position]);
         imageView.setImageResource(ResIds[position]);
         container.addView(view);

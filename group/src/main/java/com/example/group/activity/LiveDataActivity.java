@@ -2,16 +2,18 @@ package com.example.group.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
 
-import com.example.group.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.group.databinding.ActivityLiveDataBinding;
 import com.example.group.livedata.LifecycleHelper;
 /**
  * 用于展示 Live Data 功能的 Activity。
  */
 
 public class LiveDataActivity extends AppCompatActivity {
+    private ActivityLiveDataBinding binding;
     private static final String TAG = "LiveDataActivity";
     private Button mBtnLifecycle;
     private Button mBtnLivedata;
@@ -22,15 +24,16 @@ public class LiveDataActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_live_data);
+        binding = ActivityLiveDataBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        mBtnLifecycle = findViewById(R.id.btn_lifecycle);
+        mBtnLifecycle = binding.btnLifecycle;
         mBtnLifecycle.setOnClickListener(v -> startActivity(new Intent(this, LifecycleActivity.class)));
 
-        mBtnLivedata = findViewById(R.id.btn_livedata);
+        mBtnLivedata = binding.btnLivedata;
         mBtnLivedata.setOnClickListener(v -> startActivity(new Intent(this, LiveDataSampleActivity.class)));
 
-        mBtnLivedataTransformations = findViewById(R.id.btn_livedata_transformations);
+        mBtnLivedataTransformations = binding.btnLivedataTransformations;
         // LiveDataTransformationsActivity temporarily disabled due to Kotlin Function1 compatibility issue
         // mBtnLivedataTransformations.setOnClickListener(v -> startActivity(new Intent(this, LiveDataTransformationsActivity.class)));
     }

@@ -8,13 +8,14 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
 import android.os.Build;
-import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.group.R;
 /**

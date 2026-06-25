@@ -2,12 +2,13 @@ package com.example.group.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 
-import com.example.group.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.bean.Person;
+import com.example.group.databinding.ActivityMmkvBinding;
 import com.tencent.mmkv.MMKV;
 
 /**
@@ -39,6 +40,7 @@ import com.tencent.mmkv.MMKV;
  */
 @SuppressLint("LogNotTimber")
 public class MMKVActivity extends AppCompatActivity {
+    private ActivityMmkvBinding binding;
     private static final String TAG = "MMKVActivity";
     //默认支持单进程
     private static final MMKV mMMKV = MMKV.defaultMMKV();
@@ -50,33 +52,34 @@ public class MMKVActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mmkv);
+        binding = ActivityMmkvBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        Button button1 = findViewById(R.id.btn_write_int);
+        Button button1 = binding.btnWriteInt;
         button1.setOnClickListener(v -> mMMKV.encode("testInt", 2));
 
-        Button button2 = findViewById(R.id.btn_read_int);
+        Button button2 = binding.btnReadInt;
         button2.setOnClickListener(v -> {
             int value = mMMKV.decodeInt("testInt", 0);
             Log.i(TAG, "testInt = " + value);
         });
 
-        Button button3 = findViewById(R.id.btn_delete_int);
+        Button button3 = binding.btnDeleteInt;
         button3.setOnClickListener(v -> mMMKV.removeValueForKey("testInt"));
 
-        Button button4 = findViewById(R.id.btn_write_string);
+        Button button4 = binding.btnWriteString;
         button4.setOnClickListener(v -> mMMKV.encode("testString", "abc"));
 
-        Button button5 = findViewById(R.id.btn_read_string);
+        Button button5 = binding.btnReadString;
         button5.setOnClickListener(v -> {
             String value = mMMKV.decodeString("testString");
             Log.i(TAG, "testString = " + value);
         });
 
-        Button button6 = findViewById(R.id.btn_delete_string);
+        Button button6 = binding.btnDeleteString;
         button6.setOnClickListener(v -> mMMKV.removeValueForKey("testString"));
 
-        Button button7 = findViewById(R.id.btn_write_object);
+        Button button7 = binding.btnWriteObject;
         button7.setOnClickListener(v -> {
             long time = System.currentTimeMillis();
             Person person = new Person("name", 28);
@@ -84,13 +87,13 @@ public class MMKVActivity extends AppCompatActivity {
             Log.i(TAG, "time = " + (System.currentTimeMillis() - time));
         });
 
-        Button button8 = findViewById(R.id.btn_read_object);
+        Button button8 = binding.btnReadObject;
         button8.setOnClickListener(v -> {
             Person person = mMMKV.decodeParcelable("person", Person.class);
             Log.i(TAG, "person = " + person);
         });
 
-        Button button9 = findViewById(R.id.btn_delete_object);
+        Button button9 = binding.btnDeleteObject;
         button9.setOnClickListener(v -> mMMKV.removeValueForKey("person"));
     }
 }

@@ -1,7 +1,6 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
@@ -9,25 +8,30 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
+import com.example.group.databinding.ActivityTabButtonBinding;
 
 /**
  * Created by test on 2017/10/21.
  */
 public class TabButtonActivity extends AppCompatActivity implements
         OnClickListener, OnCheckedChangeListener {
+    private ActivityTabButtonBinding binding;
     private TextView tv_tab_button; //声明一个标签按钮对象
     private CheckBox ck_select; //声明一个复选框对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab_button);
+        binding = ActivityTabButtonBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //从布局文件中获取名叫tv_tab_button的标签按钮
-        tv_tab_button = findViewById(R.id.tv_tab_button);
+        tv_tab_button = binding.tvTabButton;
         tv_tab_button.setOnClickListener(this);
         //从布局文件中获取名叫ck_select的复选框
-        ck_select = findViewById(R.id.ck_select);
+        ck_select = binding.ckSelect;
         //给复选框ck_select设置勾选监听器
         ck_select.setOnCheckedChangeListener(this);
     }

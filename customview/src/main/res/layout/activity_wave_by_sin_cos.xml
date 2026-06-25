@@ -13,7 +13,7 @@
         <com.example.customview.widget.WaveViewBySinCos
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            wave:waveAmplitude="10dp"
+            wave:waveAmplitude="15dp"
             wave:waveFillType="top"
             wave:waveSpeed="3"
             wave:waveStart="true"
@@ -23,7 +23,7 @@
         <com.example.customview.widget.WaveViewBySinCos
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            wave:waveAmplitude="10dp"
+            wave:waveAmplitude="15dp"
             wave:waveFillType="top"
             wave:waveSpeed="3"
             wave:waveStart="true"
@@ -32,22 +32,10 @@
 
     </FrameLayout>
 
-    <com.example.customview.widget.WaveViewBySinCos
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginTop="80dp"
-        wave:waveAmplitude="10dp"
-        wave:waveColor="#cccccccc"
-        wave:waveFillType="bottom"
-        wave:waveSpeed="3"
-        wave:waveStart="true"
-        wave:waveStartPeriod="1"
-        wave:waveType="sin" />
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="20dp">
 
         <com.example.customview.widget.WaveViewBySinCos
             android:id="@+id/wave_sin"
@@ -74,5 +62,32 @@
             wave:waveType="sin" />
 
     </FrameLayout>
+
+    <com.example.customview.widget.WaveViewBySinCos
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        wave:waveAmplitude="10dp"
+        wave:waveColor="#99FF0000"
+        wave:waveFillType="bottom"
+        wave:waveSpeed="3"
+        wave:waveStart="true"
+        wave:waveStartPeriod="1"
+        wave:waveType="sin" />
+
+    <com.example.customview.widget.WaveView1
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp" />
+
+    <com.example.customview.widget.WaveView2
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp" />
+
+    <com.example.customview.widget.WaveView3
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="20dp" />
 
 </LinearLayout>

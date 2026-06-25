@@ -2,11 +2,12 @@ package com.example.group.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 
-import com.example.group.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.group.databinding.ActivityBannerPagerBinding;
 import com.example.group.loop.BannerPagerAdapter;
 import com.example.group.loop.CircleIndicator;
 import com.example.group.loop.LoopViewPager;
@@ -16,15 +17,17 @@ import com.example.group.loop.LoopViewPager;
  */
 @SuppressLint("LogNotTimber")
 public class BannerPagerActivity extends AppCompatActivity {
+    private ActivityBannerPagerBinding binding;
     private static final String TAG = "BannerPagerActivity";
     private LoopViewPager mLoopViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_banner_pager);
-        mLoopViewPager = findViewById(R.id.viewpager);
-        CircleIndicator indicator = findViewById(R.id.indicator);
+        binding = ActivityBannerPagerBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        mLoopViewPager = binding.viewpager;
+        CircleIndicator indicator = binding.indicator;
         mLoopViewPager.setAdapter(new BannerPagerAdapter(BannerPagerActivity.this));
         mLoopViewPager.setOnDispatchTouchEventListener(mDispatchOnTouchListener);
         mLoopViewPager.setLooperPic(true);

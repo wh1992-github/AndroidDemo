@@ -3,20 +3,22 @@ package com.example.group.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.fragment.app.Fragment;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
+
 import com.example.group.R;
 import com.example.group.adapter.RecyclerStaggeredAdapter;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.databinding.FragmentClothesBinding;
 import com.example.group.widget.SpacesItemDecoration;
 
 import java.util.ArrayList;
@@ -37,16 +39,17 @@ public class ClothesFragment extends Fragment implements OnRefreshListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContext = getActivity(); //获取活动页面的上下文
         //根据布局文件fragment_clothes.xml生成视图对象
-        mView = inflater.inflate(R.layout.fragment_clothes, container, false);
+        FragmentClothesBinding binding = FragmentClothesBinding.inflate(inflater, container, false);
+        mView = binding.getRoot();
         //从布局文件中获取名叫srl_clothes的下拉刷新布局
-        srl_clothes = mView.findViewById(R.id.srl_clothes);
+        srl_clothes = binding.srlClothes;
         //设置srl_clothes的下拉刷新监听器
         srl_clothes.setOnRefreshListener(this);
         //设置srl_clothes的下拉变色资源数组
         srl_clothes.setColorSchemeResources(
                 R.color.red, R.color.orange, R.color.green, R.color.blue);
         //从布局文件中获取名叫rv_clothes的循环视图
-        rv_clothes = mView.findViewById(R.id.rv_clothes);
+        rv_clothes = binding.rvClothes;
         //创建一个垂直方向的瀑布流布局管理器
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(3, LinearLayout.VERTICAL);
         //设置循环视图的布局管理器

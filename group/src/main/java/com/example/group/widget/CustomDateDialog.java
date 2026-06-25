@@ -10,6 +10,7 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.example.group.R;
+import com.example.group.databinding.DialogDateBinding;
 /**
  * 用于展示 Custom Date 内容的对话框类。
  */
@@ -22,13 +23,14 @@ public class CustomDateDialog implements OnClickListener {
 
     public CustomDateDialog(Context context) {
         //根据布局文件dialog_date.xml生成视图对象
-        view = LayoutInflater.from(context).inflate(R.layout.dialog_date, null);
+        DialogDateBinding binding = DialogDateBinding.inflate(LayoutInflater.from(context));
+        view = binding.getRoot();
         //创建一个指定风格的对话框对象
         dialog = new Dialog(context, R.style.CustomDateDialog);
-        tv_title = view.findViewById(R.id.tv_title);
+        tv_title = binding.tvTitle;
         //从布局文件中获取名叫dp_date的日期选择器
-        dp_date = view.findViewById(R.id.dp_date);
-        view.findViewById(R.id.btn_ok).setOnClickListener(this);
+        dp_date = binding.dpDate;
+        binding.btnOk.setOnClickListener(this);
     }
 
     //设置日期对话框的标题文本

@@ -1,7 +1,6 @@
 package com.example.group.activity;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -9,8 +8,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.group.R;
 import com.example.group.constant.ImageList;
+import com.example.group.databinding.ActivityBannerTopBinding;
 import com.example.group.util.StatusBarUtil;
 import com.example.group.util.Utils;
 import com.example.group.widget.BannerPager;
@@ -23,6 +25,7 @@ import java.util.Locale;
 
 public class BannerTopActivity extends AppCompatActivity implements
         OnClickListener, BannerPager.BannerClickListener {
+    private ActivityBannerTopBinding binding;
     private static final String TAG = "BannerTopActivity";
     private Button btn_top;
     private boolean isOccupy = true; //是否占据了状态栏
@@ -31,13 +34,14 @@ public class BannerTopActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_banner_top);
-        btn_top = findViewById(R.id.btn_top);
+        binding = ActivityBannerTopBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        btn_top = binding.btnTop;
         btn_top.setOnClickListener(this);
         //让当前页面全屏展示,也就是向上顶到状态栏
         StatusBarUtil.fullScreen(this);
         //从布局文件中获取名叫banner_top的横幅轮播条
-        BannerPager banner = findViewById(R.id.banner_top);
+        BannerPager banner = binding.bannerTop;
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) banner.getLayoutParams();
         params.height = (int) (Utils.getScreenWidth(this) * 250f / 640f);
         //设置横幅轮播条的布局参数
